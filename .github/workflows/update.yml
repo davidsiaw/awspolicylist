@@ -8,11 +8,13 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  obtain_date:
+  update:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
     - name: Create local changes
       run: |
         bash run.bash
