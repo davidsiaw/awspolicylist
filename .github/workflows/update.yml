@@ -1,0 +1,26 @@
+---
+name: updatelist
+concurrency:
+  group: default
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  obtain_date:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
+    - name: Create local changes
+      run: |
+        bash run.bash
+    - uses: stefanzweifel/git-auto-commit-action@v4
+    - name: "Run if changes have been detected"
+      if: steps.auto-commit-action.outputs.changes_detected == 'true'
+      run: echo "Changes!"
+
+    - name: "Run if no changes have been detected"
+      if: steps.auto-commit-action.outputs.changes_detected == 'false'
+      run: echo "No Changes!"
