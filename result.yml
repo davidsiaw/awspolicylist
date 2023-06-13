@@ -2660,6 +2660,7 @@ serviceMap:
     - sagemaker:RootAccess
     - sagemaker:ServerlessMaxConcurrency
     - sagemaker:ServerlessMemorySize
+    - sagemaker:TaggingAction
     - sagemaker:TargetModel
     - sagemaker:VolumeKmsKey
     - sagemaker:VpcSecurityGroupIds
@@ -5546,8 +5547,10 @@ serviceMap:
     - BatchGetMemberEc2DeepInspectionStatus
     - BatchUpdateMemberEc2DeepInspectionStatus
     - CancelFindingsReport
+    - CancelSbomExport
     - CreateFilter
     - CreateFindingsReport
+    - CreateSbomExport
     - DeleteFilter
     - DescribeOrganizationConfiguration
     - Disable
@@ -5558,8 +5561,10 @@ serviceMap:
     - GetConfiguration
     - GetDelegatedAdminAccount
     - GetEc2DeepInspectionConfiguration
+    - GetEncryptionKey
     - GetFindingsReportStatus
     - GetMember
+    - GetSbomExport
     - ListAccountPermissions
     - ListCoverage
     - ListCoverageStatistics
@@ -5570,11 +5575,13 @@ serviceMap:
     - ListMembers
     - ListTagsForResource
     - ListUsageTotals
+    - ResetEncryptionKey
     - SearchVulnerabilities
     - TagResource
     - UntagResource
     - UpdateConfiguration
     - UpdateEc2DeepInspectionConfiguration
+    - UpdateEncryptionKey
     - UpdateFilter
     - UpdateOrgEc2DeepInspectionConfiguration
     - UpdateOrganizationConfiguration
