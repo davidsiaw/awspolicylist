@@ -2668,6 +2668,36 @@ serviceMap:
     - sagemaker:WorkteamArn
     - sagemaker:WorkteamType
     HasResource: true
+  Amazon Verified Permissions:
+    StringPrefix: verifiedpermissions
+    Actions:
+    - CreateIdentitySource
+    - CreatePolicy
+    - CreatePolicyStore
+    - CreatePolicyTemplate
+    - DeleteIdentitySource
+    - DeletePolicy
+    - DeletePolicyStore
+    - DeletePolicyTemplate
+    - GetIdentitySource
+    - GetPolicy
+    - GetPolicyStore
+    - GetPolicyTemplate
+    - GetSchema
+    - IsAuthorized
+    - IsAuthorizedWithToken
+    - ListIdentitySources
+    - ListPolicies
+    - ListPolicyStores
+    - ListPolicyTemplates
+    - PutSchema
+    - UpdateIdentitySource
+    - UpdatePolicy
+    - UpdatePolicyStore
+    - UpdatePolicyTemplate
+    ARNFormat: arn:aws:verifiedpermissions:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:verifiedpermissions:.+"
+    HasResource: true
   AWS Lake Formation:
     StringPrefix: lakeformation
     Actions:
@@ -10263,16 +10293,22 @@ serviceMap:
     StringPrefix: wellarchitected
     Actions:
     - AssociateLenses
+    - AssociateProfiles
     - CreateLensShare
     - CreateLensVersion
     - CreateMilestone
+    - CreateProfile
+    - CreateProfileShare
     - CreateWorkload
     - CreateWorkloadShare
     - DeleteLens
     - DeleteLensShare
+    - DeleteProfile
+    - DeleteProfileShare
     - DeleteWorkload
     - DeleteWorkloadShare
     - DisassociateLenses
+    - DisassociateProfiles
     - ExportLens
     - GetAnswer
     - GetConsolidatedReport
@@ -10281,6 +10317,8 @@ serviceMap:
     - GetLensReviewReport
     - GetLensVersionDifference
     - GetMilestone
+    - GetProfile
+    - GetProfileTemplate
     - GetWorkload
     - ImportLens
     - ListAnswers
@@ -10292,6 +10330,9 @@ serviceMap:
     - ListLenses
     - ListMilestones
     - ListNotifications
+    - ListProfileNotifications
+    - ListProfileShares
+    - ListProfiles
     - ListShareInvitations
     - ListTagsForResource
     - ListWorkloadShares
@@ -10301,10 +10342,12 @@ serviceMap:
     - UpdateAnswer
     - UpdateGlobalSettings
     - UpdateLensReview
+    - UpdateProfile
     - UpdateShareInvitation
     - UpdateWorkload
     - UpdateWorkloadShare
     - UpgradeLensReview
+    - UpgradeProfileVersion
     ARNFormat: arn:aws:wellarchitected:${Region}:${Account}:${ResourceName}/${ResourceId}
     ARNRegex: "^arn:aws:wellarchitected:.+"
     conditionKeys:
@@ -16501,6 +16544,7 @@ serviceMap:
     StringPrefix: drs
     Actions:
     - AssociateFailbackClientToRecoveryInstanceForDrs
+    - AssociateSourceNetworkStack
     - BatchCreateVolumeSnapshotGroupForDrs
     - BatchDeleteSnapshotRequestForDrs
     - CreateConvertedSnapshotForDrs
@@ -16508,11 +16552,13 @@ serviceMap:
     - CreateLaunchConfigurationTemplate
     - CreateRecoveryInstanceForDrs
     - CreateReplicationConfigurationTemplate
+    - CreateSourceNetwork
     - CreateSourceServerForDrs
     - DeleteJob
     - DeleteLaunchConfigurationTemplate
     - DeleteRecoveryInstance
     - DeleteReplicationConfigurationTemplate
+    - DeleteSourceNetwork
     - DeleteSourceServer
     - DescribeJobLogItems
     - DescribeJobs
@@ -16522,9 +16568,11 @@ serviceMap:
     - DescribeReplicationConfigurationTemplates
     - DescribeReplicationServerAssociationsForDrs
     - DescribeSnapshotRequestsForDrs
+    - DescribeSourceNetworks
     - DescribeSourceServers
     - DisconnectRecoveryInstance
     - DisconnectSourceServer
+    - ExportSourceNetworkCfnTemplate
     - GetAgentCommandForDrs
     - GetAgentConfirmedResumeInfoForDrs
     - GetAgentInstallationAssetsForDrs
@@ -16561,8 +16609,11 @@ serviceMap:
     - StartFailbackLaunch
     - StartRecovery
     - StartReplication
+    - StartSourceNetworkRecovery
+    - StartSourceNetworkReplication
     - StopFailback
     - StopReplication
+    - StopSourceNetworkReplication
     - TagResource
     - TerminateRecoveryInstances
     - UntagResource
@@ -17702,15 +17753,19 @@ serviceMap:
     Actions:
     - AcceptAdministratorInvitation
     - AcceptInvitation
+    - BatchDeleteAutomationRules
     - BatchDisableStandards
     - BatchEnableStandards
+    - BatchGetAutomationRules
     - BatchGetControlEvaluations
     - BatchGetSecurityControls
     - BatchGetStandardsControlAssociations
     - BatchImportFindings
+    - BatchUpdateAutomationRules
     - BatchUpdateFindings
     - BatchUpdateStandardsControlAssociations
     - CreateActionTarget
+    - CreateAutomationRule
     - CreateFindingAggregator
     - CreateInsight
     - CreateMembers
@@ -17752,6 +17807,7 @@ serviceMap:
     - GetMembers
     - GetUsage
     - InviteMembers
+    - ListAutomationRules
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
     - ListFindingAggregators
