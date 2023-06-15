@@ -15164,12 +15164,16 @@ serviceMap:
   Amazon EC2 Instance Connect:
     StringPrefix: ec2-instance-connect
     Actions:
+    - OpenTunnel
     - SendSSHPublicKey
     - SendSerialConsoleSSHPublicKey
     ARNFormat: arn:aws:ec2:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:ec2:.+"
     conditionKeys:
     - aws:ResourceTag/${TagKey}
+    - ec2-instance-connect:maxTunnelDuration
+    - ec2-instance-connect:privateIpAddress
+    - ec2-instance-connect:remotePort
     - ec2:ResourceTag/${TagKey}
     - ec2:osuser
     HasResource: true
