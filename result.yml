@@ -10071,6 +10071,7 @@ serviceMap:
     - ListAssetBundleExportJobs
     - ListAssetBundleImportJobs
     - ListCustomPermissions
+    - ListCustomerManagedKeys
     - ListDashboardVersions
     - ListDashboards
     - ListDataSets
@@ -10082,6 +10083,7 @@ serviceMap:
     - ListIAMPolicyAssignments
     - ListIAMPolicyAssignmentsForUser
     - ListIngestions
+    - ListKMSKeysForUser
     - ListNamespaces
     - ListRefreshSchedules
     - ListTagsForResource
@@ -10099,7 +10101,9 @@ serviceMap:
     - PassDataSet
     - PassDataSource
     - PutDataSetRefreshProperties
+    - RegisterCustomerManagedKey
     - RegisterUser
+    - RemoveCustomerManagedKey
     - RestoreAnalysis
     - ScopeDownPolicy
     - SearchAnalyses
@@ -18066,6 +18070,7 @@ serviceMap:
   Amazon Rekognition:
     StringPrefix: rekognition
     Actions:
+    - AssociateFaces
     - CompareFaces
     - CopyProjectVersion
     - CreateCollection
@@ -18074,6 +18079,7 @@ serviceMap:
     - CreateProject
     - CreateProjectVersion
     - CreateStreamProcessor
+    - CreateUser
     - DeleteCollection
     - DeleteDataset
     - DeleteFaces
@@ -18081,6 +18087,7 @@ serviceMap:
     - DeleteProjectPolicy
     - DeleteProjectVersion
     - DeleteStreamProcessor
+    - DeleteUser
     - DescribeCollection
     - DescribeDataset
     - DescribeProjectVersions
@@ -18092,6 +18099,7 @@ serviceMap:
     - DetectModerationLabels
     - DetectProtectiveEquipment
     - DetectText
+    - DisassociateFaces
     - DistributeDatasetEntries
     - GetCelebrityInfo
     - GetCelebrityRecognition
@@ -18111,10 +18119,13 @@ serviceMap:
     - ListProjectPolicies
     - ListStreamProcessors
     - ListTagsForResource
+    - ListUsers
     - PutProjectPolicy
     - RecognizeCelebrities
     - SearchFaces
     - SearchFacesByImage
+    - SearchUsers
+    - SearchUsersByImage
     - StartCelebrityRecognition
     - StartContentModeration
     - StartFaceDetection
@@ -18676,6 +18687,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAgent
+    - UpdateDiscoveryJob
     - UpdateLocationHdfs
     - UpdateLocationNfs
     - UpdateLocationObjectStorage
