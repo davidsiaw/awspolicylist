@@ -11225,18 +11225,28 @@ serviceMap:
     - DescribeApplicableIndividualAssessments
     - DescribeCertificates
     - DescribeConnections
+    - DescribeConversionConfiguration
     - DescribeDataMigrations
+    - DescribeDataProviders
     - DescribeEndpointSettings
     - DescribeEndpointTypes
     - DescribeEndpoints
     - DescribeEventCategories
     - DescribeEventSubscriptions
     - DescribeEvents
+    - DescribeExtensionPackAssociations
     - DescribeFleetAdvisorCollectors
     - DescribeFleetAdvisorDatabases
     - DescribeFleetAdvisorLsaAnalysis
     - DescribeFleetAdvisorSchemaObjectSummary
     - DescribeFleetAdvisorSchemas
+    - DescribeInstanceProfiles
+    - DescribeMetadataModelAssessments
+    - DescribeMetadataModelConversions
+    - DescribeMetadataModelExportsAsScript
+    - DescribeMetadataModelExportsToTarget
+    - DescribeMetadataModelImports
+    - DescribeMigrationProjects
     - DescribeOrderableReplicationInstances
     - DescribePendingMaintenanceActions
     - DescribeRecommendationLimitations
@@ -11267,11 +11277,15 @@ serviceMap:
     - ListMetadataModelExports
     - ListMigrationProjects
     - ListTagsForResource
+    - ModifyConversionConfiguration
     - ModifyDataMigration
+    - ModifyDataProvider
     - ModifyEndpoint
     - ModifyEventSubscription
     - ModifyFleetAdvisorCollector
     - ModifyFleetAdvisorCollectorStatuses
+    - ModifyInstanceProfile
+    - ModifyMigrationProject
     - ModifyReplicationConfig
     - ModifyReplicationInstance
     - ModifyReplicationSubnetGroup
@@ -11284,8 +11298,10 @@ serviceMap:
     - RemoveTagsFromResource
     - RunFleetAdvisorLsaAnalysis
     - StartDataMigration
+    - StartExtensionPackAssociation
     - StartMetadataModelAssessment
     - StartMetadataModelConversion
+    - StartMetadataModelExportAsScript
     - StartMetadataModelExportAsScripts
     - StartMetadataModelExportToTarget
     - StartMetadataModelImport
@@ -11826,14 +11842,21 @@ serviceMap:
     - GetPurchaseOrder
     - ListPurchaseOrderInvoices
     - ListPurchaseOrders
+    - ListTagsForResource
     - ModifyPurchaseOrders
+    - TagResource
+    - UntagResource
     - UpdateConsoleActionSetEnforced
     - UpdatePurchaseOrder
     - UpdatePurchaseOrderStatus
     - ViewPurchaseOrders
-    ARNFormat: arn:${Partition}:purchase-orders::${Account}:${ResourceType}:${ResourceName}
-    ARNRegex: "^arn:${Partition}:purchase-orders::.+:.+:.+"
-    HasResource: false
+    ARNFormat: arn:aws:purchase-orders::${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:purchase-orders::.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon OpenSearch Serverless:
     StringPrefix: aoss
     Actions:
@@ -16317,6 +16340,7 @@ serviceMap:
     - CreateLogDelivery
     - CreateLogGroup
     - CreateLogStream
+    - DeleteAccountPolicy
     - DeleteDataProtectionPolicy
     - DeleteDestination
     - DeleteLogDelivery
@@ -16327,6 +16351,7 @@ serviceMap:
     - DeleteResourcePolicy
     - DeleteRetentionPolicy
     - DeleteSubscriptionFilter
+    - DescribeAccountPolicies
     - DescribeDestinations
     - DescribeExportTasks
     - DescribeLogGroups
@@ -16348,6 +16373,7 @@ serviceMap:
     - ListLogDeliveries
     - ListTagsForResource
     - ListTagsLogGroup
+    - PutAccountPolicy
     - PutDataProtectionPolicy
     - PutDestination
     - PutDestinationPolicy
