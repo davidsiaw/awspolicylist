@@ -8723,10 +8723,12 @@ serviceMap:
     - DescribeCaseAttributes
     - DescribeCases
     - DescribeCommunications
+    - DescribeCreateCaseOptions
     - DescribeIssueTypes
     - DescribeServices
     - DescribeSeverityLevels
     - DescribeSupportLevel
+    - DescribeSupportedLanguages
     - DescribeTrustedAdvisorCheckRefreshStatuses
     - DescribeTrustedAdvisorCheckResult
     - DescribeTrustedAdvisorCheckSummaries
@@ -13787,6 +13789,7 @@ serviceMap:
     - CreateFlowLogs
     - CreateFpgaImage
     - CreateImage
+    - CreateInstanceConnectEndpoint
     - CreateInstanceEventWindow
     - CreateInstanceExportTask
     - CreateInternetGateway
@@ -13865,6 +13868,7 @@ serviceMap:
     - DeleteFleets
     - DeleteFlowLogs
     - DeleteFpgaImage
+    - DeleteInstanceConnectEndpoint
     - DeleteInstanceEventWindow
     - DeleteInternetGateway
     - DeleteIpam
@@ -13981,6 +13985,7 @@ serviceMap:
     - DescribeImportImageTasks
     - DescribeImportSnapshotTasks
     - DescribeInstanceAttribute
+    - DescribeInstanceConnectEndpoints
     - DescribeInstanceCreditSpecifications
     - DescribeInstanceEventNotificationAttributes
     - DescribeInstanceEventWindows
