@@ -4208,7 +4208,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Identity and Access Management:
+  AWS Identity and Access Management (IAM):
     StringPrefix: iam
     Actions:
     - AddClientIDToOpenIDConnectProvider
@@ -4278,6 +4278,7 @@ serviceMap:
     - GetGroupPolicy
     - GetInstanceProfile
     - GetLoginProfile
+    - GetMFADevice
     - GetOpenIDConnectProvider
     - GetOrganizationsAccessReport
     - GetPolicy
@@ -4389,10 +4390,14 @@ serviceMap:
     - aws:TagKeys
     - iam:AWSServiceName
     - iam:AssociatedResourceArn
+    - iam:FIDO-FIPS-140-2-certification
+    - iam:FIDO-FIPS-140-3-certification
+    - iam:FIDO-certification
     - iam:OrganizationsPolicyId
     - iam:PassedToService
     - iam:PermissionsBoundary
     - iam:PolicyARN
+    - iam:RegisterSecurityKey
     - iam:ResourceTag/${TagKey}
     HasResource: true
   Amazon Route 53 Resolver:
@@ -8699,7 +8704,7 @@ serviceMap:
     - UpdateNetworkResourceMetadata
     - UpdateSite
     - UpdateVpcAttachment
-    ARNFormat: arn:aws:networkmanager::${AccountId}:${ResourceType}/${ResourceName}
+    ARNFormat: arn:aws:networkmanager::${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:networkmanager::.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
@@ -9163,20 +9168,27 @@ serviceMap:
     Actions:
     - CreateActivity
     - CreateStateMachine
+    - CreateStateMachineAlias
     - DeleteActivity
     - DeleteStateMachine
+    - DeleteStateMachineAlias
+    - DeleteStateMachineVersion
     - DescribeActivity
     - DescribeExecution
     - DescribeMapRun
     - DescribeStateMachine
+    - DescribeStateMachineAlias
     - DescribeStateMachineForExecution
     - GetActivityTask
     - GetExecutionHistory
     - ListActivities
     - ListExecutions
     - ListMapRuns
+    - ListStateMachineAliases
+    - ListStateMachineVersions
     - ListStateMachines
     - ListTagsForResource
+    - PublishStateMachineVersion
     - SendTaskFailure
     - SendTaskHeartbeat
     - SendTaskSuccess
@@ -9187,12 +9199,14 @@ serviceMap:
     - UntagResource
     - UpdateMapRun
     - UpdateStateMachine
+    - UpdateStateMachineAlias
     ARNFormat: arn:aws:states:${Region}:${Account}:${ResourceType}:${ResourceName}
     ARNRegex: "^arn:aws:states:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - states:StateMachineQualifier
     HasResource: true
   Amazon Connect Wisdom:
     StringPrefix: wisdom
@@ -10430,6 +10444,7 @@ serviceMap:
     - ListThesauri
     - PutPrincipalMapping
     - Query
+    - Retrieve
     - StartDataSourceSyncJob
     - StopDataSourceSyncJob
     - SubmitFeedback
@@ -15326,6 +15341,8 @@ serviceMap:
     - StopContinuousExport
     - StopDataCollectionByAgentIds
     - UpdateApplication
+    conditionKeys:
+    - aws:TagKeys
     HasResource: false
   Amazon Elastic Block Store:
     StringPrefix: ebs
