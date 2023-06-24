@@ -1700,6 +1700,8 @@ serviceMap:
     - CreateResourcePolicy
     - CreateSlot
     - CreateSlotType
+    - CreateTestSet
+    - CreateTestSetDiscrepancyReport
     - CreateUploadUrl
     - DeleteBot
     - DeleteBotAlias
@@ -1714,6 +1716,7 @@ serviceMap:
     - DeleteSession
     - DeleteSlot
     - DeleteSlotType
+    - DeleteTestSet
     - DeleteUtterances
     - DescribeBot
     - DescribeBotAlias
@@ -1729,7 +1732,12 @@ serviceMap:
     - DescribeResourcePolicy
     - DescribeSlot
     - DescribeSlotType
+    - DescribeTestExecution
+    - DescribeTestSet
+    - DescribeTestSetDiscrepancyReport
+    - DescribeTestSetGeneration
     - GetSession
+    - GetTestExecutionArtifactsUrl
     - ListAggregatedUtterances
     - ListBotAliases
     - ListBotChannels
@@ -1747,6 +1755,10 @@ serviceMap:
     - ListSlotTypes
     - ListSlots
     - ListTagsForResource
+    - ListTestExecutionResultItems
+    - ListTestExecutions
+    - ListTestSetRecords
+    - ListTestSets
     - PutSession
     - RecognizeText
     - RecognizeUtterance
@@ -1754,6 +1766,8 @@ serviceMap:
     - StartBotRecommendation
     - StartConversation
     - StartImport
+    - StartTestExecution
+    - StartTestSetGeneration
     - StopBotRecommendation
     - TagResource
     - UntagResource
@@ -1767,6 +1781,7 @@ serviceMap:
     - UpdateResourcePolicy
     - UpdateSlot
     - UpdateSlotType
+    - UpdateTestSet
     ARNFormat: arn:aws:lex:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:lex:.+:[0-9]+:.+"
     conditionKeys:
