@@ -4924,6 +4924,7 @@ serviceMap:
     - SearchPrompts
     - SearchQueues
     - SearchQuickConnects
+    - SearchResourceTags
     - SearchRoutingProfiles
     - SearchSecurityProfiles
     - SearchUsers
@@ -5779,6 +5780,7 @@ serviceMap:
     - ListFlows
     - ListTagsForResource
     - RegisterConnector
+    - ResetConnectorMetadataCache
     - RunFlow
     - StartFlow
     - StopFlow
@@ -10497,16 +10499,21 @@ serviceMap:
     - DeleteStreamKey
     - DisconnectParticipant
     - GetChannel
+    - GetParticipant
     - GetPlaybackKeyPair
     - GetRecordingConfiguration
     - GetStage
+    - GetStageSession
     - GetStream
     - GetStreamKey
     - GetStreamSession
     - ImportPlaybackKeyPair
     - ListChannels
+    - ListParticipantEvents
+    - ListParticipants
     - ListPlaybackKeyPairs
     - ListRecordingConfigurations
+    - ListStageSessions
     - ListStages
     - ListStreamKeys
     - ListStreamSessions
@@ -14617,6 +14624,7 @@ serviceMap:
   AWS CloudFormation:
     StringPrefix: cloudformation
     Actions:
+    - ActivateOrganizationsAccess
     - ActivateType
     - BatchDescribeTypeConfigurations
     - CancelUpdateStack
@@ -14626,6 +14634,7 @@ serviceMap:
     - CreateStackInstances
     - CreateStackSet
     - CreateUploadBucket
+    - DeactivateOrganizationsAccess
     - DeactivateType
     - DeleteChangeSet
     - DeleteStack
@@ -14635,6 +14644,7 @@ serviceMap:
     - DescribeAccountLimits
     - DescribeChangeSet
     - DescribeChangeSetHooks
+    - DescribeOrganizationsAccess
     - DescribePublisher
     - DescribeStackDriftDetectionStatus
     - DescribeStackEvents
@@ -14659,6 +14669,7 @@ serviceMap:
     - ListChangeSets
     - ListExports
     - ListImports
+    - ListStackInstanceResourceDrifts
     - ListStackInstances
     - ListStackResources
     - ListStackSetOperationResults
