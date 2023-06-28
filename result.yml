@@ -8633,6 +8633,42 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS AppFabric:
+    StringPrefix: appfabric
+    Actions:
+    - BatchGetUserAccessTasks
+    - ConnectAppAuthorization
+    - CreateAppAuthorization
+    - CreateAppBundle
+    - CreateIngestion
+    - CreateIngestionDestination
+    - DeleteAppAuthorization
+    - DeleteAppBundle
+    - DeleteIngestion
+    - DeleteIngestionDestination
+    - GetAppAuthorization
+    - GetAppBundle
+    - GetIngestion
+    - GetIngestionDestination
+    - ListAppAuthorizations
+    - ListAppBundles
+    - ListIngestionDestinations
+    - ListIngestions
+    - ListTagsForResource
+    - StartIngestion
+    - StartUserAccessTasks
+    - StopIngestion
+    - TagResource
+    - UntagResource
+    - UpdateAppAuthorization
+    - UpdateIngestionDestination
+    ARNFormat: arn:aws:appfabric:${Region}:${Account}:${ResourceInfo}
+    ARNRegex: "^arn:aws:appfabric:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Network Manager:
     StringPrefix: networkmanager
     Actions:
@@ -13346,6 +13382,7 @@ serviceMap:
     - ConnectAsViewer
     - CreateSignalingChannel
     - CreateStream
+    - DeleteEdgeConfiguration
     - DeleteSignalingChannel
     - DeleteStream
     - DescribeEdgeConfiguration
@@ -13365,6 +13402,7 @@ serviceMap:
     - GetMediaForFragmentList
     - GetSignalingChannelEndpoint
     - JoinStorageSession
+    - ListEdgeAgentConfigurations
     - ListFragments
     - ListSignalingChannels
     - ListStreams
