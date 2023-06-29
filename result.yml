@@ -12078,13 +12078,16 @@ serviceMap:
     - CreateUpfrontProposal
     - DeclineCall
     - DeleteAttachment
+    - DisableIndividualPublicProfile
     - DownloadAttachment
+    - EnableIndividualPublicProfile
     - EndCall
     - GetBuyer
     - GetCall
     - GetChatInfo
     - GetChatMessages
     - GetChatToken
+    - GetCompanyChatMessages
     - GetCompanyProfile
     - GetConversation
     - GetExpert
@@ -12096,8 +12099,10 @@ serviceMap:
     - GetReview
     - HideRequest
     - InitiateCall
+    - LinkAwsCertification
     - ListAttachments
     - ListConversations
+    - ListExpertAccessLogs
     - ListListings
     - ListPaymentRequests
     - ListProposals
@@ -12109,6 +12114,7 @@ serviceMap:
     - SendCompanyChatMessage
     - SendIndividualChatMessage
     - UnarchiveConversation
+    - UnlinkAwsCertification
     - UpdateCompanyProfile
     - UpdateConversationMembers
     - UpdateExpert
