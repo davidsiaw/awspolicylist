@@ -7982,6 +7982,7 @@ serviceMap:
     - ListSteps
     - ListStudioSessionMappings
     - ListStudios
+    - ListSupportedInstanceTypes
     - ListWorkspaceAccessIdentities
     - ModifyCluster
     - ModifyInstanceFleet
@@ -9955,6 +9956,7 @@ serviceMap:
   Amazon AppStream 2.0:
     StringPrefix: appstream
     Actions:
+    - AssociateAppBlockBuilderAppBlock
     - AssociateApplicationFleet
     - AssociateApplicationToEntitlement
     - AssociateFleet
@@ -9962,6 +9964,8 @@ serviceMap:
     - BatchDisassociateUserStack
     - CopyImage
     - CreateAppBlock
+    - CreateAppBlockBuilder
+    - CreateAppBlockBuilderStreamingURL
     - CreateApplication
     - CreateDirectoryConfig
     - CreateEntitlement
@@ -9974,6 +9978,7 @@ serviceMap:
     - CreateUsageReportSubscription
     - CreateUser
     - DeleteAppBlock
+    - DeleteAppBlockBuilder
     - DeleteApplication
     - DeleteDirectoryConfig
     - DeleteEntitlement
@@ -9984,6 +9989,8 @@ serviceMap:
     - DeleteStack
     - DeleteUsageReportSubscription
     - DeleteUser
+    - DescribeAppBlockBuilderAppBlockAssociations
+    - DescribeAppBlockBuilders
     - DescribeAppBlocks
     - DescribeApplicationFleetAssociations
     - DescribeApplications
@@ -9999,6 +10006,7 @@ serviceMap:
     - DescribeUserStackAssociations
     - DescribeUsers
     - DisableUser
+    - DisassociateAppBlockBuilderAppBlock
     - DisassociateApplicationFleet
     - DisassociateApplicationFromEntitlement
     - DisassociateFleet
@@ -10008,13 +10016,16 @@ serviceMap:
     - ListAssociatedStacks
     - ListEntitledApplications
     - ListTagsForResource
+    - StartAppBlockBuilder
     - StartFleet
     - StartImageBuilder
+    - StopAppBlockBuilder
     - StopFleet
     - StopImageBuilder
     - Stream
     - TagResource
     - UntagResource
+    - UpdateAppBlockBuilder
     - UpdateApplication
     - UpdateDirectoryConfig
     - UpdateEntitlement
