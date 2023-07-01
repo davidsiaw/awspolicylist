@@ -9502,6 +9502,7 @@ serviceMap:
     - CreateClusterSnapshot
     - CreateClusterSubnetGroup
     - CreateClusterUser
+    - CreateCustomDomainAssociation
     - CreateEndpointAccess
     - CreateEventSubscription
     - CreateHsmClientCertificate
@@ -9519,6 +9520,7 @@ serviceMap:
     - DeleteClusterSecurityGroup
     - DeleteClusterSnapshot
     - DeleteClusterSubnetGroup
+    - DeleteCustomDomainAssociation
     - DeleteEndpointAccess
     - DeleteEventSubscription
     - DeleteHsmClientCertificate
@@ -9541,6 +9543,7 @@ serviceMap:
     - DescribeClusterTracks
     - DescribeClusterVersions
     - DescribeClusters
+    - DescribeCustomDomainAssociations
     - DescribeDataShares
     - DescribeDataSharesForConsumer
     - DescribeDataSharesForProducer
@@ -9596,6 +9599,7 @@ serviceMap:
     - ModifyClusterSnapshot
     - ModifyClusterSnapshotSchedule
     - ModifyClusterSubnetGroup
+    - ModifyCustomDomainAssociation
     - ModifyEndpointAccess
     - ModifyEventSubscription
     - ModifySavedQuery
