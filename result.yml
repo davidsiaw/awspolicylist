@@ -4825,7 +4825,9 @@ serviceMap:
     - DeleteInstance
     - DeleteIntegrationAssociation
     - DeletePrompt
+    - DeleteQueue
     - DeleteQuickConnect
+    - DeleteRoutingProfile
     - DeleteRule
     - DeleteSecurityProfile
     - DeleteTaskTemplate
@@ -13251,6 +13253,7 @@ serviceMap:
     Actions:
     - AssociateFileGateway
     - AssociateFileSystemAliases
+    - BypassSnaplockEnterpriseRetention
     - CancelDataRepositoryTask
     - CopyBackup
     - CreateBackup
