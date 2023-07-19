@@ -16889,6 +16889,7 @@ serviceMap:
     - ListConfigurations
     - ListTags
     - ListUsers
+    - Promote
     - RebootBroker
     - UpdateBroker
     - UpdateConfiguration
