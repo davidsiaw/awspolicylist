@@ -12556,6 +12556,7 @@ serviceMap:
     - DisassociateLicense
     - ListPermissions
     - ListTagsForResource
+    - ListVersions
     - ListWorkspaces
     - TagResource
     - UntagResource
@@ -18195,7 +18196,7 @@ serviceMap:
     - UpdatePrivateDnsNamespace
     - UpdatePublicDnsNamespace
     - UpdateService
-    ARNFormat: arn:aws:servicediscovery:${Region}:${AccountId}:${ResourceType}/${ResourceName}
+    ARNFormat: arn:aws:servicediscovery:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:servicediscovery:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
