@@ -6792,6 +6792,7 @@ serviceMap:
     - StartSchemaExtension
     - UnauthorizeApplication
     - UnshareDirectory
+    - UpdateAuthorizedApplication
     - UpdateConditionalForwarder
     - UpdateDirectorySetup
     - UpdateNumberOfDomainControllers
@@ -10946,13 +10947,20 @@ serviceMap:
     - ListDataLakes
     - ListLogSources
     - ListSubscribers
+    - ListTagsForResource
     - RegisterDataLakeDelegatedAdministrator
+    - TagResource
+    - UntagResource
     - UpdateDataLake
     - UpdateDataLakeExceptionSubscription
     - UpdateSubscriber
     - UpdateSubscriberNotification
     ARNFormat: arn:aws:securitylake:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:securitylake:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS IoT FleetWise:
     StringPrefix: iotfleetwise
@@ -17562,6 +17570,34 @@ serviceMap:
     - GetProgram
     - PutMemberInfo
     HasResource: false
+  AWS HealthImaging:
+    StringPrefix: medical-imaging
+    Actions:
+    - CopyImageSet
+    - CreateDatastore
+    - DeleteDatastore
+    - DeleteImageSet
+    - GetDICOMImportJob
+    - GetDatastore
+    - GetImageFrame
+    - GetImageSet
+    - GetImageSetMetadata
+    - ListDICOMImportJobs
+    - ListDatastores
+    - ListImageSetVersions
+    - ListTagsForResource
+    - SearchImageSets
+    - StartDICOMImportJob
+    - TagResource
+    - UntagResource
+    - UpdateImageSetMetadata
+    ARNFormat: arn:aws:medical-imaging:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:medical-imaging:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Kendra Intelligent Ranking:
     StringPrefix: kendra-ranking
     Actions:
