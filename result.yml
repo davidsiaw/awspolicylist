@@ -3943,6 +3943,8 @@ serviceMap:
     - UpdateUser
     ARNFormat: arn:aws:identitystore::${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:identitystore:.+"
+    conditionKeys:
+    - identitystore:UserId
     HasResource: true
   AWS Elemental Support Cases:
     StringPrefix: elemental-support-cases
@@ -17182,6 +17184,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateCampaign
+    - UpdateDataset
     - UpdateMetricAttribution
     - UpdateRecommender
     ARNFormat: arn:aws:personalize:${Region}:${Account}:${Resourcename}/${ResourceId}
