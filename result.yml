@@ -687,6 +687,8 @@ serviceMap:
     - ssm:SessionDocumentAccessCheck
     - ssm:SyncType
     - ssm:resourceTag/${TagKey}
+    - ssm:resourceTag/aws:ssmmessages:session-id
+    - ssm:resourceTag/aws:ssmmessages:target-id
     - ssm:resourceTag/tag-key
     HasResource: true
   AWS IAM Identity Center (successor to AWS Single Sign-On):
@@ -2972,6 +2974,7 @@ serviceMap:
     - GetMatches
     - GetProfileObjectType
     - GetProfileObjectTypeTemplate
+    - GetSimilarProfiles
     - GetWorkflow
     - GetWorkflowSteps
     - ListAccountIntegrations
@@ -2984,6 +2987,7 @@ serviceMap:
     - ListProfileObjectTypeTemplates
     - ListProfileObjectTypes
     - ListProfileObjects
+    - ListRuleBasedMatches
     - ListTagsForResource
     - ListWorkflows
     - MergeProfiles
@@ -4428,12 +4432,14 @@ serviceMap:
     - CreateFirewallDomainList
     - CreateFirewallRule
     - CreateFirewallRuleGroup
+    - CreateOutpostResolver
     - CreateResolverEndpoint
     - CreateResolverQueryLogConfig
     - CreateResolverRule
     - DeleteFirewallDomainList
     - DeleteFirewallRule
     - DeleteFirewallRuleGroup
+    - DeleteOutpostResolver
     - DeleteResolverEndpoint
     - DeleteResolverQueryLogConfig
     - DeleteResolverRule
@@ -4446,6 +4452,7 @@ serviceMap:
     - GetFirewallRuleGroup
     - GetFirewallRuleGroupAssociation
     - GetFirewallRuleGroupPolicy
+    - GetOutpostResolver
     - GetResolverConfig
     - GetResolverDnssecConfig
     - GetResolverEndpoint
@@ -4462,6 +4469,7 @@ serviceMap:
     - ListFirewallRuleGroupAssociations
     - ListFirewallRuleGroups
     - ListFirewallRules
+    - ListOutpostResolvers
     - ListResolverConfigs
     - ListResolverDnssecConfigs
     - ListResolverEndpointIpAddresses
@@ -4480,6 +4488,7 @@ serviceMap:
     - UpdateFirewallDomains
     - UpdateFirewallRule
     - UpdateFirewallRuleGroupAssociation
+    - UpdateOutpostResolver
     - UpdateResolverConfig
     - UpdateResolverDnssecConfig
     - UpdateResolverEndpoint
@@ -10129,6 +10138,8 @@ serviceMap:
     - DescribeCustomPermissions
     - DescribeDashboard
     - DescribeDashboardPermissions
+    - DescribeDashboardSnapshotJob
+    - DescribeDashboardSnapshotJobResult
     - DescribeDataSet
     - DescribeDataSetPermissions
     - DescribeDataSetRefreshProperties
@@ -10210,9 +10221,11 @@ serviceMap:
     - SearchDirectoryGroups
     - SearchFolders
     - SearchGroups
+    - SearchUsers
     - SetGroupMapping
     - StartAssetBundleExportJob
     - StartAssetBundleImportJob
+    - StartDashboardSnapshotJob
     - Subscribe
     - TagResource
     - Unsubscribe
@@ -17355,6 +17368,7 @@ serviceMap:
     - StartServer
     - StopServer
     - TagResource
+    - TestConnection
     - TestIdentityProvider
     - UntagResource
     - UpdateAccess
@@ -17456,7 +17470,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  Amazon Omics:
+  AWS HealthOmics:
     StringPrefix: omics
     Actions:
     - AbortMultipartReadSetUpload
@@ -17855,7 +17869,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  Amazon HealthLake:
+  AWS HealthLake:
     StringPrefix: healthlake
     Actions:
     - CreateFHIRDatastore
@@ -17878,7 +17892,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateResource
-    ARNFormat: arn:aws:healthlake:${Region}:${AccountId}:${ResourceType}/${ResourceName}
+    ARNFormat: arn:aws:healthlake:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:healthlake:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
@@ -18463,6 +18477,7 @@ serviceMap:
     - PutResourcePermission
     - RegisterApplication
     - RestoreDatabase
+    - StartApplicationRefresh
     - TagResource
     - UntagResource
     - UpdateApplicationSettings
