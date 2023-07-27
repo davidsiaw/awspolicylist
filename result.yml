@@ -5282,6 +5282,7 @@ serviceMap:
     - GetReservationPurchaseRecommendation
     - GetReservationUtilization
     - GetRightsizingRecommendation
+    - GetSavingsPlanPurchaseRecommendationDetails
     - GetSavingsPlansCoverage
     - GetSavingsPlansPurchaseRecommendation
     - GetSavingsPlansUtilization
@@ -6216,6 +6217,32 @@ serviceMap:
     - swf:version
     - swf:workflowType.name
     - swf:workflowType.version
+    HasResource: true
+  AWS Entity Resolution:
+    StringPrefix: entityresolution
+    Actions:
+    - CreateMatchingWorkflow
+    - CreateSchemaMapping
+    - DeleteMatchingWorkflow
+    - DeleteSchemaMapping
+    - GetMatchId
+    - GetMatchingJob
+    - GetMatchingWorkflow
+    - GetSchemaMapping
+    - ListMatchingJobs
+    - ListMatchingWorkflows
+    - ListSchemaMappings
+    - ListTagsForResource
+    - StartMatchingJob
+    - TagResource
+    - UntagResource
+    - UpdateMatchingWorkflow
+    ARNFormat: arn:aws:entityresolution:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:entityresolution:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS AppSync:
     StringPrefix: appsync
@@ -9845,6 +9872,8 @@ serviceMap:
     - GetNode
     - GetProposal
     - Invoke
+    - InvokeRpcBitcoinMainnet
+    - InvokeRpcBitcoinTestnet
     - ListAccessors
     - ListInvitations
     - ListMembers
@@ -10559,6 +10588,7 @@ serviceMap:
     Actions:
     - BatchGetChannel
     - BatchGetStreamKey
+    - BatchStartViewerSessionRevocation
     - CreateChannel
     - CreateParticipantToken
     - CreateRecordingConfiguration
@@ -10592,6 +10622,7 @@ serviceMap:
     - ListStreams
     - ListTagsForResource
     - PutMetadata
+    - StartViewerSessionRevocation
     - StopStream
     - TagResource
     - UntagResource
@@ -12355,6 +12386,18 @@ serviceMap:
     - aws:TagKeys
     - ecr-public:ResourceTag/${TagKey}
     HasResource: true
+  Amazon Managed Blockchain Query:
+    StringPrefix: managedblockchain-query
+    Actions:
+    - BatchGetTokenBalance
+    - GetTokenBalance
+    - GetTransaction
+    - ListTokenBalances
+    - ListTransactionEvents
+    - ListTransactions
+    ARNFormat: arn:${Partition}:managedblockchain-query:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:${Partition}:managedblockchain-query:.*:[0-9]*:.+"
+    HasResource: false
   AWS Snow Device Management:
     StringPrefix: snow-device-management
     Actions:
