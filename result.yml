@@ -1752,8 +1752,13 @@ serviceMap:
     - ListCustomVocabularyItems
     - ListExports
     - ListImports
+    - ListIntentMetrics
+    - ListIntentPaths
+    - ListIntentStageMetrics
     - ListIntents
     - ListRecommendedIntents
+    - ListSessionAnalyticsData
+    - ListSessionMetrics
     - ListSlotTypes
     - ListSlots
     - ListTagsForResource
@@ -5854,6 +5859,7 @@ serviceMap:
     - RefreshCheck
     - SetAccountAccess
     - SetOrganizationAccess
+    - UpdateEngagement
     - UpdateEngagementStatus
     - UpdateNotificationConfigurations
     - UpdateNotificationPreferences
