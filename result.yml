@@ -1907,6 +1907,7 @@ serviceMap:
     - CreateTemplateSyncConfig
     - DeleteAccountRoles
     - DeleteComponent
+    - DeleteDeployment
     - DeleteEnvironment
     - DeleteEnvironmentAccountConnection
     - DeleteEnvironmentTemplate
@@ -1924,6 +1925,7 @@ serviceMap:
     - GetAccountRoles
     - GetAccountSettings
     - GetComponent
+    - GetDeployment
     - GetEnvironment
     - GetEnvironmentAccountConnection
     - GetEnvironmentTemplate
@@ -1948,6 +1950,7 @@ serviceMap:
     - ListComponentOutputs
     - ListComponentProvisionedResources
     - ListComponents
+    - ListDeployments
     - ListEnvironmentAccountConnections
     - ListEnvironmentOutputs
     - ListEnvironmentProvisionedResources
@@ -12726,6 +12729,7 @@ serviceMap:
     - DeleteVpcConnection
     - DescribeCluster
     - DescribeClusterOperation
+    - DescribeClusterOperationV2
     - DescribeClusterV2
     - DescribeConfiguration
     - DescribeConfigurationRevision
@@ -12735,6 +12739,7 @@ serviceMap:
     - GetCompatibleKafkaVersions
     - ListClientVpcConnections
     - ListClusterOperations
+    - ListClusterOperationsV2
     - ListClusters
     - ListClustersV2
     - ListConfigurationRevisions
