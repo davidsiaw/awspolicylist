@@ -8904,19 +8904,24 @@ serviceMap:
   AWS Clean Rooms:
     StringPrefix: cleanrooms
     Actions:
+    - BatchGetCollaborationAnalysisTemplate
     - BatchGetSchema
+    - CreateAnalysisTemplate
     - CreateCollaboration
     - CreateConfiguredTable
     - CreateConfiguredTableAnalysisRule
     - CreateConfiguredTableAssociation
     - CreateMembership
+    - DeleteAnalysisTemplate
     - DeleteCollaboration
     - DeleteConfiguredTable
     - DeleteConfiguredTableAnalysisRule
     - DeleteConfiguredTableAssociation
     - DeleteMember
     - DeleteMembership
+    - GetAnalysisTemplate
     - GetCollaboration
+    - GetCollaborationAnalysisTemplate
     - GetConfiguredTable
     - GetConfiguredTableAnalysisRule
     - GetConfiguredTableAssociation
@@ -8924,6 +8929,8 @@ serviceMap:
     - GetProtectedQuery
     - GetSchema
     - GetSchemaAnalysisRule
+    - ListAnalysisTemplates
+    - ListCollaborationAnalysisTemplates
     - ListCollaborations
     - ListConfiguredTableAssociations
     - ListConfiguredTables
@@ -8935,6 +8942,7 @@ serviceMap:
     - StartProtectedQuery
     - TagResource
     - UntagResource
+    - UpdateAnalysisTemplate
     - UpdateCollaboration
     - UpdateConfiguredTable
     - UpdateConfiguredTableAnalysisRule
@@ -9749,6 +9757,7 @@ serviceMap:
     - UpdateFolder
     - UpdateInstanceAlias
     - UpdateUser
+    - UpdateUserAdministrativeSettings
     HasResource: false
   AWS Marketplace Management Portal:
     StringPrefix: aws-marketplace-management
@@ -13601,6 +13610,7 @@ serviceMap:
     - DeleteReservation
     - DeleteSchedule
     - DeleteTags
+    - DescribeAccountConfiguration
     - DescribeChannel
     - DescribeInput
     - DescribeInputDevice
@@ -13611,6 +13621,7 @@ serviceMap:
     - DescribeOffering
     - DescribeReservation
     - DescribeSchedule
+    - DescribeThumbnails
     - ListChannels
     - ListInputDeviceTransfers
     - ListInputDevices
@@ -13630,6 +13641,7 @@ serviceMap:
     - StopChannel
     - StopMultiplex
     - TransferInputDevice
+    - UpdateAccountConfiguration
     - UpdateChannel
     - UpdateChannelClass
     - UpdateInput
