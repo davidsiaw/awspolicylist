@@ -5624,6 +5624,7 @@ serviceMap:
     - AssociateMember
     - BatchGetAccountStatus
     - BatchGetCodeSnippet
+    - BatchGetFindingDetails
     - BatchGetFreeTrialInfo
     - BatchGetMemberEc2DeepInspectionStatus
     - BatchUpdateMemberEc2DeepInspectionStatus
@@ -15119,6 +15120,7 @@ serviceMap:
     - GetDataSetImportTask
     - GetDeployment
     - GetEnvironment
+    - GetSignedBluinsightsUrl
     - ListApplicationVersions
     - ListApplications
     - ListBatchJobDefinitions
@@ -16186,12 +16188,17 @@ serviceMap:
     - DeleteLabel
     - DeleteLabelGroup
     - DeleteModel
+    - DeleteResourcePolicy
     - DescribeDataIngestionJob
     - DescribeDataset
     - DescribeInferenceScheduler
     - DescribeLabelGroup
     - DescribeModel
+    - DescribeModelVersion
+    - DescribeResourcePolicy
     - Describelabel
+    - ImportDataset
+    - ImportModelVersion
     - ListDataIngestionJobs
     - ListDatasets
     - ListInferenceEvents
@@ -16199,14 +16206,17 @@ serviceMap:
     - ListInferenceSchedulers
     - ListLabelGroups
     - ListLabels
+    - ListModelVersions
     - ListModels
     - ListSensorStatistics
     - ListTagsForResource
+    - PutResourcePolicy
     - StartDataIngestionJob
     - StartInferenceScheduler
     - StopInferenceScheduler
     - TagResource
     - UntagResource
+    - UpdateActiveModelVersion
     - UpdateInferenceScheduler
     - UpdateLabelGroup
     ARNFormat: arn:aws:lookoutequipment:${Region}:${Account}:${ResourceType}/${ResourceName}/${ResourceId}
