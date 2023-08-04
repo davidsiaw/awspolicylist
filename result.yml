@@ -3476,10 +3476,11 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Resilience Hub Service:
+  AWS Resilience Hub:
     StringPrefix: resiliencehub
     Actions:
     - AddDraftAppVersionResourceMappings
+    - BatchUpdateRecommendationStatus
     - CreateApp
     - CreateAppVersionAppComponent
     - CreateAppVersionResource
@@ -3503,6 +3504,7 @@ serviceMap:
     - DescribeResiliencyPolicy
     - ImportResourcesToDraftAppVersion
     - ListAlarmRecommendations
+    - ListAppAssessmentComplianceDrifts
     - ListAppAssessments
     - ListAppComponentCompliances
     - ListAppComponentRecommendations
@@ -6010,6 +6012,7 @@ serviceMap:
     - DeleteBlueGreenDeployment
     - DeleteCustomDBEngineVersion
     - DeleteDBCluster
+    - DeleteDBClusterAutomatedBackup
     - DeleteDBClusterEndpoint
     - DeleteDBClusterParameterGroup
     - DeleteDBClusterSnapshot
@@ -6028,6 +6031,7 @@ serviceMap:
     - DescribeAccountAttributes
     - DescribeBlueGreenDeployments
     - DescribeCertificates
+    - DescribeDBClusterAutomatedBackups
     - DescribeDBClusterBacktracks
     - DescribeDBClusterEndpoints
     - DescribeDBClusterParameterGroups
@@ -18993,6 +18997,7 @@ serviceMap:
     - AddStorageSystem
     - CancelTaskExecution
     - CreateAgent
+    - CreateLocationAzureBlob
     - CreateLocationEfs
     - CreateLocationFsxLustre
     - CreateLocationFsxOntap
@@ -19009,6 +19014,7 @@ serviceMap:
     - DeleteTask
     - DescribeAgent
     - DescribeDiscoveryJob
+    - DescribeLocationAzureBlob
     - DescribeLocationEfs
     - DescribeLocationFsxLustre
     - DescribeLocationFsxOntap
@@ -19040,6 +19046,7 @@ serviceMap:
     - UntagResource
     - UpdateAgent
     - UpdateDiscoveryJob
+    - UpdateLocationAzureBlob
     - UpdateLocationHdfs
     - UpdateLocationNfs
     - UpdateLocationObjectStorage
