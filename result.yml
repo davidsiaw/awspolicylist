@@ -4993,6 +4993,7 @@ serviceMap:
     - UpdateQueueStatus
     - UpdateQuickConnectConfig
     - UpdateQuickConnectName
+    - UpdateRoutingProfileAgentAvailabilityTimer
     - UpdateRoutingProfileConcurrency
     - UpdateRoutingProfileDefaultOutboundQueue
     - UpdateRoutingProfileName
@@ -11717,6 +11718,7 @@ serviceMap:
     Actions:
     - ApproveAccessGrant
     - ApprovePermissionRequest
+    - AssumePermissionRole
     - CreatePermissionRequest
     - GetPermissionRequest
     - ListPermissionRequests
@@ -16052,6 +16054,7 @@ serviceMap:
   Amazon CloudWatch Application Insights:
     StringPrefix: applicationinsights
     Actions:
+    - AddWorkload
     - CreateApplication
     - CreateComponent
     - CreateLogPattern
@@ -16066,6 +16069,7 @@ serviceMap:
     - DescribeObservation
     - DescribeProblem
     - DescribeProblemObservations
+    - DescribeWorkload
     - Link
     - ListApplications
     - ListComponents
@@ -16074,12 +16078,16 @@ serviceMap:
     - ListLogPatterns
     - ListProblems
     - ListTagsForResource
+    - ListWorkloads
+    - RemoveWorkload
     - TagResource
     - UntagResource
     - UpdateApplication
     - UpdateComponent
     - UpdateComponentConfiguration
     - UpdateLogPattern
+    - UpdateProblem
+    - UpdateWorkload
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
