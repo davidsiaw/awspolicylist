@@ -11115,6 +11115,7 @@ serviceMap:
     - CreateBackupVault
     - CreateFramework
     - CreateLegalHold
+    - CreateLogicallyAirGappedBackupVault
     - CreateReportPlan
     - DeleteBackupPlan
     - DeleteBackupSelection
@@ -11122,6 +11123,7 @@ serviceMap:
     - DeleteBackupVaultAccessPolicy
     - DeleteBackupVaultLockConfiguration
     - DeleteBackupVaultNotifications
+    - DeleteBackupVaultSharingPolicy
     - DeleteFramework
     - DeleteRecoveryPoint
     - DeleteReportPlan
@@ -11145,6 +11147,7 @@ serviceMap:
     - GetBackupSelection
     - GetBackupVaultAccessPolicy
     - GetBackupVaultNotifications
+    - GetBackupVaultSharingPolicy
     - GetLegalHold
     - GetRecoveryPointRestoreMetadata
     - GetSupportedResourceTypes
@@ -11158,6 +11161,7 @@ serviceMap:
     - ListFrameworks
     - ListLegalHolds
     - ListProtectedResources
+    - ListProtectedResourcesByBackupVault
     - ListRecoveryPointsByBackupVault
     - ListRecoveryPointsByLegalHold
     - ListRecoveryPointsByResource
@@ -11168,6 +11172,7 @@ serviceMap:
     - PutBackupVaultAccessPolicy
     - PutBackupVaultLockConfiguration
     - PutBackupVaultNotifications
+    - PutBackupVaultSharingPolicy
     - StartBackupJob
     - StartCopyJob
     - StartReportJob
@@ -11191,6 +11196,8 @@ serviceMap:
     - backup:CopyTargetOrgPaths
     - backup:CopyTargets
     - backup:FrameworkArns
+    - backup:MaxRetentionDays
+    - backup:MinRetentionDays
     HasResource: true
   Amazon Mobile Analytics:
     StringPrefix: mobileanalytics
