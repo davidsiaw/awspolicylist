@@ -13925,14 +13925,27 @@ serviceMap:
   Amazon Bedrock:
     StringPrefix: bedrock
     Actions:
+    - CreateAgent
+    - CreateAgentActionGroup
+    - CreateAgentAlias
+    - CreateAgentDraftSnapshot
     - CreateModelCustomizationJob
     - DeleteCustomModel
     - DeletePrompt
+    - GetAgent
+    - GetAgentActionGroup
+    - GetAgentAlias
+    - GetAgentVersion
     - GetCustomModel
     - GetModelCustomizationJob
     - GetPrompt
+    - InvokeAgent
     - InvokeModel
     - InvokeModelWithResponseStream
+    - ListAgentActionGroups
+    - ListAgentAliases
+    - ListAgentVersions
+    - ListAgents
     - ListCustomModels
     - ListFoundationModels
     - ListModelCustomizationJobs
@@ -13941,6 +13954,9 @@ serviceMap:
     - StopModelCustomizationJob
     - TagResource
     - UntagResource
+    - UpdateAgent
+    - UpdateAgentActionGroup
+    - UpdateAgentAlias
     - UpdatePrompt
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
