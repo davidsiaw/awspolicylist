@@ -13142,6 +13142,7 @@ serviceMap:
     - ListCompatibleImages
     - ListJobs
     - ListLongTermPricing
+    - ListPickupLocations
     - ListServiceVersions
     - UpdateCluster
     - UpdateJob
