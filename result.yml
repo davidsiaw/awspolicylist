@@ -4815,6 +4815,7 @@ serviceMap:
     - AssociateQueueQuickConnects
     - AssociateRoutingProfileQueues
     - AssociateSecurityKey
+    - AssociateTrafficDistributionGroupUser
     - BatchAssociateAnalyticsDataSet
     - BatchDisassociateAnalyticsDataSet
     - ClaimPhoneNumber
@@ -4891,6 +4892,7 @@ serviceMap:
     - DisassociateQueueQuickConnects
     - DisassociateRoutingProfileQueues
     - DisassociateSecurityKey
+    - DisassociateTrafficDistributionGroupUser
     - DismissUserContact
     - GetContactAttributes
     - GetCurrentMetricData
@@ -4934,6 +4936,7 @@ serviceMap:
     - ListSecurityProfiles
     - ListTagsForResource
     - ListTaskTemplates
+    - ListTrafficDistributionGroupUsers
     - ListTrafficDistributionGroups
     - ListUseCases
     - ListUserHierarchyGroups
@@ -7669,6 +7672,7 @@ serviceMap:
     - RevokeCacheSecurityGroupIngress
     - StartMigration
     - TestFailover
+    - TestMigration
     ARNFormat: arn:aws:elasticache:${Region}:${Account}:${ResourceType}:${ResourceName}
     ARNRegex: "^arn:aws:elasticache:.+:.+:.+"
     conditionKeys:
