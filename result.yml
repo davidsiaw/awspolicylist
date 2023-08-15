@@ -8697,6 +8697,15 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Migration Acceleration Program Credits:
+    StringPrefix: mapcredits
+    Actions:
+    - ListAssociatedPrograms
+    - ListQuarterCredits
+    - ListQuarterSpend
+    ARNFormat: arn:aws:mapcredits:::${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:mapcredits:::.+"
+    HasResource: true
   AWS AppFabric:
     StringPrefix: appfabric
     Actions:
@@ -19184,14 +19193,25 @@ serviceMap:
   AWS Performance Insights:
     StringPrefix: pi
     Actions:
+    - CreatePerformanceAnalysisReport
+    - DeletePerformanceAnalysisReport
     - DescribeDimensionKeys
     - GetDimensionKeyDetails
+    - GetPerformanceAnalysisReport
     - GetResourceMetadata
     - GetResourceMetrics
     - ListAvailableResourceDimensions
     - ListAvailableResourceMetrics
+    - ListPerformanceAnalysisReports
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
     ARNFormat: arn:aws:pi:${Region}:${Account}:${ResourceType}/${RelativeId}
     ARNRegex: "^arn:aws:pi:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon Kinesis Analytics V2:
     StringPrefix: kinesisanalytics
