@@ -12303,21 +12303,27 @@ serviceMap:
     - ExportComponents
     - ExportForms
     - ExportThemes
+    - GetCodegenJob
     - GetComponent
     - GetForm
     - GetMetadata
     - GetTheme
+    - ListCodegenJobs
     - ListComponents
     - ListForms
     - ListThemes
     - PutMetadataFlag
     - ResetMetadataFlag
+    - StartCodegenJob
     - UpdateComponent
     - UpdateForm
     - UpdateTheme
     ARNFormat: arn:aws:amplifyuibuilder:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:amplifyuibuilder:.+:.+:.+"
     conditionKeys:
+    - amplifyuibuilder:CodegenJobResourceAppId
+    - amplifyuibuilder:CodegenJobResourceEnvironmentName
+    - amplifyuibuilder:CodegenJobResourceId
     - amplifyuibuilder:ComponentResourceAppId
     - amplifyuibuilder:ComponentResourceEnvironmentName
     - amplifyuibuilder:ComponentResourceId
@@ -17601,28 +17607,34 @@ serviceMap:
     StringPrefix: omics
     Actions:
     - AbortMultipartReadSetUpload
+    - AcceptShare
     - BatchDeleteReadSet
     - CancelAnnotationImportJob
     - CancelRun
     - CancelVariantImportJob
     - CompleteMultipartReadSetUpload
     - CreateAnnotationStore
+    - CreateAnnotationStoreVersion
     - CreateMultipartReadSetUpload
     - CreateReferenceStore
     - CreateRunGroup
     - CreateSequenceStore
+    - CreateShare
     - CreateVariantStore
     - CreateWorkflow
     - DeleteAnnotationStore
+    - DeleteAnnotationStoreVersions
     - DeleteReference
     - DeleteReferenceStore
     - DeleteRun
     - DeleteRunGroup
     - DeleteSequenceStore
+    - DeleteShare
     - DeleteVariantStore
     - DeleteWorkflow
     - GetAnnotationImportJob
     - GetAnnotationStore
+    - GetAnnotationStoreVersion
     - GetReadSet
     - GetReadSetActivationJob
     - GetReadSetExportJob
@@ -17636,10 +17648,12 @@ serviceMap:
     - GetRunGroup
     - GetRunTask
     - GetSequenceStore
+    - GetShare
     - GetVariantImportJob
     - GetVariantStore
     - GetWorkflow
     - ListAnnotationImportJobs
+    - ListAnnotationStoreVersions
     - ListAnnotationStores
     - ListMultipartReadSetUploads
     - ListReadSetActivationJobs
@@ -17654,6 +17668,7 @@ serviceMap:
     - ListRunTasks
     - ListRuns
     - ListSequenceStores
+    - ListShares
     - ListTagsForResource
     - ListVariantImportJobs
     - ListVariantStores
@@ -17668,6 +17683,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAnnotationStore
+    - UpdateAnnotationStoreVersion
     - UpdateRunGroup
     - UpdateVariantStore
     - UpdateWorkflow
@@ -17680,6 +17696,7 @@ serviceMap:
     - aws:TagKeys
     - omics:AnnotationImportJobJobId
     - omics:AnnotationStoreName
+    - omics:AnnotationStoreVersionName
     - omics:VariantImportJobJobId
     - omics:VariantStoreName
     HasResource: true
