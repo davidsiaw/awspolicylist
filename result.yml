@@ -15803,6 +15803,7 @@ serviceMap:
     - ListTagsForResource
     - TagResource
     - UntagResource
+    - UpdateDataSource
     - UpdateSecurityProfile
     - UpdateSecurityProfileSnapshotCreationConfiguration
     - UpdateSecurityProfileSnapshotReleaseConfiguration
@@ -15931,6 +15932,7 @@ serviceMap:
     - GetDevice
     - GetGroup
     - GetIdentityProviderByIdentifier
+    - GetLogDeliveryConfiguration
     - GetSigningCertificate
     - GetUICustomization
     - GetUser
@@ -15953,6 +15955,7 @@ serviceMap:
     - ResendConfirmationCode
     - RespondToAuthChallenge
     - RevokeToken
+    - SetLogDeliveryConfiguration
     - SetRiskConfiguration
     - SetUICustomization
     - SetUserMFAPreference
