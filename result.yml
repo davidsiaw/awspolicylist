@@ -2569,6 +2569,7 @@ serviceMap:
     - ListPipelines
     - ListProcessingJobs
     - ListProjects
+    - ListResourceCatalogs
     - ListSharedModelEvents
     - ListSharedModelVersions
     - ListSharedModels
@@ -17267,6 +17268,7 @@ serviceMap:
     - CreateBatchInferenceJob
     - CreateBatchSegmentJob
     - CreateCampaign
+    - CreateDataInsightsJob
     - CreateDataset
     - CreateDatasetExportJob
     - CreateDatasetGroup
@@ -17291,6 +17293,7 @@ serviceMap:
     - DescribeBatchInferenceJob
     - DescribeBatchSegmentJob
     - DescribeCampaign
+    - DescribeDataInsightsJob
     - DescribeDataset
     - DescribeDatasetExportJob
     - DescribeDatasetGroup
@@ -17304,12 +17307,14 @@ serviceMap:
     - DescribeSchema
     - DescribeSolution
     - DescribeSolutionVersion
+    - GetDataInsights
     - GetPersonalizedRanking
     - GetRecommendations
     - GetSolutionMetrics
     - ListBatchInferenceJobs
     - ListBatchSegmentJobs
     - ListCampaigns
+    - ListDataInsightsJobs
     - ListDatasetExportJobs
     - ListDatasetGroups
     - ListDatasetImportJobs
