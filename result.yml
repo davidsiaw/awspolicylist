@@ -6358,9 +6358,14 @@ serviceMap:
     - RequestCertificate
     - ResendValidationEmail
     - UpdateCertificateOptions
-    ARNFormat: arn:aws:acm:${Region}:${AccountId}:${ArnType}/${ResourceId}
+    ARNFormat: arn:aws:acm:${Region}:${Account}:${ArnType}/${ResourceId}
     ARNRegex: "^arn:aws:acm:.+:[0-9]+:.+"
     conditionKeys:
+    - acm:CertificateAuthority
+    - acm:CertificateTransparencyLogging
+    - acm:DomainNames
+    - acm:KeyAlgorithm
+    - acm:ValidationMethod
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
@@ -11594,7 +11599,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  'AWS Billing ':
+  AWS Billing:
     StringPrefix: billing
     Actions:
     - GetBillingData
