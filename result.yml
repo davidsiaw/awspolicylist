@@ -18469,6 +18469,7 @@ serviceMap:
     - ExportEC2InstanceRecommendations
     - ExportECSServiceRecommendations
     - ExportLambdaFunctionRecommendations
+    - ExportLicenseRecommendations
     - GetAutoScalingGroupRecommendations
     - GetEBSVolumeRecommendations
     - GetEC2InstanceRecommendations
@@ -18479,6 +18480,7 @@ serviceMap:
     - GetEnrollmentStatus
     - GetEnrollmentStatusesForOrganization
     - GetLambdaFunctionRecommendations
+    - GetLicenseRecommendations
     - GetRecommendationPreferences
     - GetRecommendationSummaries
     - PutRecommendationPreferences
