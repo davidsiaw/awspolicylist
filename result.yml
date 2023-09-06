@@ -2942,9 +2942,13 @@ serviceMap:
     - DeleteMonitor
     - GetHealthEvent
     - GetMonitor
+    - GetQueryResults
+    - GetQueryStatus
     - ListHealthEvents
     - ListMonitors
     - ListTagsForResource
+    - StartQuery
+    - StopQuery
     - TagResource
     - UntagResource
     - UpdateMonitor
@@ -5086,6 +5090,7 @@ serviceMap:
     StringPrefix: ses
     Actions:
     - BatchGetMetricData
+    - CancelExportJob
     - CreateConfigurationSet
     - CreateConfigurationSetEventDestination
     - CreateContact
@@ -5096,6 +5101,7 @@ serviceMap:
     - CreateEmailIdentity
     - CreateEmailIdentityPolicy
     - CreateEmailTemplate
+    - CreateExportJob
     - CreateImportJob
     - DeleteConfigurationSet
     - DeleteConfigurationSetEventDestination
@@ -5124,7 +5130,9 @@ serviceMap:
     - GetEmailIdentity
     - GetEmailIdentityPolicies
     - GetEmailTemplate
+    - GetExportJob
     - GetImportJob
+    - GetMessageInsights
     - GetSuppressedDestination
     - ListConfigurationSets
     - ListContactLists
@@ -5135,6 +5143,7 @@ serviceMap:
     - ListDomainDeliverabilityCampaigns
     - ListEmailIdentities
     - ListEmailTemplates
+    - ListExportJobs
     - ListImportJobs
     - ListRecommendations
     - ListSuppressedDestinations
@@ -5179,6 +5188,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - ses:ApiVersion
+    - ses:ExportSourceType
     - ses:FeedbackAddress
     - ses:FromAddress
     - ses:FromDisplayName
