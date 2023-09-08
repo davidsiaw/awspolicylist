@@ -8004,8 +8004,6 @@ serviceMap:
     - ListDeviceIdentities
     ARNFormat: arn:aws:consoleapp:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:consoleapp:.+:.+:.+"
-    conditionKeys:
-    - consoleapp:DeviceIdentityArn
     HasResource: true
   Amazon Elastic MapReduce:
     StringPrefix: elasticmapreduce
