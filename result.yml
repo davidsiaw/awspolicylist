@@ -1247,6 +1247,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - lambda:CodeSigningConfigArn
+    - lambda:EventSourceToken
     - lambda:FunctionArn
     - lambda:FunctionUrlAuthType
     - lambda:Layer
