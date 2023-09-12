@@ -9430,6 +9430,7 @@ serviceMap:
     - GetMessages
     - SendReply
     conditionKeys:
+    - ec2:SourceInstanceARN
     - ssm:SourceInstanceARN
     HasResource: false
   AWS IoT Greengrass V2:
@@ -11595,6 +11596,7 @@ serviceMap:
     - OpenControlChannel
     - OpenDataChannel
     conditionKeys:
+    - ec2:SourceInstanceARN
     - ssm:SourceInstanceARN
     HasResource: false
   AWS Network Firewall:
