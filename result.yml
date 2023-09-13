@@ -4844,6 +4844,8 @@ serviceMap:
     - CreateUseCase
     - CreateUser
     - CreateUserHierarchyGroup
+    - CreateView
+    - CreateViewVersion
     - CreateVocabulary
     - DeactivateEvaluationForm
     - DeleteContactEvaluation
@@ -4864,6 +4866,8 @@ serviceMap:
     - DeleteUseCase
     - DeleteUser
     - DeleteUserHierarchyGroup
+    - DeleteView
+    - DeleteViewVersion
     - DeleteVocabulary
     - DescribeAgentStatus
     - DescribeContact
@@ -4887,6 +4891,7 @@ serviceMap:
     - DescribeUser
     - DescribeUserHierarchyGroup
     - DescribeUserHierarchyStructure
+    - DescribeView
     - DescribeVocabulary
     - DisassociateApprovedOrigin
     - DisassociateBot
@@ -4947,6 +4952,8 @@ serviceMap:
     - ListUseCases
     - ListUserHierarchyGroups
     - ListUsers
+    - ListViewVersions
+    - ListViews
     - MonitorContact
     - PutUserStatus
     - ReleasePhoneNumber
@@ -5018,6 +5025,8 @@ serviceMap:
     - UpdateUserPhoneConfig
     - UpdateUserRoutingProfile
     - UpdateUserSecurityProfiles
+    - UpdateViewContent
+    - UpdateViewMetadata
     ARNFormat: arn:aws:connect:${Region}:${Account}:instance/${InstanceId}
     ARNRegex: "^arn:aws:connect:.+:.+:instance/.+"
     conditionKeys:
@@ -18728,6 +18737,9 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - mediaconvert:HttpInputsAllowed
+    - mediaconvert:HttpsInputsAllowed
+    - mediaconvert:S3InputsAllowed
     HasResource: true
   Service Quotas:
     StringPrefix: servicequotas
