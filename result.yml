@@ -17001,6 +17001,7 @@ serviceMap:
     - CreateSourceNetwork
     - CreateSourceServerForDrs
     - DeleteJob
+    - DeleteLaunchAction
     - DeleteLaunchConfigurationTemplate
     - DeleteRecoveryInstance
     - DeleteReplicationConfigurationTemplate
@@ -17035,6 +17036,7 @@ serviceMap:
     - InitializeService
     - IssueAgentCertificateForDrs
     - ListExtensibleSourceServers
+    - ListLaunchActions
     - ListStagingAccounts
     - ListTagsForResource
     - NotifyAgentAuthenticationForDrs
@@ -17044,6 +17046,7 @@ serviceMap:
     - NotifyConsistencyAttainedForDrs
     - NotifyReplicationServerAuthenticationForDrs
     - NotifyVolumeEventForDrs
+    - PutLaunchAction
     - RetryDataReplication
     - ReverseReplication
     - SendAgentLogsForDrs
