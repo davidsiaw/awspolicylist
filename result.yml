@@ -15260,6 +15260,7 @@ serviceMap:
     - DescribeAffectedEntities
     - DescribeAffectedEntitiesForOrganization
     - DescribeEntityAggregates
+    - DescribeEntityAggregatesForOrganization
     - DescribeEventAggregates
     - DescribeEventDetails
     - DescribeEventDetailsForOrganization
@@ -15269,7 +15270,7 @@ serviceMap:
     - DescribeHealthServiceStatusForOrganization
     - DisableHealthServiceAccessForOrganization
     - EnableHealthServiceAccessForOrganization
-    ARNFormat: arn:aws:health::${Namespace}:${RelativeId}
+    ARNFormat: arn:aws:health:${Region}::${RelativeId}
     ARNRegex: "^arn:aws:health:[^:]*:[^:]*:.+"
     conditionKeys:
     - health:eventTypeCode
