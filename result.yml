@@ -12332,6 +12332,7 @@ serviceMap:
     - DeleteComponent
     - DeleteForm
     - DeleteTheme
+    - ExchangeCodeForToken
     - ExportComponents
     - ExportForms
     - ExportThemes
@@ -12345,6 +12346,7 @@ serviceMap:
     - ListForms
     - ListThemes
     - PutMetadataFlag
+    - RefreshToken
     - ResetMetadataFlag
     - StartCodegenJob
     - UpdateComponent
