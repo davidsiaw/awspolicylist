@@ -14399,6 +14399,7 @@ serviceMap:
     - DisableEbsEncryptionByDefault
     - DisableFastLaunch
     - DisableFastSnapshotRestores
+    - DisableImageBlockPublicAccess
     - DisableImageDeprecation
     - DisableIpamOrganizationAdminAccount
     - DisableSerialConsoleAccess
@@ -14426,6 +14427,7 @@ serviceMap:
     - EnableEbsEncryptionByDefault
     - EnableFastLaunch
     - EnableFastSnapshotRestores
+    - EnableImageBlockPublicAccess
     - EnableImageDeprecation
     - EnableIpamOrganizationAdminAccount
     - EnableReachabilityAnalyzerOrganizationSharing
@@ -14452,6 +14454,7 @@ serviceMap:
     - GetFlowLogsIntegrationTemplate
     - GetGroupsForCapacityReservation
     - GetHostReservationPurchasePreview
+    - GetImageBlockPublicAccessState
     - GetInstanceTypesFromInstanceRequirements
     - GetInstanceUefiData
     - GetIpamAddressHistory
@@ -18417,6 +18420,7 @@ serviceMap:
     - DeleteService
     - DeregisterInstance
     - DiscoverInstances
+    - DiscoverInstancesRevision
     - GetInstance
     - GetInstancesHealthStatus
     - GetNamespace
