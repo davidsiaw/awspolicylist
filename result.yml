@@ -16278,12 +16278,14 @@ serviceMap:
     - CreateLabel
     - CreateLabelGroup
     - CreateModel
+    - CreateRetrainingScheduler
     - DeleteDataset
     - DeleteInferenceScheduler
     - DeleteLabel
     - DeleteLabelGroup
     - DeleteModel
     - DeleteResourcePolicy
+    - DeleteRetrainingScheduler
     - DescribeDataIngestionJob
     - DescribeDataset
     - DescribeInferenceScheduler
@@ -16291,6 +16293,7 @@ serviceMap:
     - DescribeModel
     - DescribeModelVersion
     - DescribeResourcePolicy
+    - DescribeRetrainingScheduler
     - Describelabel
     - ImportDataset
     - ImportModelVersion
@@ -16303,23 +16306,29 @@ serviceMap:
     - ListLabels
     - ListModelVersions
     - ListModels
+    - ListRetrainingSchedulers
     - ListSensorStatistics
     - ListTagsForResource
     - PutResourcePolicy
     - StartDataIngestionJob
     - StartInferenceScheduler
+    - StartRetrainingScheduler
     - StopInferenceScheduler
+    - StopRetrainingScheduler
     - TagResource
     - UntagResource
     - UpdateActiveModelVersion
     - UpdateInferenceScheduler
     - UpdateLabelGroup
+    - UpdateModel
+    - UpdateRetrainingScheduler
     ARNFormat: arn:aws:lookoutequipment:${Region}:${Account}:${ResourceType}/${ResourceName}/${ResourceId}
     ARNRegex: "^arn:aws:lookoutequipment:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - lookoutequipment:IsImportingData
     HasResource: true
   Amazon Lookout for Metrics:
     StringPrefix: lookoutmetrics
@@ -16556,6 +16565,7 @@ serviceMap:
     - aws:TagKeys
     - ecs:CreateAction
     - ecs:ResourceTag/${TagKey}
+    - ecs:account-setting
     - ecs:capacity-provider
     - ecs:cluster
     - ecs:container-instances
