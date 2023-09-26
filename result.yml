@@ -4530,6 +4530,7 @@ serviceMap:
     - DeregisterMailDomain
     - DescribeDirectories
     - DescribeEmailMonitoringConfiguration
+    - DescribeEntity
     - DescribeGroup
     - DescribeInboundDmarcSettings
     - DescribeInboundMailFlowRule
@@ -4571,6 +4572,7 @@ serviceMap:
     - ListAvailabilityConfigurations
     - ListGroupMembers
     - ListGroups
+    - ListGroupsForEntity
     - ListImpersonationRoles
     - ListInboundMailFlowRules
     - ListMailDomains
@@ -4612,6 +4614,7 @@ serviceMap:
     - UntagResource
     - UpdateAvailabilityConfiguration
     - UpdateDefaultMailDomain
+    - UpdateGroup
     - UpdateImpersonationRole
     - UpdateInboundMailFlowRule
     - UpdateMailboxQuota
@@ -4620,6 +4623,7 @@ serviceMap:
     - UpdatePrimaryEmailAddress
     - UpdateResource
     - UpdateSmtpGateway
+    - UpdateUser
     - WipeMobileDevice
     ARNFormat: arn:aws:workmail:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:workmail:.+:.+:.+"
@@ -13979,41 +13983,63 @@ serviceMap:
   Amazon Bedrock:
     StringPrefix: bedrock
     Actions:
+    - AssociateAgentKnowledgeBase
+    - AssociateThirdPartyKnowledgeBase
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
     - CreateAgentDraftSnapshot
+    - CreateDataSource
+    - CreateKnowledgeBase
     - CreateModelCustomizationJob
     - DeleteCustomModel
+    - DeleteDataSource
+    - DeleteKnowledgeBase
+    - DisassociateAgentKnowledgeBase
     - GetAgent
     - GetAgentActionGroup
     - GetAgentAlias
+    - GetAgentKnowledgeBase
     - GetAgentVersion
     - GetCustomModel
+    - GetDataSource
+    - GetFoundationModel
+    - GetIngestionJob
+    - GetKnowledgeBase
     - GetModelCustomizationJob
     - InvokeAgent
     - InvokeModel
     - InvokeModelWithResponseStream
     - ListAgentActionGroups
     - ListAgentAliases
+    - ListAgentKnowledgeBases
     - ListAgentVersions
     - ListAgents
     - ListCustomModels
+    - ListDataSources
     - ListFoundationModels
+    - ListIngestionJobs
+    - ListKnowledgeBases
     - ListModelCustomizationJobs
     - ListTagsForResource
+    - QueryKnowledgeBase
+    - StartIngestionJob
     - StopModelCustomizationJob
     - TagResource
     - UntagResource
     - UpdateAgent
     - UpdateAgentActionGroup
     - UpdateAgentAlias
+    - UpdateAgentKnowledgeBase
+    - UpdateDataSource
+    - UpdateKnowledgeBase
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
     HasResource: true
   Amazon EC2:
     StringPrefix: ec2
