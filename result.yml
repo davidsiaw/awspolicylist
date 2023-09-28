@@ -1277,11 +1277,13 @@ serviceMap:
     - BatchDeleteSnapshotRequestForMgn
     - ChangeServerLifeCycleState
     - CreateApplication
+    - CreateConnector
     - CreateLaunchConfigurationTemplate
     - CreateReplicationConfigurationTemplate
     - CreateVcenterClientForMgn
     - CreateWave
     - DeleteApplication
+    - DeleteConnector
     - DeleteJob
     - DeleteLaunchConfigurationTemplate
     - DeleteReplicationConfigurationTemplate
@@ -1313,6 +1315,7 @@ serviceMap:
     - InitializeService
     - IssueClientCertificateForMgn
     - ListApplications
+    - ListConnectors
     - ListExportErrors
     - ListExports
     - ListImportErrors
@@ -1361,10 +1364,12 @@ serviceMap:
     - UpdateAgentReplicationProcessStateForMgn
     - UpdateAgentSourcePropertiesForMgn
     - UpdateApplication
+    - UpdateConnector
     - UpdateLaunchConfiguration
     - UpdateLaunchConfigurationTemplate
     - UpdateReplicationConfiguration
     - UpdateReplicationConfigurationTemplate
+    - UpdateSourceServer
     - UpdateSourceServerReplicationType
     - UpdateWave
     - VerifyClientRoleForMgn
