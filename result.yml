@@ -6133,6 +6133,7 @@ serviceMap:
     - StopDBInstance
     - StopDBInstanceAutomatedBackupsReplication
     - SwitchoverBlueGreenDeployment
+    - SwitchoverGlobalCluster
     - SwitchoverReadReplica
     ARNFormat: arn:aws:rds:${Region}:${Account}:${RelativeId}
     ARNRegex: "^arn:aws:rds:.+"
@@ -14115,11 +14116,16 @@ serviceMap:
     - CreateAgentAlias
     - CreateAgentDraftSnapshot
     - CreateDataSource
+    - CreateFoundationModelAgreement
     - CreateKnowledgeBase
     - CreateModelCustomizationJob
+    - CreateProvisionedModelThroughput
     - DeleteCustomModel
     - DeleteDataSource
+    - DeleteFoundationModelAgreement
     - DeleteKnowledgeBase
+    - DeleteModelInvocationLoggingConfiguration
+    - DeleteProvisionedModelThroughput
     - DisassociateAgentKnowledgeBase
     - GetAgent
     - GetAgentActionGroup
@@ -14129,9 +14135,13 @@ serviceMap:
     - GetCustomModel
     - GetDataSource
     - GetFoundationModel
+    - GetFoundationModelAvailability
     - GetIngestionJob
     - GetKnowledgeBase
     - GetModelCustomizationJob
+    - GetModelInvocationLoggingConfiguration
+    - GetProvisionedModelThroughput
+    - GetUseCaseForModelAccess
     - InvokeAgent
     - InvokeModel
     - InvokeModelWithResponseStream
@@ -14142,11 +14152,16 @@ serviceMap:
     - ListAgents
     - ListCustomModels
     - ListDataSources
+    - ListFoundationModelAgreementOffers
     - ListFoundationModels
     - ListIngestionJobs
     - ListKnowledgeBases
     - ListModelCustomizationJobs
+    - ListProvisionedModelThroughputs
     - ListTagsForResource
+    - PutFoundationModelEntitlement
+    - PutModelInvocationLoggingConfiguration
+    - PutUseCaseForModelAccess
     - QueryKnowledgeBase
     - StartIngestionJob
     - StopModelCustomizationJob
@@ -14158,6 +14173,7 @@ serviceMap:
     - UpdateAgentKnowledgeBase
     - UpdateDataSource
     - UpdateKnowledgeBase
+    - UpdateProvisionedModelThroughput
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
     conditionKeys:
