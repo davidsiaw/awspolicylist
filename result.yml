@@ -9071,6 +9071,7 @@ serviceMap:
     - ListObservabilityConfigurations
     - ListOperations
     - ListServices
+    - ListServicesForAutoScalingConfiguration
     - ListTagsForResource
     - ListVpcConnectors
     - ListVpcIngressConnections
@@ -9079,6 +9080,7 @@ serviceMap:
     - StartDeployment
     - TagResource
     - UntagResource
+    - UpdateDefaultAutoScalingConfiguration
     - UpdateService
     - UpdateVpcIngressConnection
     ARNFormat: arn:aws:apprunner:${Region}:${Account}:${ResourceType}/${PathToResource}
