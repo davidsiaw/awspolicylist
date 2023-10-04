@@ -10607,12 +10607,16 @@ serviceMap:
     - CreateMilestone
     - CreateProfile
     - CreateProfileShare
+    - CreateReviewTemplate
+    - CreateTemplateShare
     - CreateWorkload
     - CreateWorkloadShare
     - DeleteLens
     - DeleteLensShare
     - DeleteProfile
     - DeleteProfileShare
+    - DeleteReviewTemplate
+    - DeleteTemplateShare
     - DeleteWorkload
     - DeleteWorkloadShare
     - DisassociateLenses
@@ -10627,6 +10631,9 @@ serviceMap:
     - GetMilestone
     - GetProfile
     - GetProfileTemplate
+    - GetReviewTemplate
+    - GetReviewTemplateAnswer
+    - GetReviewTemplateLensReview
     - GetWorkload
     - ImportLens
     - ListAnswers
@@ -10641,8 +10648,11 @@ serviceMap:
     - ListProfileNotifications
     - ListProfileShares
     - ListProfiles
+    - ListReviewTemplateAnswers
+    - ListReviewTemplates
     - ListShareInvitations
     - ListTagsForResource
+    - ListTemplateShares
     - ListWorkloadShares
     - ListWorkloads
     - TagResource
@@ -10651,11 +10661,15 @@ serviceMap:
     - UpdateGlobalSettings
     - UpdateLensReview
     - UpdateProfile
+    - UpdateReviewTemplate
+    - UpdateReviewTemplateAnswer
+    - UpdateReviewTemplateLensReview
     - UpdateShareInvitation
     - UpdateWorkload
     - UpdateWorkloadShare
     - UpgradeLensReview
     - UpgradeProfileVersion
+    - UpgradeReviewTemplateLensReview
     ARNFormat: arn:aws:wellarchitected:${Region}:${Account}:${ResourceName}/${ResourceId}
     ARNRegex: "^arn:aws:wellarchitected:.+"
     conditionKeys:
