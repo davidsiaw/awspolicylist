@@ -16264,7 +16264,7 @@ serviceMap:
     - UpdateEnvironment
     - UpdateTagsForResource
     - ValidateConfigurationSettings
-    ARNFormat: arn:aws:elasticbeanstalk:${Region}:${AccountID}:${ResourceType}/${PathToResource}
+    ARNFormat: arn:aws:elasticbeanstalk:${Region}:${Account}:${ResourceType}/${PathToResource}
     ARNRegex: "^arn:aws:elasticbeanstalk:.+:.*:.+/.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
