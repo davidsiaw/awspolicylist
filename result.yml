@@ -11255,6 +11255,7 @@ serviceMap:
     - DisassociateVehicleFleet
     - GetCampaign
     - GetDecoderManifest
+    - GetEncryptionConfiguration
     - GetFleet
     - GetLoggingOptions
     - GetModelManifest
@@ -11277,6 +11278,7 @@ serviceMap:
     - ListTagsForResource
     - ListVehicles
     - ListVehiclesInFleet
+    - PutEncryptionConfiguration
     - PutLoggingOptions
     - RegisterAccount
     - TagResource
