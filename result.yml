@@ -13867,9 +13867,11 @@ serviceMap:
     - RebootInputDevice
     - RejectInputDeviceTransfer
     - StartChannel
+    - StartInputDevice
     - StartInputDeviceMaintenanceWindow
     - StartMultiplex
     - StopChannel
+    - StopInputDevice
     - StopMultiplex
     - TransferInputDevice
     - UpdateAccountConfiguration
@@ -17920,19 +17922,35 @@ serviceMap:
     - AnalyzeDocument
     - AnalyzeExpense
     - AnalyzeID
+    - CreateAdapter
+    - CreateAdapterVersion
+    - DeleteAdapter
+    - DeleteAdapterVersion
     - DetectDocumentText
+    - GetAdapter
+    - GetAdapterVersion
     - GetDocumentAnalysis
     - GetDocumentTextDetection
     - GetExpenseAnalysis
     - GetLendingAnalysis
     - GetLendingAnalysisSummary
+    - ListAdapterVersions
+    - ListAdapters
+    - ListTagsForResource
     - StartDocumentAnalysis
     - StartDocumentTextDetection
     - StartExpenseAnalysis
     - StartLendingAnalysis
-    ARNFormat: arn:${Partition}:textract:${Region}:${Account}:${RelativeId}
-    ARNRegex: "^arn:${Partition}:textract:.+"
-    HasResource: false
+    - TagResource
+    - UntagResource
+    - UpdateAdapter
+    ARNFormat: arn:aws:textract:${Region}:${Account}:${RelativeId}
+    ARNRegex: "^arn:aws:textract:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Activate:
     StringPrefix: activate
     Actions:
