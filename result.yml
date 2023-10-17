@@ -6244,22 +6244,33 @@ serviceMap:
   AWS Entity Resolution:
     StringPrefix: entityresolution
     Actions:
+    - CreateIdMappingWorkflow
     - CreateMatchingWorkflow
     - CreateSchemaMapping
+    - DeleteIdMappingWorkflow
     - DeleteMatchingWorkflow
     - DeleteSchemaMapping
+    - GetIdMappingJob
+    - GetIdMappingWorkflow
     - GetMatchId
     - GetMatchingJob
     - GetMatchingWorkflow
+    - GetProviderService
     - GetSchemaMapping
+    - ListIdMappingJobs
+    - ListIdMappingWorkflows
     - ListMatchingJobs
     - ListMatchingWorkflows
+    - ListProviderServices
     - ListSchemaMappings
     - ListTagsForResource
+    - StartIdMappingJob
     - StartMatchingJob
     - TagResource
     - UntagResource
+    - UpdateIdMappingWorkflow
     - UpdateMatchingWorkflow
+    - UpdateSchemaMapping
     ARNFormat: arn:aws:entityresolution:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:entityresolution:.+:.+:.+"
     conditionKeys:
@@ -12638,8 +12649,10 @@ serviceMap:
     StringPrefix: managedblockchain-query
     Actions:
     - BatchGetTokenBalance
+    - GetAssetContract
     - GetTokenBalance
     - GetTransaction
+    - ListAssetContracts
     - ListTokenBalances
     - ListTransactionEvents
     - ListTransactions
@@ -17299,6 +17312,7 @@ serviceMap:
     - GetAccountInfo
     - GetAvailableUpdates
     - GetControlOperation
+    - GetEnabledControl
     - GetGuardrailComplianceStatus
     - GetHomeRegion
     - GetLandingZoneDriftStatus
@@ -17321,9 +17335,9 @@ serviceMap:
     - PerformPreLaunchChecks
     - SetupLandingZone
     - UpdateAccountFactoryConfig
-    ARNFormat: arn:${Partition}:controltower:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:${Partition}:controltower:.+:.+:.+"
-    HasResource: false
+    ARNFormat: arn:aws:controltower:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:controltower:.+:.+:.+"
+    HasResource: true
   Amazon Nimble Studio:
     StringPrefix: nimble
     Actions:
