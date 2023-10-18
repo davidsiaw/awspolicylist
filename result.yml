@@ -7366,6 +7366,8 @@ serviceMap:
     - CreateMediaInsightsPipeline
     - CreateMediaInsightsPipelineConfiguration
     - CreateMediaLiveConnectorPipeline
+    - CreateMediaPipelineKinesisVideoStreamPool
+    - CreateMediaStreamPipeline
     - CreateMeeting
     - CreateMeetingDialOut
     - CreateMeetingWithAttendees
@@ -7404,6 +7406,7 @@ serviceMap:
     - DeleteMediaCapturePipeline
     - DeleteMediaInsightsPipelineConfiguration
     - DeleteMediaPipeline
+    - DeleteMediaPipelineKinesisVideoStreamPool
     - DeleteMeeting
     - DeleteMessagingStreamingConfigurations
     - DeletePhoneNumber
@@ -7459,6 +7462,7 @@ serviceMap:
     - GetMediaCapturePipeline
     - GetMediaInsightsPipelineConfiguration
     - GetMediaPipeline
+    - GetMediaPipelineKinesisVideoStreamPool
     - GetMeeting
     - GetMeetingDetail
     - GetMessagingSessionEndpoint
@@ -7523,6 +7527,7 @@ serviceMap:
     - ListGroups
     - ListMediaCapturePipelines
     - ListMediaInsightsPipelineConfigurations
+    - ListMediaPipelineKinesisVideoStreamPools
     - ListMediaPipelines
     - ListMeetingEvents
     - ListMeetingTags
@@ -7610,6 +7615,7 @@ serviceMap:
     - UpdateGlobalSettings
     - UpdateMediaInsightsPipelineConfiguration
     - UpdateMediaInsightsPipelineStatus
+    - UpdateMediaPipelineKinesisVideoStreamPool
     - UpdatePhoneNumber
     - UpdatePhoneNumberSettings
     - UpdateProxySession
@@ -12834,13 +12840,21 @@ serviceMap:
   Amazon CodeWhisperer:
     StringPrefix: codewhisperer
     Actions:
+    - AssociateCustomizationPermission
+    - CreateCustomization
     - CreateProfile
+    - DeleteCustomization
     - DeleteProfile
+    - DisassociateCustomizationPermission
     - GenerateRecommendations
+    - GetCustomization
+    - ListCustomizationPermissions
+    - ListCustomizations
     - ListProfiles
     - ListTagsForResource
     - TagResource
     - UntagResource
+    - UpdateCustomization
     - UpdateProfile
     ARNFormat: arn:aws:codewhisperer:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:codewhisperer:.+:[0-9]+:.+"
@@ -12974,10 +12988,12 @@ serviceMap:
     - CreateCluster
     - CreateClusterV2
     - CreateConfiguration
+    - CreateReplicator
     - CreateVpcConnection
     - DeleteCluster
     - DeleteClusterPolicy
     - DeleteConfiguration
+    - DeleteReplicator
     - DeleteVpcConnection
     - DescribeCluster
     - DescribeClusterOperation
@@ -12985,6 +13001,7 @@ serviceMap:
     - DescribeClusterV2
     - DescribeConfiguration
     - DescribeConfigurationRevision
+    - DescribeReplicator
     - DescribeVpcConnection
     - GetBootstrapBrokers
     - GetClusterPolicy
@@ -12998,6 +13015,7 @@ serviceMap:
     - ListConfigurations
     - ListKafkaVersions
     - ListNodes
+    - ListReplicators
     - ListScramSecrets
     - ListTagsForResource
     - ListVpcConnections
@@ -13014,6 +13032,7 @@ serviceMap:
     - UpdateConfiguration
     - UpdateConnectivity
     - UpdateMonitoring
+    - UpdateReplicationInfo
     - UpdateSecurity
     - UpdateStorage
     ARNFormat: arn:aws:kafka:${Region}:${Account}:${ResourceType}/${ResourceName}/${Uuid}
@@ -15652,6 +15671,7 @@ serviceMap:
     - DescribeRoutingControl
     - DescribeRoutingControlByName
     - DescribeSafetyRule
+    - GetResourcePolicy
     - ListAssociatedRoute53HealthChecks
     - ListClusters
     - ListControlPanels
@@ -18028,6 +18048,7 @@ serviceMap:
   Amazon AppIntegrations:
     StringPrefix: app-integrations
     Actions:
+    - CreateApplication
     - CreateDataIntegration
     - CreateDataIntegrationAssociation
     - CreateEventIntegration
@@ -18036,8 +18057,10 @@ serviceMap:
     - DeleteDataIntegrationAssociation
     - DeleteEventIntegration
     - DeleteEventIntegrationAssociation
+    - GetApplication
     - GetDataIntegration
     - GetEventIntegration
+    - ListApplications
     - ListDataIntegrationAssociations
     - ListDataIntegrations
     - ListEventIntegrationAssociations
@@ -18045,6 +18068,7 @@ serviceMap:
     - ListTagsForResource
     - TagResource
     - UntagResource
+    - UpdateApplication
     - UpdateDataIntegration
     - UpdateEventIntegration
     ARNFormat: arn:aws:app-integrations:${Region}:${Account}:${ResourceType}/${ResourceName}
