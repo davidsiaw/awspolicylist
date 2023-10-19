@@ -8503,9 +8503,11 @@ serviceMap:
     - ESHttpPut
     - GetCompatibleElasticsearchVersions
     - GetCompatibleVersions
+    - GetDomainMaintenanceStatus
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
+    - ListDomainMaintenances
     - ListDomainNames
     - ListDomainsForPackage
     - ListElasticsearchInstanceTypeDetails
@@ -8525,6 +8527,7 @@ serviceMap:
     - RejectInboundCrossClusterSearchConnection
     - RemoveTags
     - RevokeVpcEndpointAccess
+    - StartDomainMaintenance
     - StartElasticsearchServiceSoftwareUpdate
     - StartServiceSoftwareUpdate
     - UpdateDomainConfig
@@ -15845,12 +15848,14 @@ serviceMap:
     StringPrefix: discovery
     Actions:
     - AssociateConfigurationItemsToApplication
+    - BatchDeleteAgents
     - BatchDeleteImportData
     - CreateApplication
     - CreateTags
     - DeleteApplications
     - DeleteTags
     - DescribeAgents
+    - DescribeBatchDeleteConfigurationTask
     - DescribeConfigurations
     - DescribeContinuousExports
     - DescribeExportConfigurations
@@ -15863,6 +15868,7 @@ serviceMap:
     - GetNetworkConnectionGraph
     - ListConfigurations
     - ListServerNeighbors
+    - StartBatchDeleteConfigurationTask
     - StartContinuousExport
     - StartDataCollectionByAgentIds
     - StartExportTask
@@ -16961,6 +16967,7 @@ serviceMap:
     - DeleteSnapshot
     - DeleteUsageLimit
     - DeleteWorkgroup
+    - DescribeOneTimeCredit
     - GetCredentials
     - GetEndpointAccess
     - GetNamespace
