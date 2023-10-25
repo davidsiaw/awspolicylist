@@ -12302,15 +12302,19 @@ serviceMap:
     Actions:
     - APIAccessAll
     - BatchGetCollection
+    - BatchGetEffectiveLifecyclePolicy
+    - BatchGetLifecyclePolicy
     - BatchGetVpcEndpoint
     - CreateAccessPolicy
     - CreateCollection
+    - CreateLifecyclePolicy
     - CreateSecurityConfig
     - CreateSecurityPolicy
     - CreateVpcEndpoint
     - DashboardsAccessAll
     - DeleteAccessPolicy
     - DeleteCollection
+    - DeleteLifecyclePolicy
     - DeleteSecurityConfig
     - DeleteSecurityPolicy
     - DeleteVpcEndpoint
@@ -12321,6 +12325,7 @@ serviceMap:
     - GetSecurityPolicy
     - ListAccessPolicies
     - ListCollections
+    - ListLifecyclePolicies
     - ListSecurityConfigs
     - ListSecurityPolicies
     - ListTagsForResource
@@ -12330,6 +12335,7 @@ serviceMap:
     - UpdateAccessPolicy
     - UpdateAccountSettings
     - UpdateCollection
+    - UpdateLifecyclePolicy
     - UpdateSecurityConfig
     - UpdateSecurityPolicy
     - UpdateVpcEndpoint
@@ -18834,6 +18840,7 @@ serviceMap:
     - GetFaceLivenessSessionResults
     - GetFaceSearch
     - GetLabelDetection
+    - GetMediaAnalysisJob
     - GetPersonTracking
     - GetSegmentDetection
     - GetTextDetection
@@ -18842,6 +18849,7 @@ serviceMap:
     - ListDatasetEntries
     - ListDatasetLabels
     - ListFaces
+    - ListMediaAnalysisJobs
     - ListProjectPolicies
     - ListStreamProcessors
     - ListTagsForResource
@@ -18858,6 +18866,7 @@ serviceMap:
     - StartFaceLivenessSession
     - StartFaceSearch
     - StartLabelDetection
+    - StartMediaAnalysisJob
     - StartPersonTracking
     - StartProjectVersion
     - StartSegmentDetection
