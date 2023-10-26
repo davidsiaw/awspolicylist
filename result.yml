@@ -1083,6 +1083,7 @@ serviceMap:
     - AssociateDiscoveredResource
     - CreateHomeRegionControl
     - CreateProgressUpdateStream
+    - DeleteHomeRegionControl
     - DeleteProgressUpdateStream
     - DescribeApplicationState
     - DescribeHomeRegionControls
@@ -1099,8 +1100,8 @@ serviceMap:
     - NotifyApplicationState
     - NotifyMigrationTaskState
     - PutResourceAttributes
-    ARNFormat: arn:aws:mgh:<region>:<namespace>:<relative-id>
-    ARNRegex: "^arn:aws:mgh:[a-z0-9-]+:[0-9]{12}:.+"
+    ARNFormat: arn:aws:mgh:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:mgh:.+"
     HasResource: true
   AWS Fault Injection Simulator:
     StringPrefix: fis
