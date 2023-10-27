@@ -5503,50 +5503,6 @@ serviceMap:
     ARNFormat: arn:aws:deeplens:<region>:<account-id>:<resource-type>/<resource_name>
     ARNRegex: "^arn:aws:deeplens:.+:.+:.+"
     HasResource: true
-  Amazon GameSparks:
-    StringPrefix: gamesparks
-    Actions:
-    - CreateGame
-    - CreateSnapshot
-    - CreateStage
-    - DeleteGame
-    - DeleteStage
-    - DisconnectPlayer
-    - ExportSnapshot
-    - GetExtension
-    - GetExtensionVersion
-    - GetGame
-    - GetGameConfiguration
-    - GetGeneratedCodeJob
-    - GetPlayerConnectionStatus
-    - GetSnapshot
-    - GetStage
-    - GetStageDeployment
-    - ImportGameConfiguration
-    - InvokeBackend
-    - ListExtensionVersions
-    - ListExtensions
-    - ListGames
-    - ListGeneratedCodeJobs
-    - ListSnapshots
-    - ListStageDeployments
-    - ListStages
-    - ListTagsForResource
-    - StartGeneratedCodeJob
-    - StartStageDeployment
-    - TagResource
-    - UntagResource
-    - UpdateGame
-    - UpdateGameConfiguration
-    - UpdateSnapshot
-    - UpdateStage
-    ARNFormat: arn:aws:gamesparks:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:aws:gamesparks:.+:.+:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    HasResource: true
   Amazon RDS Data API:
     StringPrefix: rds-data
     Actions:
@@ -16292,15 +16248,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Tag Editor:
-    StringPrefix: resource-explorer
-    Actions:
-    - ListResourceTypes
-    - ListResources
-    - ListTags
-    ARNFormat: arn:${Partition}:resource-explorer:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:aws:resource-explorer:.+"
-    HasResource: false
   AWS Elastic Beanstalk:
     StringPrefix: elasticbeanstalk
     Actions:
