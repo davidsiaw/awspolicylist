@@ -1409,6 +1409,7 @@ serviceMap:
     - PublishDataSet
     - RevokeRevision
     - SendApiAsset
+    - SendDataSetNotification
     - StartJob
     - TagResource
     - UntagResource
@@ -8561,6 +8562,7 @@ serviceMap:
     - GetTrainingJob
     - ImportModel
     - ListEvaluations
+    - ListLeaderboardEvaluations
     - ListLeaderboardSubmissions
     - ListLeaderboards
     - ListModels
@@ -16954,11 +16956,13 @@ serviceMap:
     StringPrefix: redshift-serverless
     Actions:
     - ConvertRecoveryPointToSnapshot
+    - CreateCustomDomainAssociation
     - CreateEndpointAccess
     - CreateNamespace
     - CreateSnapshot
     - CreateUsageLimit
     - CreateWorkgroup
+    - DeleteCustomDomainAssociation
     - DeleteEndpointAccess
     - DeleteNamespace
     - DeleteResourcePolicy
@@ -16967,6 +16971,7 @@ serviceMap:
     - DeleteWorkgroup
     - DescribeOneTimeCredit
     - GetCredentials
+    - GetCustomDomainAssociation
     - GetEndpointAccess
     - GetNamespace
     - GetRecoveryPoint
@@ -16975,6 +16980,7 @@ serviceMap:
     - GetTableRestoreStatus
     - GetUsageLimit
     - GetWorkgroup
+    - ListCustomDomainAssociations
     - ListEndpointAccess
     - ListNamespaces
     - ListRecoveryPoints
@@ -16989,6 +16995,7 @@ serviceMap:
     - RestoreTableFromSnapshot
     - TagResource
     - UntagResource
+    - UpdateCustomDomainAssociation
     - UpdateEndpointAccess
     - UpdateNamespace
     - UpdateSnapshot
