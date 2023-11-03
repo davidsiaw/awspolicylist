@@ -544,6 +544,7 @@ serviceMap:
     - DeleteDocument
     - DeleteInventory
     - DeleteMaintenanceWindow
+    - DeleteOpsItem
     - DeleteOpsMetadata
     - DeleteParameter
     - DeleteParameters
@@ -8915,7 +8916,10 @@ serviceMap:
     - DescribeIdentityPool
     - GetCredentialsForIdentity
     - GetId
+    - GetIdentityPoolAnalytics
+    - GetIdentityPoolDailyAnalytics
     - GetIdentityPoolRoles
+    - GetIdentityProviderDailyAnalytics
     - GetOpenIdToken
     - GetOpenIdTokenForDeveloperIdentity
     - GetPrincipalTagAttributeMap
@@ -9706,6 +9710,7 @@ serviceMap:
     - EnableLogging
     - EnableSnapshotCopy
     - ExecuteQuery
+    - FailoverPrimaryCompute
     - FetchResults
     - GetClusterCredentials
     - GetClusterCredentialsWithIAM
@@ -13848,6 +13853,7 @@ serviceMap:
     - GetRecommendationReportDetails
     - GetServerDetails
     - GetServerStrategies
+    - ListAnalyzableServers
     - ListAntiPatterns
     - ListApplicationComponents
     - ListCollectors
