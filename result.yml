@@ -2367,6 +2367,7 @@ serviceMap:
     - CreateHyperParameterTuningJob
     - CreateImage
     - CreateImageVersion
+    - CreateInferenceComponent
     - CreateInferenceExperiment
     - CreateInferenceRecommendationsJob
     - CreateLabelingJob
@@ -2421,6 +2422,7 @@ serviceMap:
     - DeleteHumanTaskUi
     - DeleteImage
     - DeleteImageVersion
+    - DeleteInferenceComponent
     - DeleteInferenceExperiment
     - DeleteLineageGroupPolicy
     - DeleteModel
@@ -2475,6 +2477,7 @@ serviceMap:
     - DescribeHyperParameterTuningJob
     - DescribeImage
     - DescribeImageVersion
+    - DescribeInferenceComponent
     - DescribeInferenceExperiment
     - DescribeInferenceRecommendationsJob
     - DescribeLabelingJob
@@ -2521,6 +2524,7 @@ serviceMap:
     - ImportHubContent
     - InvokeEndpoint
     - InvokeEndpointAsync
+    - InvokeEndpointWithResponseStream
     - ListActions
     - ListAlgorithms
     - ListAliases
@@ -2552,6 +2556,7 @@ serviceMap:
     - ListHyperParameterTuningJobs
     - ListImageVersions
     - ListImages
+    - ListInferenceComponents
     - ListInferenceExperiments
     - ListInferenceRecommendationsJobSteps
     - ListInferenceRecommendationsJobs
@@ -2646,6 +2651,8 @@ serviceMap:
     - UpdateHub
     - UpdateImage
     - UpdateImageVersion
+    - UpdateInferenceComponent
+    - UpdateInferenceComponentRuntimeConfig
     - UpdateInferenceExperiment
     - UpdateModelCard
     - UpdateModelPackage
@@ -4821,6 +4828,7 @@ serviceMap:
     - BatchAssociateAnalyticsDataSet
     - BatchDisassociateAnalyticsDataSet
     - BatchGetFlowAssociation
+    - BatchPutContact
     - ClaimPhoneNumber
     - CreateAgentStatus
     - CreateContactFlow
