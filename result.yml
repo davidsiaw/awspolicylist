@@ -14739,6 +14739,7 @@ serviceMap:
     - GetPasswordData
     - GetReservedInstancesExchangeQuote
     - GetResourcePolicy
+    - GetSecurityGroupsForVpc
     - GetSerialConsoleAccessStatus
     - GetSpotPlacementScores
     - GetSubnetCidrReservations
@@ -14762,6 +14763,7 @@ serviceMap:
     - ImportKeyPair
     - ImportSnapshot
     - ImportVolume
+    - InjectApiError
     - ListImagesInRecycleBin
     - ListSnapshotsInRecycleBin
     - ModifyAddressAttribute
@@ -14928,6 +14930,8 @@ serviceMap:
     - ec2:EbsOptimized
     - ec2:ElasticGpuType
     - ec2:Encrypted
+    - ec2:FisActionId
+    - ec2:FisTargetArns
     - ec2:GatewayType
     - ec2:HostRecovery
     - ec2:IKEVersions
