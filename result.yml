@@ -124,6 +124,7 @@ serviceMap:
     - DetectSentiment
     - DetectSyntax
     - DetectTargetedSentiment
+    - DetectToxicContent
     - ImportModel
     - ListDatasets
     - ListDocumentClassificationJobs
@@ -6000,7 +6001,9 @@ serviceMap:
     - CreateDBSubnetGroup
     - CreateEventSubscription
     - CreateGlobalCluster
+    - CreateIntegration
     - CreateOptionGroup
+    - CreateTenantDatabase
     - CrossRegionCommunication
     - DeleteBlueGreenDeployment
     - DeleteCustomDBEngineVersion
@@ -6019,7 +6022,9 @@ serviceMap:
     - DeleteDBSubnetGroup
     - DeleteEventSubscription
     - DeleteGlobalCluster
+    - DeleteIntegration
     - DeleteOptionGroup
+    - DeleteTenantDatabase
     - DeregisterDBProxyTargets
     - DescribeAccountAttributes
     - DescribeBlueGreenDeployments
@@ -6046,6 +6051,7 @@ serviceMap:
     - DescribeDBSnapshotAttributes
     - DescribeDBSnapshots
     - DescribeDBSubnetGroups
+    - DescribeDbSnapshotTenantDatabases
     - DescribeEngineDefaultClusterParameters
     - DescribeEngineDefaultParameters
     - DescribeEventCategories
@@ -6053,6 +6059,7 @@ serviceMap:
     - DescribeEvents
     - DescribeExportTasks
     - DescribeGlobalClusters
+    - DescribeIntegrations
     - DescribeOptionGroupOptions
     - DescribeOptionGroups
     - DescribeOrderableDBInstanceOptions
@@ -6062,6 +6069,7 @@ serviceMap:
     - DescribeReservedDBInstances
     - DescribeReservedDBInstancesOfferings
     - DescribeSourceRegions
+    - DescribeTenantDatabases
     - DescribeValidDBInstanceModifications
     - DownloadCompleteDBLogFile
     - DownloadDBLogFilePortion
@@ -6088,6 +6096,7 @@ serviceMap:
     - ModifyGlobalCluster
     - ModifyOptionGroup
     - ModifyRecommendation
+    - ModifyTenantDatabase
     - PromoteReadReplica
     - PromoteReadReplicaDBCluster
     - PurchaseReservedDBInstancesOffering
@@ -6134,9 +6143,11 @@ serviceMap:
     - rds:EndpointType
     - rds:ManageMasterUserPassword
     - rds:MultiAz
+    - rds:MultiTenant
     - rds:Piops
     - rds:StorageEncrypted
     - rds:StorageSize
+    - rds:TenantDatabaseName
     - rds:Vpc
     - rds:cluster-pg-tag/${TagKey}
     - rds:cluster-snapshot-tag/${TagKey}
@@ -6627,10 +6638,12 @@ serviceMap:
     - AssociateIdentityProviderConfig
     - CreateAddon
     - CreateCluster
+    - CreateEksAnywhereSubscription
     - CreateFargateProfile
     - CreateNodegroup
     - DeleteAddon
     - DeleteCluster
+    - DeleteEksAnywhereSubscription
     - DeleteFargateProfile
     - DeleteNodegroup
     - DeregisterCluster
@@ -6638,6 +6651,7 @@ serviceMap:
     - DescribeAddonConfiguration
     - DescribeAddonVersions
     - DescribeCluster
+    - DescribeEksAnywhereSubscription
     - DescribeFargateProfile
     - DescribeIdentityProviderConfig
     - DescribeNodegroup
@@ -6645,6 +6659,7 @@ serviceMap:
     - DisassociateIdentityProviderConfig
     - ListAddons
     - ListClusters
+    - ListEksAnywhereSubscriptions
     - ListFargateProfiles
     - ListIdentityProviderConfigs
     - ListNodegroups
@@ -6656,6 +6671,7 @@ serviceMap:
     - UpdateAddon
     - UpdateClusterConfig
     - UpdateClusterVersion
+    - UpdateEksAnywhereSubscription
     - UpdateNodegroupConfig
     - UpdateNodegroupVersion
     ARNFormat: arn:aws:eks:${Region}:${Account}:${ResourceType}/${RelativeId}
@@ -16442,8 +16458,13 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - elasticloadbalancing:CreateAction
+    - elasticloadbalancing:ListenerProtocol
     - elasticloadbalancing:ResourceTag/
     - elasticloadbalancing:ResourceTag/${TagKey}
+    - elasticloadbalancing:Scheme
+    - elasticloadbalancing:SecurityGroup
+    - elasticloadbalancing:SecurityPolicy
+    - elasticloadbalancing:Subnet
     HasResource: true
   AWS Elastic Load Balancing V2:
     StringPrefix: elasticloadbalancing
@@ -16490,7 +16511,12 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - elasticloadbalancing:CreateAction
+    - elasticloadbalancing:ListenerProtocol
     - elasticloadbalancing:ResourceTag/${TagKey}
+    - elasticloadbalancing:Scheme
+    - elasticloadbalancing:SecurityGroup
+    - elasticloadbalancing:SecurityPolicy
+    - elasticloadbalancing:Subnet
     HasResource: true
   AmazonMediaImport:
     StringPrefix: mediaimport
@@ -16914,12 +16940,17 @@ serviceMap:
     Actions:
     - AssociateKmsKey
     - CancelExportTask
+    - CreateDelivery
     - CreateExportTask
     - CreateLogDelivery
     - CreateLogGroup
     - CreateLogStream
     - DeleteAccountPolicy
     - DeleteDataProtectionPolicy
+    - DeleteDelivery
+    - DeleteDeliveryDestination
+    - DeleteDeliveryDestinationPolicy
+    - DeleteDeliverySource
     - DeleteDestination
     - DeleteLogDelivery
     - DeleteLogGroup
@@ -16930,6 +16961,9 @@ serviceMap:
     - DeleteRetentionPolicy
     - DeleteSubscriptionFilter
     - DescribeAccountPolicies
+    - DescribeDeliveries
+    - DescribeDeliveryDestinations
+    - DescribeDeliverySources
     - DescribeDestinations
     - DescribeExportTasks
     - DescribeLogGroups
@@ -16942,6 +16976,10 @@ serviceMap:
     - DisassociateKmsKey
     - FilterLogEvents
     - GetDataProtectionPolicy
+    - GetDelivery
+    - GetDeliveryDestination
+    - GetDeliveryDestinationPolicy
+    - GetDeliverySource
     - GetLogDelivery
     - GetLogEvents
     - GetLogGroupFields
@@ -16953,6 +16991,9 @@ serviceMap:
     - ListTagsLogGroup
     - PutAccountPolicy
     - PutDataProtectionPolicy
+    - PutDeliveryDestination
+    - PutDeliveryDestinationPolicy
+    - PutDeliverySource
     - PutDestination
     - PutDestinationPolicy
     - PutLogEvents
@@ -16978,6 +17019,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - logs:DeliveryDestinationResourceArn
+    - logs:LogGeneratingResourceArns
     HasResource: true
   Amazon Redshift Serverless:
     StringPrefix: redshift-serverless
