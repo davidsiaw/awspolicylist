@@ -182,6 +182,13 @@ serviceMap:
     - comprehend:VpcSecurityGroupIds
     - comprehend:VpcSubnets
     HasResource: true
+  AWS Partner central account management:
+    StringPrefix: partnercentral-account-management
+    Actions:
+    - AssociatePartnerAccount
+    - AssociatePartnerUser
+    - DisassociatePartnerUser
+    HasResource: false
   Amazon Elastic File System:
     StringPrefix: elasticfilesystem
     Actions:
@@ -12365,8 +12372,10 @@ serviceMap:
   AWS Resource Groups:
     StringPrefix: resource-groups
     Actions:
+    - AssociateResource
     - CreateGroup
     - DeleteGroup
+    - DisassociateResource
     - GetAccountSettings
     - GetGroup
     - GetGroupConfiguration
