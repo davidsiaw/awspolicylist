@@ -12897,6 +12897,7 @@ serviceMap:
   Amazon CodeWhisperer:
     StringPrefix: codewhisperer
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociateCustomizationPermission
     - CreateCustomization
     - CreateProfile
@@ -18949,23 +18950,36 @@ serviceMap:
     StringPrefix: launchwizard
     Actions:
     - CreateAdditionalNode
+    - CreateDeployment
     - CreateSettingsSet
     - DeleteAdditionalNode
     - DeleteApp
+    - DeleteDeployment
     - DeleteSettingsSet
     - DescribeAdditionalNode
     - DescribeProvisionedApp
     - DescribeProvisioningEvents
     - DescribeSettingsSet
+    - GetDeployment
     - GetInfrastructureSuggestion
     - GetIpAddress
     - GetResourceCostEstimate
+    - GetResourceRecommendation
+    - GetSettingsSet
+    - GetWorkload
+    - GetWorkloadAsset
     - GetWorkloadAssets
     - ListAdditionalNodes
+    - ListAllowedResources
+    - ListDeploymentEvents
+    - ListDeployments
     - ListProvisionedApps
+    - ListResourceCostEstimates
     - ListSettingsSets
     - ListWorkloadDeploymentOptions
+    - ListWorkloadDeploymentPatterns
     - ListWorkloads
+    - PutSettingsSet
     - StartProvisioning
     - UpdateSettingsSet
     ARNRegex: "^arn:aws:launchwizard:.+:.+:.+"
