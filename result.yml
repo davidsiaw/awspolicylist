@@ -9393,6 +9393,7 @@ serviceMap:
     - ListStateMachines
     - ListTagsForResource
     - PublishStateMachineVersion
+    - RedriveExecution
     - SendTaskFailure
     - SendTaskHeartbeat
     - SendTaskSuccess
@@ -17443,12 +17444,19 @@ serviceMap:
     - ListManagedAccountsForParent
     - ListManagedOrganizationalUnits
     - ListManagedOrganizationalUnitsForGuardrail
+    - ListTagsForResource
     - ManageOrganizationalUnit
     - PerformPreLaunchChecks
     - SetupLandingZone
+    - TagResource
+    - UntagResource
     - UpdateAccountFactoryConfig
     ARNFormat: arn:aws:controltower:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:controltower:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon Nimble Studio:
     StringPrefix: nimble
@@ -17582,7 +17590,7 @@ serviceMap:
     - PutObjectVersionTagging
     - RestoreObject
     - WriteGetObjectResponse
-    ARNFormat: arn:aws:s3-object-lambda:::accesspoint/<access point name>
+    ARNFormat: arn:aws:s3-object-lambda:::accesspoint/${AccessPointName}
     ARNRegex: "^arn:aws:s3-object-lambda:::.+"
     conditionKeys:
     - s3-object-lambda:TlsVersion
@@ -18215,6 +18223,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateEnvironment
+    - UpdateKxClusterCodeConfiguration
     - UpdateKxClusterDatabases
     - UpdateKxDatabase
     - UpdateKxEnvironment
@@ -18416,10 +18425,12 @@ serviceMap:
     - DeleteIndex
     - DeleteView
     - DisassociateDefaultView
+    - GetAccountLevelServiceConfiguration
     - GetDefaultView
     - GetIndex
     - GetView
     - ListIndexes
+    - ListIndexesForMembers
     - ListSupportedResourceTypes
     - ListTagsForResource
     - ListViews
