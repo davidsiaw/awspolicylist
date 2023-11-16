@@ -2169,6 +2169,7 @@ serviceMap:
     - CreateBucket
     - CreateJob
     - CreateMultiRegionAccessPoint
+    - CreateStorageLensGroup
     - DeleteAccessPoint
     - DeleteAccessPointForObjectLambda
     - DeleteAccessPointPolicy
@@ -2184,6 +2185,7 @@ serviceMap:
     - DeleteObjectVersionTagging
     - DeleteStorageLensConfiguration
     - DeleteStorageLensConfigurationTagging
+    - DeleteStorageLensGroup
     - DescribeJob
     - DescribeMultiRegionAccessPointOperation
     - GetAccelerateConfiguration
@@ -2237,6 +2239,7 @@ serviceMap:
     - GetStorageLensConfiguration
     - GetStorageLensConfigurationTagging
     - GetStorageLensDashboard
+    - GetStorageLensGroup
     - InitiateReplication
     - ListAccessPoints
     - ListAccessPointsForObjectLambda
@@ -2248,6 +2251,8 @@ serviceMap:
     - ListMultiRegionAccessPoints
     - ListMultipartUploadParts
     - ListStorageLensConfigurations
+    - ListStorageLensGroups
+    - ListTagsForResource
     - ObjectOwnerOverrideToBucketOwner
     - PutAccelerateConfiguration
     - PutAccessPointConfigurationForObjectLambda
@@ -2290,8 +2295,11 @@ serviceMap:
     - ReplicateTags
     - RestoreObject
     - SubmitMultiRegionAccessPointRoutes
+    - TagResource
+    - UntagResource
     - UpdateJobPriority
     - UpdateJobStatus
+    - UpdateStorageLensGroup
     ARNFormat: arn:aws:s3:::${BucketName}/${KeyName}
     ARNRegex: "^arn:aws:s3:::.+"
     conditionKeys:
@@ -5326,6 +5334,7 @@ serviceMap:
     - GetAnomalies
     - GetAnomalyMonitors
     - GetAnomalySubscriptions
+    - GetApproximateUsageRecords
     - GetConsoleActionSetEnforced
     - GetCostAndUsage
     - GetCostAndUsageWithResources
@@ -9445,6 +9454,7 @@ serviceMap:
     - ListQuickResponses
     - ListTagsForResource
     - NotifyRecommendationsReceived
+    - PutFeedback
     - QueryAssistant
     - RemoveKnowledgeBaseTemplateUri
     - SearchContent
@@ -9689,6 +9699,7 @@ serviceMap:
     - DeleteHsmClientCertificate
     - DeleteHsmConfiguration
     - DeletePartner
+    - DeleteResourcePolicy
     - DeleteSavedQueries
     - DeleteScheduledAction
     - DeleteSnapshotCopyGrant
@@ -9718,6 +9729,7 @@ serviceMap:
     - DescribeEvents
     - DescribeHsmClientCertificates
     - DescribeHsmConfigurations
+    - DescribeInboundIntegrations
     - DescribeLoggingStatus
     - DescribeNodeConfigurationOptions
     - DescribeOrderableClusterOptions
@@ -9748,6 +9760,7 @@ serviceMap:
     - GetClusterCredentialsWithIAM
     - GetReservedNodeExchangeConfigurationOptions
     - GetReservedNodeExchangeOfferings
+    - GetResourcePolicy
     - JoinGroup
     - ListDatabases
     - ListSavedQueries
@@ -9773,6 +9786,7 @@ serviceMap:
     - ModifyUsageLimit
     - PauseCluster
     - PurchaseReservedNodeOffering
+    - PutResourcePolicy
     - RebootCluster
     - RejectDataShare
     - ResetClusterParameterGroup
@@ -9798,6 +9812,7 @@ serviceMap:
     - redshift:DbName
     - redshift:DbUser
     - redshift:DurationSeconds
+    - redshift:InboundIntegrationArn
     HasResource: true
   Amazon WorkDocs:
     StringPrefix: workdocs
@@ -11418,12 +11433,14 @@ serviceMap:
     - GetLegalHold
     - GetRecoveryPointRestoreMetadata
     - GetSupportedResourceTypes
+    - ListBackupJobSummaries
     - ListBackupJobs
     - ListBackupPlanTemplates
     - ListBackupPlanVersions
     - ListBackupPlans
     - ListBackupSelections
     - ListBackupVaults
+    - ListCopyJobSummaries
     - ListCopyJobs
     - ListFrameworks
     - ListLegalHolds
@@ -11434,6 +11451,7 @@ serviceMap:
     - ListRecoveryPointsByResource
     - ListReportJobs
     - ListReportPlans
+    - ListRestoreJobSummaries
     - ListRestoreJobs
     - ListTags
     - PutBackupVaultAccessPolicy
