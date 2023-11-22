@@ -6987,6 +6987,7 @@ serviceMap:
     - CreateAccessPolicy
     - CreateAsset
     - CreateAssetModel
+    - CreateAssetModelCompositeModel
     - CreateBulkImportJob
     - CreateDashboard
     - CreateGateway
@@ -6995,14 +6996,18 @@ serviceMap:
     - DeleteAccessPolicy
     - DeleteAsset
     - DeleteAssetModel
+    - DeleteAssetModelCompositeModel
     - DeleteDashboard
     - DeleteGateway
     - DeletePortal
     - DeleteProject
     - DeleteTimeSeries
     - DescribeAccessPolicy
+    - DescribeAction
     - DescribeAsset
+    - DescribeAssetCompositeModel
     - DescribeAssetModel
+    - DescribeAssetModelCompositeModel
     - DescribeAssetProperty
     - DescribeBulkImportJob
     - DescribeDashboard
@@ -7016,11 +7021,16 @@ serviceMap:
     - DescribeTimeSeries
     - DisassociateAssets
     - DisassociateTimeSeriesFromAssetProperty
+    - EnableSiteWiseIntegration
+    - ExecuteAction
+    - ExecuteQuery
     - GetAssetPropertyAggregates
     - GetAssetPropertyValue
     - GetAssetPropertyValueHistory
     - GetInterpolatedAssetPropertyValues
     - ListAccessPolicies
+    - ListActions
+    - ListAssetModelCompositeModels
     - ListAssetModelProperties
     - ListAssetModels
     - ListAssetProperties
@@ -7028,6 +7038,7 @@ serviceMap:
     - ListAssets
     - ListAssociatedAssets
     - ListBulkImportJobs
+    - ListCompositionRelationships
     - ListDashboards
     - ListGateways
     - ListPortals
@@ -7043,6 +7054,7 @@ serviceMap:
     - UpdateAccessPolicy
     - UpdateAsset
     - UpdateAssetModel
+    - UpdateAssetModelCompositeModel
     - UpdateAssetModelPropertyRouting
     - UpdateAssetProperty
     - UpdateDashboard
@@ -8139,6 +8151,18 @@ serviceMap:
     - ListDeviceIdentities
     ARNFormat: arn:aws:consoleapp:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:consoleapp:.+:.+:.+"
+    HasResource: true
+  Amazon CloudFront KeyValueStore:
+    StringPrefix: cloudfront-keyvaluestore
+    Actions:
+    - DeleteKey
+    - DescribeKeyValueStore
+    - GetKey
+    - ListKeys
+    - PutKey
+    - UpdateKeys
+    ARNFormat: arn:aws:cloudfront:${Region}:${Account}:key-value-store/${ResourceId}
+    ARNRegex: "^arn:aws:cloudfront:.+:[0-9]+:.+"
     HasResource: true
   Amazon Elastic MapReduce:
     StringPrefix: elasticmapreduce
@@ -13677,8 +13701,10 @@ serviceMap:
     StringPrefix: iottwinmaker
     Actions:
     - BatchPutPropertyValues
+    - CancelMetadataTransferJob
     - CreateComponentType
     - CreateEntity
+    - CreateMetadataTransferJob
     - CreateScene
     - CreateSyncJob
     - CreateWorkspace
@@ -13690,6 +13716,7 @@ serviceMap:
     - ExecuteQuery
     - GetComponentType
     - GetEntity
+    - GetMetadataTransferJob
     - GetPricingPlan
     - GetPropertyValue
     - GetPropertyValueHistory
@@ -13697,7 +13724,10 @@ serviceMap:
     - GetSyncJob
     - GetWorkspace
     - ListComponentTypes
+    - ListComponents
     - ListEntities
+    - ListMetadataTransferJobs
+    - ListProperties
     - ListScenes
     - ListSyncJobs
     - ListSyncResources
@@ -13716,6 +13746,9 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - iottwinmaker:destinationType
+    - iottwinmaker:linkedServices
+    - iottwinmaker:sourceType
     HasResource: true
   AWS Secrets Manager:
     StringPrefix: secretsmanager
