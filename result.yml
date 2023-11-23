@@ -6844,6 +6844,7 @@ serviceMap:
     - AddTagsToStream
     - CreateStream
     - DecreaseStreamRetentionPeriod
+    - DeleteResourcePolicy
     - DeleteStream
     - DeregisterStreamConsumer
     - DescribeLimits
@@ -6853,6 +6854,7 @@ serviceMap:
     - DisableEnhancedMonitoring
     - EnableEnhancedMonitoring
     - GetRecords
+    - GetResourcePolicy
     - GetShardIterator
     - IncreaseStreamRetentionPeriod
     - ListShards
@@ -6862,6 +6864,7 @@ serviceMap:
     - MergeShards
     - PutRecord
     - PutRecords
+    - PutResourcePolicy
     - RegisterStreamConsumer
     - RemoveTagsFromStream
     - SplitShard
@@ -9784,6 +9787,7 @@ serviceMap:
     - CreateEventSubscription
     - CreateHsmClientCertificate
     - CreateHsmConfiguration
+    - CreateRedshiftIdcApplication
     - CreateSavedQuery
     - CreateScheduledAction
     - CreateSnapshotCopyGrant
@@ -9803,6 +9807,7 @@ serviceMap:
     - DeleteHsmClientCertificate
     - DeleteHsmConfiguration
     - DeletePartner
+    - DeleteRedshiftIdcApplication
     - DeleteResourcePolicy
     - DeleteSavedQueries
     - DeleteScheduledAction
@@ -9839,6 +9844,7 @@ serviceMap:
     - DescribeOrderableClusterOptions
     - DescribePartners
     - DescribeQuery
+    - DescribeRedshiftIdcApplications
     - DescribeReservedNodeExchangeStatus
     - DescribeReservedNodeOfferings
     - DescribeReservedNodes
@@ -9883,6 +9889,7 @@ serviceMap:
     - ModifyCustomDomainAssociation
     - ModifyEndpointAccess
     - ModifyEventSubscription
+    - ModifyRedshiftIdcApplication
     - ModifySavedQuery
     - ModifyScheduledAction
     - ModifySnapshotCopyRetentionPeriod
