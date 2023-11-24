@@ -14514,6 +14514,7 @@ serviceMap:
     - AssociateEnclaveCertificateIamRole
     - AssociateIamInstanceProfile
     - AssociateInstanceEventWindow
+    - AssociateIpamByoasn
     - AssociateIpamResourceDiscovery
     - AssociateNatGatewayAddress
     - AssociateRouteTable
@@ -14710,6 +14711,7 @@ serviceMap:
     - DeleteVpnConnectionRoute
     - DeleteVpnGateway
     - DeprovisionByoipCidr
+    - DeprovisionIpamByoasn
     - DeprovisionIpamPoolCidr
     - DeprovisionPublicIpv4PoolCidr
     - DeregisterImage
@@ -14725,6 +14727,7 @@ serviceMap:
     - DescribeAwsNetworkPerformanceMetricSubscriptions
     - DescribeBundleTasks
     - DescribeByoipCidrs
+    - DescribeCapacityBlockOfferings
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservations
     - DescribeCarrierGateways
@@ -14766,10 +14769,12 @@ serviceMap:
     - DescribeInstanceEventNotificationAttributes
     - DescribeInstanceEventWindows
     - DescribeInstanceStatus
+    - DescribeInstanceTopology
     - DescribeInstanceTypeOfferings
     - DescribeInstanceTypes
     - DescribeInstances
     - DescribeInternetGateways
+    - DescribeIpamByoasn
     - DescribeIpamPools
     - DescribeIpamResourceDiscoveries
     - DescribeIpamResourceDiscoveryAssociations
@@ -14786,6 +14791,7 @@ serviceMap:
     - DescribeLocalGatewayVirtualInterfaceGroups
     - DescribeLocalGatewayVirtualInterfaces
     - DescribeLocalGateways
+    - DescribeLockedSnapshots
     - DescribeManagedPrefixLists
     - DescribeMovingAddresses
     - DescribeNatGateways
@@ -14879,6 +14885,7 @@ serviceMap:
     - DisableImageDeprecation
     - DisableIpamOrganizationAdminAccount
     - DisableSerialConsoleAccess
+    - DisableSnapshotBlockPublicAccess
     - DisableTransitGatewayRouteTablePropagation
     - DisableVgwRoutePropagation
     - DisableVpcClassicLink
@@ -14888,6 +14895,7 @@ serviceMap:
     - DisassociateEnclaveCertificateIamRole
     - DisassociateIamInstanceProfile
     - DisassociateInstanceEventWindow
+    - DisassociateIpamByoasn
     - DisassociateIpamResourceDiscovery
     - DisassociateNatGatewayAddress
     - DisassociateRouteTable
@@ -14909,6 +14917,7 @@ serviceMap:
     - EnableIpamOrganizationAdminAccount
     - EnableReachabilityAnalyzerOrganizationSharing
     - EnableSerialConsoleAccess
+    - EnableSnapshotBlockPublicAccess
     - EnableTransitGatewayRouteTablePropagation
     - EnableVgwRoutePropagation
     - EnableVolumeIO
@@ -14936,6 +14945,7 @@ serviceMap:
     - GetInstanceUefiData
     - GetIpamAddressHistory
     - GetIpamDiscoveredAccounts
+    - GetIpamDiscoveredPublicAddresses
     - GetIpamDiscoveredResourceCidrs
     - GetIpamPoolAllocations
     - GetIpamPoolCidrs
@@ -14950,6 +14960,7 @@ serviceMap:
     - GetResourcePolicy
     - GetSecurityGroupsForVpc
     - GetSerialConsoleAccessStatus
+    - GetSnapshotBlockPublicAccessState
     - GetSpotPlacementScores
     - GetSubnetCidrReservations
     - GetTransitGatewayAttachmentPropagations
@@ -14975,6 +14986,7 @@ serviceMap:
     - InjectApiError
     - ListImagesInRecycleBin
     - ListSnapshotsInRecycleBin
+    - LockSnapshot
     - ModifyAddressAttribute
     - ModifyAvailabilityZoneGroup
     - ModifyCapacityReservation
@@ -15044,8 +15056,10 @@ serviceMap:
     - MoveByoipCidrToIpam
     - PauseVolumeIO
     - ProvisionByoipCidr
+    - ProvisionIpamByoasn
     - ProvisionIpamPoolCidr
     - ProvisionPublicIpv4PoolCidr
+    - PurchaseCapacityBlock
     - PurchaseHostReservation
     - PurchaseReservedInstancesOffering
     - PurchaseScheduledInstances
@@ -15105,6 +15119,7 @@ serviceMap:
     - UnassignIpv6Addresses
     - UnassignPrivateIpAddresses
     - UnassignPrivateNatGatewayAddress
+    - UnlockSnapshot
     - UnmonitorInstances
     - UpdateSecurityGroupRuleDescriptionsEgress
     - UpdateSecurityGroupRuleDescriptionsIngress
@@ -15205,7 +15220,9 @@ serviceMap:
     - ec2:SamlProviderArn
     - ec2:SecurityGroupID
     - ec2:ServerCertificateArn
+    - ec2:SnapshotCoolOffPeriod
     - ec2:SnapshotID
+    - ec2:SnapshotLockDuration
     - ec2:SnapshotTime
     - ec2:SourceInstanceARN
     - ec2:SourceOutpostArn
