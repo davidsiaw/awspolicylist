@@ -467,6 +467,28 @@ serviceMap:
     - glue:SubnetIds
     - glue:VpcIds
     HasResource: true
+  AWS Billing And Cost Management Data Exports:
+    StringPrefix: bcm-data-exports
+    Actions:
+    - CreateExport
+    - DeleteExport
+    - GetExecution
+    - GetExport
+    - GetTable
+    - ListExecutions
+    - ListExports
+    - ListTables
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateExport
+    ARNFormat: arn:aws:bcm-data-exports:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:bcm-data-exports:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon CloudWatch Evidently:
     StringPrefix: evidently
     Actions:
@@ -1657,6 +1679,15 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon EKS Auth:
+    StringPrefix: eks-auth
+    Actions:
+    - AssumeRoleForPodIdentity
+    ARNFormat: arn:aws:eks:${Region}:${Account}:${ResourceType}/${RelativeId}
+    ARNRegex: "^arn:aws:eks:.+"
+    conditionKeys:
+    - aws:ResourceTag/${TagKey}
+    HasResource: true
   Amazon EventBridge:
     StringPrefix: events
     Actions:
@@ -1709,6 +1740,7 @@ serviceMap:
     - PutTargets
     - RemovePermission
     - RemoveTargets
+    - RetrieveConnectionCredentials
     - StartReplay
     - TagResource
     - TestEventPattern
@@ -2902,18 +2934,22 @@ serviceMap:
     - CreateAlertManagerDefinition
     - CreateLoggingConfiguration
     - CreateRuleGroupsNamespace
+    - CreateScraper
     - CreateWorkspace
     - DeleteAlertManagerDefinition
     - DeleteAlertManagerSilence
     - DeleteLoggingConfiguration
     - DeleteRuleGroupsNamespace
+    - DeleteScraper
     - DeleteWorkspace
     - DescribeAlertManagerDefinition
     - DescribeLoggingConfiguration
     - DescribeRuleGroupsNamespace
+    - DescribeScraper
     - DescribeWorkspace
     - GetAlertManagerSilence
     - GetAlertManagerStatus
+    - GetDefaultScraperConfiguration
     - GetLabels
     - GetMetricMetadata
     - GetSeries
@@ -2924,6 +2960,7 @@ serviceMap:
     - ListAlerts
     - ListRuleGroupsNamespaces
     - ListRules
+    - ListScrapers
     - ListTagsForResource
     - ListWorkspaces
     - PutAlertManagerDefinition
@@ -6746,11 +6783,13 @@ serviceMap:
     - CreateEksAnywhereSubscription
     - CreateFargateProfile
     - CreateNodegroup
+    - CreatePodIdentityAssociation
     - DeleteAddon
     - DeleteCluster
     - DeleteEksAnywhereSubscription
     - DeleteFargateProfile
     - DeleteNodegroup
+    - DeletePodIdentityAssociation
     - DeregisterCluster
     - DescribeAddon
     - DescribeAddonConfiguration
@@ -6760,6 +6799,7 @@ serviceMap:
     - DescribeFargateProfile
     - DescribeIdentityProviderConfig
     - DescribeNodegroup
+    - DescribePodIdentityAssociation
     - DescribeUpdate
     - DisassociateIdentityProviderConfig
     - ListAddons
@@ -6768,6 +6808,7 @@ serviceMap:
     - ListFargateProfiles
     - ListIdentityProviderConfigs
     - ListNodegroups
+    - ListPodIdentityAssociations
     - ListTagsForResource
     - ListUpdates
     - RegisterCluster
@@ -6779,6 +6820,7 @@ serviceMap:
     - UpdateEksAnywhereSubscription
     - UpdateNodegroupConfig
     - UpdateNodegroupVersion
+    - UpdatePodIdentityAssociation
     ARNFormat: arn:aws:eks:${Region}:${Account}:${ResourceType}/${RelativeId}
     ARNRegex: "^arn:aws:eks:.+"
     conditionKeys:
@@ -7276,17 +7318,30 @@ serviceMap:
     Actions:
     - CreateConnection
     - CreateHost
+    - CreateRepositoryLink
+    - CreateSyncConfiguration
     - DeleteConnection
     - DeleteHost
+    - DeleteRepositoryLink
+    - DeleteSyncConfiguration
     - GetConnection
     - GetHost
     - GetIndividualAccessToken
     - GetInstallationUrl
+    - GetRepositoryLink
+    - GetRepositorySyncStatus
+    - GetResourceSyncStatus
+    - GetSyncBlockerSummary
+    - GetSyncConfiguration
     - ListConnections
     - ListHosts
     - ListInstallationTargets
+    - ListRepositoryLinks
+    - ListRepositorySyncDefinitions
+    - ListSyncConfigurations
     - ListTagsForResource
     - PassConnection
+    - PassRepository
     - RegisterAppCode
     - StartAppRegistrationHandshake
     - StartOAuthHandshake
@@ -7294,6 +7349,9 @@ serviceMap:
     - UntagResource
     - UpdateConnectionInstallation
     - UpdateHost
+    - UpdateRepositoryLink
+    - UpdateSyncBlocker
+    - UpdateSyncConfiguration
     - UseConnection
     ARNFormat: arn:aws:codestar-connections:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:codestar-connections:.+:.+:.+"
@@ -7301,6 +7359,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - codestar-connections:Branch
     - codestar-connections:BranchName
     - codestar-connections:FullRepositoryId
     - codestar-connections:HostArn
@@ -9938,6 +9997,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - redshift:AllowWrites
     - redshift:ConsumerArn
     - redshift:ConsumerIdentifier
     - redshift:DbName
@@ -10141,6 +10201,8 @@ serviceMap:
     - Invoke
     - InvokeRpcBitcoinMainnet
     - InvokeRpcBitcoinTestnet
+    - InvokeRpcPolygonMainnet
+    - InvokeRpcPolygonMumbaiTestnet
     - ListAccessors
     - ListInvitations
     - ListMembers
@@ -12537,6 +12599,17 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Cost Optimization Hub:
+    StringPrefix: cost-optimization-hub
+    Actions:
+    - GetPreferences
+    - GetRecommendation
+    - ListEnrollmentStatuses
+    - ListRecommendationSummaries
+    - ListRecommendations
+    - UpdateEnrollmentStatus
+    - UpdatePreferences
+    HasResource: false
   AWS Resource Groups:
     StringPrefix: resource-groups
     Actions:
@@ -13075,6 +13148,7 @@ serviceMap:
     - GenerateRecommendations
     - GetCustomization
     - ListCustomizationPermissions
+    - ListCustomizationVersions
     - ListCustomizations
     - ListProfiles
     - ListTagsForResource
@@ -13489,6 +13563,7 @@ serviceMap:
     - DisableInsightRules
     - EnableAlarmActions
     - EnableInsightRules
+    - GenerateQuery
     - GetDashboard
     - GetInsightRuleReport
     - GetMetricData
@@ -16701,14 +16776,17 @@ serviceMap:
     Actions:
     - AddListenerCertificates
     - AddTags
+    - AddTrustStoreRevocations
     - CreateListener
     - CreateLoadBalancer
     - CreateRule
     - CreateTargetGroup
+    - CreateTrustStore
     - DeleteListener
     - DeleteLoadBalancer
     - DeleteRule
     - DeleteTargetGroup
+    - DeleteTrustStore
     - DeregisterTargets
     - DescribeAccountLimits
     - DescribeListenerCertificates
@@ -16721,14 +16799,21 @@ serviceMap:
     - DescribeTargetGroupAttributes
     - DescribeTargetGroups
     - DescribeTargetHealth
+    - DescribeTrustStoreAssociations
+    - DescribeTrustStoreRevocations
+    - DescribeTrustStores
+    - GetTrustStoreCaCertificatesBundle
+    - GetTrustStoreRevocationContent
     - ModifyListener
     - ModifyLoadBalancerAttributes
     - ModifyRule
     - ModifyTargetGroup
     - ModifyTargetGroupAttributes
+    - ModifyTrustStore
     - RegisterTargets
     - RemoveListenerCertificates
     - RemoveTags
+    - RemoveTrustStoreRevocations
     - SetIpAddressType
     - SetRulePriorities
     - SetSecurityGroups
@@ -17177,6 +17262,7 @@ serviceMap:
     - CancelExportTask
     - CreateDelivery
     - CreateExportTask
+    - CreateLogAnomalyDetector
     - CreateLogDelivery
     - CreateLogGroup
     - CreateLogStream
@@ -17187,6 +17273,7 @@ serviceMap:
     - DeleteDeliveryDestinationPolicy
     - DeleteDeliverySource
     - DeleteDestination
+    - DeleteLogAnomalyDetector
     - DeleteLogDelivery
     - DeleteLogGroup
     - DeleteLogStream
@@ -17215,12 +17302,15 @@ serviceMap:
     - GetDeliveryDestination
     - GetDeliveryDestinationPolicy
     - GetDeliverySource
+    - GetLogAnomalyDetector
     - GetLogDelivery
     - GetLogEvents
     - GetLogGroupFields
     - GetLogRecord
     - GetQueryResults
     - Link
+    - ListAnomalies
+    - ListLogAnomalyDetectors
     - ListLogDeliveries
     - ListTagsForResource
     - ListTagsLogGroup
@@ -17247,6 +17337,8 @@ serviceMap:
     - Unmask
     - UntagLogGroup
     - UntagResource
+    - UpdateAnomaly
+    - UpdateLogAnomalyDetector
     - UpdateLogDelivery
     ARNFormat: arn:aws:logs:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:logs:.+"
