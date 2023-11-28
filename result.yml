@@ -227,6 +227,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateFileSystem
+    - UpdateFileSystemProtection
     ARNFormat: arn:aws:elasticfilesystem:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:elasticfilesystem:.+"
     conditionKeys:
@@ -5950,6 +5951,43 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS B2B Data Interchange:
+    StringPrefix: b2bi
+    Actions:
+    - CreateCapability
+    - CreatePartnership
+    - CreateProfile
+    - CreateTransformer
+    - DeleteCapability
+    - DeletePartnership
+    - DeleteProfile
+    - DeleteTransformer
+    - GetCapability
+    - GetPartnership
+    - GetProfile
+    - GetTransformer
+    - GetTransformerJob
+    - ListCapabilities
+    - ListPartnerships
+    - ListProfiles
+    - ListTagsForResource
+    - ListTransformers
+    - StartTransformerJob
+    - TagResource
+    - TestMapping
+    - TestParsing
+    - UntagResource
+    - UpdateCapability
+    - UpdatePartnership
+    - UpdateProfile
+    - UpdateTransformer
+    ARNFormat: arn:aws:b2bi:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:b2bi:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Trusted Advisor:
     StringPrefix: trustedadvisor
     Actions:
@@ -6104,6 +6142,25 @@ serviceMap:
     - UntagResource
     ARNFormat: arn:aws:config:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:config:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  AWS Diagnostic tools:
+    StringPrefix: ts
+    Actions:
+    - GetExecution
+    - GetExecutionOutput
+    - GetTool
+    - ListExecutions
+    - ListTagsForResource
+    - ListTools
+    - StartExecution
+    - TagResource
+    - UntagResource
+    ARNFormat: arn:aws:ts::${Account}:execution/${UserId}/${ToolId}/${ExecutionId}
+    ARNRegex: "^arn:aws:ts:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -6446,6 +6503,7 @@ serviceMap:
     - GetApiAssociation
     - GetApiCache
     - GetDataSource
+    - GetDataSourceIntrospection
     - GetDomainName
     - GetFunction
     - GetGraphqlApi
@@ -6470,6 +6528,7 @@ serviceMap:
     - PutResourcePolicy
     - SetWebACL
     - SourceGraphQL
+    - StartDataSourceIntrospection
     - StartSchemaCreation
     - StartSchemaMerge
     - TagResource
@@ -8539,8 +8598,11 @@ serviceMap:
     - DeregisterOrganizationDelegatedAdmin
     - DescribeQuery
     - DescribeTrails
+    - DisableFederation
+    - EnableFederation
     - GetChannel
     - GetEventDataStore
+    - GetEventDataStoreData
     - GetEventSelectors
     - GetImport
     - GetInsightSelectors
@@ -9580,6 +9642,7 @@ serviceMap:
     - DescribeStateMachineForExecution
     - GetActivityTask
     - GetExecutionHistory
+    - InvokeHTTPEndpoint
     - ListActivities
     - ListExecutions
     - ListMapRuns
@@ -9589,6 +9652,7 @@ serviceMap:
     - ListTagsForResource
     - PublishStateMachineVersion
     - RedriveExecution
+    - RevealSecrets
     - SendTaskFailure
     - SendTaskHeartbeat
     - SendTaskSuccess
@@ -9596,6 +9660,7 @@ serviceMap:
     - StartSyncExecution
     - StopExecution
     - TagResource
+    - TestState
     - UntagResource
     - UpdateMapRun
     - UpdateStateMachine
@@ -9606,6 +9671,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - states:HTTPEndpoint
+    - states:HTTPMethod
     - states:StateMachineQualifier
     HasResource: true
   Amazon Connect Wisdom:
@@ -10087,6 +10154,27 @@ serviceMap:
     ARNFormat: arn:${Partition}:Marketplace:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:${Partition}:Marketplace:.+"
     HasResource: false
+  AWS re:Post Private:
+    StringPrefix: repostspace
+    Actions:
+    - CreateSpace
+    - DeleteSpace
+    - DeregisterAdmin
+    - GetSpace
+    - ListSpaces
+    - ListTagsForResource
+    - RegisterAdmin
+    - SendInvites
+    - TagResource
+    - UntagResource
+    - UpdateSpace
+    ARNFormat: arn:aws:repostspace:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:repostspace:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Comprehend Medical:
     StringPrefix: comprehendmedical
     Actions:
@@ -11610,6 +11698,8 @@ serviceMap:
     - CreateLegalHold
     - CreateLogicallyAirGappedBackupVault
     - CreateReportPlan
+    - CreateRestoreTestingPlan
+    - CreateRestoreTestingSelection
     - DeleteBackupPlan
     - DeleteBackupSelection
     - DeleteBackupVault
@@ -11620,6 +11710,8 @@ serviceMap:
     - DeleteFramework
     - DeleteRecoveryPoint
     - DeleteReportPlan
+    - DeleteRestoreTestingPlan
+    - DeleteRestoreTestingSelection
     - DescribeBackupJob
     - DescribeBackupVault
     - DescribeCopyJob
@@ -11643,6 +11735,10 @@ serviceMap:
     - GetBackupVaultSharingPolicy
     - GetLegalHold
     - GetRecoveryPointRestoreMetadata
+    - GetRestoreJobMetadata
+    - GetRestoreTestingInferredMetadata
+    - GetRestoreTestingPlan
+    - GetRestoreTestingSelection
     - GetSupportedResourceTypes
     - ListBackupJobSummaries
     - ListBackupJobs
@@ -11664,11 +11760,15 @@ serviceMap:
     - ListReportPlans
     - ListRestoreJobSummaries
     - ListRestoreJobs
+    - ListRestoreJobsByProtectedResource
+    - ListRestoreTestingPlans
+    - ListRestoreTestingSelections
     - ListTags
     - PutBackupVaultAccessPolicy
     - PutBackupVaultLockConfiguration
     - PutBackupVaultNotifications
     - PutBackupVaultSharingPolicy
+    - PutRestoreValidationResult
     - StartBackupJob
     - StartCopyJob
     - StartReportJob
@@ -11682,6 +11782,8 @@ serviceMap:
     - UpdateRecoveryPointLifecycle
     - UpdateRegionSettings
     - UpdateReportPlan
+    - UpdateRestoreTestingPlan
+    - UpdateRestoreTestingSelection
     ARNFormat: arn:aws:backup:${Region}:${Account}:${ResourceType}:${ResourceName}
     ARNRegex: "^arn:aws:backup:.+:.+:.+"
     conditionKeys:
@@ -12176,6 +12278,7 @@ serviceMap:
     - DeleteCallAnalyticsCategory
     - DeleteCallAnalyticsJob
     - DeleteLanguageModel
+    - DeleteMedicalScribeJob
     - DeleteMedicalTranscriptionJob
     - DeleteMedicalVocabulary
     - DeleteTranscriptionJob
@@ -12184,6 +12287,7 @@ serviceMap:
     - DescribeLanguageModel
     - GetCallAnalyticsCategory
     - GetCallAnalyticsJob
+    - GetMedicalScribeJob
     - GetMedicalTranscriptionJob
     - GetMedicalVocabulary
     - GetTranscriptionJob
@@ -12192,6 +12296,7 @@ serviceMap:
     - ListCallAnalyticsCategories
     - ListCallAnalyticsJobs
     - ListLanguageModels
+    - ListMedicalScribeJobs
     - ListMedicalTranscriptionJobs
     - ListMedicalVocabularies
     - ListTagsForResource
@@ -12201,6 +12306,7 @@ serviceMap:
     - StartCallAnalyticsJob
     - StartCallAnalyticsStreamTranscription
     - StartCallAnalyticsStreamTranscriptionWebSocket
+    - StartMedicalScribeJob
     - StartMedicalStreamTranscription
     - StartMedicalStreamTranscriptionWebSocket
     - StartMedicalTranscriptionJob
@@ -13855,6 +13961,7 @@ serviceMap:
   AWS Secrets Manager:
     StringPrefix: secretsmanager
     Actions:
+    - BatchGetSecretValue
     - CancelRotateSecret
     - CreateSecret
     - DeleteResourcePolicy
@@ -13945,6 +14052,7 @@ serviceMap:
     - BypassSnaplockEnterpriseRetention
     - CancelDataRepositoryTask
     - CopyBackup
+    - CopySnapshotAndUpdateVolume
     - CreateBackup
     - CreateDataRepositoryAssociation
     - CreateDataRepositoryTask
@@ -13969,6 +14077,7 @@ serviceMap:
     - DescribeFileCaches
     - DescribeFileSystemAliases
     - DescribeFileSystems
+    - DescribeSharedVpcConfiguration
     - DescribeSnapshots
     - DescribeStorageVirtualMachines
     - DescribeVolumes
@@ -13984,6 +14093,7 @@ serviceMap:
     - UpdateDataRepositoryAssociation
     - UpdateFileCache
     - UpdateFileSystem
+    - UpdateSharedVpcConfiguration
     - UpdateSnapshot
     - UpdateStorageVirtualMachine
     - UpdateVolume
@@ -17966,6 +18076,7 @@ serviceMap:
     - DescribeSchema
     - DescribeSolution
     - DescribeSolutionVersion
+    - GetActionRecommendations
     - GetDataInsights
     - GetPersonalizedRanking
     - GetRecommendations
@@ -17988,6 +18099,8 @@ serviceMap:
     - ListSolutionVersions
     - ListSolutions
     - ListTagsForResource
+    - PutActionInteractions
+    - PutActions
     - PutEvents
     - PutItems
     - PutUsers
@@ -18093,22 +18206,28 @@ serviceMap:
     - EnableOrganizationAdminAccount
     - GetFreeTrialEligibility
     - GetGraphIngestState
+    - GetInvestigation
     - GetMembers
     - GetPricingInformation
     - GetUsageInformation
+    - InvokeAssistant
     - ListDatasourcePackages
     - ListGraphs
     - ListHighDegreeEntities
+    - ListIndicators
+    - ListInvestigations
     - ListInvitations
     - ListMembers
     - ListOrganizationAdminAccount
     - ListTagsForResource
     - RejectInvitation
     - SearchGraph
+    - StartInvestigation
     - StartMonitoringMember
     - TagResource
     - UntagResource
     - UpdateDatasourcePackages
+    - UpdateInvestigationState
     - UpdateOrganizationConfiguration
     ARNFormat: arn:aws:detective:${Region}:${Account}:graph:${GraphId}
     ARNRegex: "^arn:aws:detective:.+"
@@ -18237,6 +18356,8 @@ serviceMap:
     Actions:
     - ApplyArchiveRule
     - CancelPolicyGeneration
+    - CheckAccessNotGranted
+    - CheckNoNewAccess
     - CreateAccessPreview
     - CreateAnalyzer
     - CreateArchiveRule
@@ -18247,6 +18368,7 @@ serviceMap:
     - GetAnalyzer
     - GetArchiveRule
     - GetFinding
+    - GetFindingsStatistics
     - GetGeneratedPolicy
     - ListAccessPreviewFindings
     - ListAccessPreviews
@@ -18874,6 +18996,7 @@ serviceMap:
     - BatchDisableStandards
     - BatchEnableStandards
     - BatchGetAutomationRules
+    - BatchGetConfigurationPolicyAssociations
     - BatchGetControlEvaluations
     - BatchGetSecurityControls
     - BatchGetStandardsControlAssociations
@@ -18883,11 +19006,13 @@ serviceMap:
     - BatchUpdateStandardsControlAssociations
     - CreateActionTarget
     - CreateAutomationRule
+    - CreateConfigurationPolicy
     - CreateFindingAggregator
     - CreateInsight
     - CreateMembers
     - DeclineInvitations
     - DeleteActionTarget
+    - DeleteConfigurationPolicy
     - DeleteFindingAggregator
     - DeleteInsight
     - DeleteInvitations
@@ -18909,6 +19034,8 @@ serviceMap:
     - EnableSecurityHub
     - GetAdhocInsightResults
     - GetAdministratorAccount
+    - GetConfigurationPolicy
+    - GetConfigurationPolicyAssociation
     - GetControlFindingSummary
     - GetEnabledStandards
     - GetFindingAggregator
@@ -18922,9 +19049,12 @@ serviceMap:
     - GetInvitationsCount
     - GetMasterAccount
     - GetMembers
+    - GetSecurityControlDefinition
     - GetUsage
     - InviteMembers
     - ListAutomationRules
+    - ListConfigurationPolicies
+    - ListConfigurationPolicyAssociations
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
     - ListFindingAggregators
@@ -18936,13 +19066,17 @@ serviceMap:
     - ListTagsForResource
     - SendFindingEvents
     - SendInsightEvents
+    - StartConfigurationPolicyAssociation
+    - StartConfigurationPolicyDisassociation
     - TagResource
     - UntagResource
     - UpdateActionTarget
+    - UpdateConfigurationPolicy
     - UpdateFindingAggregator
     - UpdateFindings
     - UpdateInsight
     - UpdateOrganizationConfiguration
+    - UpdateSecurityControl
     - UpdateSecurityHubConfiguration
     - UpdateStandardsControl
     ARNFormat: arn:aws:securityhub:${Region}:${Account}:.+
@@ -19060,6 +19194,33 @@ serviceMap:
     - UntagQueue
     ARNFormat: arn:aws:sqs:${Region}:${Account}:${QueueName}
     ARNRegex: "^arn:aws:sqs:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  Amazon WorkSpaces Thin Client:
+    StringPrefix: thinclient
+    Actions:
+    - CreateEnvironment
+    - DeleteDevice
+    - DeleteEnvironment
+    - DeregisterDevice
+    - GetDevice
+    - GetEnvironment
+    - GetSoftwareSet
+    - ListDeviceSessions
+    - ListDevices
+    - ListEnvironments
+    - ListSoftwareSets
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateDevice
+    - UpdateEnvironment
+    - UpdateSoftwareSet
+    ARNFormat: arn:aws:thinclient:${Region}:${Account}:${ResourceType}/${ResourceIdentifier}
+    ARNRegex: "^arn:aws:thinclient:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
