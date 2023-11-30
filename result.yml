@@ -1068,6 +1068,20 @@ serviceMap:
     ARNFormat: arn:aws:aws-marketplace::${Account}:${Catalog}/${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:aws-marketplace:.+"
     HasResource: true
+  AWS Marketplace Deployment Service:
+    StringPrefix: aws-marketplace
+    Actions:
+    - ListTagsForResource
+    - PutDeploymentParameter
+    - TagResource
+    - UntagResource
+    ARNFormat: arn:aws:aws-marketplace:${Region}:${Account}:${ResourceType}:catalogs/${CatalogName}/products/${ProductId}/${ResourceId}
+    ARNRegex: "^arn:aws:aws-marketplace:${Region}:${Account}:${ResourceType}:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Marketplace Discovery:
     StringPrefix: aws-marketplace
     Actions:
@@ -4118,9 +4132,11 @@ serviceMap:
     Actions:
     - AcceptInboundConnection
     - AcceptInboundCrossClusterSearchConnection
+    - AddDataSource
     - AddTags
     - AssociatePackage
     - AuthorizeVpcEndpointAccess
+    - CancelDomainConfigChange
     - CancelElasticsearchServiceSoftwareUpdate
     - CancelServiceSoftwareUpdate
     - CreateDomain
@@ -4131,6 +4147,7 @@ serviceMap:
     - CreatePackage
     - CreateServiceRole
     - CreateVpcEndpoint
+    - DeleteDataSource
     - DeleteDomain
     - DeleteElasticsearchDomain
     - DeleteElasticsearchServiceRole
@@ -4173,10 +4190,12 @@ serviceMap:
     - ESHttpPut
     - GetCompatibleElasticsearchVersions
     - GetCompatibleVersions
+    - GetDataSource
     - GetDomainMaintenanceStatus
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
+    - ListDataSources
     - ListDomainMaintenances
     - ListDomainNames
     - ListDomainsForPackage
@@ -4200,6 +4219,7 @@ serviceMap:
     - StartDomainMaintenance
     - StartElasticsearchServiceSoftwareUpdate
     - StartServiceSoftwareUpdate
+    - UpdateDataSource
     - UpdateDomainConfig
     - UpdateElasticsearchDomainConfig
     - UpdatePackage
@@ -4552,46 +4572,63 @@ serviceMap:
     - BatchGetSchema
     - CreateAnalysisTemplate
     - CreateCollaboration
+    - CreateConfiguredAudienceModelAssociation
     - CreateConfiguredTable
     - CreateConfiguredTableAnalysisRule
     - CreateConfiguredTableAssociation
     - CreateMembership
+    - CreatePrivacyBudgetTemplate
     - DeleteAnalysisTemplate
     - DeleteCollaboration
+    - DeleteConfiguredAudienceModelAssociation
     - DeleteConfiguredTable
     - DeleteConfiguredTableAnalysisRule
     - DeleteConfiguredTableAssociation
     - DeleteMember
     - DeleteMembership
+    - DeletePrivacyBudgetTemplate
     - GetAnalysisTemplate
     - GetCollaboration
     - GetCollaborationAnalysisTemplate
+    - GetCollaborationConfiguredAudienceModelAssociation
+    - GetCollaborationPrivacyBudgetTemplate
+    - GetConfiguredAudienceModelAssociation
     - GetConfiguredTable
     - GetConfiguredTableAnalysisRule
     - GetConfiguredTableAssociation
     - GetMembership
+    - GetPrivacyBudgetTemplate
     - GetProtectedQuery
     - GetSchema
     - GetSchemaAnalysisRule
     - ListAnalysisTemplates
     - ListCollaborationAnalysisTemplates
+    - ListCollaborationConfiguredAudienceModelAssociations
+    - ListCollaborationPrivacyBudgetTemplates
+    - ListCollaborationPrivacyBudgets
     - ListCollaborations
+    - ListConfiguredAudienceModelAssociations
     - ListConfiguredTableAssociations
     - ListConfiguredTables
     - ListMembers
     - ListMemberships
+    - ListPrivacyBudgetTemplates
+    - ListPrivacyBudgets
     - ListProtectedQueries
     - ListSchemas
     - ListTagsForResource
+    - PreviewPrivacyImpact
     - StartProtectedQuery
     - TagResource
     - UntagResource
     - UpdateAnalysisTemplate
     - UpdateCollaboration
+    - UpdateConfiguredAudienceModelAssociation
     - UpdateConfiguredTable
     - UpdateConfiguredTableAnalysisRule
     - UpdateConfiguredTableAssociation
     - UpdateMembership
+    - UpdatePrivacyBudgetTemplate
     - UpdateProtectedQuery
     ARNFormat: arn:aws:cleanrooms:${Region}:${Account}:${ResourceType}/${PathToResource}
     ARNRegex: "^arn:aws:cleanrooms:.+"
@@ -6303,6 +6340,42 @@ serviceMap:
     ARNFormat: arn:aws:iq-permission:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:iq-permission:.+"
     HasResource: true
+  AWS Clean Rooms ML:
+    StringPrefix: cleanrooms-ml
+    Actions:
+    - CreateAudienceModel
+    - CreateConfiguredAudienceModel
+    - CreateTrainingDataset
+    - DeleteAudienceGenerationJob
+    - DeleteAudienceModel
+    - DeleteConfiguredAudienceModel
+    - DeleteConfiguredAudienceModelPolicy
+    - DeleteTrainingDataset
+    - GetAudienceGenerationJob
+    - GetAudienceModel
+    - GetConfiguredAudienceModel
+    - GetConfiguredAudienceModelPolicy
+    - GetTrainingDataset
+    - ListAudienceExportJobs
+    - ListAudienceGenerationJobs
+    - ListAudienceModels
+    - ListConfiguredAudienceModels
+    - ListTagsForResource
+    - ListTrainingDatasets
+    - PutConfiguredAudienceModelPolicy
+    - StartAudienceExportJob
+    - StartAudienceGenerationJob
+    - TagResource
+    - UnTagResource
+    - UpdateConfiguredAudienceModel
+    ARNFormat: arn:aws:cleanrooms-ml:${Region}:${Account}:${ResourceType}/${ResourceIdentifier}
+    ARNRegex: "^arn:aws:cleanrooms-ml:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - cleanrooms-ml:CollaborationId
+    HasResource: true
   AWS Elemental MediaPackage VOD:
     StringPrefix: mediapackage-vod
     Actions:
@@ -7416,15 +7489,23 @@ serviceMap:
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
-    - CreateAgentDraftSnapshot
     - CreateDataSource
     - CreateFoundationModelAgreement
+    - CreateGuardrail
+    - CreateGuardrailVersion
     - CreateKnowledgeBase
     - CreateModelCustomizationJob
+    - CreateModelEvaluationJob
+    - CreateModelInvocationJob
     - CreateProvisionedModelThroughput
+    - DeleteAgent
+    - DeleteAgentActionGroup
+    - DeleteAgentAlias
+    - DeleteAgentVersion
     - DeleteCustomModel
     - DeleteDataSource
     - DeleteFoundationModelAgreement
+    - DeleteGuardrail
     - DeleteKnowledgeBase
     - DeleteModelInvocationLoggingConfiguration
     - DeleteProvisionedModelThroughput
@@ -7438,9 +7519,12 @@ serviceMap:
     - GetDataSource
     - GetFoundationModel
     - GetFoundationModelAvailability
+    - GetGuardrail
     - GetIngestionJob
     - GetKnowledgeBase
     - GetModelCustomizationJob
+    - GetModelEvaluationJob
+    - GetModelInvocationJob
     - GetModelInvocationLoggingConfiguration
     - GetProvisionedModelThroughput
     - GetUseCaseForModelAccess
@@ -7456,17 +7540,23 @@ serviceMap:
     - ListDataSources
     - ListFoundationModelAgreementOffers
     - ListFoundationModels
+    - ListGuardrails
     - ListIngestionJobs
     - ListKnowledgeBases
     - ListModelCustomizationJobs
+    - ListModelEvaluationJobs
+    - ListModelInvocationJobs
     - ListProvisionedModelThroughputs
     - ListTagsForResource
+    - PrepareAgent
     - PutFoundationModelEntitlement
     - PutModelInvocationLoggingConfiguration
     - PutUseCaseForModelAccess
-    - QueryKnowledgeBase
+    - Retrieve
+    - RetrieveAndGenerate
     - StartIngestionJob
     - StopModelCustomizationJob
+    - StopModelInvocationJob
     - TagResource
     - UntagResource
     - UpdateAgent
@@ -7474,6 +7564,7 @@ serviceMap:
     - UpdateAgentAlias
     - UpdateAgentKnowledgeBase
     - UpdateDataSource
+    - UpdateGuardrail
     - UpdateKnowledgeBase
     - UpdateProvisionedModelThroughput
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
@@ -11700,6 +11791,7 @@ serviceMap:
     - CreateArtifact
     - CreateAutoMLJob
     - CreateAutoMLJobV2
+    - CreateCluster
     - CreateCodeRepository
     - CreateCompilationJob
     - CreateContext
@@ -11756,6 +11848,7 @@ serviceMap:
     - DeleteAppImageConfig
     - DeleteArtifact
     - DeleteAssociation
+    - DeleteCluster
     - DeleteCodeRepository
     - DeleteContext
     - DeleteDataQualityJobDefinition
@@ -11807,6 +11900,8 @@ serviceMap:
     - DescribeArtifact
     - DescribeAutoMLJob
     - DescribeAutoMLJobV2
+    - DescribeCluster
+    - DescribeClusterNode
     - DescribeCodeRepository
     - DescribeCompilationJob
     - DescribeContext
@@ -11886,6 +11981,8 @@ serviceMap:
     - ListAssociations
     - ListAutoMLJobs
     - ListCandidatesForAutoMLJob
+    - ListClusterNodes
+    - ListClusters
     - ListCodeRepositories
     - ListCompilationJobs
     - ListContexts
@@ -11990,6 +12087,7 @@ serviceMap:
     - UpdateAction
     - UpdateAppImageConfig
     - UpdateArtifact
+    - UpdateCluster
     - UpdateCodeRepository
     - UpdateContext
     - UpdateDeviceFleet
@@ -12057,11 +12155,13 @@ serviceMap:
     - sagemaker:ModelArn
     - sagemaker:NetworkIsolation
     - sagemaker:OutputKmsKey
+    - sagemaker:OwnerUserProfileArn
     - sagemaker:ResourceTag/
     - sagemaker:ResourceTag/${TagKey}
     - sagemaker:RootAccess
     - sagemaker:ServerlessMaxConcurrency
     - sagemaker:ServerlessMemorySize
+    - sagemaker:SpaceSharingType
     - sagemaker:TaggingAction
     - sagemaker:TargetModel
     - sagemaker:VolumeKmsKey
@@ -13569,6 +13669,7 @@ serviceMap:
     - GetConnection
     - GetNotebook
     - GetNotebookVersion
+    - GetQSqlRecommendations
     - GetQueryExecutionHistory
     - GetSavedQuery
     - GetSchemaInference
@@ -13595,6 +13696,7 @@ serviceMap:
     - UpdateAccountConnectionSettings
     - UpdateAccountExportSettings
     - UpdateAccountGeneralSettings
+    - UpdateAccountQSqlSettings
     - UpdateChart
     - UpdateConnection
     - UpdateFileFolder
@@ -19688,6 +19790,47 @@ serviceMap:
     - UpdateConnector
     ARNFormat: arn:aws:kafkaconnect:${Region}:${Account}:${ResourceType}/${ResourceName}/${UUID}
     ARNRegex: "^arn:aws:kafkaconnect:.+"
+    HasResource: true
+  Amazon Neptune Analytics:
+    StringPrefix: neptune-graph
+    Actions:
+    - CancelImportTask
+    - CancelQuery
+    - CreateGraph
+    - CreateGraphSnapshot
+    - CreateGraphUsingImportTask
+    - CreatePrivateGraphEndpoint
+    - DeleteDataViaQuery
+    - DeleteGraph
+    - DeleteGraphSnapshot
+    - DeletePrivateGraphEndpoint
+    - GetEngineStatus
+    - GetGraph
+    - GetGraphSnapshot
+    - GetGraphSummary
+    - GetImportTask
+    - GetPrivateGraphEndpoint
+    - GetQueryStatus
+    - GetStatisticsStatus
+    - ListGraphSnapshots
+    - ListGraphs
+    - ListImportTasks
+    - ListPrivateGraphEndpoints
+    - ListQueries
+    - ListTagsForResource
+    - ReadDataViaQuery
+    - ResetGraph
+    - RestoreGraphFromSnapshot
+    - TagResource
+    - UntagResource
+    - UpdateGraph
+    - WriteDataViaQuery
+    ARNFormat: arn:aws:neptune-graph:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:neptune-graph:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon EC2 Image Builder:
     StringPrefix: imagebuilder
