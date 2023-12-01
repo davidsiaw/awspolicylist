@@ -7002,11 +7002,15 @@ serviceMap:
   Amazon CloudWatch:
     StringPrefix: cloudwatch
     Actions:
+    - BatchGetServiceLevelIndicatorReport
+    - BatchGetServiceLevelObjectiveBudgetReport
+    - CreateServiceLevelObjective
     - DeleteAlarms
     - DeleteAnomalyDetector
     - DeleteDashboards
     - DeleteInsightRules
     - DeleteMetricStream
+    - DeleteServiceLevelObjective
     - DescribeAlarmHistory
     - DescribeAlarms
     - DescribeAlarmsForMetric
@@ -7016,6 +7020,7 @@ serviceMap:
     - DisableInsightRules
     - EnableAlarmActions
     - EnableInsightRules
+    - EnableTopologyDiscovery
     - GenerateQuery
     - GetDashboard
     - GetInsightRuleReport
@@ -7023,11 +7028,18 @@ serviceMap:
     - GetMetricStatistics
     - GetMetricStream
     - GetMetricWidgetImage
+    - GetService
+    - GetServiceData
+    - GetServiceLevelObjective
+    - GetTopologyDiscoveryStatus
+    - GetTopologyMap
     - Link
     - ListDashboards
     - ListManagedInsightRules
     - ListMetricStreams
     - ListMetrics
+    - ListServiceLevelObjectives
+    - ListServices
     - ListTagsForResource
     - PutAnomalyDetector
     - PutCompositeAlarm
@@ -7042,6 +7054,7 @@ serviceMap:
     - StopMetricStreams
     - TagResource
     - UntagResource
+    - UpdateServiceLevelObjective
     ARNFormat: arn:aws:cloudwatch:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:cloudwatch:.+"
     conditionKeys:
@@ -14301,6 +14314,7 @@ serviceMap:
     - FailoverGlobalReplicationGroup
     - IncreaseNodeGroupsInGlobalReplicationGroup
     - IncreaseReplicaCount
+    - InterruptClusterAzPower
     - ListAllowedNodeTypeModifications
     - ListTagsForResource
     - ModifyCacheCluster
@@ -15999,10 +16013,15 @@ serviceMap:
     StringPrefix: arc-zonal-shift
     Actions:
     - CancelZonalShift
+    - CreatePracticeRunConfiguration
+    - DeletePracticeRunConfiguration
     - GetManagedResource
+    - ListAutoshifts
     - ListManagedResources
     - ListZonalShifts
     - StartZonalShift
+    - UpdatePracticeRunConfiguration
+    - UpdateZonalAutoshiftConfiguration
     - UpdateZonalShift
     ARNFormat: arn:aws:arc-zonal-shift:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:arc-zonal-shift:.+:.+:.+"
@@ -18770,14 +18789,18 @@ serviceMap:
     - CreateCustomDomainAssociation
     - CreateEndpointAccess
     - CreateNamespace
+    - CreateScheduledAction
     - CreateSnapshot
+    - CreateSnapshotCopyConfiguration
     - CreateUsageLimit
     - CreateWorkgroup
     - DeleteCustomDomainAssociation
     - DeleteEndpointAccess
     - DeleteNamespace
     - DeleteResourcePolicy
+    - DeleteScheduledAction
     - DeleteSnapshot
+    - DeleteSnapshotCopyConfiguration
     - DeleteUsageLimit
     - DeleteWorkgroup
     - DescribeOneTimeCredit
@@ -18787,6 +18810,7 @@ serviceMap:
     - GetNamespace
     - GetRecoveryPoint
     - GetResourcePolicy
+    - GetScheduledAction
     - GetSnapshot
     - GetTableRestoreStatus
     - GetUsageLimit
@@ -18795,6 +18819,8 @@ serviceMap:
     - ListEndpointAccess
     - ListNamespaces
     - ListRecoveryPoints
+    - ListScheduledActions
+    - ListSnapshotCopyConfigurations
     - ListSnapshots
     - ListTableRestoreStatus
     - ListTagsForResource
@@ -18803,13 +18829,16 @@ serviceMap:
     - PutResourcePolicy
     - RestoreFromRecoveryPoint
     - RestoreFromSnapshot
+    - RestoreTableFromRecoveryPoint
     - RestoreTableFromSnapshot
     - TagResource
     - UntagResource
     - UpdateCustomDomainAssociation
     - UpdateEndpointAccess
     - UpdateNamespace
+    - UpdateScheduledAction
     - UpdateSnapshot
+    - UpdateSnapshotCopyConfiguration
     - UpdateUsageLimit
     - UpdateWorkgroup
     ARNFormat: arn:aws:redshift-serverless:${Region}:${Account}:${ResourceType}/${ResourcePath}
