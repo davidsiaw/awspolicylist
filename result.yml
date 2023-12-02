@@ -10142,6 +10142,7 @@ serviceMap:
     - BatchGetDevEndpoints
     - BatchGetJobs
     - BatchGetPartition
+    - BatchGetTableOptimizer
     - BatchGetTriggers
     - BatchGetWorkflows
     - BatchStopJobRun
@@ -10169,6 +10170,7 @@ serviceMap:
     - CreateSecurityConfiguration
     - CreateSession
     - CreateTable
+    - CreateTableOptimizer
     - CreateTrigger
     - CreateUserDefinedFunction
     - CreateWorkflow
@@ -10193,6 +10195,7 @@ serviceMap:
     - DeleteSecurityConfiguration
     - DeleteSession
     - DeleteTable
+    - DeleteTableOptimizer
     - DeleteTableVersion
     - DeleteTrigger
     - DeleteUserDefinedFunction
@@ -10206,6 +10209,8 @@ serviceMap:
     - GetClassifiers
     - GetColumnStatisticsForPartition
     - GetColumnStatisticsForTable
+    - GetColumnStatisticsTaskRun
+    - GetColumnStatisticsTaskRuns
     - GetCompletion
     - GetConnection
     - GetConnections
@@ -10251,6 +10256,7 @@ serviceMap:
     - GetSession
     - GetStatement
     - GetTable
+    - GetTableOptimizer
     - GetTableVersion
     - GetTableVersions
     - GetTables
@@ -10267,6 +10273,7 @@ serviceMap:
     - GlueNotebookRefreshCredentials
     - ImportCatalogToGlue
     - ListBlueprints
+    - ListColumnStatisticsTaskRuns
     - ListCrawlers
     - ListCrawls
     - ListCustomEntityTypes
@@ -10282,9 +10289,11 @@ serviceMap:
     - ListSchemas
     - ListSessions
     - ListStatements
+    - ListTableOptimizerRuns
     - ListTriggers
     - ListWorkflows
     - NotifyEvent
+    - PassConnection
     - PublishDataQuality
     - PutDataCatalogEncryptionSettings
     - PutResourcePolicy
@@ -10300,6 +10309,7 @@ serviceMap:
     - SearchTables
     - SendFeedback
     - StartBlueprintRun
+    - StartColumnStatisticsTaskRun
     - StartCompletion
     - StartCrawler
     - StartCrawlerSchedule
@@ -10313,6 +10323,7 @@ serviceMap:
     - StartNotebook
     - StartTrigger
     - StartWorkflowRun
+    - StopColumnStatisticsTaskRun
     - StopCrawler
     - StopCrawlerSchedule
     - StopSession
@@ -10340,6 +10351,7 @@ serviceMap:
     - UpdateSchema
     - UpdateSourceControlFromJob
     - UpdateTable
+    - UpdateTableOptimizer
     - UpdateTrigger
     - UpdateUserDefinedFunction
     - UpdateWorkflow
