@@ -15318,6 +15318,7 @@ serviceMap:
     - DeleteGroup
     - DeleteGroupMembership
     - DeleteIAMPolicyAssignment
+    - DeleteIdentityPropagationConfig
     - DeleteNamespace
     - DeleteRefreshSchedule
     - DeleteRoleCustomPermission
@@ -15394,6 +15395,7 @@ serviceMap:
     - ListGroups
     - ListIAMPolicyAssignments
     - ListIAMPolicyAssignmentsForUser
+    - ListIdentityPropagationConfigs
     - ListIngestions
     - ListKMSKeysForUser
     - ListNamespaces
@@ -15452,6 +15454,7 @@ serviceMap:
     - UpdateFolderPermissions
     - UpdateGroup
     - UpdateIAMPolicyAssignment
+    - UpdateIdentityPropagationConfig
     - UpdateIpRestriction
     - UpdatePublicSharingSettings
     - UpdateRefreshSchedule
