@@ -12680,6 +12680,7 @@ serviceMap:
     - BatchGetPreparedStatement
     - BatchGetQueryExecution
     - CancelCapacityReservation
+    - CancelQueryExecution
     - CreateCapacityReservation
     - CreateDataCatalog
     - CreateNamedQuery
@@ -12699,18 +12700,26 @@ serviceMap:
     - GetCalculationExecutionStatus
     - GetCapacityAssignmentConfiguration
     - GetCapacityReservation
+    - GetCatalogs
     - GetDataCatalog
     - GetDatabase
+    - GetExecutionEngine
+    - GetExecutionEngines
     - GetNamedQuery
+    - GetNamespace
+    - GetNamespaces
     - GetNotebookMetadata
     - GetPreparedStatement
     - GetQueryExecution
+    - GetQueryExecutions
     - GetQueryResults
     - GetQueryResultsStream
     - GetQueryRuntimeStatistics
     - GetSession
     - GetSessionStatus
+    - GetTable
     - GetTableMetadata
+    - GetTables
     - GetWorkGroup
     - ImportNotebook
     - ListApplicationDPUSizes
@@ -12730,6 +12739,7 @@ serviceMap:
     - ListTagsForResource
     - ListWorkGroups
     - PutCapacityAssignmentConfiguration
+    - RunQuery
     - StartCalculationExecution
     - StartQueryExecution
     - StartSession
