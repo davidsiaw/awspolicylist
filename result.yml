@@ -19571,21 +19571,30 @@ serviceMap:
     - CreateKxChangeset
     - CreateKxCluster
     - CreateKxDatabase
+    - CreateKxDataview
     - CreateKxEnvironment
+    - CreateKxScalingGroup
     - CreateKxUser
+    - CreateKxVolume
     - CreateUser
     - DeleteEnvironment
     - DeleteKxCluster
     - DeleteKxDatabase
+    - DeleteKxDataview
     - DeleteKxEnvironment
+    - DeleteKxScalingGroup
     - DeleteKxUser
+    - DeleteKxVolume
     - GetEnvironment
     - GetKxChangeset
     - GetKxCluster
     - GetKxConnectionString
     - GetKxDatabase
+    - GetKxDataview
     - GetKxEnvironment
+    - GetKxScalingGroup
     - GetKxUser
+    - GetKxVolume
     - GetLoadSampleDataSetGroupIntoEnvironmentStatus
     - GetUser
     - ListEnvironments
@@ -19593,8 +19602,11 @@ serviceMap:
     - ListKxClusterNodes
     - ListKxClusters
     - ListKxDatabases
+    - ListKxDataviews
     - ListKxEnvironments
+    - ListKxScalingGroups
     - ListKxUsers
+    - ListKxVolumes
     - ListTagsForResource
     - ListUsers
     - LoadSampleDataSetGroupIntoEnvironment
@@ -19606,9 +19618,11 @@ serviceMap:
     - UpdateKxClusterCodeConfiguration
     - UpdateKxClusterDatabases
     - UpdateKxDatabase
+    - UpdateKxDataview
     - UpdateKxEnvironment
     - UpdateKxEnvironmentNetwork
     - UpdateKxUser
+    - UpdateKxVolume
     - UpdateUser
     ARNFormat: arn:aws:finspace:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:finspace:.+"
