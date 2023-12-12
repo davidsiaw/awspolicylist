@@ -11292,6 +11292,7 @@ serviceMap:
     - DescribeBotChannel
     - DescribeBotLocale
     - DescribeBotRecommendation
+    - DescribeBotResourceGeneration
     - DescribeBotVersion
     - DescribeCustomVocabulary
     - DescribeCustomVocabularyMetadata
@@ -11305,6 +11306,7 @@ serviceMap:
     - DescribeTestSet
     - DescribeTestSetDiscrepancyReport
     - DescribeTestSetGeneration
+    - GenerateBotElement
     - GetSession
     - GetTestExecutionArtifactsUrl
     - ListAggregatedUtterances
@@ -11312,6 +11314,7 @@ serviceMap:
     - ListBotChannels
     - ListBotLocales
     - ListBotRecommendations
+    - ListBotResourceGenerations
     - ListBotVersions
     - ListBots
     - ListBuiltInIntents
@@ -11338,6 +11341,7 @@ serviceMap:
     - RecognizeUtterance
     - SearchAssociatedTranscripts
     - StartBotRecommendation
+    - StartBotResourceGeneration
     - StartConversation
     - StartImport
     - StartTestExecution
