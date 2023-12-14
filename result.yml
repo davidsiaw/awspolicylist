@@ -19938,6 +19938,7 @@ serviceMap:
     - CreateImageRecipe
     - CreateInfrastructureConfiguration
     - CreateLifecyclePolicy
+    - CreateWorkflow
     - DeleteComponent
     - DeleteContainerRecipe
     - DeleteDistributionConfiguration
@@ -19946,6 +19947,7 @@ serviceMap:
     - DeleteImageRecipe
     - DeleteInfrastructureConfiguration
     - DeleteLifecyclePolicy
+    - DeleteWorkflow
     - GetComponent
     - GetComponentPolicy
     - GetContainerRecipe
@@ -19959,6 +19961,7 @@ serviceMap:
     - GetInfrastructureConfiguration
     - GetLifecycleExecution
     - GetLifecyclePolicy
+    - GetWorkflow
     - GetWorkflowExecution
     - GetWorkflowStepExecution
     - ImportComponent
@@ -19980,12 +19983,16 @@ serviceMap:
     - ListLifecycleExecutions
     - ListLifecyclePolicies
     - ListTagsForResource
+    - ListWaitingWorkflowSteps
+    - ListWorkflowBuildVersions
     - ListWorkflowExecutions
     - ListWorkflowStepExecutions
+    - ListWorkflows
     - PutComponentPolicy
     - PutContainerRecipePolicy
     - PutImagePolicy
     - PutImageRecipePolicy
+    - SendWorkflowStepAction
     - StartImagePipelineExecution
     - StartResourceStateUpdate
     - TagResource
