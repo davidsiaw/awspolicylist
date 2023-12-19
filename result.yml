@@ -1651,9 +1651,11 @@ serviceMap:
     - ListViewVersions
     - ListViews
     - MonitorContact
+    - PauseContact
     - PutUserStatus
     - ReleasePhoneNumber
     - ReplicateInstance
+    - ResumeContact
     - ResumeContactRecording
     - SearchAvailablePhoneNumbers
     - SearchHoursOfOperations
@@ -1680,8 +1682,10 @@ serviceMap:
     - StopForecastingPlanningSchedulingIntegration
     - SubmitContactEvaluation
     - SuspendContactRecording
+    - TagContact
     - TagResource
     - TransferContact
+    - UntagContact
     - UntagResource
     - UpdateAgentStatus
     - UpdateContact
@@ -2977,14 +2981,17 @@ serviceMap:
     StringPrefix: eks
     Actions:
     - AccessKubernetesApi
+    - AssociateAccessPolicy
     - AssociateEncryptionConfig
     - AssociateIdentityProviderConfig
+    - CreateAccessEntry
     - CreateAddon
     - CreateCluster
     - CreateEksAnywhereSubscription
     - CreateFargateProfile
     - CreateNodegroup
     - CreatePodIdentityAssociation
+    - DeleteAccessEntry
     - DeleteAddon
     - DeleteCluster
     - DeleteEksAnywhereSubscription
@@ -2992,6 +2999,7 @@ serviceMap:
     - DeleteNodegroup
     - DeletePodIdentityAssociation
     - DeregisterCluster
+    - DescribeAccessEntry
     - DescribeAddon
     - DescribeAddonConfiguration
     - DescribeAddonVersions
@@ -3002,8 +3010,12 @@ serviceMap:
     - DescribeNodegroup
     - DescribePodIdentityAssociation
     - DescribeUpdate
+    - DisassociateAccessPolicy
     - DisassociateIdentityProviderConfig
+    - ListAccessEntries
+    - ListAccessPolicies
     - ListAddons
+    - ListAssociatedAccessPolicies
     - ListClusters
     - ListEksAnywhereSubscriptions
     - ListFargateProfiles
@@ -3015,6 +3027,7 @@ serviceMap:
     - RegisterCluster
     - TagResource
     - UntagResource
+    - UpdateAccessEntry
     - UpdateAddon
     - UpdateClusterConfig
     - UpdateClusterVersion
@@ -3028,8 +3041,17 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - eks:accessEntryType
+    - eks:accessScope
+    - eks:bootstrapClusterCreatorAdminPermissions
     - eks:clientId
+    - eks:clusterName
     - eks:issuerUrl
+    - eks:kubernetesGroups
+    - eks:namespaces
+    - eks:policyArn
+    - eks:principalArn
+    - eks:username
     HasResource: true
   AWS Identity Sync:
     StringPrefix: identity-sync
