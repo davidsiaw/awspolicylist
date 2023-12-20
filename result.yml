@@ -7349,6 +7349,7 @@ serviceMap:
     - DeleteDataRepositoryAssociation
     - DeleteFileCache
     - DeleteFileSystem
+    - DeleteResourcePolicy
     - DeleteSnapshot
     - DeleteStorageVirtualMachine
     - DeleteVolume
@@ -7365,8 +7366,10 @@ serviceMap:
     - DescribeVolumes
     - DisassociateFileGateway
     - DisassociateFileSystemAliases
+    - GetResourcePolicy
     - ListTagsForResource
     - ManageBackupPrincipalAssociations
+    - PutResourcePolicy
     - ReleaseFileSystemNfsV3Locks
     - RestoreVolumeFromSnapshot
     - StartMisconfiguredStateRecovery
@@ -15507,6 +15510,7 @@ serviceMap:
     - UpdateAnalysisPermissions
     - UpdateCustomPermissions
     - UpdateDashboard
+    - UpdateDashboardLinks
     - UpdateDashboardPermissions
     - UpdateDashboardPublishedVersion
     - UpdateDataSet
@@ -16267,6 +16271,9 @@ serviceMap:
     - TerminateAgreement
     ARNFormat: arn:aws:artifact:::${Resource}
     ARNRegex: "^arn:aws:artifact::.+"
+    conditionKeys:
+    - artifact:ReportCategory
+    - artifact:ReportSeries
     HasResource: true
   AWS Payment Cryptography:
     StringPrefix: payment-cryptography
