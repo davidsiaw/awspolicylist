@@ -3007,6 +3007,7 @@ serviceMap:
     - DescribeEksAnywhereSubscription
     - DescribeFargateProfile
     - DescribeIdentityProviderConfig
+    - DescribeInsight
     - DescribeNodegroup
     - DescribePodIdentityAssociation
     - DescribeUpdate
@@ -3020,6 +3021,7 @@ serviceMap:
     - ListEksAnywhereSubscriptions
     - ListFargateProfiles
     - ListIdentityProviderConfigs
+    - ListInsights
     - ListNodegroups
     - ListPodIdentityAssociations
     - ListTagsForResource
