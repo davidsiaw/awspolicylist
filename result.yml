@@ -1661,6 +1661,7 @@ serviceMap:
     - ResumeContact
     - ResumeContactRecording
     - SearchAvailablePhoneNumbers
+    - SearchContacts
     - SearchHoursOfOperations
     - SearchPredefinedAttributes
     - SearchPrompts
@@ -1746,6 +1747,7 @@ serviceMap:
     - connect:AttributeType
     - connect:InstanceId
     - connect:MonitorCapabilities
+    - connect:SearchContactsByContactAnalysis
     - connect:SearchTag/${TagKey}
     - connect:StorageResourceType
     HasResource: true
@@ -2534,6 +2536,7 @@ serviceMap:
     - DescribeDBProxyEndpoints
     - DescribeDBProxyTargetGroups
     - DescribeDBProxyTargets
+    - DescribeDBRecommendations
     - DescribeDBSecurityGroups
     - DescribeDBSnapshotAttributes
     - DescribeDBSnapshots
@@ -2558,8 +2561,10 @@ serviceMap:
     - DescribeSourceRegions
     - DescribeTenantDatabases
     - DescribeValidDBInstanceModifications
+    - DisableHttpEndpoint
     - DownloadCompleteDBLogFile
     - DownloadDBLogFilePortion
+    - EnableHttpEndpoint
     - FailoverDBCluster
     - FailoverGlobalCluster
     - ListTagsForResource
@@ -2576,6 +2581,7 @@ serviceMap:
     - ModifyDBProxy
     - ModifyDBProxyEndpoint
     - ModifyDBProxyTargetGroup
+    - ModifyDBRecommendation
     - ModifyDBSnapshot
     - ModifyDBSnapshotAttribute
     - ModifyDBSubnetGroup
@@ -11176,6 +11182,7 @@ serviceMap:
     - GetMasterAccount
     - GetMemberDetectors
     - GetMembers
+    - GetOrganizationStatistics
     - GetRemainingFreeTrialDays
     - GetThreatIntelSet
     - GetUsageStatistics
