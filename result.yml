@@ -19609,10 +19609,13 @@ serviceMap:
     StringPrefix: app-integrations
     Actions:
     - CreateApplication
+    - CreateApplicationAssociation
     - CreateDataIntegration
     - CreateDataIntegrationAssociation
     - CreateEventIntegration
     - CreateEventIntegrationAssociation
+    - DeleteApplication
+    - DeleteApplicationAssociation
     - DeleteDataIntegration
     - DeleteDataIntegrationAssociation
     - DeleteEventIntegration
@@ -19620,6 +19623,7 @@ serviceMap:
     - GetApplication
     - GetDataIntegration
     - GetEventIntegration
+    - ListApplicationAssociations
     - ListApplications
     - ListDataIntegrationAssociations
     - ListDataIntegrations
