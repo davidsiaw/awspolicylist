@@ -105,6 +105,7 @@ serviceMap:
     - CreateAuthorizer
     - CreateBillingGroup
     - CreateCertificateFromCsr
+    - CreateCertificateProvider
     - CreateCustomMetric
     - CreateDimension
     - CreateDomainConfiguration
@@ -137,6 +138,7 @@ serviceMap:
     - DeleteBillingGroup
     - DeleteCACertificate
     - DeleteCertificate
+    - DeleteCertificateProvider
     - DeleteCustomMetric
     - DeleteDimension
     - DeleteDomainConfiguration
@@ -175,6 +177,7 @@ serviceMap:
     - DescribeBillingGroup
     - DescribeCACertificate
     - DescribeCertificate
+    - DescribeCertificateProvider
     - DescribeCustomMetric
     - DescribeDefaultAuthorizer
     - DescribeDetectMitigationActionsTask
@@ -237,6 +240,7 @@ serviceMap:
     - ListAuthorizers
     - ListBillingGroups
     - ListCACertificates
+    - ListCertificateProviders
     - ListCertificates
     - ListCertificatesByCA
     - ListCustomMetrics
@@ -326,6 +330,7 @@ serviceMap:
     - UpdateBillingGroup
     - UpdateCACertificate
     - UpdateCertificate
+    - UpdateCertificateProvider
     - UpdateCustomMetric
     - UpdateDimension
     - UpdateDomainConfiguration
@@ -4134,6 +4139,7 @@ serviceMap:
     - ExportTableToPointInTime
     - GetItem
     - GetRecords
+    - GetResourcePolicy
     - GetShardIterator
     - ImportTable
     - ListBackups
@@ -11824,6 +11830,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - s3:AccessGrantsInstanceArn
     - s3:AccessPointNetworkOrigin
     - s3:DataAccessPointAccount
     - s3:DataAccessPointArn
