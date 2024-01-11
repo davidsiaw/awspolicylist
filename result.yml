@@ -12310,12 +12310,15 @@ serviceMap:
     - CommitTransaction
     - CreateDataCellsFilter
     - CreateLFTag
+    - CreateLakeFormationIdentityCenterConfiguration
     - CreateLakeFormationOptIn
     - DeleteDataCellsFilter
     - DeleteLFTag
+    - DeleteLakeFormationIdentityCenterConfiguration
     - DeleteLakeFormationOptIn
     - DeleteObjectsOnCancel
     - DeregisterResource
+    - DescribeLakeFormationIdentityCenterConfiguration
     - DescribeResource
     - DescribeTransaction
     - ExtendTransaction
@@ -12348,6 +12351,7 @@ serviceMap:
     - StartTransaction
     - UpdateDataCellsFilter
     - UpdateLFTag
+    - UpdateLakeFormationIdentityCenterConfiguration
     - UpdateResource
     - UpdateTableObjects
     - UpdateTableStorageOptimizer
