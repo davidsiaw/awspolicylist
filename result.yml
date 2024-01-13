@@ -614,11 +614,13 @@ serviceMap:
     StringPrefix: scn
     Actions:
     - AssignAdminPermissionsToUser
+    - CreateBillOfMaterialsImportJob
     - CreateInstance
     - CreateSSOApplication
     - DeleteInstance
     - DeleteSSOApplication
     - DescribeInstance
+    - GetBillOfMaterialsImportJob
     - ListAdminUsers
     - ListInstances
     - ListTagsForResource
