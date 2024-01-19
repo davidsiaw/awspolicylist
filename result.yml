@@ -1394,16 +1394,19 @@ serviceMap:
     - BatchDeleteBuilds
     - BatchGetBuildBatches
     - BatchGetBuilds
+    - BatchGetFleets
     - BatchGetProjects
     - BatchGetReportGroups
     - BatchGetReports
     - BatchPutCodeCoverages
     - BatchPutTestCases
+    - CreateFleet
     - CreateProject
     - CreateReport
     - CreateReportGroup
     - CreateWebhook
     - DeleteBuildBatch
+    - DeleteFleet
     - DeleteOAuthToken
     - DeleteProject
     - DeleteReport
@@ -1423,6 +1426,7 @@ serviceMap:
     - ListBuildsForProject
     - ListConnectedOAuthAccounts
     - ListCuratedEnvironmentImages
+    - ListFleets
     - ListProjects
     - ListReportGroups
     - ListReports
@@ -1439,6 +1443,7 @@ serviceMap:
     - StartBuildBatch
     - StopBuild
     - StopBuildBatch
+    - UpdateFleet
     - UpdateProject
     - UpdateProjectVisibility
     - UpdateReport
@@ -3979,6 +3984,7 @@ serviceMap:
     - RemoveManagedScalingPolicy
     - RemoveTags
     - RunJobFlow
+    - SetKeepJobFlowAliveWhenNoSteps
     - SetTerminationProtection
     - SetVisibleToAllUsers
     - StartEditor
