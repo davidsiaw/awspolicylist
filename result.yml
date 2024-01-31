@@ -5504,6 +5504,7 @@ serviceMap:
     - ListDataSourceRuns
     - ListDataSources
     - ListDomains
+    - ListEnvironmentBlueprintConfigurationSummaries
     - ListEnvironmentBlueprintConfigurations
     - ListEnvironmentBlueprints
     - ListEnvironmentProfiles
