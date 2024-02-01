@@ -5654,6 +5654,7 @@ serviceMap:
     - CreateChannel
     - CreateEncoderConfiguration
     - CreateParticipantToken
+    - CreatePlaybackRestrictionPolicy
     - CreateRecordingConfiguration
     - CreateStage
     - CreateStorageConfiguration
@@ -5661,6 +5662,7 @@ serviceMap:
     - DeleteChannel
     - DeleteEncoderConfiguration
     - DeletePlaybackKeyPair
+    - DeletePlaybackRestrictionPolicy
     - DeleteRecordingConfiguration
     - DeleteStage
     - DeleteStorageConfiguration
@@ -5671,6 +5673,7 @@ serviceMap:
     - GetEncoderConfiguration
     - GetParticipant
     - GetPlaybackKeyPair
+    - GetPlaybackRestrictionPolicy
     - GetRecordingConfiguration
     - GetStage
     - GetStageSession
@@ -5685,6 +5688,7 @@ serviceMap:
     - ListParticipantEvents
     - ListParticipants
     - ListPlaybackKeyPairs
+    - ListPlaybackRestrictionPolicies
     - ListRecordingConfigurations
     - ListStageSessions
     - ListStages
@@ -5701,6 +5705,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateChannel
+    - UpdatePlaybackRestrictionPolicy
     - UpdateStage
     ARNFormat: arn:aws:ivs:${Region}:${Account}:${ArnType}/${ResourceId}
     ARNRegex: "^arn:aws:ivs:.+:.+:.+"
