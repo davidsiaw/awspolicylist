@@ -2511,6 +2511,7 @@ serviceMap:
     - CreateDBProxy
     - CreateDBProxyEndpoint
     - CreateDBSecurityGroup
+    - CreateDBShardGroup
     - CreateDBSnapshot
     - CreateDBSubnetGroup
     - CreateEventSubscription
@@ -2532,6 +2533,7 @@ serviceMap:
     - DeleteDBProxy
     - DeleteDBProxyEndpoint
     - DeleteDBSecurityGroup
+    - DeleteDBShardGroup
     - DeleteDBSnapshot
     - DeleteDBSubnetGroup
     - DeleteEventSubscription
@@ -2563,6 +2565,7 @@ serviceMap:
     - DescribeDBProxyTargets
     - DescribeDBRecommendations
     - DescribeDBSecurityGroups
+    - DescribeDBShardGroups
     - DescribeDBSnapshotAttributes
     - DescribeDBSnapshots
     - DescribeDBSubnetGroups
@@ -2607,6 +2610,7 @@ serviceMap:
     - ModifyDBProxyEndpoint
     - ModifyDBProxyTargetGroup
     - ModifyDBRecommendation
+    - ModifyDBShardGroup
     - ModifyDBSnapshot
     - ModifyDBSnapshotAttribute
     - ModifyDBSubnetGroup
@@ -2620,6 +2624,7 @@ serviceMap:
     - PurchaseReservedDBInstancesOffering
     - RebootDBCluster
     - RebootDBInstance
+    - RebootDBShardGroup
     - RegisterDBProxyTargets
     - RemoveFromGlobalCluster
     - RemoveRoleFromDBCluster
@@ -11992,6 +11997,7 @@ serviceMap:
     - DeleteHubContent
     - DeleteHumanLoop
     - DeleteHumanTaskUi
+    - DeleteHyperParameterTuningJob
     - DeleteImage
     - DeleteImageVersion
     - DeleteInferenceComponent
