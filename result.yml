@@ -5158,6 +5158,7 @@ serviceMap:
     - GetResourcePolicy
     - JoinGroup
     - ListDatabases
+    - ListRecommendations
     - ListSavedQueries
     - ListSchemas
     - ListTables
