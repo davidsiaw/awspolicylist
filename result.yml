@@ -1064,6 +1064,7 @@ serviceMap:
     ARNFormat: arn:aws:aws-marketplace:${Region}:${Account}:${Catalog}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:aws-marketplace:.+"
     conditionKeys:
+    - aws-marketplace:Intent
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
@@ -7826,6 +7827,7 @@ serviceMap:
     - CancelUpdateStack
     - ContinueUpdateRollback
     - CreateChangeSet
+    - CreateGeneratedTemplate
     - CreateStack
     - CreateStackInstances
     - CreateStackSet
@@ -7833,6 +7835,7 @@ serviceMap:
     - DeactivateOrganizationsAccess
     - DeactivateType
     - DeleteChangeSet
+    - DeleteGeneratedTemplate
     - DeleteStack
     - DeleteStackInstances
     - DeleteStackSet
@@ -7840,8 +7843,10 @@ serviceMap:
     - DescribeAccountLimits
     - DescribeChangeSet
     - DescribeChangeSetHooks
+    - DescribeGeneratedTemplate
     - DescribeOrganizationsAccess
     - DescribePublisher
+    - DescribeResourceScan
     - DescribeStackDriftDetectionStatus
     - DescribeStackEvents
     - DescribeStackInstance
@@ -7858,13 +7863,18 @@ serviceMap:
     - DetectStackSetDrift
     - EstimateTemplateCost
     - ExecuteChangeSet
+    - GetGeneratedTemplate
     - GetStackPolicy
     - GetTemplate
     - GetTemplateSummary
     - ImportStacksToStackSet
     - ListChangeSets
     - ListExports
+    - ListGeneratedTemplates
     - ListImports
+    - ListResourceScanRelatedResources
+    - ListResourceScanResources
+    - ListResourceScans
     - ListStackInstanceResourceDrifts
     - ListStackInstances
     - ListStackResources
@@ -7884,10 +7894,12 @@ serviceMap:
     - SetTypeConfiguration
     - SetTypeDefaultVersion
     - SignalResource
+    - StartResourceScan
     - StopStackSetOperation
     - TagResource
     - TestType
     - UntagResource
+    - UpdateGeneratedTemplate
     - UpdateStack
     - UpdateStackInstances
     - UpdateStackSet
@@ -18650,6 +18662,15 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Tag Editor:
+    StringPrefix: resource-explorer
+    Actions:
+    - ListResourceTypes
+    - ListResources
+    - ListTags
+    ARNFormat: arn:${Partition}:resource-explorer:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:resource-explorer:.+"
+    HasResource: false
   Amazon CloudWatch Network Monitor:
     StringPrefix: networkmonitor
     Actions:
@@ -19356,6 +19377,7 @@ serviceMap:
     - BatchPutTaxRegistration
     - DeleteTaxRegistration
     - GetExemptions
+    - GetTaxInfoReportingDocument
     - GetTaxInheritance
     - GetTaxInterview
     - GetTaxRegistration
