@@ -7642,6 +7642,7 @@ serviceMap:
     - DeleteKnowledgeBase
     - DeleteModelInvocationLoggingConfiguration
     - DeleteProvisionedModelThroughput
+    - DetectGeneratedContent
     - DisassociateAgentKnowledgeBase
     - GetAgent
     - GetAgentActionGroup
@@ -12261,6 +12262,7 @@ serviceMap:
     - UpdateAppImageConfig
     - UpdateArtifact
     - UpdateCluster
+    - UpdateClusterSoftware
     - UpdateCodeRepository
     - UpdateContext
     - UpdateDeviceFleet
@@ -19262,13 +19264,18 @@ serviceMap:
     - DescribeManagedOrganizationalUnit
     - DescribeRegisterOrganizationalUnitOperation
     - DescribeSingleSignOn
+    - DisableBaseline
     - DisableControl
     - DisableGuardrail
+    - EnableBaseline
     - EnableControl
     - EnableGuardrail
     - GetAccountInfo
     - GetAvailableUpdates
+    - GetBaseline
+    - GetBaselineOperation
     - GetControlOperation
+    - GetEnabledBaseline
     - GetEnabledControl
     - GetGuardrailComplianceStatus
     - GetHomeRegion
@@ -19276,8 +19283,10 @@ serviceMap:
     - GetLandingZoneDriftStatus
     - GetLandingZoneOperation
     - GetLandingZoneStatus
+    - ListBaselines
     - ListDirectoryGroups
     - ListDriftDetails
+    - ListEnabledBaselines
     - ListEnabledControls
     - ListEnabledGuardrails
     - ListExtendGovernancePrecheckDetails
@@ -19294,11 +19303,13 @@ serviceMap:
     - ListTagsForResource
     - ManageOrganizationalUnit
     - PerformPreLaunchChecks
+    - ResetEnabledBaseline
     - ResetLandingZone
     - SetupLandingZone
     - TagResource
     - UntagResource
     - UpdateAccountFactoryConfig
+    - UpdateEnabledBaseline
     - UpdateEnabledControl
     - UpdateLandingZone
     ARNFormat: arn:aws:controltower:${Region}:${Account}:${ResourceType}/${ResourceName}
