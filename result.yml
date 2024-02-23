@@ -6734,15 +6734,18 @@ serviceMap:
     - AssociateResource
     - CreateGroup
     - DeleteGroup
+    - DeleteGroupPolicy
     - DisassociateResource
     - GetAccountSettings
     - GetGroup
     - GetGroupConfiguration
+    - GetGroupPolicy
     - GetGroupQuery
     - GetTags
     - GroupResources
     - ListGroupResources
     - ListGroups
+    - ListResourceTypes
     - PutGroupConfiguration
     - PutGroupPolicy
     - SearchResources
