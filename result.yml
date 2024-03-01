@@ -6127,10 +6127,6 @@ serviceMap:
     - CreateReplicationInstance
     - CreateReplicationSubnetGroup
     - CreateReplicationTask
-    - CreateTest
-    - CreateTestEnvironments
-    - CreateTestPlan
-    - CreateTestRun
     - DeleteCertificate
     - DeleteConnection
     - DeleteDataMigration
@@ -6146,8 +6142,6 @@ serviceMap:
     - DeleteReplicationSubnetGroup
     - DeleteReplicationTask
     - DeleteReplicationTaskAssessmentRun
-    - DeleteTest
-    - DeleteTestPlan
     - DescribeAccountAttributes
     - DescribeApplicableIndividualAssessments
     - DescribeCertificates
@@ -6192,12 +6186,6 @@ serviceMap:
     - DescribeReplications
     - DescribeSchemas
     - DescribeTableStatistics
-    - DescribeTestEnvironments
-    - DescribeTestGenerationStatus
-    - DescribeTestPlans
-    - DescribeTestRunResultsSummaries
-    - DescribeTestRuns
-    - DescribeTests
     - DisassociateExtensionPack
     - ExportMetadataModelAssessment
     - GetMetadataModel
@@ -6224,8 +6212,6 @@ serviceMap:
     - ModifyReplicationInstance
     - ModifyReplicationSubnetGroup
     - ModifyReplicationTask
-    - ModifyTest
-    - ModifyTestPlan
     - MoveReplicationTask
     - RebootReplicationInstance
     - RefreshSchemas
@@ -6235,7 +6221,6 @@ serviceMap:
     - RunFleetAdvisorLsaAnalysis
     - StartDataMigration
     - StartExtensionPackAssociation
-    - StartGenerateTests
     - StartMetadataModelAssessment
     - StartMetadataModelConversion
     - StartMetadataModelExportAsScript
@@ -6248,10 +6233,8 @@ serviceMap:
     - StartReplicationTaskAssessment
     - StartReplicationTaskAssessmentRun
     - StopDataMigration
-    - StopGenerateTests
     - StopReplication
     - StopReplicationTask
-    - StopTestRun
     - TestConnection
     - UpdateConversionConfiguration
     - UpdateDataProvider
@@ -6259,7 +6242,6 @@ serviceMap:
     - UpdateMigrationProject
     - UpdateSubscriptionsToEventBridge
     - UploadFileMetadataList
-    - ViewTestRunResults
     ARNFormat: arn:aws:dms:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:aws:dms:.+"
     conditionKeys:
@@ -6278,10 +6260,6 @@ serviceMap:
     - dms:req-tag/${TagKey}
     - dms:subgrp-tag/${TagKey}
     - dms:task-tag/${TagKey}
-    - dms:test-environment-tag/${TagKey}
-    - dms:test-plan-tag/${TagKey}
-    - dms:test-run-tag/${TagKey}
-    - dms:test-tag/${TagKey}
     HasResource: true
   AWS Network Firewall:
     StringPrefix: network-firewall
