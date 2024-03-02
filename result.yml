@@ -5581,6 +5581,7 @@ serviceMap:
     - CreateRegexPatternSet
     - CreateRuleGroup
     - CreateWebACL
+    - DeleteAPIKey
     - DeleteFirewallManagerRuleGroups
     - DeleteIPSet
     - DeleteLoggingConfiguration
@@ -16569,11 +16570,14 @@ serviceMap:
     - ListCodegenJobs
     - ListComponents
     - ListForms
+    - ListTagsForResource
     - ListThemes
     - PutMetadataFlag
     - RefreshToken
     - ResetMetadataFlag
     - StartCodegenJob
+    - TagResource
+    - UntagResource
     - UpdateComponent
     - UpdateForm
     - UpdateTheme
