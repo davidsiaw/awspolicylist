@@ -2186,6 +2186,7 @@ serviceMap:
     Actions:
     - GetConversation
     - GetTroubleshootingResults
+    - ListConversations
     - SendMessage
     - StartConversation
     - StartTroubleshootingAnalysis
@@ -3103,6 +3104,7 @@ serviceMap:
   AWS Identity Sync:
     StringPrefix: identity-sync
     Actions:
+    - AllowVendedLogDeliveryForResource
     - CreateSyncFilter
     - CreateSyncProfile
     - CreateSyncTarget
@@ -5073,6 +5075,7 @@ serviceMap:
     - CreateEventSubscription
     - CreateHsmClientCertificate
     - CreateHsmConfiguration
+    - CreateQev2IdcApplication
     - CreateRedshiftIdcApplication
     - CreateSavedQuery
     - CreateScheduledAction
@@ -5093,6 +5096,7 @@ serviceMap:
     - DeleteHsmClientCertificate
     - DeleteHsmConfiguration
     - DeletePartner
+    - DeleteQev2IdcApplication
     - DeleteRedshiftIdcApplication
     - DeleteResourcePolicy
     - DeleteSavedQueries
@@ -5129,6 +5133,7 @@ serviceMap:
     - DescribeNodeConfigurationOptions
     - DescribeOrderableClusterOptions
     - DescribePartners
+    - DescribeQev2IdcApplications
     - DescribeQuery
     - DescribeRedshiftIdcApplications
     - DescribeReservedNodeExchangeStatus
@@ -5176,6 +5181,7 @@ serviceMap:
     - ModifyCustomDomainAssociation
     - ModifyEndpointAccess
     - ModifyEventSubscription
+    - ModifyQev2IdcApplication
     - ModifyRedshiftIdcApplication
     - ModifySavedQuery
     - ModifyScheduledAction
