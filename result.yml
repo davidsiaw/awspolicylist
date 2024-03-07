@@ -4009,6 +4009,7 @@ serviceMap:
     - RunJobFlow
     - SetKeepJobFlowAliveWhenNoSteps
     - SetTerminationProtection
+    - SetUnhealthyNodeReplacement
     - SetVisibleToAllUsers
     - StartEditor
     - StartNotebookExecution
