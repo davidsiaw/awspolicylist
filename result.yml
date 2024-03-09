@@ -5450,6 +5450,7 @@ serviceMap:
     Actions:
     - AcceptPredictions
     - AcceptSubscriptionRequest
+    - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAsset
     - CreateAssetRevision
@@ -11378,6 +11379,7 @@ serviceMap:
     - CreateBotAlias
     - CreateBotChannel
     - CreateBotLocale
+    - CreateBotReplica
     - CreateBotVersion
     - CreateCustomVocabulary
     - CreateExport
@@ -11392,6 +11394,7 @@ serviceMap:
     - DeleteBotAlias
     - DeleteBotChannel
     - DeleteBotLocale
+    - DeleteBotReplica
     - DeleteBotVersion
     - DeleteCustomVocabulary
     - DeleteExport
@@ -11408,6 +11411,7 @@ serviceMap:
     - DescribeBotChannel
     - DescribeBotLocale
     - DescribeBotRecommendation
+    - DescribeBotReplica
     - DescribeBotResourceGeneration
     - DescribeBotVersion
     - DescribeCustomVocabulary
@@ -11426,11 +11430,14 @@ serviceMap:
     - GetSession
     - GetTestExecutionArtifactsUrl
     - ListAggregatedUtterances
+    - ListBotAliasReplicas
     - ListBotAliases
     - ListBotChannels
     - ListBotLocales
     - ListBotRecommendations
+    - ListBotReplicas
     - ListBotResourceGenerations
+    - ListBotVersionReplicas
     - ListBotVersions
     - ListBots
     - ListBuiltInIntents
