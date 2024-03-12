@@ -16066,6 +16066,7 @@ serviceMap:
     - GetRelationalDatabaseSnapshot
     - GetRelationalDatabaseSnapshots
     - GetRelationalDatabases
+    - GetSetupHistory
     - GetStaticIp
     - GetStaticIps
     - ImportKeyPair
@@ -16082,6 +16083,7 @@ serviceMap:
     - SendContactMethodVerification
     - SetIpAddressType
     - SetResourceAccessForBucket
+    - SetupInstanceHttps
     - StartGUISession
     - StartInstance
     - StartRelationalDatabase
@@ -17309,6 +17311,8 @@ serviceMap:
     - ListImportFileTask
     - ListJarArtifacts
     - ListServers
+    - PutLogData
+    - PutMetricData
     - PutPortfolioPreferences
     - RegisterCollector
     - SendMessage
