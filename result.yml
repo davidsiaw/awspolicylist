@@ -16383,7 +16383,7 @@ serviceMap:
     - artifact:ReportCategory
     - artifact:ReportSeries
     HasResource: true
-  Amazon Timestream Influxdb:
+  Amazon Timestream InfluxDB:
     StringPrefix: timestream-influxdb
     Actions:
     - CreateDbInstance
