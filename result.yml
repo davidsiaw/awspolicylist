@@ -6903,6 +6903,7 @@ serviceMap:
     - GetTokenBalance
     - GetTransaction
     - ListAssetContracts
+    - ListFilteredTransactionEvents
     - ListTokenBalances
     - ListTransactionEvents
     - ListTransactions
