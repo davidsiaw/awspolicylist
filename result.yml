@@ -4148,6 +4148,7 @@ serviceMap:
     - CreateTableReplica
     - DeleteBackup
     - DeleteItem
+    - DeleteResourcePolicy
     - DeleteTable
     - DeleteTableReplica
     - DescribeBackup
@@ -4188,6 +4189,7 @@ serviceMap:
     - PartiQLUpdate
     - PurchaseReservedCapacityOfferings
     - PutItem
+    - PutResourcePolicy
     - Query
     - RestoreTableFromAwsBackup
     - RestoreTableFromBackup
@@ -4202,6 +4204,7 @@ serviceMap:
     - UpdateGlobalTableSettings
     - UpdateGlobalTableVersion
     - UpdateItem
+    - UpdateKinesisStreamingDestination
     - UpdateTable
     - UpdateTableReplicaAutoScaling
     - UpdateTimeToLive
@@ -13473,6 +13476,7 @@ serviceMap:
     StringPrefix: workmail
     Actions:
     - AddMembersToGroup
+    - AllowVendedLogDeliveryForResource
     - AssociateDelegateToResource
     - AssociateMemberToGroup
     - AssumeImpersonationRole
@@ -18288,7 +18292,6 @@ serviceMap:
     - ec2:PlacementGroup
     - ec2:PlacementGroupName
     - ec2:PlacementGroupStrategy
-    - ec2:PreSharedKeys
     - ec2:ProductCode
     - ec2:Public
     - ec2:PublicIpAddress
