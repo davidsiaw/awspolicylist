@@ -2050,11 +2050,13 @@ serviceMap:
     - GetSavingsPlansUtilizationDetails
     - GetTags
     - GetUsageForecast
+    - ListCostAllocationTagBackfillHistory
     - ListCostAllocationTags
     - ListCostCategoryDefinitions
     - ListSavingsPlansPurchaseRecommendationGeneration
     - ListTagsForResource
     - ProvideAnomalyFeedback
+    - StartCostAllocationTagBackfill
     - StartSavingsPlansPurchaseRecommendationGeneration
     - TagResource
     - UntagResource
@@ -10593,6 +10595,7 @@ serviceMap:
     - DescribeSavingsPlansOfferingRates
     - DescribeSavingsPlansOfferings
     - ListTagsForResource
+    - ReturnSavingsPlan
     - TagResource
     - UntagResource
     ARNFormat: arn:aws:savingsplans::${Account}:${ResourceType}/${ResourcePath}
@@ -18450,9 +18453,11 @@ serviceMap:
   AWS Migration Hub Orchestrator:
     StringPrefix: migrationhub-orchestrator
     Actions:
+    - CreateTemplate
     - CreateWorkflow
     - CreateWorkflowStep
     - CreateWorkflowStepGroup
+    - DeleteTemplate
     - DeleteWorkflow
     - DeleteWorkflowStep
     - DeleteWorkflowStepGroup
@@ -18478,6 +18483,7 @@ serviceMap:
     - StopWorkflow
     - TagResource
     - UntagResource
+    - UpdateTemplate
     - UpdateWorkflow
     - UpdateWorkflowStep
     - UpdateWorkflowStepGroup
