@@ -17899,6 +17899,7 @@ serviceMap:
     - DescribeLocalGatewayVirtualInterfaces
     - DescribeLocalGateways
     - DescribeLockedSnapshots
+    - DescribeMacHosts
     - DescribeManagedPrefixLists
     - DescribeMovingAddresses
     - DescribeNatGateways
@@ -18048,6 +18049,7 @@ serviceMap:
     - GetGroupsForCapacityReservation
     - GetHostReservationPurchasePreview
     - GetImageBlockPublicAccessState
+    - GetInstanceMetadataDefaults
     - GetInstanceTypesFromInstanceRequirements
     - GetInstanceUefiData
     - GetIpamAddressHistory
@@ -18113,6 +18115,7 @@ serviceMap:
     - ModifyInstanceEventStartTime
     - ModifyInstanceEventWindow
     - ModifyInstanceMaintenanceOptions
+    - ModifyInstanceMetadataDefaults
     - ModifyInstanceMetadataOptions
     - ModifyInstancePlacement
     - ModifyIpam
@@ -19820,6 +19823,7 @@ serviceMap:
     - CreateUser
     - DeleteEnvironment
     - DeleteKxCluster
+    - DeleteKxClusterNode
     - DeleteKxDatabase
     - DeleteKxDataview
     - DeleteKxEnvironment
@@ -19876,11 +19880,22 @@ serviceMap:
     StringPrefix: groundtruthlabeling
     Actions:
     - AssociatePatchToManifestJob
+    - CreateBatch
+    - CreateIntakeForm
+    - CreateProject
+    - CreateWorkflowDefinition
     - DescribeConsoleJob
+    - GenerateLIDARPreviewTaskConfigJob
+    - GetBatch
+    - GetIntakeFormStatus
+    - ListBatches
     - ListDatasetObjects
+    - ListProjects
     - RunFilterOrSampleDatasetJob
     - RunGenerateManifestByCrawlingJob
-    ARNFormat: arn:${Partition}:groundtruthlabeling:${region}:${account}:${resourceType}/${resourcePath}
+    - RunGenerateManifestMetricsJob
+    - UpdateBatch
+    ARNFormat: arn:${Partition}:groundtruthlabeling:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:${Partition}:groundtruthlabeling:.+"
     HasResource: false
   Amazon S3 on Outposts:
