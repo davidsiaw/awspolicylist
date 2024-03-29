@@ -12072,6 +12072,7 @@ serviceMap:
     - DeletePipeline
     - DeleteProject
     - DeleteRecord
+    - DeleteResourcePolicy
     - DeleteSpace
     - DeleteStudioLifecycleConfig
     - DeleteTags
@@ -12153,6 +12154,7 @@ serviceMap:
     - GetLineageGroupPolicy
     - GetModelPackageGroupPolicy
     - GetRecord
+    - GetResourcePolicy
     - GetSagemakerServicecatalogPortfolioStatus
     - GetScalingConfigurationRecommendation
     - GetSearchSuggestions
@@ -12242,6 +12244,7 @@ serviceMap:
     - PutLineageGroupPolicy
     - PutModelPackageGroupPolicy
     - PutRecord
+    - PutResourcePolicy
     - QueryLineage
     - RegisterDevices
     - RenderUiTemplate
