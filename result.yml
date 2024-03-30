@@ -3853,6 +3853,8 @@ serviceMap:
     - GetEventConfigurationByResourceTypes
     - GetFuotaTask
     - GetLogLevelsByResourceTypes
+    - GetMetricConfiguration
+    - GetMetrics
     - GetMulticastGroup
     - GetMulticastGroupSession
     - GetNetworkAnalyzerConfiguration
@@ -3911,6 +3913,7 @@ serviceMap:
     - UpdateEventConfigurationByResourceTypes
     - UpdateFuotaTask
     - UpdateLogLevelsByResourceTypes
+    - UpdateMetricConfiguration
     - UpdateMulticastGroup
     - UpdateNetworkAnalyzerConfiguration
     - UpdatePartnerAccount
@@ -13504,7 +13507,6 @@ serviceMap:
     - CreateImpersonationRole
     - CreateInboundMailFlowRule
     - CreateMailDomain
-    - CreateMailUser
     - CreateMobileDeviceAccessRule
     - CreateOrganization
     - CreateOutboundMailFlowRule
@@ -13548,13 +13550,9 @@ serviceMap:
     - DescribeResource
     - DescribeSmtpGateway
     - DescribeUser
-    - DisableMailGroups
-    - DisableMailUsers
     - DisassociateDelegateFromResource
     - DisassociateMemberFromGroup
     - EnableMailDomain
-    - EnableMailGroups
-    - EnableMailUsers
     - GetAccessControlEffect
     - GetDefaultRetentionPolicy
     - GetImpersonationRole
@@ -13563,7 +13561,6 @@ serviceMap:
     - GetMailDomain
     - GetMailDomainDetails
     - GetMailGroupDetails
-    - GetMailUserDetails
     - GetMailboxDetails
     - GetMobileDeviceAccessEffect
     - GetMobileDeviceAccessOverride
@@ -13606,8 +13603,6 @@ serviceMap:
     - SetAdmin
     - SetDefaultMailDomain
     - SetJournalingRules
-    - SetMailGroupDetails
-    - SetMailUserDetails
     - SetMobilePolicyDetails
     - StartMailboxExportJob
     - TagResource
@@ -18391,6 +18386,65 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    HasResource: true
+  AWS CodeConnections:
+    StringPrefix: codeconnections
+    Actions:
+    - CreateConnection
+    - CreateHost
+    - CreateRepositoryLink
+    - CreateSyncConfiguration
+    - DeleteConnection
+    - DeleteHost
+    - DeleteRepositoryLink
+    - DeleteSyncConfiguration
+    - GetConnection
+    - GetHost
+    - GetIndividualAccessToken
+    - GetInstallationUrl
+    - GetRepositoryLink
+    - GetRepositorySyncStatus
+    - GetResourceSyncStatus
+    - GetSyncBlockerSummary
+    - GetSyncConfiguration
+    - ListConnections
+    - ListHosts
+    - ListInstallationTargets
+    - ListRepositoryLinks
+    - ListRepositorySyncDefinitions
+    - ListSyncConfigurations
+    - ListTagsForResource
+    - PassConnection
+    - PassRepository
+    - RegisterAppCode
+    - StartAppRegistrationHandshake
+    - StartOAuthHandshake
+    - TagResource
+    - UntagResource
+    - UpdateConnectionInstallation
+    - UpdateHost
+    - UpdateRepositoryLink
+    - UpdateSyncBlocker
+    - UpdateSyncConfiguration
+    - UseConnection
+    ARNFormat: arn:aws:codeconnections:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:codeconnections:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - codeconnections:Branch
+    - codeconnections:BranchName
+    - codeconnections:FullRepositoryId
+    - codeconnections:HostArn
+    - codeconnections:InstallationId
+    - codeconnections:OwnerId
+    - codeconnections:PassedToService
+    - codeconnections:ProviderAction
+    - codeconnections:ProviderPermissionsRequired
+    - codeconnections:ProviderType
+    - codeconnections:ProviderTypeFilter
+    - codeconnections:RepositoryName
     HasResource: true
   Amazon WorkMail Message Flow:
     StringPrefix: workmailmessageflow
