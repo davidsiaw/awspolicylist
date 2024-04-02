@@ -1457,6 +1457,127 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Deadline Cloud:
+    StringPrefix: deadline
+    Actions:
+    - AssociateMemberToFarm
+    - AssociateMemberToFleet
+    - AssociateMemberToJob
+    - AssociateMemberToQueue
+    - AssumeFleetRoleForRead
+    - AssumeFleetRoleForWorker
+    - AssumeQueueRoleForRead
+    - AssumeQueueRoleForUser
+    - AssumeQueueRoleForWorker
+    - BatchGetJobEntity
+    - CopyJobTemplate
+    - CreateBudget
+    - CreateFarm
+    - CreateFleet
+    - CreateJob
+    - CreateLicenseEndpoint
+    - CreateMonitor
+    - CreateQueue
+    - CreateQueueEnvironment
+    - CreateQueueFleetAssociation
+    - CreateStorageProfile
+    - CreateWorker
+    - DeleteBudget
+    - DeleteFarm
+    - DeleteFleet
+    - DeleteLicenseEndpoint
+    - DeleteMeteredProduct
+    - DeleteMonitor
+    - DeleteQueue
+    - DeleteQueueEnvironment
+    - DeleteQueueFleetAssociation
+    - DeleteStorageProfile
+    - DeleteWorker
+    - DisassociateMemberFromFarm
+    - DisassociateMemberFromFleet
+    - DisassociateMemberFromJob
+    - DisassociateMemberFromQueue
+    - GetApplicationVersion
+    - GetBudget
+    - GetFarm
+    - GetFleet
+    - GetJob
+    - GetLicenseEndpoint
+    - GetMonitor
+    - GetQueue
+    - GetQueueEnvironment
+    - GetQueueFleetAssociation
+    - GetSession
+    - GetSessionAction
+    - GetSessionsStatisticsAggregation
+    - GetStep
+    - GetStorageProfile
+    - GetStorageProfileForQueue
+    - GetTask
+    - GetWorker
+    - ListAvailableMeteredProducts
+    - ListBudgets
+    - ListFarmMembers
+    - ListFarms
+    - ListFleetMembers
+    - ListFleets
+    - ListJobMembers
+    - ListJobs
+    - ListLicenseEndpoints
+    - ListMeteredProducts
+    - ListMonitors
+    - ListQueueEnvironments
+    - ListQueueFleetAssociations
+    - ListQueueMembers
+    - ListQueues
+    - ListSessionActions
+    - ListSessions
+    - ListSessionsForWorker
+    - ListStepConsumers
+    - ListStepDependencies
+    - ListSteps
+    - ListStorageProfiles
+    - ListStorageProfilesForQueue
+    - ListTagsForResource
+    - ListTasks
+    - ListWorkers
+    - PutMeteredProduct
+    - SearchJobs
+    - SearchSteps
+    - SearchTasks
+    - SearchWorkers
+    - StartSessionsStatisticsAggregation
+    - TagResource
+    - UntagResource
+    - UpdateBudget
+    - UpdateFarm
+    - UpdateFleet
+    - UpdateJob
+    - UpdateMonitor
+    - UpdateQueue
+    - UpdateQueueEnvironment
+    - UpdateQueueFleetAssociation
+    - UpdateSession
+    - UpdateStep
+    - UpdateStorageProfile
+    - UpdateTask
+    - UpdateWorker
+    - UpdateWorkerSchedule
+    ARNFormat: arn:aws:deadline:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:deadline:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - deadline:AssociatedMembershipLevel
+    - deadline:FarmMembershipLevels
+    - deadline:FleetMembershipLevels
+    - deadline:JobMembershipLevels
+    - deadline:MembershipLevel
+    - deadline:PrincipalId
+    - deadline:QueueMembershipLevels
+    - deadline:RequesterPrincipalId
+    HasResource: true
   AWS IoT Analytics:
     StringPrefix: iotanalytics
     Actions:
@@ -5497,6 +5618,7 @@ serviceMap:
     - DeleteSubscriptionGrant
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
+    - DeleteTimeSeriesDataPoints
     - GetAsset
     - GetAssetType
     - GetDataSource
@@ -5522,6 +5644,7 @@ serviceMap:
     - GetSubscriptionGrant
     - GetSubscriptionRequestDetails
     - GetSubscriptionTarget
+    - GetTimeSeriesDataPoint
     - GetUserProfile
     - ListAccountEnvironments
     - ListAssetRevisions
@@ -5544,7 +5667,9 @@ serviceMap:
     - ListSubscriptionTargets
     - ListSubscriptions
     - ListTagsForResource
+    - ListTimeSeriesDataPoints
     - ListWarehouseMetadata
+    - PostTimeSeriesDataPoints
     - ProvisionDomain
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
@@ -7881,6 +8006,7 @@ serviceMap:
     - ListStackInstanceResourceDrifts
     - ListStackInstances
     - ListStackResources
+    - ListStackSetAutoDeploymentTargets
     - ListStackSetOperationResults
     - ListStackSetOperations
     - ListStackSets
