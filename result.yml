@@ -1048,10 +1048,12 @@ serviceMap:
     - CancelChangeSet
     - CompleteTask
     - DeleteResourcePolicy
+    - DescribeAssessment
     - DescribeChangeSet
     - DescribeEntity
     - DescribeTask
     - GetResourcePolicy
+    - ListAssessments
     - ListChangeSets
     - ListEntities
     - ListTagsForResource
@@ -2813,33 +2815,43 @@ serviceMap:
   AWS Entity Resolution:
     StringPrefix: entityresolution
     Actions:
+    - AddPolicyStatement
     - CreateIdMappingWorkflow
+    - CreateIdNamespace
     - CreateMatchingWorkflow
     - CreateSchemaMapping
     - DeleteIdMappingWorkflow
+    - DeleteIdNamespace
     - DeleteMatchingWorkflow
+    - DeletePolicyStatement
     - DeleteSchemaMapping
     - GetIdMappingJob
     - GetIdMappingWorkflow
+    - GetIdNamespace
     - GetMatchId
     - GetMatchingJob
     - GetMatchingWorkflow
+    - GetPolicy
     - GetProviderService
     - GetSchemaMapping
     - ListIdMappingJobs
     - ListIdMappingWorkflows
+    - ListIdNamespaces
     - ListMatchingJobs
     - ListMatchingWorkflows
     - ListProviderServices
     - ListSchemaMappings
     - ListTagsForResource
+    - PutPolicy
     - StartIdMappingJob
     - StartMatchingJob
     - TagResource
     - UntagResource
     - UpdateIdMappingWorkflow
+    - UpdateIdNamespace
     - UpdateMatchingWorkflow
     - UpdateSchemaMapping
+    - UseIdNamespace
     ARNFormat: arn:aws:entityresolution:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:entityresolution:.+:.+:.+"
     conditionKeys:
