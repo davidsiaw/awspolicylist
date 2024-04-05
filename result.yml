@@ -2378,6 +2378,7 @@ serviceMap:
   Amazon DocumentDB Elastic Clusters:
     StringPrefix: docdb-elastic
     Actions:
+    - CopyClusterSnapshot
     - CreateCluster
     - CreateClusterSnapshot
     - DeleteCluster
@@ -2388,6 +2389,8 @@ serviceMap:
     - ListClusters
     - ListTagsForResource
     - RestoreClusterFromSnapshot
+    - StartCluster
+    - StopCluster
     - TagResource
     - UntagResource
     - UpdateCluster
@@ -4800,6 +4803,7 @@ serviceMap:
     Actions:
     - BatchGetCollaborationAnalysisTemplate
     - BatchGetSchema
+    - BatchGetSchemaAnalysisRule
     - CreateAnalysisTemplate
     - CreateCollaboration
     - CreateConfiguredAudienceModelAssociation
