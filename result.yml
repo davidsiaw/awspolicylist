@@ -2746,6 +2746,7 @@ serviceMap:
     - ModifyDBSubnetGroup
     - ModifyEventSubscription
     - ModifyGlobalCluster
+    - ModifyIntegration
     - ModifyOptionGroup
     - ModifyRecommendation
     - ModifyTenantDatabase
@@ -20373,6 +20374,7 @@ serviceMap:
     - ReadDataViaQuery
     - ResetGraph
     - RestoreGraphFromSnapshot
+    - StartImportTask
     - TagResource
     - UntagResource
     - UpdateGraph
