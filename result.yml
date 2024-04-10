@@ -77,6 +77,7 @@ conditionKeys:
 - aws:TokenIssueTime
 - aws:UserAgent
 - aws:ViaAWSService
+- aws:VpcSourceIp
 - aws:userid
 - aws:username
 serviceMap:
@@ -5605,6 +5606,7 @@ serviceMap:
     Actions:
     - AcceptPredictions
     - AcceptSubscriptionRequest
+    - AddPolicyGrant
     - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAsset
@@ -5686,6 +5688,7 @@ serviceMap:
     - ListGroupsForUser
     - ListMetadataGenerationRuns
     - ListNotifications
+    - ListPolicyGrants
     - ListProjectMemberships
     - ListProjects
     - ListSubscriptionGrants
@@ -5702,6 +5705,7 @@ serviceMap:
     - RefreshToken
     - RejectPredictions
     - RejectSubscriptionRequest
+    - RemovePolicyGrant
     - RevokeSubscription
     - Search
     - SearchGroupProfiles
@@ -5716,6 +5720,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateDataSource
+    - UpdateDataSourceRunActivities
     - UpdateDomain
     - UpdateEnvironment
     - UpdateEnvironmentBlueprint
