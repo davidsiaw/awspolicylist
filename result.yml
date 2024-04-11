@@ -635,6 +635,7 @@ serviceMap:
     - ListInstances
     - ListTagsForResource
     - RemoveAdminPermissionsForUser
+    - SendDataIntegrationEvent
     - TagResource
     - UntagResource
     - UpdateInstance
