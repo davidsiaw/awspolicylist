@@ -5042,6 +5042,7 @@ serviceMap:
     - UpdateContent
     - UpdateKnowledgeBaseTemplateUri
     - UpdateQuickResponse
+    - UpdateSession
     ARNFormat: arn:aws:wisdom:${Region}:${Account}:${Resource}/${ResourceId}
     ARNRegex: "^arn:aws:wisdom:.+:.+:.+"
     conditionKeys:
@@ -7689,19 +7690,29 @@ serviceMap:
     - CancelInputDeviceTransfer
     - ClaimDevice
     - CreateChannel
+    - CreateCloudWatchAlarmTemplate
+    - CreateCloudWatchAlarmTemplateGroup
+    - CreateEventBridgeRuleTemplate
+    - CreateEventBridgeRuleTemplateGroup
     - CreateInput
     - CreateInputSecurityGroup
     - CreateMultiplex
     - CreateMultiplexProgram
     - CreatePartnerInput
+    - CreateSignalMap
     - CreateTags
     - DeleteChannel
+    - DeleteCloudWatchAlarmTemplate
+    - DeleteCloudWatchAlarmTemplateGroup
+    - DeleteEventBridgeRuleTemplate
+    - DeleteEventBridgeRuleTemplateGroup
     - DeleteInput
     - DeleteInputSecurityGroup
     - DeleteMultiplex
     - DeleteMultiplexProgram
     - DeleteReservation
     - DeleteSchedule
+    - DeleteSignalMap
     - DeleteTags
     - DescribeAccountConfiguration
     - DescribeChannel
@@ -7715,7 +7726,16 @@ serviceMap:
     - DescribeReservation
     - DescribeSchedule
     - DescribeThumbnails
+    - GetCloudWatchAlarmTemplate
+    - GetCloudWatchAlarmTemplateGroup
+    - GetEventBridgeRuleTemplate
+    - GetEventBridgeRuleTemplateGroup
+    - GetSignalMap
     - ListChannels
+    - ListCloudWatchAlarmTemplateGroups
+    - ListCloudWatchAlarmTemplates
+    - ListEventBridgeRuleTemplateGroups
+    - ListEventBridgeRuleTemplates
     - ListInputDeviceTransfers
     - ListInputDevices
     - ListInputSecurityGroups
@@ -7724,15 +7744,19 @@ serviceMap:
     - ListMultiplexes
     - ListOfferings
     - ListReservations
+    - ListSignalMaps
     - ListTagsForResource
     - PurchaseOffering
     - RebootInputDevice
     - RejectInputDeviceTransfer
     - RestartChannelPipelines
     - StartChannel
+    - StartDeleteMonitorDeployment
     - StartInputDevice
     - StartInputDeviceMaintenanceWindow
+    - StartMonitorDeployment
     - StartMultiplex
+    - StartUpdateSignalMap
     - StopChannel
     - StopInputDevice
     - StopMultiplex
@@ -7740,6 +7764,10 @@ serviceMap:
     - UpdateAccountConfiguration
     - UpdateChannel
     - UpdateChannelClass
+    - UpdateCloudWatchAlarmTemplate
+    - UpdateCloudWatchAlarmTemplateGroup
+    - UpdateEventBridgeRuleTemplate
+    - UpdateEventBridgeRuleTemplateGroup
     - UpdateInput
     - UpdateInputDevice
     - UpdateInputSecurityGroup
@@ -10449,6 +10477,7 @@ serviceMap:
     - BatchGetDevEndpoints
     - BatchGetJobs
     - BatchGetPartition
+    - BatchGetStageFiles
     - BatchGetTableOptimizer
     - BatchGetTriggers
     - BatchGetWorkflows
@@ -10536,11 +10565,15 @@ serviceMap:
     - GetDataflowGraph
     - GetDevEndpoint
     - GetDevEndpoints
+    - GetEnvironment
+    - GetExecutors
+    - GetExecutorsThreads
     - GetJob
     - GetJobBookmark
     - GetJobRun
     - GetJobRuns
     - GetJobs
+    - GetLogParsingStatus
     - GetMLTaskRun
     - GetMLTaskRuns
     - GetMLTransform
@@ -10551,6 +10584,8 @@ serviceMap:
     - GetPartitionIndexes
     - GetPartitions
     - GetPlan
+    - GetQueries
+    - GetQuery
     - GetRegistry
     - GetResourcePolicies
     - GetResourcePolicy
@@ -10561,7 +10596,15 @@ serviceMap:
     - GetSecurityConfiguration
     - GetSecurityConfigurations
     - GetSession
+    - GetStage
+    - GetStageAttempt
+    - GetStageAttemptTaskList
+    - GetStageAttemptTaskSummary
+    - GetStageFiles
+    - GetStages
     - GetStatement
+    - GetStorage
+    - GetStorageUnit
     - GetTable
     - GetTableOptimizer
     - GetTableVersion
@@ -10609,6 +10652,7 @@ serviceMap:
     - QuerySchemaVersionMetadata
     - RegisterSchemaVersion
     - RemoveSchemaVersionMetadata
+    - RequestLogParsing
     - ResetJobBookmark
     - ResumeWorkflowRun
     - RunDataPreviewStatement
