@@ -17686,6 +17686,7 @@ serviceMap:
     - ListAliases
     - ListGrants
     - ListKeyPolicies
+    - ListKeyRotations
     - ListKeys
     - ListResourceTags
     - ListRetirableGrants
@@ -17695,6 +17696,7 @@ serviceMap:
     - ReplicateKey
     - RetireGrant
     - RevokeGrant
+    - RotateKeyOnDemand
     - ScheduleKeyDeletion
     - Sign
     - SynchronizeMultiRegionKey
@@ -17740,6 +17742,7 @@ serviceMap:
     - kms:RequestAlias
     - kms:ResourceAliases
     - kms:RetiringPrincipal
+    - kms:RotationPeriodInDays
     - kms:ScheduleKeyDeletionPendingWindowInDays
     - kms:SigningAlgorithm
     - kms:ValidTo
