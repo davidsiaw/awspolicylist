@@ -4589,6 +4589,7 @@ serviceMap:
     - CancelJobRun
     - CreateJobTemplate
     - CreateManagedEndpoint
+    - CreateSecurityConfiguration
     - CreateVirtualCluster
     - DeleteJobTemplate
     - DeleteManagedEndpoint
@@ -4596,11 +4597,13 @@ serviceMap:
     - DescribeJobRun
     - DescribeJobTemplate
     - DescribeManagedEndpoint
+    - DescribeSecurityConfiguration
     - DescribeVirtualCluster
     - GetManagedEndpointSessionCredentials
     - ListJobRuns
     - ListJobTemplates
     - ListManagedEndpoints
+    - ListSecurityConfigurations
     - ListTagsForResource
     - ListVirtualClusters
     - StartJobRun
@@ -8280,6 +8283,7 @@ serviceMap:
   AWS Outposts:
     StringPrefix: outposts
     Actions:
+    - CancelCapacityTask
     - CancelOrder
     - CreateOrder
     - CreateOutpost
@@ -8287,20 +8291,24 @@ serviceMap:
     - CreateSite
     - DeleteOutpost
     - DeleteSite
+    - GetCapacityTask
     - GetCatalogItem
     - GetConnection
     - GetOrder
     - GetOutpost
     - GetOutpostInstanceTypes
+    - GetOutpostSupportedInstanceTypes
     - GetPrivateConnectivityConfig
     - GetSite
     - GetSiteAddress
     - ListAssets
+    - ListCapacityTasks
     - ListCatalogItems
     - ListOrders
     - ListOutposts
     - ListSites
     - ListTagsForResource
+    - StartCapacityTask
     - StartConnection
     - TagResource
     - UntagResource
@@ -15928,6 +15936,7 @@ serviceMap:
     Actions:
     - AssociateLenses
     - AssociateProfiles
+    - ConfigureIntegration
     - CreateLensShare
     - CreateLensVersion
     - CreateMilestone
@@ -15950,6 +15959,7 @@ serviceMap:
     - ExportLens
     - GetAnswer
     - GetConsolidatedReport
+    - GetGlobalSettings
     - GetLens
     - GetLensReview
     - GetLensReviewReport
@@ -15985,6 +15995,7 @@ serviceMap:
     - UntagResource
     - UpdateAnswer
     - UpdateGlobalSettings
+    - UpdateIntegration
     - UpdateLensReview
     - UpdateProfile
     - UpdateReviewTemplate
@@ -16002,6 +16013,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - wellarchitected:JiraProjectKey
     HasResource: true
   AWS Connector Service:
     StringPrefix: awsconnector
