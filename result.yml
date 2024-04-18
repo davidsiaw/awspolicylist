@@ -12725,11 +12725,13 @@ serviceMap:
     - CreateMonitor
     - DeleteMonitor
     - GetHealthEvent
+    - GetInternetEvent
     - GetMonitor
     - GetQueryResults
     - GetQueryStatus
     - Link
     - ListHealthEvents
+    - ListInternetEvents
     - ListMonitors
     - ListTagsForResource
     - StartQuery
