@@ -2321,12 +2321,15 @@ serviceMap:
     StringPrefix: q
     Actions:
     - GetConversation
+    - GetIdentityMetadata
     - GetTroubleshootingResults
     - ListConversations
+    - PassRequest
     - SendMessage
     - StartConversation
     - StartTroubleshootingAnalysis
     - StartTroubleshootingResolutionExplanation
+    - UpdateTroubleshootingCommandResult
     HasResource: false
   AWS IAM Identity Center (successor to AWS Single Sign-On) directory:
     StringPrefix: sso-directory
@@ -14551,11 +14554,13 @@ serviceMap:
   Amazon WorkSpaces:
     StringPrefix: workspaces
     Actions:
+    - AcceptAccountLinkInvitation
     - AssociateConnectionAlias
     - AssociateIpGroups
     - AssociateWorkspaceApplication
     - AuthorizeIpRules
     - CopyWorkspaceImage
+    - CreateAccountLinkInvitation
     - CreateConnectClientAddIn
     - CreateConnectionAlias
     - CreateIpGroup
@@ -14565,6 +14570,7 @@ serviceMap:
     - CreateWorkspaceBundle
     - CreateWorkspaceImage
     - CreateWorkspaces
+    - DeleteAccountLinkInvitation
     - DeleteClientBranding
     - DeleteConnectClientAddIn
     - DeleteConnectionAlias
@@ -14598,8 +14604,10 @@ serviceMap:
     - DisassociateConnectionAlias
     - DisassociateIpGroups
     - DisassociateWorkspaceApplication
+    - GetAccountLink
     - ImportClientBranding
     - ImportWorkspaceImage
+    - ListAccountLinks
     - ListAvailableManagementCidrRanges
     - MigrateWorkspace
     - ModifyAccount
@@ -14614,6 +14622,7 @@ serviceMap:
     - RebootWorkspaces
     - RebuildWorkspaces
     - RegisterWorkspaceDirectory
+    - RejectAccountLinkInvitation
     - RestoreWorkspace
     - RevokeIpRules
     - StartWorkspaces
