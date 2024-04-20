@@ -17093,6 +17093,7 @@ serviceMap:
     - CreateVirtualService
     - DeleteGatewayRoute
     - DeleteMesh
+    - DeleteMeshPolicy
     - DeleteRoute
     - DeleteVirtualGateway
     - DeleteVirtualNode
@@ -17105,6 +17106,7 @@ serviceMap:
     - DescribeVirtualNode
     - DescribeVirtualRouter
     - DescribeVirtualService
+    - GetMeshPolicy
     - ListGatewayRoutes
     - ListMeshes
     - ListRoutes
@@ -17113,6 +17115,7 @@ serviceMap:
     - ListVirtualNodes
     - ListVirtualRouters
     - ListVirtualServices
+    - PutMeshPolicy
     - StreamAggregatedResources
     - TagResource
     - UntagResource
