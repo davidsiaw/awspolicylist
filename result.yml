@@ -7810,12 +7810,14 @@ serviceMap:
   Amazon Bedrock:
     StringPrefix: bedrock
     Actions:
+    - ApplyGuardrail
     - AssociateAgentKnowledgeBase
     - AssociateThirdPartyKnowledgeBase
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
     - CreateDataSource
+    - CreateEvaluationJob
     - CreateFoundationModelAgreement
     - CreateGuardrail
     - CreateGuardrailVersion
@@ -7844,6 +7846,7 @@ serviceMap:
     - GetAgentVersion
     - GetCustomModel
     - GetDataSource
+    - GetEvaluationJob
     - GetFoundationModel
     - GetFoundationModelAvailability
     - GetGuardrail
@@ -7865,6 +7868,7 @@ serviceMap:
     - ListAgents
     - ListCustomModels
     - ListDataSources
+    - ListEvaluationJobs
     - ListFoundationModelAgreementOffers
     - ListFoundationModels
     - ListGuardrails
@@ -7882,6 +7886,7 @@ serviceMap:
     - Retrieve
     - RetrieveAndGenerate
     - StartIngestionJob
+    - StopEvaluationJob
     - StopModelCustomizationJob
     - StopModelInvocationJob
     - TagResource
@@ -17491,6 +17496,7 @@ serviceMap:
     - CreateVirtualService
     - DeleteGatewayRoute
     - DeleteMesh
+    - DeleteMeshPolicy
     - DeleteRoute
     - DeleteVirtualGateway
     - DeleteVirtualNode
@@ -17503,6 +17509,7 @@ serviceMap:
     - DescribeVirtualNode
     - DescribeVirtualRouter
     - DescribeVirtualService
+    - GetMeshPolicy
     - ListGatewayRoutes
     - ListMeshes
     - ListRoutes
@@ -17510,6 +17517,7 @@ serviceMap:
     - ListVirtualNodes
     - ListVirtualRouters
     - ListVirtualServices
+    - PutMeshPolicy
     - StreamAggregatedResources
     - UpdateGatewayRoute
     - UpdateMesh
