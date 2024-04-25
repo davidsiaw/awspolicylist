@@ -18828,6 +18828,7 @@ serviceMap:
     - ClaimGameServer
     - CreateAlias
     - CreateBuild
+    - CreateContainerGroupDefinition
     - CreateFleet
     - CreateFleetLocations
     - CreateGameServerGroup
@@ -18843,6 +18844,7 @@ serviceMap:
     - CreateVpcPeeringConnection
     - DeleteAlias
     - DeleteBuild
+    - DeleteContainerGroupDefinition
     - DeleteFleet
     - DeleteFleetLocations
     - DeleteGameServerGroup
@@ -18859,6 +18861,7 @@ serviceMap:
     - DescribeAlias
     - DescribeBuild
     - DescribeCompute
+    - DescribeContainerGroupDefinition
     - DescribeEC2InstanceLimits
     - DescribeFleetAttributes
     - DescribeFleetCapacity
@@ -18892,6 +18895,7 @@ serviceMap:
     - ListAliases
     - ListBuilds
     - ListCompute
+    - ListContainerGroupDefinitions
     - ListFleets
     - ListGameServerGroups
     - ListGameServers
