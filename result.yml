@@ -4993,6 +4993,7 @@ serviceMap:
     - UpdateMapRun
     - UpdateStateMachine
     - UpdateStateMachineAlias
+    - ValidateStateMachineDefinition
     ARNFormat: arn:aws:states:${Region}:${Account}:${ResourceType}:${ResourceName}
     ARNRegex: "^arn:aws:states:.+"
     conditionKeys:
@@ -9176,6 +9177,12 @@ serviceMap:
     Actions:
     - GenerateDataSet
     - StartSupportDataExport
+    HasResource: false
+  AWS Signin:
+    StringPrefix: signin
+    Actions:
+    - CreateTrustedIdentityPropagationApplicationForConsole
+    - ListTrustedIdentityPropagationApplicationsForConsole
     HasResource: false
   Amazon CloudWatch Logs:
     StringPrefix: logs
@@ -15514,6 +15521,7 @@ serviceMap:
     - DescribeDocumentVersions
     - DescribeFolderContents
     - DescribeGroups
+    - DescribeInstanceExports
     - DescribeInstances
     - DescribeNotificationPermissions
     - DescribeNotificationSubscriptions
@@ -15535,13 +15543,16 @@ serviceMap:
     - RemoveResourcePermission
     - RestoreDocumentVersions
     - SearchResources
+    - StartInstanceExport
     - UpdateDocument
     - UpdateDocumentVersion
     - UpdateFolder
     - UpdateInstanceAlias
     - UpdateUser
     - UpdateUserAdministrativeSettings
-    HasResource: false
+    ARNFormat: arn:aws:workdocs:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:workdocs:.+:.+:.+"
+    HasResource: true
   Amazon Comprehend Medical:
     StringPrefix: comprehendmedical
     Actions:
@@ -15878,6 +15889,7 @@ serviceMap:
     - UpdateRefreshSchedule
     - UpdateResourcePermissions
     - UpdateRoleCustomPermission
+    - UpdateSPICECapacityConfiguration
     - UpdateTemplate
     - UpdateTemplateAlias
     - UpdateTemplatePermissions
@@ -15919,6 +15931,9 @@ serviceMap:
     - CreateRelatedItem
     - CreateTemplate
     - DeleteDomain
+    - DeleteField
+    - DeleteLayout
+    - DeleteTemplate
     - GetCase
     - GetCaseAuditEvents
     - GetCaseEventConfiguration
