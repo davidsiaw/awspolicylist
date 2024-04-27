@@ -9794,6 +9794,7 @@ serviceMap:
     - PutWebhook
     - RegisterWebhookWithThirdParty
     - RetryStageExecution
+    - RollbackStage
     - StartPipelineExecution
     - StopPipelineExecution
     - TagResource
@@ -13724,7 +13725,6 @@ serviceMap:
   Amazon WorkMail:
     StringPrefix: workmail
     Actions:
-    - AddMembersToGroup
     - AllowVendedLogDeliveryForResource
     - AssociateDelegateToResource
     - AssociateMemberToGroup
@@ -13762,19 +13762,14 @@ serviceMap:
     - DeleteUser
     - DeregisterFromWorkMail
     - DeregisterMailDomain
-    - DescribeDirectories
     - DescribeEmailMonitoringConfiguration
     - DescribeEntity
     - DescribeGroup
     - DescribeInboundDmarcSettings
     - DescribeInboundMailFlowRule
-    - DescribeKmsKeys
     - DescribeMailDomains
-    - DescribeMailGroups
-    - DescribeMailUsers
     - DescribeMailboxExportJob
     - DescribeOrganization
-    - DescribeOrganizations
     - DescribeOutboundMailFlowRule
     - DescribeResource
     - DescribeSmtpGateway
@@ -13789,7 +13784,6 @@ serviceMap:
     - GetJournalingRules
     - GetMailDomain
     - GetMailDomainDetails
-    - GetMailGroupDetails
     - GetMailboxDetails
     - GetMobileDeviceAccessEffect
     - GetMobileDeviceAccessOverride
@@ -13807,7 +13801,6 @@ serviceMap:
     - ListMailDomains
     - ListMailboxExportJobs
     - ListMailboxPermissions
-    - ListMembersInMailGroup
     - ListMobileDeviceAccessOverrides
     - ListMobileDeviceAccessRules
     - ListOrganizations
@@ -13825,11 +13818,8 @@ serviceMap:
     - PutRetentionPolicy
     - RegisterMailDomain
     - RegisterToWorkMail
-    - RemoveMembersFromGroup
     - ResetPassword
-    - ResetUserPassword
     - SearchMembers
-    - SetAdmin
     - SetDefaultMailDomain
     - SetJournalingRules
     - SetMobilePolicyDetails
@@ -20416,6 +20406,7 @@ serviceMap:
     - ListFHIRImportJobs
     - ListTagsForResource
     - ReadResource
+    - SearchEverything
     - SearchWithGet
     - SearchWithPost
     - StartFHIRExportJob
