@@ -8398,6 +8398,7 @@ serviceMap:
     - DeleteDatabase
     - DeleteScheduledQuery
     - DeleteTable
+    - DescribeAccountSettings
     - DescribeBatchLoadTask
     - DescribeDatabase
     - DescribeEndpoints
@@ -8421,6 +8422,7 @@ serviceMap:
     - TagResource
     - Unload
     - UntagResource
+    - UpdateAccountSettings
     - UpdateDatabase
     - UpdateScheduledQuery
     - UpdateTable
@@ -18619,6 +18621,13 @@ serviceMap:
     - ec2:VpceServiceName
     - ec2:VpceServiceOwner
     - ec2:VpceServicePrivateDnsName
+    - ec2:transitGatewayAttachmentId
+    - ec2:transitGatewayConnectPeerId
+    - ec2:transitGatewayId
+    - ec2:transitGatewayMulticastDomainId
+    - ec2:transitGatewayPolicyTableId
+    - ec2:transitGatewayRouteTableAnnouncementId
+    - ec2:transitGatewayRouteTableId
     HasResource: true
   AWS Import Export Disk Service:
     StringPrefix: importexport
