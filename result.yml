@@ -81,6 +81,33 @@ conditionKeys:
 - aws:userid
 - aws:username
 serviceMap:
+  Amazon Q Business Q Apps:
+    StringPrefix: qapps
+    Actions:
+    - AssociateQAppWithUser
+    - CopyQApp
+    - CreateLibraryItem
+    - CreateLibraryItemReview
+    - CreateQApp
+    - CreateSubscriptionToken
+    - DeleteLibraryItem
+    - DeleteQApp
+    - DisassociateQAppFromUser
+    - GetLibraryItem
+    - GetQApp
+    - ImportDocumentToQApp
+    - ImportDocumentToQAppSession
+    - ListLibraryItems
+    - ListQApps
+    - PredictProblemStatementFromConversation
+    - PredictQAppFromProblemStatement
+    - StartQAppSession
+    - StopQAppSession
+    - UpdateLibraryItem
+    - UpdateQApp
+    ARNFormat: arn:aws:qapps:${Region}:${Account}:${ResourceType}:${ResourcePath}
+    ARNRegex: "^arn:aws:qapps:.+:.+:.+"
+    HasResource: true
   AWS IoT:
     StringPrefix: iot
     Actions:
@@ -16131,6 +16158,7 @@ serviceMap:
     - AddUserLicenses
     - BatchDeleteDocument
     - BatchPutDocument
+    - CancelSubscription
     - Chat
     - ChatSync
     - CreateApplication
@@ -16139,6 +16167,7 @@ serviceMap:
     - CreateLicense
     - CreatePlugin
     - CreateRetriever
+    - CreateSubscription
     - CreateUser
     - CreateWebExperience
     - DeleteApplication
@@ -16171,6 +16200,7 @@ serviceMap:
     - ListMessages
     - ListPlugins
     - ListRetrievers
+    - ListSubscriptions
     - ListTagsForResource
     - ListUserLicenses
     - ListWebExperiences
@@ -16187,6 +16217,7 @@ serviceMap:
     - UpdateIndex
     - UpdatePlugin
     - UpdateRetriever
+    - UpdateSubscription
     - UpdateUser
     - UpdateWebExperience
     ARNFormat: arn:aws:qbusiness:${Region}:${Account}:${ResourceType}/${ResourceName}
