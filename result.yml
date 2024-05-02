@@ -17292,23 +17292,28 @@ serviceMap:
     StringPrefix: sms-voice
     Actions:
     - AssociateOriginationIdentity
+    - AssociateProtectConfiguration
     - CreateConfigurationSet
     - CreateEventDestination
     - CreateOptOutList
     - CreatePool
+    - CreateProtectConfiguration
     - CreateRegistration
     - CreateRegistrationAssociation
     - CreateRegistrationAttachment
     - CreateRegistrationVersion
     - CreateVerifiedDestinationNumber
+    - DeleteAccountDefaultProtectConfiguration
     - DeleteConfigurationSet
     - DeleteDefaultMessageType
     - DeleteDefaultSenderId
     - DeleteEventDestination
     - DeleteKeyword
+    - DeleteMediaMessageSpendLimitOverride
     - DeleteOptOutList
     - DeleteOptedOutNumber
     - DeletePool
+    - DeleteProtectConfiguration
     - DeleteRegistration
     - DeleteRegistrationAttachment
     - DeleteRegistrationFieldValue
@@ -17323,6 +17328,7 @@ serviceMap:
     - DescribeOptedOutNumbers
     - DescribePhoneNumbers
     - DescribePools
+    - DescribeProtectConfigurations
     - DescribeRegistrationAttachments
     - DescribeRegistrationFieldDefinitions
     - DescribeRegistrationFieldValues
@@ -17334,7 +17340,9 @@ serviceMap:
     - DescribeSpendLimits
     - DescribeVerifiedDestinationNumbers
     - DisassociateOriginationIdentity
+    - DisassociateProtectConfiguration
     - DiscardRegistrationVersion
+    - GetProtectConfigurationCountryRuleSet
     - ListPoolOriginationIdentities
     - ListRegistrationAssociations
     - ListTagsForResource
@@ -17346,10 +17354,13 @@ serviceMap:
     - RequestPhoneNumber
     - RequestSenderId
     - SendDestinationNumberVerificationCode
+    - SendMediaMessage
     - SendTextMessage
     - SendVoiceMessage
+    - SetAccountDefaultProtectConfiguration
     - SetDefaultMessageType
     - SetDefaultSenderId
+    - SetMediaMessageSpendLimitOverride
     - SetTextMessageSpendLimitOverride
     - SetVoiceMessageSpendLimitOverride
     - SubmitRegistrationVersion
@@ -17358,6 +17369,8 @@ serviceMap:
     - UpdateEventDestination
     - UpdatePhoneNumber
     - UpdatePool
+    - UpdateProtectConfiguration
+    - UpdateProtectConfigurationCountryRuleSet
     - UpdateSenderId
     - VerifyDestinationNumber
     ARNFormat: arn:aws:sms-voice:${Region}:${Account}:${ResourceType}/${ResourceId}
