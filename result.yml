@@ -20572,6 +20572,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - neptune-graph:PublicConnectivity
     HasResource: true
   Amazon EC2 Image Builder:
     StringPrefix: imagebuilder
