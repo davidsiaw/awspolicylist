@@ -1666,6 +1666,7 @@ serviceMap:
     StringPrefix: connect
     Actions:
     - ActivateEvaluationForm
+    - AdminGetEmergencyAccessToken
     - AssociateApprovedOrigin
     - AssociateBot
     - AssociateCustomerProfilesDomain
@@ -1775,7 +1776,6 @@ serviceMap:
     - GetCurrentMetricData
     - GetCurrentUserData
     - GetFederationToken
-    - GetFederationTokens
     - GetFlowAssociation
     - GetMetricData
     - GetMetricDataV2
@@ -9482,6 +9482,7 @@ serviceMap:
     - CreateBatchInferenceJob
     - CreateBatchSegmentJob
     - CreateCampaign
+    - CreateDataDeletionJob
     - CreateDataInsightsJob
     - CreateDataset
     - CreateDatasetExportJob
@@ -9507,6 +9508,7 @@ serviceMap:
     - DescribeBatchInferenceJob
     - DescribeBatchSegmentJob
     - DescribeCampaign
+    - DescribeDataDeletionJob
     - DescribeDataInsightsJob
     - DescribeDataset
     - DescribeDatasetExportJob
@@ -9529,6 +9531,7 @@ serviceMap:
     - ListBatchInferenceJobs
     - ListBatchSegmentJobs
     - ListCampaigns
+    - ListDataDeletionJobs
     - ListDataInsightsJobs
     - ListDatasetExportJobs
     - ListDatasetGroups
