@@ -1010,6 +1010,7 @@ serviceMap:
     - ImportResourcesToDraftAppVersion
     - ListAlarmRecommendations
     - ListAppAssessmentComplianceDrifts
+    - ListAppAssessmentResourceDrifts
     - ListAppAssessments
     - ListAppComponentCompliances
     - ListAppComponentRecommendations
@@ -2445,6 +2446,7 @@ serviceMap:
   Amazon VPC Lattice Services:
     StringPrefix: vpc-lattice-svcs
     Actions:
+    - Connect
     - Invoke
     ARNFormat: arn:aws:vpc-lattice:${Region}:${Account}:${ResourceType}/${RelativeId}
     ARNRegex: "^arn:aws:vpc-lattice:.+"
@@ -8283,6 +8285,7 @@ serviceMap:
     - ListApplications
     - ListBatchJobDefinitions
     - ListBatchJobExecutions
+    - ListBatchJobRestartPoints
     - ListDataSetImportHistory
     - ListDataSets
     - ListDeployments
