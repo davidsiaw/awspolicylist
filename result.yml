@@ -2348,6 +2348,8 @@ serviceMap:
   Amazon Q:
     StringPrefix: q
     Actions:
+    - CreateAssignment
+    - DeleteAssignment
     - GetConversation
     - GetIdentityMetadata
     - GetTroubleshootingResults
@@ -20057,6 +20059,7 @@ serviceMap:
     - ListUsers
     - ListWorkflows
     - SendWorkflowStepState
+    - StartDirectoryListing
     - StartFileTransfer
     - StartServer
     - StopServer
