@@ -10144,12 +10144,15 @@ serviceMap:
     - ListApplications
     - ListComponents
     - ListDatabases
+    - ListOperationEvents
     - ListOperations
     - ListTagsForResource
     - PutResourcePermission
     - RegisterApplication
     - RestoreDatabase
+    - StartApplication
     - StartApplicationRefresh
+    - StopApplication
     - TagResource
     - UntagResource
     - UpdateApplicationSettings
