@@ -1684,9 +1684,11 @@ serviceMap:
     - AssociateUserProficiencies
     - BatchAssociateAnalyticsDataSet
     - BatchDisassociateAnalyticsDataSet
+    - BatchGetAttachedFileMetadata
     - BatchGetFlowAssociation
     - BatchPutContact
     - ClaimPhoneNumber
+    - CompleteAttachedFileUpload
     - CreateAgentStatus
     - CreateContactFlow
     - CreateContactFlowModule
@@ -1712,6 +1714,7 @@ serviceMap:
     - CreateViewVersion
     - CreateVocabulary
     - DeactivateEvaluationForm
+    - DeleteAttachedFile
     - DeleteContactEvaluation
     - DeleteContactFlow
     - DeleteContactFlowModule
@@ -1773,6 +1776,7 @@ serviceMap:
     - DisassociateTrafficDistributionGroupUser
     - DisassociateUserProficiencies
     - DismissUserContact
+    - GetAttachedFile
     - GetContactAttributes
     - GetCurrentMetricData
     - GetCurrentUserData
@@ -1848,6 +1852,7 @@ serviceMap:
     - SearchUsers
     - SearchVocabularies
     - SendChatIntegrationEvent
+    - StartAttachedFileUpload
     - StartChatContact
     - StartContactEvaluation
     - StartContactRecording
@@ -1925,6 +1930,7 @@ serviceMap:
     - connect:SearchContactsByContactAnalysis
     - connect:SearchTag/${TagKey}
     - connect:StorageResourceType
+    - connect:UserArn
     HasResource: true
   Amazon Pinpoint Email Service:
     StringPrefix: ses
@@ -15971,6 +15977,7 @@ serviceMap:
     - DeleteDomain
     - DeleteField
     - DeleteLayout
+    - DeleteRelatedItem
     - DeleteTemplate
     - GetCase
     - GetCaseAuditEvents
