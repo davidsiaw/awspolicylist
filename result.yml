@@ -11653,6 +11653,7 @@ serviceMap:
     - UpdateArchive
     - UpdateConnection
     - UpdateEndpoint
+    - UpdateEventBus
     ARNFormat: arn:aws:events:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:events:.+"
     conditionKeys:
