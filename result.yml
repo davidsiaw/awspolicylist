@@ -5055,18 +5055,21 @@ serviceMap:
     - CreateAssistant
     - CreateAssistantAssociation
     - CreateContent
+    - CreateContentAssociation
     - CreateKnowledgeBase
     - CreateQuickResponse
     - CreateSession
     - DeleteAssistant
     - DeleteAssistantAssociation
     - DeleteContent
+    - DeleteContentAssociation
     - DeleteImportJob
     - DeleteKnowledgeBase
     - DeleteQuickResponse
     - GetAssistant
     - GetAssistantAssociation
     - GetContent
+    - GetContentAssociation
     - GetContentSummary
     - GetImportJob
     - GetKnowledgeBase
@@ -5075,6 +5078,7 @@ serviceMap:
     - GetSession
     - ListAssistantAssociations
     - ListAssistants
+    - ListContentAssociations
     - ListContents
     - ListImportJobs
     - ListKnowledgeBases
@@ -15837,6 +15841,7 @@ serviceMap:
     - DescribeIAMPolicyAssignment
     - DescribeIngestion
     - DescribeIpRestriction
+    - DescribeKeyRegistration
     - DescribeNamespace
     - DescribeRefreshSchedule
     - DescribeRoleCustomPermission
@@ -15936,6 +15941,7 @@ serviceMap:
     - UpdateIAMPolicyAssignment
     - UpdateIdentityPropagationConfig
     - UpdateIpRestriction
+    - UpdateKeyRegistration
     - UpdatePublicSharingSettings
     - UpdateRefreshSchedule
     - UpdateResourcePermissions
@@ -15962,6 +15968,7 @@ serviceMap:
     - quicksight:DirectoryType
     - quicksight:Edition
     - quicksight:IamArn
+    - quicksight:KmsKeyArns
     - quicksight:SessionName
     - quicksight:UserName
     HasResource: true
@@ -20148,6 +20155,7 @@ serviceMap:
     - DeleteDatastore
     - DeleteImageSet
     - GetDICOMImportJob
+    - GetDICOMInstance
     - GetDatastore
     - GetImageFrame
     - GetImageSet
@@ -20698,6 +20706,16 @@ serviceMap:
     - imagebuilder:LifecyclePolicyResourceType
     - imagebuilder:StatusTopicArn
     HasResource: true
+  AWS User Subscriptions:
+    StringPrefix: user-subscriptions
+    Actions:
+    - CreateClaim
+    - DeleteClaim
+    - ListApplicationClaims
+    - ListClaims
+    - ListUserSubscriptions
+    - UpdateClaim
+    HasResource: false
   Amazon S3 Glacier:
     StringPrefix: glacier
     Actions:
