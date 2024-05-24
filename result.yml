@@ -9046,6 +9046,12 @@ serviceMap:
     - elasticbeanstalk:FromSolutionStack
     - elasticbeanstalk:InApplication
     HasResource: true
+  AWS Support Recommendations:
+    StringPrefix: supportrecommendations
+    Actions:
+    - GetSupportTroubleshootingResponse
+    - StartSupportTroubleshooting
+    HasResource: false
   Amazon CloudWatch Application Insights:
     StringPrefix: applicationinsights
     Actions:
@@ -16578,6 +16584,7 @@ serviceMap:
     StringPrefix: emr-serverless
     Actions:
     - AccessInteractiveEndpoints
+    - AccessLivyEndpoints
     - CancelJobRun
     - CreateApplication
     - DeleteApplication
@@ -18422,6 +18429,7 @@ serviceMap:
     - DisableImage
     - DisableImageBlockPublicAccess
     - DisableImageDeprecation
+    - DisableImageDeregistrationProtection
     - DisableIpamOrganizationAdminAccount
     - DisableSerialConsoleAccess
     - DisableSnapshotBlockPublicAccess
@@ -18453,6 +18461,7 @@ serviceMap:
     - EnableImage
     - EnableImageBlockPublicAccess
     - EnableImageDeprecation
+    - EnableImageDeregistrationProtection
     - EnableIpamOrganizationAdminAccount
     - EnableReachabilityAnalyzerOrganizationSharing
     - EnableSerialConsoleAccess
@@ -18481,6 +18490,7 @@ serviceMap:
     - GetHostReservationPurchasePreview
     - GetImageBlockPublicAccessState
     - GetInstanceMetadataDefaults
+    - GetInstanceTpmEkPub
     - GetInstanceTypesFromInstanceRequirements
     - GetInstanceUefiData
     - GetIpamAddressHistory
@@ -18941,8 +18951,11 @@ serviceMap:
     - ListMicrosoftTeamsChannelConfigurations
     - ListMicrosoftTeamsConfiguredTeams
     - ListMicrosoftTeamsUserIdentities
+    - ListTagsForResource
     - RedeemMicrosoftTeamsOauthCode
     - RedeemSlackOauthCode
+    - TagResource
+    - UntagResource
     - UpdateAccountPreferences
     - UpdateChimeWebhookConfiguration
     - UpdateMicrosoftTeamsChannelConfiguration
