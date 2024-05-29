@@ -10649,6 +10649,7 @@ serviceMap:
     - BatchGetTableOptimizer
     - BatchGetTriggers
     - BatchGetWorkflows
+    - BatchPutDataQualityStatisticAnnotation
     - BatchStopJobRun
     - BatchUpdatePartition
     - CancelDataQualityRuleRecommendationRun
@@ -10705,6 +10706,8 @@ serviceMap:
     - DeleteUserDefinedFunction
     - DeleteWorkflow
     - DeregisterDataPreview
+    - DescribeConnectionType
+    - DescribeEntity
     - GetBlueprint
     - GetBlueprintRun
     - GetBlueprintRuns
@@ -10724,6 +10727,8 @@ serviceMap:
     - GetCustomEntityType
     - GetDataCatalogEncryptionSettings
     - GetDataPreviewStatement
+    - GetDataQualityModel
+    - GetDataQualityModelResult
     - GetDataQualityResult
     - GetDataQualityRuleRecommendationRun
     - GetDataQualityRuleset
@@ -10792,6 +10797,7 @@ serviceMap:
     - ImportCatalogToGlue
     - ListBlueprints
     - ListColumnStatisticsTaskRuns
+    - ListConnectionTypes
     - ListCrawlers
     - ListCrawls
     - ListCustomEntityTypes
@@ -10799,7 +10805,10 @@ serviceMap:
     - ListDataQualityRuleRecommendationRuns
     - ListDataQualityRulesetEvaluationRuns
     - ListDataQualityRulesets
+    - ListDataQualityStatisticAnnotations
+    - ListDataQualityStatistics
     - ListDevEndpoints
+    - ListEntities
     - ListJobs
     - ListMLTransforms
     - ListRegistries
@@ -10814,10 +10823,12 @@ serviceMap:
     - PassConnection
     - PublishDataQuality
     - PutDataCatalogEncryptionSettings
+    - PutDataQualityProfileAnnotation
     - PutResourcePolicy
     - PutSchemaVersionMetadata
     - PutWorkflowRunProperties
     - QuerySchemaVersionMetadata
+    - RefreshOAuth2Tokens
     - RegisterSchemaVersion
     - RemoveSchemaVersionMetadata
     - RequestLogParsing
@@ -14371,6 +14382,8 @@ serviceMap:
     - CountOpenWorkflowExecutions
     - CountPendingActivityTasks
     - CountPendingDecisionTasks
+    - DeleteActivityType
+    - DeleteWorkflowType
     - DeprecateActivityType
     - DeprecateDomain
     - DeprecateWorkflowType
