@@ -2342,6 +2342,31 @@ serviceMap:
     - refactor-spaces:ServiceCreatedByAccount
     - refactor-spaces:SourcePath
     HasResource: true
+  Amazon CloudWatch Application Signals:
+    StringPrefix: application-signals
+    Actions:
+    - BatchGetServiceLevelObjectiveBudgetReport
+    - CreateServiceLevelObjective
+    - DeleteServiceLevelObjective
+    - GetService
+    - GetServiceLevelObjective
+    - ListServiceDependencies
+    - ListServiceDependents
+    - ListServiceLevelObjectives
+    - ListServiceOperations
+    - ListServices
+    - ListTagsForResource
+    - StartDiscovery
+    - TagResource
+    - UntagResource
+    - UpdateServiceLevelObjective
+    ARNFormat: arn:aws:application-signals:${Region}:${Account}:slo/{ServiceLevelObjectivesName}
+    ARNRegex: "^arn:aws:application-signals:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Inspector2:
     StringPrefix: inspector2
     Actions:
@@ -7667,7 +7692,7 @@ serviceMap:
     - UpdatePaymentInstrument
     - UpdatePaymentPreferences
     ARNFormat: arn:aws:payments::${Account}:${ResourceType}:${ResourceId}
-    ARNRegex: "^arn:aws:payments::[0-9]{12}:.+:.+"
+    ARNRegex: "^arn:aws:payments:::.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
