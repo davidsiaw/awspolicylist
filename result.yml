@@ -15157,6 +15157,7 @@ serviceMap:
     - DescribeJobQueues
     - DescribeJobs
     - DescribeSchedulingPolicies
+    - GetJobQueueSnapshot
     - ListJobs
     - ListSchedulingPolicies
     - ListTagsForResource
