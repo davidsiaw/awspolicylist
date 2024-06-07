@@ -17896,6 +17896,7 @@ serviceMap:
     - DescribeRouteCalculator
     - DescribeTracker
     - DisassociateTrackerConsumer
+    - ForecastGeofenceEvents
     - GetDevicePosition
     - GetDevicePositionHistory
     - GetGeofence
@@ -17926,6 +17927,7 @@ serviceMap:
     - UpdatePlaceIndex
     - UpdateRouteCalculator
     - UpdateTracker
+    - VerifyDevicePosition
     ARNFormat: arn:aws:geo:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:geo:.+"
     conditionKeys:
@@ -21457,6 +21459,7 @@ serviceMap:
   AWS Account Management:
     StringPrefix: account
     Actions:
+    - AcceptPrimaryEmailUpdate
     - CloseAccount
     - DeleteAlternateContact
     - DisableRegion
@@ -21465,17 +21468,20 @@ serviceMap:
     - GetAlternateContact
     - GetChallengeQuestions
     - GetContactInformation
+    - GetPrimaryEmail
     - GetRegionOptStatus
     - ListRegions
     - PutAlternateContact
     - PutChallengeQuestions
     - PutContactInformation
+    - StartPrimaryEmailUpdate
     ARNFormat: arn:aws:account::${Account}:account
     ARNRegex: "^arn:aws:account::.+:account"
     conditionKeys:
     - account:AccountResourceOrgPaths
     - account:AccountResourceOrgTags/${TagKey}
     - account:AlternateContactTypes
+    - account:EmailTargetDomain
     - account:TargetRegion
     HasResource: true
 policyTypes:
