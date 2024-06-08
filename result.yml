@@ -12282,6 +12282,7 @@ serviceMap:
     - ListStorageLensGroups
     - ListTagsForResource
     - ObjectOwnerOverrideToBucketOwner
+    - PauseReplication
     - PutAccelerateConfiguration
     - PutAccessGrantsInstanceResourcePolicy
     - PutAccessPointConfigurationForObjectLambda
@@ -12353,6 +12354,8 @@ serviceMap:
     - s3:TlsVersion
     - s3:authType
     - s3:delimiter
+    - s3:destinationRegion
+    - s3:isReplicationPauseRequest
     - s3:locationconstraint
     - s3:max-keys
     - s3:object-lock-legal-hold
