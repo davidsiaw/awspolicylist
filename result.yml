@@ -11654,6 +11654,7 @@ serviceMap:
     - CreateDetector
     - CreateFilter
     - CreateIPSet
+    - CreateMalwareProtectionPlan
     - CreateMembers
     - CreatePublishingDestination
     - CreateSampleFindings
@@ -11663,6 +11664,7 @@ serviceMap:
     - DeleteFilter
     - DeleteIPSet
     - DeleteInvitations
+    - DeleteMalwareProtectionPlan
     - DeleteMembers
     - DeletePublishingDestination
     - DeleteThreatIntelSet
@@ -11682,6 +11684,7 @@ serviceMap:
     - GetFindingsStatistics
     - GetIPSet
     - GetInvitationsCount
+    - GetMalwareProtectionPlan
     - GetMalwareScanSettings
     - GetMasterAccount
     - GetMemberDetectors
@@ -11697,6 +11700,7 @@ serviceMap:
     - ListFindings
     - ListIPSets
     - ListInvitations
+    - ListMalwareProtectionPlans
     - ListMembers
     - ListOrganizationAdminAccounts
     - ListPublishingDestinations
@@ -11713,6 +11717,7 @@ serviceMap:
     - UpdateFilter
     - UpdateFindingsFeedback
     - UpdateIPSet
+    - UpdateMalwareProtectionPlan
     - UpdateMalwareScanSettings
     - UpdateMemberDetectors
     - UpdateOrganizationConfiguration
@@ -19512,6 +19517,7 @@ serviceMap:
     - ecs:enable-ebs-volumes
     - ecs:enable-execute-command
     - ecs:enable-service-connect
+    - ecs:fargate-ephemeral-storage-kms-key
     - ecs:namespace
     - ecs:service
     - ecs:task
