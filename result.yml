@@ -2957,6 +2957,7 @@ serviceMap:
     StringPrefix: entityresolution
     Actions:
     - AddPolicyStatement
+    - BatchDeleteUniqueId
     - CreateIdMappingWorkflow
     - CreateIdNamespace
     - CreateMatchingWorkflow
