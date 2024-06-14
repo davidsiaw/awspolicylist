@@ -1839,6 +1839,8 @@ serviceMap:
     - ResumeContact
     - ResumeContactRecording
     - SearchAvailablePhoneNumbers
+    - SearchContactFlowModules
+    - SearchContactFlows
     - SearchContacts
     - SearchHoursOfOperations
     - SearchPredefinedAttributes
@@ -5751,6 +5753,7 @@ serviceMap:
     - AcceptPredictions
     - AcceptSubscriptionRequest
     - AddPolicyGrant
+    - AssociateEnvironmentRole
     - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAsset
@@ -5759,6 +5762,7 @@ serviceMap:
     - CreateDataSource
     - CreateDomain
     - CreateEnvironment
+    - CreateEnvironmentAction
     - CreateEnvironmentBlueprint
     - CreateEnvironmentProfile
     - CreateFormType
@@ -5778,6 +5782,7 @@ serviceMap:
     - DeleteDomain
     - DeleteDomainSharingPolicy
     - DeleteEnvironment
+    - DeleteEnvironmentAction
     - DeleteEnvironmentBlueprint
     - DeleteEnvironmentBlueprintConfiguration
     - DeleteEnvironmentProfile
@@ -5791,6 +5796,7 @@ serviceMap:
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
+    - DisassociateEnvironmentRole
     - GetAsset
     - GetAssetType
     - GetDataSource
@@ -5798,6 +5804,7 @@ serviceMap:
     - GetDomain
     - GetDomainSharingPolicy
     - GetEnvironment
+    - GetEnvironmentAction
     - GetEnvironmentActionLink
     - GetEnvironmentBlueprint
     - GetEnvironmentBlueprintConfiguration
@@ -5824,6 +5831,7 @@ serviceMap:
     - ListDataSourceRuns
     - ListDataSources
     - ListDomains
+    - ListEnvironmentActions
     - ListEnvironmentBlueprintConfigurationSummaries
     - ListEnvironmentBlueprintConfigurations
     - ListEnvironmentBlueprints
@@ -5867,6 +5875,7 @@ serviceMap:
     - UpdateDataSourceRunActivities
     - UpdateDomain
     - UpdateEnvironment
+    - UpdateEnvironmentAction
     - UpdateEnvironmentBlueprint
     - UpdateEnvironmentConfiguration
     - UpdateEnvironmentDeploymentStatus
@@ -14492,6 +14501,41 @@ serviceMap:
     - swf:workflowType.name
     - swf:workflowType.version
     HasResource: true
+  ? AWS Mainframe Modernization Application Testing provides tools and resources for
+    automated functional equivalence testing for your migration projects.
+  : StringPrefix: apptest
+    Actions:
+    - CreateTestCase
+    - CreateTestConfiguration
+    - CreateTestSuite
+    - DeleteTestCase
+    - DeleteTestConfiguration
+    - DeleteTestRun
+    - DeleteTestSuite
+    - GetTestCase
+    - GetTestConfiguration
+    - GetTestRunStep
+    - GetTestSuite
+    - ListTagsForResource
+    - ListTestCases
+    - ListTestConfigurations
+    - ListTestRunSteps
+    - ListTestRunTestCases
+    - ListTestRuns
+    - ListTestSuites
+    - StartTestRun
+    - TagResource
+    - UntagResource
+    - UpdateTestCase
+    - UpdateTestConfiguration
+    - UpdateTestSuite
+    ARNFormat: arn:aws:apptest:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:apptest:${Region}:${Account}:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Systems Manager Incident Manager:
     StringPrefix: ssm-incidents
     Actions:
@@ -20036,6 +20080,7 @@ serviceMap:
   AWS Tax Settings:
     StringPrefix: tax
     Actions:
+    - BatchDeleteTaxRegistration
     - BatchPutTaxRegistration
     - DeleteTaxRegistration
     - GetExemptions
