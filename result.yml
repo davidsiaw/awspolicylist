@@ -18004,6 +18004,7 @@ serviceMap:
     - DeleteAlias
     - DeleteCustomKeyStore
     - DeleteImportedKeyMaterial
+    - DeriveSharedSecret
     - DescribeCustomKeyStores
     - DescribeKey
     - DisableKey
@@ -18067,6 +18068,7 @@ serviceMap:
     - kms:GrantIsForAWSResource
     - kms:GrantOperations
     - kms:GranteePrincipal
+    - kms:KeyAgreementAlgorithm
     - kms:KeyOrigin
     - kms:KeySpec
     - kms:KeyUsage
