@@ -7972,6 +7972,7 @@ serviceMap:
   Amazon Bedrock:
     StringPrefix: bedrock
     Actions:
+    - AllowVendedLogDeliveryForResource
     - ApplyGuardrail
     - AssociateAgentKnowledgeBase
     - AssociateThirdPartyKnowledgeBase
@@ -8302,6 +8303,7 @@ serviceMap:
     Actions:
     - AcceptInvitation
     - BatchGetCustomDataIdentifiers
+    - BatchUpdateAutomatedDiscoveryAccounts
     - CreateAllowList
     - CreateClassificationJob
     - CreateCustomDataIdentifier
@@ -8348,6 +8350,7 @@ serviceMap:
     - GetUsageStatistics
     - GetUsageTotals
     - ListAllowLists
+    - ListAutomatedDiscoveryAccounts
     - ListClassificationJobs
     - ListClassificationScopes
     - ListCustomDataIdentifiers
@@ -12439,6 +12442,7 @@ serviceMap:
     - CreateInferenceRecommendationsJob
     - CreateLabelingJob
     - CreateLineageGroupPolicy
+    - CreateMlflowTrackingServer
     - CreateModel
     - CreateModelBiasJobDefinition
     - CreateModelCard
@@ -12452,6 +12456,7 @@ serviceMap:
     - CreateNotebookInstanceLifecycleConfig
     - CreatePipeline
     - CreatePresignedDomainUrl
+    - CreatePresignedMlflowTrackingServerUrl
     - CreatePresignedNotebookInstanceUrl
     - CreateProcessingJob
     - CreateProject
@@ -12495,6 +12500,7 @@ serviceMap:
     - DeleteInferenceComponent
     - DeleteInferenceExperiment
     - DeleteLineageGroupPolicy
+    - DeleteMlflowTrackingServer
     - DeleteModel
     - DeleteModelBiasJobDefinition
     - DeleteModelCard
@@ -12555,6 +12561,7 @@ serviceMap:
     - DescribeInferenceRecommendationsJob
     - DescribeLabelingJob
     - DescribeLineageGroup
+    - DescribeMlflowTrackingServer
     - DescribeModel
     - DescribeModelBiasJobDefinition
     - DescribeModelCard
@@ -12639,6 +12646,7 @@ serviceMap:
     - ListLabelingJobs
     - ListLabelingJobsForWorkteam
     - ListLineageGroups
+    - ListMlflowTrackingServers
     - ListModelBiasJobDefinitions
     - ListModelCardExportJobs
     - ListModelCardVersions
@@ -12694,6 +12702,7 @@ serviceMap:
     - StartEdgeDeploymentStage
     - StartHumanLoop
     - StartInferenceExperiment
+    - StartMlflowTrackingServer
     - StartMonitoringSchedule
     - StartNotebookInstance
     - StartPipelineExecution
@@ -12706,6 +12715,7 @@ serviceMap:
     - StopInferenceExperiment
     - StopInferenceRecommendationsJob
     - StopLabelingJob
+    - StopMlflowTrackingServer
     - StopMonitoringSchedule
     - StopNotebookInstance
     - StopPipelineExecution
@@ -12733,6 +12743,7 @@ serviceMap:
     - UpdateInferenceComponent
     - UpdateInferenceComponentRuntimeConfig
     - UpdateInferenceExperiment
+    - UpdateMlflowTrackingServer
     - UpdateModelCard
     - UpdateModelPackage
     - UpdateMonitoringAlert
@@ -15788,6 +15799,57 @@ serviceMap:
     - UpdateUserAdministrativeSettings
     ARNFormat: arn:aws:workdocs:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:workdocs:.+:.+:.+"
+    HasResource: true
+  Amazon SageMaker with MLflow:
+    StringPrefix: sagemaker-mlflow
+    Actions:
+    - AccessUI
+    - CreateExperiment
+    - CreateModelVersion
+    - CreateRegisteredModel
+    - CreateRun
+    - DeleteExperiment
+    - DeleteModelVersion
+    - DeleteModelVersionTag
+    - DeleteRegisteredModel
+    - DeleteRegisteredModelAlias
+    - DeleteRegisteredModelTag
+    - DeleteRun
+    - DeleteTag
+    - GetDownloadURIForModelVersionArtifacts
+    - GetExperiment
+    - GetExperimentByName
+    - GetLatestModelVersions
+    - GetMetricHistory
+    - GetModelVersion
+    - GetModelVersionByAlias
+    - GetRegisteredModel
+    - GetRun
+    - ListArtifacts
+    - LogBatch
+    - LogInputs
+    - LogMetric
+    - LogModel
+    - LogParam
+    - RenameRegisteredModel
+    - RestoreExperiment
+    - RestoreRun
+    - SearchExperiments
+    - SearchModelVersions
+    - SearchRegisteredModels
+    - SearchRuns
+    - SetExperimentTag
+    - SetModelVersionTag
+    - SetRegisteredModelAlias
+    - SetRegisteredModelTag
+    - SetTag
+    - TransitionModelVersionStage
+    - UpdateExperiment
+    - UpdateModelVersion
+    - UpdateRegisteredModel
+    - UpdateRun
+    ARNFormat: arn:aws:sagemaker:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:sagemaker:.+"
     HasResource: true
   Amazon Comprehend Medical:
     StringPrefix: comprehendmedical
