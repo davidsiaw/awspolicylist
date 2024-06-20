@@ -17972,6 +17972,7 @@ serviceMap:
     - CreateEnvironment
     - CreateSession
     - DeleteEnvironment
+    - DescribeEnvironments
     - GetEnvironmentStatus
     - GetFileDownloadUrls
     - GetFileUploadUrls
@@ -17980,6 +17981,10 @@ serviceMap:
     - StopEnvironment
     ARNFormat: arn:aws:cloudshell:${Region}:${Account}:environment/${EnvironmentId}
     ARNRegex: "^arn:aws:cloudshell:${Region}:${Account}:environment/.+?"
+    conditionKeys:
+    - cloudshell:SecurityGroupIds
+    - cloudshell:SubnetIds
+    - cloudshell:VpcIds
     HasResource: true
   Amazon Location:
     StringPrefix: geo
