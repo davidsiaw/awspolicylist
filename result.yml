@@ -1689,6 +1689,7 @@ serviceMap:
     - ClaimPhoneNumber
     - CompleteAttachedFileUpload
     - CreateAgentStatus
+    - CreateAuthenticationProfile
     - CreateContactFlow
     - CreateContactFlowModule
     - CreateEvaluationForm
@@ -1737,6 +1738,7 @@ serviceMap:
     - DeleteViewVersion
     - DeleteVocabulary
     - DescribeAgentStatus
+    - DescribeAuthenticationProfile
     - DescribeContact
     - DescribeContactEvaluation
     - DescribeContactFlow
@@ -1789,6 +1791,7 @@ serviceMap:
     - ImportPhoneNumber
     - ListAgentStatuses
     - ListApprovedOrigins
+    - ListAuthenticationProfiles
     - ListBots
     - ListContactEvaluations
     - ListContactFlowModules
@@ -1874,6 +1877,7 @@ serviceMap:
     - UntagContact
     - UntagResource
     - UpdateAgentStatus
+    - UpdateAuthenticationProfile
     - UpdateContact
     - UpdateContactAttributes
     - UpdateContactEvaluation
@@ -10205,6 +10209,7 @@ serviceMap:
     - ExportECSServiceRecommendations
     - ExportLambdaFunctionRecommendations
     - ExportLicenseRecommendations
+    - ExportRDSDatabaseRecommendations
     - GetAutoScalingGroupRecommendations
     - GetEBSVolumeRecommendations
     - GetEC2InstanceRecommendations
@@ -10216,6 +10221,8 @@ serviceMap:
     - GetEnrollmentStatusesForOrganization
     - GetLambdaFunctionRecommendations
     - GetLicenseRecommendations
+    - GetRDSDatabaseRecommendationProjectedMetrics
+    - GetRDSDatabaseRecommendations
     - GetRecommendationPreferences
     - GetRecommendationSummaries
     - PutRecommendationPreferences
