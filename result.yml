@@ -10731,6 +10731,7 @@ serviceMap:
     - CreateTable
     - CreateTableOptimizer
     - CreateTrigger
+    - CreateUsageProfile
     - CreateUserDefinedFunction
     - CreateWorkflow
     - DeleteBlueprint
@@ -10757,6 +10758,7 @@ serviceMap:
     - DeleteTableOptimizer
     - DeleteTableVersion
     - DeleteTrigger
+    - DeleteUsageProfile
     - DeleteUserDefinedFunction
     - DeleteWorkflow
     - DeregisterDataPreview
@@ -10840,6 +10842,7 @@ serviceMap:
     - GetTags
     - GetTrigger
     - GetTriggers
+    - GetUsageProfile
     - GetUserDefinedFunction
     - GetUserDefinedFunctions
     - GetWorkflow
@@ -10872,6 +10875,7 @@ serviceMap:
     - ListStatements
     - ListTableOptimizerRuns
     - ListTriggers
+    - ListUsageProfiles
     - ListWorkflows
     - NotifyEvent
     - PassConnection
@@ -10937,6 +10941,7 @@ serviceMap:
     - UpdateTable
     - UpdateTableOptimizer
     - UpdateTrigger
+    - UpdateUsageProfile
     - UpdateUserDefinedFunction
     - UpdateWorkflow
     - UseGlueStudio
