@@ -3375,6 +3375,7 @@ serviceMap:
     - eks:accessEntryType
     - eks:accessScope
     - eks:bootstrapClusterCreatorAdminPermissions
+    - eks:bootstrapSelfManagedAddons
     - eks:clientId
     - eks:clusterName
     - eks:issuerUrl
@@ -18586,6 +18587,7 @@ serviceMap:
     - DescribeStoreImageTasks
     - DescribeSubnets
     - DescribeTags
+    - DescribeTrafficMirrorFilterRules
     - DescribeTrafficMirrorFilters
     - DescribeTrafficMirrorSessions
     - DescribeTrafficMirrorTargets
@@ -20067,6 +20069,7 @@ serviceMap:
     - ListGuardrailViolations
     - ListGuardrails
     - ListGuardrailsForTarget
+    - ListLandingZoneOperations
     - ListLandingZones
     - ListManagedAccounts
     - ListManagedAccountsForGuardrail
