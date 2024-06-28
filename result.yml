@@ -83,6 +83,7 @@ serviceMap:
   Amazon Q Business Q Apps:
     StringPrefix: qapps
     Actions:
+    - AssociateLibraryItemReview
     - AssociateQAppWithUser
     - CopyQApp
     - CreateLibraryItem
@@ -91,21 +92,33 @@ serviceMap:
     - CreateSubscriptionToken
     - DeleteLibraryItem
     - DeleteQApp
+    - DisassociateLibraryItemReview
     - DisassociateQAppFromUser
     - GetLibraryItem
     - GetQApp
+    - GetQAppSession
+    - GetQAppSessionMetadata
+    - ImportDocument
     - ImportDocumentToQApp
     - ImportDocumentToQAppSession
     - ListLibraryItems
     - ListQApps
     - PredictProblemStatementFromConversation
+    - PredictQApp
     - PredictQAppFromProblemStatement
     - StartQAppSession
     - StopQAppSession
+    - TagResource
     - UpdateLibraryItem
     - UpdateQApp
+    - UpdateQAppSession
+    - UpdateQAppSessionMetadata
     ARNFormat: arn:aws:qapps:${Region}:${Account}:${ResourceType}:${ResourcePath}
     ARNRegex: "^arn:aws:qapps:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS IoT:
     StringPrefix: iot
@@ -766,6 +779,7 @@ serviceMap:
     - CreateEventStream
     - CreateIntegrationWorkflow
     - CreateProfile
+    - CreateSnapshot
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
     - DeleteEventStream
@@ -787,6 +801,7 @@ serviceMap:
     - GetProfileObjectType
     - GetProfileObjectTypeTemplate
     - GetSimilarProfiles
+    - GetSnapshot
     - GetWorkflow
     - GetWorkflowSteps
     - ListAccountIntegrations
@@ -5762,6 +5777,7 @@ serviceMap:
     - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAsset
+    - CreateAssetFilter
     - CreateAssetRevision
     - CreateAssetType
     - CreateDataSource
@@ -5782,6 +5798,7 @@ serviceMap:
     - CreateSubscriptionTarget
     - CreateUserProfile
     - DeleteAsset
+    - DeleteAssetFilter
     - DeleteAssetType
     - DeleteDataSource
     - DeleteDomain
@@ -5803,6 +5820,7 @@ serviceMap:
     - DeleteTimeSeriesDataPoints
     - DisassociateEnvironmentRole
     - GetAsset
+    - GetAssetFilter
     - GetAssetType
     - GetDataSource
     - GetDataSourceRun
@@ -5820,6 +5838,7 @@ serviceMap:
     - GetGlossaryTerm
     - GetGroupProfile
     - GetIamPortalLoginUrl
+    - GetLineageNode
     - GetListing
     - GetMetadataGenerationRun
     - GetProject
@@ -5831,6 +5850,7 @@ serviceMap:
     - GetTimeSeriesDataPoint
     - GetUserProfile
     - ListAccountEnvironments
+    - ListAssetFilters
     - ListAssetRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -5843,6 +5863,7 @@ serviceMap:
     - ListEnvironmentProfiles
     - ListEnvironments
     - ListGroupsForUser
+    - ListLineageNodeHistory
     - ListMetadataGenerationRuns
     - ListNotifications
     - ListPolicyGrants
@@ -5855,6 +5876,7 @@ serviceMap:
     - ListTagsForResource
     - ListTimeSeriesDataPoints
     - ListWarehouseMetadata
+    - PostLineageEvent
     - PostTimeSeriesDataPoints
     - ProvisionDomain
     - PutDomainSharingPolicy
@@ -5876,6 +5898,7 @@ serviceMap:
     - StopMetadataGenerationRun
     - TagResource
     - UntagResource
+    - UpdateAssetFilter
     - UpdateDataSource
     - UpdateDataSourceRunActivities
     - UpdateDomain
@@ -7634,8 +7657,8 @@ serviceMap:
     - UpdateEmergencyContactSettings
     - UpdateProtectionGroup
     - UpdateSubscription
-    ARNFormat: arn:aws:shield::${Account}:${Resource}/${ResourceId}
-    ARNRegex: "^arn:aws:shield::[0-9]+:.+/.+"
+    ARNFormat: arn:aws:shield:${Region}:${Account}:${Resource}/${ResourceId}
+    ARNRegex: "^arn:aws:shield:${Region}:[0-9]+:.+/.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -14842,6 +14865,7 @@ serviceMap:
     - CreateWorkspaceBundle
     - CreateWorkspaceImage
     - CreateWorkspaces
+    - CreateWorkspacesPool
     - DeleteAccountLinkInvitation
     - DeleteClientBranding
     - DeleteConnectClientAddIn
@@ -14873,6 +14897,8 @@ serviceMap:
     - DescribeWorkspaceSnapshots
     - DescribeWorkspaces
     - DescribeWorkspacesConnectionStatus
+    - DescribeWorkspacesPoolSessions
+    - DescribeWorkspacesPools
     - DisassociateConnectionAlias
     - DisassociateIpGroups
     - DisassociateWorkspaceApplication
@@ -14887,6 +14913,7 @@ serviceMap:
     - ModifyClientProperties
     - ModifySamlProperties
     - ModifySelfservicePermissions
+    - ModifyStreamingProperties
     - ModifyWorkspaceAccessProperties
     - ModifyWorkspaceCreationProperties
     - ModifyWorkspaceProperties
@@ -14898,14 +14925,19 @@ serviceMap:
     - RestoreWorkspace
     - RevokeIpRules
     - StartWorkspaces
+    - StartWorkspacesPool
     - StopWorkspaces
+    - StopWorkspacesPool
     - Stream
     - TerminateWorkspaces
+    - TerminateWorkspacesPool
+    - TerminateWorkspacesPoolSession
     - UpdateConnectClientAddIn
     - UpdateConnectionAliasPermission
     - UpdateRulesOfIpGroup
     - UpdateWorkspaceBundle
     - UpdateWorkspaceImagePermission
+    - UpdateWorkspacesPool
     ARNFormat: arn:aws:workspaces:${Region}:${Account}:*
     ARNRegex: "^arn:aws:workspaces:.*:.*:.*"
     conditionKeys:
