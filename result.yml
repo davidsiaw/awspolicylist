@@ -18218,12 +18218,14 @@ serviceMap:
     - DeleteHapg
     - DeleteHsm
     - DeleteLunaClient
+    - DeleteResourcePolicy
     - DescribeBackups
     - DescribeClusters
     - DescribeHapg
     - DescribeHsm
     - DescribeLunaClient
     - GetConfig
+    - GetResourcePolicy
     - InitializeCluster
     - ListAvailableZones
     - ListHapgs
@@ -18236,6 +18238,7 @@ serviceMap:
     - ModifyHapg
     - ModifyHsm
     - ModifyLunaClient
+    - PutResourcePolicy
     - RemoveTagsFromResource
     - RestoreBackup
     - TagResource
