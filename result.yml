@@ -12469,6 +12469,7 @@ serviceMap:
     - CreateFeatureGroup
     - CreateFlowDefinition
     - CreateHub
+    - CreateHubContentReference
     - CreateHumanTaskUi
     - CreateHyperParameterTuningJob
     - CreateImage
@@ -12528,6 +12529,7 @@ serviceMap:
     - DeleteFlowDefinition
     - DeleteHub
     - DeleteHubContent
+    - DeleteHubContentReference
     - DeleteHumanLoop
     - DeleteHumanTaskUi
     - DeleteHyperParameterTuningJob
@@ -12560,6 +12562,7 @@ serviceMap:
     - DeleteUserProfile
     - DeleteWorkforce
     - DeleteWorkteam
+    - DeployHubModel
     - DeregisterDevices
     - DescribeAction
     - DescribeAlgorithm
@@ -21516,6 +21519,28 @@ serviceMap:
     - UpdateTaskExecution
     ARNFormat: arn:aws:datasync:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:datasync:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  AWS Systems Manager Quick Setup:
+    StringPrefix: ssm-quicksetup
+    Actions:
+    - CreateConfigurationManager
+    - DeleteConfigurationManager
+    - GetConfigurationManager
+    - GetServiceSettings
+    - ListConfigurationManagers
+    - ListQuickSetupTypes
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateConfigurationDefinition
+    - UpdateConfigurationManager
+    - UpdateServiceSettings
+    ARNFormat: arn:aws:ssm-quicksetup:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:ssm-quicksetup:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
