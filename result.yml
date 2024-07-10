@@ -12497,6 +12497,7 @@ serviceMap:
     - CreateMonitoringSchedule
     - CreateNotebookInstance
     - CreateNotebookInstanceLifecycleConfig
+    - CreateOptimizationJob
     - CreatePipeline
     - CreatePresignedDomainUrl
     - CreatePresignedMlflowTrackingServerUrl
@@ -12556,6 +12557,7 @@ serviceMap:
     - DeleteMonitoringSchedule
     - DeleteNotebookInstance
     - DeleteNotebookInstanceLifecycleConfig
+    - DeleteOptimization
     - DeletePipeline
     - DeleteProject
     - DeleteRecord
@@ -12618,6 +12620,7 @@ serviceMap:
     - DescribeMonitoringSchedule
     - DescribeNotebookInstance
     - DescribeNotebookInstanceLifecycleConfig
+    - DescribeOptimizationJob
     - DescribePipeline
     - DescribePipelineDefinitionForExecution
     - DescribePipelineExecution
@@ -12708,6 +12711,7 @@ serviceMap:
     - ListMonitoringSchedules
     - ListNotebookInstanceLifecycleConfigs
     - ListNotebookInstances
+    - ListOptimizationJobs
     - ListPipelineExecutionSteps
     - ListPipelineExecutions
     - ListPipelineParametersForExecution
@@ -12763,6 +12767,7 @@ serviceMap:
     - StopMlflowTrackingServer
     - StopMonitoringSchedule
     - StopNotebookInstance
+    - StopOptimizationJob
     - StopPipelineExecution
     - StopProcessingJob
     - StopTrainingJob
@@ -21227,6 +21232,7 @@ serviceMap:
     - ListQueues
     - ListTagsForResource
     - PutPolicy
+    - SearchJobs
     - TagResource
     - UntagResource
     - UpdateJobTemplate
