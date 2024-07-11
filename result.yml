@@ -2961,7 +2961,6 @@ serviceMap:
     - rds:EndpointType
     - rds:ManageMasterUserPassword
     - rds:MultiAz
-    - rds:MultiTenant
     - rds:Piops
     - rds:StorageEncrypted
     - rds:StorageSize
@@ -3308,6 +3307,7 @@ serviceMap:
     - UpdateCloudFrontOriginAccessIdentity
     - UpdateContinuousDeploymentPolicy
     - UpdateDistribution
+    - UpdateDistributionWithStagingConfig
     - UpdateFieldLevelEncryptionConfig
     - UpdateFieldLevelEncryptionProfile
     - UpdateFunction
@@ -17496,6 +17496,17 @@ serviceMap:
     conditionKeys:
     - aws:ResourceTag/${TagKey}
     HasResource: true
+  AWS App Studio:
+    StringPrefix: appstudio
+    Actions:
+    - GetAccountStatus
+    - GetEnablementJobStatus
+    - StartEnablementJob
+    - StartRollbackEnablementJob
+    - StartTeamDeployment
+    ARNFormat: arn:${Partition}:appstudio:${Region}:${Account}:${ResourceType}:${ResourcePath}
+    ARNRegex: "^arn:${Partition}:appstudio:.+:.+:.+"
+    HasResource: false
   AWS App Mesh:
     StringPrefix: appmesh
     Actions:
@@ -20508,6 +20519,8 @@ serviceMap:
     - DeleteImageSet
     - GetDICOMImportJob
     - GetDICOMInstance
+    - GetDICOMInstanceFrames
+    - GetDICOMInstanceMetadata
     - GetDatastore
     - GetImageFrame
     - GetImageSet
@@ -21201,11 +21214,24 @@ serviceMap:
   AWS License Manager Linux Subscriptions Manager:
     StringPrefix: license-manager-linux-subscriptions
     Actions:
+    - DeregisterSubscriptionProvider
+    - GetRegisteredSubscriptionProvider
     - GetServiceSettings
     - ListLinuxSubscriptionInstances
     - ListLinuxSubscriptions
+    - ListRegisteredSubscriptionProviders
+    - ListTagsForResource
+    - RegisterSubscriptionProvider
+    - TagResource
+    - UntagResource
     - UpdateServiceSettings
-    HasResource: false
+    ARNFormat: arn:aws:license-manager-linux-subscriptions:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:license-manager-linux-subscriptions:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Elemental MediaConvert:
     StringPrefix: mediaconvert
     Actions:
