@@ -6034,6 +6034,7 @@ serviceMap:
     - DeleteEncoderConfiguration
     - DeletePlaybackKeyPair
     - DeletePlaybackRestrictionPolicy
+    - DeletePublicKey
     - DeleteRecordingConfiguration
     - DeleteStage
     - DeleteStorageConfiguration
@@ -6045,6 +6046,7 @@ serviceMap:
     - GetParticipant
     - GetPlaybackKeyPair
     - GetPlaybackRestrictionPolicy
+    - GetPublicKey
     - GetRecordingConfiguration
     - GetStage
     - GetStageSession
@@ -6053,6 +6055,7 @@ serviceMap:
     - GetStreamKey
     - GetStreamSession
     - ImportPlaybackKeyPair
+    - ImportPublicKey
     - ListChannels
     - ListCompositions
     - ListEncoderConfigurations
@@ -6060,6 +6063,7 @@ serviceMap:
     - ListParticipants
     - ListPlaybackKeyPairs
     - ListPlaybackRestrictionPolicies
+    - ListPublicKeys
     - ListRecordingConfigurations
     - ListStageSessions
     - ListStages
@@ -8015,6 +8019,9 @@ serviceMap:
     - CreateAgentAlias
     - CreateDataSource
     - CreateEvaluationJob
+    - CreateFlow
+    - CreateFlowAlias
+    - CreateFlowVersion
     - CreateFoundationModelAgreement
     - CreateGuardrail
     - CreateGuardrailVersion
@@ -8022,17 +8029,24 @@ serviceMap:
     - CreateModelCustomizationJob
     - CreateModelEvaluationJob
     - CreateModelInvocationJob
+    - CreatePrompt
+    - CreatePromptVersion
     - CreateProvisionedModelThroughput
     - DeleteAgent
     - DeleteAgentActionGroup
     - DeleteAgentAlias
+    - DeleteAgentMemory
     - DeleteAgentVersion
     - DeleteCustomModel
     - DeleteDataSource
+    - DeleteFlow
+    - DeleteFlowAlias
+    - DeleteFlowVersion
     - DeleteFoundationModelAgreement
     - DeleteGuardrail
     - DeleteKnowledgeBase
     - DeleteModelInvocationLoggingConfiguration
+    - DeletePrompt
     - DeleteProvisionedModelThroughput
     - DetectGeneratedContent
     - DisassociateAgentKnowledgeBase
@@ -8040,10 +8054,14 @@ serviceMap:
     - GetAgentActionGroup
     - GetAgentAlias
     - GetAgentKnowledgeBase
+    - GetAgentMemory
     - GetAgentVersion
     - GetCustomModel
     - GetDataSource
     - GetEvaluationJob
+    - GetFlow
+    - GetFlowAlias
+    - GetFlowVersion
     - GetFoundationModel
     - GetFoundationModelAvailability
     - GetGuardrail
@@ -8053,9 +8071,11 @@ serviceMap:
     - GetModelEvaluationJob
     - GetModelInvocationJob
     - GetModelInvocationLoggingConfiguration
+    - GetPrompt
     - GetProvisionedModelThroughput
     - GetUseCaseForModelAccess
     - InvokeAgent
+    - InvokeFlow
     - InvokeModel
     - InvokeModelWithResponseStream
     - ListAgentActionGroups
@@ -8066,6 +8086,9 @@ serviceMap:
     - ListCustomModels
     - ListDataSources
     - ListEvaluationJobs
+    - ListFlowAliases
+    - ListFlowVersions
+    - ListFlows
     - ListFoundationModelAgreementOffers
     - ListFoundationModels
     - ListGuardrails
@@ -8074,9 +8097,11 @@ serviceMap:
     - ListModelCustomizationJobs
     - ListModelEvaluationJobs
     - ListModelInvocationJobs
+    - ListPrompts
     - ListProvisionedModelThroughputs
     - ListTagsForResource
     - PrepareAgent
+    - PrepareFlow
     - PutFoundationModelEntitlement
     - PutModelInvocationLoggingConfiguration
     - PutUseCaseForModelAccess
@@ -8093,8 +8118,11 @@ serviceMap:
     - UpdateAgentAlias
     - UpdateAgentKnowledgeBase
     - UpdateDataSource
+    - UpdateFlow
+    - UpdateFlowAlias
     - UpdateGuardrail
     - UpdateKnowledgeBase
+    - UpdatePrompt
     - UpdateProvisionedModelThroughput
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
