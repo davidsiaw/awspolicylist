@@ -1862,6 +1862,7 @@ serviceMap:
     - ReplicateInstance
     - ResumeContact
     - ResumeContactRecording
+    - SearchAgentStatuses
     - SearchAvailablePhoneNumbers
     - SearchContactFlowModules
     - SearchContactFlows
@@ -1874,6 +1875,7 @@ serviceMap:
     - SearchResourceTags
     - SearchRoutingProfiles
     - SearchSecurityProfiles
+    - SearchUserHierarchyGroups
     - SearchUsers
     - SearchVocabularies
     - SendChatIntegrationEvent
