@@ -3397,6 +3397,7 @@ serviceMap:
     - aws:TagKeys
     - eks:accessEntryType
     - eks:accessScope
+    - eks:authenticationMode
     - eks:bootstrapClusterCreatorAdminPermissions
     - eks:bootstrapSelfManagedAddons
     - eks:clientId
@@ -3406,6 +3407,7 @@ serviceMap:
     - eks:namespaces
     - eks:policyArn
     - eks:principalArn
+    - eks:supportType
     - eks:username
     HasResource: true
   AWS Identity Sync:
@@ -16091,6 +16093,8 @@ serviceMap:
     StringPrefix: quicksight
     Actions:
     - AccountConfigurations
+    - BatchCreateTopicReviewedAnswer
+    - BatchDeleteTopicReviewedAnswer
     - CancelIngestion
     - CreateAccountCustomization
     - CreateAccountSubscription
@@ -16225,6 +16229,7 @@ serviceMap:
     - ListThemeVersions
     - ListThemes
     - ListTopicRefreshSchedules
+    - ListTopicReviewedAnswers
     - ListTopics
     - ListUserGroups
     - ListUsers
@@ -20921,17 +20926,20 @@ serviceMap:
     - CreateIndex
     - CreateView
     - DeleteIndex
+    - DeleteResourcePolicy
     - DeleteView
     - DisassociateDefaultView
     - GetAccountLevelServiceConfiguration
     - GetDefaultView
     - GetIndex
+    - GetResourcePolicy
     - GetView
     - ListIndexes
     - ListIndexesForMembers
     - ListSupportedResourceTypes
     - ListTagsForResource
     - ListViews
+    - PutResourcePolicy
     - Search
     - TagResource
     - UntagResource
