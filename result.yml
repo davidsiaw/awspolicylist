@@ -12603,7 +12603,7 @@ serviceMap:
     - DeleteMonitoringSchedule
     - DeleteNotebookInstance
     - DeleteNotebookInstanceLifecycleConfig
-    - DeleteOptimization
+    - DeleteOptimizationJob
     - DeletePipeline
     - DeleteProject
     - DeleteRecord
@@ -14074,6 +14074,7 @@ serviceMap:
     - DeleteRetentionPolicy
     - DeleteSmtpGateway
     - DeleteUser
+    - DeliverToMailbox
     - DeregisterFromWorkMail
     - DeregisterMailDomain
     - DescribeEmailMonitoringConfiguration
