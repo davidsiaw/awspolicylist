@@ -4992,6 +4992,7 @@ serviceMap:
     - CreateConfiguredTable
     - CreateConfiguredTableAnalysisRule
     - CreateConfiguredTableAssociation
+    - CreateConfiguredTableAssociationAnalysisRule
     - CreateIdMappingTable
     - CreateIdNamespaceAssociation
     - CreateMembership
@@ -5002,6 +5003,7 @@ serviceMap:
     - DeleteConfiguredTable
     - DeleteConfiguredTableAnalysisRule
     - DeleteConfiguredTableAssociation
+    - DeleteConfiguredTableAssociationAnalysisRule
     - DeleteIdMappingTable
     - DeleteIdNamespaceAssociation
     - DeleteMember
@@ -5017,6 +5019,7 @@ serviceMap:
     - GetConfiguredTable
     - GetConfiguredTableAnalysisRule
     - GetConfiguredTableAssociation
+    - GetConfiguredTableAssociationAnalysisRule
     - GetIdMappingTable
     - GetIdNamespaceAssociation
     - GetMembership
@@ -5054,6 +5057,7 @@ serviceMap:
     - UpdateConfiguredTable
     - UpdateConfiguredTableAnalysisRule
     - UpdateConfiguredTableAssociation
+    - UpdateConfiguredTableAssociationAnalysisRule
     - UpdateIdMappingTable
     - UpdateIdNamespaceAssociation
     - UpdateMembership
@@ -9271,6 +9275,7 @@ serviceMap:
     - DeleteListener
     - DeleteLoadBalancer
     - DeleteRule
+    - DeleteSharedTrustStoreAssociation
     - DeleteTargetGroup
     - DeleteTrustStore
     - DeregisterTargets
@@ -9288,6 +9293,7 @@ serviceMap:
     - DescribeTrustStoreAssociations
     - DescribeTrustStoreRevocations
     - DescribeTrustStores
+    - GetResourcePolicy
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
     - ModifyListener
@@ -19808,7 +19814,7 @@ serviceMap:
     - DescribePullThroughCacheRules
     - DescribeRegistry
     - DescribeRepositories
-    - DescribeRepositoryCreationTemplate
+    - DescribeRepositoryCreationTemplates
     - GetAuthorizationToken
     - GetDownloadUrlForLayer
     - GetLifecyclePolicy
@@ -19833,6 +19839,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdatePullThroughCacheRule
+    - UpdateRepositoryCreationTemplate
     - UploadLayerPart
     - ValidatePullThroughCacheRule
     ARNFormat: arn:aws:ecr:${Region}:${Account}:repository/${RepositoryName}
