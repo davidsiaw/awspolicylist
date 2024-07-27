@@ -5129,6 +5129,7 @@ serviceMap:
     StringPrefix: customer-verification
     Actions:
     - CreateCustomerVerificationDetails
+    - CreateUploadUrls
     - GetCustomerVerificationDetails
     - GetCustomerVerificationEligibility
     - UpdateCustomerVerificationDetails
