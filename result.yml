@@ -77,6 +77,7 @@ conditionKeys:
 - aws:TokenIssueTime
 - aws:UserAgent
 - aws:ViaAWSService
+- aws:VpcSourceIp
 - aws:userid
 - aws:username
 serviceMap:
@@ -8049,6 +8050,7 @@ serviceMap:
     - CreateGuardrail
     - CreateGuardrailVersion
     - CreateKnowledgeBase
+    - CreateModelCopyJob
     - CreateModelCustomizationJob
     - CreateModelEvaluationJob
     - CreateModelInvocationJob
@@ -8090,6 +8092,7 @@ serviceMap:
     - GetGuardrail
     - GetIngestionJob
     - GetKnowledgeBase
+    - GetModelCopyJob
     - GetModelCustomizationJob
     - GetModelEvaluationJob
     - GetModelInvocationJob
@@ -8117,6 +8120,7 @@ serviceMap:
     - ListGuardrails
     - ListIngestionJobs
     - ListKnowledgeBases
+    - ListModelCopyJobs
     - ListModelCustomizationJobs
     - ListModelEvaluationJobs
     - ListModelInvocationJobs
@@ -16894,11 +16898,13 @@ serviceMap:
     - CancelZonalShift
     - CreatePracticeRunConfiguration
     - DeletePracticeRunConfiguration
+    - GetAutoshiftObserverNotificationStatus
     - GetManagedResource
     - ListAutoshifts
     - ListManagedResources
     - ListZonalShifts
     - StartZonalShift
+    - UpdateAutoshiftObserverNotificationStatus
     - UpdatePracticeRunConfiguration
     - UpdateZonalAutoshiftConfiguration
     - UpdateZonalShift
