@@ -8058,6 +8058,7 @@ serviceMap:
     - ApplyGuardrail
     - AssociateAgentKnowledgeBase
     - AssociateThirdPartyKnowledgeBase
+    - BatchDeleteEvaluationJob
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
