@@ -7382,9 +7382,17 @@ serviceMap:
     Actions:
     - CompleteAccountRegistration
     - CompleteFileUpload
+    - ConfirmAccount
+    - DownloadKickstart
     - DownloadSoftware
+    - GenerateLicense
     - GenerateLicenses
     - GetActivation
+    - GetArtifactGroupSoftwareVersions
+    - GetAsset
+    - GetAssets
+    - GetProductAdvisories
+    - GetSoftwareVersions
     - ListTagsForResource
     - StartAccountRegistration
     - StartFileUpload
