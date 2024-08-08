@@ -10822,7 +10822,6 @@ serviceMap:
     - BatchGetTableOptimizer
     - BatchGetTriggers
     - BatchGetWorkflows
-    - BatchPutDataQualityStatisticAnnotation
     - BatchStopJobRun
     - BatchUpdatePartition
     - CancelDataQualityRuleRecommendationRun
@@ -10981,8 +10980,6 @@ serviceMap:
     - ListDataQualityRuleRecommendationRuns
     - ListDataQualityRulesetEvaluationRuns
     - ListDataQualityRulesets
-    - ListDataQualityStatisticAnnotations
-    - ListDataQualityStatistics
     - ListDevEndpoints
     - ListEntities
     - ListJobs
@@ -11001,6 +10998,7 @@ serviceMap:
     - PublishDataQuality
     - PutDataCatalogEncryptionSettings
     - PutDataQualityProfileAnnotation
+    - PutDataQualityStatisticAnnotation
     - PutResourcePolicy
     - PutSchemaVersionMetadata
     - PutWorkflowRunProperties
@@ -18059,6 +18057,7 @@ serviceMap:
     - GetMediaForFragmentList
     - GetSignalingChannelEndpoint
     - JoinStorageSession
+    - JoinStorageSessionAsViewer
     - ListEdgeAgentConfigurations
     - ListFragments
     - ListSignalingChannels
