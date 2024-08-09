@@ -20666,6 +20666,7 @@ serviceMap:
     - UntagResource
     - UpdateApplication
     - UpdateDataIntegration
+    - UpdateDataIntegrationAssociation
     - UpdateEventIntegration
     ARNFormat: arn:aws:app-integrations:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:app-integrations:.+:.+:.+"
