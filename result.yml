@@ -8102,6 +8102,7 @@ serviceMap:
     - DeleteModelInvocationLoggingConfiguration
     - DeletePrompt
     - DeleteProvisionedModelThroughput
+    - DeleteResourcePolicy
     - DetectGeneratedContent
     - DisassociateAgentKnowledgeBase
     - GetAgent
@@ -8128,6 +8129,7 @@ serviceMap:
     - GetModelInvocationLoggingConfiguration
     - GetPrompt
     - GetProvisionedModelThroughput
+    - GetResourcePolicy
     - GetUseCaseForModelAccess
     - InvokeAgent
     - InvokeFlow
@@ -8160,6 +8162,7 @@ serviceMap:
     - PrepareFlow
     - PutFoundationModelEntitlement
     - PutModelInvocationLoggingConfiguration
+    - PutResourcePolicy
     - PutUseCaseForModelAccess
     - Retrieve
     - RetrieveAndGenerate
@@ -18461,6 +18464,7 @@ serviceMap:
     - CreateInstanceExportTask
     - CreateInternetGateway
     - CreateIpam
+    - CreateIpamExternalResourceVerificationToken
     - CreateIpamPool
     - CreateIpamResourceDiscovery
     - CreateIpamScope
@@ -18539,6 +18543,7 @@ serviceMap:
     - DeleteInstanceEventWindow
     - DeleteInternetGateway
     - DeleteIpam
+    - DeleteIpamExternalResourceVerificationToken
     - DeleteIpamPool
     - DeleteIpamResourceDiscovery
     - DeleteIpamScope
@@ -18665,6 +18670,7 @@ serviceMap:
     - DescribeInstances
     - DescribeInternetGateways
     - DescribeIpamByoasn
+    - DescribeIpamExternalResourceVerificationTokens
     - DescribeIpamPools
     - DescribeIpamResourceDiscoveries
     - DescribeIpamResourceDiscoveryAssociations
@@ -19043,6 +19049,7 @@ serviceMap:
     - ec2:ClientRootCertificateChainArn
     - ec2:CloudwatchLogGroupArn
     - ec2:CloudwatchLogStreamArn
+    - ec2:CpuOptionsAmdSevSnp
     - ec2:CreateAction
     - ec2:DPDTimeoutSeconds
     - ec2:DhcpOptionsID
