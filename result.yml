@@ -10936,6 +10936,7 @@ serviceMap:
     - GetPlan
     - GetQueries
     - GetQuery
+    - GetRecipeAction
     - GetRegistry
     - GetResourcePolicies
     - GetResourcePolicy
@@ -11016,6 +11017,7 @@ serviceMap:
     - RunStatement
     - SearchTables
     - SendFeedback
+    - SendRecipeAction
     - StartBlueprintRun
     - StartColumnStatisticsTaskRun
     - StartCompletion
@@ -11330,6 +11332,7 @@ serviceMap:
     - ssm:AutoApprove
     - ssm:DocumentCategories
     - ssm:Overwrite
+    - ssm:Policies
     - ssm:Recursive
     - ssm:SessionDocumentAccessCheck
     - ssm:SourceInstanceARN
@@ -17047,11 +17050,13 @@ serviceMap:
     - DisassociateResourceFromProfile
     - GetProfile
     - GetProfileAssociation
+    - GetProfilePolicy
     - GetProfileResourceAssociation
     - ListProfileAssociations
     - ListProfileResourceAssociations
     - ListProfiles
     - ListTagsForResource
+    - PutProfilePolicy
     - TagResource
     - UntagResource
     - UpdateProfileResourceAssociation
@@ -21759,9 +21764,11 @@ serviceMap:
     - DeleteApplicationSnapshot
     - DeleteApplicationVpcConfiguration
     - DescribeApplication
+    - DescribeApplicationOperation
     - DescribeApplicationSnapshot
     - DescribeApplicationVersion
     - DiscoverInputSchema
+    - ListApplicationOperations
     - ListApplicationSnapshots
     - ListApplicationVersions
     - ListApplications
