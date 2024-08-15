@@ -5738,6 +5738,7 @@ serviceMap:
     - CreateImageBuilderStreamingURL
     - CreateStack
     - CreateStreamingURL
+    - CreateThemeForStack
     - CreateUpdatedImage
     - CreateUsageReportSubscription
     - CreateUser
@@ -5751,6 +5752,7 @@ serviceMap:
     - DeleteImageBuilder
     - DeleteImagePermissions
     - DeleteStack
+    - DeleteThemeForStack
     - DeleteUsageReportSubscription
     - DeleteUser
     - DescribeAppBlockBuilderAppBlockAssociations
@@ -5766,6 +5768,7 @@ serviceMap:
     - DescribeImages
     - DescribeSessions
     - DescribeStacks
+    - DescribeThemeForStack
     - DescribeUsageReportSubscriptions
     - DescribeUserStackAssociations
     - DescribeUsers
@@ -5796,6 +5799,7 @@ serviceMap:
     - UpdateFleet
     - UpdateImagePermissions
     - UpdateStack
+    - UpdateThemeForStack
     ARNFormat: arn:aws:appstream:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:appstream:.+"
     conditionKeys:
@@ -14907,6 +14911,7 @@ serviceMap:
     - DeleteRepositoryLink
     - DeleteSyncConfiguration
     - GetConnection
+    - GetConnectionToken
     - GetHost
     - GetIndividualAccessToken
     - GetInstallationUrl
@@ -19207,6 +19212,7 @@ serviceMap:
     - DeleteRepositoryLink
     - DeleteSyncConfiguration
     - GetConnection
+    - GetConnectionToken
     - GetHost
     - GetIndividualAccessToken
     - GetInstallationUrl
