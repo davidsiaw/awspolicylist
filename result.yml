@@ -5838,6 +5838,7 @@ serviceMap:
     - CreateListingChangeSet
     - CreateProject
     - CreateProjectMembership
+    - CreateProjectProfile
     - CreateSubscriptionGrant
     - CreateSubscriptionRequest
     - CreateSubscriptionTarget
@@ -5861,6 +5862,7 @@ serviceMap:
     - DeleteListing
     - DeleteProject
     - DeleteProjectMembership
+    - DeleteProjectProfile
     - DeleteSubscriptionGrant
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
@@ -5891,6 +5893,7 @@ serviceMap:
     - GetListing
     - GetMetadataGenerationRun
     - GetProject
+    - GetProjectProfile
     - GetSubscription
     - GetSubscriptionEligibility
     - GetSubscriptionGrant
@@ -5920,6 +5923,7 @@ serviceMap:
     - ListNotifications
     - ListPolicyGrants
     - ListProjectMemberships
+    - ListProjectProfiles
     - ListProjects
     - ListSubscriptionGrants
     - ListSubscriptionRequests
@@ -5966,6 +5970,7 @@ serviceMap:
     - UpdateGlossaryTerm
     - UpdateGroupProfile
     - UpdateProject
+    - UpdateProjectProfile
     - UpdateSubscriptionGrantStatus
     - UpdateSubscriptionRequest
     - UpdateSubscriptionTarget
@@ -20951,12 +20956,14 @@ serviceMap:
   AWS HealthLake:
     StringPrefix: healthlake
     Actions:
+    - CancelFHIRExportJobWithDelete
     - CreateFHIRDatastore
     - CreateResource
     - DeleteFHIRDatastore
     - DeleteResource
     - DescribeFHIRDatastore
     - DescribeFHIRExportJob
+    - DescribeFHIRExportJobWithGet
     - DescribeFHIRImportJob
     - GetCapabilities
     - ListFHIRDatastores
@@ -20968,6 +20975,7 @@ serviceMap:
     - SearchWithGet
     - SearchWithPost
     - StartFHIRExportJob
+    - StartFHIRExportJobWithPost
     - StartFHIRImportJob
     - TagResource
     - UntagResource
