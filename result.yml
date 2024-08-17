@@ -11546,6 +11546,7 @@ serviceMap:
     - GetFunctionConcurrency
     - GetFunctionConfiguration
     - GetFunctionEventInvokeConfig
+    - GetFunctionRecursionConfig
     - GetFunctionUrlConfig
     - GetLayerVersion
     - GetLayerVersionPolicy
@@ -11572,6 +11573,7 @@ serviceMap:
     - PutFunctionCodeSigningConfig
     - PutFunctionConcurrency
     - PutFunctionEventInvokeConfig
+    - PutFunctionRecursionConfig
     - PutProvisionedConcurrencyConfig
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
