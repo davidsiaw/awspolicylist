@@ -19852,6 +19852,7 @@ serviceMap:
     - DescribeRegistry
     - DescribeRepositories
     - DescribeRepositoryCreationTemplates
+    - GetAccountSetting
     - GetAuthorizationToken
     - GetDownloadUrlForLayer
     - GetLifecyclePolicy
@@ -19862,6 +19863,7 @@ serviceMap:
     - InitiateLayerUpload
     - ListImages
     - ListTagsForResource
+    - PutAccountSetting
     - PutImage
     - PutImageScanningConfiguration
     - PutImageTagMutability
