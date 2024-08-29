@@ -5809,6 +5809,35 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Parallel Computing Service:
+    StringPrefix: pcs
+    Actions:
+    - AllowVendedLogDeliveryForResource
+    - CreateCluster
+    - CreateComputeNodeGroup
+    - CreateQueue
+    - DeleteCluster
+    - DeleteComputeNodeGroup
+    - DeleteQueue
+    - GetCluster
+    - GetComputeNodeGroup
+    - GetQueue
+    - ListClusters
+    - ListComputeNodeGroups
+    - ListQueues
+    - ListTagsForResource
+    - RegisterComputeNodeGroupInstance
+    - TagResource
+    - UntagResource
+    - UpdateComputeNodeGroup
+    - UpdateQueue
+    ARNFormat: arn:aws:pcs:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:pcs:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon DataZone:
     StringPrefix: datazone
     Actions:
@@ -8083,6 +8112,7 @@ serviceMap:
     - CreateModelCopyJob
     - CreateModelCustomizationJob
     - CreateModelEvaluationJob
+    - CreateModelImportJob
     - CreateModelInvocationJob
     - CreatePrompt
     - CreatePromptVersion
@@ -8099,6 +8129,7 @@ serviceMap:
     - DeleteFlowVersion
     - DeleteFoundationModelAgreement
     - DeleteGuardrail
+    - DeleteImportedModel
     - DeleteKnowledgeBase
     - DeleteModelInvocationLoggingConfiguration
     - DeletePrompt
@@ -8121,11 +8152,14 @@ serviceMap:
     - GetFoundationModel
     - GetFoundationModelAvailability
     - GetGuardrail
+    - GetImportedModel
+    - GetInferenceProfile
     - GetIngestionJob
     - GetKnowledgeBase
     - GetModelCopyJob
     - GetModelCustomizationJob
     - GetModelEvaluationJob
+    - GetModelImportJob
     - GetModelInvocationJob
     - GetModelInvocationLoggingConfiguration
     - GetPrompt
@@ -8150,11 +8184,14 @@ serviceMap:
     - ListFoundationModelAgreementOffers
     - ListFoundationModels
     - ListGuardrails
+    - ListImportedModels
+    - ListInferenceProfiles
     - ListIngestionJobs
     - ListKnowledgeBases
     - ListModelCopyJobs
     - ListModelCustomizationJobs
     - ListModelEvaluationJobs
+    - ListModelImportJobs
     - ListModelInvocationJobs
     - ListPrompts
     - ListProvisionedModelThroughputs
@@ -8190,6 +8227,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - bedrock:InferenceProfileArn
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
     HasResource: true
   AWS Microservice Extractor for .NET:
