@@ -16316,6 +16316,7 @@ serviceMap:
     - ListDataSources
     - ListFolderMembers
     - ListFolders
+    - ListFoldersForResource
     - ListGroupMemberships
     - ListGroups
     - ListIAMPolicyAssignments
