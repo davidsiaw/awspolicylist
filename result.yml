@@ -425,6 +425,7 @@ serviceMap:
     - GetExperiment
     - GetExperimentTargetAccountConfiguration
     - GetExperimentTemplate
+    - GetSafetyLever
     - GetTargetAccountConfiguration
     - GetTargetResourceType
     - InjectApiInternalError
@@ -443,6 +444,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateExperimentTemplate
+    - UpdateSafetyLeverState
     - UpdateTargetAccountConfiguration
     ARNFormat: arn:aws:fis:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:fis:.+:.+:.+"
