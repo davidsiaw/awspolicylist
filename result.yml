@@ -5099,6 +5099,7 @@ serviceMap:
     - DeleteExtension
     - DeleteExtensionAssociation
     - DeleteHostedConfigurationVersion
+    - GetAccountSettings
     - GetApplication
     - GetConfiguration
     - GetConfigurationProfile
@@ -5123,6 +5124,7 @@ serviceMap:
     - StopDeployment
     - TagResource
     - UntagResource
+    - UpdateAccountSettings
     - UpdateApplication
     - UpdateConfigurationProfile
     - UpdateDeploymentStrategy
@@ -9359,6 +9361,7 @@ serviceMap:
     - DeleteTrustStore
     - DeregisterTargets
     - DescribeAccountLimits
+    - DescribeListenerAttributes
     - DescribeListenerCertificates
     - DescribeListeners
     - DescribeLoadBalancerAttributes
@@ -9376,6 +9379,7 @@ serviceMap:
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
     - ModifyListener
+    - ModifyListenerAttributes
     - ModifyLoadBalancerAttributes
     - ModifyRule
     - ModifyTargetGroup
@@ -9550,6 +9554,7 @@ serviceMap:
     - DeleteRetentionPolicy
     - DeleteSubscriptionFilter
     - DescribeAccountPolicies
+    - DescribeConfigurationTemplates
     - DescribeDeliveries
     - DescribeDeliveryDestinations
     - DescribeDeliverySources
@@ -9605,6 +9610,7 @@ serviceMap:
     - UntagLogGroup
     - UntagResource
     - UpdateAnomaly
+    - UpdateDeliveryConfiguration
     - UpdateLogAnomalyDetector
     - UpdateLogDelivery
     ARNFormat: arn:aws:logs:${Region}:${Account}:.+
@@ -12472,6 +12478,7 @@ serviceMap:
     - ListBucket
     - ListBucketMultipartUploads
     - ListBucketVersions
+    - ListCallerAccessGrants
     - ListJobs
     - ListMultiRegionAccessPoints
     - ListMultipartUploadParts
