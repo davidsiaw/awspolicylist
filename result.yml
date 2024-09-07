@@ -787,11 +787,16 @@ serviceMap:
     StringPrefix: profile
     Actions:
     - AddProfileKey
+    - BatchGetCalculatedAttributeForProfile
+    - BatchGetProfile
     - CreateCalculatedAttributeDefinition
     - CreateDomain
     - CreateEventStream
     - CreateIntegrationWorkflow
     - CreateProfile
+    - CreateSegmentDefinition
+    - CreateSegmentEstimate
+    - CreateSegmentSnapshot
     - CreateSnapshot
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
@@ -801,6 +806,7 @@ serviceMap:
     - DeleteProfileKey
     - DeleteProfileObject
     - DeleteProfileObjectType
+    - DeleteSegmentDefinition
     - DeleteWorkflow
     - DetectProfileObjectType
     - GetAutoMergingPreview
@@ -813,6 +819,10 @@ serviceMap:
     - GetMatches
     - GetProfileObjectType
     - GetProfileObjectTypeTemplate
+    - GetSegmentDefinition
+    - GetSegmentEstimate
+    - GetSegmentMembership
+    - GetSegmentSnapshot
     - GetSimilarProfiles
     - GetSnapshot
     - GetWorkflow
@@ -824,10 +834,13 @@ serviceMap:
     - ListEventStreams
     - ListIdentityResolutionJobs
     - ListIntegrations
+    - ListObjectTypeAttributes
+    - ListProfileAttributeValues
     - ListProfileObjectTypeTemplates
     - ListProfileObjectTypes
     - ListProfileObjects
     - ListRuleBasedMatches
+    - ListSegmentDefinitions
     - ListTagsForResource
     - ListWorkflows
     - MergeProfiles
@@ -5203,19 +5216,26 @@ serviceMap:
   Amazon Q in Connect:
     StringPrefix: wisdom
     Actions:
+    - ActivateMessageTemplate
     - CreateAssistant
     - CreateAssistantAssociation
     - CreateContent
     - CreateContentAssociation
     - CreateKnowledgeBase
+    - CreateMessageTemplate
+    - CreateMessageTemplateAttachment
+    - CreateMessageTemplateVersion
     - CreateQuickResponse
     - CreateSession
+    - DeactivateMessageTemplate
     - DeleteAssistant
     - DeleteAssistantAssociation
     - DeleteContent
     - DeleteContentAssociation
     - DeleteImportJob
     - DeleteKnowledgeBase
+    - DeleteMessageTemplate
+    - DeleteMessageTemplateAttachment
     - DeleteQuickResponse
     - GetAssistant
     - GetAssistantAssociation
@@ -5224,6 +5244,7 @@ serviceMap:
     - GetContentSummary
     - GetImportJob
     - GetKnowledgeBase
+    - GetMessageTemplate
     - GetQuickResponse
     - GetRecommendations
     - GetSession
@@ -5233,13 +5254,17 @@ serviceMap:
     - ListContents
     - ListImportJobs
     - ListKnowledgeBases
+    - ListMessageTemplateVersions
+    - ListMessageTemplates
     - ListQuickResponses
     - ListTagsForResource
     - NotifyRecommendationsReceived
     - PutFeedback
     - QueryAssistant
     - RemoveKnowledgeBaseTemplateUri
+    - RenderMessageTemplate
     - SearchContent
+    - SearchMessageTemplates
     - SearchQuickResponses
     - SearchSessions
     - StartContentUpload
@@ -5248,6 +5273,8 @@ serviceMap:
     - UntagResource
     - UpdateContent
     - UpdateKnowledgeBaseTemplateUri
+    - UpdateMessageTemplate
+    - UpdateMessageTemplateMetadata
     - UpdateQuickResponse
     - UpdateSession
     ARNFormat: arn:aws:wisdom:${Region}:${Account}:${Resource}/${ResourceId}
@@ -5256,6 +5283,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - wisdom:MessageTemplate/RoutingProfileArn
+    - wisdom:SearchFilter/Qualifier
     - wisdom:SearchFilter/RoutingProfileArn
     HasResource: true
   Amazon Message Delivery Service:
