@@ -114,6 +114,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateLibraryItem
+    - UpdateLibraryItemMetadata
     - UpdateQApp
     - UpdateQAppSession
     - UpdateQAppSessionMetadata
@@ -2815,6 +2816,7 @@ serviceMap:
     - AuthorizeDBSecurityGroupIngress
     - BacktrackDBCluster
     - CancelExportTask
+    - CopyCustomDBEngineVersion
     - CopyDBClusterParameterGroup
     - CopyDBClusterSnapshot
     - CopyDBParameterGroup
@@ -2888,9 +2890,9 @@ serviceMap:
     - DescribeDBSecurityGroups
     - DescribeDBShardGroups
     - DescribeDBSnapshotAttributes
+    - DescribeDBSnapshotTenantDatabases
     - DescribeDBSnapshots
     - DescribeDBSubnetGroups
-    - DescribeDbSnapshotTenantDatabases
     - DescribeEngineDefaultClusterParameters
     - DescribeEngineDefaultParameters
     - DescribeEventCategories
@@ -6141,6 +6143,7 @@ serviceMap:
     - BatchStartViewerSessionRevocation
     - CreateChannel
     - CreateEncoderConfiguration
+    - CreateIngestConfiguration
     - CreateParticipantToken
     - CreatePlaybackRestrictionPolicy
     - CreateRecordingConfiguration
@@ -6149,6 +6152,7 @@ serviceMap:
     - CreateStreamKey
     - DeleteChannel
     - DeleteEncoderConfiguration
+    - DeleteIngestConfiguration
     - DeletePlaybackKeyPair
     - DeletePlaybackRestrictionPolicy
     - DeletePublicKey
@@ -6160,6 +6164,7 @@ serviceMap:
     - GetChannel
     - GetComposition
     - GetEncoderConfiguration
+    - GetIngestConfiguration
     - GetParticipant
     - GetPlaybackKeyPair
     - GetPlaybackRestrictionPolicy
@@ -6176,6 +6181,7 @@ serviceMap:
     - ListChannels
     - ListCompositions
     - ListEncoderConfigurations
+    - ListIngestConfigurations
     - ListParticipantEvents
     - ListParticipants
     - ListPlaybackKeyPairs
@@ -6197,6 +6203,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateChannel
+    - UpdateIngestConfiguration
     - UpdatePlaybackRestrictionPolicy
     - UpdateStage
     ARNFormat: arn:aws:ivs:${Region}:${Account}:${ArnType}/${ResourceId}
@@ -17423,6 +17430,7 @@ serviceMap:
     - CreateSupportPlanSchedule
     - GetSupportPlan
     - GetSupportPlanUpdateStatus
+    - ListSupportPlanModifiers
     - StartSupportPlanUpdate
     ARNFormat: "^arn:${Partition}:supportplans::${Account}:${ResourceType}/${ResourcePath}"
     ARNRegex: "^arn:${Partition}:supportplans::.+:.+"
