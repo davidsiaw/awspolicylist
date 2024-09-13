@@ -14507,6 +14507,7 @@ serviceMap:
     - DeleteNotebook
     - DeleteNotebookCell
     - DeleteNotebookVersion
+    - DeleteQCustomContext
     - DeleteSavedQuery
     - DeleteTab
     - DriverExecute
@@ -14521,6 +14522,8 @@ serviceMap:
     - GetConnection
     - GetNotebook
     - GetNotebookVersion
+    - GetQCustomContext
+    - GetQSqlPromptQuotas
     - GetQSqlRecommendations
     - GetQueryExecutionHistory
     - GetSavedQuery
@@ -14540,6 +14543,7 @@ serviceMap:
     - ListTabs
     - ListTaggedResources
     - ListTagsForResource
+    - PutQCustomContext
     - PutTab
     - PutUserWorkspaceSettings
     - RestoreNotebookVersion
