@@ -3551,6 +3551,7 @@ serviceMap:
     StringPrefix: ds
     Actions:
     - AcceptSharedDirectory
+    - AccessDSData
     - AddIpRoutes
     - AddRegion
     - AddTagsToResource
@@ -9881,6 +9882,7 @@ serviceMap:
     - UpdateDataset
     - UpdateMetricAttribution
     - UpdateRecommender
+    - UpdateSolution
     ARNFormat: arn:aws:personalize:${Region}:${Account}:${Resourcename}/${ResourceId}
     ARNRegex: "^arn:aws:personalize:.+:.+:.+"
     HasResource: true
@@ -11579,6 +11581,7 @@ serviceMap:
     - DeleteFunctionUrlConfig
     - DeleteLayerVersion
     - DeleteProvisionedConcurrencyConfig
+    - DeleteResourcePolicy
     - DisableReplication
     - EnableReplication
     - GetAccountSettings
@@ -11596,6 +11599,8 @@ serviceMap:
     - GetLayerVersionPolicy
     - GetPolicy
     - GetProvisionedConcurrencyConfig
+    - GetPublicAccessBlockConfig
+    - GetResourcePolicy
     - GetRuntimeManagementConfig
     - InvokeAsync
     - InvokeFunction
@@ -11619,6 +11624,8 @@ serviceMap:
     - PutFunctionEventInvokeConfig
     - PutFunctionRecursionConfig
     - PutProvisionedConcurrencyConfig
+    - PutPublicAccessBlockConfig
+    - PutResourcePolicy
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
     - RemovePermission
