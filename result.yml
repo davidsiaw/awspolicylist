@@ -135,6 +135,7 @@ serviceMap:
     - AcceptCertificateTransfer
     - AddThingToBillingGroup
     - AddThingToThingGroup
+    - AssociateSbomWithPackageVersion
     - AssociateTargetsWithJob
     - AttachPolicy
     - AttachPrincipalPolicy
@@ -257,6 +258,7 @@ serviceMap:
     - DetachSecurityProfile
     - DetachThingPrincipal
     - DisableTopicRule
+    - DisassociateSbomFromPackageVersion
     - EnableTopicRule
     - GetBehaviorModelTrainingSummaries
     - GetBucketsAggregation
@@ -321,6 +323,7 @@ serviceMap:
     - ListRelatedResourcesForAuditFinding
     - ListRetainedMessages
     - ListRoleAliases
+    - ListSbomValidationResults
     - ListScheduledAudits
     - ListSecurityProfiles
     - ListSecurityProfilesForTarget
@@ -20978,8 +20981,10 @@ serviceMap:
     - DeleteBucket
     - DeleteBucketPolicy
     - GetBucketPolicy
+    - GetEncryptionConfiguration
     - ListAllMyDirectoryBuckets
     - PutBucketPolicy
+    - PutEncryptionConfiguration
     ARNFormat: arn:aws:s3express:${Region}:${Account}:bucket/${BucketName}
     ARNRegex: "^arn:aws:s3express:${Region}:${Account}:bucket/.+"
     conditionKeys:
@@ -20991,6 +20996,8 @@ serviceMap:
     - s3express:signatureAge
     - s3express:signatureversion
     - s3express:x-amz-content-sha256
+    - s3express:x-amz-server-side-encryption
+    - s3express:x-amz-server-side-encryption-aws-kms-key-id
     HasResource: true
   AWS BugBust:
     StringPrefix: bugbust
