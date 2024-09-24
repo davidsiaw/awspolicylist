@@ -20225,6 +20225,7 @@ serviceMap:
     - DeleteProduct
     - DeleteProvisionedProductPlan
     - DeleteProvisioningArtifact
+    - DeleteResourcePolicy
     - DeleteServiceAction
     - DeleteTagOption
     - DescribeConstraint
@@ -20260,6 +20261,7 @@ serviceMap:
     - GetAttributeGroup
     - GetConfiguration
     - GetProvisionedProductOutputs
+    - GetResourcePolicy
     - ImportAsProvisionedProduct
     - ListAcceptedPortfolioShares
     - ListApplications
@@ -20290,6 +20292,7 @@ serviceMap:
     - NotifyUpdateProvisionedProductEngineWorkflowResult
     - ProvisionProduct
     - PutConfiguration
+    - PutResourcePolicy
     - RejectPortfolioShare
     - ScanProvisionedProducts
     - SearchProducts
@@ -21502,6 +21505,7 @@ serviceMap:
     - ListPresets
     - ListQueues
     - ListTagsForResource
+    - ListVersions
     - PutPolicy
     - SearchJobs
     - TagResource
