@@ -96,6 +96,7 @@ serviceMap:
     - DeleteQApp
     - DisassociateLibraryItemReview
     - DisassociateQAppFromUser
+    - ExportQAppSessionData
     - GetLibraryItem
     - GetQApp
     - GetQAppSession
@@ -104,6 +105,7 @@ serviceMap:
     - ImportDocumentToQApp
     - ImportDocumentToQAppSession
     - ListLibraryItems
+    - ListQAppSessionData
     - ListQApps
     - ListTagsForResource
     - PredictProblemStatementFromConversation
@@ -3562,6 +3564,10 @@ serviceMap:
     - UpdateStreamMode
     ARNFormat: arn:aws:kinesis:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:kinesis:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Directory Service:
     StringPrefix: ds
@@ -17924,6 +17930,7 @@ serviceMap:
     - DeleteRegistration
     - DeleteRegistrationAttachment
     - DeleteRegistrationFieldValue
+    - DeleteResourcePolicy
     - DeleteTextMessageSpendLimitOverride
     - DeleteVerifiedDestinationNumber
     - DeleteVoiceMessageSpendLimitOverride
@@ -17950,12 +17957,14 @@ serviceMap:
     - DisassociateProtectConfiguration
     - DiscardRegistrationVersion
     - GetProtectConfigurationCountryRuleSet
+    - GetResourcePolicy
     - ListPoolOriginationIdentities
     - ListRegistrationAssociations
     - ListTagsForResource
     - PutKeyword
     - PutOptedOutNumber
     - PutRegistrationFieldValue
+    - PutResourcePolicy
     - ReleasePhoneNumber
     - ReleaseSenderId
     - RequestPhoneNumber
