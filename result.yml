@@ -2556,17 +2556,21 @@ serviceMap:
     - EnableExternalIdPConfigurationForDirectory
     - EnableUser
     - GetAWSSPConfigurationForDirectory
+    - GetGroupId
+    - GetUserId
     - GetUserPoolInfo
     - ImportExternalIdPCertificate
     - IsMemberInGroup
     - ListBearerTokens
     - ListExternalIdPCertificates
     - ListExternalIdPConfigurationsForDirectory
+    - ListGroups
     - ListGroupsForMember
     - ListGroupsForUser
     - ListMembersInGroup
     - ListMfaDevicesForUser
     - ListProvisioningTenants
+    - ListUsers
     - RemoveMemberFromGroup
     - SearchGroups
     - SearchUsers
