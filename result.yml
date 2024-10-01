@@ -682,19 +682,30 @@ serviceMap:
     Actions:
     - AssignAdminPermissionsToUser
     - CreateBillOfMaterialsImportJob
+    - CreateDataIntegrationFlow
+    - CreateDataLakeDataset
     - CreateInstance
     - CreateSSOApplication
+    - DeleteDataIntegrationFlow
+    - DeleteDataLakeDataset
     - DeleteInstance
     - DeleteSSOApplication
     - DescribeInstance
     - GetBillOfMaterialsImportJob
+    - GetDataIntegrationFlow
+    - GetDataLakeDataset
+    - GetInstance
     - ListAdminUsers
+    - ListDataIntegrationFlows
+    - ListDataLakeDatasets
     - ListInstances
     - ListTagsForResource
     - RemoveAdminPermissionsForUser
     - SendDataIntegrationEvent
     - TagResource
     - UntagResource
+    - UpdateDataIntegrationFlow
+    - UpdateDataLakeDataset
     - UpdateInstance
     ARNFormat: arn:aws:scn:${Region}:${Account}:instance/
     ARNRegex: "^arn:aws:scn:.+"
