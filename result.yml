@@ -8278,6 +8278,7 @@ serviceMap:
     - GetResourcePolicy
     - GetUseCaseForModelAccess
     - InvokeAgent
+    - InvokeBuilder
     - InvokeFlow
     - InvokeModel
     - InvokeModelWithResponseStream
@@ -8317,6 +8318,7 @@ serviceMap:
     - RetrieveAndGenerate
     - StartIngestionJob
     - StopEvaluationJob
+    - StopIngestionJob
     - StopModelCustomizationJob
     - StopModelInvocationJob
     - TagResource
