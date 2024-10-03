@@ -2647,6 +2647,7 @@ serviceMap:
     - CreateCapability
     - CreatePartnership
     - CreateProfile
+    - CreateStarterMappingTemplate
     - CreateTransformer
     - DeleteCapability
     - DeletePartnership
@@ -2664,6 +2665,7 @@ serviceMap:
     - ListTransformers
     - StartTransformerJob
     - TagResource
+    - TestConversion
     - TestMapping
     - TestParsing
     - UntagResource
@@ -17210,7 +17212,7 @@ serviceMap:
     ARNFormat: arn:${Partition}:rhelkb:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:${Partition}:rhelkb:.+"
     HasResource: false
-  Amazon Route 53 Profiles enables sharing DNS settings with VPCs:
+  Amazon Route 53 Profiles:
     StringPrefix: route53profiles
     Actions:
     - AssociateProfile
