@@ -1118,6 +1118,7 @@ serviceMap:
     Actions:
     - CancelConnection
     - GetConnection
+    - ListConnections
     - StartConnection
     HasResource: false
   AWS Marketplace Metering Service:
