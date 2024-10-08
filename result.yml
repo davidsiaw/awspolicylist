@@ -1207,6 +1207,13 @@ serviceMap:
     Actions:
     - ListPrivateListings
     HasResource: false
+  AWS Marketplace Reporting:
+    StringPrefix: aws-marketplace
+    Actions:
+    - GetBuyerDashboard
+    ARNFormat: arn:aws:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/${VizualizationType}/${DashboardName}
+    ARNRegex: "^arn:aws:aws-marketplace::.+"
+    HasResource: true
   AWS Marketplace Entitlement Service:
     StringPrefix: aws-marketplace
     Actions:
@@ -1606,6 +1613,7 @@ serviceMap:
     - GetFarm
     - GetFleet
     - GetJob
+    - GetJobTemplate
     - GetLicenseEndpoint
     - GetMonitor
     - GetQueue
@@ -1626,6 +1634,7 @@ serviceMap:
     - ListFleetMembers
     - ListFleets
     - ListJobMembers
+    - ListJobParameterDefinitions
     - ListJobs
     - ListLicenseEndpoints
     - ListMeteredProducts
@@ -5263,6 +5272,10 @@ serviceMap:
     StringPrefix: wisdom
     Actions:
     - ActivateMessageTemplate
+    - CreateAIAgent
+    - CreateAIAgentVersion
+    - CreateAIPrompt
+    - CreateAIPromptVersion
     - CreateAssistant
     - CreateAssistantAssociation
     - CreateContent
@@ -5274,6 +5287,10 @@ serviceMap:
     - CreateQuickResponse
     - CreateSession
     - DeactivateMessageTemplate
+    - DeleteAIAgent
+    - DeleteAIAgentVersion
+    - DeleteAIPrompt
+    - DeleteAIPromptVersion
     - DeleteAssistant
     - DeleteAssistantAssociation
     - DeleteContent
@@ -5283,6 +5300,8 @@ serviceMap:
     - DeleteMessageTemplate
     - DeleteMessageTemplateAttachment
     - DeleteQuickResponse
+    - GetAIAgent
+    - GetAIPrompt
     - GetAssistant
     - GetAssistantAssociation
     - GetContent
@@ -5294,6 +5313,10 @@ serviceMap:
     - GetQuickResponse
     - GetRecommendations
     - GetSession
+    - ListAIAgentVersions
+    - ListAIAgents
+    - ListAIPromptVersions
+    - ListAIPrompts
     - ListAssistantAssociations
     - ListAssistants
     - ListContentAssociations
@@ -5307,6 +5330,7 @@ serviceMap:
     - NotifyRecommendationsReceived
     - PutFeedback
     - QueryAssistant
+    - RemoveAssistantAIAgent
     - RemoveKnowledgeBaseTemplateUri
     - RenderMessageTemplate
     - SearchContent
@@ -5317,12 +5341,16 @@ serviceMap:
     - StartImportJob
     - TagResource
     - UntagResource
+    - UpdateAIAgent
+    - UpdateAIPrompt
+    - UpdateAssistantAIAgent
     - UpdateContent
     - UpdateKnowledgeBaseTemplateUri
     - UpdateMessageTemplate
     - UpdateMessageTemplateMetadata
     - UpdateQuickResponse
     - UpdateSession
+    - UpdateSessionData
     ARNFormat: arn:aws:wisdom:${Region}:${Account}:${Resource}/${ResourceId}
     ARNRegex: "^arn:aws:wisdom:.+:.+:.+"
     conditionKeys:
