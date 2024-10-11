@@ -9988,6 +9988,29 @@ serviceMap:
     ARNFormat: arn:aws:personalize:${Region}:${Account}:${Resourcename}/${ResourceId}
     ARNRegex: "^arn:aws:personalize:.+:.+:.+"
     HasResource: true
+  AWS Social Messaging:
+    StringPrefix: social-messaging
+    Actions:
+    - AssociateWhatsAppBusinessAccount
+    - DeleteWhatsAppMessageMedia
+    - DisassociateWhatsAppBusinessAccount
+    - GetLinkedWhatsAppBusinessAccount
+    - GetLinkedWhatsAppBusinessAccountPhoneNumber
+    - GetWhatsAppMessageMedia
+    - ListLinkedWhatsAppBusinessAccounts
+    - ListTagsForResource
+    - PostWhatsAppMessageMedia
+    - PutWhatsAppBusinessAccountEventDestinations
+    - SendWhatsAppMessage
+    - TagResource
+    - UntagResource
+    ARNFormat: arn:aws:social-messaging:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:social-messaging:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Panorama:
     StringPrefix: panorama
     Actions:
@@ -16793,6 +16816,7 @@ serviceMap:
     - DeleteRetriever
     - DeleteUser
     - DeleteWebExperience
+    - DisableAclOnDataSource
     - GetApplication
     - GetChatControlsConfiguration
     - GetDataSource
