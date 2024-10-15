@@ -12463,6 +12463,7 @@ serviceMap:
     - DescribeBridge
     - DescribeFlow
     - DescribeFlowSourceMetadata
+    - DescribeFlowSourceThumbnail
     - DescribeGateway
     - DescribeGatewayInstance
     - DescribeOffering
@@ -13480,7 +13481,7 @@ serviceMap:
     - UpdateTypedLinkFacet
     - UpgradeAppliedSchema
     - UpgradePublishedSchema
-    ARNFormat: arn:aws:clouddirectory::${Region}:${Account}:${RelativeId}
+    ARNFormat: arn:aws:clouddirectory:${Region}:${Account}:${RelativeId}
     ARNRegex: "^arn:aws:clouddirectory:.+:[0-9]+:(directory|schema)/.+"
     HasResource: true
   AWS Security Token Service:
