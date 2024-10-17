@@ -2530,6 +2530,7 @@ serviceMap:
     Actions:
     - CreateAssignment
     - DeleteAssignment
+    - GenerateCodeFromCommands
     - GetConversation
     - GetIdentityMetadata
     - GetTroubleshootingResults
@@ -5525,6 +5526,7 @@ serviceMap:
     - AuthorizeClusterSecurityGroupIngress
     - AuthorizeDataShare
     - AuthorizeEndpointAccess
+    - AuthorizeInboundIntegration
     - AuthorizeSnapshotAccess
     - BatchDeleteClusterSnapshots
     - BatchModifyClusterSnapshots
@@ -5544,6 +5546,8 @@ serviceMap:
     - CreateEventSubscription
     - CreateHsmClientCertificate
     - CreateHsmConfiguration
+    - CreateInboundIntegration
+    - CreateIntegration
     - CreateQev2IdcApplication
     - CreateRedshiftIdcApplication
     - CreateSavedQuery
@@ -5564,6 +5568,7 @@ serviceMap:
     - DeleteEventSubscription
     - DeleteHsmClientCertificate
     - DeleteHsmConfiguration
+    - DeleteIntegration
     - DeletePartner
     - DeleteQev2IdcApplication
     - DeleteRedshiftIdcApplication
@@ -5598,6 +5603,7 @@ serviceMap:
     - DescribeHsmClientCertificates
     - DescribeHsmConfigurations
     - DescribeInboundIntegrations
+    - DescribeIntegrations
     - DescribeLoggingStatus
     - DescribeNodeConfigurationOptions
     - DescribeOrderableClusterOptions
@@ -5650,6 +5656,7 @@ serviceMap:
     - ModifyCustomDomainAssociation
     - ModifyEndpointAccess
     - ModifyEventSubscription
+    - ModifyIntegration
     - ModifyQev2IdcApplication
     - ModifyRedshiftIdcApplication
     - ModifySavedQuery
@@ -5687,6 +5694,8 @@ serviceMap:
     - redshift:DbUser
     - redshift:DurationSeconds
     - redshift:InboundIntegrationArn
+    - redshift:IntegrationSourceArn
+    - redshift:IntegrationTargetArn
     HasResource: true
   AWS Marketplace Management Portal:
     StringPrefix: aws-marketplace-management
