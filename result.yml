@@ -6817,11 +6817,13 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - dms:assessment-run-tag/${TagKey}
     - dms:cert-tag/${TagKey}
     - dms:data-migration-tag/${TagKey}
     - dms:data-provider-tag/${TagKey}
     - dms:endpoint-tag/${TagKey}
     - dms:es-tag/${TagKey}
+    - dms:individual-assessment-tag/${TagKey}
     - dms:instance-profile-tag/${TagKey}
     - dms:migration-project-tag/${TagKey}
     - dms:rep-tag/${TagKey}
@@ -11910,28 +11912,36 @@ serviceMap:
   AWS Data Exchange:
     StringPrefix: dataexchange
     Actions:
+    - AcceptDataGrant
     - CancelJob
     - CreateAsset
+    - CreateDataGrant
     - CreateDataSet
     - CreateEventAction
     - CreateJob
     - CreateRevision
     - DeleteAsset
+    - DeleteDataGrant
     - DeleteDataSet
     - DeleteEventAction
     - DeleteRevision
     - GetAsset
+    - GetDataGrant
     - GetDataSet
     - GetEventAction
     - GetJob
+    - GetReceivedDataGrant
     - GetRevision
+    - ListDataGrants
     - ListDataSetRevisions
     - ListDataSets
     - ListEventActions
     - ListJobs
+    - ListReceivedDataGrants
     - ListRevisionAssets
     - ListTagsForResource
     - PublishDataSet
+    - PublishToDataGrant
     - RevokeRevision
     - SendApiAsset
     - SendDataSetNotification
