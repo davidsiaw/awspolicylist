@@ -17671,12 +17671,14 @@ serviceMap:
     - DisassociateTrustStore
     - DisassociateUserAccessLoggingSettings
     - DisassociateUserSettings
+    - ExpireSession
     - GetBrowserSettings
     - GetIdentityProvider
     - GetIpAccessSettings
     - GetNetworkSettings
     - GetPortal
     - GetPortalServiceProviderMetadata
+    - GetSession
     - GetTrustStore
     - GetTrustStoreCertificate
     - GetUserAccessLoggingSettings
@@ -17686,6 +17688,7 @@ serviceMap:
     - ListIpAccessSettings
     - ListNetworkSettings
     - ListPortals
+    - ListSessions
     - ListTagsForResource
     - ListTrustStoreCertificates
     - ListTrustStores
