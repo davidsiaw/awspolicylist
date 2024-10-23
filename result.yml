@@ -14864,9 +14864,8 @@ serviceMap:
     - swf:workflowType.name
     - swf:workflowType.version
     HasResource: true
-  ? AWS Mainframe Modernization Application Testing provides tools and resources for
-    automated functional equivalence testing for your migration projects.
-  : StringPrefix: apptest
+  AWS Mainframe Modernization Application Testing:
+    StringPrefix: apptest
     Actions:
     - CreateTestCase
     - CreateTestConfiguration
@@ -16808,6 +16807,7 @@ serviceMap:
     StringPrefix: qbusiness
     Actions:
     - AddUserLicenses
+    - AllowVendedLogDeliveryForResource
     - BatchDeleteDocument
     - BatchPutDocument
     - CancelSubscription
