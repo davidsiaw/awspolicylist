@@ -5273,6 +5273,7 @@ serviceMap:
     StringPrefix: wisdom
     Actions:
     - ActivateMessageTemplate
+    - AllowVendedLogDeliveryForResource
     - CreateAIAgent
     - CreateAIAgentVersion
     - CreateAIPrompt
@@ -20785,6 +20786,7 @@ serviceMap:
     - ListCertificates
     - ListConnectors
     - ListExecutions
+    - ListFileTransferResults
     - ListHostKeys
     - ListProfiles
     - ListSecurityPolicies
