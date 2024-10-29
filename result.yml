@@ -20022,6 +20022,8 @@ serviceMap:
     - DescribeCapacityProviders
     - DescribeClusters
     - DescribeContainerInstances
+    - DescribeServiceDeployments
+    - DescribeServiceRevisions
     - DescribeServices
     - DescribeTaskDefinition
     - DescribeTaskSets
@@ -20033,6 +20035,7 @@ serviceMap:
     - ListAttributes
     - ListClusters
     - ListContainerInstances
+    - ListServiceDeployments
     - ListServices
     - ListServicesByNamespace
     - ListTagsForResource
