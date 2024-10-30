@@ -415,6 +415,9 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - iot:ClientMode
+    - iot:CommandExecutionParameterBoolean/${CommandParameterName}
+    - iot:CommandExecutionParameterNumber/${CommandParameterName}
+    - iot:CommandExecutionParameterString/${CommandParameterName}
     - iot:Delete
     - iot:DomainName
     - iot:ThingGroupArn
@@ -9702,8 +9705,10 @@ serviceMap:
     - GetQueryResults
     - Link
     - ListAnomalies
+    - ListEntitiesForLogGroup
     - ListLogAnomalyDetectors
     - ListLogDeliveries
+    - ListLogGroupsForEntity
     - ListTagsForResource
     - ListTagsLogGroup
     - PutAccountPolicy
