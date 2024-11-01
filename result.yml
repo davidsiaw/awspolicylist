@@ -8270,6 +8270,7 @@ serviceMap:
     - CreateFoundationModelAgreement
     - CreateGuardrail
     - CreateGuardrailVersion
+    - CreateInferenceProfile
     - CreateKnowledgeBase
     - CreateModelCopyJob
     - CreateModelCustomizationJob
@@ -8292,6 +8293,7 @@ serviceMap:
     - DeleteFoundationModelAgreement
     - DeleteGuardrail
     - DeleteImportedModel
+    - DeleteInferenceProfile
     - DeleteKnowledgeBase
     - DeleteModelInvocationLoggingConfiguration
     - DeletePrompt
@@ -14310,6 +14312,7 @@ serviceMap:
     - CreateAlias
     - CreateAvailabilityConfiguration
     - CreateGroup
+    - CreateIdentityCenterApplication
     - CreateImpersonationRole
     - CreateInboundMailFlowRule
     - CreateMailDomain
@@ -14324,6 +14327,8 @@ serviceMap:
     - DeleteAvailabilityConfiguration
     - DeleteEmailMonitoringConfiguration
     - DeleteGroup
+    - DeleteIdentityCenterApplication
+    - DeleteIdentityProviderConfiguration
     - DeleteImpersonationRole
     - DeleteInboundMailFlowRule
     - DeleteMailDomain
@@ -14333,6 +14338,7 @@ serviceMap:
     - DeleteMobileDeviceAccessRule
     - DeleteOrganization
     - DeleteOutboundMailFlowRule
+    - DeletePersonalAccessToken
     - DeleteResource
     - DeleteRetentionPolicy
     - DeleteSmtpGateway
@@ -14343,6 +14349,7 @@ serviceMap:
     - DescribeEmailMonitoringConfiguration
     - DescribeEntity
     - DescribeGroup
+    - DescribeIdentityProviderConfiguration
     - DescribeInboundDmarcSettings
     - DescribeInboundMailFlowRule
     - DescribeMailDomains
@@ -14368,6 +14375,7 @@ serviceMap:
     - GetMobileDeviceDetails
     - GetMobileDevicesForUser
     - GetMobilePolicyDetails
+    - GetPersonalAccessTokenMetadata
     - ListAccessControlRules
     - ListAliases
     - ListAvailabilityConfigurations
@@ -14383,6 +14391,7 @@ serviceMap:
     - ListMobileDeviceAccessRules
     - ListOrganizations
     - ListOutboundMailFlowRules
+    - ListPersonalAccessTokens
     - ListResourceDelegates
     - ListResources
     - ListSmtpGateways
@@ -14390,6 +14399,7 @@ serviceMap:
     - ListUsers
     - PutAccessControlRule
     - PutEmailMonitoringConfiguration
+    - PutIdentityProviderConfiguration
     - PutInboundDmarcSettings
     - PutMailboxPermissions
     - PutMobileDeviceAccessOverride
