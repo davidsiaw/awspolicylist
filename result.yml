@@ -2442,6 +2442,7 @@ serviceMap:
     - DeleteServiceLevelObjective
     - GetService
     - GetServiceLevelObjective
+    - ListObservedEntities
     - ListServiceDependencies
     - ListServiceDependents
     - ListServiceLevelObjectives
@@ -12758,6 +12759,7 @@ serviceMap:
     - AddAssociation
     - AddTags
     - AssociateTrialComponent
+    - BatchDeleteClusterNodes
     - BatchDescribeModelPackage
     - BatchGetMetrics
     - BatchGetRecord
