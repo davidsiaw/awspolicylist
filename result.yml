@@ -87,6 +87,9 @@ serviceMap:
     Actions:
     - AssociateLibraryItemReview
     - AssociateQAppWithUser
+    - BatchCreateCategory
+    - BatchDeleteCategory
+    - BatchUpdateCategory
     - CopyQApp
     - CreateLibraryItem
     - CreateLibraryItemReview
@@ -104,6 +107,7 @@ serviceMap:
     - ImportDocument
     - ImportDocumentToQApp
     - ImportDocumentToQAppSession
+    - ListCategories
     - ListLibraryItems
     - ListQAppSessionData
     - ListQApps
