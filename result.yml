@@ -20662,6 +20662,7 @@ serviceMap:
     Actions:
     - BatchDeleteTaxRegistration
     - BatchPutTaxRegistration
+    - DeleteSupplementalTaxRegistration
     - DeleteTaxRegistration
     - GetExemptions
     - GetTaxInfoReportingDocument
@@ -20669,7 +20670,9 @@ serviceMap:
     - GetTaxInterview
     - GetTaxRegistration
     - GetTaxRegistrationDocument
+    - ListSupplementalTaxRegistrations
     - ListTaxRegistrations
+    - PutSupplementalTaxRegistration
     - PutTaxInheritance
     - PutTaxInterview
     - PutTaxRegistration
