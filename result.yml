@@ -1747,6 +1747,7 @@ serviceMap:
     Actions:
     - ActivateEvaluationForm
     - AdminGetEmergencyAccessToken
+    - AssociateAnalyticsDataSet
     - AssociateApprovedOrigin
     - AssociateBot
     - AssociateCustomerProfilesDomain
@@ -1846,6 +1847,7 @@ serviceMap:
     - DescribeUserHierarchyStructure
     - DescribeView
     - DescribeVocabulary
+    - DisassociateAnalyticsDataSet
     - DisassociateApprovedOrigin
     - DisassociateBot
     - DisassociateCustomerProfilesDomain
@@ -1874,6 +1876,7 @@ serviceMap:
     - GetTrafficDistribution
     - ImportPhoneNumber
     - ListAgentStatuses
+    - ListAnalyticsDataAssociations
     - ListApprovedOrigins
     - ListAuthenticationProfiles
     - ListBots
@@ -1951,7 +1954,9 @@ serviceMap:
     - StartContactRecording
     - StartContactStreaming
     - StartForecastingPlanningSchedulingIntegration
+    - StartOutboundChatContact
     - StartOutboundVoiceContact
+    - StartScreenSharing
     - StartTaskContact
     - StartWebRTCContact
     - StopContact
@@ -2025,6 +2030,7 @@ serviceMap:
     - connect:SearchContactsByContactAnalysis
     - connect:SearchTag/${TagKey}
     - connect:StorageResourceType
+    - connect:Subtype
     - connect:UserArn
     HasResource: true
   Amazon Pinpoint Email Service:
@@ -7755,6 +7761,7 @@ serviceMap:
     - GetTopologyMap
     - Link
     - ListDashboards
+    - ListEntitiesForMetric
     - ListManagedInsightRules
     - ListMetricStreams
     - ListMetrics
@@ -10494,6 +10501,7 @@ serviceMap:
     - DeleteEnvironment
     - DeregisterDevice
     - GetDevice
+    - GetDeviceDetails
     - GetEnvironment
     - GetSoftwareSet
     - ListDeviceSessions
@@ -11036,6 +11044,8 @@ serviceMap:
     - PutBackupPolicy
     - PutFileSystemPolicy
     - PutLifecycleConfiguration
+    - ReplicationRead
+    - ReplicationWrite
     - Restore
     - TagResource
     - UntagResource
@@ -13348,6 +13358,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateLoggingConfiguration
+    - UpdateScraper
     - UpdateWorkspaceAlias
     ARNFormat: arn:aws:aps:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:aps:.+:.+:.+"
@@ -18720,6 +18731,7 @@ serviceMap:
     StringPrefix: ec2
     Actions:
     - AcceptAddressTransfer
+    - AcceptCapacityReservationBillingOwnership
     - AcceptReservedInstancesExchangeQuote
     - AcceptTransitGatewayMulticastDomainAssociations
     - AcceptTransitGatewayPeeringAttachment
@@ -18735,6 +18747,7 @@ serviceMap:
     - AssignPrivateIpAddresses
     - AssignPrivateNatGatewayAddress
     - AssociateAddress
+    - AssociateCapacityReservationBillingOwner
     - AssociateClientVpnTargetNetwork
     - AssociateDhcpOptions
     - AssociateEnclaveCertificateIamRole
@@ -18744,6 +18757,7 @@ serviceMap:
     - AssociateIpamResourceDiscovery
     - AssociateNatGatewayAddress
     - AssociateRouteTable
+    - AssociateSecurityGroupVpc
     - AssociateSubnetCidrBlock
     - AssociateTransitGatewayMulticastDomain
     - AssociateTransitGatewayPolicyTable
@@ -18957,6 +18971,7 @@ serviceMap:
     - DescribeBundleTasks
     - DescribeByoipCidrs
     - DescribeCapacityBlockOfferings
+    - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservations
     - DescribeCarrierGateways
@@ -18997,6 +19012,7 @@ serviceMap:
     - DescribeInstanceCreditSpecifications
     - DescribeInstanceEventNotificationAttributes
     - DescribeInstanceEventWindows
+    - DescribeInstanceImageMetadata
     - DescribeInstanceStatus
     - DescribeInstanceTopology
     - DescribeInstanceTypeOfferings
@@ -19049,6 +19065,7 @@ serviceMap:
     - DescribeScheduledInstances
     - DescribeSecurityGroupReferences
     - DescribeSecurityGroupRules
+    - DescribeSecurityGroupVpcAssociations
     - DescribeSecurityGroups
     - DescribeSnapshotAttribute
     - DescribeSnapshotTierStatus
@@ -19124,6 +19141,7 @@ serviceMap:
     - DisableVpcClassicLink
     - DisableVpcClassicLinkDnsSupport
     - DisassociateAddress
+    - DisassociateCapacityReservationBillingOwner
     - DisassociateClientVpnTargetNetwork
     - DisassociateEnclaveCertificateIamRole
     - DisassociateIamInstanceProfile
@@ -19132,6 +19150,7 @@ serviceMap:
     - DisassociateIpamResourceDiscovery
     - DisassociateNatGatewayAddress
     - DisassociateRouteTable
+    - DisassociateSecurityGroupVpc
     - DisassociateSubnetCidrBlock
     - DisassociateTransitGatewayMulticastDomain
     - DisassociateTransitGatewayPolicyTable
@@ -19238,6 +19257,7 @@ serviceMap:
     - ModifyImageAttribute
     - ModifyInstanceAttribute
     - ModifyInstanceCapacityReservationAttributes
+    - ModifyInstanceCpuOptions
     - ModifyInstanceCreditSpecification
     - ModifyInstanceEventStartTime
     - ModifyInstanceEventWindow
@@ -19307,6 +19327,7 @@ serviceMap:
     - RegisterInstanceEventNotificationAttributes
     - RegisterTransitGatewayMulticastGroupMembers
     - RegisterTransitGatewayMulticastGroupSources
+    - RejectCapacityReservationBillingOwnership
     - RejectTransitGatewayMulticastDomainAssociations
     - RejectTransitGatewayPeeringAttachment
     - RejectTransitGatewayVpcAttachment
