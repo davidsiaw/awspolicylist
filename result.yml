@@ -8403,6 +8403,7 @@ serviceMap:
     - PutModelInvocationLoggingConfiguration
     - PutResourcePolicy
     - PutUseCaseForModelAccess
+    - RenderPrompt
     - Retrieve
     - RetrieveAndGenerate
     - StartIngestionJob
@@ -8423,6 +8424,7 @@ serviceMap:
     - UpdateKnowledgeBase
     - UpdatePrompt
     - UpdateProvisionedModelThroughput
+    - ValidateFlowDefinition
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
     conditionKeys:
@@ -14127,8 +14129,10 @@ serviceMap:
   AWS Elemental MediaPackage V2:
     StringPrefix: mediapackagev2
     Actions:
+    - CancelHarvestJob
     - CreateChannel
     - CreateChannelGroup
+    - CreateHarvestJob
     - CreateOriginEndpoint
     - DeleteChannel
     - DeleteChannelGroup
@@ -14138,12 +14142,15 @@ serviceMap:
     - GetChannel
     - GetChannelGroup
     - GetChannelPolicy
+    - GetHarvestJob
     - GetHeadObject
     - GetObject
     - GetOriginEndpoint
     - GetOriginEndpointPolicy
+    - HarvestObject
     - ListChannelGroups
     - ListChannels
+    - ListHarvestJobs
     - ListOriginEndpoints
     - ListTagsForResource
     - PutChannelPolicy
@@ -16264,6 +16271,9 @@ serviceMap:
     - DeleteRegisteredModelTag
     - DeleteRun
     - DeleteTag
+    - DeleteTraceTag
+    - DeleteTraces
+    - EndTrace
     - GetDownloadURIForModelVersionArtifacts
     - GetExperiment
     - GetExperimentByName
@@ -16273,6 +16283,7 @@ serviceMap:
     - GetModelVersionByAlias
     - GetRegisteredModel
     - GetRun
+    - GetTraceInfo
     - ListArtifacts
     - LogBatch
     - LogInputs
@@ -16286,11 +16297,14 @@ serviceMap:
     - SearchModelVersions
     - SearchRegisteredModels
     - SearchRuns
+    - SearchTraces
     - SetExperimentTag
     - SetModelVersionTag
     - SetRegisteredModelAlias
     - SetRegisteredModelTag
     - SetTag
+    - SetTraceTag
+    - StartTrace
     - TransitionModelVersionStage
     - UpdateExperiment
     - UpdateModelVersion
@@ -16298,6 +16312,9 @@ serviceMap:
     - UpdateRun
     ARNFormat: arn:aws:sagemaker:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:sagemaker:.+"
+    conditionKeys:
+    - aws:ResourceTag/${TagKey}
+    - sagemaker:ResourceTag/${TagKey}
     HasResource: true
   Amazon Comprehend Medical:
     StringPrefix: comprehendmedical
@@ -17250,6 +17267,13 @@ serviceMap:
     conditionKeys:
     - aws:ResourceTag/${TagKey}
     - elasticloadbalancing:ResourceTag/${TagKey}
+    HasResource: true
+  Amazon OpenSearch:
+    StringPrefix: opensearch
+    Actions:
+    - ApplicationAccessAll
+    ARNFormat: arn:aws:opensearch:${Region}:${Account}:${Resource}
+    ARNRegex: "^arn:aws:opensearch:.+"
     HasResource: true
   AWS Consolidated Billing:
     StringPrefix: consolidatedbilling
