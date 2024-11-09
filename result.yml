@@ -16948,6 +16948,7 @@ serviceMap:
     - GetUser
     - GetWebExperience
     - ListApplications
+    - ListAttachments
     - ListConversations
     - ListDataSourceSyncJobs
     - ListDataSources
@@ -16983,6 +16984,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - identitystore:GroupId
+    - identitystore:UserId
     HasResource: true
   Amazon Lightsail:
     StringPrefix: lightsail
@@ -21375,6 +21378,7 @@ serviceMap:
     - AssociateDefaultView
     - BatchGetView
     - CreateIndex
+    - CreateManagedView
     - CreateView
     - DeleteIndex
     - DeleteResourcePolicy
@@ -21383,10 +21387,12 @@ serviceMap:
     - GetAccountLevelServiceConfiguration
     - GetDefaultView
     - GetIndex
+    - GetManagedView
     - GetResourcePolicy
     - GetView
     - ListIndexes
     - ListIndexesForMembers
+    - ListManagedViews
     - ListSupportedResourceTypes
     - ListTagsForResource
     - ListViews
@@ -21402,6 +21408,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - resource-explorer-2:Operation
     HasResource: true
   Amazon Managed Streaming for Kafka Connect:
     StringPrefix: kafkaconnect
