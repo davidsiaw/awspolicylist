@@ -5999,6 +5999,8 @@ serviceMap:
     - AddEntityOwner
     - AddPolicyGrant
     - AssociateEnvironmentRole
+    - BatchDeleteLinkedTypes
+    - BatchPutLinkedTypes
     - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAsset
@@ -6102,6 +6104,7 @@ serviceMap:
     - ListEnvironments
     - ListGroupsForUser
     - ListLineageNodeHistory
+    - ListLinkedTypes
     - ListMetadataGenerationRuns
     - ListNotifications
     - ListPolicyGrants
@@ -8841,7 +8844,9 @@ serviceMap:
     - GetPrivateConnectivityConfig
     - GetSite
     - GetSiteAddress
+    - ListAssetInstances
     - ListAssets
+    - ListBlockingInstancesForCapacityTask
     - ListCapacityTasks
     - ListCatalogItems
     - ListOrders
