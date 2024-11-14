@@ -2543,21 +2543,33 @@ serviceMap:
     StringPrefix: q
     Actions:
     - CreateAssignment
+    - CreatePlugin
     - DeleteAssignment
+    - DeletePlugin
     - GenerateCodeFromCommands
     - GetConversation
     - GetIdentityMetadata
+    - GetPlugin
     - GetTroubleshootingResults
     - ListConversations
+    - ListPluginProviders
+    - ListPlugins
+    - ListTagsForResource
     - PassRequest
     - SendMessage
     - StartConversation
     - StartTroubleshootingAnalysis
     - StartTroubleshootingResolutionExplanation
+    - TagResource
+    - UntagResource
     - UpdateTroubleshootingCommandResult
-    ARNFormat: arn:aws:codewhisperer:${Region}:${Account}:${ResourceType}/${ResourceId}
-    ARNRegex: "^arn:aws:codewhisperer:.+:[0-9]+:.+"
+    - UsePlugin
+    ARNFormat: arn:aws:qdeveloper:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:qdeveloper:.+:[0-9]+:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - identitystore:GroupId
     - identitystore:UserId
     HasResource: true
@@ -2681,6 +2693,7 @@ serviceMap:
     - DeletePartnership
     - DeleteProfile
     - DeleteTransformer
+    - GenerateMapping
     - GetCapability
     - GetPartnership
     - GetProfile
@@ -15518,7 +15531,7 @@ serviceMap:
     - TagDeliveryStream
     - UntagDeliveryStream
     - UpdateDestination
-    ARNFormat: arn:aws:firehose:{Region}:{Account}:deliverystream/${DeliveryStreamName}
+    ARNFormat: arn:aws:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}
     ARNRegex: "^arn:aws:firehose:.+:[0-9]+:deliverystream/.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
@@ -15778,6 +15791,7 @@ serviceMap:
     - DisableFederation
     - EnableFederation
     - GenerateQuery
+    - GenerateQueryResultsSummary
     - GetChannel
     - GetEventDataStore
     - GetEventDataStoreData
@@ -19780,6 +19794,7 @@ serviceMap:
     - ClaimGameServer
     - CreateAlias
     - CreateBuild
+    - CreateContainerFleet
     - CreateContainerGroupDefinition
     - CreateFleet
     - CreateFleetLocations
@@ -19796,6 +19811,7 @@ serviceMap:
     - CreateVpcPeeringConnection
     - DeleteAlias
     - DeleteBuild
+    - DeleteContainerFleet
     - DeleteContainerGroupDefinition
     - DeleteFleet
     - DeleteFleetLocations
@@ -19813,10 +19829,12 @@ serviceMap:
     - DescribeAlias
     - DescribeBuild
     - DescribeCompute
+    - DescribeContainerFleet
     - DescribeContainerGroupDefinition
     - DescribeEC2InstanceLimits
     - DescribeFleetAttributes
     - DescribeFleetCapacity
+    - DescribeFleetDeployment
     - DescribeFleetEvents
     - DescribeFleetLocationAttributes
     - DescribeFleetLocationCapacity
@@ -19847,7 +19865,10 @@ serviceMap:
     - ListAliases
     - ListBuilds
     - ListCompute
+    - ListContainerFleets
+    - ListContainerGroupDefinitionVersions
     - ListContainerGroupDefinitions
+    - ListFleetDeployments
     - ListFleets
     - ListGameServerGroups
     - ListGameServers
@@ -19873,6 +19894,8 @@ serviceMap:
     - UntagResource
     - UpdateAlias
     - UpdateBuild
+    - UpdateContainerFleet
+    - UpdateContainerGroupDefinition
     - UpdateFleetAttributes
     - UpdateFleetCapacity
     - UpdateFleetPortSettings
@@ -20645,6 +20668,7 @@ serviceMap:
     - ManageOrganizationalUnit
     - PerformPreLaunchChecks
     - ResetEnabledBaseline
+    - ResetEnabledControl
     - ResetLandingZone
     - SetupLandingZone
     - TagResource
