@@ -410,6 +410,7 @@ serviceMap:
     - UpdateThingGroup
     - UpdateThingGroupsForThing
     - UpdateThingShadow
+    - UpdateThingType
     - UpdateTopicRuleDestination
     - ValidateSecurityProfileBehaviors
     ARNFormat: arn:aws:iot:${Region}:${Account}:${Type}/${Name}
@@ -4775,11 +4776,13 @@ serviceMap:
     StringPrefix: deepracer
     Actions:
     - AddLeaderboardAccessPermission
+    - AdminDescribeAccountKey
     - AdminGetAccountConfig
     - AdminListAssociatedResources
     - AdminListAssociatedUsers
     - AdminManageUser
     - AdminSetAccountConfig
+    - AdminUpdateAccountKey
     - CloneReinforcementLearningModel
     - CreateCar
     - CreateLeaderboard
@@ -5327,6 +5330,8 @@ serviceMap:
     - AllowVendedLogDeliveryForResource
     - CreateAIAgent
     - CreateAIAgentVersion
+    - CreateAIGuardrail
+    - CreateAIGuardrailVersion
     - CreateAIPrompt
     - CreateAIPromptVersion
     - CreateAssistant
@@ -5342,6 +5347,8 @@ serviceMap:
     - DeactivateMessageTemplate
     - DeleteAIAgent
     - DeleteAIAgentVersion
+    - DeleteAIGuardrail
+    - DeleteAIGuardrailVersion
     - DeleteAIPrompt
     - DeleteAIPromptVersion
     - DeleteAssistant
@@ -5354,6 +5361,7 @@ serviceMap:
     - DeleteMessageTemplateAttachment
     - DeleteQuickResponse
     - GetAIAgent
+    - GetAIGuardrail
     - GetAIPrompt
     - GetAssistant
     - GetAssistantAssociation
@@ -5363,11 +5371,14 @@ serviceMap:
     - GetImportJob
     - GetKnowledgeBase
     - GetMessageTemplate
+    - GetNextMessage
     - GetQuickResponse
     - GetRecommendations
     - GetSession
     - ListAIAgentVersions
     - ListAIAgents
+    - ListAIGuardrailVersions
+    - ListAIGuardrails
     - ListAIPromptVersions
     - ListAIPrompts
     - ListAssistantAssociations
@@ -5378,6 +5389,7 @@ serviceMap:
     - ListKnowledgeBases
     - ListMessageTemplateVersions
     - ListMessageTemplates
+    - ListMessages
     - ListQuickResponses
     - ListTagsForResource
     - NotifyRecommendationsReceived
@@ -5390,11 +5402,13 @@ serviceMap:
     - SearchMessageTemplates
     - SearchQuickResponses
     - SearchSessions
+    - SendMessage
     - StartContentUpload
     - StartImportJob
     - TagResource
     - UntagResource
     - UpdateAIAgent
+    - UpdateAIGuardrail
     - UpdateAIPrompt
     - UpdateAssistantAIAgent
     - UpdateContent
@@ -10901,17 +10915,29 @@ serviceMap:
     StringPrefix: license-manager-user-subscriptions
     Actions:
     - AssociateUser
+    - CreateLicenseServerEndpoint
+    - DeleteLicenseServerEndpoint
     - DeregisterIdentityProvider
     - DisassociateUser
     - ListIdentityProviders
     - ListInstances
+    - ListLicenseServerEndpoints
     - ListProductSubscriptions
+    - ListTagsForResource
     - ListUserAssociations
     - RegisterIdentityProvider
     - StartProductSubscription
     - StopProductSubscription
+    - TagResource
+    - UntagResource
     - UpdateIdentityProviderSettings
-    HasResource: false
+    ARNFormat: arn:aws:license-manager-user-subscriptions:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:license-manager-user-subscriptions:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Performance Insights:
     StringPrefix: pi
     Actions:
@@ -13610,6 +13636,7 @@ serviceMap:
     - AssumeRole
     - AssumeRoleWithSAML
     - AssumeRoleWithWebIdentity
+    - AssumeRoot
     - DecodeAuthorizationMessage
     - GetAccessKeyInfo
     - GetCallerIdentity
@@ -13673,6 +13700,7 @@ serviceMap:
     - sts:RequestContextProviders
     - sts:RoleSessionName
     - sts:SourceIdentity
+    - sts:TaskPolicyArn
     - sts:TransitiveTagKeys
     - www.amazon.com:app_id
     - www.amazon.com:user_id
@@ -14079,6 +14107,31 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Partner Central Selling:
+    StringPrefix: partnercentral
+    Actions:
+    - AcceptEngagementInvitation
+    - AssignOpportunity
+    - AssociateOpportunity
+    - CreateOpportunity
+    - DisassociateOpportunity
+    - GetAwsOpportunitySummary
+    - GetEngagementInvitation
+    - GetOpportunity
+    - ListEngagementInvitations
+    - ListOpportunities
+    - ListSolutions
+    - RejectEngagementInvitation
+    - StartEngagementByAcceptingInvitationTask
+    - StartEngagementFromOpportunityTask
+    - SubmitOpportunity
+    - UpdateOpportunity
+    ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:partnercentral:.+"
+    conditionKeys:
+    - partnercentral:Catalog
+    - partnercentral:RelatedEntityType
+    HasResource: true
   AWS OpsWorks:
     StringPrefix: opsworks
     Actions:
@@ -14253,7 +14306,11 @@ serviceMap:
     - DetachGroupPolicy
     - DetachRolePolicy
     - DetachUserPolicy
+    - DisableOrganizationsRootCredentialsManagement
+    - DisableOrganizationsRootSessions
     - EnableMFADevice
+    - EnableOrganizationsRootCredentialsManagement
+    - EnableOrganizationsRootSessions
     - GenerateCredentialReport
     - GenerateOrganizationsAccessReport
     - GenerateServiceLastAccessedDetails
@@ -14303,6 +14360,7 @@ serviceMap:
     - ListMFADevices
     - ListOpenIDConnectProviderTags
     - ListOpenIDConnectProviders
+    - ListOrganizationsFeatures
     - ListPolicies
     - ListPoliciesGrantingServiceAccess
     - ListPolicyTags
@@ -15509,6 +15567,8 @@ serviceMap:
     - elasticache:KmsKeyId
     - elasticache:MaximumDataStorage
     - elasticache:MaximumECPUPerSecond
+    - elasticache:MinimumDataStorage
+    - elasticache:MinimumECPUPerSecond
     - elasticache:MultiAZEnabled
     - elasticache:NumNodeGroups
     - elasticache:ReplicasPerNodeGroup
@@ -21026,6 +21086,7 @@ serviceMap:
     - StartResourceScan
     - TagResource
     - UntagResource
+    - UpdateAnalyzer
     - UpdateArchiveRule
     - UpdateFindings
     - ValidatePolicy
