@@ -1029,6 +1029,7 @@ serviceMap:
     - route53:ChangeResourceRecordSetsActions
     - route53:ChangeResourceRecordSetsNormalizedRecordNames
     - route53:ChangeResourceRecordSetsRecordTypes
+    - route53:VPCs
     HasResource: true
   Amazon SimpleDB:
     StringPrefix: sdb
@@ -4608,6 +4609,7 @@ serviceMap:
     - DisableKinesisStreamingDestination
     - EnableKinesisStreamingDestination
     - ExportTableToPointInTime
+    - GetAbacStatus
     - GetItem
     - GetRecords
     - GetResourcePolicy
@@ -4636,6 +4638,7 @@ serviceMap:
     - StartAwsBackupJob
     - TagResource
     - UntagResource
+    - UpdateAbacStatus
     - UpdateContinuousBackups
     - UpdateContributorInsights
     - UpdateGlobalTable
@@ -4649,6 +4652,9 @@ serviceMap:
     ARNFormat: arn:aws:dynamodb:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:dynamodb:.+:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - dynamodb:Attributes
     - dynamodb:EnclosingOperation
     - dynamodb:FullTableScan
@@ -5782,9 +5788,11 @@ serviceMap:
     ARNFormat: arn:${Partition}:Marketplace:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:${Partition}:Marketplace:.+"
     HasResource: false
-  AWS re:Post Private:
+  AWS rePost Private:
     StringPrefix: repostspace
     Actions:
+    - BatchAddRole
+    - BatchRemoveRole
     - CreateSpace
     - DeleteSpace
     - DeregisterAdmin
@@ -6054,6 +6062,7 @@ serviceMap:
     - CreateProject
     - CreateProjectMembership
     - CreateProjectProfile
+    - CreateRule
     - CreateSubscriptionGrant
     - CreateSubscriptionRequest
     - CreateSubscriptionTarget
@@ -6078,6 +6087,7 @@ serviceMap:
     - DeleteProject
     - DeleteProjectMembership
     - DeleteProjectProfile
+    - DeleteRule
     - DeleteSubscriptionGrant
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
@@ -6109,6 +6119,7 @@ serviceMap:
     - GetMetadataGenerationRun
     - GetProject
     - GetProjectProfile
+    - GetRule
     - GetSubscription
     - GetSubscriptionEligibility
     - GetSubscriptionGrant
@@ -6141,6 +6152,7 @@ serviceMap:
     - ListProjectMemberships
     - ListProjectProfiles
     - ListProjects
+    - ListRules
     - ListSubscriptionGrants
     - ListSubscriptionRequests
     - ListSubscriptionTargets
@@ -6162,6 +6174,7 @@ serviceMap:
     - Search
     - SearchGroupProfiles
     - SearchListings
+    - SearchRules
     - SearchTypes
     - SearchUserProfiles
     - SsoLogin
@@ -6187,6 +6200,7 @@ serviceMap:
     - UpdateGroupProfile
     - UpdateProject
     - UpdateProjectProfile
+    - UpdateRule
     - UpdateSubscriptionGrantStatus
     - UpdateSubscriptionRequest
     - UpdateSubscriptionTarget
@@ -15201,6 +15215,7 @@ serviceMap:
     - CreateAssetModelCompositeModel
     - CreateBulkImportJob
     - CreateDashboard
+    - CreateDataset
     - CreateGateway
     - CreatePortal
     - CreateProject
@@ -15209,6 +15224,7 @@ serviceMap:
     - DeleteAssetModel
     - DeleteAssetModelCompositeModel
     - DeleteDashboard
+    - DeleteDataset
     - DeleteGateway
     - DeletePortal
     - DeleteProject
@@ -15222,6 +15238,7 @@ serviceMap:
     - DescribeAssetProperty
     - DescribeBulkImportJob
     - DescribeDashboard
+    - DescribeDataset
     - DescribeDefaultEncryptionConfiguration
     - DescribeGateway
     - DescribeGatewayCapabilityConfiguration
@@ -15239,6 +15256,7 @@ serviceMap:
     - GetAssetPropertyValue
     - GetAssetPropertyValueHistory
     - GetInterpolatedAssetPropertyValues
+    - InvokeAssistant
     - ListAccessPolicies
     - ListActions
     - ListAssetModelCompositeModels
@@ -15251,6 +15269,7 @@ serviceMap:
     - ListBulkImportJobs
     - ListCompositionRelationships
     - ListDashboards
+    - ListDatasets
     - ListGateways
     - ListPortals
     - ListProjectAssets
@@ -15269,6 +15288,7 @@ serviceMap:
     - UpdateAssetModelPropertyRouting
     - UpdateAssetProperty
     - UpdateDashboard
+    - UpdateDataset
     - UpdateGateway
     - UpdateGatewayCapabilityConfiguration
     - UpdatePortal
@@ -18250,7 +18270,21 @@ serviceMap:
     - memorydb:TLSEnabled
     - memorydb:UserAuthenticationMode
     HasResource: true
-  Amazon Pinpoint SMS Voice V2:
+  Amazon Pinpoint SMS and Voice Service:
+    StringPrefix: sms-voice
+    Actions:
+    - CreateConfigurationSet
+    - CreateConfigurationSetEventDestination
+    - DeleteConfigurationSet
+    - DeleteConfigurationSetEventDestination
+    - GetConfigurationSetEventDestinations
+    - ListConfigurationSets
+    - SendVoiceMessage
+    - UpdateConfigurationSetEventDestination
+    ARNFormat: arn:aws:sms-voice:<region>:<account-id>:<resource-type>/<resource_name>
+    ARNRegex: "^arn:aws:sms-voice:.+:.+:.+"
+    HasResource: false
+  AWS End User Messaging SMS and Voice V2:
     StringPrefix: sms-voice
     Actions:
     - AssociateOriginationIdentity
@@ -18276,6 +18310,7 @@ serviceMap:
     - DeleteOptedOutNumber
     - DeletePool
     - DeleteProtectConfiguration
+    - DeleteProtectConfigurationRuleSetNumberOverride
     - DeleteRegistration
     - DeleteRegistrationAttachment
     - DeleteRegistrationFieldValue
@@ -18308,10 +18343,13 @@ serviceMap:
     - GetProtectConfigurationCountryRuleSet
     - GetResourcePolicy
     - ListPoolOriginationIdentities
+    - ListProtectConfigurationRuleSetNumberOverrides
     - ListRegistrationAssociations
     - ListTagsForResource
     - PutKeyword
+    - PutMessageFeedback
     - PutOptedOutNumber
+    - PutProtectConfigurationRuleSetNumberOverride
     - PutRegistrationFieldValue
     - PutResourcePolicy
     - ReleasePhoneNumber
@@ -18323,6 +18361,7 @@ serviceMap:
     - SendTextMessage
     - SendVoiceMessage
     - SetAccountDefaultProtectConfiguration
+    - SetDefaultMessageFeedbackEnabled
     - SetDefaultMessageType
     - SetDefaultSenderId
     - SetMediaMessageSpendLimitOverride
@@ -18345,20 +18384,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  Amazon Pinpoint SMS and Voice Service:
-    StringPrefix: sms-voice
-    Actions:
-    - CreateConfigurationSet
-    - CreateConfigurationSetEventDestination
-    - DeleteConfigurationSet
-    - DeleteConfigurationSetEventDestination
-    - GetConfigurationSetEventDestinations
-    - ListConfigurationSets
-    - SendVoiceMessage
-    - UpdateConfigurationSetEventDestination
-    ARNFormat: arn:aws:sms-voice:<region>:<account-id>:<resource-type>/<resource_name>
-    ARNRegex: "^arn:aws:sms-voice:.+:.+:.+"
-    HasResource: false
   AWS SimSpace Weaver:
     StringPrefix: simspaceweaver
     Actions:
