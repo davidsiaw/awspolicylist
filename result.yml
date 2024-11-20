@@ -1241,6 +1241,7 @@ serviceMap:
     - GetAgreementRequest
     - GetAgreementTerms
     - ListAgreementApprovalRequests
+    - ListAgreementCharges
     - ListAgreementRequests
     - ListEntitlementDetails
     - RejectAgreementApprovalRequest
@@ -1248,6 +1249,7 @@ serviceMap:
     - Subscribe
     - Unsubscribe
     - UpdateAgreementApprovalRequest
+    - UpdatePurchaseOrders
     - ViewSubscriptions
     conditionKeys:
     - aws-marketplace:AgreementType
@@ -6045,6 +6047,7 @@ serviceMap:
     - CreateAssetFilter
     - CreateAssetRevision
     - CreateAssetType
+    - CreateConnection
     - CreateDataProduct
     - CreateDataProductRevision
     - CreateDataSource
@@ -6070,6 +6073,7 @@ serviceMap:
     - DeleteAsset
     - DeleteAssetFilter
     - DeleteAssetType
+    - DeleteConnection
     - DeleteDataProduct
     - DeleteDataSource
     - DeleteDomain
@@ -6096,10 +6100,12 @@ serviceMap:
     - GetAsset
     - GetAssetFilter
     - GetAssetType
+    - GetConnection
     - GetDataProduct
     - GetDataSource
     - GetDataSourceRun
     - GetDomain
+    - GetDomainExecutionRoleCredentials
     - GetDomainSharingPolicy
     - GetDomainUnit
     - GetEnvironment
@@ -6114,6 +6120,8 @@ serviceMap:
     - GetGlossaryTerm
     - GetGroupProfile
     - GetIamPortalLoginUrl
+    - GetJobRun
+    - GetLineageEvent
     - GetLineageNode
     - GetListing
     - GetMetadataGenerationRun
@@ -6130,6 +6138,7 @@ serviceMap:
     - ListAccountEnvironments
     - ListAssetFilters
     - ListAssetRevisions
+    - ListConnections
     - ListDataProductRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -6144,6 +6153,8 @@ serviceMap:
     - ListEnvironmentProfiles
     - ListEnvironments
     - ListGroupsForUser
+    - ListJobRuns
+    - ListLineageEvents
     - ListLineageNodeHistory
     - ListLinkedTypes
     - ListMetadataGenerationRuns
@@ -6185,6 +6196,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAssetFilter
+    - UpdateConnection
     - UpdateDataSource
     - UpdateDataSourceRunActivities
     - UpdateDomain
@@ -10228,6 +10240,7 @@ serviceMap:
     - CreateAnnotationStoreVersion
     - CreateMultipartReadSetUpload
     - CreateReferenceStore
+    - CreateRunCache
     - CreateRunGroup
     - CreateSequenceStore
     - CreateShare
@@ -10238,7 +10251,9 @@ serviceMap:
     - DeleteReference
     - DeleteReferenceStore
     - DeleteRun
+    - DeleteRunCache
     - DeleteRunGroup
+    - DeleteS3AccessPolicy
     - DeleteSequenceStore
     - DeleteShare
     - DeleteVariantStore
@@ -10256,8 +10271,10 @@ serviceMap:
     - GetReferenceMetadata
     - GetReferenceStore
     - GetRun
+    - GetRunCache
     - GetRunGroup
     - GetRunTask
+    - GetS3AccessPolicy
     - GetSequenceStore
     - GetShare
     - GetVariantImportJob
@@ -10275,6 +10292,7 @@ serviceMap:
     - ListReferenceImportJobs
     - ListReferenceStores
     - ListReferences
+    - ListRunCaches
     - ListRunGroups
     - ListRunTasks
     - ListRuns
@@ -10284,6 +10302,7 @@ serviceMap:
     - ListVariantImportJobs
     - ListVariantStores
     - ListWorkflows
+    - PutS3AccessPolicy
     - StartAnnotationImportJob
     - StartReadSetActivationJob
     - StartReadSetExportJob
@@ -10295,7 +10314,9 @@ serviceMap:
     - UntagResource
     - UpdateAnnotationStore
     - UpdateAnnotationStoreVersion
+    - UpdateRunCache
     - UpdateRunGroup
+    - UpdateSequenceStore
     - UpdateVariantStore
     - UpdateWorkflow
     - UploadReadSetPart
@@ -10305,11 +10326,6 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
-    - omics:AnnotationImportJobJobId
-    - omics:AnnotationStoreName
-    - omics:AnnotationStoreVersionName
-    - omics:VariantImportJobJobId
-    - omics:VariantStoreName
     HasResource: true
   Amazon Textract:
     StringPrefix: textract
@@ -11173,6 +11189,7 @@ serviceMap:
   AWS Glue:
     StringPrefix: glue
     Actions:
+    - AuthorizeInboundIntegration
     - BatchCreatePartition
     - BatchDeleteConnection
     - BatchDeletePartition
@@ -11196,13 +11213,19 @@ serviceMap:
     - CancelStatement
     - CheckSchemaVersionValidity
     - CreateBlueprint
+    - CreateCatalog
     - CreateClassifier
+    - CreateColumnStatisticsTaskSettings
     - CreateConnection
     - CreateCrawler
     - CreateCustomEntityType
     - CreateDataQualityRuleset
     - CreateDatabase
     - CreateDevEndpoint
+    - CreateInboundIntegration
+    - CreateIntegration
+    - CreateIntegrationResourceProperty
+    - CreateIntegrationTableProperties
     - CreateJob
     - CreateMLTransform
     - CreatePartition
@@ -11219,15 +11242,19 @@ serviceMap:
     - CreateUserDefinedFunction
     - CreateWorkflow
     - DeleteBlueprint
+    - DeleteCatalog
     - DeleteClassifier
     - DeleteColumnStatisticsForPartition
     - DeleteColumnStatisticsForTable
+    - DeleteColumnStatisticsTaskSettings
     - DeleteConnection
     - DeleteCrawler
     - DeleteCustomEntityType
     - DeleteDataQualityRuleset
     - DeleteDatabase
     - DeleteDevEndpoint
+    - DeleteIntegration
+    - DeleteIntegrationTableProperties
     - DeleteJob
     - DeleteMLTransform
     - DeletePartition
@@ -11248,16 +11275,21 @@ serviceMap:
     - DeregisterDataPreview
     - DescribeConnectionType
     - DescribeEntity
+    - DescribeInboundIntegrations
+    - DescribeIntegrations
     - GetBlueprint
     - GetBlueprintRun
     - GetBlueprintRuns
+    - GetCatalog
     - GetCatalogImportStatus
+    - GetCatalogs
     - GetClassifier
     - GetClassifiers
     - GetColumnStatisticsForPartition
     - GetColumnStatisticsForTable
     - GetColumnStatisticsTaskRun
     - GetColumnStatisticsTaskRuns
+    - GetColumnStatisticsTaskSettings
     - GetCompletion
     - GetConnection
     - GetConnections
@@ -11265,6 +11297,7 @@ serviceMap:
     - GetCrawlerMetrics
     - GetCrawlers
     - GetCustomEntityType
+    - GetDashboardUrl
     - GetDataCatalogEncryptionSettings
     - GetDataPreviewStatement
     - GetDataQualityModel
@@ -11278,9 +11311,13 @@ serviceMap:
     - GetDataflowGraph
     - GetDevEndpoint
     - GetDevEndpoints
+    - GetEntityRecords
     - GetEnvironment
     - GetExecutors
     - GetExecutorsThreads
+    - GetGeneratedCode
+    - GetIntegrationResourceProperty
+    - GetIntegrationTableProperties
     - GetJob
     - GetJobBookmark
     - GetJobRun
@@ -11360,6 +11397,7 @@ serviceMap:
     - ListTriggers
     - ListUsageProfiles
     - ListWorkflows
+    - ModifyIntegration
     - NotifyEvent
     - PassConnection
     - PublishDataQuality
@@ -11383,6 +11421,7 @@ serviceMap:
     - SendRecipeAction
     - StartBlueprintRun
     - StartColumnStatisticsTaskRun
+    - StartColumnStatisticsTaskRunSchedule
     - StartCompletion
     - StartCrawler
     - StartCrawlerSchedule
@@ -11397,6 +11436,7 @@ serviceMap:
     - StartTrigger
     - StartWorkflowRun
     - StopColumnStatisticsTaskRun
+    - StopColumnStatisticsTaskRunSchedule
     - StopCrawler
     - StopCrawlerSchedule
     - StopSession
@@ -11407,15 +11447,19 @@ serviceMap:
     - TestConnection
     - UntagResource
     - UpdateBlueprint
+    - UpdateCatalog
     - UpdateClassifier
     - UpdateColumnStatisticsForPartition
     - UpdateColumnStatisticsForTable
+    - UpdateColumnStatisticsTaskSettings
     - UpdateConnection
     - UpdateCrawler
     - UpdateCrawlerSchedule
     - UpdateDataQualityRuleset
     - UpdateDatabase
     - UpdateDevEndpoint
+    - UpdateIntegrationResourceProperty
+    - UpdateIntegrationTableProperties
     - UpdateJob
     - UpdateJobFromSourceControl
     - UpdateMLTransform
@@ -11438,6 +11482,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - glue:CredentialIssuingService
+    - glue:EnabledForRedshiftAutoDiscovery
     - glue:RoleAssumedBy
     - glue:SecurityGroupIds
     - glue:SubnetIds
@@ -14875,6 +14920,7 @@ serviceMap:
     - DeleteNotebookVersion
     - DeleteQCustomContext
     - DeleteSavedQuery
+    - DeleteSqlGenerationContext
     - DeleteTab
     - DriverExecute
     - DuplicateNotebook
@@ -14894,6 +14940,8 @@ serviceMap:
     - GetQueryExecutionHistory
     - GetSavedQuery
     - GetSchemaInference
+    - GetSqlGenerationContext
+    - GetSqlRecommendations
     - GetUserInfo
     - GetUserWorkspaceSettings
     - ImportNotebook
@@ -14909,7 +14957,9 @@ serviceMap:
     - ListTabs
     - ListTaggedResources
     - ListTagsForResource
+    - PassAccountSettings
     - PutQCustomContext
+    - PutSqlGenerationContext
     - PutTab
     - PutUserWorkspaceSettings
     - RestoreNotebookVersion
