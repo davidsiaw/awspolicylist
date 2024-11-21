@@ -1777,6 +1777,7 @@ serviceMap:
     - CreateAuthenticationProfile
     - CreateContactFlow
     - CreateContactFlowModule
+    - CreateContactFlowVersion
     - CreateEvaluationForm
     - CreateHoursOfOperation
     - CreateHoursOfOperationOverride
@@ -1886,6 +1887,7 @@ serviceMap:
     - ListBots
     - ListContactEvaluations
     - ListContactFlowModules
+    - ListContactFlowVersions
     - ListContactFlows
     - ListContactReferences
     - ListDefaultVocabularies
@@ -2029,6 +2031,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - connect:AttributeType
+    - connect:FlowType
     - connect:InstanceId
     - connect:MonitorCapabilities
     - connect:SearchContactsByContactAnalysis
@@ -3266,6 +3269,7 @@ serviceMap:
     Actions:
     - BatchGetTraceSummaryById
     - BatchGetTraces
+    - CancelTraceRetrieval
     - CreateGroup
     - CreateSamplingRule
     - DeleteGroup
@@ -3275,28 +3279,37 @@ serviceMap:
     - GetEncryptionConfig
     - GetGroup
     - GetGroups
+    - GetIndexingRules
     - GetInsight
     - GetInsightEvents
     - GetInsightImpactGraph
     - GetInsightSummaries
+    - GetRetrievedTracesGraph
     - GetSamplingRules
     - GetSamplingStatisticSummaries
     - GetSamplingTargets
     - GetServiceGraph
     - GetTimeSeriesServiceStatistics
     - GetTraceGraph
+    - GetTraceSegmentDestination
     - GetTraceSummaries
     - Link
     - ListResourcePolicies
+    - ListRetrievedTraces
     - ListTagsForResource
     - PutEncryptionConfig
     - PutResourcePolicy
+    - PutSpans
+    - PutSpansForIndexing
     - PutTelemetryRecords
     - PutTraceSegments
+    - StartTraceRetrieval
     - TagResource
     - UntagResource
     - UpdateGroup
+    - UpdateIndexingRule
     - UpdateSamplingRule
+    - UpdateTraceSegmentDestination
     ARNFormat: arn:aws:xray:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:xray:.+"
     conditionKeys:
@@ -3326,8 +3339,10 @@ serviceMap:
   Amazon CloudFront:
     StringPrefix: cloudfront
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociateAlias
     - CopyDistribution
+    - CreateAnycastIpList
     - CreateCachePolicy
     - CreateCloudFrontOriginAccessIdentity
     - CreateContinuousDeploymentPolicy
@@ -3347,6 +3362,8 @@ serviceMap:
     - CreateSavingsPlan
     - CreateStreamingDistribution
     - CreateStreamingDistributionWithTags
+    - CreateVpcOrigin
+    - DeleteAnycastIpList
     - DeleteCachePolicy
     - DeleteCloudFrontOriginAccessIdentity
     - DeleteContinuousDeploymentPolicy
@@ -3363,8 +3380,10 @@ serviceMap:
     - DeleteRealtimeLogConfig
     - DeleteResponseHeadersPolicy
     - DeleteStreamingDistribution
+    - DeleteVpcOrigin
     - DescribeFunction
     - DescribeKeyValueStore
+    - GetAnycastIpList
     - GetCachePolicy
     - GetCachePolicyConfig
     - GetCloudFrontOriginAccessIdentity
@@ -3394,17 +3413,21 @@ serviceMap:
     - GetSavingsPlan
     - GetStreamingDistribution
     - GetStreamingDistributionConfig
+    - GetVpcOrigin
+    - ListAnycastIpLists
     - ListCachePolicies
     - ListCloudFrontOriginAccessIdentities
     - ListConflictingAliases
     - ListContinuousDeploymentPolicies
     - ListDistributions
+    - ListDistributionsByAnycastIpListId
     - ListDistributionsByCachePolicyId
     - ListDistributionsByKeyGroup
     - ListDistributionsByLambdaFunction
     - ListDistributionsByOriginRequestPolicyId
     - ListDistributionsByRealtimeLogConfig
     - ListDistributionsByResponseHeadersPolicyId
+    - ListDistributionsByVpcOriginId
     - ListDistributionsByWebACLId
     - ListFieldLevelEncryptionConfigs
     - ListFieldLevelEncryptionProfiles
@@ -3422,6 +3445,7 @@ serviceMap:
     - ListStreamingDistributions
     - ListTagsForResource
     - ListUsages
+    - ListVpcOrigins
     - PublishFunction
     - TagResource
     - TestFunction
@@ -3443,6 +3467,7 @@ serviceMap:
     - UpdateResponseHeadersPolicy
     - UpdateSavingsPlan
     - UpdateStreamingDistribution
+    - UpdateVpcOrigin
     ARNFormat: arn:aws:cloudfront:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:cloudfront:.+:[0-9]+:.+"
     conditionKeys:
@@ -7956,6 +7981,8 @@ serviceMap:
     ARNFormat: arn:aws:autoscaling:${Region}:${Account}:${RelativeId}
     ARNRegex: "^arn:aws:autoscaling:.+:.+:.+"
     conditionKeys:
+    - autoscaling:CapacityReservationIds
+    - autoscaling:CapacityReservationResourceGroupArns
     - autoscaling:ImageId
     - autoscaling:InstanceType
     - autoscaling:InstanceTypes
@@ -8473,6 +8500,7 @@ serviceMap:
     - InvokeAgent
     - InvokeBuilder
     - InvokeFlow
+    - InvokeInlineAgent
     - InvokeModel
     - InvokeModelWithResponseStream
     - ListAgentActionGroups
@@ -9635,6 +9663,7 @@ serviceMap:
     - DeleteTrustStore
     - DeregisterTargets
     - DescribeAccountLimits
+    - DescribeCapacityReservation
     - DescribeListenerAttributes
     - DescribeListenerCertificates
     - DescribeListeners
@@ -9652,6 +9681,7 @@ serviceMap:
     - GetResourcePolicy
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
+    - ModifyCapacityReservation
     - ModifyListener
     - ModifyListenerAttributes
     - ModifyLoadBalancerAttributes
@@ -10694,6 +10724,7 @@ serviceMap:
     - ExportEBSVolumeRecommendations
     - ExportEC2InstanceRecommendations
     - ExportECSServiceRecommendations
+    - ExportIdleRecommendations
     - ExportLambdaFunctionRecommendations
     - ExportLicenseRecommendations
     - ExportRDSDatabaseRecommendations
@@ -10706,6 +10737,7 @@ serviceMap:
     - GetEffectiveRecommendationPreferences
     - GetEnrollmentStatus
     - GetEnrollmentStatusesForOrganization
+    - GetIdleRecommendations
     - GetLambdaFunctionRecommendations
     - GetLicenseRecommendations
     - GetRDSDatabaseRecommendationProjectedMetrics
@@ -13012,6 +13044,8 @@ serviceMap:
     - CreateNotebookInstance
     - CreateNotebookInstanceLifecycleConfig
     - CreateOptimizationJob
+    - CreatePartnerApp
+    - CreatePartnerAppPresignedUrl
     - CreatePipeline
     - CreatePresignedDomainUrl
     - CreatePresignedMlflowTrackingServerUrl
@@ -13072,6 +13106,7 @@ serviceMap:
     - DeleteNotebookInstance
     - DeleteNotebookInstanceLifecycleConfig
     - DeleteOptimizationJob
+    - DeletePartnerApp
     - DeletePipeline
     - DeleteProject
     - DeleteRecord
@@ -13135,6 +13170,7 @@ serviceMap:
     - DescribeNotebookInstance
     - DescribeNotebookInstanceLifecycleConfig
     - DescribeOptimizationJob
+    - DescribePartnerApp
     - DescribePipeline
     - DescribePipelineDefinitionForExecution
     - DescribePipelineExecution
@@ -13226,6 +13262,7 @@ serviceMap:
     - ListNotebookInstanceLifecycleConfigs
     - ListNotebookInstances
     - ListOptimizationJobs
+    - ListPartnerApps
     - ListPipelineExecutionSteps
     - ListPipelineExecutions
     - ListPipelineParametersForExecution
@@ -13314,6 +13351,7 @@ serviceMap:
     - UpdateMonitoringSchedule
     - UpdateNotebookInstance
     - UpdateNotebookInstanceLifecycleConfig
+    - UpdatePartnerApp
     - UpdatePipeline
     - UpdatePipelineExecution
     - UpdateProject
@@ -19687,6 +19725,7 @@ serviceMap:
     - ec2:KeyPairType
     - ec2:KmsKeyId
     - ec2:LaunchTemplate
+    - ec2:ManagedResourceOperator
     - ec2:MetadataHttpEndpoint
     - ec2:MetadataHttpPutResponseHopLimit
     - ec2:MetadataHttpTokens
