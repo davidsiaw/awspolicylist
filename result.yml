@@ -829,6 +829,7 @@ serviceMap:
     - CreateCalculatedAttributeDefinition
     - CreateDomain
     - CreateEventStream
+    - CreateEventTrigger
     - CreateIntegrationWorkflow
     - CreateProfile
     - CreateSegmentDefinition
@@ -838,6 +839,7 @@ serviceMap:
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
     - DeleteEventStream
+    - DeleteEventTrigger
     - DeleteIntegration
     - DeleteProfile
     - DeleteProfileKey
@@ -851,6 +853,7 @@ serviceMap:
     - GetCalculatedAttributeForProfile
     - GetDomain
     - GetEventStream
+    - GetEventTrigger
     - GetIdentityResolutionJob
     - GetIntegration
     - GetMatches
@@ -869,6 +872,7 @@ serviceMap:
     - ListCalculatedAttributesForProfile
     - ListDomains
     - ListEventStreams
+    - ListEventTriggers
     - ListIdentityResolutionJobs
     - ListIntegrations
     - ListObjectTypeAttributes
@@ -889,6 +893,7 @@ serviceMap:
     - UntagResource
     - UpdateCalculatedAttributeDefinition
     - UpdateDomain
+    - UpdateEventTrigger
     - UpdateProfile
     ARNFormat: arn:aws:profile:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:profile:.+:.+:.+"
@@ -6339,6 +6344,55 @@ serviceMap:
     - aws:TagKeys
     - wafv2:LogDestinationResource
     - wafv2:LogScope
+    HasResource: true
+  AWS Billing And Cost Management Pricing Calculator:
+    StringPrefix: bcm-pricing-calculator
+    Actions:
+    - CreateBillEstimate
+    - CreateBillScenario
+    - CreateBillScenarioCommitmentModification
+    - CreateBillScenarioUsageModification
+    - CreateWorkloadEstimate
+    - CreateWorkloadEstimateUsage
+    - DeleteBillEstimate
+    - DeleteBillScenario
+    - DeleteBillScenarioCommitmentModification
+    - DeleteBillScenarioUsageModification
+    - DeleteWorkloadEstimate
+    - DeleteWorkloadEstimateUsage
+    - GetBillEstimate
+    - GetBillScenario
+    - GetPreferences
+    - GetWorkloadEstimate
+    - ListBillEstimateCommitments
+    - ListBillEstimateInputCommitmentModifications
+    - ListBillEstimateInputUsageModifications
+    - ListBillEstimateLineItems
+    - ListBillEstimates
+    - ListBillScenarioCommitmentModifications
+    - ListBillScenarioUsageModifications
+    - ListBillScenarios
+    - ListTagsForResource
+    - ListWorkloadEstimateUsage
+    - ListWorkloadEstimates
+    - TagResource
+    - UntagResource
+    - UpdateBillEstimate
+    - UpdateBillScenario
+    - UpdateBillScenarioCommitmentModification
+    - UpdateBillScenarioUsageModification
+    - UpdatePreferences
+    - UpdateWorkloadEstimate
+    - UpdateWorkloadEstimateUsage
+    ARNFormat: arn:aws:bcm-pricing-calculator::${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:bcm-pricing-calculator::.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - bcm-pricing-calculator:bill-estimateBillEstimateId
+    - bcm-pricing-calculator:bill-scenarioBillScenarioId
+    - bcm-pricing-calculator:workload-estimateWorkloadEstimateId
     HasResource: true
   Amazon Data Lifecycle Manager:
     StringPrefix: dlm
