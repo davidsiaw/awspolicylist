@@ -742,6 +742,7 @@ serviceMap:
     - DescribeStatement
     - DescribeTable
     - ExecuteStatement
+    - GetStagingBucketLocation
     - GetStatementResult
     - ListDatabases
     - ListSchemas
@@ -751,6 +752,7 @@ serviceMap:
     ARNRegex: "^arn:aws:(redshift|redshift-serverless):.+:.+:.+"
     conditionKeys:
     - aws:ResourceTag/${TagKey}
+    - redshift-data:glue-catalog-arn
     - redshift-data:session-owner-iam-userid
     - redshift-data:statement-owner-iam-userid
     HasResource: true
@@ -5048,6 +5050,7 @@ serviceMap:
     - CreateConnection
     - CreateCoreNetwork
     - CreateDevice
+    - CreateDirectConnectGatewayAttachment
     - CreateGlobalNetwork
     - CreateLink
     - CreateSite
@@ -5083,6 +5086,7 @@ serviceMap:
     - GetCoreNetworkPolicy
     - GetCustomerGatewayAssociations
     - GetDevices
+    - GetDirectConnectGatewayAttachment
     - GetLinkAssociations
     - GetLinks
     - GetNetworkResourceCounts
@@ -5118,6 +5122,7 @@ serviceMap:
     - UpdateConnection
     - UpdateCoreNetwork
     - UpdateDevice
+    - UpdateDirectConnectGatewayAttachment
     - UpdateGlobalNetwork
     - UpdateLink
     - UpdateNetworkResourceMetadata
@@ -5130,6 +5135,8 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - networkmanager:cgwArn
+    - networkmanager:directConnectGatewayArn
+    - networkmanager:edgeLocations
     - networkmanager:subnetArns
     - networkmanager:tgwArn
     - networkmanager:tgwConnectPeerArn
@@ -11440,6 +11447,7 @@ serviceMap:
     - GetJobBookmark
     - GetJobRun
     - GetJobRuns
+    - GetJobUpgradeAnalysis
     - GetJobs
     - GetLogParsingStatus
     - GetMLTaskRun
@@ -11504,6 +11512,7 @@ serviceMap:
     - ListDataQualityRulesets
     - ListDevEndpoints
     - ListEntities
+    - ListJobUpgradeAnalyses
     - ListJobs
     - ListMLTransforms
     - ListRegistries
@@ -11548,6 +11557,7 @@ serviceMap:
     - StartExportLabelsTaskRun
     - StartImportLabelsTaskRun
     - StartJobRun
+    - StartJobUpgradeAnalysis
     - StartMLEvaluationTaskRun
     - StartMLLabelingSetGenerationTaskRun
     - StartNotebook
@@ -11557,6 +11567,7 @@ serviceMap:
     - StopColumnStatisticsTaskRunSchedule
     - StopCrawler
     - StopCrawlerSchedule
+    - StopJobUpgradeAnalysis
     - StopSession
     - StopTrigger
     - StopWorkflowRun
@@ -11591,6 +11602,7 @@ serviceMap:
     - UpdateUsageProfile
     - UpdateUserDefinedFunction
     - UpdateWorkflow
+    - UpgradeJob
     - UseGlueStudio
     - UseMLTransforms
     ARNFormat: arn:aws:glue:${Region}:${Account}:${ResourceType}/${ResourcePath}
@@ -20751,6 +20763,7 @@ serviceMap:
     - GetCredentials
     - GetCustomDomainAssociation
     - GetEndpointAccess
+    - GetManagedWorkgroup
     - GetNamespace
     - GetRecoveryPoint
     - GetResourcePolicy
@@ -20792,6 +20805,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - redshift-serverless:endpointAccessId
+    - redshift-serverless:managedWorkgroupName
     - redshift-serverless:namespaceId
     - redshift-serverless:recoveryPointId
     - redshift-serverless:snapshotId
