@@ -4629,6 +4629,11 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS PrivateLink:
+    StringPrefix: vpce
+    Actions:
+    - AllowMultiRegion
+    HasResource: false
   Amazon DynamoDB:
     StringPrefix: dynamodb
     Actions:
@@ -16068,6 +16073,7 @@ serviceMap:
     - PutConnectInstanceIntegration
     - PutDialRequestBatch
     - PutOutboundRequestBatch
+    - PutProfileOutboundRequestBatch
     - ResumeCampaign
     - StartCampaign
     - StartInstanceOnboardingJob
