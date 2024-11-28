@@ -2816,6 +2816,7 @@ serviceMap:
   AWS Config:
     StringPrefix: config
     Actions:
+    - AssociateResourceTypes
     - BatchGetAggregateResourceConfig
     - BatchGetResourceConfig
     - DeleteAggregationAuthorization
@@ -2832,6 +2833,7 @@ serviceMap:
     - DeleteRemediationExceptions
     - DeleteResourceConfig
     - DeleteRetentionConfiguration
+    - DeleteServiceLinkedConfigurationRecorder
     - DeleteStoredQuery
     - DeliverConfigSnapshot
     - DescribeAggregateComplianceByConfigRules
@@ -2859,6 +2861,7 @@ serviceMap:
     - DescribeRemediationExceptions
     - DescribeRemediationExecutionStatus
     - DescribeRetentionConfigurations
+    - DisassociateResourceTypes
     - GetAggregateComplianceDetailsByConfigRule
     - GetAggregateConfigRuleComplianceSummary
     - GetAggregateConformancePackComplianceSummary
@@ -2879,6 +2882,7 @@ serviceMap:
     - GetResourceEvaluationSummary
     - GetStoredQuery
     - ListAggregateDiscoveredResources
+    - ListConfigurationRecorders
     - ListConformancePackComplianceScores
     - ListDiscoveredResources
     - ListResourceEvaluations
@@ -2898,6 +2902,7 @@ serviceMap:
     - PutRemediationExceptions
     - PutResourceConfig
     - PutRetentionConfiguration
+    - PutServiceLinkedConfigurationRecorder
     - PutStoredQuery
     - SelectAggregateResourceConfig
     - SelectResourceConfig
@@ -2914,6 +2919,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - config:ConfigurationRecorderServicePrincipal
     HasResource: true
   Amazon RDS:
     StringPrefix: rds
