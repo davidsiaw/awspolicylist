@@ -9961,6 +9961,7 @@ serviceMap:
     - DeleteDeliverySource
     - DeleteDestination
     - DeleteIndexPolicy
+    - DeleteIntegration
     - DeleteLogAnomalyDetector
     - DeleteLogDelivery
     - DeleteLogGroup
@@ -9994,6 +9995,7 @@ serviceMap:
     - GetDeliveryDestination
     - GetDeliveryDestinationPolicy
     - GetDeliverySource
+    - GetIntegration
     - GetLogAnomalyDetector
     - GetLogDelivery
     - GetLogEvents
@@ -10004,6 +10006,7 @@ serviceMap:
     - Link
     - ListAnomalies
     - ListEntitiesForLogGroup
+    - ListIntegrations
     - ListLogAnomalyDetectors
     - ListLogDeliveries
     - ListLogGroupsForEntity
@@ -10018,6 +10021,7 @@ serviceMap:
     - PutDestination
     - PutDestinationPolicy
     - PutIndexPolicy
+    - PutIntegration
     - PutLogEvents
     - PutMetricFilter
     - PutQueryDefinition
