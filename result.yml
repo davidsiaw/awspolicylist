@@ -4737,6 +4737,7 @@ serviceMap:
     - AcceptInboundConnection
     - AcceptInboundCrossClusterSearchConnection
     - AddDataSource
+    - AddDirectQueryDataSource
     - AddTags
     - AssociatePackage
     - AssociatePackages
@@ -4755,6 +4756,7 @@ serviceMap:
     - CreateVpcEndpoint
     - DeleteApplication
     - DeleteDataSource
+    - DeleteDirectQueryDataSource
     - DeleteDomain
     - DeleteElasticsearchDomain
     - DeleteElasticsearchServiceRole
@@ -4800,12 +4802,14 @@ serviceMap:
     - GetCompatibleElasticsearchVersions
     - GetCompatibleVersions
     - GetDataSource
+    - GetDirectQueryDataSource
     - GetDomainMaintenanceStatus
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
     - ListApplications
     - ListDataSources
+    - ListDirectQueryDataSources
     - ListDomainMaintenances
     - ListDomainNames
     - ListDomainsForPackage
@@ -4831,6 +4835,7 @@ serviceMap:
     - StartServiceSoftwareUpdate
     - UpdateApplication
     - UpdateDataSource
+    - UpdateDirectQueryDataSource
     - UpdateDomainConfig
     - UpdateElasticsearchDomainConfig
     - UpdatePackage
@@ -6593,11 +6598,26 @@ serviceMap:
   AWS Invoicing Service:
     StringPrefix: invoicing
     Actions:
+    - BatchGetInvoiceProfile
+    - CreateInvoiceUnit
+    - DeleteInvoiceUnit
     - GetInvoiceEmailDeliveryPreferences
     - GetInvoicePDF
+    - GetInvoiceUnit
     - ListInvoiceSummaries
+    - ListInvoiceUnits
+    - ListTagsForResource
     - PutInvoiceEmailDeliveryPreferences
-    HasResource: false
+    - TagResource
+    - UntagResource
+    - UpdateInvoiceUnit
+    ARNFormat: arn:aws:invoicing::${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:invoicing::.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Security Lake:
     StringPrefix: securitylake
     Actions:
@@ -10571,6 +10591,42 @@ serviceMap:
     - UpdateProject
     ARNFormat: arn:aws:iot1click:${Region}:${Account}:${Type}/${Name}
     ARNRegex: "^arn:aws:iot1click:.+:[0-9]+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  Network Flow Monitor:
+    StringPrefix: networkflowmonitor
+    Actions:
+    - CreateMonitor
+    - CreateScope
+    - DeleteMonitor
+    - DeleteScope
+    - GetMonitor
+    - GetQueryResultsMonitorTopContributors
+    - GetQueryResultsWorkloadInsightsTopContributors
+    - GetQueryResultsWorkloadInsightsTopContributorsData
+    - GetQueryStatusMonitorTopContributors
+    - GetQueryStatusWorkloadInsightsTopContributors
+    - GetQueryStatusWorkloadInsightsTopContributorsData
+    - GetScope
+    - ListMonitors
+    - ListScopes
+    - ListTagsForResource
+    - Publish
+    - StartQueryMonitorTopContributors
+    - StartQueryWorkloadInsightsTopContributors
+    - StartQueryWorkloadInsightsTopContributorsData
+    - StopQueryMonitorTopContributors
+    - StopQueryWorkloadInsightsTopContributors
+    - StopQueryWorkloadInsightsTopContributorsData
+    - TagResource
+    - UntagResource
+    - UpdateMonitor
+    - UpdateScope
+    ARNFormat: arn:aws:networkflowmonitor:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:networkflowmonitor:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -16208,6 +16264,38 @@ serviceMap:
     ARNFormat: arn:aws:geo-places:${Region}::provider/default
     ARNRegex: "^arn:aws:geo-places:.+"
     HasResource: true
+  AWS Security Incident Response:
+    StringPrefix: security-ir
+    Actions:
+    - BatchGetMemberAccountDetails
+    - CancelMembership
+    - CloseCase
+    - CreateCase
+    - CreateCaseComment
+    - CreateMembership
+    - GetCase
+    - GetCaseAttachmentDownloadUrl
+    - GetCaseAttachmentUploadUrl
+    - GetMembership
+    - ListCaseEdits
+    - ListCases
+    - ListComments
+    - ListMemberships
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateCase
+    - UpdateCaseComment
+    - UpdateCaseStatus
+    - UpdateMembership
+    - UpdateResolverType
+    ARNFormat: arn:aws:security-ir:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:security-ir:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Migration Acceleration Program Credits:
     StringPrefix: mapcredits
     Actions:
@@ -17321,14 +17409,17 @@ serviceMap:
     Actions:
     - AddUserLicenses
     - AllowVendedLogDeliveryForResource
+    - AssociatePermission
     - BatchDeleteDocument
     - BatchPutDocument
     - CancelSubscription
     - Chat
     - ChatSync
     - CreateApplication
+    - CreateDataAccessor
     - CreateDataSource
     - CreateIndex
+    - CreateIntegration
     - CreateLicense
     - CreatePlugin
     - CreateRetriever
@@ -17338,33 +17429,45 @@ serviceMap:
     - DeleteApplication
     - DeleteChatControlsConfiguration
     - DeleteConversation
+    - DeleteDataAccessor
     - DeleteDataSource
     - DeleteGroup
     - DeleteIndex
+    - DeleteIntegration
     - DeletePlugin
     - DeleteRetriever
     - DeleteUser
     - DeleteWebExperience
     - DisableAclOnDataSource
+    - DisassociatePermission
     - GetApplication
     - GetChatControlsConfiguration
+    - GetDataAccessor
     - GetDataSource
     - GetGroup
     - GetIndex
+    - GetIntegration
     - GetLicense
+    - GetMedia
     - GetPlugin
+    - GetPolicy
     - GetRetriever
     - GetUser
     - GetWebExperience
     - ListApplications
     - ListAttachments
     - ListConversations
+    - ListDataAccessors
     - ListDataSourceSyncJobs
     - ListDataSources
     - ListDocuments
     - ListGroups
     - ListIndices
+    - ListIntegrations
     - ListMessages
+    - ListPluginActions
+    - ListPluginTypeActions
+    - ListPluginTypeMetadata
     - ListPlugins
     - ListRetrievers
     - ListSubscriptions
@@ -17373,15 +17476,20 @@ serviceMap:
     - ListWebExperiences
     - PutFeedback
     - PutGroup
+    - PutResourcePolicy
     - RemoveUserLicenses
+    - SearchRelevantContent
     - StartDataSourceSyncJob
+    - StartDeployment
     - StopDataSourceSyncJob
     - TagResource
     - UntagResource
     - UpdateApplication
     - UpdateChatControlsConfiguration
+    - UpdateDataAccessor
     - UpdateDataSource
     - UpdateIndex
+    - UpdateIntegration
     - UpdatePlugin
     - UpdateRetriever
     - UpdateSubscription
@@ -17685,6 +17793,10 @@ serviceMap:
     StringPrefix: opensearch
     Actions:
     - ApplicationAccessAll
+    - CancelDirectQuery
+    - GetDirectQuery
+    - GetDirectQueryResult
+    - StartDirectQuery
     ARNFormat: arn:aws:opensearch:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:aws:opensearch:.+"
     HasResource: true
@@ -18489,12 +18601,14 @@ serviceMap:
     - CopySnapshot
     - CreateAcl
     - CreateCluster
+    - CreateMultiRegionCluster
     - CreateParameterGroup
     - CreateSnapshot
     - CreateSubnetGroup
     - CreateUser
     - DeleteAcl
     - DeleteCluster
+    - DeleteMultiRegionCluster
     - DeleteParameterGroup
     - DeleteSnapshot
     - DeleteSubnetGroup
@@ -18503,6 +18617,9 @@ serviceMap:
     - DescribeClusters
     - DescribeEngineVersions
     - DescribeEvents
+    - DescribeMultiRegionClusters
+    - DescribeMultiRegionParameterGroups
+    - DescribeMultiRegionParameters
     - DescribeParameterGroups
     - DescribeParameters
     - DescribeReservedNodes
@@ -18512,6 +18629,7 @@ serviceMap:
     - DescribeSubnetGroups
     - DescribeUsers
     - FailoverShard
+    - ListAllowedMultiRegionClusterUpdates
     - ListAllowedNodeTypeUpdates
     - ListTags
     - PurchaseReservedNodesOffering
@@ -18520,6 +18638,7 @@ serviceMap:
     - UntagResource
     - UpdateAcl
     - UpdateCluster
+    - UpdateMultiRegionCluster
     - UpdateParameterGroup
     - UpdateSubnetGroup
     - UpdateUser
@@ -21753,6 +21872,7 @@ serviceMap:
     ARNFormat: arn:aws:s3express:${Region}:${Account}:bucket/${BucketName}
     ARNRegex: "^arn:aws:s3express:${Region}:${Account}:bucket/.+"
     conditionKeys:
+    - s3express:AllAccessRestrictedToLocalZoneGroup
     - s3express:LocationName
     - s3express:ResourceAccount
     - s3express:SessionMode
@@ -21968,6 +22088,7 @@ serviceMap:
     - GetInfrastructureConfiguration
     - GetLifecycleExecution
     - GetLifecyclePolicy
+    - GetMarketplaceResource
     - GetWorkflow
     - GetWorkflowExecution
     - GetWorkflowStepExecution
