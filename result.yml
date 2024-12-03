@@ -82,6 +82,38 @@ conditionKeys:
 - aws:userid
 - aws:username
 serviceMap:
+  Amazon AI Operations:
+    StringPrefix: aiops
+    Actions:
+    - CreateInvestigation
+    - CreateInvestigationEvent
+    - CreateInvestigationGroup
+    - CreateInvestigationResource
+    - DeleteInvestigation
+    - DeleteInvestigationGroup
+    - DeleteInvestigationGroupPolicy
+    - GetInvestigation
+    - GetInvestigationEvent
+    - GetInvestigationGroup
+    - GetInvestigationGroupPolicy
+    - GetInvestigationResource
+    - ListInvestigationEvents
+    - ListInvestigationGroups
+    - ListInvestigations
+    - ListTagsForResource
+    - PutInvestigationGroupPolicy
+    - TagResource
+    - UntagResource
+    - UpdateInvestigation
+    - UpdateInvestigationEvent
+    - UpdateInvestigationGroup
+    ARNFormat: arn:aws:aiops:${Region}:${Account}:.+
+    ARNRegex: "^arn:aws:aiops:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Q Business Q Apps:
     StringPrefix: qapps
     Actions:
@@ -3997,6 +4029,7 @@ serviceMap:
     - AssociatePhoneNumbersWithVoiceConnector
     - AssociatePhoneNumbersWithVoiceConnectorGroup
     - AssociateSigninDelegateGroupsWithAccount
+    - AssociateVoiceConnectorConnect
     - AuthorizeDirectory
     - BatchCreateAttendee
     - BatchCreateChannelMembership
@@ -4024,6 +4057,8 @@ serviceMap:
     - CreateChannelFlow
     - CreateChannelMembership
     - CreateChannelModerator
+    - CreateConnectAnalyticsConnector
+    - CreateConnectCallTransferConnector
     - CreateMediaCapturePipeline
     - CreateMediaConcatenationPipeline
     - CreateMediaInsightsPipeline
@@ -4080,6 +4115,7 @@ serviceMap:
     - DeleteSipRule
     - DeleteVoiceConnector
     - DeleteVoiceConnectorEmergencyCallingConfiguration
+    - DeleteVoiceConnectorExternalSystemsConfiguration
     - DeleteVoiceConnectorGroup
     - DeleteVoiceConnectorOrigination
     - DeleteVoiceConnectorProxy
@@ -4106,6 +4142,7 @@ serviceMap:
     - DisassociatePhoneNumbersFromVoiceConnector
     - DisassociatePhoneNumbersFromVoiceConnectorGroup
     - DisassociateSigninDelegateGroupsFromAccount
+    - DisassociateVoiceConnectorConnect
     - DisconnectDirectory
     - GetAccount
     - GetAccountResource
@@ -4148,6 +4185,7 @@ serviceMap:
     - GetUserSettings
     - GetVoiceConnector
     - GetVoiceConnectorEmergencyCallingConfiguration
+    - GetVoiceConnectorExternalSystemsConfiguration
     - GetVoiceConnectorGroup
     - GetVoiceConnectorLoggingConfiguration
     - GetVoiceConnectorOrigination
@@ -4224,6 +4262,7 @@ serviceMap:
     - PutSipMediaApplicationAlexaSkillConfiguration
     - PutSipMediaApplicationLoggingConfiguration
     - PutVoiceConnectorEmergencyCallingConfiguration
+    - PutVoiceConnectorExternalSystemsConfiguration
     - PutVoiceConnectorLoggingConfiguration
     - PutVoiceConnectorOrigination
     - PutVoiceConnectorProxy
@@ -6835,21 +6874,30 @@ serviceMap:
   Amazon VPC Lattice:
     StringPrefix: vpc-lattice
     Actions:
+    - AssociateViaAWSService-EventsAndStates
     - CreateAccessLogSubscription
     - CreateListener
+    - CreateResourceConfiguration
+    - CreateResourceGateway
     - CreateRule
     - CreateService
     - CreateServiceNetwork
+    - CreateServiceNetworkResourceAssociation
     - CreateServiceNetworkServiceAssociation
     - CreateServiceNetworkVpcAssociation
+    - CreateServiceNetworkVpcEndpointAssociation
     - CreateTargetGroup
     - DeleteAccessLogSubscription
     - DeleteAuthPolicy
     - DeleteListener
+    - DeleteResourceConfiguration
+    - DeleteResourceEndpointAssociation
+    - DeleteResourceGateway
     - DeleteResourcePolicy
     - DeleteRule
     - DeleteService
     - DeleteServiceNetwork
+    - DeleteServiceNetworkResourceAssociation
     - DeleteServiceNetworkServiceAssociation
     - DeleteServiceNetworkVpcAssociation
     - DeleteTargetGroup
@@ -6857,18 +6905,26 @@ serviceMap:
     - GetAccessLogSubscription
     - GetAuthPolicy
     - GetListener
+    - GetResourceConfiguration
+    - GetResourceGateway
     - GetResourcePolicy
     - GetRule
     - GetService
     - GetServiceNetwork
+    - GetServiceNetworkResourceAssociation
     - GetServiceNetworkServiceAssociation
     - GetServiceNetworkVpcAssociation
     - GetTargetGroup
     - ListAccessLogSubscriptions
     - ListListeners
+    - ListResourceConfigurations
+    - ListResourceEndpointAssociations
+    - ListResourceGateways
     - ListRules
+    - ListServiceNetworkResourceAssociations
     - ListServiceNetworkServiceAssociations
     - ListServiceNetworkVpcAssociations
+    - ListServiceNetworkVpcEndpointAssociations
     - ListServiceNetworks
     - ListServices
     - ListTagsForResource
@@ -6881,6 +6937,8 @@ serviceMap:
     - UntagResource
     - UpdateAccessLogSubscription
     - UpdateListener
+    - UpdateResourceConfiguration
+    - UpdateResourceGateway
     - UpdateRule
     - UpdateService
     - UpdateServiceNetwork
@@ -6894,10 +6952,12 @@ serviceMap:
     - aws:TagKeys
     - vpc-lattice:AuthType
     - vpc-lattice:Protocol
+    - vpc-lattice:ResourceConfigurationArn
     - vpc-lattice:SecurityGroupIds
     - vpc-lattice:ServiceArn
     - vpc-lattice:ServiceNetworkArn
     - vpc-lattice:TargetGroupArns
+    - vpc-lattice:VpcEndpointId
     - vpc-lattice:VpcId
     HasResource: true
   AWS IoT Device Tester:
@@ -21454,6 +21514,7 @@ serviceMap:
     - CreateProfile
     - CreateServer
     - CreateUser
+    - CreateWebApp
     - CreateWorkflow
     - DeleteAccess
     - DeleteAgreement
@@ -21464,6 +21525,8 @@ serviceMap:
     - DeleteServer
     - DeleteSshPublicKey
     - DeleteUser
+    - DeleteWebApp
+    - DeleteWebAppCustomization
     - DeleteWorkflow
     - DescribeAccess
     - DescribeAgreement
@@ -21475,6 +21538,8 @@ serviceMap:
     - DescribeSecurityPolicy
     - DescribeServer
     - DescribeUser
+    - DescribeWebApp
+    - DescribeWebAppCustomization
     - DescribeWorkflow
     - ImportCertificate
     - ImportHostKey
@@ -21491,6 +21556,7 @@ serviceMap:
     - ListServers
     - ListTagsForResource
     - ListUsers
+    - ListWebApps
     - ListWorkflows
     - SendWorkflowStepState
     - StartDirectoryListing
@@ -21509,6 +21575,8 @@ serviceMap:
     - UpdateProfile
     - UpdateServer
     - UpdateUser
+    - UpdateWebApp
+    - UpdateWebAppCustomization
     ARNFormat: arn:aws:transfer:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:transfer:.+:.+:.+"
     conditionKeys:
