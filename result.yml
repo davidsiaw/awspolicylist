@@ -2007,12 +2007,14 @@ serviceMap:
     - SearchUsers
     - SearchVocabularies
     - SendChatIntegrationEvent
+    - SendIntegrationEvent
     - SendOutboundEmail
     - StartAttachedFileUpload
     - StartChatContact
     - StartContactEvaluation
     - StartContactRecording
     - StartContactStreaming
+    - StartEmailContact
     - StartForecastingPlanningSchedulingIntegration
     - StartOutboundChatContact
     - StartOutboundVoiceContact
@@ -10016,6 +10018,11 @@ serviceMap:
     - GenerateDataSet
     - StartSupportDataExport
     HasResource: false
+  Amazon SageMaker data science assistant:
+    StringPrefix: sagemaker-data-science-assistant
+    Actions:
+    - SendConversation
+    HasResource: false
   AWS Signin:
     StringPrefix: signin
     Actions:
@@ -13035,6 +13042,7 @@ serviceMap:
     - CreateAccessPoint
     - CreateAccessPointForObjectLambda
     - CreateBucket
+    - CreateBucketMetadataTableConfiguration
     - CreateJob
     - CreateMultiRegionAccessPoint
     - CreateStorageLensGroup
@@ -13047,6 +13055,7 @@ serviceMap:
     - DeleteAccessPointPolicy
     - DeleteAccessPointPolicyForObjectLambda
     - DeleteBucket
+    - DeleteBucketMetadataTableConfiguration
     - DeleteBucketPolicy
     - DeleteBucketWebsite
     - DeleteJobTagging
@@ -13080,6 +13089,7 @@ serviceMap:
     - GetBucketCORS
     - GetBucketLocation
     - GetBucketLogging
+    - GetBucketMetadataTableConfiguration
     - GetBucketNotification
     - GetBucketObjectLockConfiguration
     - GetBucketOwnershipControls
@@ -16445,6 +16455,29 @@ serviceMap:
     ARNFormat: arn:aws:polly:${Region}:${Account}:lexicon/${RelativeId}
     ARNRegex: "^arn:aws:polly:${Region}:.+"
     HasResource: true
+  Amazon Aurora DSQL:
+    StringPrefix: dsql
+    Actions:
+    - CreateCluster
+    - CreateMultiRegionClusters
+    - DbConnect
+    - DbConnectAdmin
+    - DeleteCluster
+    - DeleteMultiRegionClusters
+    - GetCluster
+    - ListClusters
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateCluster
+    ARNFormat: arn:aws:dsql:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:dsql:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - dsql:WitnessRegion
+    HasResource: true
   AWS App Runner:
     StringPrefix: apprunner
     Actions:
@@ -17048,6 +17081,7 @@ serviceMap:
     - DeleteDataSet
     - DeleteDataSetRefreshProperties
     - DeleteDataSource
+    - DeleteDefaultQBusinessApplication
     - DeleteEmailCustomizationTemplate
     - DeleteFolder
     - DeleteFolderMembership
@@ -17090,6 +17124,7 @@ serviceMap:
     - DescribeDataSetRefreshProperties
     - DescribeDataSource
     - DescribeDataSourcePermissions
+    - DescribeDefaultQBusinessApplication
     - DescribeEmailCustomizationTemplate
     - DescribeFolder
     - DescribeFolderPermissions
@@ -17102,6 +17137,7 @@ serviceMap:
     - DescribeKeyRegistration
     - DescribeNamespace
     - DescribeQPersonalizationConfiguration
+    - DescribeQuickSightQSearchConfiguration
     - DescribeRefreshSchedule
     - DescribeRoleCustomPermission
     - DescribeTemplate
@@ -17118,6 +17154,7 @@ serviceMap:
     - DescribeVPCConnection
     - GenerateEmbedUrlForAnonymousUser
     - GenerateEmbedUrlForRegisteredUser
+    - GenerateEmbedUrlForRegisteredUserWithIdentity
     - GetAnonymousUserEmbedUrl
     - GetAuthCode
     - GetDashboardEmbedUrl
@@ -17161,6 +17198,7 @@ serviceMap:
     - ListVPCConnections
     - PassDataSet
     - PassDataSource
+    - PredictQAResults
     - PutDataSetRefreshProperties
     - RegisterCustomerManagedKey
     - RegisterUser
@@ -17189,6 +17227,7 @@ serviceMap:
     - UpdateAccountSettings
     - UpdateAnalysis
     - UpdateAnalysisPermissions
+    - UpdateApplicationWithTokenExchangeGrant
     - UpdateBrand
     - UpdateBrandAssignment
     - UpdateBrandPublishedVersion
@@ -17202,6 +17241,7 @@ serviceMap:
     - UpdateDataSetPermissions
     - UpdateDataSource
     - UpdateDataSourcePermissions
+    - UpdateDefaultQBusinessApplication
     - UpdateEmailCustomizationTemplate
     - UpdateFolder
     - UpdateFolderPermissions
@@ -17212,6 +17252,7 @@ serviceMap:
     - UpdateKeyRegistration
     - UpdatePublicSharingSettings
     - UpdateQPersonalizationConfiguration
+    - UpdateQuickSightQSearchConfiguration
     - UpdateRefreshSchedule
     - UpdateResourcePermissions
     - UpdateRoleCustomPermission
@@ -22791,6 +22832,43 @@ serviceMap:
     - aws:TagKeys
     - organizations:PolicyType
     - organizations:ServicePrincipal
+    HasResource: true
+  Amazon S3 Tables:
+    StringPrefix: s3tables
+    Actions:
+    - CreateNamespace
+    - CreateTable
+    - CreateTableBucket
+    - DeleteNamespace
+    - DeleteTable
+    - DeleteTableBucket
+    - DeleteTableBucketPolicy
+    - DeleteTablePolicy
+    - GetNamespace
+    - GetTable
+    - GetTableBucket
+    - GetTableBucketMaintenanceConfiguration
+    - GetTableBucketPolicy
+    - GetTableData
+    - GetTableMaintenanceConfiguration
+    - GetTableMaintenanceJobStatus
+    - GetTableMetadataLocation
+    - GetTablePolicy
+    - ListNamespaces
+    - ListTableBuckets
+    - ListTables
+    - PutTableBucketMaintenanceConfiguration
+    - PutTableBucketPolicy
+    - PutTableData
+    - PutTableMaintenanceConfiguration
+    - PutTablePolicy
+    - RenameTable
+    - UpdateTableMetadataLocation
+    ARNFormat: arn:aws:s3tables:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:s3tables:.+"
+    conditionKeys:
+    - s3tables:namespace
+    - s3tables:tableName
     HasResource: true
   Amazon Kinesis Analytics V2:
     StringPrefix: kinesisanalytics
