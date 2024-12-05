@@ -5772,6 +5772,7 @@ serviceMap:
     - DeleteSnapshotSchedule
     - DeleteTags
     - DeleteUsageLimit
+    - DeregisterNamespace
     - DescribeAccountAttributes
     - DescribeAuthenticationProfiles
     - DescribeClusterDbRevisions
@@ -5861,6 +5862,7 @@ serviceMap:
     - PurchaseReservedNodeOffering
     - PutResourcePolicy
     - RebootCluster
+    - RegisterNamespace
     - RejectDataShare
     - ResetClusterParameterGroup
     - ResizeCluster
@@ -13261,6 +13263,7 @@ serviceMap:
     - BatchGetMetrics
     - BatchGetRecord
     - BatchPutMetrics
+    - CallPartnerAppApi
     - CreateAction
     - CreateAlgorithm
     - CreateApp
@@ -13269,8 +13272,10 @@ serviceMap:
     - CreateAutoMLJob
     - CreateAutoMLJobV2
     - CreateCluster
+    - CreateClusterSchedulerConfig
     - CreateCodeRepository
     - CreateCompilationJob
+    - CreateComputeQuota
     - CreateContext
     - CreateDataQualityJobDefinition
     - CreateDeviceFleet
@@ -13315,10 +13320,12 @@ serviceMap:
     - CreatePresignedNotebookInstanceUrl
     - CreateProcessingJob
     - CreateProject
+    - CreateReservedCapacity
     - CreateSharedModel
     - CreateSpace
     - CreateStudioLifecycleConfig
     - CreateTrainingJob
+    - CreateTrainingPlan
     - CreateTransformJob
     - CreateTrial
     - CreateTrialComponent
@@ -13332,8 +13339,10 @@ serviceMap:
     - DeleteArtifact
     - DeleteAssociation
     - DeleteCluster
+    - DeleteClusterSchedulerConfig
     - DeleteCodeRepository
     - DeleteCompilationJob
+    - DeleteComputeQuota
     - DeleteContext
     - DeleteDataQualityJobDefinition
     - DeleteDeviceFleet
@@ -13393,8 +13402,10 @@ serviceMap:
     - DescribeAutoMLJobV2
     - DescribeCluster
     - DescribeClusterNode
+    - DescribeClusterSchedulerConfig
     - DescribeCodeRepository
     - DescribeCompilationJob
+    - DescribeComputeQuota
     - DescribeContext
     - DescribeDataQualityJobDefinition
     - DescribeDevice
@@ -13444,6 +13455,7 @@ serviceMap:
     - DescribeStudioLifecycleConfig
     - DescribeSubscribedWorkteam
     - DescribeTrainingJob
+    - DescribeTrainingPlan
     - DescribeTransformJob
     - DescribeTrial
     - DescribeTrialComponent
@@ -13477,9 +13489,11 @@ serviceMap:
     - ListAutoMLJobs
     - ListCandidatesForAutoMLJob
     - ListClusterNodes
+    - ListClusterSchedulerConfigs
     - ListClusters
     - ListCodeRepositories
     - ListCompilationJobs
+    - ListComputeQuotas
     - ListContexts
     - ListDataQualityJobDefinitions
     - ListDeviceFleets
@@ -13543,6 +13557,7 @@ serviceMap:
     - ListTags
     - ListTrainingJobs
     - ListTrainingJobsForHyperParameterTuningJob
+    - ListTrainingPlans
     - ListTransformJobs
     - ListTrialComponents
     - ListTrials
@@ -13558,6 +13573,7 @@ serviceMap:
     - RenderUiTemplate
     - RetryPipelineExecution
     - Search
+    - SearchTrainingPlanOfferings
     - SendHeartbeat
     - SendPipelineExecutionStepFailure
     - SendPipelineExecutionStepSuccess
@@ -13590,8 +13606,10 @@ serviceMap:
     - UpdateAppImageConfig
     - UpdateArtifact
     - UpdateCluster
+    - UpdateClusterSchedulerConfig
     - UpdateClusterSoftware
     - UpdateCodeRepository
+    - UpdateComputeQuota
     - UpdateContext
     - UpdateDeviceFleet
     - UpdateDevices
@@ -14506,17 +14524,36 @@ serviceMap:
     - AcceptEngagementInvitation
     - AssignOpportunity
     - AssociateOpportunity
+    - CreateEngagement
+    - CreateEngagementInvitation
     - CreateOpportunity
+    - CreateResourceSnapshot
+    - CreateResourceSnapshotJob
+    - DeleteResourceSnapshotJob
     - DisassociateOpportunity
     - GetAwsOpportunitySummary
+    - GetEngagement
     - GetEngagementInvitation
     - GetOpportunity
+    - GetResourceSnapshot
+    - GetResourceSnapshotJob
+    - GetSellingSystemSettings
+    - ListEngagementByAcceptingInvitationTasks
+    - ListEngagementFromOpportunityTasks
     - ListEngagementInvitations
+    - ListEngagementMembers
+    - ListEngagementResourceAssociations
+    - ListEngagements
     - ListOpportunities
+    - ListResourceSnapshotJobs
+    - ListResourceSnapshots
     - ListSolutions
+    - PutSellingSystemSettings
     - RejectEngagementInvitation
     - StartEngagementByAcceptingInvitationTask
     - StartEngagementFromOpportunityTask
+    - StartResourceSnapshotJob
+    - StopResourceSnapshotJob
     - SubmitOpportunity
     - UpdateOpportunity
     ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
@@ -21027,6 +21064,7 @@ serviceMap:
     - GetWorkgroup
     - ListCustomDomainAssociations
     - ListEndpointAccess
+    - ListManagedWorkgroups
     - ListNamespaces
     - ListRecoveryPoints
     - ListScheduledActions
