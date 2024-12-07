@@ -8605,12 +8605,16 @@ serviceMap:
     Actions:
     - AllowVendedLogDeliveryForResource
     - ApplyGuardrail
+    - AssociateAgentCollaborator
     - AssociateAgentKnowledgeBase
     - AssociateThirdPartyKnowledgeBase
     - BatchDeleteEvaluationJob
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
+    - CreateBlueprint
+    - CreateBlueprintVersion
+    - CreateDataAutomationProject
     - CreateDataSource
     - CreateEvaluationJob
     - CreateFlow
@@ -8621,6 +8625,7 @@ serviceMap:
     - CreateGuardrailVersion
     - CreateInferenceProfile
     - CreateKnowledgeBase
+    - CreateMarketplaceModelEndpoint
     - CreateModelCopyJob
     - CreateModelCustomizationJob
     - CreateModelEvaluationJob
@@ -8634,7 +8639,9 @@ serviceMap:
     - DeleteAgentAlias
     - DeleteAgentMemory
     - DeleteAgentVersion
+    - DeleteBlueprint
     - DeleteCustomModel
+    - DeleteDataAutomationProject
     - DeleteDataSource
     - DeleteFlow
     - DeleteFlowAlias
@@ -8644,19 +8651,31 @@ serviceMap:
     - DeleteImportedModel
     - DeleteInferenceProfile
     - DeleteKnowledgeBase
+    - DeleteKnowledgeBaseDocuments
+    - DeleteMarketplaceModelAgreement
+    - DeleteMarketplaceModelEndpoint
     - DeleteModelInvocationLoggingConfiguration
     - DeletePrompt
     - DeleteProvisionedModelThroughput
     - DeleteResourcePolicy
+    - DeregisterMarketplaceModelEndpoint
     - DetectGeneratedContent
+    - DisassociateAgentCollaborator
     - DisassociateAgentKnowledgeBase
+    - GenerateQuery
     - GetAgent
     - GetAgentActionGroup
     - GetAgentAlias
+    - GetAgentCollaborator
     - GetAgentKnowledgeBase
     - GetAgentMemory
     - GetAgentVersion
+    - GetAsyncInvoke
+    - GetBlueprint
+    - GetBlueprintRecommendation
     - GetCustomModel
+    - GetDataAutomationProject
+    - GetDataAutomationStatus
     - GetDataSource
     - GetEvaluationJob
     - GetFlow
@@ -8669,6 +8688,8 @@ serviceMap:
     - GetInferenceProfile
     - GetIngestionJob
     - GetKnowledgeBase
+    - GetKnowledgeBaseDocuments
+    - GetMarketplaceModelEndpoint
     - GetModelCopyJob
     - GetModelCustomizationJob
     - GetModelEvaluationJob
@@ -8676,21 +8697,29 @@ serviceMap:
     - GetModelInvocationJob
     - GetModelInvocationLoggingConfiguration
     - GetPrompt
+    - GetPromptRouter
     - GetProvisionedModelThroughput
     - GetResourcePolicy
     - GetUseCaseForModelAccess
+    - IngestKnowledgeBaseDocuments
     - InvokeAgent
+    - InvokeBlueprintRecommendationAsync
     - InvokeBuilder
+    - InvokeDataAutomationAsync
     - InvokeFlow
     - InvokeInlineAgent
     - InvokeModel
     - InvokeModelWithResponseStream
     - ListAgentActionGroups
     - ListAgentAliases
+    - ListAgentCollaborators
     - ListAgentKnowledgeBases
     - ListAgentVersions
     - ListAgents
+    - ListAsyncInvokes
+    - ListBlueprints
     - ListCustomModels
+    - ListDataAutomationProjects
     - ListDataSources
     - ListEvaluationJobs
     - ListFlowAliases
@@ -8702,22 +8731,28 @@ serviceMap:
     - ListImportedModels
     - ListInferenceProfiles
     - ListIngestionJobs
+    - ListKnowledgeBaseDocuments
     - ListKnowledgeBases
+    - ListMarketplaceModelEndpoints
     - ListModelCopyJobs
     - ListModelCustomizationJobs
     - ListModelEvaluationJobs
     - ListModelImportJobs
     - ListModelInvocationJobs
+    - ListPromptRouters
     - ListPrompts
     - ListProvisionedModelThroughputs
     - ListTagsForResource
+    - OptimizePrompt
     - PrepareAgent
     - PrepareFlow
     - PutFoundationModelEntitlement
     - PutModelInvocationLoggingConfiguration
     - PutResourcePolicy
     - PutUseCaseForModelAccess
+    - RegisterMarketplaceModelEndpoint
     - RenderPrompt
+    - Rerank
     - Retrieve
     - RetrieveAndGenerate
     - StartIngestionJob
@@ -8730,12 +8765,16 @@ serviceMap:
     - UpdateAgent
     - UpdateAgentActionGroup
     - UpdateAgentAlias
+    - UpdateAgentCollaborator
     - UpdateAgentKnowledgeBase
+    - UpdateBlueprint
+    - UpdateDataAutomationProject
     - UpdateDataSource
     - UpdateFlow
     - UpdateFlowAlias
     - UpdateGuardrail
     - UpdateKnowledgeBase
+    - UpdateMarketplaceModelEndpoint
     - UpdatePrompt
     - UpdateProvisionedModelThroughput
     - ValidateFlowDefinition
@@ -8746,6 +8785,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - bedrock:InferenceProfileArn
+    - bedrock:PromptRouterArn
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
     HasResource: true
   AWS Microservice Extractor for .NET:
@@ -19491,6 +19531,7 @@ serviceMap:
     - CancelCapacityReservation
     - CancelCapacityReservationFleets
     - CancelConversionTask
+    - CancelDeclarativePoliciesReport
     - CancelExportTask
     - CancelImageLaunchPermission
     - CancelImportTask
@@ -19580,6 +19621,7 @@ serviceMap:
     - CreateVerifiedAccessTrustProvider
     - CreateVolume
     - CreateVpc
+    - CreateVpcBlockPublicAccessExclusion
     - CreateVpcEndpoint
     - CreateVpcEndpointConnectionNotification
     - CreateVpcEndpointServiceConfiguration
@@ -19658,6 +19700,7 @@ serviceMap:
     - DeleteVerifiedAccessTrustProvider
     - DeleteVolume
     - DeleteVpc
+    - DeleteVpcBlockPublicAccessExclusion
     - DeleteVpcEndpointConnectionNotifications
     - DeleteVpcEndpointServiceConfigurations
     - DeleteVpcEndpoints
@@ -19682,6 +19725,8 @@ serviceMap:
     - DescribeAwsNetworkPerformanceMetricSubscriptions
     - DescribeBundleTasks
     - DescribeByoipCidrs
+    - DescribeCapacityBlockExtensionHistory
+    - DescribeCapacityBlockExtensionOfferings
     - DescribeCapacityBlockOfferings
     - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationFleets
@@ -19696,6 +19741,7 @@ serviceMap:
     - DescribeCoipPools
     - DescribeConversionTasks
     - DescribeCustomerGateways
+    - DescribeDeclarativePoliciesReports
     - DescribeDhcpOptions
     - DescribeEgressOnlyInternetGateways
     - DescribeElasticGpus
@@ -19818,8 +19864,11 @@ serviceMap:
     - DescribeVolumes
     - DescribeVolumesModifications
     - DescribeVpcAttribute
+    - DescribeVpcBlockPublicAccessExclusions
+    - DescribeVpcBlockPublicAccessOptions
     - DescribeVpcClassicLink
     - DescribeVpcClassicLinkDnsSupport
+    - DescribeVpcEndpointAssociations
     - DescribeVpcEndpointConnectionNotifications
     - DescribeVpcEndpointConnections
     - DescribeVpcEndpointServiceConfigurations
@@ -19837,6 +19886,7 @@ serviceMap:
     - DetachVolume
     - DetachVpnGateway
     - DisableAddressTransfer
+    - DisableAllowedImagesSettings
     - DisableAwsNetworkPerformanceMetricSubscription
     - DisableEbsEncryptionByDefault
     - DisableFastLaunch
@@ -19871,6 +19921,7 @@ serviceMap:
     - DisassociateVerifiedAccessInstanceWebAcl
     - DisassociateVpcCidrBlock
     - EnableAddressTransfer
+    - EnableAllowedImagesSettings
     - EnableAwsNetworkPerformanceMetricSubscription
     - EnableEbsEncryptionByDefault
     - EnableFastLaunch
@@ -19892,6 +19943,8 @@ serviceMap:
     - ExportClientVpnClientConfiguration
     - ExportImage
     - ExportTransitGatewayRoutes
+    - ExportVerifiedAccessInstanceClientConfiguration
+    - GetAllowedImagesSettings
     - GetAssociatedEnclaveCertificateIamRoles
     - GetAssociatedIpv6PoolCidrs
     - GetAwsNetworkPerformanceData
@@ -19899,6 +19952,7 @@ serviceMap:
     - GetCoipPoolUsage
     - GetConsoleOutput
     - GetConsoleScreenshot
+    - GetDeclarativePoliciesReportSummary
     - GetDefaultCreditSpecification
     - GetEbsDefaultKmsKeyId
     - GetEbsEncryptionByDefault
@@ -19938,6 +19992,7 @@ serviceMap:
     - GetTransitGatewayRouteTableAssociations
     - GetTransitGatewayRouteTablePropagations
     - GetVerifiedAccessEndpointPolicy
+    - GetVerifiedAccessEndpointTargets
     - GetVerifiedAccessGroupPolicy
     - GetVerifiedAccessInstanceWebAcl
     - GetVpnConnectionDeviceSampleConfiguration
@@ -20009,6 +20064,8 @@ serviceMap:
     - ModifyVolume
     - ModifyVolumeAttribute
     - ModifyVpcAttribute
+    - ModifyVpcBlockPublicAccessExclusion
+    - ModifyVpcBlockPublicAccessOptions
     - ModifyVpcEndpoint
     - ModifyVpcEndpointConnectionNotification
     - ModifyVpcEndpointServiceConfiguration
@@ -20030,6 +20087,7 @@ serviceMap:
     - ProvisionIpamPoolCidr
     - ProvisionPublicIpv4PoolCidr
     - PurchaseCapacityBlock
+    - PurchaseCapacityBlockExtension
     - PurchaseHostReservation
     - PurchaseReservedInstancesOffering
     - PurchaseScheduledInstances
@@ -20049,6 +20107,7 @@ serviceMap:
     - ReleaseHosts
     - ReleaseIpamPoolAllocation
     - ReplaceIamInstanceProfileAssociation
+    - ReplaceImageCriteriaInAllowedImagesSettings
     - ReplaceNetworkAclAssociation
     - ReplaceNetworkAclEntry
     - ReplaceRoute
@@ -20080,6 +20139,7 @@ serviceMap:
     - SearchTransitGatewayRoutes
     - SendDiagnosticInterrupt
     - SendSpotInstanceInterruptions
+    - StartDeclarativePoliciesReport
     - StartInstances
     - StartNetworkInsightsAccessScopeAnalysis
     - StartNetworkInsightsAnalysis
@@ -20227,6 +20287,9 @@ serviceMap:
     - ec2:transitGatewayPolicyTableId
     - ec2:transitGatewayRouteTableAnnouncementId
     - ec2:transitGatewayRouteTableId
+    - ec2:vpceMultiRegion
+    - ec2:vpceServiceRegion
+    - ec2:vpceSupportedRegion
     HasResource: true
   AWS Import Export Disk Service:
     StringPrefix: importexport
