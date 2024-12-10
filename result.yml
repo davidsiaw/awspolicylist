@@ -9640,6 +9640,7 @@ serviceMap:
     - ConfirmSignUp
     - CreateGroup
     - CreateIdentityProvider
+    - CreateManagedLoginBranding
     - CreateResourceServer
     - CreateUserImportJob
     - CreateUserPool
@@ -9647,6 +9648,7 @@ serviceMap:
     - CreateUserPoolDomain
     - DeleteGroup
     - DeleteIdentityProvider
+    - DeleteManagedLoginBranding
     - DeleteResourceServer
     - DeleteUser
     - DeleteUserAttributes
@@ -9654,6 +9656,8 @@ serviceMap:
     - DeleteUserPoolClient
     - DeleteUserPoolDomain
     - DescribeIdentityProvider
+    - DescribeManagedLoginBranding
+    - DescribeManagedLoginBrandingByClient
     - DescribeResourceServer
     - DescribeRiskConfiguration
     - DescribeUserImportJob
@@ -9705,6 +9709,7 @@ serviceMap:
     - UpdateDeviceStatus
     - UpdateGroup
     - UpdateIdentityProvider
+    - UpdateManagedLoginBranding
     - UpdateResourceServer
     - UpdateUserAttributes
     - UpdateUserPool
