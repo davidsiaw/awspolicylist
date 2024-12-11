@@ -6459,9 +6459,6 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
-    - bcm-pricing-calculator:bill-estimateBillEstimateId
-    - bcm-pricing-calculator:bill-scenarioBillScenarioId
-    - bcm-pricing-calculator:workload-estimateWorkloadEstimateId
     HasResource: true
   Amazon Data Lifecycle Manager:
     StringPrefix: dlm
@@ -12226,29 +12223,61 @@ serviceMap:
   AWS Migration Hub:
     StringPrefix: mgh
     Actions:
+    - AcceptConnection
+    - AssociateAutomationUnitRole
     - AssociateCreatedArtifact
     - AssociateDiscoveredResource
+    - AssociateSourceResource
+    - BatchAssociateIamRoleWithConnection
+    - BatchDisassociateIamRoleFromConnection
+    - CreateAutomationRun
+    - CreateAutomationUnit
     - CreateHomeRegionControl
     - CreateProgressUpdateStream
+    - DeleteAutomationRun
+    - DeleteAutomationUnit
+    - DeleteConnection
     - DeleteHomeRegionControl
     - DeleteProgressUpdateStream
     - DescribeApplicationState
+    - DescribeAutomationRun
+    - DescribeAutomationUnit
     - DescribeHomeRegionControls
     - DescribeMigrationTask
+    - DisassociateAutomationUnitRole
     - DisassociateCreatedArtifact
     - DisassociateDiscoveredResource
+    - DisassociateSourceResource
+    - GetConnection
     - GetHomeRegion
     - ImportMigrationTask
     - ListApplicationStates
+    - ListAutomationRuns
+    - ListAutomationUnits
+    - ListConnectionRoles
+    - ListConnections
     - ListCreatedArtifacts
     - ListDiscoveredResources
+    - ListMigrationTaskUpdates
     - ListMigrationTasks
     - ListProgressUpdateStreams
+    - ListSourceResources
+    - ListTagsForResource
     - NotifyApplicationState
     - NotifyMigrationTaskState
     - PutResourceAttributes
+    - RejectConnection
+    - TagResource
+    - UntagResource
     ARNFormat: arn:aws:mgh:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:mgh:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - mgh:AutomationRunResourceRunID
+    - mgh:AutomationUnitResourceAutomationUnitArn
+    - mgh:ConnectionResourceConnectionArn
     HasResource: true
   AWS Lambda:
     StringPrefix: lambda
@@ -12360,6 +12389,7 @@ serviceMap:
     - CreateApplication
     - CreateConnector
     - CreateLaunchConfigurationTemplate
+    - CreateNetworkMigrationDefinition
     - CreateReplicationConfigurationTemplate
     - CreateVcenterClientForMgn
     - CreateWave
@@ -12367,6 +12397,7 @@ serviceMap:
     - DeleteConnector
     - DeleteJob
     - DeleteLaunchConfigurationTemplate
+    - DeleteNetworkMigrationDefinition
     - DeleteReplicationConfigurationTemplate
     - DeleteSourceServer
     - DeleteVcenterClient
@@ -12391,6 +12422,8 @@ serviceMap:
     - GetAgentSnapshotCreditsForMgn
     - GetChannelCommandsForMgn
     - GetLaunchConfiguration
+    - GetNetworkMigrationDefinition
+    - GetNetworkMigrationMapperSegmentConstruct
     - GetReplicationConfiguration
     - GetVcenterClientCommandsForMgn
     - InitializeService
@@ -12402,6 +12435,18 @@ serviceMap:
     - ListImportErrors
     - ListImports
     - ListManagedAccounts
+    - ListNetworkMigrationAnalyses
+    - ListNetworkMigrationAnalysisResults
+    - ListNetworkMigrationCodeGenerationSegments
+    - ListNetworkMigrationCodeGenerations
+    - ListNetworkMigrationDefinitions
+    - ListNetworkMigrationDeployedStacks
+    - ListNetworkMigrationDeployedStacksDeletions
+    - ListNetworkMigrationDeployments
+    - ListNetworkMigrationExecutions
+    - ListNetworkMigrationMapperSegmentConstructs
+    - ListNetworkMigrationMapperSegments
+    - ListNetworkMigrationMappings
     - ListSourceServerActions
     - ListTagsForResource
     - ListTemplateActions
@@ -12431,6 +12476,11 @@ serviceMap:
     - StartCutover
     - StartExport
     - StartImport
+    - StartNetworkMigrationAnalysis
+    - StartNetworkMigrationCodeGeneration
+    - StartNetworkMigrationDeployedStacksDeletion
+    - StartNetworkMigrationDeployment
+    - StartNetworkMigrationMapping
     - StartReplication
     - StartTest
     - StopReplication
@@ -12448,6 +12498,9 @@ serviceMap:
     - UpdateConnector
     - UpdateLaunchConfiguration
     - UpdateLaunchConfigurationTemplate
+    - UpdateNetworkMigrationDefinition
+    - UpdateNetworkMigrationMapperSegment
+    - UpdateNetworkMigrationMapperSegmentConstruct
     - UpdateReplicationConfiguration
     - UpdateReplicationConfigurationTemplate
     - UpdateSourceServer
