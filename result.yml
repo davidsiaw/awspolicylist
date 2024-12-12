@@ -1841,6 +1841,7 @@ serviceMap:
     - CreatePersistentContactAssociation
     - CreatePredefinedAttribute
     - CreatePrompt
+    - CreatePushNotificationRegistration
     - CreateQueue
     - CreateQuickConnect
     - CreateRoutingProfile
@@ -1866,6 +1867,7 @@ serviceMap:
     - DeleteIntegrationAssociation
     - DeletePredefinedAttribute
     - DeletePrompt
+    - DeletePushNotificationRegistration
     - DeleteQueue
     - DeleteQuickConnect
     - DeleteRoutingProfile
