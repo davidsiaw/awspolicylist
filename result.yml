@@ -2173,6 +2173,7 @@ serviceMap:
     - CreateEmailTemplate
     - CreateExportJob
     - CreateImportJob
+    - CreateMultiRegionEndpoint
     - DeleteConfigurationSet
     - DeleteConfigurationSetEventDestination
     - DeleteContact
@@ -2182,6 +2183,7 @@ serviceMap:
     - DeleteEmailIdentity
     - DeleteEmailIdentityPolicy
     - DeleteEmailTemplate
+    - DeleteMultiRegionEndpoint
     - DeleteSuppressedDestination
     - GetAccount
     - GetBlacklistReports
@@ -2203,6 +2205,7 @@ serviceMap:
     - GetExportJob
     - GetImportJob
     - GetMessageInsights
+    - GetMultiRegionEndpoint
     - GetSuppressedDestination
     - ListConfigurationSets
     - ListContactLists
@@ -2215,6 +2218,7 @@ serviceMap:
     - ListEmailTemplates
     - ListExportJobs
     - ListImportJobs
+    - ListMultiRegionEndpoints
     - ListRecommendations
     - ListSuppressedDestinations
     - ListTagsForResource
@@ -2239,6 +2243,7 @@ serviceMap:
     - PutEmailIdentityFeedbackAttributes
     - PutEmailIdentityMailFromAttributes
     - PutSuppressedDestination
+    - ReplicateEmailIdentityDkimSigningKey
     - SendBulkEmail
     - SendCustomVerificationEmail
     - SendEmail
@@ -2262,7 +2267,9 @@ serviceMap:
     - ses:FeedbackAddress
     - ses:FromAddress
     - ses:FromDisplayName
+    - ses:MultiRegionEndpointId
     - ses:Recipients
+    - ses:ReplicaRegion
     HasResource: true
   Amazon Simple Email Service - Mail Manager:
     StringPrefix: ses
@@ -13837,10 +13844,12 @@ serviceMap:
     - CommitTransaction
     - CreateDataCellsFilter
     - CreateLFTag
+    - CreateLFTagExpression
     - CreateLakeFormationIdentityCenterConfiguration
     - CreateLakeFormationOptIn
     - DeleteDataCellsFilter
     - DeleteLFTag
+    - DeleteLFTagExpression
     - DeleteLakeFormationIdentityCenterConfiguration
     - DeleteLakeFormationOptIn
     - DeleteObjectsOnCancel
@@ -13855,6 +13864,7 @@ serviceMap:
     - GetDataLakeSettings
     - GetEffectivePermissionsForPath
     - GetLFTag
+    - GetLFTagExpression
     - GetQueryState
     - GetQueryStatistics
     - GetResourceLFTags
@@ -13863,6 +13873,7 @@ serviceMap:
     - GetWorkUnits
     - GrantPermissions
     - ListDataCellsFilter
+    - ListLFTagExpressions
     - ListLFTags
     - ListLakeFormationOptIns
     - ListPermissions
@@ -13879,6 +13890,7 @@ serviceMap:
     - StartTransaction
     - UpdateDataCellsFilter
     - UpdateLFTag
+    - UpdateLFTagExpression
     - UpdateLakeFormationIdentityCenterConfiguration
     - UpdateResource
     - UpdateTableObjects
