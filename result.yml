@@ -10973,6 +10973,7 @@ serviceMap:
     - CreateService
     - DeleteNamespace
     - DeleteService
+    - DeleteServiceAttributes
     - DeregisterInstance
     - DiscoverInstances
     - DiscoverInstancesRevision
@@ -10981,6 +10982,7 @@ serviceMap:
     - GetNamespace
     - GetOperation
     - GetService
+    - GetServiceAttributes
     - ListInstances
     - ListNamespaces
     - ListOperations
@@ -10994,6 +10996,7 @@ serviceMap:
     - UpdatePrivateDnsNamespace
     - UpdatePublicDnsNamespace
     - UpdateService
+    - UpdateServiceAttributes
     ARNFormat: arn:aws:servicediscovery:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:servicediscovery:.+"
     conditionKeys:
