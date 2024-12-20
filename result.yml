@@ -8967,6 +8967,7 @@ serviceMap:
     - ListChangeSets
     - ListExports
     - ListGeneratedTemplates
+    - ListHookResults
     - ListImports
     - ListResourceScanRelatedResources
     - ListResourceScanResources
@@ -9009,6 +9010,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - cloudformation:ChangeSetName
+    - cloudformation:CreateAction
     - cloudformation:ImportResourceTypes
     - cloudformation:ResourceTypes
     - cloudformation:RoleArn
@@ -22344,6 +22346,7 @@ serviceMap:
   Amazon Neptune Analytics:
     StringPrefix: neptune-graph
     Actions:
+    - CancelExportTask
     - CancelImportTask
     - CancelQuery
     - CreateGraph
@@ -22355,6 +22358,7 @@ serviceMap:
     - DeleteGraphSnapshot
     - DeletePrivateGraphEndpoint
     - GetEngineStatus
+    - GetExportTask
     - GetGraph
     - GetGraphSnapshot
     - GetGraphSummary
@@ -22362,6 +22366,7 @@ serviceMap:
     - GetPrivateGraphEndpoint
     - GetQueryStatus
     - GetStatisticsStatus
+    - ListExportTasks
     - ListGraphSnapshots
     - ListGraphs
     - ListImportTasks
@@ -22371,6 +22376,7 @@ serviceMap:
     - ReadDataViaQuery
     - ResetGraph
     - RestoreGraphFromSnapshot
+    - StartExportTask
     - StartImportTask
     - TagResource
     - UntagResource
