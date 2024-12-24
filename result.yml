@@ -3580,6 +3580,7 @@ serviceMap:
     - DescribeAddonConfiguration
     - DescribeAddonVersions
     - DescribeCluster
+    - DescribeClusterVersions
     - DescribeEksAnywhereSubscription
     - DescribeFargateProfile
     - DescribeIdentityProviderConfig
@@ -20335,6 +20336,7 @@ serviceMap:
     - ec2:KeyPairType
     - ec2:KmsKeyId
     - ec2:LaunchTemplate
+    - ec2:Location
     - ec2:ManagedResourceOperator
     - ec2:MetadataHttpEndpoint
     - ec2:MetadataHttpPutResponseHopLimit
@@ -20382,6 +20384,7 @@ serviceMap:
     - ec2:SnapshotID
     - ec2:SnapshotLockDuration
     - ec2:SnapshotTime
+    - ec2:SourceAvailabilityZone
     - ec2:SourceCapacityReservationId
     - ec2:SourceInstanceARN
     - ec2:SourceOutpostArn
@@ -21158,6 +21161,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - ecr:AccountSetting
     - ecr:ResourceTag/${TagKey}
     HasResource: true
   Amazon DynamoDB Accelerator (DAX):
