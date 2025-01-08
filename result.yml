@@ -18594,12 +18594,14 @@ serviceMap:
     StringPrefix: workspaces-web
     Actions:
     - AssociateBrowserSettings
+    - AssociateDataProtectionSettings
     - AssociateIpAccessSettings
     - AssociateNetworkSettings
     - AssociateTrustStore
     - AssociateUserAccessLoggingSettings
     - AssociateUserSettings
     - CreateBrowserSettings
+    - CreateDataProtectionSettings
     - CreateIdentityProvider
     - CreateIpAccessSettings
     - CreateNetworkSettings
@@ -18608,6 +18610,7 @@ serviceMap:
     - CreateUserAccessLoggingSettings
     - CreateUserSettings
     - DeleteBrowserSettings
+    - DeleteDataProtectionSettings
     - DeleteIdentityProvider
     - DeleteIpAccessSettings
     - DeleteNetworkSettings
@@ -18616,6 +18619,7 @@ serviceMap:
     - DeleteUserAccessLoggingSettings
     - DeleteUserSettings
     - DisassociateBrowserSettings
+    - DisassociateDataProtectionSettings
     - DisassociateIpAccessSettings
     - DisassociateNetworkSettings
     - DisassociateTrustStore
@@ -18623,6 +18627,7 @@ serviceMap:
     - DisassociateUserSettings
     - ExpireSession
     - GetBrowserSettings
+    - GetDataProtectionSettings
     - GetIdentityProvider
     - GetIpAccessSettings
     - GetNetworkSettings
@@ -18634,6 +18639,7 @@ serviceMap:
     - GetUserAccessLoggingSettings
     - GetUserSettings
     - ListBrowserSettings
+    - ListDataProtectionSettings
     - ListIdentityProviders
     - ListIpAccessSettings
     - ListNetworkSettings
@@ -18647,6 +18653,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateBrowserSettings
+    - UpdateDataProtectionSettings
     - UpdateIdentityProvider
     - UpdateIpAccessSettings
     - UpdateNetworkSettings
