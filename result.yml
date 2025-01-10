@@ -8557,6 +8557,7 @@ serviceMap:
     - ListReservations
     - ListSignalMaps
     - ListTagsForResource
+    - ListVersions
     - PollAnywhere
     - PurchaseOffering
     - RebootInputDevice
@@ -18735,17 +18736,22 @@ serviceMap:
     StringPrefix: apigateway
     Actions:
     - AddCertificateToDomain
+    - CreateAccessAssociation
     - DELETE
     - GET
     - PATCH
     - POST
     - PUT
+    - RejectAccessAssociation
     - RemoveCertificateFromDomain
     - SetWebACL
+    - UpdateDomainNameManagementPolicy
+    - UpdateDomainNamePolicy
     - UpdateRestApiPolicy
     ARNFormat: arn:aws:apigateway:${Region}::${ApiGatewayResourcePath}
     ARNRegex: "^arn:aws:apigateway:.+"
     conditionKeys:
+    - apigateway:Request/AccessAssociationSource
     - apigateway:Request/AccessLoggingDestination
     - apigateway:Request/AccessLoggingFormat
     - apigateway:Request/ApiKeyRequired
@@ -18753,6 +18759,7 @@ serviceMap:
     - apigateway:Request/AuthorizerType
     - apigateway:Request/AuthorizerUri
     - apigateway:Request/DisableExecuteApiEndpoint
+    - apigateway:Request/DomainNameArn
     - apigateway:Request/EndpointType
     - apigateway:Request/MtlsTrustStoreUri
     - apigateway:Request/MtlsTrustStoreVersion
@@ -22462,6 +22469,7 @@ serviceMap:
     - GetWorkflowExecution
     - GetWorkflowStepExecution
     - ImportComponent
+    - ImportDiskImage
     - ImportVmImage
     - ListComponentBuildVersions
     - ListComponents
