@@ -22996,9 +22996,15 @@ serviceMap:
     - UpdateAgent
     - UpdateDiscoveryJob
     - UpdateLocationAzureBlob
+    - UpdateLocationEfs
+    - UpdateLocationFsxLustre
+    - UpdateLocationFsxOntap
+    - UpdateLocationFsxOpenZfs
+    - UpdateLocationFsxWindows
     - UpdateLocationHdfs
     - UpdateLocationNfs
     - UpdateLocationObjectStorage
+    - UpdateLocationS3
     - UpdateLocationSmb
     - UpdateStorageSystem
     - UpdateTask
