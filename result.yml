@@ -14693,6 +14693,7 @@ serviceMap:
     - ListResourceSnapshotJobs
     - ListResourceSnapshots
     - ListSolutions
+    - ListTagsForResource
     - PutSellingSystemSettings
     - RejectEngagementInvitation
     - StartEngagementByAcceptingInvitationTask
@@ -14700,10 +14701,15 @@ serviceMap:
     - StartResourceSnapshotJob
     - StopResourceSnapshotJob
     - SubmitOpportunity
+    - TagResource
+    - UntagResource
     - UpdateOpportunity
     ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:partnercentral:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - partnercentral:Catalog
     - partnercentral:RelatedEntityType
     HasResource: true
