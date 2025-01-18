@@ -1833,6 +1833,7 @@ serviceMap:
     - CreateContactFlow
     - CreateContactFlowModule
     - CreateContactFlowVersion
+    - CreateEmailAddress
     - CreateEvaluationForm
     - CreateHoursOfOperation
     - CreateHoursOfOperationOverride
@@ -1861,6 +1862,7 @@ serviceMap:
     - DeleteContactEvaluation
     - DeleteContactFlow
     - DeleteContactFlowModule
+    - DeleteEmailAddress
     - DeleteEvaluationForm
     - DeleteHoursOfOperation
     - DeleteHoursOfOperationOverride
@@ -1888,6 +1890,7 @@ serviceMap:
     - DescribeContactEvaluation
     - DescribeContactFlow
     - DescribeContactFlowModule
+    - DescribeEmailAddress
     - DescribeEvaluationForm
     - DescribeForecastingPlanningSchedulingIntegration
     - DescribeHoursOfOperation
@@ -1940,6 +1943,7 @@ serviceMap:
     - ListAgentStatuses
     - ListAnalyticsDataAssociations
     - ListApprovedOrigins
+    - ListAssociatedContacts
     - ListAuthenticationProfiles
     - ListBots
     - ListContactEvaluations
@@ -1997,6 +2001,7 @@ serviceMap:
     - SearchContactFlowModules
     - SearchContactFlows
     - SearchContacts
+    - SearchEmailAddresses
     - SearchHoursOfOperationOverrides
     - SearchHoursOfOperations
     - SearchPredefinedAttributes
@@ -2020,6 +2025,7 @@ serviceMap:
     - StartEmailContact
     - StartForecastingPlanningSchedulingIntegration
     - StartOutboundChatContact
+    - StartOutboundEmailContact
     - StartOutboundVoiceContact
     - StartScreenSharing
     - StartTaskContact
@@ -2047,6 +2053,7 @@ serviceMap:
     - UpdateContactFlowName
     - UpdateContactRoutingData
     - UpdateContactSchedule
+    - UpdateEmailAddressMetadata
     - UpdateEvaluationForm
     - UpdateHoursOfOperation
     - UpdateHoursOfOperationOverride
@@ -2062,6 +2069,7 @@ serviceMap:
     - UpdateQueueMaxContacts
     - UpdateQueueName
     - UpdateQueueOutboundCallerConfig
+    - UpdateQueueOutboundEmailConfig
     - UpdateQueueStatus
     - UpdateQuickConnectConfig
     - UpdateQuickConnectName
