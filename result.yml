@@ -23305,8 +23305,8 @@ policyTypes:
 VPCPolicyServiceActionMap:
   Amazon DynamoDB For VPC Policies:
   - DescribeContinuousBackups
-  - DescribeReservedCapacity
   - DescribeBackup
+  - DescribeReservedCapacity
   - PurchaseReservedCapacityOfferings
   - ListBackups
   - Query
@@ -23315,14 +23315,14 @@ VPCPolicyServiceActionMap:
   - DescribeTable
   - CreateTable
   - BatchGetItem
-  - BatchWriteItem
   - DeleteTable
+  - BatchWriteItem
   - RestoreTableFromBackup
-  - GetItem
   - DescribeLimits
+  - GetItem
   - UpdateTable
-  - UpdateItem
   - DescribeReservedCapacityOfferings
+  - UpdateItem
   - ListTables
   - Scan
   - PutItem
