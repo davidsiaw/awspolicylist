@@ -1655,21 +1655,25 @@ serviceMap:
     - CreateFleet
     - CreateJob
     - CreateLicenseEndpoint
+    - CreateLimit
     - CreateMonitor
     - CreateQueue
     - CreateQueueEnvironment
     - CreateQueueFleetAssociation
+    - CreateQueueLimitAssociation
     - CreateStorageProfile
     - CreateWorker
     - DeleteBudget
     - DeleteFarm
     - DeleteFleet
     - DeleteLicenseEndpoint
+    - DeleteLimit
     - DeleteMeteredProduct
     - DeleteMonitor
     - DeleteQueue
     - DeleteQueueEnvironment
     - DeleteQueueFleetAssociation
+    - DeleteQueueLimitAssociation
     - DeleteStorageProfile
     - DeleteWorker
     - DisassociateMemberFromFarm
@@ -1683,10 +1687,12 @@ serviceMap:
     - GetJob
     - GetJobTemplate
     - GetLicenseEndpoint
+    - GetLimit
     - GetMonitor
     - GetQueue
     - GetQueueEnvironment
     - GetQueueFleetAssociation
+    - GetQueueLimitAssociation
     - GetSession
     - GetSessionAction
     - GetSessionsStatisticsAggregation
@@ -1705,10 +1711,12 @@ serviceMap:
     - ListJobParameterDefinitions
     - ListJobs
     - ListLicenseEndpoints
+    - ListLimits
     - ListMeteredProducts
     - ListMonitors
     - ListQueueEnvironments
     - ListQueueFleetAssociations
+    - ListQueueLimitAssociations
     - ListQueueMembers
     - ListQueues
     - ListSessionActions
@@ -1734,10 +1742,12 @@ serviceMap:
     - UpdateFarm
     - UpdateFleet
     - UpdateJob
+    - UpdateLimit
     - UpdateMonitor
     - UpdateQueue
     - UpdateQueueEnvironment
     - UpdateQueueFleetAssociation
+    - UpdateQueueLimitAssociation
     - UpdateSession
     - UpdateStep
     - UpdateStorageProfile
@@ -7280,6 +7290,7 @@ serviceMap:
     - GetCallAnalyticsCategory
     - GetCallAnalyticsJob
     - GetMedicalScribeJob
+    - GetMedicalScribeStream
     - GetMedicalTranscriptionJob
     - GetMedicalVocabulary
     - GetTranscriptionJob
@@ -7299,6 +7310,7 @@ serviceMap:
     - StartCallAnalyticsStreamTranscription
     - StartCallAnalyticsStreamTranscriptionWebSocket
     - StartMedicalScribeJob
+    - StartMedicalScribeStream
     - StartMedicalStreamTranscription
     - StartMedicalStreamTranscriptionWebSocket
     - StartMedicalTranscriptionJob
