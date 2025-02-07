@@ -2300,6 +2300,8 @@ serviceMap:
     - AllowVendedLogDeliveryForResource
     - CreateAddonInstance
     - CreateAddonSubscription
+    - CreateAddressList
+    - CreateAddressListImportJob
     - CreateArchive
     - CreateIngressPoint
     - CreateRelay
@@ -2307,13 +2309,17 @@ serviceMap:
     - CreateTrafficPolicy
     - DeleteAddonInstance
     - DeleteAddonSubscription
+    - DeleteAddressList
     - DeleteArchive
     - DeleteIngressPoint
     - DeleteRelay
     - DeleteRuleSet
     - DeleteTrafficPolicy
+    - DeregisterMemberFromAddressList
     - GetAddonInstance
     - GetAddonSubscription
+    - GetAddressList
+    - GetAddressListImportJob
     - GetArchive
     - GetArchiveExport
     - GetArchiveMessage
@@ -2321,21 +2327,28 @@ serviceMap:
     - GetArchiveSearch
     - GetArchiveSearchResults
     - GetIngressPoint
+    - GetMemberOfAddressList
     - GetRelay
     - GetRuleSet
     - GetTrafficPolicy
     - ListAddonInstances
     - ListAddonSubscriptions
+    - ListAddressListImportJobs
+    - ListAddressLists
     - ListArchiveExports
     - ListArchiveSearches
     - ListArchives
     - ListIngressPoints
+    - ListMembersOfAddressList
     - ListRelays
     - ListRuleSets
     - ListTagsForResource
     - ListTrafficPolicies
+    - RegisterMemberToAddressList
+    - StartAddressListImportJob
     - StartArchiveExport
     - StartArchiveSearch
+    - StopAddressListImportJob
     - StopArchiveExport
     - StopArchiveSearch
     - TagResource
@@ -8455,6 +8468,7 @@ serviceMap:
   AWS Amplify:
     StringPrefix: amplify
     Actions:
+    - AssociateWebACL
     - CreateApp
     - CreateBackendEnvironment
     - CreateBranch
@@ -8467,6 +8481,7 @@ serviceMap:
     - DeleteDomainAssociation
     - DeleteJob
     - DeleteWebHook
+    - DisassociateWebACL
     - GenerateAccessLogs
     - GetApp
     - GetArtifactUrl
@@ -8474,6 +8489,7 @@ serviceMap:
     - GetBranch
     - GetDomainAssociation
     - GetJob
+    - GetWebACLForResource
     - GetWebHook
     - ListApps
     - ListArtifacts
@@ -8481,6 +8497,7 @@ serviceMap:
     - ListBranches
     - ListDomainAssociations
     - ListJobs
+    - ListResourcesForWebACL
     - ListTagsForResource
     - ListWebHooks
     - StartDeployment
@@ -8956,6 +8973,7 @@ serviceMap:
     - CreateGeneratedTemplate
     - CreateStack
     - CreateStackInstances
+    - CreateStackRefactor
     - CreateStackSet
     - CreateUploadBucket
     - DeactivateOrganizationsAccess
@@ -8976,6 +8994,7 @@ serviceMap:
     - DescribeStackDriftDetectionStatus
     - DescribeStackEvents
     - DescribeStackInstance
+    - DescribeStackRefactor
     - DescribeStackResource
     - DescribeStackResourceDrifts
     - DescribeStackResources
@@ -8989,6 +9008,7 @@ serviceMap:
     - DetectStackSetDrift
     - EstimateTemplateCost
     - ExecuteChangeSet
+    - ExecuteStackRefactor
     - GetGeneratedTemplate
     - GetStackPolicy
     - GetTemplate
@@ -9004,6 +9024,8 @@ serviceMap:
     - ListResourceScans
     - ListStackInstanceResourceDrifts
     - ListStackInstances
+    - ListStackRefactorActions
+    - ListStackRefactors
     - ListStackResources
     - ListStackSetAutoDeploymentTargets
     - ListStackSetOperationResults
