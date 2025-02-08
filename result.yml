@@ -2655,11 +2655,15 @@ serviceMap:
   Amazon Q:
     StringPrefix: q
     Actions:
+    - AssociateConnectorResource
     - CreateAssignment
+    - CreateAuthGrant
+    - CreateOAuthAppConnection
     - CreatePlugin
     - DeleteAssignment
     - DeletePlugin
     - GenerateCodeFromCommands
+    - GetConnector
     - GetConversation
     - GetIdentityMetadata
     - GetPlugin
@@ -2670,12 +2674,16 @@ serviceMap:
     - ListPlugins
     - ListTagsForResource
     - PassRequest
+    - RejectConnector
+    - SendEvent
     - SendMessage
     - StartConversation
     - StartTroubleshootingAnalysis
     - StartTroubleshootingResolutionExplanation
     - TagResource
     - UntagResource
+    - UpdateAuthGrant
+    - UpdateOAuthAppConnection
     - UpdateTroubleshootingCommandResult
     - UsePlugin
     ARNFormat: arn:aws:qdeveloper:${Region}:${Account}:${ResourceType}/${ResourceId}
