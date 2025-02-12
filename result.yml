@@ -1842,6 +1842,7 @@ serviceMap:
     - CompleteAttachedFileUpload
     - CreateAgentStatus
     - CreateAuthenticationProfile
+    - CreateContact
     - CreateContactFlow
     - CreateContactFlowModule
     - CreateContactFlowVersion
@@ -2113,6 +2114,7 @@ serviceMap:
     - aws:TagKeys
     - connect:AssignmentType
     - connect:AttributeType
+    - connect:ContactInitiationMethod
     - connect:FlowType
     - connect:InstanceId
     - connect:MonitorCapabilities
