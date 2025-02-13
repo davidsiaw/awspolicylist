@@ -8897,7 +8897,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - datapipeline:PipelineCreator
-    - datapipeline:Tag
+    - datapipeline:Tag/${TagKey}
     - datapipeline:workerGroup
     HasResource: true
   AWS Server Migration Service:
@@ -22403,6 +22403,7 @@ serviceMap:
     - DescribeFHIRImportJob
     - GetCapabilities
     - GetExportedFile
+    - GetHistoryByResourceId
     - ListFHIRDatastores
     - ListFHIRExportJobs
     - ListFHIRImportJobs
@@ -22418,6 +22419,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateResource
+    - VersionReadResource
     ARNFormat: arn:aws:healthlake:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:healthlake:.+:.+:.+"
     conditionKeys:
