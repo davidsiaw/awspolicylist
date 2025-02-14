@@ -17530,14 +17530,17 @@ serviceMap:
   Amazon Connect Cases:
     StringPrefix: cases
     Actions:
+    - BatchGetCaseRule
     - BatchGetField
     - BatchPutFieldOptions
     - CreateCase
+    - CreateCaseRule
     - CreateDomain
     - CreateField
     - CreateLayout
     - CreateRelatedItem
     - CreateTemplate
+    - DeleteCaseRule
     - DeleteDomain
     - DeleteField
     - DeleteLayout
@@ -17549,6 +17552,7 @@ serviceMap:
     - GetDomain
     - GetLayout
     - GetTemplate
+    - ListCaseRules
     - ListCasesForContact
     - ListDomains
     - ListFieldOptions
@@ -17562,6 +17566,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateCase
+    - UpdateCaseRule
     - UpdateField
     - UpdateLayout
     - UpdateTemplate
