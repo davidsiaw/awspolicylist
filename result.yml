@@ -5059,6 +5059,7 @@ serviceMap:
     StringPrefix: emr-containers
     Actions:
     - CancelJobRun
+    - CreateCertificate
     - CreateJobTemplate
     - CreateManagedEndpoint
     - CreateSecurityConfiguration
