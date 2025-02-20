@@ -7219,14 +7219,18 @@ serviceMap:
     - DescribeRuleGroupMetadata
     - DescribeTLSInspectionConfiguration
     - DisassociateSubnets
+    - GetAnalysisReportResults
+    - ListAnalysisReports
     - ListFirewallPolicies
     - ListFirewalls
     - ListRuleGroups
     - ListTLSInspectionConfigurations
     - ListTagsForResource
     - PutResourcePolicy
+    - StartAnalysisReport
     - TagResource
     - UntagResource
+    - UpdateFirewallAnalysisSettings
     - UpdateFirewallDeleteProtection
     - UpdateFirewallDescription
     - UpdateFirewallEncryptionConfiguration
@@ -16294,6 +16298,7 @@ serviceMap:
     - AttachVolume
     - BypassGovernanceRetention
     - CancelArchival
+    - CancelCacheReport
     - CancelRetrieval
     - CreateCachediSCSIVolume
     - CreateNFSFileShare
@@ -16306,6 +16311,7 @@ serviceMap:
     - CreateTapes
     - DeleteAutomaticTapeCreationPolicy
     - DeleteBandwidthRateLimit
+    - DeleteCacheReport
     - DeleteChapCredentials
     - DeleteFileShare
     - DeleteGateway
@@ -16318,6 +16324,7 @@ serviceMap:
     - DescribeBandwidthRateLimit
     - DescribeBandwidthRateLimitSchedule
     - DescribeCache
+    - DescribeCacheReport
     - DescribeCachediSCSIVolumes
     - DescribeChapCredentials
     - DescribeFileSystemAssociations
@@ -16339,6 +16346,7 @@ serviceMap:
     - DisassociateFileSystem
     - JoinDomain
     - ListAutomaticTapeCreationPolicies
+    - ListCacheReports
     - ListFileShares
     - ListFileSystemAssociations
     - ListGateways
@@ -16359,6 +16367,7 @@ serviceMap:
     - SetSMBGuestPassword
     - ShutdownGateway
     - StartAvailabilityMonitorTest
+    - StartCacheReport
     - StartGateway
     - UpdateAutomaticTapeCreationPolicy
     - UpdateBandwidthRateLimit
