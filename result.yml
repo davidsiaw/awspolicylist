@@ -19462,6 +19462,7 @@ serviceMap:
   AWS CloudShell:
     StringPrefix: cloudshell
     Actions:
+    - ApproveCommand
     - CreateEnvironment
     - CreateSession
     - DeleteEnvironment
@@ -21231,19 +21232,27 @@ serviceMap:
     - ecs:CreateAction
     - ecs:ResourceTag/${TagKey}
     - ecs:account-setting
+    - ecs:auto-assign-public-ip
     - ecs:capacity-provider
     - ecs:cluster
+    - ecs:compute-compatibility
     - ecs:container-instances
     - ecs:container-name
     - ecs:enable-ebs-volumes
+    - ecs:enable-ecs-managed-tags
     - ecs:enable-execute-command
     - ecs:enable-service-connect
     - ecs:enable-vpc-lattice
     - ecs:fargate-ephemeral-storage-kms-key
     - ecs:namespace
+    - ecs:privileged
+    - ecs:propagate-tags
     - ecs:service
+    - ecs:subnet
     - ecs:task
+    - ecs:task-cpu
     - ecs:task-definition
+    - ecs:task-memory
     HasResource: true
   Amazon Elastic Container Registry:
     StringPrefix: ecr
