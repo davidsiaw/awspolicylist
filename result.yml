@@ -2252,6 +2252,7 @@ serviceMap:
     - PutAccountSendingAttributes
     - PutAccountSuppressionAttributes
     - PutAccountVdmAttributes
+    - PutConfigurationSetArchivingOptions
     - PutConfigurationSetDeliveryOptions
     - PutConfigurationSetReputationOptions
     - PutConfigurationSetSendingOptions
@@ -8701,6 +8702,7 @@ serviceMap:
     - CreateGuardrail
     - CreateGuardrailVersion
     - CreateInferenceProfile
+    - CreateInvocation
     - CreateKnowledgeBase
     - CreateMarketplaceModelEndpoint
     - CreateModelCopyJob
@@ -8711,6 +8713,7 @@ serviceMap:
     - CreatePrompt
     - CreatePromptVersion
     - CreateProvisionedModelThroughput
+    - CreateSession
     - DeleteAgent
     - DeleteAgentActionGroup
     - DeleteAgentAlias
@@ -8735,10 +8738,12 @@ serviceMap:
     - DeletePrompt
     - DeleteProvisionedModelThroughput
     - DeleteResourcePolicy
+    - DeleteSession
     - DeregisterMarketplaceModelEndpoint
     - DetectGeneratedContent
     - DisassociateAgentCollaborator
     - DisassociateAgentKnowledgeBase
+    - EndSession
     - GenerateQuery
     - GetAgent
     - GetAgentActionGroup
@@ -8764,6 +8769,7 @@ serviceMap:
     - GetImportedModel
     - GetInferenceProfile
     - GetIngestionJob
+    - GetInvocationStep
     - GetKnowledgeBase
     - GetKnowledgeBaseDocuments
     - GetMarketplaceModelEndpoint
@@ -8777,6 +8783,7 @@ serviceMap:
     - GetPromptRouter
     - GetProvisionedModelThroughput
     - GetResourcePolicy
+    - GetSession
     - GetUseCaseForModelAccess
     - IngestKnowledgeBaseDocuments
     - InvokeAgent
@@ -8808,6 +8815,8 @@ serviceMap:
     - ListImportedModels
     - ListInferenceProfiles
     - ListIngestionJobs
+    - ListInvocationSteps
+    - ListInvocations
     - ListKnowledgeBaseDocuments
     - ListKnowledgeBases
     - ListMarketplaceModelEndpoints
@@ -8819,11 +8828,13 @@ serviceMap:
     - ListPromptRouters
     - ListPrompts
     - ListProvisionedModelThroughputs
+    - ListSessions
     - ListTagsForResource
     - OptimizePrompt
     - PrepareAgent
     - PrepareFlow
     - PutFoundationModelEntitlement
+    - PutInvocationStep
     - PutModelInvocationLoggingConfiguration
     - PutResourcePolicy
     - PutUseCaseForModelAccess
@@ -8854,6 +8865,7 @@ serviceMap:
     - UpdateMarketplaceModelEndpoint
     - UpdatePrompt
     - UpdateProvisionedModelThroughput
+    - UpdateSession
     - ValidateFlowDefinition
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock:.*:.*:.+"
@@ -21400,6 +21412,7 @@ serviceMap:
     - GetScheduledAction
     - GetSnapshot
     - GetTableRestoreStatus
+    - GetTrack
     - GetUsageLimit
     - GetWorkgroup
     - ListCustomDomainAssociations
@@ -21412,6 +21425,7 @@ serviceMap:
     - ListSnapshots
     - ListTableRestoreStatus
     - ListTagsForResource
+    - ListTracks
     - ListUsageLimits
     - ListWorkgroups
     - PutResourcePolicy
