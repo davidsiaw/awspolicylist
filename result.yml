@@ -16441,6 +16441,7 @@ serviceMap:
     - DetachVolume
     - DisableGateway
     - DisassociateFileSystem
+    - EvictFilesFailingUpload
     - JoinDomain
     - ListAutomaticTapeCreationPolicies
     - ListCacheReports
@@ -21379,6 +21380,7 @@ serviceMap:
     - GetAccountSetting
     - GetAuthorizationToken
     - GetDownloadUrlForLayer
+    - GetImageCopyStatus
     - GetLifecyclePolicy
     - GetLifecyclePolicyPreview
     - GetRegistryPolicy
