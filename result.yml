@@ -2114,6 +2114,8 @@ serviceMap:
     - aws:TagKeys
     - connect:AssignmentType
     - connect:AttributeType
+    - connect:Channel
+    - connect:ContactAssociationId
     - connect:ContactInitiationMethod
     - connect:FlowType
     - connect:InstanceId
@@ -2735,6 +2737,7 @@ serviceMap:
     - GetUserPoolInfo
     - ImportExternalIdPCertificate
     - IsMemberInGroup
+    - IsMemberInGroups
     - ListBearerTokens
     - ListExternalIdPCertificates
     - ListExternalIdPConfigurationsForDirectory
@@ -8873,6 +8876,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - bedrock:GuardrailIdentifier
     - bedrock:InferenceProfileArn
     - bedrock:PromptRouterArn
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
@@ -16140,6 +16144,7 @@ serviceMap:
     - ModifyAccount
     - ModifyCertificateBasedAuthProperties
     - ModifyClientProperties
+    - ModifyEndpointEncryptionMode
     - ModifySamlProperties
     - ModifySelfservicePermissions
     - ModifyStreamingProperties
