@@ -10086,6 +10086,7 @@ serviceMap:
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
     - ModifyCapacityReservation
+    - ModifyIpPools
     - ModifyListener
     - ModifyListenerAttributes
     - ModifyLoadBalancerAttributes
@@ -15858,12 +15859,15 @@ serviceMap:
     - BatchGetRumMetricDefinitions
     - CreateAppMonitor
     - DeleteAppMonitor
+    - DeleteResourcePolicy
     - DeleteRumMetricsDestination
     - GetAppMonitor
     - GetAppMonitorData
+    - GetResourcePolicy
     - ListAppMonitors
     - ListRumMetricsDestinations
     - ListTagsForResource
+    - PutResourcePolicy
     - PutRumEvents
     - PutRumMetricsDestination
     - TagResource
