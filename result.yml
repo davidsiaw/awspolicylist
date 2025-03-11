@@ -8714,6 +8714,7 @@ serviceMap:
     - CreateModelImportJob
     - CreateModelInvocationJob
     - CreatePrompt
+    - CreatePromptRouter
     - CreatePromptVersion
     - CreateProvisionedModelThroughput
     - CreateSession
@@ -8739,6 +8740,7 @@ serviceMap:
     - DeleteMarketplaceModelEndpoint
     - DeleteModelInvocationLoggingConfiguration
     - DeletePrompt
+    - DeletePromptRouter
     - DeleteProvisionedModelThroughput
     - DeleteResourcePolicy
     - DeleteSession
@@ -16082,6 +16084,7 @@ serviceMap:
     - codestar-connections:ProviderType
     - codestar-connections:ProviderTypeFilter
     - codestar-connections:RepositoryName
+    - codestar-connections:VpcId
     HasResource: true
   Amazon WorkSpaces:
     StringPrefix: workspaces
@@ -16820,6 +16823,7 @@ serviceMap:
     - DescribeTrustedAdvisorCheckResult
     - DescribeTrustedAdvisorCheckSummaries
     - DescribeTrustedAdvisorChecks
+    - GetInteraction
     - InitiateCallForCase
     - InitiateChatForCase
     - PutCaseAttributes
@@ -16827,6 +16831,7 @@ serviceMap:
     - RefreshTrustedAdvisorCheck
     - ResolveCase
     - SearchForCases
+    - StartInteraction
     HasResource: false
   Amazon Polly:
     StringPrefix: polly
@@ -20796,6 +20801,7 @@ serviceMap:
     - codeconnections:ProviderType
     - codeconnections:ProviderTypeFilter
     - codeconnections:RepositoryName
+    - codeconnections:VpcId
     HasResource: true
   Amazon WorkMail Message Flow:
     StringPrefix: workmailmessageflow
