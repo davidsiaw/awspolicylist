@@ -16516,19 +16516,24 @@ serviceMap:
     Actions:
     - CancelJob
     - CreateComputeEnvironment
+    - CreateConsumableResource
     - CreateJobQueue
     - CreateSchedulingPolicy
     - DeleteComputeEnvironment
+    - DeleteConsumableResource
     - DeleteJobQueue
     - DeleteSchedulingPolicy
     - DeregisterJobDefinition
     - DescribeComputeEnvironments
+    - DescribeConsumableResource
     - DescribeJobDefinitions
     - DescribeJobQueues
     - DescribeJobs
     - DescribeSchedulingPolicies
     - GetJobQueueSnapshot
+    - ListConsumableResources
     - ListJobs
+    - ListJobsByConsumableResource
     - ListSchedulingPolicies
     - ListTagsForResource
     - RegisterJobDefinition
@@ -16537,6 +16542,7 @@ serviceMap:
     - TerminateJob
     - UntagResource
     - UpdateComputeEnvironment
+    - UpdateConsumableResource
     - UpdateJobQueue
     - UpdateSchedulingPolicy
     ARNFormat: arn:aws:batch:${Region}:${Account}:${ResourceType}/${ResourcePath}
@@ -23518,13 +23524,11 @@ serviceMap:
     - EnableRegion
     - GetAccountInformation
     - GetAlternateContact
-    - GetChallengeQuestions
     - GetContactInformation
     - GetPrimaryEmail
     - GetRegionOptStatus
     - ListRegions
     - PutAlternateContact
-    - PutChallengeQuestions
     - PutContactInformation
     - StartPrimaryEmailUpdate
     ARNFormat: arn:aws:account::${Account}:account
