@@ -2566,6 +2566,7 @@ serviceMap:
     StringPrefix: application-signals
     Actions:
     - BatchGetServiceLevelObjectiveBudgetReport
+    - BatchUpdateExclusionWindows
     - CreateServiceLevelObjective
     - DeleteServiceLevelObjective
     - GetService
@@ -2574,6 +2575,7 @@ serviceMap:
     - ListObservedEntities
     - ListServiceDependencies
     - ListServiceDependents
+    - ListServiceLevelObjectiveExclusionWindows
     - ListServiceLevelObjectives
     - ListServiceOperations
     - ListServices
