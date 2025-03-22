@@ -9448,6 +9448,7 @@ serviceMap:
     - ListTagsForResource
     - TagResource
     - UntagResource
+    - UpdateCluster
     - UpdateControlPanel
     - UpdateRoutingControl
     - UpdateSafetyRule
