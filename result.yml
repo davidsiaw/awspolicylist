@@ -6325,6 +6325,7 @@ serviceMap:
     - GetSubscriptionRequestDetails
     - GetSubscriptionTarget
     - GetTimeSeriesDataPoint
+    - GetUpdateEligibility
     - GetUserProfile
     - ListAccountEnvironments
     - ListAssetFilters
@@ -9432,6 +9433,7 @@ serviceMap:
     - CreateSafetyRule
     - DeleteCluster
     - DeleteControlPanel
+    - DeleteResourcePolicy
     - DeleteRoutingControl
     - DeleteSafetyRule
     - DescribeCluster
@@ -9446,6 +9448,7 @@ serviceMap:
     - ListRoutingControls
     - ListSafetyRules
     - ListTagsForResource
+    - PutResourcePolicy
     - TagResource
     - UntagResource
     - UpdateCluster
@@ -18518,8 +18521,6 @@ serviceMap:
     Actions:
     - AcceptAgreement
     - AcceptNdaForAgreement
-    - DownloadAgreement
-    - Get
     - GetAccountSettings
     - GetAgreement
     - GetCustomerAgreement
