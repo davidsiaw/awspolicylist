@@ -367,6 +367,7 @@ serviceMap:
     - ListPolicyVersions
     - ListPrincipalPolicies
     - ListPrincipalThings
+    - ListPrincipalThingsV2
     - ListProvisioningTemplateVersions
     - ListProvisioningTemplates
     - ListRelatedResourcesForAuditFinding
@@ -383,6 +384,7 @@ serviceMap:
     - ListThingGroups
     - ListThingGroupsForThing
     - ListThingPrincipals
+    - ListThingPrincipalsV2
     - ListThingRegistrationTaskReports
     - ListThingRegistrationTasks
     - ListThingTypes
@@ -472,6 +474,7 @@ serviceMap:
     - iot:DomainName
     - iot:ThingGroupArn
     - iot:TunnelDestinationService
+    - iot:thingArn
     HasResource: true
   AWS Fault Injection Service:
     StringPrefix: fis
@@ -22583,6 +22586,7 @@ serviceMap:
     - ListFHIRExportJobs
     - ListFHIRImportJobs
     - ListTagsForResource
+    - ProcessBundle
     - ReadResource
     - SearchEverything
     - SearchWithGet
