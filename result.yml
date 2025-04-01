@@ -22492,22 +22492,36 @@ serviceMap:
   Amazon S3 Express:
     StringPrefix: s3express
     Actions:
+    - CreateAccessPoint
     - CreateBucket
     - CreateSession
+    - DeleteAccessPoint
+    - DeleteAccessPointPolicy
+    - DeleteAccessPointScope
     - DeleteBucket
     - DeleteBucketPolicy
+    - GetAccessPoint
+    - GetAccessPointPolicy
+    - GetAccessPointScope
     - GetBucketPolicy
     - GetEncryptionConfiguration
     - GetLifecycleConfiguration
+    - ListAccessPointsForDirectoryBuckets
     - ListAllMyDirectoryBuckets
+    - PutAccessPointPolicy
+    - PutAccessPointScope
     - PutBucketPolicy
     - PutEncryptionConfiguration
     - PutLifecycleConfiguration
     ARNFormat: arn:aws:s3express:${Region}:${Account}:bucket/${BucketName}
     ARNRegex: "^arn:aws:s3express:${Region}:${Account}:bucket/.+"
     conditionKeys:
+    - s3express:AccessPointNetworkOrigin
     - s3express:AllAccessRestrictedToLocalZoneGroup
+    - s3express:DataAccessPointAccount
+    - s3express:DataAccessPointArn
     - s3express:LocationName
+    - s3express:Permissions
     - s3express:ResourceAccount
     - s3express:SessionMode
     - s3express:TlsVersion
