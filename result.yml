@@ -22832,6 +22832,8 @@ serviceMap:
     - ListClaims
     - ListUserSubscriptions
     - UpdateClaim
+    conditionKeys:
+    - user-subscriptions:CreateForSelf
     HasResource: false
   Amazon S3 Glacier:
     StringPrefix: glacier
