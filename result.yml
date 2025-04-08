@@ -1575,10 +1575,12 @@ serviceMap:
     - BatchDeleteBuilds
     - BatchGetBuildBatches
     - BatchGetBuilds
+    - BatchGetCommandExecutions
     - BatchGetFleets
     - BatchGetProjects
     - BatchGetReportGroups
     - BatchGetReports
+    - BatchGetSandboxes
     - BatchPutCodeCoverages
     - BatchPutTestCases
     - CreateFleet
@@ -1605,6 +1607,7 @@ serviceMap:
     - ListBuildBatchesForProject
     - ListBuilds
     - ListBuildsForProject
+    - ListCommandExecutionsForSandbox
     - ListConnectedOAuthAccounts
     - ListCuratedEnvironmentImages
     - ListFleets
@@ -1613,6 +1616,8 @@ serviceMap:
     - ListReports
     - ListReportsForReportGroup
     - ListRepositories
+    - ListSandboxes
+    - ListSandboxesForProject
     - ListSharedProjects
     - ListSharedReportGroups
     - ListSourceCredentials
@@ -1622,8 +1627,12 @@ serviceMap:
     - RetryBuildBatch
     - StartBuild
     - StartBuildBatch
+    - StartCommandExecution
+    - StartSandbox
+    - StartSandboxConnection
     - StopBuild
     - StopBuildBatch
+    - StopSandbox
     - UpdateFleet
     - UpdateProject
     - UpdateProjectVisibility
