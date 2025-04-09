@@ -2682,8 +2682,10 @@ serviceMap:
     - CreateOAuthAppConnection
     - CreatePlugin
     - DeleteAssignment
+    - DeleteOAuthAppConnection
     - DeletePlugin
     - GenerateCodeFromCommands
+    - GenerateCodeRecommendations
     - GetConnector
     - GetConversation
     - GetIdentityMetadata
@@ -2707,6 +2709,7 @@ serviceMap:
     - UpdateOAuthAppConnection
     - UpdateTroubleshootingCommandResult
     - UsePlugin
+    - VerifyOAuthAppConnection
     ARNFormat: arn:aws:qdeveloper:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:qdeveloper:.+:[0-9]+:.+"
     conditionKeys:
