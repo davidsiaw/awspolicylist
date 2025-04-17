@@ -9325,6 +9325,7 @@ serviceMap:
     Actions:
     - CancelBatchJobExecution
     - CreateApplication
+    - CreateDataSetExportTask
     - CreateDataSetImportTask
     - CreateDeployment
     - CreateEnvironment
@@ -9335,6 +9336,7 @@ serviceMap:
     - GetApplicationVersion
     - GetBatchJobExecution
     - GetDataSetDetails
+    - GetDataSetExportTask
     - GetDataSetImportTask
     - GetDeployment
     - GetEnvironment
@@ -9344,6 +9346,7 @@ serviceMap:
     - ListBatchJobDefinitions
     - ListBatchJobExecutions
     - ListBatchJobRestartPoints
+    - ListDataSetExportHistory
     - ListDataSetImportHistory
     - ListDataSets
     - ListDeployments
@@ -22145,6 +22148,8 @@ serviceMap:
     - SendWorkflowStepState
     - StartDirectoryListing
     - StartFileTransfer
+    - StartRemoteDelete
+    - StartRemoteMove
     - StartServer
     - StopServer
     - TagResource
@@ -23442,14 +23447,17 @@ serviceMap:
     - DeleteNamespace
     - DeleteTable
     - DeleteTableBucket
+    - DeleteTableBucketEncryption
     - DeleteTableBucketPolicy
     - DeleteTablePolicy
     - GetNamespace
     - GetTable
     - GetTableBucket
+    - GetTableBucketEncryption
     - GetTableBucketMaintenanceConfiguration
     - GetTableBucketPolicy
     - GetTableData
+    - GetTableEncryption
     - GetTableMaintenanceConfiguration
     - GetTableMaintenanceJobStatus
     - GetTableMetadataLocation
@@ -23457,9 +23465,11 @@ serviceMap:
     - ListNamespaces
     - ListTableBuckets
     - ListTables
+    - PutTableBucketEncryption
     - PutTableBucketMaintenanceConfiguration
     - PutTableBucketPolicy
     - PutTableData
+    - PutTableEncryption
     - PutTableMaintenanceConfiguration
     - PutTablePolicy
     - RenameTable
@@ -23467,6 +23477,8 @@ serviceMap:
     ARNFormat: arn:aws:s3tables:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3tables:.+"
     conditionKeys:
+    - s3tables:KMSKeyArn
+    - s3tables:SSEAlgorithm
     - s3tables:namespace
     - s3tables:tableName
     HasResource: true
