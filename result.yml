@@ -14147,6 +14147,7 @@ serviceMap:
     - DescribeRuleGroupsNamespace
     - DescribeScraper
     - DescribeWorkspace
+    - DescribeWorkspaceConfiguration
     - GetAlertManagerSilence
     - GetAlertManagerStatus
     - GetDefaultScraperConfiguration
@@ -14173,6 +14174,7 @@ serviceMap:
     - UpdateLoggingConfiguration
     - UpdateScraper
     - UpdateWorkspaceAlias
+    - UpdateWorkspaceConfiguration
     ARNFormat: arn:aws:aps:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:aps:.+:.+:.+"
     conditionKeys:
