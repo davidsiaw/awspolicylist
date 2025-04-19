@@ -10741,6 +10741,7 @@ serviceMap:
     - CreateShare
     - CreateVariantStore
     - CreateWorkflow
+    - CreateWorkflowVersion
     - DeleteAnnotationStore
     - DeleteAnnotationStoreVersions
     - DeleteReference
@@ -10753,6 +10754,7 @@ serviceMap:
     - DeleteShare
     - DeleteVariantStore
     - DeleteWorkflow
+    - DeleteWorkflowVersion
     - GetAnnotationImportJob
     - GetAnnotationStore
     - GetAnnotationStoreVersion
@@ -10775,6 +10777,7 @@ serviceMap:
     - GetVariantImportJob
     - GetVariantStore
     - GetWorkflow
+    - GetWorkflowVersion
     - ListAnnotationImportJobs
     - ListAnnotationStoreVersions
     - ListAnnotationStores
@@ -10796,6 +10799,7 @@ serviceMap:
     - ListTagsForResource
     - ListVariantImportJobs
     - ListVariantStores
+    - ListWorkflowVersions
     - ListWorkflows
     - PutS3AccessPolicy
     - StartAnnotationImportJob
@@ -10814,6 +10818,7 @@ serviceMap:
     - UpdateSequenceStore
     - UpdateVariantStore
     - UpdateWorkflow
+    - UpdateWorkflowVersion
     - UploadReadSetPart
     ARNFormat: arn:aws:omics:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:omics:${Region}:${Account}?:${ResourceType}/.+?"
