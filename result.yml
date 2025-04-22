@@ -12307,6 +12307,7 @@ serviceMap:
     - ec2:SourceInstanceARN
     - ssm:AutoApprove
     - ssm:DocumentCategories
+    - ssm:DocumentType
     - ssm:Overwrite
     - ssm:Policies
     - ssm:Recursive
@@ -17942,6 +17943,7 @@ serviceMap:
     - CancelSubscription
     - Chat
     - ChatSync
+    - CheckDocumentAccess
     - CreateApplication
     - CreateDataAccessor
     - CreateDataSource
@@ -19006,6 +19008,7 @@ serviceMap:
     - apigateway:Request/ApiName
     - apigateway:Request/AuthorizerType
     - apigateway:Request/AuthorizerUri
+    - apigateway:Request/CognitoUserPoolProviderArn
     - apigateway:Request/DisableExecuteApiEndpoint
     - apigateway:Request/DomainNameArn
     - apigateway:Request/EndpointType
@@ -19020,6 +19023,7 @@ serviceMap:
     - apigateway:Resource/ApiName
     - apigateway:Resource/AuthorizerType
     - apigateway:Resource/AuthorizerUri
+    - apigateway:Resource/CognitoUserPoolProviderArn
     - apigateway:Resource/DisableExecuteApiEndpoint
     - apigateway:Resource/EndpointType
     - apigateway:Resource/MtlsTrustStoreUri
