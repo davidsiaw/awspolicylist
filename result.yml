@@ -21385,6 +21385,7 @@ serviceMap:
     - RunTask
     - StartTask
     - StartTelemetrySession
+    - StopServiceDeployment
     - StopTask
     - SubmitAttachmentStateChanges
     - SubmitContainerStateChange
@@ -21552,6 +21553,7 @@ serviceMap:
     - CreateCustomDomainAssociation
     - CreateEndpointAccess
     - CreateNamespace
+    - CreateReservation
     - CreateScheduledAction
     - CreateSnapshot
     - CreateSnapshotCopyConfiguration
@@ -21573,6 +21575,8 @@ serviceMap:
     - GetManagedWorkgroup
     - GetNamespace
     - GetRecoveryPoint
+    - GetReservation
+    - GetReservationOffering
     - GetResourcePolicy
     - GetScheduledAction
     - GetSnapshot
@@ -21585,6 +21589,8 @@ serviceMap:
     - ListManagedWorkgroups
     - ListNamespaces
     - ListRecoveryPoints
+    - ListReservationOfferings
+    - ListReservations
     - ListScheduledActions
     - ListSnapshotCopyConfigurations
     - ListSnapshots
@@ -23577,6 +23583,7 @@ serviceMap:
     - GetPrimaryEmail
     - GetRegionOptStatus
     - ListRegions
+    - PutAccountName
     - PutAlternateContact
     - PutContactInformation
     - StartPrimaryEmailUpdate
