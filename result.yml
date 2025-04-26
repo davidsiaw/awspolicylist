@@ -2708,6 +2708,7 @@ serviceMap:
     - UntagResource
     - UpdateAuthGrant
     - UpdateOAuthAppConnection
+    - UpdatePlugin
     - UpdateTroubleshootingCommandResult
     - UsePlugin
     - VerifyOAuthAppConnection
