@@ -3489,16 +3489,21 @@ serviceMap:
     Actions:
     - AllowVendedLogDeliveryForResource
     - AssociateAlias
+    - AssociateDistributionTenantWebACL
+    - AssociateDistributionWebACL
     - CopyDistribution
     - CreateAnycastIpList
     - CreateCachePolicy
     - CreateCloudFrontOriginAccessIdentity
+    - CreateConnectionGroup
     - CreateContinuousDeploymentPolicy
     - CreateDistribution
+    - CreateDistributionTenant
     - CreateFieldLevelEncryptionConfig
     - CreateFieldLevelEncryptionProfile
     - CreateFunction
     - CreateInvalidation
+    - CreateInvalidationForDistributionTenant
     - CreateKeyGroup
     - CreateKeyValueStore
     - CreateMonitoringSubscription
@@ -3514,8 +3519,10 @@ serviceMap:
     - DeleteAnycastIpList
     - DeleteCachePolicy
     - DeleteCloudFrontOriginAccessIdentity
+    - DeleteConnectionGroup
     - DeleteContinuousDeploymentPolicy
     - DeleteDistribution
+    - DeleteDistributionTenant
     - DeleteFieldLevelEncryptionConfig
     - DeleteFieldLevelEncryptionProfile
     - DeleteFunction
@@ -3531,23 +3538,31 @@ serviceMap:
     - DeleteVpcOrigin
     - DescribeFunction
     - DescribeKeyValueStore
+    - DisassociateDistributionTenantWebACL
+    - DisassociateDistributionWebACL
     - GetAnycastIpList
     - GetCachePolicy
     - GetCachePolicyConfig
     - GetCloudFrontOriginAccessIdentity
     - GetCloudFrontOriginAccessIdentityConfig
+    - GetConnectionGroup
+    - GetConnectionGroupByRoutingEndpoint
     - GetContinuousDeploymentPolicy
     - GetContinuousDeploymentPolicyConfig
     - GetDistribution
     - GetDistributionConfig
+    - GetDistributionTenant
+    - GetDistributionTenantByDomain
     - GetFieldLevelEncryption
     - GetFieldLevelEncryptionConfig
     - GetFieldLevelEncryptionProfile
     - GetFieldLevelEncryptionProfileConfig
     - GetFunction
     - GetInvalidation
+    - GetInvalidationForDistributionTenant
     - GetKeyGroup
     - GetKeyGroupConfig
+    - GetManagedCertificateDetails
     - GetMonitoringSubscription
     - GetOriginAccessControl
     - GetOriginAccessControlConfig
@@ -3566,10 +3581,14 @@ serviceMap:
     - ListCachePolicies
     - ListCloudFrontOriginAccessIdentities
     - ListConflictingAliases
+    - ListConnectionGroups
     - ListContinuousDeploymentPolicies
+    - ListDistributionTenants
+    - ListDistributionTenantsByCustomization
     - ListDistributions
     - ListDistributionsByAnycastIpListId
     - ListDistributionsByCachePolicyId
+    - ListDistributionsByConnectionMode
     - ListDistributionsByKeyGroup
     - ListDistributionsByLambdaFunction
     - ListDistributionsByOriginRequestPolicyId
@@ -3577,10 +3596,12 @@ serviceMap:
     - ListDistributionsByResponseHeadersPolicyId
     - ListDistributionsByVpcOriginId
     - ListDistributionsByWebACLId
+    - ListDomainConflicts
     - ListFieldLevelEncryptionConfigs
     - ListFieldLevelEncryptionProfiles
     - ListFunctions
     - ListInvalidations
+    - ListInvalidationsForDistributionTenant
     - ListKeyGroups
     - ListKeyValueStores
     - ListOriginAccessControls
@@ -3600,9 +3621,12 @@ serviceMap:
     - UntagResource
     - UpdateCachePolicy
     - UpdateCloudFrontOriginAccessIdentity
+    - UpdateConnectionGroup
     - UpdateContinuousDeploymentPolicy
     - UpdateDistribution
+    - UpdateDistributionTenant
     - UpdateDistributionWithStagingConfig
+    - UpdateDomainAssociation
     - UpdateFieldLevelEncryptionConfig
     - UpdateFieldLevelEncryptionProfile
     - UpdateFunction
@@ -3616,6 +3640,7 @@ serviceMap:
     - UpdateSavingsPlan
     - UpdateStreamingDistribution
     - UpdateVpcOrigin
+    - VerifyDnsConfiguration
     ARNFormat: arn:aws:cloudfront:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:cloudfront:.+:[0-9]+:.+"
     conditionKeys:
@@ -7076,9 +7101,6 @@ serviceMap:
     - ApplyPendingMaintenanceAction
     - AssociateExtensionPack
     - BatchStartRecommendations
-    - CancelMetadataModelAssessment
-    - CancelMetadataModelConversion
-    - CancelMetadataModelExport
     - CancelReplicationTaskAssessmentRun
     - CreateDataMigration
     - CreateDataProvider
@@ -7112,7 +7134,6 @@ serviceMap:
     - DescribeConnections
     - DescribeConversionConfiguration
     - DescribeDataMigrations
-    - DescribeDataProviders
     - DescribeEndpointSettings
     - DescribeEndpointTypes
     - DescribeEndpoints
@@ -7120,19 +7141,12 @@ serviceMap:
     - DescribeEventCategories
     - DescribeEventSubscriptions
     - DescribeEvents
-    - DescribeExtensionPackAssociations
     - DescribeFleetAdvisorCollectors
     - DescribeFleetAdvisorDatabases
     - DescribeFleetAdvisorLsaAnalysis
     - DescribeFleetAdvisorSchemaObjectSummary
     - DescribeFleetAdvisorSchemas
-    - DescribeInstanceProfiles
-    - DescribeMetadataModelAssessments
-    - DescribeMetadataModelConversions
-    - DescribeMetadataModelExportsAsScript
-    - DescribeMetadataModelExportsToTarget
     - DescribeMetadataModelImports
-    - DescribeMigrationProjects
     - DescribeOrderableReplicationInstances
     - DescribePendingMaintenanceActions
     - DescribeRecommendationLimitations
@@ -7150,9 +7164,7 @@ serviceMap:
     - DescribeReplications
     - DescribeSchemas
     - DescribeTableStatistics
-    - DisassociateExtensionPack
     - ExportMetadataModelAssessment
-    - GetMetadataModel
     - ImportCertificate
     - ListDataProviders
     - ListExtensionPacks
@@ -7163,15 +7175,11 @@ serviceMap:
     - ListMetadataModelExports
     - ListMigrationProjects
     - ListTagsForResource
-    - ModifyConversionConfiguration
     - ModifyDataMigration
-    - ModifyDataProvider
     - ModifyEndpoint
     - ModifyEventSubscription
     - ModifyFleetAdvisorCollector
     - ModifyFleetAdvisorCollectorStatuses
-    - ModifyInstanceProfile
-    - ModifyMigrationProject
     - ModifyReplicationConfig
     - ModifyReplicationInstance
     - ModifyReplicationSubnetGroup
@@ -7184,10 +7192,8 @@ serviceMap:
     - RemoveTagsFromResource
     - RunFleetAdvisorLsaAnalysis
     - StartDataMigration
-    - StartExtensionPackAssociation
     - StartMetadataModelAssessment
     - StartMetadataModelConversion
-    - StartMetadataModelExportAsScript
     - StartMetadataModelExportAsScripts
     - StartMetadataModelExportToTarget
     - StartMetadataModelImport
@@ -8915,6 +8921,7 @@ serviceMap:
     - aws:TagKeys
     - bedrock:GuardrailIdentifier
     - bedrock:InferenceProfileArn
+    - bedrock:InlineAgentName
     - bedrock:PromptRouterArn
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
     HasResource: true
@@ -16889,6 +16896,7 @@ serviceMap:
     - DeleteCluster
     - DeleteMultiRegionClusters
     - GetCluster
+    - GetVpcEndpointServiceName
     - ListClusters
     - ListTagsForResource
     - TagResource
