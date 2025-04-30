@@ -1184,9 +1184,12 @@ serviceMap:
     StringPrefix: ssm-guiconnect
     Actions:
     - CancelConnection
+    - DeleteConnectionRecordingPreferences
     - GetConnection
+    - GetConnectionRecordingPreferences
     - ListConnections
     - StartConnection
+    - UpdateConnectionRecordingPreferences
     HasResource: false
   AWS Marketplace Metering Service:
     StringPrefix: aws-marketplace
@@ -1774,6 +1777,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - deadline:AssociatedMembershipLevel
+    - deadline:CalledAction
     - deadline:FarmMembershipLevels
     - deadline:FleetMembershipLevels
     - deadline:JobMembershipLevels
@@ -3826,6 +3830,7 @@ serviceMap:
     - ListShards
     - ListStreamConsumers
     - ListStreams
+    - ListTagsForResource
     - ListTagsForStream
     - MergeShards
     - PutRecord
@@ -3837,6 +3842,8 @@ serviceMap:
     - StartStreamEncryption
     - StopStreamEncryption
     - SubscribeToShard
+    - TagResource
+    - UntagResource
     - UpdateShardCount
     - UpdateStreamMode
     ARNFormat: arn:aws:kinesis:${Region}:${Account}:${ResourceType}/${ResourceName}
@@ -12218,6 +12225,7 @@ serviceMap:
     - DescribeSessions
     - DisassociateOpsItemRelatedItem
     - ExecuteAPI
+    - GetAccessToken
     - GetAutomationExecution
     - GetCalendar
     - GetCalendarState
@@ -12283,6 +12291,7 @@ serviceMap:
     - ResumeSession
     - SendAutomationSignal
     - SendCommand
+    - StartAccessRequest
     - StartAssociationsOnce
     - StartAutomationExecution
     - StartChangeRequestExecution
@@ -12314,6 +12323,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - ec2:SourceInstanceARN
+    - ssm:AccessRequestId
     - ssm:AutoApprove
     - ssm:DocumentCategories
     - ssm:DocumentType
@@ -19956,6 +19966,7 @@ serviceMap:
     - AssociateIpamByoasn
     - AssociateIpamResourceDiscovery
     - AssociateNatGatewayAddress
+    - AssociateRouteServer
     - AssociateRouteTable
     - AssociateSecurityGroupVpc
     - AssociateSubnetCidrBlock
@@ -20039,6 +20050,9 @@ serviceMap:
     - CreateReservedInstancesListing
     - CreateRestoreImageTask
     - CreateRoute
+    - CreateRouteServer
+    - CreateRouteServerEndpoint
+    - CreateRouteServerPeer
     - CreateRouteTable
     - CreateSecurityGroup
     - CreateSnapshot
@@ -20120,6 +20134,9 @@ serviceMap:
     - DeleteQueuedReservedInstances
     - DeleteResourcePolicy
     - DeleteRoute
+    - DeleteRouteServer
+    - DeleteRouteServerEndpoint
+    - DeleteRouteServerPeer
     - DeleteRouteTable
     - DeleteSecurityGroup
     - DeleteSnapshot
@@ -20266,6 +20283,9 @@ serviceMap:
     - DescribeReservedInstancesListings
     - DescribeReservedInstancesModifications
     - DescribeReservedInstancesOfferings
+    - DescribeRouteServerEndpoints
+    - DescribeRouteServerPeers
+    - DescribeRouteServers
     - DescribeRouteTables
     - DescribeScheduledInstanceAvailability
     - DescribeScheduledInstances
@@ -20344,6 +20364,7 @@ serviceMap:
     - DisableImageDeprecation
     - DisableImageDeregistrationProtection
     - DisableIpamOrganizationAdminAccount
+    - DisableRouteServerPropagation
     - DisableSerialConsoleAccess
     - DisableSnapshotBlockPublicAccess
     - DisableTransitGatewayRouteTablePropagation
@@ -20359,6 +20380,7 @@ serviceMap:
     - DisassociateIpamByoasn
     - DisassociateIpamResourceDiscovery
     - DisassociateNatGatewayAddress
+    - DisassociateRouteServer
     - DisassociateRouteTable
     - DisassociateSecurityGroupVpc
     - DisassociateSubnetCidrBlock
@@ -20380,6 +20402,7 @@ serviceMap:
     - EnableImageDeregistrationProtection
     - EnableIpamOrganizationAdminAccount
     - EnableReachabilityAnalyzerOrganizationSharing
+    - EnableRouteServerPropagation
     - EnableSerialConsoleAccess
     - EnableSnapshotBlockPublicAccess
     - EnableTransitGatewayRouteTablePropagation
@@ -20427,6 +20450,9 @@ serviceMap:
     - GetPasswordData
     - GetReservedInstancesExchangeQuote
     - GetResourcePolicy
+    - GetRouteServerAssociations
+    - GetRouteServerPropagations
+    - GetRouteServerRoutingDatabase
     - GetSecurityGroupsForVpc
     - GetSerialConsoleAccessStatus
     - GetSnapshotBlockPublicAccessState
@@ -20492,6 +20518,7 @@ serviceMap:
     - ModifyNetworkInterfaceAttribute
     - ModifyPrivateDnsNameOptions
     - ModifyReservedInstances
+    - ModifyRouteServer
     - ModifySecurityGroupRules
     - ModifySnapshotAttribute
     - ModifySnapshotTier
@@ -20622,6 +20649,7 @@ serviceMap:
     - ec2:AuthorizedUser
     - ec2:AutoPlacement
     - ec2:AvailabilityZone
+    - ec2:AvailabilityZoneId
     - ec2:CapacityReservationFleet
     - ec2:ClientRootCertificateChainArn
     - ec2:CloudwatchLogGroupArn
@@ -20639,6 +20667,7 @@ serviceMap:
     - ec2:Encrypted
     - ec2:EndDate
     - ec2:EndDateType
+    - ec2:EphemeralStorage
     - ec2:FisActionId
     - ec2:FisTargetArns
     - ec2:GatewayType
