@@ -14077,13 +14077,20 @@ serviceMap:
     - ListPolicies
     - ListPolicyStores
     - ListPolicyTemplates
+    - ListTagsForResource
     - PutSchema
+    - TagResource
+    - UntagResource
     - UpdateIdentitySource
     - UpdatePolicy
     - UpdatePolicyStore
     - UpdatePolicyTemplate
     ARNFormat: arn:aws:verifiedpermissions:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:verifiedpermissions:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Lake Formation:
     StringPrefix: lakeformation
@@ -17964,6 +17971,7 @@ serviceMap:
     - Chat
     - ChatSync
     - CheckDocumentAccess
+    - CreateAnonymousWebExperienceUrl
     - CreateApplication
     - CreateDataAccessor
     - CreateDataSource
