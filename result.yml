@@ -21241,7 +21241,7 @@ serviceMap:
     ARNFormat: arn:${Partition}:resource-explorer:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:resource-explorer:.+"
     HasResource: false
-  Amazon CloudWatch Network Monitor:
+  Amazon CloudWatch Network Synthetic Monitor:
     StringPrefix: networkmonitor
     Actions:
     - CreateMonitor
