@@ -740,20 +740,28 @@ serviceMap:
     - CreateBillOfMaterialsImportJob
     - CreateDataIntegrationFlow
     - CreateDataLakeDataset
+    - CreateDataLakeNamespace
     - CreateInstance
     - CreateSSOApplication
     - DeleteDataIntegrationFlow
     - DeleteDataLakeDataset
+    - DeleteDataLakeNamespace
     - DeleteInstance
     - DeleteSSOApplication
     - DescribeInstance
     - GetBillOfMaterialsImportJob
+    - GetDataIntegrationEvent
     - GetDataIntegrationFlow
+    - GetDataIntegrationFlowExecution
     - GetDataLakeDataset
+    - GetDataLakeNamespace
     - GetInstance
     - ListAdminUsers
+    - ListDataIntegrationEvents
+    - ListDataIntegrationFlowExecutions
     - ListDataIntegrationFlows
     - ListDataLakeDatasets
+    - ListDataLakeNamespaces
     - ListInstances
     - ListTagsForResource
     - RemoveAdminPermissionsForUser
@@ -762,6 +770,7 @@ serviceMap:
     - UntagResource
     - UpdateDataIntegrationFlow
     - UpdateDataLakeDataset
+    - UpdateDataLakeNamespace
     - UpdateInstance
     ARNFormat: arn:aws:scn:${Region}:${Account}:instance/
     ARNRegex: "^arn:aws:scn:.+"
@@ -2687,6 +2696,7 @@ serviceMap:
     - CreateOAuthAppConnection
     - CreatePlugin
     - DeleteAssignment
+    - DeleteConversation
     - DeleteOAuthAppConnection
     - DeletePlugin
     - GenerateCodeFromCommands
@@ -2711,6 +2721,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAuthGrant
+    - UpdateConversation
     - UpdateOAuthAppConnection
     - UpdatePlugin
     - UpdateTroubleshootingCommandResult
@@ -8664,7 +8675,7 @@ serviceMap:
     - ListNodes
     - ListOfferings
     - ListReservations
-    - ListSdiSource
+    - ListSdiSources
     - ListSignalMaps
     - ListTagsForResource
     - ListVersions
@@ -15515,6 +15526,7 @@ serviceMap:
     - ListGroups
     - ListTagsForResource
     - StartCanary
+    - StartCanaryDryRun
     - StopCanary
     - TagResource
     - UntagResource
