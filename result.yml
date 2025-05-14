@@ -16918,6 +16918,7 @@ serviceMap:
   Amazon Aurora DSQL:
     StringPrefix: dsql
     Actions:
+    - AddPeerCluster
     - CreateCluster
     - CreateMultiRegionClusters
     - DbConnect
@@ -16928,6 +16929,9 @@ serviceMap:
     - GetVpcEndpointServiceName
     - ListClusters
     - ListTagsForResource
+    - PutMultiRegionProperties
+    - PutWitnessRegion
+    - RemovePeerCluster
     - TagResource
     - UntagResource
     - UpdateCluster
@@ -17055,6 +17059,7 @@ serviceMap:
     ARNRegex: "^arn:aws:license-manager:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - license-manager:ResourceTag/${TagKey}
     HasResource: true
@@ -20056,6 +20061,8 @@ serviceMap:
     - CreateLocalGatewayRouteTablePermission
     - CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
     - CreateLocalGatewayRouteTableVpcAssociation
+    - CreateLocalGatewayVirtualInterface
+    - CreateLocalGatewayVirtualInterfaceGroup
     - CreateManagedPrefixList
     - CreateNatGateway
     - CreateNetworkAcl
@@ -20139,6 +20146,8 @@ serviceMap:
     - DeleteLocalGatewayRouteTablePermission
     - DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
     - DeleteLocalGatewayRouteTableVpcAssociation
+    - DeleteLocalGatewayVirtualInterface
+    - DeleteLocalGatewayVirtualInterfaceGroup
     - DeleteManagedPrefixList
     - DeleteNatGateway
     - DeleteNetworkAcl
@@ -20293,6 +20302,7 @@ serviceMap:
     - DescribeNetworkInterfaceAttribute
     - DescribeNetworkInterfacePermissions
     - DescribeNetworkInterfaces
+    - DescribeOutpostLags
     - DescribePlacementGroups
     - DescribePrefixLists
     - DescribePrincipalIdFormat
@@ -20313,6 +20323,7 @@ serviceMap:
     - DescribeSecurityGroupRules
     - DescribeSecurityGroupVpcAssociations
     - DescribeSecurityGroups
+    - DescribeServiceLinkVirtualInterfaces
     - DescribeSnapshotAttribute
     - DescribeSnapshotTierStatus
     - DescribeSnapshots
