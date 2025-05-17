@@ -875,6 +875,7 @@ serviceMap:
     - BatchGetProfile
     - CreateCalculatedAttributeDefinition
     - CreateDomain
+    - CreateDomainLayout
     - CreateEventStream
     - CreateEventTrigger
     - CreateIntegrationWorkflow
@@ -885,6 +886,7 @@ serviceMap:
     - CreateSnapshot
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
+    - DeleteDomainLayout
     - DeleteEventStream
     - DeleteEventTrigger
     - DeleteIntegration
@@ -899,6 +901,7 @@ serviceMap:
     - GetCalculatedAttributeDefinition
     - GetCalculatedAttributeForProfile
     - GetDomain
+    - GetDomainLayout
     - GetEventStream
     - GetEventTrigger
     - GetIdentityResolutionJob
@@ -917,6 +920,7 @@ serviceMap:
     - ListAccountIntegrations
     - ListCalculatedAttributeDefinitions
     - ListCalculatedAttributesForProfile
+    - ListDomainLayouts
     - ListDomains
     - ListEventStreams
     - ListEventTriggers
@@ -940,6 +944,7 @@ serviceMap:
     - UntagResource
     - UpdateCalculatedAttributeDefinition
     - UpdateDomain
+    - UpdateDomainLayout
     - UpdateEventTrigger
     - UpdateProfile
     ARNFormat: arn:aws:profile:${Region}:${Account}:${ResourceType}/${ResourceName}
@@ -11115,6 +11120,7 @@ serviceMap:
     - GetThirdPartyJobDetails
     - ListActionExecutions
     - ListActionTypes
+    - ListDeployActionExecutionTargets
     - ListPipelineExecutions
     - ListPipelines
     - ListRuleExecutions
@@ -17001,6 +17007,7 @@ serviceMap:
     - CreateCase
     - DescribeAttachment
     - DescribeCaseAttributes
+    - DescribeCaseOptions
     - DescribeCases
     - DescribeCommunication
     - DescribeCommunications
@@ -17023,6 +17030,7 @@ serviceMap:
     - ResolveCase
     - SearchForCases
     - StartInteraction
+    - UpdateCaseSeverity
     HasResource: false
   Amazon Polly:
     StringPrefix: polly
