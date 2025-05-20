@@ -2851,7 +2851,7 @@ serviceMap:
     - identitystore:GroupId
     - identitystore:UserId
     HasResource: true
-  AWS IAM Identity Center (successor to AWS Single Sign-On) directory:
+  AWS IAM Identity Center directory:
     StringPrefix: sso-directory
     Actions:
     - AddMemberToGroup
@@ -12478,7 +12478,7 @@ serviceMap:
     - ssm:resourceTag/aws:ssmmessages:target-id
     - ssm:resourceTag/tag-key
     HasResource: true
-  AWS IAM Identity Center (successor to AWS Single Sign-On):
+  AWS IAM Identity Center:
     StringPrefix: sso
     Actions:
     - AssociateDirectory
