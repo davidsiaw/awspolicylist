@@ -2261,6 +2261,8 @@ serviceMap:
     - connect:ContactInitiationMethod
     - connect:FlowType
     - connect:InstanceId
+    - connect:ListRealtimeContactAnalysisSegmentsByOutputType
+    - connect:ListRealtimeContactAnalysisSegmentsBySegmentType
     - connect:MonitorCapabilities
     - connect:SearchContactsByContactAnalysis
     - connect:SearchTag/${TagKey}
@@ -8290,6 +8292,7 @@ serviceMap:
     - EnableInsightRules
     - EnableTopologyDiscovery
     - GenerateQuery
+    - GenerateQueryResultsSummary
     - GetDashboard
     - GetInsightRuleReport
     - GetMetricData
@@ -14196,6 +14199,15 @@ serviceMap:
     - sagemaker:WorkteamArn
     - sagemaker:WorkteamType
     HasResource: true
+  AWS Service for managing account level display settings:
+    StringPrefix: uxc
+    Actions:
+    - DeleteAccountColor
+    - GetAccountColor
+    - PutAccountColor
+    ARNFormat: arn:${Partition}:uxc:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:${Partition}:uxc:.+:.+:.+"
+    HasResource: false
   Amazon Verified Permissions:
     StringPrefix: verifiedpermissions
     Actions:
