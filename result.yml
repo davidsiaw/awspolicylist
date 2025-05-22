@@ -3822,6 +3822,8 @@ serviceMap:
     - ListAddons
     - ListAssociatedAccessPolicies
     - ListClusters
+    - ListDashboardData
+    - ListDashboardResources
     - ListEksAnywhereSubscriptions
     - ListFargateProfiles
     - ListIdentityProviderConfigs
@@ -17064,18 +17066,22 @@ serviceMap:
     Actions:
     - AddPeerCluster
     - CreateCluster
-    - CreateMultiRegionClusters
     - DbConnect
     - DbConnectAdmin
     - DeleteCluster
-    - DeleteMultiRegionClusters
+    - GetBackupJob
     - GetCluster
+    - GetRestoreJob
     - GetVpcEndpointServiceName
     - ListClusters
     - ListTagsForResource
     - PutMultiRegionProperties
     - PutWitnessRegion
     - RemovePeerCluster
+    - StartBackupJob
+    - StartRestoreJob
+    - StopBackupJob
+    - StopRestoreJob
     - TagResource
     - UntagResource
     - UpdateCluster
@@ -18561,8 +18567,6 @@ serviceMap:
     StringPrefix: iotfleetwise
     Actions:
     - AssociateVehicleFleet
-    - BatchCreateVehicle
-    - BatchUpdateVehicle
     - CreateCampaign
     - CreateDecoderManifest
     - CreateFleet
@@ -22460,6 +22464,7 @@ serviceMap:
     - GetDICOMInstance
     - GetDICOMInstanceFrames
     - GetDICOMInstanceMetadata
+    - GetDICOMSeriesMetadata
     - GetDatastore
     - GetImageFrame
     - GetImageSet
