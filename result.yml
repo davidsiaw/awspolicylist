@@ -125,7 +125,6 @@ serviceMap:
     - CopyQApp
     - CreateLibraryItem
     - CreateLibraryItemReview
-    - CreatePresignedUrl
     - CreateQApp
     - CreateSubscriptionToken
     - DeleteLibraryItem
@@ -139,8 +138,6 @@ serviceMap:
     - GetQAppSession
     - GetQAppSessionMetadata
     - ImportDocument
-    - ImportDocumentToQApp
-    - ImportDocumentToQAppSession
     - ListCategories
     - ListLibraryItems
     - ListQAppSessionData
@@ -8944,8 +8941,10 @@ serviceMap:
     - GetDataAutomationStatus
     - GetDataSource
     - GetEvaluationJob
+    - GetExecutionFlowSnapshot
     - GetFlow
     - GetFlowAlias
+    - GetFlowExecution
     - GetFlowVersion
     - GetFoundationModel
     - GetFoundationModelAvailability
@@ -8991,6 +8990,8 @@ serviceMap:
     - ListDataSources
     - ListEvaluationJobs
     - ListFlowAliases
+    - ListFlowExecutionEvents
+    - ListFlowExecutions
     - ListFlowVersions
     - ListFlows
     - ListFoundationModelAgreementOffers
@@ -9027,8 +9028,10 @@ serviceMap:
     - Rerank
     - Retrieve
     - RetrieveAndGenerate
+    - StartFlowExecution
     - StartIngestionJob
     - StopEvaluationJob
+    - StopFlowExecution
     - StopIngestionJob
     - StopModelCustomizationJob
     - StopModelInvocationJob
@@ -14320,17 +14323,20 @@ serviceMap:
     - CreateAlertManagerAlerts
     - CreateAlertManagerDefinition
     - CreateLoggingConfiguration
+    - CreateQueryLoggingConfiguration
     - CreateRuleGroupsNamespace
     - CreateScraper
     - CreateWorkspace
     - DeleteAlertManagerDefinition
     - DeleteAlertManagerSilence
     - DeleteLoggingConfiguration
+    - DeleteQueryLoggingConfiguration
     - DeleteRuleGroupsNamespace
     - DeleteScraper
     - DeleteWorkspace
     - DescribeAlertManagerDefinition
     - DescribeLoggingConfiguration
+    - DescribeQueryLoggingConfiguration
     - DescribeRuleGroupsNamespace
     - DescribeScraper
     - DescribeWorkspace
@@ -14359,6 +14365,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateLoggingConfiguration
+    - UpdateQueryLoggingConfiguration
     - UpdateScraper
     - UpdateWorkspaceAlias
     - UpdateWorkspaceConfiguration
