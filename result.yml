@@ -1229,23 +1229,19 @@ serviceMap:
     StringPrefix: aws-marketplace
     Actions:
     - CancelChangeSet
-    - CompleteTask
     - DeleteResourcePolicy
     - DescribeAssessment
     - DescribeChangeSet
     - DescribeEntity
-    - DescribeTask
     - GetResourcePolicy
     - ListAssessments
     - ListChangeSets
     - ListEntities
     - ListTagsForResource
-    - ListTasks
     - PutResourcePolicy
     - StartChangeSet
     - TagResource
     - UntagResource
-    - UpdateTask
     ARNFormat: arn:aws:aws-marketplace:${Region}:${Account}:${Catalog}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:aws-marketplace:.+"
     conditionKeys:
