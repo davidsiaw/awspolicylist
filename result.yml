@@ -2617,8 +2617,10 @@ serviceMap:
     - GetCommitmentPurchaseAnalysis
     - GetConsoleActionSetEnforced
     - GetCostAndUsage
+    - GetCostAndUsageComparisons
     - GetCostAndUsageWithResources
     - GetCostCategories
+    - GetCostComparisonDrivers
     - GetCostForecast
     - GetDimensionValues
     - GetPreferences
@@ -7373,12 +7375,15 @@ serviceMap:
     - CreateFirewallPolicy
     - CreateRuleGroup
     - CreateTLSInspectionConfiguration
+    - CreateVpcEndpointAssociation
     - DeleteFirewall
     - DeleteFirewallPolicy
     - DeleteResourcePolicy
     - DeleteRuleGroup
     - DeleteTLSInspectionConfiguration
+    - DeleteVpcEndpointAssociation
     - DescribeFirewall
+    - DescribeFirewallMetadata
     - DescribeFirewallPolicy
     - DescribeFlowOperation
     - DescribeLoggingConfiguration
@@ -7386,6 +7391,7 @@ serviceMap:
     - DescribeRuleGroup
     - DescribeRuleGroupMetadata
     - DescribeTLSInspectionConfiguration
+    - DescribeVpcEndpointAssociation
     - DisassociateSubnets
     - GetAnalysisReportResults
     - ListAnalysisReports
@@ -7396,6 +7402,7 @@ serviceMap:
     - ListRuleGroups
     - ListTLSInspectionConfigurations
     - ListTagsForResource
+    - ListVpcEndpointAssociations
     - PutResourcePolicy
     - StartAnalysisReport
     - StartFlowCapture
@@ -10495,6 +10502,7 @@ serviceMap:
     - ListIntegrations
     - ListLogAnomalyDetectors
     - ListLogDeliveries
+    - ListLogGroups
     - ListLogGroupsForEntity
     - ListLogGroupsForQuery
     - ListTagsForResource
