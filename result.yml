@@ -16835,6 +16835,7 @@ serviceMap:
     - GenerateQueryResultsSummary
     - GetChannel
     - GetDashboard
+    - GetEventConfiguration
     - GetEventDataStore
     - GetEventDataStoreData
     - GetEventSelectors
@@ -16856,6 +16857,7 @@ serviceMap:
     - ListTags
     - ListTrails
     - LookupEvents
+    - PutEventConfiguration
     - PutEventSelectors
     - PutInsightSelectors
     - PutResourcePolicy
