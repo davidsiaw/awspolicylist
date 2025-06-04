@@ -3381,6 +3381,7 @@ serviceMap:
     - DeleteMatchingWorkflow
     - DeletePolicyStatement
     - DeleteSchemaMapping
+    - GenerateMatchId
     - GetIdMappingJob
     - GetIdMappingWorkflow
     - GetIdNamespace
