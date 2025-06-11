@@ -951,6 +951,29 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS WorkSpaces Managed Instances:
+    StringPrefix: workspaces-instances
+    Actions:
+    - AssociateVolume
+    - CreateVolume
+    - CreateWorkspaceInstance
+    - DeleteVolume
+    - DeleteWorkspaceInstance
+    - DisassociateVolume
+    - GetWorkspaceInstance
+    - ListInstanceTypes
+    - ListRegions
+    - ListTagsForResource
+    - ListWorkspaceInstances
+    - TagResource
+    - UntagResource
+    ARNFormat: arn:aws:workspaces-instances:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:workspaces-instances:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS CloudTrail Data:
     StringPrefix: cloudtrail-data
     Actions:
@@ -11170,15 +11193,23 @@ serviceMap:
     - BatchUpdateAutomationRules
     - BatchUpdateFindings
     - BatchUpdateStandardsControlAssociations
+    - ConnectorRegistrationsV2
     - CreateActionTarget
+    - CreateAggregatorV2
     - CreateAutomationRule
+    - CreateAutomationRuleV2
     - CreateConfigurationPolicy
+    - CreateConnectorV2
     - CreateFindingAggregator
     - CreateInsight
     - CreateMembers
+    - CreateTicketV2
     - DeclineInvitations
     - DeleteActionTarget
+    - DeleteAggregatorV2
+    - DeleteAutomationRuleV2
     - DeleteConfigurationPolicy
+    - DeleteConnectorV2
     - DeleteFindingAggregator
     - DeleteInsight
     - DeleteInvitations
@@ -11187,21 +11218,28 @@ serviceMap:
     - DescribeHub
     - DescribeOrganizationConfiguration
     - DescribeProducts
+    - DescribeProductsV2
+    - DescribeSecurityHubV2
     - DescribeStandards
     - DescribeStandardsControls
     - DisableImportFindingsForProduct
     - DisableOrganizationAdminAccount
     - DisableSecurityHub
+    - DisableSecurityHubV2
     - DisassociateFromAdministratorAccount
     - DisassociateFromMasterAccount
     - DisassociateMembers
     - EnableImportFindingsForProduct
     - EnableOrganizationAdminAccount
     - EnableSecurityHub
+    - EnableSecurityHubV2
     - GetAdhocInsightResults
     - GetAdministratorAccount
+    - GetAggregatorV2
+    - GetAutomationRuleV2
     - GetConfigurationPolicy
     - GetConfigurationPolicyAssociation
+    - GetConnectorV2
     - GetControlFindingSummary
     - GetEnabledStandards
     - GetFindingAggregator
@@ -11215,12 +11253,17 @@ serviceMap:
     - GetInvitationsCount
     - GetMasterAccount
     - GetMembers
+    - GetResourceStatisticsV2
+    - GetResourcesV2
     - GetSecurityControlDefinition
     - GetUsage
     - InviteMembers
+    - ListAggregatorV2s
     - ListAutomationRules
+    - ListAutomationRulesV2
     - ListConfigurationPolicies
     - ListConfigurationPolicyAssociations
+    - ListConnectorsV2
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
     - ListFindingAggregators
@@ -11237,7 +11280,10 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateActionTarget
+    - UpdateAggregatorV2
+    - UpdateAutomationRuleV2
     - UpdateConfigurationPolicy
+    - UpdateConnectorV2
     - UpdateFindingAggregator
     - UpdateFindings
     - UpdateInsight
@@ -11252,6 +11298,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - securityhub:ASFFSyntaxPath/${ASFFSyntaxPath}
+    - securityhub:OCSFSyntaxPath/${OCSFSyntaxPath}
     - securityhub:TargetAccount
     HasResource: true
   AWS Transform:
