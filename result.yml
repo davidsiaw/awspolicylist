@@ -10042,6 +10042,7 @@ serviceMap:
     - GetIdentityProviderByIdentifier
     - GetLogDeliveryConfiguration
     - GetSigningCertificate
+    - GetTokensFromRefreshToken
     - GetUICustomization
     - GetUser
     - GetUserAttributeVerificationCode
@@ -11560,7 +11561,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  Amazon Elastic Virtualization Service:
+  Amazon Elastic VMware Service:
     StringPrefix: evs
     Actions:
     - CreateEnvironment
