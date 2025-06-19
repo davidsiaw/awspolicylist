@@ -882,6 +882,7 @@ serviceMap:
     - CreateSegmentEstimate
     - CreateSegmentSnapshot
     - CreateSnapshot
+    - CreateUploadJob
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
     - DeleteDomainLayout
@@ -913,6 +914,8 @@ serviceMap:
     - GetSegmentSnapshot
     - GetSimilarProfiles
     - GetSnapshot
+    - GetUploadJob
+    - GetUploadJobPath
     - GetWorkflow
     - GetWorkflowSteps
     - ListAccountIntegrations
@@ -932,12 +935,15 @@ serviceMap:
     - ListRuleBasedMatches
     - ListSegmentDefinitions
     - ListTagsForResource
+    - ListUploadJobs
     - ListWorkflows
     - MergeProfiles
     - PutIntegration
     - PutProfileObject
     - PutProfileObjectType
     - SearchProfiles
+    - StartUploadJob
+    - StopUploadJob
     - TagResource
     - UntagResource
     - UpdateCalculatedAttributeDefinition
@@ -16878,6 +16884,7 @@ serviceMap:
     - GetCampaignState
     - GetCampaignStateBatch
     - GetConnectInstanceConfig
+    - GetInstanceCommunicationLimits
     - GetInstanceOnboardingJobStatus
     - ListCampaigns
     - ListConnectInstanceIntegrations
@@ -16885,6 +16892,7 @@ serviceMap:
     - PauseCampaign
     - PutConnectInstanceIntegration
     - PutDialRequestBatch
+    - PutInstanceCommunicationLimits
     - PutOutboundRequestBatch
     - PutProfileOutboundRequestBatch
     - ResumeCampaign
@@ -18943,6 +18951,42 @@ serviceMap:
     - payment-cryptography:RequestAlias
     - payment-cryptography:ResourceAliases
     - payment-cryptography:WrappingKeyIdentifier
+    HasResource: true
+  Multi-party approval:
+    StringPrefix: mpa
+    Actions:
+    - CancelSession
+    - CreateApprovalTeam
+    - CreateIdentitySource
+    - DeleteIdentitySource
+    - DeleteInactiveApprovalTeamVersion
+    - DeleteResourcePolicy
+    - GetApprovalTeam
+    - GetIdentitySource
+    - GetPolicyVersion
+    - GetResourcePolicy
+    - GetSession
+    - ListApprovalTeams
+    - ListIdentitySources
+    - ListPolicies
+    - ListPolicyVersions
+    - ListResourcePolicies
+    - ListSessions
+    - ListTagsForResource
+    - PutResourcePolicy
+    - StartActiveApprovalTeamDeletion
+    - StartSession
+    - TagResource
+    - UntagResource
+    - UpdateApprovalTeam
+    ARNFormat: arn:aws:mpa:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:mpa:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - mpa:ProtectedResourceAccount
+    - mpa:RequestedOperation
     HasResource: true
   AWS Purchase Orders Console:
     StringPrefix: purchase-orders
