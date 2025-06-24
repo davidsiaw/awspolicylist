@@ -107,6 +107,7 @@ serviceMap:
     - UpdateInvestigation
     - UpdateInvestigationEvent
     - UpdateInvestigationGroup
+    - ValidateInvestigationGroup
     ARNFormat: arn:aws:aiops:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:aiops:.+:.+:.+"
     conditionKeys:
@@ -21316,7 +21317,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  Amazon GameLift:
+  Amazon GameLift Servers:
     StringPrefix: gamelift
     Actions:
     - AcceptMatch
