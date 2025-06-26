@@ -8667,6 +8667,7 @@ serviceMap:
     - CancelDataRepositoryTask
     - CopyBackup
     - CopySnapshotAndUpdateVolume
+    - CreateAndAttachS3AccessPoint
     - CreateBackup
     - CreateDataRepositoryAssociation
     - CreateDataRepositoryTask
@@ -8692,10 +8693,12 @@ serviceMap:
     - DescribeFileCaches
     - DescribeFileSystemAliases
     - DescribeFileSystems
+    - DescribeS3AccessPointAttachments
     - DescribeSharedVpcConfiguration
     - DescribeSnapshots
     - DescribeStorageVirtualMachines
     - DescribeVolumes
+    - DetachAndDeleteS3AccessPoint
     - DisassociateFileGateway
     - DisassociateFileSystemAliases
     - GetResourcePolicy
@@ -18248,6 +18251,7 @@ serviceMap:
     - CreateAnonymousWebExperienceUrl
     - CreateApplication
     - CreateDataAccessor
+    - CreateDataAccessorWithTti
     - CreateDataSource
     - CreateIndex
     - CreateIntegration
@@ -22393,7 +22397,6 @@ serviceMap:
     - UpdateMembershipSettings
     - UpdateSSHRemote
     - UpdateUserSettings
-    - ValidateEnvironmentName
     ARNFormat: arn:aws:cloud9:${Region}:${Account}:${ResourceType}:${ResourceId}
     ARNRegex: "^arn:aws:cloud9:.+:[0-9]+:.+:.+"
     conditionKeys:
