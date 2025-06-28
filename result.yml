@@ -8088,6 +8088,62 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Service - Oracle Database@AWS:
+    StringPrefix: odb
+    Actions:
+    - AcceptMarketplaceRegistration
+    - CreateCloudAutonomousVmCluster
+    - CreateCloudExadataInfrastructure
+    - CreateCloudVmCluster
+    - CreateDbNode
+    - CreateOdbNetwork
+    - CreateOdbPeeringConnection
+    - CreateOutboundIntegration
+    - DeleteCloudAutonomousVmCluster
+    - DeleteCloudExadataInfrastructure
+    - DeleteCloudVmCluster
+    - DeleteDbNode
+    - DeleteOdbNetwork
+    - DeleteOdbPeeringConnection
+    - DeleteResourcePolicy
+    - GetCloudAutonomousVmCluster
+    - GetCloudExadataInfrastructure
+    - GetCloudExadataInfrastructureUnallocatedResources
+    - GetCloudVmCluster
+    - GetDbNode
+    - GetDbServer
+    - GetOciOnboardingStatus
+    - GetOdbNetwork
+    - GetOdbPeeringConnection
+    - GetResourcePolicy
+    - InitializeService
+    - ListAutonomousVirtualMachines
+    - ListCloudAutonomousVmClusters
+    - ListCloudExadataInfrastructures
+    - ListCloudVmClusters
+    - ListDbNodes
+    - ListDbServers
+    - ListDbSystemShapes
+    - ListGiVersions
+    - ListOdbNetworks
+    - ListOdbPeeringConnections
+    - ListSystemVersions
+    - ListTagsForResource
+    - PutResourcePolicy
+    - RebootDbNode
+    - StartDbNode
+    - StopDbNode
+    - TagResource
+    - UntagResource
+    - UpdateCloudExadataInfrastructure
+    - UpdateOdbNetwork
+    ARNFormat: arn:aws:odb:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:odb:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Elastic Container Registry Public:
     StringPrefix: ecr-public
     Actions:
@@ -14820,6 +14876,10 @@ serviceMap:
     - CreateMultiRegionResource
     - Drop
     - DropMultiRegionResource
+    - GetRecords
+    - GetShardIterator
+    - GetStream
+    - ListStreams
     - Modify
     - ModifyMultiRegionResource
     - Restore
