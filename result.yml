@@ -4985,9 +4985,11 @@ serviceMap:
     - ConditionCheckItem
     - CreateBackup
     - CreateGlobalTable
+    - CreateGlobalTableWitness
     - CreateTable
     - CreateTableReplica
     - DeleteBackup
+    - DeleteGlobalTableWitness
     - DeleteItem
     - DeleteResourcePolicy
     - DeleteTable
@@ -19375,11 +19377,16 @@ serviceMap:
   Amazon API Gateway Management V2:
     StringPrefix: apigateway
     Actions:
+    - CreateRoutingRule
     - DELETE
+    - DeleteRoutingRule
     - GET
+    - GetRoutingRule
+    - ListRoutingRule
     - PATCH
     - POST
     - PUT
+    - UpdateRoutingRule
     ARNFormat: arn:aws:apigateway:${Region}::${ApiGatewayResourcePath}
     ARNRegex: "^arn:aws:apigateway:.+"
     conditionKeys:
@@ -19389,11 +19396,14 @@ serviceMap:
     - apigateway:Request/ApiName
     - apigateway:Request/AuthorizerType
     - apigateway:Request/AuthorizerUri
+    - apigateway:Request/ConditionBasePaths
     - apigateway:Request/DisableExecuteApiEndpoint
     - apigateway:Request/EndpointType
     - apigateway:Request/MtlsTrustStoreUri
     - apigateway:Request/MtlsTrustStoreVersion
+    - apigateway:Request/Priority
     - apigateway:Request/RouteAuthorizationType
+    - apigateway:Request/RoutingMode
     - apigateway:Request/SecurityPolicy
     - apigateway:Request/StageName
     - apigateway:Resource/AccessLoggingDestination
@@ -19402,11 +19412,14 @@ serviceMap:
     - apigateway:Resource/ApiName
     - apigateway:Resource/AuthorizerType
     - apigateway:Resource/AuthorizerUri
+    - apigateway:Resource/ConditionBasePaths
     - apigateway:Resource/DisableExecuteApiEndpoint
     - apigateway:Resource/EndpointType
     - apigateway:Resource/MtlsTrustStoreUri
     - apigateway:Resource/MtlsTrustStoreVersion
+    - apigateway:Resource/Priority
     - apigateway:Resource/RouteAuthorizationType
+    - apigateway:Resource/RoutingMode
     - apigateway:Resource/SecurityPolicy
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -19445,6 +19458,7 @@ serviceMap:
     - apigateway:Request/MtlsTrustStoreUri
     - apigateway:Request/MtlsTrustStoreVersion
     - apigateway:Request/RouteAuthorizationType
+    - apigateway:Request/RoutingMode
     - apigateway:Request/SecurityPolicy
     - apigateway:Request/StageName
     - apigateway:Resource/AccessLoggingDestination
@@ -19459,6 +19473,7 @@ serviceMap:
     - apigateway:Resource/MtlsTrustStoreUri
     - apigateway:Resource/MtlsTrustStoreVersion
     - apigateway:Resource/RouteAuthorizationType
+    - apigateway:Resource/RoutingMode
     - apigateway:Resource/SecurityPolicy
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
