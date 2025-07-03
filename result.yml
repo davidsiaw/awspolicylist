@@ -12669,6 +12669,7 @@ serviceMap:
     - ssm:AutoApprove
     - ssm:DocumentCategories
     - ssm:DocumentType
+    - ssm:InventoryTypeName
     - ssm:Overwrite
     - ssm:Policies
     - ssm:Recursive
@@ -18343,6 +18344,7 @@ serviceMap:
     - CheckDocumentAccess
     - CreateAnonymousWebExperienceUrl
     - CreateApplication
+    - CreateChatResponseConfiguration
     - CreateDataAccessor
     - CreateDataAccessorWithTti
     - CreateDataSource
@@ -18357,6 +18359,7 @@ serviceMap:
     - DeleteApplication
     - DeleteAttachment
     - DeleteChatControlsConfiguration
+    - DeleteChatResponseConfiguration
     - DeleteConversation
     - DeleteDataAccessor
     - DeleteDataSource
@@ -18371,6 +18374,7 @@ serviceMap:
     - DisassociatePermission
     - GetApplication
     - GetChatControlsConfiguration
+    - GetChatResponseConfiguration
     - GetDataAccessor
     - GetDataSource
     - GetGroup
@@ -18385,6 +18389,7 @@ serviceMap:
     - GetWebExperience
     - ListApplications
     - ListAttachments
+    - ListChatResponseConfigurations
     - ListConversations
     - ListDataAccessors
     - ListDataSourceSyncJobs
@@ -18415,6 +18420,7 @@ serviceMap:
     - UntagResource
     - UpdateApplication
     - UpdateChatControlsConfiguration
+    - UpdateChatResponseConfiguration
     - UpdateDataAccessor
     - UpdateDataSource
     - UpdateIndex
@@ -22770,6 +22776,7 @@ serviceMap:
     - CreateApplicationAssociation
     - CreateDataIntegration
     - CreateDataIntegrationAssociation
+    - CreateDataIntegrationSchedule
     - CreateEventIntegration
     - CreateEventIntegrationAssociation
     - DeleteApplication
@@ -22780,19 +22787,25 @@ serviceMap:
     - DeleteEventIntegrationAssociation
     - GetApplication
     - GetDataIntegration
+    - GetDataIntegrationExecution
+    - GetDataIntegrationSchedule
     - GetEventIntegration
     - ListApplicationAssociations
     - ListApplications
     - ListDataIntegrationAssociations
+    - ListDataIntegrationExecutions
+    - ListDataIntegrationSchedules
     - ListDataIntegrations
     - ListEventIntegrationAssociations
     - ListEventIntegrations
     - ListTagsForResource
+    - StartDataIntegrationExecution
     - TagResource
     - UntagResource
     - UpdateApplication
     - UpdateDataIntegration
     - UpdateDataIntegrationAssociation
+    - UpdateDataIntegrationSchedule
     - UpdateEventIntegration
     ARNFormat: arn:aws:app-integrations:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:app-integrations:.+:.+:.+"
@@ -23026,16 +23039,23 @@ serviceMap:
     - GetLifecycleConfiguration
     - ListAccessPointsForDirectoryBuckets
     - ListAllMyDirectoryBuckets
+    - ListTagsForResource
     - PutAccessPointPolicy
     - PutAccessPointScope
     - PutBucketPolicy
     - PutEncryptionConfiguration
     - PutLifecycleConfiguration
+    - TagResource
+    - UntagResource
     ARNFormat: arn:aws:s3express:${Region}:${Account}:bucket/${BucketName}
     ARNRegex: "^arn:aws:s3express:${Region}:${Account}:bucket/.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - s3express:AccessPointNetworkOrigin
     - s3express:AllAccessRestrictedToLocalZoneGroup
+    - s3express:BucketTag/${TagKey}
     - s3express:DataAccessPointAccount
     - s3express:DataAccessPointArn
     - s3express:LocationName
