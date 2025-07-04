@@ -8575,6 +8575,7 @@ serviceMap:
     - DeleteProtectionGroup
     - DeleteSubscription
     - DescribeAttack
+    - DescribeAttackContributors
     - DescribeAttackStatistics
     - DescribeDRTAccess
     - DescribeEmergencyContactSettings
@@ -8588,8 +8589,10 @@ serviceMap:
     - DisassociateHealthCheck
     - EnableApplicationLayerAutomaticResponse
     - EnableProactiveEngagement
+    - GetGlobalThreatData
     - GetSubscriptionState
     - ListAttacks
+    - ListMitigations
     - ListProtectionGroups
     - ListProtections
     - ListResourcesInProtectionGroup
