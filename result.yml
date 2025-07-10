@@ -7292,6 +7292,21 @@ serviceMap:
     ARNFormat: arn:${Partition}:iot-device-tester:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:.+:iot-device-tester:.+:.+:.+"
     HasResource: false
+  AWS Shield network security director:
+    StringPrefix: network-security-director
+    Actions:
+    - GetFinding
+    - GetNetworkSecurityScan
+    - GetResource
+    - ListFindings
+    - ListInsights
+    - ListRemediations
+    - ListResources
+    - StartNetworkSecurityScan
+    - UpdateFinding
+    ARNFormat: arn:${Partition}:network-security-director:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:${Partition}:network-security-director:.+:.+:.+"
+    HasResource: false
   AWS Database Migration Service:
     StringPrefix: dms
     Actions:
@@ -12974,9 +12989,13 @@ serviceMap:
   AWS Free Tier:
     StringPrefix: freetier
     Actions:
+    - GetAccountActivity
+    - GetAccountPlanState
     - GetFreeTierAlertPreference
     - GetFreeTierUsage
+    - ListAccountActivities
     - PutFreeTierAlertPreference
+    - UpgradeAccountPlan
     HasResource: false
   AWS Application Migration Service:
     StringPrefix: mgn
