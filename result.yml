@@ -14010,6 +14010,7 @@ serviceMap:
     - CreateFeatureGroup
     - CreateFlowDefinition
     - CreateHub
+    - CreateHubContentPresignedUrls
     - CreateHubContentReference
     - CreateHumanTaskUi
     - CreateHyperParameterTuningJob
@@ -14122,6 +14123,7 @@ serviceMap:
     - DescribeAutoMLJob
     - DescribeAutoMLJobV2
     - DescribeCluster
+    - DescribeClusterInference
     - DescribeClusterNode
     - DescribeClusterSchedulerConfig
     - DescribeCodeRepository
@@ -14264,6 +14266,7 @@ serviceMap:
     - ListPipelineExecutionSteps
     - ListPipelineExecutions
     - ListPipelineParametersForExecution
+    - ListPipelineVersions
     - ListPipelines
     - ListProcessingJobs
     - ListProjects
@@ -14306,6 +14309,7 @@ serviceMap:
     - StartMonitoringSchedule
     - StartNotebookInstance
     - StartPipelineExecution
+    - StartSession
     - StopAutoMLJob
     - StopCompilationJob
     - StopEdgeDeploymentStage
@@ -14328,6 +14332,7 @@ serviceMap:
     - UpdateAppImageConfig
     - UpdateArtifact
     - UpdateCluster
+    - UpdateClusterInference
     - UpdateClusterSchedulerConfig
     - UpdateClusterSoftware
     - UpdateCodeRepository
@@ -14359,6 +14364,7 @@ serviceMap:
     - UpdatePartnerApp
     - UpdatePipeline
     - UpdatePipelineExecution
+    - UpdatePipelineVersion
     - UpdateProject
     - UpdateSharedModel
     - UpdateSpace
@@ -14408,6 +14414,8 @@ serviceMap:
     - sagemaker:NetworkIsolation
     - sagemaker:OutputKmsKey
     - sagemaker:OwnerUserProfileArn
+    - sagemaker:PipelineVersionId
+    - sagemaker:RemoteAccess
     - sagemaker:ResourceTag/
     - sagemaker:ResourceTag/${TagKey}
     - sagemaker:RootAccess
@@ -17680,6 +17688,8 @@ serviceMap:
     - CreateRegisteredModel
     - CreateRun
     - DeleteExperiment
+    - DeleteLoggedModel
+    - DeleteLoggedModelTag
     - DeleteModelVersion
     - DeleteModelVersionTag
     - DeleteRegisteredModel
@@ -17690,10 +17700,12 @@ serviceMap:
     - DeleteTraceTag
     - DeleteTraces
     - EndTrace
+    - FinalizeLoggedModel
     - GetDownloadURIForModelVersionArtifacts
     - GetExperiment
     - GetExperimentByName
     - GetLatestModelVersions
+    - GetLoggedModel
     - GetMetricHistory
     - GetModelVersion
     - GetModelVersionByAlias
@@ -17701,20 +17713,25 @@ serviceMap:
     - GetRun
     - GetTraceInfo
     - ListArtifacts
+    - ListLoggedModelArtifacts
     - LogBatch
     - LogInputs
+    - LogLoggedModelParams
     - LogMetric
     - LogModel
+    - LogOutputs
     - LogParam
     - RenameRegisteredModel
     - RestoreExperiment
     - RestoreRun
     - SearchExperiments
+    - SearchLoggedModels
     - SearchModelVersions
     - SearchRegisteredModels
     - SearchRuns
     - SearchTraces
     - SetExperimentTag
+    - SetLoggedModelTags
     - SetModelVersionTag
     - SetRegisteredModelAlias
     - SetRegisteredModelTag
