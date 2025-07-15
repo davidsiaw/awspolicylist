@@ -13925,7 +13925,9 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - s3:AccessGrantScope
     - s3:AccessGrantsInstanceArn
+    - s3:AccessGrantsLocationScope
     - s3:AccessPointNetworkOrigin
     - s3:DataAccessPointAccount
     - s3:DataAccessPointArn
