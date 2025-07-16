@@ -6612,6 +6612,7 @@ serviceMap:
     - SearchUserProfiles
     - SsoLogin
     - SsoLogout
+    - StartAccountBootstrapAction
     - StartDataSourceRun
     - StartMetadataGenerationRun
     - StopMetadataGenerationRun
@@ -10312,12 +10313,6 @@ serviceMap:
     - elasticbeanstalk:FromSolutionStack
     - elasticbeanstalk:InApplication
     HasResource: true
-  AWS Support Recommendations:
-    StringPrefix: supportrecommendations
-    Actions:
-    - GetSupportTroubleshootingResponse
-    - StartSupportTroubleshooting
-    HasResource: false
   Amazon CloudWatch Application Insights:
     StringPrefix: applicationinsights
     Actions:
@@ -11202,6 +11197,31 @@ serviceMap:
     - SnapToRoads
     ARNFormat: arn:aws:geo-routes:${Region}::provider/default
     ARNRegex: "^arn:aws:geo-routes:.+"
+    HasResource: true
+  Amazon S3 Vectors:
+    StringPrefix: s3vectors
+    Actions:
+    - CreateIndex
+    - CreateVectorBucket
+    - DeleteIndex
+    - DeleteVectorBucket
+    - DeleteVectorBucketPolicy
+    - DeleteVectors
+    - GetIndex
+    - GetVectorBucket
+    - GetVectorBucketPolicy
+    - GetVectors
+    - ListIndexes
+    - ListVectorBuckets
+    - ListVectors
+    - PutVectorBucketPolicy
+    - PutVectors
+    - QueryVectors
+    ARNFormat: arn:aws:s3vectors:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:s3vectors:.+:.+:.+"
+    conditionKeys:
+    - s3vectors:kmsKeyArn
+    - s3vectors:sseType
     HasResource: true
   AWS IoT 1-Click:
     StringPrefix: iot1click
@@ -13916,6 +13936,8 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAccessGrantsLocation
+    - UpdateBucketMetadataInventoryTableConfiguration
+    - UpdateBucketMetadataJournalTableConfiguration
     - UpdateJobPriority
     - UpdateJobStatus
     - UpdateStorageLensGroup
