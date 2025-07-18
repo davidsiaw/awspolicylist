@@ -9009,6 +9009,7 @@ serviceMap:
     - CreateBlueprint
     - CreateBlueprintVersion
     - CreateCustomModel
+    - CreateCustomModelDeployment
     - CreateDataAutomationProject
     - CreateDataSource
     - CreateEvaluationJob
@@ -9039,6 +9040,7 @@ serviceMap:
     - DeleteAgentVersion
     - DeleteBlueprint
     - DeleteCustomModel
+    - DeleteCustomModelDeployment
     - DeleteDataAutomationProject
     - DeleteDataSource
     - DeleteFlow
@@ -9075,6 +9077,7 @@ serviceMap:
     - GetBlueprint
     - GetBlueprintRecommendation
     - GetCustomModel
+    - GetCustomModelDeployment
     - GetDataAutomationProject
     - GetDataAutomationStatus
     - GetDataSource
@@ -9123,6 +9126,7 @@ serviceMap:
     - ListAgents
     - ListAsyncInvokes
     - ListBlueprints
+    - ListCustomModelDeployments
     - ListCustomModels
     - ListDataAutomationProjects
     - ListDataSources
@@ -19713,6 +19717,7 @@ serviceMap:
     - ListAllowedMultiRegionClusterUpdates
     - ListAllowedNodeTypeUpdates
     - ListTags
+    - PauseMultiRegionClusterReplication
     - PurchaseReservedNodesOffering
     - ResetParameterGroup
     - TagResource
@@ -22786,6 +22791,7 @@ serviceMap:
     - CreateDatastore
     - DeleteDatastore
     - DeleteImageSet
+    - GetDICOMBulkdata
     - GetDICOMImportJob
     - GetDICOMInstance
     - GetDICOMInstanceFrames
@@ -22804,6 +22810,8 @@ serviceMap:
     - SearchDICOMStudies
     - SearchImageSets
     - StartDICOMImportJob
+    - StoreDICOM
+    - StoreDICOMStudy
     - TagResource
     - UntagResource
     - UpdateImageSetMetadata
