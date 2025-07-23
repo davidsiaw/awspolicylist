@@ -18746,6 +18746,7 @@ serviceMap:
     Actions:
     - AccessInteractiveEndpoints
     - AccessLivyEndpoints
+    - AccessSystemProfileLogs
     - CancelJobRun
     - CreateApplication
     - DeleteApplication
@@ -19003,6 +19004,7 @@ serviceMap:
     - GetBillingNotifications
     - GetBillingPreferences
     - GetBillingView
+    - GetBillingViewData
     - GetContractInformation
     - GetCredits
     - GetIAMAccessPreference
@@ -20699,6 +20701,8 @@ serviceMap:
     - DescribeCapacityBlockExtensionHistory
     - DescribeCapacityBlockExtensionOfferings
     - DescribeCapacityBlockOfferings
+    - DescribeCapacityBlockStatus
+    - DescribeCapacityBlocks
     - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservations
@@ -21262,6 +21266,7 @@ serviceMap:
     - ec2:SubnetID
     - ec2:Tenancy
     - ec2:VolumeID
+    - ec2:VolumeInitializationRate
     - ec2:VolumeIops
     - ec2:VolumeSize
     - ec2:VolumeThroughput
