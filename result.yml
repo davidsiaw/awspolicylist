@@ -2765,6 +2765,8 @@ serviceMap:
     StringPrefix: inspector2
     Actions:
     - AssociateMember
+    - BatchAssociateCodeSecurityScanConfiguration
+    - BatchDisassociateCodeSecurityScanConfiguration
     - BatchGetAccountStatus
     - BatchGetCodeSnippet
     - BatchGetFindingDetails
@@ -2774,10 +2776,14 @@ serviceMap:
     - CancelFindingsReport
     - CancelSbomExport
     - CreateCisScanConfiguration
+    - CreateCodeSecurityIntegration
+    - CreateCodeSecurityScanConfiguration
     - CreateFilter
     - CreateFindingsReport
     - CreateSbomExport
     - DeleteCisScanConfiguration
+    - DeleteCodeSecurityIntegration
+    - DeleteCodeSecurityScanConfiguration
     - DeleteFilter
     - DescribeOrganizationConfiguration
     - Disable
@@ -2788,6 +2794,9 @@ serviceMap:
     - GetCisScanReport
     - GetCisScanResultDetails
     - GetClustersForImage
+    - GetCodeSecurityIntegration
+    - GetCodeSecurityScan
+    - GetCodeSecurityScanConfiguration
     - GetConfiguration
     - GetDelegatedAdminAccount
     - GetEc2DeepInspectionConfiguration
@@ -2800,6 +2809,9 @@ serviceMap:
     - ListCisScanResultsAggregatedByChecks
     - ListCisScanResultsAggregatedByTargetResource
     - ListCisScans
+    - ListCodeSecurityIntegrations
+    - ListCodeSecurityScanConfigurationAssociations
+    - ListCodeSecurityScanConfigurations
     - ListCoverage
     - ListCoverageStatistics
     - ListDelegatedAdminAccounts
@@ -2814,10 +2826,13 @@ serviceMap:
     - SendCisSessionHealth
     - SendCisSessionTelemetry
     - StartCisSession
+    - StartCodeSecurityScan
     - StopCisSession
     - TagResource
     - UntagResource
     - UpdateCisScanConfiguration
+    - UpdateCodeSecurityIntegration
+    - UpdateCodeSecurityScanConfiguration
     - UpdateConfiguration
     - UpdateEc2DeepInspectionConfiguration
     - UpdateEncryptionKey
