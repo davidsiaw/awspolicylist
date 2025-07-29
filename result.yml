@@ -16390,6 +16390,7 @@ serviceMap:
     - CreateAssetModel
     - CreateAssetModelCompositeModel
     - CreateBulkImportJob
+    - CreateComputationModel
     - CreateDashboard
     - CreateDataset
     - CreateGateway
@@ -16399,6 +16400,7 @@ serviceMap:
     - DeleteAsset
     - DeleteAssetModel
     - DeleteAssetModelCompositeModel
+    - DeleteComputationModel
     - DeleteDashboard
     - DeleteDataset
     - DeleteGateway
@@ -16413,9 +16415,12 @@ serviceMap:
     - DescribeAssetModelCompositeModel
     - DescribeAssetProperty
     - DescribeBulkImportJob
+    - DescribeComputationModel
+    - DescribeComputationModelExecutionSummary
     - DescribeDashboard
     - DescribeDataset
     - DescribeDefaultEncryptionConfiguration
+    - DescribeExecution
     - DescribeGateway
     - DescribeGatewayCapabilityConfiguration
     - DescribeLoggingOptions
@@ -16444,8 +16449,12 @@ serviceMap:
     - ListAssociatedAssets
     - ListBulkImportJobs
     - ListCompositionRelationships
+    - ListComputationModelDataBindingUsages
+    - ListComputationModelResolveToResources
+    - ListComputationModels
     - ListDashboards
     - ListDatasets
+    - ListExecutions
     - ListGateways
     - ListPortals
     - ListProjectAssets
@@ -16463,6 +16472,7 @@ serviceMap:
     - UpdateAssetModelCompositeModel
     - UpdateAssetModelPropertyRouting
     - UpdateAssetProperty
+    - UpdateComputationModel
     - UpdateDashboard
     - UpdateDataset
     - UpdateGateway
@@ -23539,7 +23549,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
-    - imagebuilder:CreatedResourceTag/<key>
+    - imagebuilder:CreatedResourceTag/${TagKey}
     - imagebuilder:CreatedResourceTagKeys
     - imagebuilder:Ec2MetadataHttpTokens
     - imagebuilder:LifecyclePolicyResourceType
