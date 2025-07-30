@@ -5631,9 +5631,11 @@ serviceMap:
     - UpdateCollaboration
     - UpdateConfiguredAudienceModelAssociation
     - UpdateConfiguredTable
+    - UpdateConfiguredTableAllowedColumns
     - UpdateConfiguredTableAnalysisRule
     - UpdateConfiguredTableAssociation
     - UpdateConfiguredTableAssociationAnalysisRule
+    - UpdateConfiguredTableReference
     - UpdateIdMappingTable
     - UpdateIdNamespaceAssociation
     - UpdateMembership
