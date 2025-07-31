@@ -13351,6 +13351,7 @@ serviceMap:
     StringPrefix: events
     Actions:
     - ActivateEventSource
+    - AllowVendedLogDeliveryForResource
     - CancelReplay
     - CreateApiDestination
     - CreateArchive
@@ -16589,6 +16590,7 @@ serviceMap:
     - CreateConnectClientAddIn
     - CreateConnectionAlias
     - CreateIpGroup
+    - CreateRootClientCertificate
     - CreateStandbyWorkspaces
     - CreateTags
     - CreateUpdatedWorkspaceImage
@@ -16601,6 +16603,7 @@ serviceMap:
     - DeleteConnectClientAddIn
     - DeleteConnectionAlias
     - DeleteIpGroup
+    - DeleteRootClientCertificate
     - DeleteTags
     - DeleteWorkspaceBundle
     - DeleteWorkspaceImage
@@ -16618,6 +16621,7 @@ serviceMap:
     - DescribeConnectionAliases
     - DescribeImageAssociations
     - DescribeIpGroups
+    - DescribeRootClientCertificates
     - DescribeTags
     - DescribeWorkspaceAssociations
     - DescribeWorkspaceBundles
@@ -16629,6 +16633,7 @@ serviceMap:
     - DescribeWorkspacesConnectionStatus
     - DescribeWorkspacesPoolSessions
     - DescribeWorkspacesPools
+    - DirectoryAccessManagement
     - DisassociateConnectionAlias
     - DisassociateIpGroups
     - DisassociateWorkspaceApplication
@@ -16665,6 +16670,7 @@ serviceMap:
     - TerminateWorkspacesPoolSession
     - UpdateConnectClientAddIn
     - UpdateConnectionAliasPermission
+    - UpdateRootClientCertificate
     - UpdateRulesOfIpGroup
     - UpdateWorkspaceBundle
     - UpdateWorkspaceImagePermission
