@@ -4062,11 +4062,13 @@ serviceMap:
     - CreateComputer
     - CreateConditionalForwarder
     - CreateDirectory
+    - CreateHybridAD
     - CreateIdentityPoolDirectory
     - CreateLogSubscription
     - CreateMicrosoftAD
     - CreateSnapshot
     - CreateTrust
+    - DeleteADAssessment
     - DeleteConditionalForwarder
     - DeleteDirectory
     - DeleteLogSubscription
@@ -4074,6 +4076,7 @@ serviceMap:
     - DeleteTrust
     - DeregisterCertificate
     - DeregisterEventTopic
+    - DescribeADAssessment
     - DescribeCertificate
     - DescribeClientAuthenticationSettings
     - DescribeConditionalForwarders
@@ -4081,6 +4084,7 @@ serviceMap:
     - DescribeDirectoryDataAccess
     - DescribeDomainControllers
     - DescribeEventTopics
+    - DescribeHybridADUpdate
     - DescribeLDAPSSettings
     - DescribeRegions
     - DescribeSettings
@@ -4103,6 +4107,7 @@ serviceMap:
     - GetAuthorizedApplicationDetails
     - GetDirectoryLimits
     - GetSnapshotLimits
+    - ListADAssessments
     - ListAuthorizedApplications
     - ListCertificates
     - ListIpRoutes
@@ -4118,6 +4123,7 @@ serviceMap:
     - ResetUserPassword
     - RestoreFromSnapshot
     - ShareDirectory
+    - StartADAssessment
     - StartSchemaExtension
     - UnauthorizeApplication
     - UnshareDirectory
@@ -4125,6 +4131,7 @@ serviceMap:
     - UpdateConditionalForwarder
     - UpdateDirectory
     - UpdateDirectorySetup
+    - UpdateHybridAD
     - UpdateNumberOfDomainControllers
     - UpdateRadius
     - UpdateSettings
@@ -13973,6 +13980,7 @@ serviceMap:
     - s3:AccessGrantsInstanceArn
     - s3:AccessGrantsLocationScope
     - s3:AccessPointNetworkOrigin
+    - s3:AccessPointTag/${TagKey}
     - s3:DataAccessPointAccount
     - s3:DataAccessPointArn
     - s3:ExistingJobOperation
@@ -19389,6 +19397,7 @@ serviceMap:
     - AssociateDataProtectionSettings
     - AssociateIpAccessSettings
     - AssociateNetworkSettings
+    - AssociateSessionLogger
     - AssociateTrustStore
     - AssociateUserAccessLoggingSettings
     - AssociateUserSettings
@@ -19398,6 +19407,7 @@ serviceMap:
     - CreateIpAccessSettings
     - CreateNetworkSettings
     - CreatePortal
+    - CreateSessionLogger
     - CreateTrustStore
     - CreateUserAccessLoggingSettings
     - CreateUserSettings
@@ -19407,6 +19417,7 @@ serviceMap:
     - DeleteIpAccessSettings
     - DeleteNetworkSettings
     - DeletePortal
+    - DeleteSessionLogger
     - DeleteTrustStore
     - DeleteUserAccessLoggingSettings
     - DeleteUserSettings
@@ -19414,6 +19425,7 @@ serviceMap:
     - DisassociateDataProtectionSettings
     - DisassociateIpAccessSettings
     - DisassociateNetworkSettings
+    - DisassociateSessionLogger
     - DisassociateTrustStore
     - DisassociateUserAccessLoggingSettings
     - DisassociateUserSettings
@@ -19426,6 +19438,7 @@ serviceMap:
     - GetPortal
     - GetPortalServiceProviderMetadata
     - GetSession
+    - GetSessionLogger
     - GetTrustStore
     - GetTrustStoreCertificate
     - GetUserAccessLoggingSettings
@@ -19436,6 +19449,7 @@ serviceMap:
     - ListIpAccessSettings
     - ListNetworkSettings
     - ListPortals
+    - ListSessionLoggers
     - ListSessions
     - ListTagsForResource
     - ListTrustStoreCertificates
@@ -19450,6 +19464,7 @@ serviceMap:
     - UpdateIpAccessSettings
     - UpdateNetworkSettings
     - UpdatePortal
+    - UpdateSessionLogger
     - UpdateTrustStore
     - UpdateUserAccessLoggingSettings
     - UpdateUserSettings
@@ -21668,6 +21683,39 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon ARC Region switch:
+    StringPrefix: arc-region-switch
+    Actions:
+    - ApprovePlanExecutionStep
+    - CancelPlanExecution
+    - CreatePlan
+    - DeletePlan
+    - DeleteResourcePolicy
+    - GetPlan
+    - GetPlanEvaluationStatus
+    - GetPlanExecution
+    - GetPlanInRegion
+    - GetResourcePolicy
+    - ListPlanExecutionEvents
+    - ListPlanExecutions
+    - ListPlans
+    - ListPlansInRegion
+    - ListRoute53HealthChecks
+    - ListTagsForResource
+    - PutResourcePolicy
+    - StartPlanExecution
+    - TagResource
+    - UntagResource
+    - UpdatePlan
+    - UpdatePlanExecution
+    - UpdatePlanExecutionStep
+    ARNFormat: arn:aws:arc-region-switch:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:arc-region-switch:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS OpsWorks Configuration Management:
     StringPrefix: opsworks-cm
     Actions:
@@ -23164,6 +23212,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - s3express:AccessPointNetworkOrigin
+    - s3express:AccessPointTag/${TagKey}
     - s3express:AllAccessRestrictedToLocalZoneGroup
     - s3express:BucketTag/${TagKey}
     - s3express:DataAccessPointAccount
