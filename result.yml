@@ -2369,6 +2369,8 @@ serviceMap:
     - CreateExportJob
     - CreateImportJob
     - CreateMultiRegionEndpoint
+    - CreateTenant
+    - CreateTenantResourceAssociation
     - DeleteConfigurationSet
     - DeleteConfigurationSetEventDestination
     - DeleteContact
@@ -2380,6 +2382,8 @@ serviceMap:
     - DeleteEmailTemplate
     - DeleteMultiRegionEndpoint
     - DeleteSuppressedDestination
+    - DeleteTenant
+    - DeleteTenantResourceAssociation
     - GetAccount
     - GetBlacklistReports
     - GetConfigurationSet
@@ -2401,7 +2405,9 @@ serviceMap:
     - GetImportJob
     - GetMessageInsights
     - GetMultiRegionEndpoint
+    - GetReputationEntity
     - GetSuppressedDestination
+    - GetTenant
     - ListConfigurationSets
     - ListContactLists
     - ListContacts
@@ -2415,8 +2421,12 @@ serviceMap:
     - ListImportJobs
     - ListMultiRegionEndpoints
     - ListRecommendations
+    - ListReputationEntities
+    - ListResourceTenants
     - ListSuppressedDestinations
     - ListTagsForResource
+    - ListTenantResources
+    - ListTenants
     - PutAccountDedicatedIpWarmupAttributes
     - PutAccountDetails
     - PutAccountSendingAttributes
@@ -2452,6 +2462,8 @@ serviceMap:
     - UpdateCustomVerificationEmailTemplate
     - UpdateEmailIdentityPolicy
     - UpdateEmailTemplate
+    - UpdateReputationEntityCustomerManagedStatus
+    - UpdateReputationEntityPolicy
     ARNFormat: arn:aws:ses:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:ses:.+:[0-9]+:.+"
     conditionKeys:
@@ -2466,6 +2478,7 @@ serviceMap:
     - ses:MultiRegionEndpointId
     - ses:Recipients
     - ses:ReplicaRegion
+    - ses:TenantName
     HasResource: true
   Amazon Simple Email Service - Mail Manager:
     StringPrefix: ses
@@ -9562,17 +9575,34 @@ serviceMap:
   Amazon CloudWatch Observability Admin Service:
     StringPrefix: observabilityadmin
     Actions:
+    - CreateTelemetryRule
+    - CreateTelemetryRuleForOrganization
+    - DeleteTelemetryRule
+    - DeleteTelemetryRuleForOrganization
     - GetTelemetryEvaluationStatus
     - GetTelemetryEvaluationStatusForOrganization
+    - GetTelemetryRule
+    - GetTelemetryRuleForOrganization
     - ListResourceTelemetry
     - ListResourceTelemetryForOrganization
+    - ListTagsForResource
+    - ListTelemetryRules
+    - ListTelemetryRulesForOrganization
     - StartTelemetryEvaluation
     - StartTelemetryEvaluationForOrganization
     - StopTelemetryEvaluation
     - StopTelemetryEvaluationForOrganization
-    ARNFormat: arn:${Partition}:observabilityadmin:${Region}:${Account}:${ResourceType}
-    ARNRegex: "^arn:${Partition}:observabilityadmin:.+:.+:.+"
-    HasResource: false
+    - TagResource
+    - UntagResource
+    - UpdateTelemetryRule
+    - UpdateTelemetryRuleForOrganization
+    ARNFormat: arn:aws:observabilityadmin:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:observabilityadmin:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Macie:
     StringPrefix: macie2
     Actions:
@@ -23404,7 +23434,7 @@ serviceMap:
     - GetWorkloadAccessTokenForJWT
     - GetWorkloadAccessTokenForUserId
     - GetWorkloadIdentity
-    - InvokeAgentRuntimeEndpoint
+    - InvokeAgentRuntime
     - InvokeCodeInterpreter
     - ListActors
     - ListAgentRuntimeEndpoints
