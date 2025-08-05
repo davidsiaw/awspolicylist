@@ -3672,6 +3672,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - xray:ResourcePolicyName
+    - xray:TraceSegmentDestination
     HasResource: true
   AWS User Notifications Contacts:
     StringPrefix: notifications-contacts
@@ -16441,6 +16443,7 @@ serviceMap:
     - DeleteAsset
     - DeleteAssetModel
     - DeleteAssetModelCompositeModel
+    - DeleteAssetModelInterfaceRelationship
     - DeleteComputationModel
     - DeleteDashboard
     - DeleteDataset
@@ -16454,6 +16457,7 @@ serviceMap:
     - DescribeAssetCompositeModel
     - DescribeAssetModel
     - DescribeAssetModelCompositeModel
+    - DescribeAssetModelInterfaceRelationship
     - DescribeAssetProperty
     - DescribeBulkImportJob
     - DescribeComputationModel
@@ -16497,11 +16501,13 @@ serviceMap:
     - ListDatasets
     - ListExecutions
     - ListGateways
+    - ListInterfaceRelationships
     - ListPortals
     - ListProjectAssets
     - ListProjects
     - ListTagsForResource
     - ListTimeSeries
+    - PutAssetModelInterfaceRelationship
     - PutDefaultEncryptionConfiguration
     - PutLoggingOptions
     - PutStorageConfiguration
@@ -21540,6 +21546,10 @@ serviceMap:
     - UpdateSlackChannelConfiguration
     ARNFormat: arn:aws:chatbot::${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:chatbot:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Migration Hub Orchestrator:
     StringPrefix: migrationhub-orchestrator
