@@ -6253,18 +6253,24 @@ serviceMap:
   AWS rePost Private:
     StringPrefix: repostspace
     Actions:
+    - BatchAddChannelRoleToAccessors
     - BatchAddRole
+    - BatchRemoveChannelRoleFromAccessors
     - BatchRemoveRole
+    - CreateChannel
     - CreateSpace
     - DeleteSpace
     - DeregisterAdmin
+    - GetChannel
     - GetSpace
+    - ListChannels
     - ListSpaces
     - ListTagsForResource
     - RegisterAdmin
     - SendInvites
     - TagResource
     - UntagResource
+    - UpdateChannel
     - UpdateSpace
     ARNFormat: arn:aws:repostspace:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:repostspace:.+:.+:.+"
@@ -9042,9 +9048,13 @@ serviceMap:
     - AssociateThirdPartyKnowledgeBase
     - BatchDeleteEvaluationJob
     - CallWithBearerToken
+    - CancelAutomatedReasoningPolicyBuildWorkflow
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
+    - CreateAutomatedReasoningPolicy
+    - CreateAutomatedReasoningPolicyTestCase
+    - CreateAutomatedReasoningPolicyVersion
     - CreateBlueprint
     - CreateBlueprintVersion
     - CreateCustomModel
@@ -9077,6 +9087,9 @@ serviceMap:
     - DeleteAgentAlias
     - DeleteAgentMemory
     - DeleteAgentVersion
+    - DeleteAutomatedReasoningPolicy
+    - DeleteAutomatedReasoningPolicyBuildWorkflow
+    - DeleteAutomatedReasoningPolicyTestCase
     - DeleteBlueprint
     - DeleteCustomModel
     - DeleteCustomModelDeployment
@@ -9104,6 +9117,7 @@ serviceMap:
     - DisassociateAgentCollaborator
     - DisassociateAgentKnowledgeBase
     - EndSession
+    - ExportAutomatedReasoningPolicyVersion
     - GenerateQuery
     - GetAgent
     - GetAgentActionGroup
@@ -9113,6 +9127,13 @@ serviceMap:
     - GetAgentMemory
     - GetAgentVersion
     - GetAsyncInvoke
+    - GetAutomatedReasoningPolicy
+    - GetAutomatedReasoningPolicyAnnotations
+    - GetAutomatedReasoningPolicyBuildWorkflow
+    - GetAutomatedReasoningPolicyBuildWorkflowResultAssets
+    - GetAutomatedReasoningPolicyNextScenario
+    - GetAutomatedReasoningPolicyTestCase
+    - GetAutomatedReasoningPolicyTestResult
     - GetBlueprint
     - GetBlueprintRecommendation
     - GetCustomModel
@@ -9150,6 +9171,7 @@ serviceMap:
     - GetUseCaseForModelAccess
     - IngestKnowledgeBaseDocuments
     - InvokeAgent
+    - InvokeAutomatedReasoningPolicy
     - InvokeBlueprintRecommendationAsync
     - InvokeBuilder
     - InvokeDataAutomationAsync
@@ -9164,6 +9186,10 @@ serviceMap:
     - ListAgentVersions
     - ListAgents
     - ListAsyncInvokes
+    - ListAutomatedReasoningPolicies
+    - ListAutomatedReasoningPolicyBuildWorkflows
+    - ListAutomatedReasoningPolicyTestCases
+    - ListAutomatedReasoningPolicyTestResults
     - ListBlueprints
     - ListCustomModelDeployments
     - ListCustomModels
@@ -9209,6 +9235,8 @@ serviceMap:
     - Rerank
     - Retrieve
     - RetrieveAndGenerate
+    - StartAutomatedReasoningPolicyBuildWorkflow
+    - StartAutomatedReasoningPolicyTestWorkflow
     - StartFlowExecution
     - StartIngestionJob
     - StopEvaluationJob
@@ -9223,6 +9251,9 @@ serviceMap:
     - UpdateAgentAlias
     - UpdateAgentCollaborator
     - UpdateAgentKnowledgeBase
+    - UpdateAutomatedReasoningPolicy
+    - UpdateAutomatedReasoningPolicyAnnotations
+    - UpdateAutomatedReasoningPolicyTestCase
     - UpdateBlueprint
     - UpdateDataAutomationProject
     - UpdateDataSource
@@ -14065,6 +14096,8 @@ serviceMap:
     - AddAssociation
     - AddTags
     - AssociateTrialComponent
+    - AttachClusterNodeVolume
+    - BatchAddClusterNodes
     - BatchDeleteClusterNodes
     - BatchDescribeModelPackage
     - BatchGetMetrics
@@ -14209,6 +14242,7 @@ serviceMap:
     - DescribeAutoMLJob
     - DescribeAutoMLJobV2
     - DescribeCluster
+    - DescribeClusterEvent
     - DescribeClusterInference
     - DescribeClusterNode
     - DescribeClusterSchedulerConfig
@@ -14271,6 +14305,7 @@ serviceMap:
     - DescribeUserProfile
     - DescribeWorkforce
     - DescribeWorkteam
+    - DetachClusterNodeVolume
     - DisableSagemakerServicecatalogPortfolio
     - DisassociateTrialComponent
     - EnableSagemakerServicecatalogPortfolio
@@ -14297,6 +14332,7 @@ serviceMap:
     - ListAssociations
     - ListAutoMLJobs
     - ListCandidatesForAutoMLJob
+    - ListClusterEvents
     - ListClusterNodes
     - ListClusterSchedulerConfigs
     - ListClusters
@@ -17057,10 +17093,12 @@ serviceMap:
     - CreateConsumableResource
     - CreateJobQueue
     - CreateSchedulingPolicy
+    - CreateServiceEnvironment
     - DeleteComputeEnvironment
     - DeleteConsumableResource
     - DeleteJobQueue
     - DeleteSchedulingPolicy
+    - DeleteServiceEnvironment
     - DeregisterJobDefinition
     - DescribeComputeEnvironments
     - DescribeConsumableResource
@@ -17068,21 +17106,27 @@ serviceMap:
     - DescribeJobQueues
     - DescribeJobs
     - DescribeSchedulingPolicies
+    - DescribeServiceEnvironments
+    - DescribeServiceJob
     - GetJobQueueSnapshot
     - ListConsumableResources
     - ListJobs
     - ListJobsByConsumableResource
     - ListSchedulingPolicies
+    - ListServiceJobs
     - ListTagsForResource
     - RegisterJobDefinition
     - SubmitJob
+    - SubmitServiceJob
     - TagResource
     - TerminateJob
+    - TerminateServiceJob
     - UntagResource
     - UpdateComputeEnvironment
     - UpdateConsumableResource
     - UpdateJobQueue
     - UpdateSchedulingPolicy
+    - UpdateServiceEnvironment
     ARNFormat: arn:aws:batch:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:batch:.+"
     conditionKeys:
@@ -18478,8 +18522,6 @@ serviceMap:
   Amazon Q Business:
     StringPrefix: qbusiness
     Actions:
-    - AddUserLicenses
-    - AllowVendedLogDeliveryForResource
     - AssociatePermission
     - BatchDeleteDocument
     - BatchPutDocument
@@ -18495,7 +18537,6 @@ serviceMap:
     - CreateDataSource
     - CreateIndex
     - CreateIntegration
-    - CreateLicense
     - CreatePlugin
     - CreateRetriever
     - CreateSubscription
@@ -18522,10 +18563,10 @@ serviceMap:
     - GetChatResponseConfiguration
     - GetDataAccessor
     - GetDataSource
+    - GetDocumentContent
     - GetGroup
     - GetIndex
     - GetIntegration
-    - GetLicense
     - GetMedia
     - GetPlugin
     - GetPolicy
@@ -18551,12 +18592,10 @@ serviceMap:
     - ListRetrievers
     - ListSubscriptions
     - ListTagsForResource
-    - ListUserLicenses
     - ListWebExperiences
     - PutFeedback
     - PutGroup
     - PutResourcePolicy
-    - RemoveUserLicenses
     - SearchRelevantContent
     - StartDataSourceSyncJob
     - StartDeployment
