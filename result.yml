@@ -6509,6 +6509,7 @@ serviceMap:
     - BatchPutLinkedTypes
     - CancelMetadataGenerationRun
     - CancelSubscription
+    - CreateAccountPool
     - CreateAsset
     - CreateAssetFilter
     - CreateAssetRevision
@@ -6536,6 +6537,7 @@ serviceMap:
     - CreateSubscriptionRequest
     - CreateSubscriptionTarget
     - CreateUserProfile
+    - DeleteAccountPool
     - DeleteAsset
     - DeleteAssetFilter
     - DeleteAssetType
@@ -6563,6 +6565,7 @@ serviceMap:
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
     - DisassociateEnvironmentRole
+    - GetAccountPool
     - GetAsset
     - GetAssetFilter
     - GetAssetType
@@ -6603,6 +6606,8 @@ serviceMap:
     - GetUpdateEligibility
     - GetUserProfile
     - ListAccountEnvironments
+    - ListAccountPools
+    - ListAccountsInAccountPool
     - ListAssetFilters
     - ListAssetRevisions
     - ListConnections
@@ -6663,6 +6668,7 @@ serviceMap:
     - StopMetadataGenerationRun
     - TagResource
     - UntagResource
+    - UpdateAccountPool
     - UpdateAssetFilter
     - UpdateConnection
     - UpdateDataSource
@@ -19314,6 +19320,7 @@ serviceMap:
     - BatchGetVpcEndpoint
     - CreateAccessPolicy
     - CreateCollection
+    - CreateIndex
     - CreateLifecyclePolicy
     - CreateSecurityConfig
     - CreateSecurityPolicy
@@ -19321,12 +19328,14 @@ serviceMap:
     - DashboardsAccessAll
     - DeleteAccessPolicy
     - DeleteCollection
+    - DeleteIndex
     - DeleteLifecyclePolicy
     - DeleteSecurityConfig
     - DeleteSecurityPolicy
     - DeleteVpcEndpoint
     - GetAccessPolicy
     - GetAccountSettings
+    - GetIndex
     - GetPoliciesStats
     - GetSecurityConfig
     - GetSecurityPolicy
@@ -19342,6 +19351,7 @@ serviceMap:
     - UpdateAccessPolicy
     - UpdateAccountSettings
     - UpdateCollection
+    - UpdateIndex
     - UpdateLifecyclePolicy
     - UpdateSecurityConfig
     - UpdateSecurityPolicy
