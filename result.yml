@@ -231,6 +231,7 @@ serviceMap:
     - DeleteCertificateProvider
     - DeleteCommand
     - DeleteCommandExecution
+    - DeleteConnection
     - DeleteCustomMetric
     - DeleteDimension
     - DeleteDomainConfiguration
@@ -7745,6 +7746,7 @@ serviceMap:
     - ListMLInputChannels
     - ListTagsForResource
     - ListTrainedModelInferenceJobs
+    - ListTrainedModelVersions
     - ListTrainedModels
     - ListTrainingDatasets
     - PutConfiguredAudienceModelPolicy
@@ -14301,6 +14303,7 @@ serviceMap:
     - DescribePipelineExecution
     - DescribeProcessingJob
     - DescribeProject
+    - DescribeReservedCapacity
     - DescribeSharedModel
     - DescribeSpace
     - DescribeStudioLifecycleConfig
@@ -14415,6 +14418,7 @@ serviceMap:
     - ListTransformJobs
     - ListTrialComponents
     - ListTrials
+    - ListUltraServersByReservedCapacity
     - ListUserProfiles
     - ListWorkforces
     - ListWorkteams
