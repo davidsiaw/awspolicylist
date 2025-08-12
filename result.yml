@@ -12880,6 +12880,7 @@ serviceMap:
     - GetApplicationAuthenticationMethod
     - GetApplicationGrant
     - GetApplicationInstance
+    - GetApplicationSessionConfiguration
     - GetApplicationTemplate
     - GetInlinePolicyForPermissionSet
     - GetManagedApplicationInstance
@@ -12924,6 +12925,7 @@ serviceMap:
     - PutApplicationAssignmentConfiguration
     - PutApplicationAuthenticationMethod
     - PutApplicationGrant
+    - PutApplicationSessionConfiguration
     - PutInlinePolicyToPermissionSet
     - PutMfaDeviceManagementForDirectory
     - PutPermissionsBoundaryToPermissionSet
