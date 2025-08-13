@@ -2109,6 +2109,7 @@ serviceMap:
     - DismissUserContact
     - GetAttachedFile
     - GetContactAttributes
+    - GetContactMetrics
     - GetCurrentMetricData
     - GetCurrentUserData
     - GetEffectiveHoursOfOperations
