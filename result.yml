@@ -2747,6 +2747,11 @@ serviceMap:
     - refactor-spaces:ServiceCreatedByAccount
     - refactor-spaces:SourcePath
     HasResource: true
+  AWS Billing And Cost Management Recommended Actions:
+    StringPrefix: bcm-recommended-actions
+    Actions:
+    - ListRecommendedActions
+    HasResource: false
   Amazon CloudWatch Application Signals:
     StringPrefix: application-signals
     Actions:
@@ -3429,6 +3434,7 @@ serviceMap:
     - rds:ManageMasterUserPassword
     - rds:MultiAz
     - rds:Piops
+    - rds:PubliclyAccessible
     - rds:StorageEncrypted
     - rds:StorageSize
     - rds:TenantDatabaseName
@@ -9957,41 +9963,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Diode Messaging:
-    StringPrefix: diode-messaging
-    Actions:
-    - AcceptAccountMapping
-    - AssociateRequestingFlow
-    - AssociateRespondingFlow
-    - CreateAccountMapping
-    - CreateRequestingFlow
-    - CreateRespondingFlow
-    - DeleteAccountMapping
-    - DeleteRequestingFlow
-    - DeleteRespondingFlow
-    - DisassociateRequestingFlow
-    - DisassociateRespondingFlow
-    - GetAccountMapping
-    - GetAccountMappingPin
-    - GetRequestingFlow
-    - GetRespondingFlow
-    - ListAccountMappings
-    - ListArtifacts
-    - ListRequestingFlows
-    - ListRespondingFlows
-    - ListTagsForResource
-    - RejectAccountMapping
-    - TagResource
-    - UntagResource
-    - UpdateRequestingFlow
-    - UpdateRespondingFlow
-    ARNFormat: arn:aws:diode-messaging:${Region}:${Account}:${RelativeId}
-    ARNRegex: "^arn:aws:diode-messaging:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    HasResource: true
   Amazon EC2 Instance Connect:
     StringPrefix: ec2-instance-connect
     Actions:
@@ -11691,6 +11662,7 @@ serviceMap:
     - CreatePublicDnsNamespace
     - CreateService
     - DeleteNamespace
+    - DeleteResourcePolicy
     - DeleteService
     - DeleteServiceAttributes
     - DeregisterInstance
@@ -11700,6 +11672,7 @@ serviceMap:
     - GetInstancesHealthStatus
     - GetNamespace
     - GetOperation
+    - GetResourcePolicy
     - GetService
     - GetServiceAttributes
     - ListInstances
@@ -11707,6 +11680,7 @@ serviceMap:
     - ListOperations
     - ListServices
     - ListTagsForResource
+    - PutResourcePolicy
     - RegisterInstance
     - TagResource
     - UntagResource
@@ -11725,6 +11699,7 @@ serviceMap:
     - servicediscovery:NamespaceArn
     - servicediscovery:NamespaceName
     - servicediscovery:ServiceArn
+    - servicediscovery:ServiceCreatedByAccount
     - servicediscovery:ServiceName
     HasResource: true
   AWS Tiros:
@@ -14605,6 +14580,15 @@ serviceMap:
     - sagemaker:WorkteamArn
     - sagemaker:WorkteamType
     HasResource: true
+  AWS Service for managing AWS Console user experience capabilities.:
+    StringPrefix: uxc
+    Actions:
+    - DeleteAccountColor
+    - GetAccountColor
+    - PutAccountColor
+    ARNFormat: arn:${Partition}:uxc:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:${Partition}:uxc:.+:.+:.+"
+    HasResource: false
   Amazon Verified Permissions:
     StringPrefix: verifiedpermissions
     Actions:
@@ -16750,6 +16734,8 @@ serviceMap:
     - DescribeConnectClientAddIns
     - DescribeConnectionAliasPermissions
     - DescribeConnectionAliases
+    - DescribeConsent
+    - DescribeCustomWorkspaceImageImport
     - DescribeImageAssociations
     - DescribeIpGroups
     - DescribeRootClientCertificates
@@ -16770,6 +16756,7 @@ serviceMap:
     - DisassociateWorkspaceApplication
     - GetAccountLink
     - ImportClientBranding
+    - ImportCustomWorkspaceImage
     - ImportWorkspaceImage
     - ListAccountLinks
     - ListAvailableManagementCidrRanges
@@ -16801,6 +16788,7 @@ serviceMap:
     - TerminateWorkspacesPoolSession
     - UpdateConnectClientAddIn
     - UpdateConnectionAliasPermission
+    - UpdateConsent
     - UpdateRootClientCertificate
     - UpdateRulesOfIpGroup
     - UpdateWorkspaceBundle
@@ -18941,6 +18929,7 @@ serviceMap:
   Amazon Application Recovery Controller - Zonal Shift:
     StringPrefix: arc-zonal-shift
     Actions:
+    - CancelPracticeRun
     - CancelZonalShift
     - CreatePracticeRunConfiguration
     - DeletePracticeRunConfiguration
@@ -18949,6 +18938,7 @@ serviceMap:
     - ListAutoshifts
     - ListManagedResources
     - ListZonalShifts
+    - StartPracticeRun
     - StartZonalShift
     - UpdateAutoshiftObserverNotificationStatus
     - UpdatePracticeRunConfiguration
@@ -19917,36 +19907,6 @@ serviceMap:
     - aws:TagKeys
     - memorydb:TLSEnabled
     - memorydb:UserAuthenticationMode
-    HasResource: true
-  AWS Diode:
-    StringPrefix: diode
-    Actions:
-    - AcceptAccountMapping
-    - CreateAccountMapping
-    - CreateLogDeliverySubscription
-    - CreateTransfer
-    - DeleteAccountMapping
-    - DeleteLogDeliverySubscription
-    - DescribeAccountMapping
-    - DescribeTransfer
-    - GetAccountMappingPin
-    - ListAccountMappings
-    - ListLogDeliverySubscriptions
-    - ListTags
-    - ListTransfers
-    - RejectAccountMapping
-    - TagResource
-    - UntagResource
-    - UpdateAccountMappingAlias
-    - UpdateAccountMappingDeliveryS3BucketName
-    - UpdateAccountMappingRoleArn
-    ARNFormat: arn:aws:diode:${Region}:${Account}:${ResourceType}/${ResourceId}
-    ARNRegex: "^arn:aws:diode:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    - diode:transferProfile
     HasResource: true
   Amazon Pinpoint SMS and Voice Service:
     StringPrefix: sms-voice
