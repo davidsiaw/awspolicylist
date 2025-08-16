@@ -13369,7 +13369,9 @@ serviceMap:
     - CreateMembers
     - CreatePublishingDestination
     - CreateSampleFindings
+    - CreateThreatEntitySet
     - CreateThreatIntelSet
+    - CreateTrustedEntitySet
     - DeclineInvitations
     - DeleteDetector
     - DeleteFilter
@@ -13378,7 +13380,9 @@ serviceMap:
     - DeleteMalwareProtectionPlan
     - DeleteMembers
     - DeletePublishingDestination
+    - DeleteThreatEntitySet
     - DeleteThreatIntelSet
+    - DeleteTrustedEntitySet
     - DescribeMalwareScans
     - DescribeOrganizationConfiguration
     - DescribePublishingDestination
@@ -13402,7 +13406,9 @@ serviceMap:
     - GetMembers
     - GetOrganizationStatistics
     - GetRemainingFreeTrialDays
+    - GetThreatEntitySet
     - GetThreatIntelSet
+    - GetTrustedEntitySet
     - GetUsageStatistics
     - InviteMembers
     - ListCoverage
@@ -13416,7 +13422,9 @@ serviceMap:
     - ListOrganizationAdminAccounts
     - ListPublishingDestinations
     - ListTagsForResource
+    - ListThreatEntitySets
     - ListThreatIntelSets
+    - ListTrustedEntitySets
     - SendSecurityTelemetry
     - StartMalwareScan
     - StartMonitoringMembers
@@ -13433,7 +13441,9 @@ serviceMap:
     - UpdateMemberDetectors
     - UpdateOrganizationConfiguration
     - UpdatePublishingDestination
+    - UpdateThreatEntitySet
     - UpdateThreatIntelSet
+    - UpdateTrustedEntitySet
     ARNFormat: arn:aws:guardduty:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:guardduty:.+"
     conditionKeys:
@@ -14707,12 +14717,14 @@ serviceMap:
     - DeleteAlertManagerSilence
     - DeleteLoggingConfiguration
     - DeleteQueryLoggingConfiguration
+    - DeleteResourcePolicy
     - DeleteRuleGroupsNamespace
     - DeleteScraper
     - DeleteWorkspace
     - DescribeAlertManagerDefinition
     - DescribeLoggingConfiguration
     - DescribeQueryLoggingConfiguration
+    - DescribeResourcePolicy
     - DescribeRuleGroupsNamespace
     - DescribeScraper
     - DescribeWorkspace
@@ -14735,6 +14747,7 @@ serviceMap:
     - ListWorkspaces
     - PutAlertManagerDefinition
     - PutAlertManagerSilences
+    - PutResourcePolicy
     - PutRuleGroupsNamespace
     - QueryMetrics
     - RemoteWrite
@@ -18323,7 +18336,6 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
-    - identitystore:GroupId
     - quicksight:AllowedEmbeddingDomains
     - quicksight:DirectoryType
     - quicksight:Edition
