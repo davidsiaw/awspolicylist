@@ -12290,6 +12290,7 @@ serviceMap:
     - CreateDataQualityRuleset
     - CreateDatabase
     - CreateDevEndpoint
+    - CreateGlueIdentityCenterConfiguration
     - CreateInboundIntegration
     - CreateIntegration
     - CreateIntegrationResourceProperty
@@ -12321,6 +12322,7 @@ serviceMap:
     - DeleteDataQualityRuleset
     - DeleteDatabase
     - DeleteDevEndpoint
+    - DeleteGlueIdentityCenterConfiguration
     - DeleteIntegration
     - DeleteIntegrationTableProperties
     - DeleteJob
@@ -12384,6 +12386,7 @@ serviceMap:
     - GetExecutors
     - GetExecutorsThreads
     - GetGeneratedCode
+    - GetGlueIdentityCenterConfiguration
     - GetIntegrationResourceProperty
     - GetIntegrationTableProperties
     - GetJob
@@ -12530,6 +12533,7 @@ serviceMap:
     - UpdateDataQualityRuleset
     - UpdateDatabase
     - UpdateDevEndpoint
+    - UpdateGlueIdentityCenterConfiguration
     - UpdateIntegrationResourceProperty
     - UpdateIntegrationTableProperties
     - UpdateJob
@@ -12866,7 +12870,6 @@ serviceMap:
     - DeleteManagedApplicationInstance
     - DeletePermissionSet
     - DeletePermissionsBoundaryFromPermissionSet
-    - DeletePermissionsPolicy
     - DeleteProfile
     - DeleteTrustedTokenIssuer
     - DescribeAccountAssignmentCreationStatus
@@ -12874,15 +12877,12 @@ serviceMap:
     - DescribeApplication
     - DescribeApplicationAssignment
     - DescribeApplicationProvider
-    - DescribeDirectories
     - DescribeInstance
     - DescribeInstanceAccessControlAttributeConfiguration
     - DescribePermissionSet
     - DescribePermissionSetProvisioningStatus
-    - DescribePermissionsPolicies
     - DescribeRegisteredRegions
     - DescribeTrustedTokenIssuer
-    - DescribeTrusts
     - DetachCustomerManagedPolicyReferenceFromPermissionSet
     - DetachManagedPolicyFromPermissionSet
     - DisassociateDirectory
@@ -12899,7 +12899,6 @@ serviceMap:
     - GetMfaDeviceManagementForDirectory
     - GetPermissionSet
     - GetPermissionsBoundaryForPermissionSet
-    - GetPermissionsPolicy
     - GetProfile
     - GetSSOStatus
     - GetSharedSsoConfiguration
@@ -12955,7 +12954,6 @@ serviceMap:
     - UpdateApplicationInstanceSecurityConfiguration
     - UpdateApplicationInstanceServiceProviderConfiguration
     - UpdateApplicationInstanceStatus
-    - UpdateDirectoryAssociation
     - UpdateInstance
     - UpdateInstanceAccessControlAttributeConfiguration
     - UpdateManagedApplicationInstanceStatus
@@ -18574,6 +18572,7 @@ serviceMap:
   Amazon Q Business:
     StringPrefix: qbusiness
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociatePermission
     - BatchDeleteDocument
     - BatchPutDocument
