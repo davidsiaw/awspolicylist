@@ -6513,6 +6513,7 @@ serviceMap:
     - AddEntityOwner
     - AddPolicyGrant
     - AssociateEnvironmentRole
+    - AssociateGovernedTerms
     - BatchDeleteLinkedTypes
     - BatchPutLinkedTypes
     - CancelMetadataGenerationRun
@@ -6573,6 +6574,7 @@ serviceMap:
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
     - DisassociateEnvironmentRole
+    - DisassociateGovernedTerms
     - GetAccountPool
     - GetAsset
     - GetAssetFilter
