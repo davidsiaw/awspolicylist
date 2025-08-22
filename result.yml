@@ -276,6 +276,7 @@ serviceMap:
     - DescribeDetectMitigationActionsTask
     - DescribeDimension
     - DescribeDomainConfiguration
+    - DescribeEncryptionConfiguration
     - DescribeEndpoint
     - DescribeEventConfigurations
     - DescribeFleetMetric
@@ -439,6 +440,7 @@ serviceMap:
     - UpdateDimension
     - UpdateDomainConfiguration
     - UpdateDynamicThingGroup
+    - UpdateEncryptionConfiguration
     - UpdateEventConfigurations
     - UpdateFleetMetric
     - UpdateIndexingConfiguration
