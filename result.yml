@@ -11850,20 +11850,26 @@ serviceMap:
     - DeregisterApplication
     - GetApplication
     - GetComponent
+    - GetConfigurationCheckOperation
     - GetDatabase
     - GetOperation
     - GetResourcePermission
     - ListApplications
     - ListComponents
+    - ListConfigurationCheckDefinitions
+    - ListConfigurationCheckOperations
     - ListDatabases
     - ListOperationEvents
     - ListOperations
+    - ListSubCheckResults
+    - ListSubCheckRuleResults
     - ListTagsForResource
     - PutResourcePermission
     - RegisterApplication
     - RestoreDatabase
     - StartApplication
     - StartApplicationRefresh
+    - StartConfigurationChecks
     - StopApplication
     - TagResource
     - UntagResource
@@ -17457,6 +17463,9 @@ serviceMap:
     - UpdateDashboard
     ARNFormat: arn:${Partition}:bcm-dashboards:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:${Partition}:bcm-dashboards:. :. :. "
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:TagKeys
     HasResource: false
   Amazon GameLift Streams:
     StringPrefix: gameliftstreams
@@ -20751,6 +20760,7 @@ serviceMap:
     - CreateFlowLogs
     - CreateFpgaImage
     - CreateImage
+    - CreateImageUsageReport
     - CreateInstanceConnectEndpoint
     - CreateInstanceEventWindow
     - CreateInstanceExportTask
@@ -20838,6 +20848,7 @@ serviceMap:
     - DeleteFleets
     - DeleteFlowLogs
     - DeleteFpgaImage
+    - DeleteImageUsageReport
     - DeleteInstanceConnectEndpoint
     - DeleteInstanceEventWindow
     - DeleteInternetGateway
@@ -20966,6 +20977,9 @@ serviceMap:
     - DescribeIdFormat
     - DescribeIdentityIdFormat
     - DescribeImageAttribute
+    - DescribeImageReferences
+    - DescribeImageUsageReportEntries
+    - DescribeImageUsageReports
     - DescribeImages
     - DescribeImportImageTasks
     - DescribeImportSnapshotTasks
@@ -21241,6 +21255,7 @@ serviceMap:
     - ModifyImageAttribute
     - ModifyInstanceAttribute
     - ModifyInstanceCapacityReservationAttributes
+    - ModifyInstanceConnectEndpoint
     - ModifyInstanceCpuOptions
     - ModifyInstanceCreditSpecification
     - ModifyInstanceEventStartTime
