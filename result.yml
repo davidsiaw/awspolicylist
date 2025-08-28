@@ -3919,6 +3919,7 @@ serviceMap:
     - DescribeFargateProfile
     - DescribeIdentityProviderConfig
     - DescribeInsight
+    - DescribeInsightsRefresh
     - DescribeNodegroup
     - DescribePodIdentityAssociation
     - DescribeUpdate
@@ -3940,6 +3941,7 @@ serviceMap:
     - ListTagsForResource
     - ListUpdates
     - RegisterCluster
+    - StartInsightsRefresh
     - TagResource
     - UntagResource
     - UpdateAccessEntry
