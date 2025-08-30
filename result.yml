@@ -111,6 +111,7 @@ serviceMap:
     - DeleteInvestigation
     - DeleteInvestigationGroup
     - DeleteInvestigationGroupPolicy
+    - GetEphemeralInvestigationResults
     - GetInvestigation
     - GetInvestigationEvent
     - GetInvestigationGroup
