@@ -98,6 +98,9 @@ conditionKeys:
 - aws:UserAgent
 - aws:ViaAWSService
 - aws:VpcSourceIp
+- aws:VpceAccount
+- aws:VpceOrgID
+- aws:VpceOrgPaths
 - aws:userid
 - aws:username
 serviceMap:
