@@ -5619,6 +5619,7 @@ serviceMap:
     - BatchGetSchemaAnalysisRule
     - CreateAnalysisTemplate
     - CreateCollaboration
+    - CreateCollaborationChangeRequest
     - CreateConfiguredAudienceModelAssociation
     - CreateConfiguredTable
     - CreateConfiguredTableAnalysisRule
@@ -5643,6 +5644,7 @@ serviceMap:
     - GetAnalysisTemplate
     - GetCollaboration
     - GetCollaborationAnalysisTemplate
+    - GetCollaborationChangeRequest
     - GetCollaborationConfiguredAudienceModelAssociation
     - GetCollaborationIdNamespaceAssociation
     - GetCollaborationPrivacyBudgetTemplate
@@ -5661,6 +5663,7 @@ serviceMap:
     - GetSchemaAnalysisRule
     - ListAnalysisTemplates
     - ListCollaborationAnalysisTemplates
+    - ListCollaborationChangeRequests
     - ListCollaborationConfiguredAudienceModelAssociations
     - ListCollaborationIdNamespaceAssociations
     - ListCollaborationPrivacyBudgetTemplates
@@ -10974,6 +10977,7 @@ serviceMap:
     - Promote
     - RebootBroker
     - UpdateBroker
+    - UpdateBrokerAccessConfiguration
     - UpdateConfiguration
     - UpdateUser
     ARNFormat: arn:aws:mq:${Region}:${Account}:.+
@@ -15878,6 +15882,8 @@ serviceMap:
     - iam:PolicyARN
     - iam:RegisterSecurityKey
     - iam:ResourceTag/${TagKey}
+    - iam:ServiceSpecificCredentialAgeDays
+    - iam:ServiceSpecificCredentialServiceName
     HasResource: true
   Amazon WorkMail:
     StringPrefix: workmail
