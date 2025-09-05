@@ -9322,6 +9322,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - bedrock:BearerTokenType
     - bedrock:GuardrailIdentifier
     - bedrock:InferenceProfileArn
     - bedrock:InlineAgentName
@@ -12610,6 +12611,7 @@ serviceMap:
     - aws:TagKeys
     - glue:CredentialIssuingService
     - glue:EnabledForRedshiftAutoDiscovery
+    - glue:LakeFormationPermissions
     - glue:RoleAssumedBy
     - glue:SecurityGroupIds
     - glue:SubnetIds
@@ -20169,6 +20171,7 @@ serviceMap:
     - AssociateChannel
     - AssociateManagedNotificationAccountContact
     - AssociateManagedNotificationAdditionalChannel
+    - AssociateOrganizationalUnit
     - CreateEventRule
     - CreateNotificationConfiguration
     - DeleteEventRule
@@ -20178,6 +20181,7 @@ serviceMap:
     - DisassociateChannel
     - DisassociateManagedNotificationAccountContact
     - DisassociateManagedNotificationAdditionalChannel
+    - DisassociateOrganizationalUnit
     - EnableNotificationsAccessForOrganization
     - GetEventRule
     - GetFeatureOptInStatus
@@ -20193,9 +20197,11 @@ serviceMap:
     - ListManagedNotificationChildEvents
     - ListManagedNotificationConfigurations
     - ListManagedNotificationEvents
+    - ListMemberAccounts
     - ListNotificationConfigurations
     - ListNotificationEvents
     - ListNotificationHubs
+    - ListOrganizationalUnits
     - ListTagsForResource
     - PutFeatureOptInStatus
     - RegisterNotificationHub
