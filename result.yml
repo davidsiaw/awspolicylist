@@ -24007,6 +24007,7 @@ serviceMap:
     - CreateJobTemplate
     - CreatePreset
     - CreateQueue
+    - CreateResourceShare
     - DeleteJobTemplate
     - DeletePolicy
     - DeletePreset
@@ -24398,10 +24399,12 @@ serviceMap:
     - ListAWSServiceAccessForOrganization
     - ListAccounts
     - ListAccountsForParent
+    - ListAccountsWithInvalidEffectivePolicy
     - ListChildren
     - ListCreateAccountStatus
     - ListDelegatedAdministrators
     - ListDelegatedServicesForAccount
+    - ListEffectivePolicyValidationErrors
     - ListHandshakesForAccount
     - ListHandshakesForOrganization
     - ListOrganizationalUnitsForParent
