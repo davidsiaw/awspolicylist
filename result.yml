@@ -23886,8 +23886,6 @@ serviceMap:
     ARNFormat: arn:aws:glacier:${Region}:${Account}:vault/${VaultName}
     ARNRegex: "^arn:aws:glacier:.+:.+:.+"
     conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:TagKeys
     - glacier:ArchiveAgeInDays
     - glacier:ResourceTag/
     HasResource: true
