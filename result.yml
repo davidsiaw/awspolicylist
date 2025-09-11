@@ -11633,13 +11633,21 @@ serviceMap:
     Actions:
     - AssociateConnectorResource
     - CreateProfile
+    - DeleteConnector
     - DeleteProfile
     - GetConnector
+    - ListConnectors
     - ListProfiles
+    - ListTagsForResource
     - RejectConnector
+    - TagResource
+    - UntagResource
     - UpdateProfile
     ARNFormat: arn:aws:transform:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:transform:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon SQS:
     StringPrefix: sqs
