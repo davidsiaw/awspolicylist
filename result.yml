@@ -1440,9 +1440,11 @@ serviceMap:
     Actions:
     - CreateGroup
     - CreateGroupMembership
+    - CreateIdentityStore
     - CreateUser
     - DeleteGroup
     - DeleteGroupMembership
+    - DeleteIdentityStore
     - DeleteUser
     - DescribeGroup
     - DescribeGroupMembership
@@ -1456,6 +1458,7 @@ serviceMap:
     - ListGroups
     - ListUsers
     - UpdateGroup
+    - UpdateIdentityStore
     - UpdateUser
     ARNFormat: arn:aws:identitystore::${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:identitystore:.+"
@@ -18213,6 +18216,7 @@ serviceMap:
     - CreateTopicRefreshSchedule
     - CreateUser
     - CreateVPCConnection
+    - DeleteAccountCustomPermission
     - DeleteAccountCustomization
     - DeleteAccountSubscription
     - DeleteAnalysis
@@ -18245,6 +18249,7 @@ serviceMap:
     - DeleteUserByPrincipalId
     - DeleteUserCustomPermission
     - DeleteVPCConnection
+    - DescribeAccountCustomPermission
     - DescribeAccountCustomization
     - DescribeAccountSettings
     - DescribeAccountSubscription
@@ -18365,6 +18370,7 @@ serviceMap:
     - TagResource
     - Unsubscribe
     - UntagResource
+    - UpdateAccountCustomPermission
     - UpdateAccountCustomization
     - UpdateAccountSettings
     - UpdateAnalysis
