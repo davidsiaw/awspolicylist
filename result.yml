@@ -7046,13 +7046,16 @@ serviceMap:
     - BatchGetInvoiceProfile
     - CreateInvoiceUnit
     - DeleteInvoiceUnit
+    - GetInvoiceCorrection
     - GetInvoiceEmailDeliveryPreferences
     - GetInvoicePDF
     - GetInvoiceUnit
+    - ListInvoiceCorrections
     - ListInvoiceSummaries
     - ListInvoiceUnits
     - ListTagsForResource
     - PutInvoiceEmailDeliveryPreferences
+    - StartInvoiceCorrection
     - TagResource
     - UntagResource
     - UpdateInvoiceUnit
@@ -9497,6 +9500,7 @@ serviceMap:
     - GetTemplate
     - GetTemplateSummary
     - ImportStacksToStackSet
+    - ListAllHookResults
     - ListChangeSets
     - ListExports
     - ListGeneratedTemplates
@@ -9552,6 +9556,7 @@ serviceMap:
     - cloudformation:StackPolicyUrl
     - cloudformation:TargetRegion
     - cloudformation:TemplateUrl
+    - cloudformation:TypeArn
     HasResource: true
   AWS Cloud Control API:
     StringPrefix: cloudformation
@@ -9664,25 +9669,33 @@ serviceMap:
   Amazon CloudWatch Observability Admin Service:
     StringPrefix: observabilityadmin
     Actions:
+    - CreateCentralizationRuleForOrganization
     - CreateTelemetryRule
     - CreateTelemetryRuleForOrganization
+    - DeleteCentralizationRuleForOrganization
     - DeleteTelemetryRule
     - DeleteTelemetryRuleForOrganization
+    - GetCentralizationRuleForOrganization
+    - GetTelemetryEnrichmentStatus
     - GetTelemetryEvaluationStatus
     - GetTelemetryEvaluationStatusForOrganization
     - GetTelemetryRule
     - GetTelemetryRuleForOrganization
+    - ListCentralizationRulesForOrganization
     - ListResourceTelemetry
     - ListResourceTelemetryForOrganization
     - ListTagsForResource
     - ListTelemetryRules
     - ListTelemetryRulesForOrganization
+    - StartTelemetryEnrichment
     - StartTelemetryEvaluation
     - StartTelemetryEvaluationForOrganization
+    - StopTelemetryEnrichment
     - StopTelemetryEvaluation
     - StopTelemetryEvaluationForOrganization
     - TagResource
     - UntagResource
+    - UpdateCentralizationRuleForOrganization
     - UpdateTelemetryRule
     - UpdateTelemetryRuleForOrganization
     ARNFormat: arn:aws:observabilityadmin:${Region}:${Account}:${ResourceType}
@@ -9691,6 +9704,9 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - observabilityadmin:CentralizationBackupRegion
+    - observabilityadmin:CentralizationDestinationRegion
+    - observabilityadmin:CentralizationSourceRegions
     HasResource: true
   Amazon Macie:
     StringPrefix: macie2
@@ -22814,16 +22830,22 @@ serviceMap:
     Actions:
     - BatchDeleteTaxRegistration
     - BatchPutTaxRegistration
+    - CancelDocument
+    - CreateDocument
     - DeleteSupplementalTaxRegistration
     - DeleteTaxRegistration
+    - GetDocument
+    - GetDocumentUploadUrl
     - GetExemptions
     - GetTaxInfoReportingDocument
     - GetTaxInheritance
     - GetTaxInterview
     - GetTaxRegistration
     - GetTaxRegistrationDocument
+    - ListDocuments
     - ListSupplementalTaxRegistrations
     - ListTaxRegistrations
+    - ListWithholdingEligibleInvoices
     - PutSupplementalTaxRegistration
     - PutTaxInheritance
     - PutTaxInterview
