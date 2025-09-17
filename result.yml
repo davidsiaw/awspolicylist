@@ -5908,6 +5908,7 @@ serviceMap:
     - RemoveAssistantAIAgent
     - RemoveKnowledgeBaseTemplateUri
     - RenderMessageTemplate
+    - Retrieve
     - SearchContent
     - SearchMessageTemplates
     - SearchQuickResponses
