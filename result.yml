@@ -8660,6 +8660,7 @@ serviceMap:
     conditionKeys:
     - autoscaling:CapacityReservationIds
     - autoscaling:CapacityReservationResourceGroupArns
+    - autoscaling:ForceDelete
     - autoscaling:ImageId
     - autoscaling:InstanceType
     - autoscaling:InstanceTypes
@@ -11927,10 +11928,12 @@ serviceMap:
   Amazon Elastic VMware Service:
     StringPrefix: evs
     Actions:
+    - AssociateEipToVlan
     - CreateEnvironment
     - CreateEnvironmentHost
     - DeleteEnvironment
     - DeleteEnvironmentHost
+    - DisassociateEipFromVlan
     - GetEnvironment
     - ListEnvironmentHosts
     - ListEnvironmentVlans
@@ -16831,7 +16834,6 @@ serviceMap:
     - DescribeCustomWorkspaceImageImport
     - DescribeImageAssociations
     - DescribeIpGroups
-    - DescribeRootClientCertificates
     - DescribeTags
     - DescribeWorkspaceAssociations
     - DescribeWorkspaceBundles
