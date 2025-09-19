@@ -78,6 +78,8 @@ conditionKeys:
 - aws:PrincipalTag/${TagKey}
 - aws:PrincipalType
 - aws:Referer
+- aws:RequestIdentityStoreGroupArn
+- aws:RequestIdentityStoreUserArn
 - aws:RequestTag/${TagKey}
 - aws:RequestedRegion
 - aws:ResourceAccount
@@ -9107,6 +9109,7 @@ serviceMap:
     - BatchDeleteEvaluationJob
     - CallWithBearerToken
     - CancelAutomatedReasoningPolicyBuildWorkflow
+    - CountTokens
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
