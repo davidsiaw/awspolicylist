@@ -23685,6 +23685,7 @@ serviceMap:
     - ListMemoryRecords
     - ListOauth2CredentialProviders
     - ListSessions
+    - ListTagsForResource
     - ListWorkloadIdentities
     - RetrieveMemoryRecords
     - SetTokenVaultCMK
@@ -23693,6 +23694,8 @@ serviceMap:
     - StopBrowserSession
     - StopCodeInterpreterSession
     - SynchronizeGatewayTargets
+    - TagResource
+    - UntagResource
     - UpdateAgentRuntime
     - UpdateAgentRuntimeEndpoint
     - UpdateApiKeyCredentialProvider
@@ -23705,6 +23708,9 @@ serviceMap:
     ARNFormat: arn:aws:bedrock-agentcore:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock-agentcore:.+:.+:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
     - bedrock-agentcore:sessionId
