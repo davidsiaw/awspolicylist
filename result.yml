@@ -19279,9 +19279,11 @@ serviceMap:
   AWS Billing:
     StringPrefix: billing
     Actions:
+    - AssociateSourceViews
     - CreateBillingView
     - DeleteBillingView
     - DeleteResourcePolicy
+    - DisassociateSourceViews
     - GetBillingData
     - GetBillingDetails
     - GetBillingNotifications
@@ -19304,6 +19306,7 @@ serviceMap:
     - UpdateBillingPreferences
     - UpdateBillingView
     - UpdateIAMAccessPreference
+    - UseSourceView
     ARNFormat: arn:aws:billing::${Account}:${ResourceType}
     ARNRegex: "^arn:aws:billing:.+"
     conditionKeys:
