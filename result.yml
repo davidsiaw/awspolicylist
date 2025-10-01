@@ -935,6 +935,7 @@ serviceMap:
     - GetIdentityResolutionJob
     - GetIntegration
     - GetMatches
+    - GetProfileHistoryRecord
     - GetProfileObjectType
     - GetProfileObjectTypeTemplate
     - GetSegmentDefinition
@@ -958,6 +959,7 @@ serviceMap:
     - ListIntegrations
     - ListObjectTypeAttributes
     - ListProfileAttributeValues
+    - ListProfileHistoryRecords
     - ListProfileObjectTypeTemplates
     - ListProfileObjectTypes
     - ListProfileObjects
@@ -11408,42 +11410,6 @@ serviceMap:
     conditionKeys:
     - s3vectors:kmsKeyArn
     - s3vectors:sseType
-    HasResource: true
-  AWS IoT 1-Click:
-    StringPrefix: iot1click
-    Actions:
-    - AssociateDeviceWithPlacement
-    - ClaimDevicesByClaimCode
-    - CreatePlacement
-    - CreateProject
-    - DeletePlacement
-    - DeleteProject
-    - DescribeDevice
-    - DescribePlacement
-    - DescribeProject
-    - DisassociateDeviceFromPlacement
-    - FinalizeDeviceClaim
-    - GetDeviceMethods
-    - GetDevicesInPlacement
-    - InitiateDeviceClaim
-    - InvokeDeviceMethod
-    - ListDeviceEvents
-    - ListDevices
-    - ListPlacements
-    - ListProjects
-    - ListTagsForResource
-    - TagResource
-    - UnclaimDevice
-    - UntagResource
-    - UpdateDeviceState
-    - UpdatePlacement
-    - UpdateProject
-    ARNFormat: arn:aws:iot1click:${Region}:${Account}:${Type}/${Name}
-    ARNRegex: "^arn:aws:iot1click:.+:[0-9]+:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
     HasResource: true
   Network Flow Monitor:
     StringPrefix: networkflowmonitor
@@ -23641,20 +23607,30 @@ serviceMap:
     - BatchGetView
     - CreateIndex
     - CreateManagedView
+    - CreateResourceExplorerSetup
+    - CreateStreamingAccessForService
     - CreateView
     - DeleteIndex
+    - DeleteResourceExplorerSetup
     - DeleteResourcePolicy
+    - DeleteStreamingAccessForService
     - DeleteView
     - DisassociateDefaultView
     - GetAccountLevelServiceConfiguration
     - GetDefaultView
     - GetIndex
     - GetManagedView
+    - GetResourceExplorerSetup
     - GetResourcePolicy
+    - GetServiceIndex
+    - GetServiceView
     - GetView
     - ListIndexes
     - ListIndexesForMembers
     - ListManagedViews
+    - ListServiceIndexes
+    - ListServiceViews
+    - ListStreamingAccessForServices
     - ListSupportedResourceTypes
     - ListTagsForResource
     - ListViews
