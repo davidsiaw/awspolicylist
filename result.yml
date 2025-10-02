@@ -6545,6 +6545,7 @@ serviceMap:
     - RegisterComputeNodeGroupInstance
     - TagResource
     - UntagResource
+    - UpdateCluster
     - UpdateComputeNodeGroup
     - UpdateQueue
     ARNFormat: arn:aws:pcs:${Region}:${Account}:${ResourceType}/${ResourcePath}
@@ -22310,8 +22311,8 @@ serviceMap:
     - UpdateServicePrimaryTaskSet
     - UpdateTaskProtection
     - UpdateTaskSet
-    ARNFormat: arn:aws:ecs:${Region}:${Account}:${ResourceType}/${RelativeId}
-    ARNRegex: "^arn:aws:ecs:.+"
+    ARNFormat: arn:aws:ecs:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:ecs:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
