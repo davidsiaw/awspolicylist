@@ -78,8 +78,6 @@ conditionKeys:
 - aws:PrincipalTag/${TagKey}
 - aws:PrincipalType
 - aws:Referer
-- aws:RequestIdentityStoreGroupArn
-- aws:RequestIdentityStoreUserArn
 - aws:RequestTag/${TagKey}
 - aws:RequestedRegion
 - aws:ResourceAccount
@@ -16193,16 +16191,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Application Cost Profiler Service:
-    StringPrefix: application-cost-profiler
-    Actions:
-    - DeleteReportDefinition
-    - GetReportDefinition
-    - ImportApplicationUsage
-    - ListReportDefinitions
-    - PutReportDefinition
-    - UpdateReportDefinition
-    HasResource: false
   Amazon RDS Data API:
     StringPrefix: rds-data
     Actions:
