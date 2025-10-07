@@ -23641,6 +23641,9 @@ serviceMap:
     StringPrefix: bedrock-agentcore
     Actions:
     - AllowVendedLogDeliveryForResource
+    - BatchCreateMemoryRecords
+    - BatchDeleteMemoryRecords
+    - BatchUpdateMemoryRecords
     - ConnectBrowserAutomationStream
     - ConnectBrowserLiveViewStream
     - CreateAgentRuntime
@@ -23666,6 +23669,7 @@ serviceMap:
     - DeleteMemoryRecord
     - DeleteOauth2CredentialProvider
     - DeleteWorkloadIdentity
+    - GetAgentCard
     - GetAgentRuntime
     - GetAgentRuntimeEndpoint
     - GetApiKeyCredentialProvider
@@ -23712,6 +23716,7 @@ serviceMap:
     - StartCodeInterpreterSession
     - StopBrowserSession
     - StopCodeInterpreterSession
+    - StopRuntimeSession
     - SynchronizeGatewayTargets
     - TagResource
     - UntagResource
