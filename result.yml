@@ -111,25 +111,34 @@ serviceMap:
     - CreateInvestigationEvent
     - CreateInvestigationGroup
     - CreateInvestigationResource
+    - CreateReport
     - DeleteInvestigation
     - DeleteInvestigationGroup
     - DeleteInvestigationGroupPolicy
+    - GenerateReport
     - GetEphemeralInvestigationResults
+    - GetFact
+    - GetFactVersions
     - GetInvestigation
     - GetInvestigationEvent
     - GetInvestigationGroup
     - GetInvestigationGroupPolicy
     - GetInvestigationResource
+    - GetReport
+    - ListFacts
     - ListInvestigationEvents
     - ListInvestigationGroups
     - ListInvestigations
+    - ListReports
     - ListTagsForResource
+    - PutFact
     - PutInvestigationGroupPolicy
     - TagResource
     - UntagResource
     - UpdateInvestigation
     - UpdateInvestigationEvent
     - UpdateInvestigationGroup
+    - UpdateReport
     - ValidateInvestigationGroup
     ARNFormat: arn:aws:aiops:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:aiops:.+:.+:.+"
