@@ -18198,6 +18198,7 @@ serviceMap:
     - CancelIngestion
     - CreateAccountCustomization
     - CreateAccountSubscription
+    - CreateActionConnector
     - CreateAdmin
     - CreateAnalysis
     - CreateBrand
@@ -18206,6 +18207,7 @@ serviceMap:
     - CreateDataSet
     - CreateDataSource
     - CreateEmailCustomizationTemplate
+    - CreateExtensionAccess
     - CreateFolder
     - CreateFolderMembership
     - CreateGroup
@@ -18227,6 +18229,7 @@ serviceMap:
     - DeleteAccountCustomPermission
     - DeleteAccountCustomization
     - DeleteAccountSubscription
+    - DeleteActionConnector
     - DeleteAnalysis
     - DeleteBrand
     - DeleteBrandAssignment
@@ -18237,6 +18240,7 @@ serviceMap:
     - DeleteDataSource
     - DeleteDefaultQBusinessApplication
     - DeleteEmailCustomizationTemplate
+    - DeleteExtensionAccess
     - DeleteFolder
     - DeleteFolderMembership
     - DeleteGroup
@@ -18261,6 +18265,10 @@ serviceMap:
     - DescribeAccountCustomization
     - DescribeAccountSettings
     - DescribeAccountSubscription
+    - DescribeActionConnector
+    - DescribeActionConnectorPermissions
+    - DescribeAgent
+    - DescribeAgentPermissions
     - DescribeAnalysis
     - DescribeAnalysisPermissions
     - DescribeAssetBundleExportJob
@@ -18268,6 +18276,7 @@ serviceMap:
     - DescribeBrand
     - DescribeBrandAssignment
     - DescribeBrandPublishedVersion
+    - DescribeChatConfiguration
     - DescribeCustomPermissions
     - DescribeDashboard
     - DescribeDashboardPermissions
@@ -18281,6 +18290,7 @@ serviceMap:
     - DescribeDataSourcePermissions
     - DescribeDefaultQBusinessApplication
     - DescribeEmailCustomizationTemplate
+    - DescribeExtensionAccess
     - DescribeFolder
     - DescribeFolderPermissions
     - DescribeFolderResolvedPermissions
@@ -18292,6 +18302,7 @@ serviceMap:
     - DescribeKeyRegistration
     - DescribeNamespace
     - DescribeQPersonalizationConfiguration
+    - DescribeQuickIndexCapacity
     - DescribeQuickSightQSearchConfiguration
     - DescribeRefreshSchedule
     - DescribeRoleCustomPermission
@@ -18312,9 +18323,14 @@ serviceMap:
     - GenerateEmbedUrlForRegisteredUserWithIdentity
     - GetAnonymousUserEmbedUrl
     - GetAuthCode
+    - GetCustomPermissionsSummary
     - GetDashboardEmbedUrl
+    - GetFlowMetadata
+    - GetFlowPermissions
     - GetGroupMapping
     - GetSessionEmbedUrl
+    - ListActionConnectors
+    - ListAgents
     - ListAnalyses
     - ListAssetBundleExportJobs
     - ListAssetBundleImportJobs
@@ -18325,6 +18341,8 @@ serviceMap:
     - ListDashboards
     - ListDataSets
     - ListDataSources
+    - ListExtensionAccesses
+    - ListFlows
     - ListFolderMembers
     - ListFolders
     - ListFoldersForResource
@@ -18355,16 +18373,20 @@ serviceMap:
     - PassDataSource
     - PredictQAResults
     - PutDataSetRefreshProperties
+    - QuickSuiteUsageMetrics
     - RegisterCustomerManagedKey
     - RegisterUser
     - RemoveCustomerManagedKey
     - RestoreAnalysis
     - ScopeDownPolicy
+    - SearchActionConnectors
+    - SearchAgents
     - SearchAnalyses
     - SearchDashboards
     - SearchDataSets
     - SearchDataSources
     - SearchDirectoryGroups
+    - SearchFlows
     - SearchFolders
     - SearchGroups
     - SearchTopics
@@ -18376,17 +18398,22 @@ serviceMap:
     - StartDashboardSnapshotJobSchedule
     - Subscribe
     - TagResource
+    - UnpublishFlow
     - Unsubscribe
     - UntagResource
     - UpdateAccountCustomPermission
     - UpdateAccountCustomization
     - UpdateAccountSettings
+    - UpdateActionConnector
+    - UpdateActionConnectorPermissions
+    - UpdateAgentPermissions
     - UpdateAnalysis
     - UpdateAnalysisPermissions
     - UpdateApplicationWithTokenExchangeGrant
     - UpdateBrand
     - UpdateBrandAssignment
     - UpdateBrandPublishedVersion
+    - UpdateChatConfiguration
     - UpdateCustomPermissions
     - UpdateDashboard
     - UpdateDashboardLinks
@@ -18399,6 +18426,8 @@ serviceMap:
     - UpdateDataSourcePermissions
     - UpdateDefaultQBusinessApplication
     - UpdateEmailCustomizationTemplate
+    - UpdateExtensionAccess
+    - UpdateFlowPermissions
     - UpdateFolder
     - UpdateFolderPermissions
     - UpdateGroup
@@ -18408,6 +18437,7 @@ serviceMap:
     - UpdateKeyRegistration
     - UpdatePublicSharingSettings
     - UpdateQPersonalizationConfiguration
+    - UpdateQuickIndexCapacity
     - UpdateQuickSightQSearchConfiguration
     - UpdateRefreshSchedule
     - UpdateResourcePermissions
@@ -23700,6 +23730,7 @@ serviceMap:
     - GetWorkloadAccessTokenForUserId
     - GetWorkloadIdentity
     - InvokeAgentRuntime
+    - InvokeAgentRuntimeForUser
     - InvokeCodeInterpreter
     - InvokeGateway
     - ListActors
