@@ -24164,6 +24164,7 @@ serviceMap:
     - DisassociateServiceQuotaTemplate
     - GetAWSDefaultServiceQuota
     - GetAssociationForServiceQuotaTemplate
+    - GetAutoManagementConfiguration
     - GetRequestedServiceQuotaChange
     - GetServiceQuota
     - GetServiceQuotaIncreaseRequestFromTemplate
@@ -24176,8 +24177,11 @@ serviceMap:
     - ListTagsForResource
     - PutServiceQuotaIncreaseRequestIntoTemplate
     - RequestServiceQuotaIncrease
+    - StartAutoManagement
+    - StopAutoManagement
     - TagResource
     - UntagResource
+    - UpdateAutoManagement
     ARNFormat: arn:aws:servicequotas:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:servicequotas:.+"
     conditionKeys:
