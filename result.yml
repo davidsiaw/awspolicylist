@@ -3967,6 +3967,7 @@ serviceMap:
     - ListPodIdentityAssociations
     - ListTagsForResource
     - ListUpdates
+    - MutateViaKubernetesApi
     - RegisterCluster
     - StartInsightsRefresh
     - TagResource
@@ -23684,6 +23685,7 @@ serviceMap:
     - BatchCreateMemoryRecords
     - BatchDeleteMemoryRecords
     - BatchUpdateMemoryRecords
+    - CompleteResourceTokenAuth
     - ConnectBrowserAutomationStream
     - ConnectBrowserLiveViewStream
     - CreateAgentRuntime
@@ -23778,10 +23780,18 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - bedrock-agentcore:GatewayAuthorizerType
+    - bedrock-agentcore:InboundJwtClaim/aud
+    - bedrock-agentcore:InboundJwtClaim/client_id
+    - bedrock-agentcore:InboundJwtClaim/iss
+    - bedrock-agentcore:InboundJwtClaim/scope
+    - bedrock-agentcore:InboundJwtClaim/sub
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
+    - bedrock-agentcore:securityGroups
     - bedrock-agentcore:sessionId
     - bedrock-agentcore:strategyId
+    - bedrock-agentcore:subnets
+    - bedrock-agentcore:userid
     HasResource: true
   Amazon Managed Streaming for Kafka Connect:
     StringPrefix: kafkaconnect
