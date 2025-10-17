@@ -200,6 +200,11 @@ serviceMap:
     - qapps:UserIsAppOwner
     - qapps:UserIsSessionModerator
     HasResource: true
+  AWS Action Recommendations:
+    StringPrefix: action-recommendations
+    Actions:
+    - ListRecommendedActions
+    HasResource: false
   AWS IoT:
     StringPrefix: iot
     Actions:
@@ -8284,6 +8289,7 @@ serviceMap:
     - UntagResource
     - UpdateCloudExadataInfrastructure
     - UpdateOdbNetwork
+    - UpdateOdbPeeringConnection
     ARNFormat: arn:aws:odb:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:odb:.+:.+:.+"
     conditionKeys:
