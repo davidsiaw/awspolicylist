@@ -9064,10 +9064,12 @@ serviceMap:
     - GetEventBridgeRuleTemplate
     - GetEventBridgeRuleTemplateGroup
     - GetSignalMap
+    - ListAlerts
     - ListChannelPlacementGroups
     - ListChannels
     - ListCloudWatchAlarmTemplateGroups
     - ListCloudWatchAlarmTemplates
+    - ListClusterAlerts
     - ListClusters
     - ListEventBridgeRuleTemplateGroups
     - ListEventBridgeRuleTemplates
@@ -9075,6 +9077,7 @@ serviceMap:
     - ListInputDevices
     - ListInputSecurityGroups
     - ListInputs
+    - ListMultiplexAlerts
     - ListMultiplexPrograms
     - ListMultiplexes
     - ListNetworks
@@ -23613,6 +23616,10 @@ serviceMap:
     - DescribeFHIRExportJob
     - DescribeFHIRExportJobWithGet
     - DescribeFHIRImportJob
+    - ExpandValueSetWithGet
+    - ExpandValueSetWithPost
+    - GenerateDocumentWithGet
+    - GenerateDocumentWithPost
     - GetCapabilities
     - GetExportedFile
     - GetHistoryByResourceId
@@ -23620,6 +23627,9 @@ serviceMap:
     - ListFHIRExportJobs
     - ListFHIRImportJobs
     - ListTagsForResource
+    - LookupCodeSystemWithGet
+    - LookupCodeSystemWithPost
+    - PatchResource
     - ProcessBundle
     - ReadResource
     - SearchEverything
@@ -23632,6 +23642,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateResource
+    - ValidateResource
     - VersionReadResource
     ARNFormat: arn:aws:healthlake:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:healthlake:.+:.+:.+"
