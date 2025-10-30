@@ -4118,6 +4118,7 @@ serviceMap:
     - SubscribeToShard
     - TagResource
     - UntagResource
+    - UpdateMaxRecordSize
     - UpdateShardCount
     - UpdateStreamMode
     ARNFormat: arn:aws:kinesis:${Region}:${Account}:${ResourceType}/${ResourceName}
@@ -17581,6 +17582,7 @@ serviceMap:
     - GetInteraction
     - InitiateCallForCase
     - InitiateChatForCase
+    - InitiateLiveContactForCase
     - PutCaseAttributes
     - RateCaseCommunication
     - RefreshTrustedAdvisorCheck
