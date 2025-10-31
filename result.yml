@@ -5414,6 +5414,7 @@ serviceMap:
     - CreateVirtualCluster
     - DeleteJobTemplate
     - DeleteManagedEndpoint
+    - DeleteSecurityConfiguration
     - DeleteVirtualCluster
     - DescribeJobRun
     - DescribeJobTemplate
@@ -9651,6 +9652,7 @@ serviceMap:
     - GetHubConfiguration
     - GetManagedThing
     - GetManagedThingCapabilities
+    - GetManagedThingCertificate
     - GetManagedThingConnectivityData
     - GetManagedThingMetaData
     - GetManagedThingState
@@ -14797,6 +14799,7 @@ serviceMap:
     Actions:
     - CreateAlertManagerAlerts
     - CreateAlertManagerDefinition
+    - CreateAnomalyDetector
     - CreateLoggingConfiguration
     - CreateQueryLoggingConfiguration
     - CreateRuleGroupsNamespace
@@ -14804,18 +14807,22 @@ serviceMap:
     - CreateWorkspace
     - DeleteAlertManagerDefinition
     - DeleteAlertManagerSilence
+    - DeleteAnomalyDetector
     - DeleteLoggingConfiguration
     - DeleteQueryLoggingConfiguration
     - DeleteResourcePolicy
     - DeleteRuleGroupsNamespace
     - DeleteScraper
+    - DeleteScraperLoggingConfiguration
     - DeleteWorkspace
     - DescribeAlertManagerDefinition
+    - DescribeAnomalyDetector
     - DescribeLoggingConfiguration
     - DescribeQueryLoggingConfiguration
     - DescribeResourcePolicy
     - DescribeRuleGroupsNamespace
     - DescribeScraper
+    - DescribeScraperLoggingConfiguration
     - DescribeWorkspace
     - DescribeWorkspaceConfiguration
     - GetAlertManagerSilence
@@ -14829,13 +14836,16 @@ serviceMap:
     - ListAlertManagerReceivers
     - ListAlertManagerSilences
     - ListAlerts
+    - ListAnomalyDetectors
     - ListRuleGroupsNamespaces
     - ListRules
     - ListScrapers
     - ListTagsForResource
     - ListWorkspaces
+    - PreviewAnomalyDetector
     - PutAlertManagerDefinition
     - PutAlertManagerSilences
+    - PutAnomalyDetector
     - PutResourcePolicy
     - PutRuleGroupsNamespace
     - QueryMetrics
@@ -14845,6 +14855,7 @@ serviceMap:
     - UpdateLoggingConfiguration
     - UpdateQueryLoggingConfiguration
     - UpdateScraper
+    - UpdateScraperLoggingConfiguration
     - UpdateWorkspaceAlias
     - UpdateWorkspaceConfiguration
     ARNFormat: arn:aws:aps:${Region}:${Account}:${ResourceType}/${ResourceName}
