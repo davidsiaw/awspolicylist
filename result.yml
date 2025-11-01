@@ -9277,6 +9277,7 @@ serviceMap:
     - InvokeInlineAgent
     - InvokeModel
     - InvokeModelWithResponseStream
+    - InvokeTool
     - ListAgentActionGroups
     - ListAgentAliases
     - ListAgentCollaborators
@@ -10370,6 +10371,7 @@ serviceMap:
     - CreateIdentityProvider
     - CreateManagedLoginBranding
     - CreateResourceServer
+    - CreateTerms
     - CreateUserImportJob
     - CreateUserPool
     - CreateUserPoolClient
@@ -10378,6 +10380,7 @@ serviceMap:
     - DeleteIdentityProvider
     - DeleteManagedLoginBranding
     - DeleteResourceServer
+    - DeleteTerms
     - DeleteUser
     - DeleteUserAttributes
     - DeleteUserPool
@@ -10388,6 +10391,7 @@ serviceMap:
     - DescribeManagedLoginBrandingByClient
     - DescribeResourceServer
     - DescribeRiskConfiguration
+    - DescribeTerms
     - DescribeUserImportJob
     - DescribeUserPool
     - DescribeUserPoolClient
@@ -10415,6 +10419,7 @@ serviceMap:
     - ListResourceServers
     - ListResourcesForWebACL
     - ListTagsForResource
+    - ListTerms
     - ListUserImportJobs
     - ListUserPoolClients
     - ListUserPools
@@ -10440,6 +10445,7 @@ serviceMap:
     - UpdateIdentityProvider
     - UpdateManagedLoginBranding
     - UpdateResourceServer
+    - UpdateTerms
     - UpdateUserAttributes
     - UpdateUserPool
     - UpdateUserPoolClient
