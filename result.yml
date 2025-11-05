@@ -4090,6 +4090,7 @@ serviceMap:
     - DeleteResourcePolicy
     - DeleteStream
     - DeregisterStreamConsumer
+    - DescribeAccountSettings
     - DescribeLimits
     - DescribeStream
     - DescribeStreamConsumer
@@ -4118,9 +4119,11 @@ serviceMap:
     - SubscribeToShard
     - TagResource
     - UntagResource
+    - UpdateAccountSettings
     - UpdateMaxRecordSize
     - UpdateShardCount
     - UpdateStreamMode
+    - UpdateStreamWarmThroughput
     ARNFormat: arn:aws:kinesis:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:kinesis:.+"
     conditionKeys:
@@ -13992,6 +13995,10 @@ serviceMap:
     - UpdateGatewayInstance
     ARNFormat: arn:aws:mediaconnect:${Region}:${Account}:${Namespace}:${RelativeId}:${RelativeName}
     ARNRegex: "^arn:aws:mediaconnect:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon S3:
     StringPrefix: s3
@@ -20925,6 +20932,8 @@ serviceMap:
     - CopyFpgaImage
     - CopyImage
     - CopySnapshot
+    - CopyVolumes
+    - CreateCapacityManagerDataExport
     - CreateCapacityReservation
     - CreateCapacityReservationBySplitting
     - CreateCapacityReservationFleet
@@ -21020,6 +21029,7 @@ serviceMap:
     - CreateVpnConnection
     - CreateVpnConnectionRoute
     - CreateVpnGateway
+    - DeleteCapacityManagerDataExport
     - DeleteCarrierGateway
     - DeleteClientVpnEndpoint
     - DeleteClientVpnRoute
@@ -21127,6 +21137,7 @@ serviceMap:
     - DescribeCapacityBlockOfferings
     - DescribeCapacityBlockStatus
     - DescribeCapacityBlocks
+    - DescribeCapacityManagerDataExports
     - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservations
@@ -21296,6 +21307,7 @@ serviceMap:
     - DisableAddressTransfer
     - DisableAllowedImagesSettings
     - DisableAwsNetworkPerformanceMetricSubscription
+    - DisableCapacityManager
     - DisableEbsEncryptionByDefault
     - DisableFastLaunch
     - DisableFastSnapshotRestores
@@ -21333,6 +21345,7 @@ serviceMap:
     - EnableAddressTransfer
     - EnableAllowedImagesSettings
     - EnableAwsNetworkPerformanceMetricSubscription
+    - EnableCapacityManager
     - EnableEbsEncryptionByDefault
     - EnableFastLaunch
     - EnableFastSnapshotRestores
@@ -21360,6 +21373,9 @@ serviceMap:
     - GetAssociatedEnclaveCertificateIamRoles
     - GetAssociatedIpv6PoolCidrs
     - GetAwsNetworkPerformanceData
+    - GetCapacityManagerAttributes
+    - GetCapacityManagerMetricData
+    - GetCapacityManagerMetricDimensions
     - GetCapacityReservationUsage
     - GetCoipPoolUsage
     - GetConsoleOutput
@@ -21571,6 +21587,7 @@ serviceMap:
     - UnassignPrivateNatGatewayAddress
     - UnlockSnapshot
     - UnmonitorInstances
+    - UpdateCapacityManagerOrganizationsAccess
     - UpdateSecurityGroupRuleDescriptionsEgress
     - UpdateSecurityGroupRuleDescriptionsIngress
     - WithdrawByoipCidr
@@ -21702,9 +21719,12 @@ serviceMap:
     - ec2:Vpc
     - ec2:VpcID
     - ec2:VpcPeeringConnectionID
+    - ec2:VpceMultiRegion
     - ec2:VpceServiceName
     - ec2:VpceServiceOwner
     - ec2:VpceServicePrivateDnsName
+    - ec2:VpceServiceRegion
+    - ec2:VpceSupportedRegion
     - ec2:transitGatewayAttachmentId
     - ec2:transitGatewayConnectPeerId
     - ec2:transitGatewayId
@@ -21712,9 +21732,6 @@ serviceMap:
     - ec2:transitGatewayPolicyTableId
     - ec2:transitGatewayRouteTableAnnouncementId
     - ec2:transitGatewayRouteTableId
-    - ec2:vpceMultiRegion
-    - ec2:vpceServiceRegion
-    - ec2:vpceSupportedRegion
     HasResource: true
   AWS Import Export Disk Service:
     StringPrefix: importexport
