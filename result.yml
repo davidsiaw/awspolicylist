@@ -2034,6 +2034,7 @@ serviceMap:
     - AssociateContactWithUser
     - AssociateCustomerProfilesDomain
     - AssociateDefaultVocabulary
+    - AssociateEmailAddressAlias
     - AssociateFlow
     - AssociateInstanceStorageConfig
     - AssociateLambdaFunction
@@ -2141,6 +2142,7 @@ serviceMap:
     - DisassociateApprovedOrigin
     - DisassociateBot
     - DisassociateCustomerProfilesDomain
+    - DisassociateEmailAddressAlias
     - DisassociateFlow
     - DisassociateInstanceStorageConfig
     - DisassociateLambdaFunction
@@ -3805,6 +3807,7 @@ serviceMap:
     - DeleteOriginRequestPolicy
     - DeletePublicKey
     - DeleteRealtimeLogConfig
+    - DeleteResourcePolicy
     - DeleteResponseHeadersPolicy
     - DeleteStreamingDistribution
     - DeleteVpcOrigin
@@ -3843,6 +3846,7 @@ serviceMap:
     - GetPublicKey
     - GetPublicKeyConfig
     - GetRealtimeLogConfig
+    - GetResourcePolicy
     - GetResponseHeadersPolicy
     - GetResponseHeadersPolicyConfig
     - GetSavingsPlan
@@ -3888,9 +3892,11 @@ serviceMap:
     - ListUsages
     - ListVpcOrigins
     - PublishFunction
+    - PutResourcePolicy
     - TagResource
     - TestFunction
     - UntagResource
+    - UpdateAnycastIpList
     - UpdateCachePolicy
     - UpdateCloudFrontOriginAccessIdentity
     - UpdateConnectionGroup
@@ -10623,6 +10629,7 @@ serviceMap:
     - AddListenerCertificates
     - AddTags
     - AddTrustStoreRevocations
+    - AllowVendedLogDeliveryForResource
     - CreateListener
     - CreateLoadBalancer
     - CreateRule
@@ -13211,6 +13218,7 @@ serviceMap:
     - lambda:EventSourceToken
     - lambda:FunctionArn
     - lambda:FunctionUrlAuthType
+    - lambda:InvokedViaFunctionUrl
     - lambda:Layer
     - lambda:Principal
     - lambda:SecurityGroupIds
