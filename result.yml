@@ -919,6 +919,7 @@ serviceMap:
     - CreateEventTrigger
     - CreateIntegrationWorkflow
     - CreateProfile
+    - CreateRecommender
     - CreateSegmentDefinition
     - CreateSegmentEstimate
     - CreateSegmentSnapshot
@@ -927,6 +928,7 @@ serviceMap:
     - DeleteCalculatedAttributeDefinition
     - DeleteDomain
     - DeleteDomainLayout
+    - DeleteDomainObjectType
     - DeleteEventStream
     - DeleteEventTrigger
     - DeleteIntegration
@@ -934,6 +936,7 @@ serviceMap:
     - DeleteProfileKey
     - DeleteProfileObject
     - DeleteProfileObjectType
+    - DeleteRecommender
     - DeleteSegmentDefinition
     - DeleteWorkflow
     - DetectProfileObjectType
@@ -942,14 +945,19 @@ serviceMap:
     - GetCalculatedAttributeForProfile
     - GetDomain
     - GetDomainLayout
+    - GetDomainObjectType
     - GetEventStream
     - GetEventTrigger
     - GetIdentityResolutionJob
     - GetIntegration
     - GetMatches
+    - GetObjectTypeAttributeStatistics
     - GetProfileHistoryRecord
+    - GetProfileInsights
     - GetProfileObjectType
     - GetProfileObjectTypeTemplate
+    - GetProfileRecommendations
+    - GetRecommender
     - GetSegmentDefinition
     - GetSegmentEstimate
     - GetSegmentMembership
@@ -964,28 +972,36 @@ serviceMap:
     - ListCalculatedAttributeDefinitions
     - ListCalculatedAttributesForProfile
     - ListDomainLayouts
+    - ListDomainObjectTypes
+    - ListDomainObjects
     - ListDomains
     - ListEventStreams
     - ListEventTriggers
     - ListIdentityResolutionJobs
     - ListIntegrations
+    - ListObjectTypeAttributeValues
     - ListObjectTypeAttributes
     - ListProfileAttributeValues
     - ListProfileHistoryRecords
     - ListProfileObjectTypeTemplates
     - ListProfileObjectTypes
     - ListProfileObjects
+    - ListRecommenderRecipes
+    - ListRecommenders
     - ListRuleBasedMatches
     - ListSegmentDefinitions
     - ListTagsForResource
     - ListUploadJobs
     - ListWorkflows
     - MergeProfiles
+    - PutDomainObjectType
     - PutIntegration
     - PutProfileObject
     - PutProfileObjectType
     - SearchProfiles
+    - StartRecommender
     - StartUploadJob
+    - StopRecommender
     - StopUploadJob
     - TagResource
     - UntagResource
@@ -994,6 +1010,7 @@ serviceMap:
     - UpdateDomainLayout
     - UpdateEventTrigger
     - UpdateProfile
+    - UpdateRecommender
     ARNFormat: arn:aws:profile:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:profile:.+:.+:.+"
     conditionKeys:
@@ -3189,6 +3206,8 @@ serviceMap:
     - GetAccountState
     - GetBanner
     - GetCaseDraft
+    - GetIssueClassificationPredictions
+    - GetIssueTextSummary
     - GetQuestionnaire
     - SaveFeedback
     ARNFormat: arn:${Partition}:support-console:${Region}:${Account}:${ResourceType}
@@ -15098,11 +15117,14 @@ serviceMap:
     - DecodeAuthorizationMessage
     - GetAccessKeyInfo
     - GetCallerIdentity
+    - GetDelegatedAccessToken
     - GetFederationToken
     - GetServiceBearerToken
     - GetSessionToken
+    - GetWebIdentityToken
     - SetContext
     - SetSourceIdentity
+    - TagGetWebIdentityToken
     - TagSession
     ARNFormat: arn:aws:iam::${Account}:${RelativeId}
     ARNRegex: "^arn:aws:iam::.+"
@@ -15154,9 +15176,11 @@ serviceMap:
     - sts:AWSServiceName
     - sts:DurationSeconds
     - sts:ExternalId
+    - sts:IdentityTokenAudience
     - sts:RequestContext/${ContextKey}
     - sts:RequestContextProviders
     - sts:RoleSessionName
+    - sts:SigningAlgorithm
     - sts:SourceIdentity
     - sts:TaskPolicyArn
     - sts:TransitiveTagKeys
@@ -24081,6 +24105,7 @@ serviceMap:
     - ListApplicationClaims
     - ListClaims
     - ListUserSubscriptions
+    - SetOverageConfig
     - UpdateClaim
     conditionKeys:
     - user-subscriptions:CreateForSelf
@@ -24698,6 +24723,7 @@ serviceMap:
     - ListNamespaces
     - ListTableBuckets
     - ListTables
+    - ListTagsForResource
     - PutTableBucketEncryption
     - PutTableBucketMaintenanceConfiguration
     - PutTableBucketPolicy
@@ -24706,12 +24732,18 @@ serviceMap:
     - PutTableMaintenanceConfiguration
     - PutTablePolicy
     - RenameTable
+    - TagResource
+    - UntagResource
     - UpdateTableMetadataLocation
     ARNFormat: arn:aws:s3tables:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3tables:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - s3tables:KMSKeyArn
     - s3tables:SSEAlgorithm
+    - s3tables:TableBucketTag/${TagKey}
     - s3tables:namespace
     - s3tables:tableName
     HasResource: true
