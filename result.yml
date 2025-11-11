@@ -8578,6 +8578,7 @@ serviceMap:
     - UpdateConfiguration
     - UpdateConnectivity
     - UpdateMonitoring
+    - UpdateRebalancing
     - UpdateReplicationInfo
     - UpdateSecurity
     - UpdateStorage
