@@ -1177,6 +1177,7 @@ serviceMap:
     - TestDNSAnswer
     - UpdateHealthCheck
     - UpdateHostedZoneComment
+    - UpdateHostedZoneFeatures
     - UpdateTrafficPolicyComment
     - UpdateTrafficPolicyInstance
     ARNFormat: arn:aws:route53:::${Resource}/{$Id}
@@ -2263,6 +2264,7 @@ serviceMap:
     - SearchVocabularies
     - SendChatIntegrationEvent
     - SendIntegrationEvent
+    - SendOutboundChatMessage
     - SendOutboundEmail
     - StartAttachedFileUpload
     - StartChatContact
@@ -6615,6 +6617,10 @@ serviceMap:
     - AssociateEnvironmentRole
     - AssociateGovernedTerms
     - BatchDeleteLinkedTypes
+    - BatchGetAttributesMetadata
+    - BatchGetCell
+    - BatchGetCellRun
+    - BatchPutAttributesMetadata
     - BatchPutLinkedTypes
     - CancelMetadataGenerationRun
     - CancelSubscription
@@ -6623,6 +6629,8 @@ serviceMap:
     - CreateAssetFilter
     - CreateAssetRevision
     - CreateAssetType
+    - CreateCell
+    - CreateCellRun
     - CreateConnection
     - CreateDataProduct
     - CreateDataProductRevision
@@ -6638,6 +6646,7 @@ serviceMap:
     - CreateGlossaryTerm
     - CreateGroupProfile
     - CreateListingChangeSet
+    - CreateNotebook
     - CreateProject
     - CreateProjectMembership
     - CreateProjectProfile
@@ -6650,6 +6659,8 @@ serviceMap:
     - DeleteAsset
     - DeleteAssetFilter
     - DeleteAssetType
+    - DeleteCell
+    - DeleteCellRun
     - DeleteConnection
     - DeleteDataProduct
     - DeleteDataSource
@@ -6665,6 +6676,7 @@ serviceMap:
     - DeleteGlossary
     - DeleteGlossaryTerm
     - DeleteListing
+    - DeleteNotebook
     - DeleteProject
     - DeleteProjectMembership
     - DeleteProjectProfile
@@ -6675,11 +6687,16 @@ serviceMap:
     - DeleteTimeSeriesDataPoints
     - DisassociateEnvironmentRole
     - DisassociateGovernedTerms
+    - GenerateCode
     - GetAccountPool
     - GetAsset
     - GetAssetFilter
     - GetAssetType
+    - GetCell
+    - GetCellRun
+    - GetCellRunResult
     - GetConnection
+    - GetConversation
     - GetDataProduct
     - GetDataSource
     - GetDataSourceRun
@@ -6704,6 +6721,8 @@ serviceMap:
     - GetLineageNode
     - GetListing
     - GetMetadataGenerationRun
+    - GetNotebook
+    - GetNotebookCompute
     - GetProject
     - GetProjectProfile
     - GetRule
@@ -6720,7 +6739,9 @@ serviceMap:
     - ListAccountsInAccountPool
     - ListAssetFilters
     - ListAssetRevisions
+    - ListCellRuns
     - ListConnections
+    - ListConversations
     - ListDataProductRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -6740,6 +6761,7 @@ serviceMap:
     - ListLineageNodeHistory
     - ListLinkedTypes
     - ListMetadataGenerationRuns
+    - ListNotebooks
     - ListNotifications
     - ListPolicyGrants
     - ListProjectMemberships
@@ -6756,6 +6778,7 @@ serviceMap:
     - PostLineageEvent
     - PostTimeSeriesDataPoints
     - ProvisionDomain
+    - PutCellRunResult
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
     - RefreshToken
@@ -6770,16 +6793,22 @@ serviceMap:
     - SearchRules
     - SearchTypes
     - SearchUserProfiles
+    - SendMessage
     - SsoLogin
     - SsoLogout
     - StartAccountBootstrapAction
+    - StartConversation
     - StartDataSourceRun
     - StartMetadataGenerationRun
+    - StartNotebookCompute
     - StopMetadataGenerationRun
+    - StopNotebookCompute
     - TagResource
     - UntagResource
     - UpdateAccountPool
     - UpdateAssetFilter
+    - UpdateCell
+    - UpdateCellRun
     - UpdateConnection
     - UpdateDataSource
     - UpdateDataSourceRunActivities
@@ -6794,6 +6823,7 @@ serviceMap:
     - UpdateGlossary
     - UpdateGlossaryTerm
     - UpdateGroupProfile
+    - UpdateNotebook
     - UpdateProject
     - UpdateProjectProfile
     - UpdateRule
@@ -17648,10 +17678,13 @@ serviceMap:
     - InitiateCallForCase
     - InitiateChatForCase
     - InitiateLiveContactForCase
+    - ListInteractionEntries
+    - ListInteractions
     - PutCaseAttributes
     - RateCaseCommunication
     - RefreshTrustedAdvisorCheck
     - ResolveCase
+    - ResolveInteraction
     - SearchForCases
     - StartInteraction
     - UpdateCaseSeverity
