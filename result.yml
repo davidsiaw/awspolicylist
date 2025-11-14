@@ -9613,6 +9613,7 @@ serviceMap:
     - ExecuteChangeSet
     - ExecuteStackRefactor
     - GetGeneratedTemplate
+    - GetHookResult
     - GetStackPolicy
     - GetTemplate
     - GetTemplateSummary
@@ -23784,10 +23785,12 @@ serviceMap:
     StringPrefix: healthlake
     Actions:
     - CancelFHIRExportJobWithDelete
+    - ConfirmAttributionList
     - CreateFHIRDatastore
     - CreateResource
     - DeleteFHIRDatastore
     - DeleteResource
+    - DescribeFHIRBulkDeleteJob
     - DescribeFHIRDatastore
     - DescribeFHIRExportJob
     - DescribeFHIRExportJobWithGet
@@ -23805,12 +23808,17 @@ serviceMap:
     - ListTagsForResource
     - LookupCodeSystemWithGet
     - LookupCodeSystemWithPost
+    - MemberAdd
+    - MemberMatch
+    - MemberRemove
     - PatchResource
     - ProcessBundle
     - ReadResource
+    - RetrieveAttributionStatus
     - SearchEverything
     - SearchWithGet
     - SearchWithPost
+    - StartFHIRBulkDeleteJob
     - StartFHIRExportJob
     - StartFHIRExportJobWithGet
     - StartFHIRExportJobWithPost
