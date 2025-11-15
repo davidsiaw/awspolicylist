@@ -12516,6 +12516,7 @@ serviceMap:
     - DescribeEntity
     - DescribeInboundIntegrations
     - DescribeIntegrations
+    - FederateAuthorization
     - GetBlueprint
     - GetBlueprintRun
     - GetBlueprintRuns
@@ -12729,6 +12730,7 @@ serviceMap:
     - aws:TagKeys
     - glue:CredentialIssuingService
     - glue:EnabledForRedshiftAutoDiscovery
+    - glue:FederatedAuthorizationSource
     - glue:LakeFormationPermissions
     - glue:RoleAssumedBy
     - glue:SecurityGroupIds
@@ -15345,7 +15347,9 @@ serviceMap:
     - GetQueryResults
     - GetQueryResultsStream
     - GetQueryRuntimeStatistics
+    - GetResourceDashboard
     - GetSession
+    - GetSessionEndpoint
     - GetSessionStatus
     - GetTable
     - GetTableMetadata
@@ -16219,6 +16223,31 @@ serviceMap:
     - UpdateResourceSet
     ARNFormat: arn:aws:route53-recovery-readiness::${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:route53-recovery-readiness::.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  AWS MWAA Serverless:
+    StringPrefix: airflow-serverless
+    Actions:
+    - CreateWorkflow
+    - DeleteWorkflow
+    - GetTaskInstance
+    - GetWorkflow
+    - GetWorkflowRun
+    - ListTagsForResource
+    - ListTaskInstances
+    - ListWorkflowRuns
+    - ListWorkflowVersions
+    - ListWorkflows
+    - StartWorkflowRun
+    - StopWorkflowRun
+    - TagResource
+    - UntagResource
+    - UpdateWorkflow
+    ARNFormat: arn:aws:airflow-serverless:${Region}:${Account}:${ResourceType}:${ResourcePath}
+    ARNRegex: "^arn:aws:airflow-serverless:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
