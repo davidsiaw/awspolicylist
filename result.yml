@@ -5225,6 +5225,7 @@ serviceMap:
     - CreateDomain
     - CreateElasticsearchDomain
     - CreateElasticsearchServiceRole
+    - CreateIndex
     - CreateOutboundConnection
     - CreateOutboundCrossClusterSearchConnection
     - CreatePackage
@@ -5238,6 +5239,7 @@ serviceMap:
     - DeleteElasticsearchServiceRole
     - DeleteInboundConnection
     - DeleteInboundCrossClusterSearchConnection
+    - DeleteIndex
     - DeleteOutboundConnection
     - DeleteOutboundCrossClusterSearchConnection
     - DeletePackage
@@ -5280,6 +5282,7 @@ serviceMap:
     - GetDataSource
     - GetDirectQueryDataSource
     - GetDomainMaintenanceStatus
+    - GetIndex
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
@@ -5314,6 +5317,7 @@ serviceMap:
     - UpdateDirectQueryDataSource
     - UpdateDomainConfig
     - UpdateElasticsearchDomainConfig
+    - UpdateIndex
     - UpdatePackage
     - UpdatePackageScope
     - UpdateScheduledAction
@@ -6492,6 +6496,7 @@ serviceMap:
     - AssociateApplicationFleet
     - AssociateApplicationToEntitlement
     - AssociateFleet
+    - AssociateSoftwareToImageBuilder
     - BatchAssociateUserStack
     - BatchDisassociateUserStack
     - CopyImage
@@ -6501,9 +6506,11 @@ serviceMap:
     - CreateApplication
     - CreateDirectoryConfig
     - CreateEntitlement
+    - CreateExportImageTask
     - CreateFleet
     - CreateImageBuilder
     - CreateImageBuilderStreamingURL
+    - CreateImportedImage
     - CreateStack
     - CreateStreamingURL
     - CreateThemeForStack
@@ -6526,6 +6533,7 @@ serviceMap:
     - DescribeAppBlockBuilderAppBlockAssociations
     - DescribeAppBlockBuilders
     - DescribeAppBlocks
+    - DescribeAppLicenseUsage
     - DescribeApplicationFleetAssociations
     - DescribeApplications
     - DescribeDirectoryConfigs
@@ -6535,6 +6543,7 @@ serviceMap:
     - DescribeImagePermissions
     - DescribeImages
     - DescribeSessions
+    - DescribeSoftwareAssociations
     - DescribeStacks
     - DescribeThemeForStack
     - DescribeUsageReportSubscriptions
@@ -6545,15 +6554,19 @@ serviceMap:
     - DisassociateApplicationFleet
     - DisassociateApplicationFromEntitlement
     - DisassociateFleet
+    - DisassociateSoftwareFromImageBuilder
     - EnableUser
     - ExpireSession
+    - GetExportImageTask
     - ListAssociatedFleets
     - ListAssociatedStacks
     - ListEntitledApplications
+    - ListExportImageTasks
     - ListTagsForResource
     - StartAppBlockBuilder
     - StartFleet
     - StartImageBuilder
+    - StartSoftwareDeploymentToImageBuilder
     - StopAppBlockBuilder
     - StopFleet
     - StopImageBuilder
@@ -13598,6 +13611,7 @@ serviceMap:
     - ListThreatEntitySets
     - ListThreatIntelSets
     - ListTrustedEntitySets
+    - SendObjectMalwareScan
     - SendSecurityTelemetry
     - StartMalwareScan
     - StartMonitoringMembers
@@ -22373,6 +22387,15 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon EKS MCP Server:
+    StringPrefix: eks-mcp
+    Actions:
+    - CallPrivilegedTool
+    - CallReadOnlyTool
+    - InvokeMcp
+    ARNFormat: arn:${Partition}:eks-mcp:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:${Partition}:eks:."
+    HasResource: false
   Amazon Translate:
     StringPrefix: translate
     Actions:
