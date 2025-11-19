@@ -7151,20 +7151,26 @@ serviceMap:
     Actions:
     - BatchGetInvoiceProfile
     - CreateInvoiceUnit
+    - CreateProcurementPortalPreference
     - DeleteInvoiceUnit
+    - DeleteProcurementPortalPreference
     - GetInvoiceCorrection
     - GetInvoiceEmailDeliveryPreferences
     - GetInvoicePDF
     - GetInvoiceUnit
+    - GetProcurementPortalPreference
     - ListInvoiceCorrections
     - ListInvoiceSummaries
     - ListInvoiceUnits
+    - ListProcurementPortalPreferences
     - ListTagsForResource
     - PutInvoiceEmailDeliveryPreferences
+    - PutProcurementPortalPreference
     - StartInvoiceCorrection
     - TagResource
     - UntagResource
     - UpdateInvoiceUnit
+    - UpdateProcurementPortalPreferenceStatus
     ARNFormat: arn:aws:invoicing::${Account}:${ResourceType}
     ARNRegex: "^arn:aws:invoicing::.+:.+"
     conditionKeys:
@@ -7230,6 +7236,7 @@ serviceMap:
     - CreateRestoreAccessBackupVault
     - CreateRestoreTestingPlan
     - CreateRestoreTestingSelection
+    - CreateTieringConfiguration
     - DeleteBackupPlan
     - DeleteBackupSelection
     - DeleteBackupVault
@@ -7242,6 +7249,7 @@ serviceMap:
     - DeleteReportPlan
     - DeleteRestoreTestingPlan
     - DeleteRestoreTestingSelection
+    - DeleteTieringConfiguration
     - DescribeBackupJob
     - DescribeBackupVault
     - DescribeCopyJob
@@ -7272,6 +7280,7 @@ serviceMap:
     - GetRestoreTestingPlan
     - GetRestoreTestingSelection
     - GetSupportedResourceTypes
+    - GetTieringConfiguration
     - ListBackupJobSummaries
     - ListBackupJobs
     - ListBackupPlanTemplates
@@ -7299,6 +7308,7 @@ serviceMap:
     - ListRestoreTestingPlans
     - ListRestoreTestingSelections
     - ListTags
+    - ListTieringConfigurations
     - PutBackupVaultAccessPolicy
     - PutBackupVaultLockConfiguration
     - PutBackupVaultNotifications
@@ -7322,6 +7332,7 @@ serviceMap:
     - UpdateReportPlan
     - UpdateRestoreTestingPlan
     - UpdateRestoreTestingSelection
+    - UpdateTieringConfiguration
     ARNFormat: arn:aws:backup:${Region}:${Account}:${ResourceType}:${ResourceName}
     ARNRegex: "^arn:aws:backup:.+:.+:.+"
     conditionKeys:
@@ -8598,6 +8609,8 @@ serviceMap:
     - DescribeConfiguration
     - DescribeConfigurationRevision
     - DescribeReplicator
+    - DescribeTopic
+    - DescribeTopicPartitions
     - DescribeVpcConnection
     - GetBootstrapBrokers
     - GetClusterPolicy
@@ -8614,6 +8627,7 @@ serviceMap:
     - ListReplicators
     - ListScramSecrets
     - ListTagsForResource
+    - ListTopics
     - ListVpcConnections
     - PutClusterPolicy
     - RebootBroker
@@ -9463,6 +9477,7 @@ serviceMap:
     - bedrock:InferenceProfileArn
     - bedrock:InlineAgentName
     - bedrock:PromptRouterArn
+    - bedrock:ServiceTier
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
     HasResource: true
   AWS Microservice Extractor for .NET:
@@ -9603,6 +9618,7 @@ serviceMap:
     - DescribeAccountLimits
     - DescribeChangeSet
     - DescribeChangeSetHooks
+    - DescribeEvents
     - DescribeGeneratedTemplate
     - DescribeOrganizationsAccess
     - DescribePublisher
@@ -10892,6 +10908,8 @@ serviceMap:
   AWS Signin:
     StringPrefix: signin
     Actions:
+    - AuthorizeOAuth2Access
+    - CreateOAuth2Token
     - CreateTrustedIdentityPropagationApplicationForConsole
     - ListTrustedIdentityPropagationApplicationsForConsole
     HasResource: false
@@ -11693,6 +11711,7 @@ serviceMap:
     - GetFindingAggregator
     - GetFindingHistory
     - GetFindings
+    - GetFindingsTrendsV2
     - GetFreeTrialEndDate
     - GetFreeTrialUsage
     - GetInsightFindingTrend
@@ -11702,6 +11721,7 @@ serviceMap:
     - GetMasterAccount
     - GetMembers
     - GetResourcesStatisticsV2
+    - GetResourcesTrendsV2
     - GetResourcesV2
     - GetSecurityControlDefinition
     - GetUsage
@@ -13375,6 +13395,7 @@ serviceMap:
     - ListExportErrors
     - ListExports
     - ListImportErrors
+    - ListImportFileEnrichments
     - ListImports
     - ListManagedAccounts
     - ListNetworkMigrationAnalyses
@@ -13388,6 +13409,7 @@ serviceMap:
     - ListNetworkMigrationExecutions
     - ListNetworkMigrationMapperSegmentConstructs
     - ListNetworkMigrationMapperSegments
+    - ListNetworkMigrationMappingUpdates
     - ListNetworkMigrationMappings
     - ListSourceServerActions
     - ListTagsForResource
@@ -13418,11 +13440,13 @@ serviceMap:
     - StartCutover
     - StartExport
     - StartImport
+    - StartImportFileEnrichment
     - StartNetworkMigrationAnalysis
     - StartNetworkMigrationCodeGeneration
     - StartNetworkMigrationDeployedStacksDeletion
     - StartNetworkMigrationDeployment
     - StartNetworkMigrationMapping
+    - StartNetworkMigrationMappingUpdate
     - StartReplication
     - StartTest
     - StopReplication
@@ -17623,6 +17647,20 @@ serviceMap:
     - ListQuarterSpend
     ARNFormat: arn:aws:mapcredits:::${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:mapcredits:::.+"
+    HasResource: true
+  AWS PricingPlanManager Service:
+    StringPrefix: pricingplanmanager
+    Actions:
+    - AssociateResourcesToSubscription
+    - CancelSubscription
+    - CancelSubscriptionChange
+    - CreateSubscription
+    - DisassociateResourcesFromSubscription
+    - GetSubscription
+    - ListSubscriptions
+    - UpdateSubscription
+    ARNFormat: arn:aws:pricingplanmanager:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:pricingplanmanager:.+:.+:.+"
     HasResource: true
   AWS AppFabric:
     StringPrefix: appfabric
