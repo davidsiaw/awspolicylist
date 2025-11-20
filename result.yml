@@ -5201,11 +5201,15 @@ serviceMap:
     - aws:TagKeys
     - dynamodb:Attributes
     - dynamodb:EnclosingOperation
+    - dynamodb:FirstPartitionKeyValues
+    - dynamodb:FourthPartitionKeyValues
     - dynamodb:FullTableScan
     - dynamodb:LeadingKeys
     - dynamodb:ReturnConsumedCapacity
     - dynamodb:ReturnValues
+    - dynamodb:SecondPartitionKeyValues
     - dynamodb:Select
+    - dynamodb:ThirdPartitionKeyValues
     HasResource: true
   Amazon OpenSearch Service:
     StringPrefix: es
@@ -8390,6 +8394,7 @@ serviceMap:
     - UpdateCloudExadataInfrastructure
     - UpdateOdbNetwork
     - UpdateOdbPeeringConnection
+    - UpdateOutboundIntegration
     ARNFormat: arn:aws:odb:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:odb:.+:.+:.+"
     conditionKeys:
@@ -8902,6 +8907,7 @@ serviceMap:
     - secretsmanager:AddReplicaRegions
     - secretsmanager:BlockPublicPolicy
     - secretsmanager:Description
+    - secretsmanager:ExternalSecretRotationRoleArn
     - secretsmanager:ForceDeleteWithoutRecovery
     - secretsmanager:ForceOverwriteReplicaSecret
     - secretsmanager:KmsKeyArn
@@ -8914,9 +8920,11 @@ serviceMap:
     - secretsmanager:RotationLambdaARN
     - secretsmanager:SecretId
     - secretsmanager:SecretPrimaryRegion
+    - secretsmanager:Type
     - secretsmanager:VersionId
     - secretsmanager:VersionStage
     - secretsmanager:resource/AllowRotationLambdaArn
+    - secretsmanager:resource/Type
     HasResource: true
   AWS Payments:
     StringPrefix: payments
@@ -10924,6 +10932,7 @@ serviceMap:
     - CreateLogDelivery
     - CreateLogGroup
     - CreateLogStream
+    - CreateScheduledQuery
     - DeleteAccountPolicy
     - DeleteDataProtectionPolicy
     - DeleteDelivery
@@ -10941,6 +10950,7 @@ serviceMap:
     - DeleteQueryDefinition
     - DeleteResourcePolicy
     - DeleteRetentionPolicy
+    - DeleteScheduledQuery
     - DeleteSubscriptionFilter
     - DeleteTransformer
     - DescribeAccountPolicies
@@ -10973,6 +10983,8 @@ serviceMap:
     - GetLogGroupFields
     - GetLogRecord
     - GetQueryResults
+    - GetScheduledQuery
+    - GetScheduledQueryHistory
     - GetTransformer
     - Link
     - ListAnomalies
@@ -10983,6 +10995,7 @@ serviceMap:
     - ListLogGroups
     - ListLogGroupsForEntity
     - ListLogGroupsForQuery
+    - ListScheduledQueries
     - ListTagsForResource
     - ListTagsLogGroup
     - PutAccountPolicy
@@ -11016,6 +11029,7 @@ serviceMap:
     - UpdateDeliveryConfiguration
     - UpdateLogAnomalyDetector
     - UpdateLogDelivery
+    - UpdateScheduledQuery
     ARNFormat: arn:aws:logs:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:logs:.+"
     conditionKeys:
@@ -12687,6 +12701,7 @@ serviceMap:
     - RefreshOAuth2Tokens
     - RegisterSchemaVersion
     - RemoveSchemaVersionMetadata
+    - RenameTable
     - RequestLogParsing
     - ResetJobBookmark
     - ResumeWorkflowRun
@@ -13610,6 +13625,7 @@ serviceMap:
     - GetIPSet
     - GetInvitationsCount
     - GetMalwareProtectionPlan
+    - GetMalwareScan
     - GetMalwareScanSettings
     - GetMasterAccount
     - GetMemberDetectors
@@ -13628,6 +13644,7 @@ serviceMap:
     - ListIPSets
     - ListInvitations
     - ListMalwareProtectionPlans
+    - ListMalwareScans
     - ListMembers
     - ListOrganizationAdminAccounts
     - ListPublishingDestinations
@@ -14889,6 +14906,8 @@ serviceMap:
     - GetQueryStatistics
     - GetResourceLFTags
     - GetTableObjects
+    - GetTemporaryGluePartitionCredentials
+    - GetTemporaryGlueTableCredentials
     - GetWorkUnitResults
     - GetWorkUnits
     - GrantPermissions
@@ -15715,26 +15734,36 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Partner Central Selling:
+  AWS Partner Central:
     StringPrefix: partnercentral
     Actions:
+    - AcceptChannelHandshake
     - AcceptEngagementInvitation
     - AssignOpportunity
     - AssociateOpportunity
+    - CancelChannelHandshake
+    - CreateChannelHandshake
     - CreateEngagement
     - CreateEngagementInvitation
     - CreateOpportunity
+    - CreateProgramManagementAccount
+    - CreateRelationship
     - CreateResourceSnapshot
     - CreateResourceSnapshotJob
+    - DeleteProgramManagementAccount
+    - DeleteRelationship
     - DeleteResourceSnapshotJob
     - DisassociateOpportunity
     - GetAwsOpportunitySummary
     - GetEngagement
     - GetEngagementInvitation
     - GetOpportunity
+    - GetProgramManagementAccount
+    - GetRelationship
     - GetResourceSnapshot
     - GetResourceSnapshotJob
     - GetSellingSystemSettings
+    - ListChannelHandshakes
     - ListEngagementByAcceptingInvitationTasks
     - ListEngagementFromOpportunityTasks
     - ListEngagementInvitations
@@ -15742,11 +15771,14 @@ serviceMap:
     - ListEngagementResourceAssociations
     - ListEngagements
     - ListOpportunities
+    - ListProgramManagementAccounts
+    - ListRelationships
     - ListResourceSnapshotJobs
     - ListResourceSnapshots
     - ListSolutions
     - ListTagsForResource
     - PutSellingSystemSettings
+    - RejectChannelHandshake
     - RejectEngagementInvitation
     - StartEngagementByAcceptingInvitationTask
     - StartEngagementFromOpportunityTask
@@ -15756,6 +15788,8 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateOpportunity
+    - UpdateProgramManagementAccount
+    - UpdateRelationship
     ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:partnercentral:.+"
     conditionKeys:
@@ -15763,6 +15797,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - partnercentral:Catalog
+    - partnercentral:ChannelHandshakeType
     - partnercentral:RelatedEntityType
     HasResource: true
   AWS OpsWorks:
@@ -15892,15 +15927,18 @@ serviceMap:
   AWS Identity and Access Management (IAM):
     StringPrefix: iam
     Actions:
+    - AcceptDelegationRequest
     - AddClientIDToOpenIDConnectProvider
     - AddRoleToInstanceProfile
     - AddUserToGroup
+    - AssociateDelegationRequest
     - AttachGroupPolicy
     - AttachRolePolicy
     - AttachUserPolicy
     - ChangePassword
     - CreateAccessKey
     - CreateAccountAlias
+    - CreateDelegationRequest
     - CreateGroup
     - CreateInstanceProfile
     - CreateLoginProfile
@@ -15943,9 +15981,11 @@ serviceMap:
     - DetachUserPolicy
     - DisableOrganizationsRootCredentialsManagement
     - DisableOrganizationsRootSessions
+    - DisableOutboundWebIdentityFederation
     - EnableMFADevice
     - EnableOrganizationsRootCredentialsManagement
     - EnableOrganizationsRootSessions
+    - EnableOutboundWebIdentityFederation
     - GenerateCredentialReport
     - GenerateOrganizationsAccessReport
     - GenerateServiceLastAccessedDetails
@@ -15959,13 +15999,16 @@ serviceMap:
     - GetContextKeysForCustomPolicy
     - GetContextKeysForPrincipalPolicy
     - GetCredentialReport
+    - GetDelegationRequest
     - GetGroup
     - GetGroupPolicy
+    - GetHumanReadableSummary
     - GetInstanceProfile
     - GetLoginProfile
     - GetMFADevice
     - GetOpenIDConnectProvider
     - GetOrganizationsAccessReport
+    - GetOutboundWebIdentityFederationInfo
     - GetPolicy
     - GetPolicyVersion
     - GetRole
@@ -15984,6 +16027,7 @@ serviceMap:
     - ListAttachedRolePolicies
     - ListAttachedUserPolicies
     - ListCloudFrontPublicKeys
+    - ListDelegationRequests
     - ListEntitiesForPolicy
     - ListGroupPolicies
     - ListGroups
@@ -16021,11 +16065,13 @@ serviceMap:
     - PutRolePolicy
     - PutUserPermissionsBoundary
     - PutUserPolicy
+    - RejectDelegationRequest
     - RemoveClientIDFromOpenIDConnectProvider
     - RemoveRoleFromInstanceProfile
     - RemoveUserFromGroup
     - ResetServiceSpecificCredential
     - ResyncMFADevice
+    - SendDelegationToken
     - SetDefaultPolicyVersion
     - SetSTSRegionalEndpointStatus
     - SetSecurityTokenServicePreferences
@@ -16076,9 +16122,12 @@ serviceMap:
     - aws:TagKeys
     - iam:AWSServiceName
     - iam:AssociatedResourceArn
+    - iam:DelegationDuration
+    - iam:DelegationRequestOwner
     - iam:FIDO-FIPS-140-2-certification
     - iam:FIDO-FIPS-140-3-certification
     - iam:FIDO-certification
+    - iam:NotificationChannel
     - iam:OrganizationsPolicyId
     - iam:PassedToService
     - iam:PermissionsBoundary
@@ -16087,6 +16136,7 @@ serviceMap:
     - iam:ResourceTag/${TagKey}
     - iam:ServiceSpecificCredentialAgeDays
     - iam:ServiceSpecificCredentialServiceName
+    - iam:TemplateArn
     HasResource: true
   Amazon WorkMail:
     StringPrefix: workmail
@@ -17910,6 +17960,8 @@ serviceMap:
     - CreateGrant
     - CreateGrantVersion
     - CreateLicense
+    - CreateLicenseAssetGroup
+    - CreateLicenseAssetRuleset
     - CreateLicenseConfiguration
     - CreateLicenseConversionTaskForResource
     - CreateLicenseManagerReportGenerator
@@ -17917,6 +17969,8 @@ serviceMap:
     - CreateToken
     - DeleteGrant
     - DeleteLicense
+    - DeleteLicenseAssetGroup
+    - DeleteLicenseAssetRuleset
     - DeleteLicenseConfiguration
     - DeleteLicenseManagerReportGenerator
     - DeleteToken
@@ -17924,15 +17978,21 @@ serviceMap:
     - GetAccessToken
     - GetGrant
     - GetLicense
+    - GetLicenseAssetGroup
+    - GetLicenseAssetRuleset
     - GetLicenseConfiguration
     - GetLicenseConversionTask
     - GetLicenseManagerReportGenerator
     - GetLicenseUsage
     - GetServiceSettings
+    - ListAssetsForLicenseAssetGroup
     - ListAssociationsForLicenseConfiguration
     - ListDistributedGrants
     - ListFailuresForLicenseConfigurationOperations
+    - ListLicenseAssetGroups
+    - ListLicenseAssetRulesets
     - ListLicenseConfigurations
+    - ListLicenseConfigurationsForOrganization
     - ListLicenseConversionTasks
     - ListLicenseManagerReportGenerators
     - ListLicenseSpecificationsForResource
@@ -17949,6 +18009,8 @@ serviceMap:
     - RejectGrant
     - TagResource
     - UntagResource
+    - UpdateLicenseAssetGroup
+    - UpdateLicenseAssetRuleset
     - UpdateLicenseConfiguration
     - UpdateLicenseManagerReportGenerator
     - UpdateLicenseSpecificationsForResource
@@ -18413,6 +18475,7 @@ serviceMap:
     StringPrefix: quicksight
     Actions:
     - AccountConfigurations
+    - AllowVendedLogDeliveryForResource
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteTopicReviewedAnswer
     - CancelIngestion
@@ -19768,6 +19831,7 @@ serviceMap:
     Actions:
     - GetPreferences
     - GetRecommendation
+    - ListEfficiencyMetrics
     - ListEnrollmentStatuses
     - ListRecommendationSummaries
     - ListRecommendations
@@ -22761,6 +22825,7 @@ serviceMap:
     - GetResources
     - GetTagKeys
     - GetTagValues
+    - ListRequiredTags
     - StartReportCreation
     - TagResources
     - UntagResources
@@ -24080,6 +24145,7 @@ serviceMap:
     - bedrock-agentcore:InboundJwtClaim/iss
     - bedrock-agentcore:InboundJwtClaim/scope
     - bedrock-agentcore:InboundJwtClaim/sub
+    - bedrock-agentcore:KmsKeyArn
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
     - bedrock-agentcore:sessionId
@@ -24809,6 +24875,7 @@ serviceMap:
     - DescribeOrganizationalUnit
     - DescribePolicy
     - DescribeResourcePolicy
+    - DescribeResponsibilityTransfer
     - DetachPolicy
     - DisableAWSServiceAccess
     - DisablePolicyType
@@ -24816,6 +24883,7 @@ serviceMap:
     - EnableAllFeatures
     - EnablePolicyType
     - InviteAccountToOrganization
+    - InviteOrganizationToTransferResponsibility
     - LeaveOrganization
     - ListAWSServiceAccessForOrganization
     - ListAccounts
@@ -24828,7 +24896,9 @@ serviceMap:
     - ListEffectivePolicyValidationErrors
     - ListHandshakesForAccount
     - ListHandshakesForOrganization
+    - ListInboundResponsibilityTransfers
     - ListOrganizationalUnitsForParent
+    - ListOutboundResponsibilityTransfers
     - ListParents
     - ListPolicies
     - ListPoliciesForTarget
@@ -24840,9 +24910,11 @@ serviceMap:
     - RegisterDelegatedAdministrator
     - RemoveAccountFromOrganization
     - TagResource
+    - TerminateResponsibilityTransfer
     - UntagResource
     - UpdateOrganizationalUnit
     - UpdatePolicy
+    - UpdateResponsibilityTransfer
     ARNFormat: arn:aws:organizations::${Account}:${Resource}/o-${OrganizationId}(/${ResourceType}/${ResourceId})?
     ARNRegex: "^arn:aws:organizations::.+:.+"
     conditionKeys:
@@ -24851,6 +24923,8 @@ serviceMap:
     - aws:TagKeys
     - organizations:PolicyType
     - organizations:ServicePrincipal
+    - organizations:TransferDirection
+    - organizations:TransferType
     HasResource: true
   Amazon S3 Tables:
     StringPrefix: s3tables
