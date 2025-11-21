@@ -1496,6 +1496,7 @@ serviceMap:
     ARNFormat: arn:aws:identitystore::${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:identitystore:.+"
     conditionKeys:
+    - identitystore:IdentityStoreArn
     - identitystore:UserId
     HasResource: true
   Amazon FreeRTOS:
@@ -2831,6 +2832,7 @@ serviceMap:
     - GetServiceLevelObjective
     - Link
     - ListAuditFindings
+    - ListEntityEvents
     - ListGroupingAttributeDefinitions
     - ListObservedEntities
     - ListServiceDependencies
@@ -7230,6 +7232,7 @@ serviceMap:
     - CancelLegalHold
     - CopyFromBackupVault
     - CopyIntoBackupVault
+    - CreateBackupAccessPoint
     - CreateBackupPlan
     - CreateBackupSelection
     - CreateBackupVault
@@ -7241,6 +7244,7 @@ serviceMap:
     - CreateRestoreTestingPlan
     - CreateRestoreTestingSelection
     - CreateTieringConfiguration
+    - DeleteBackupAccessPoint
     - DeleteBackupPlan
     - DeleteBackupSelection
     - DeleteBackupVault
@@ -7254,6 +7258,7 @@ serviceMap:
     - DeleteRestoreTestingPlan
     - DeleteRestoreTestingSelection
     - DeleteTieringConfiguration
+    - DescribeBackupAccessPoint
     - DescribeBackupJob
     - DescribeBackupVault
     - DescribeCopyJob
@@ -7265,6 +7270,7 @@ serviceMap:
     - DescribeReportJob
     - DescribeReportPlan
     - DescribeRestoreJob
+    - DescribeScanJob
     - DisassociateBackupVaultMpaApprovalTeam
     - DisassociateRecoveryPoint
     - DisassociateRecoveryPointFromParent
@@ -7311,6 +7317,8 @@ serviceMap:
     - ListRestoreJobsByProtectedResource
     - ListRestoreTestingPlans
     - ListRestoreTestingSelections
+    - ListScanJobSummaries
+    - ListScanJobs
     - ListTags
     - ListTieringConfigurations
     - PutBackupVaultAccessPolicy
@@ -7324,6 +7332,7 @@ serviceMap:
     - StartCopyJob
     - StartReportJob
     - StartRestoreJob
+    - StartScanJob
     - StopBackupJob
     - TagResource
     - UntagResource
@@ -7553,6 +7562,7 @@ serviceMap:
     - CreateFleetAdvisorCollector
     - CreateInstanceProfile
     - CreateMigrationProject
+    - CreateOutboundIntegration
     - CreateReplicationConfig
     - CreateReplicationInstance
     - CreateReplicationSubnetGroup
@@ -7628,6 +7638,7 @@ serviceMap:
     - ModifyEventSubscription
     - ModifyFleetAdvisorCollector
     - ModifyFleetAdvisorCollectorStatuses
+    - ModifyOutboundIntegration
     - ModifyReplicationConfig
     - ModifyReplicationInstance
     - ModifyReplicationSubnetGroup
@@ -8751,6 +8762,7 @@ serviceMap:
     - DeleteTags
     - DeleteWarmPool
     - DescribeAccountLimits
+    - DescribeAccountSettings
     - DescribeAdjustmentTypes
     - DescribeAutoScalingGroups
     - DescribeAutoScalingInstances
@@ -8782,6 +8794,7 @@ serviceMap:
     - ExitStandby
     - GetPredictiveScalingForecast
     - LaunchInstances
+    - PutAccountSetting
     - PutLifecycleHook
     - PutNotificationConfiguration
     - PutScalingPolicy
@@ -9381,6 +9394,7 @@ serviceMap:
     - InvokeAutomatedReasoningPolicy
     - InvokeBlueprintRecommendationAsync
     - InvokeBuilder
+    - InvokeDataAutomation
     - InvokeDataAutomationAsync
     - InvokeFlow
     - InvokeInlineAgent
@@ -14186,6 +14200,7 @@ serviceMap:
     - GetAccessPointPolicyStatusForObjectLambda
     - GetAccountPublicAccessBlock
     - GetAnalyticsConfiguration
+    - GetBucketAbac
     - GetBucketAcl
     - GetBucketCORS
     - GetBucketLocation
@@ -14257,6 +14272,7 @@ serviceMap:
     - PutAccessPointPublicAccessBlock
     - PutAccountPublicAccessBlock
     - PutAnalyticsConfiguration
+    - PutBucketAbac
     - PutBucketAcl
     - PutBucketCORS
     - PutBucketLogging
@@ -14310,6 +14326,7 @@ serviceMap:
     - s3:AccessGrantsLocationScope
     - s3:AccessPointNetworkOrigin
     - s3:AccessPointTag/${TagKey}
+    - s3:BucketTag/${TagKey}
     - s3:DataAccessPointAccount
     - s3:DataAccessPointArn
     - s3:ExistingJobOperation
@@ -17610,6 +17627,7 @@ serviceMap:
     - ListEventDataStores
     - ListImportFailures
     - ListImports
+    - ListInsightsData
     - ListPublicKeys
     - ListQueries
     - ListServiceLinkedChannels
@@ -19543,6 +19561,8 @@ serviceMap:
     - CancelQuantumTask
     - CreateJob
     - CreateQuantumTask
+    - CreateSpendingLimit
+    - DeleteSpendingLimit
     - GetDevice
     - GetJob
     - GetQuantumTask
@@ -19552,8 +19572,10 @@ serviceMap:
     - SearchDevices
     - SearchJobs
     - SearchQuantumTasks
+    - SearchSpendingLimits
     - TagResource
     - UntagResource
+    - UpdateSpendingLimit
     ARNFormat: arn:aws:braket:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:braket:${Region}:${Account}:.+"
     conditionKeys:
@@ -22623,12 +22645,14 @@ serviceMap:
     Actions:
     - CreateCapacityProvider
     - CreateCluster
+    - CreateExpressGatewayService
     - CreateService
     - CreateTaskSet
     - DeleteAccountSetting
     - DeleteAttributes
     - DeleteCapacityProvider
     - DeleteCluster
+    - DeleteExpressGatewayService
     - DeleteService
     - DeleteTaskDefinitions
     - DeleteTaskSet
@@ -22637,6 +22661,7 @@ serviceMap:
     - DescribeCapacityProviders
     - DescribeClusters
     - DescribeContainerInstances
+    - DescribeExpressGatewayService
     - DescribeServiceDeployments
     - DescribeServiceRevisions
     - DescribeServices
@@ -22680,6 +22705,7 @@ serviceMap:
     - UpdateClusterSettings
     - UpdateContainerAgent
     - UpdateContainerInstancesState
+    - UpdateExpressGatewayService
     - UpdateService
     - UpdateServicePrimaryTaskSet
     - UpdateTaskProtection
@@ -24252,6 +24278,7 @@ serviceMap:
     - DeleteInfrastructureConfiguration
     - DeleteLifecyclePolicy
     - DeleteWorkflow
+    - DistributeImage
     - GetComponent
     - GetComponentPolicy
     - GetContainerRecipe
@@ -24298,6 +24325,7 @@ serviceMap:
     - PutContainerRecipePolicy
     - PutImagePolicy
     - PutImageRecipePolicy
+    - RetryImage
     - SendWorkflowStepAction
     - StartImagePipelineExecution
     - StartResourceStateUpdate
