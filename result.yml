@@ -1496,7 +1496,11 @@ serviceMap:
     ARNFormat: arn:aws:identitystore::${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:identitystore:.+"
     conditionKeys:
+    - identitystore:GroupExternalIdIssuers
     - identitystore:IdentityStoreArn
+    - identitystore:PrimaryRegion
+    - identitystore:ReservedUserId
+    - identitystore:UserExternalIdIssuers
     - identitystore:UserId
     HasResource: true
   Amazon FreeRTOS:
@@ -17691,8 +17695,10 @@ serviceMap:
     - ListCaseEdits
     - ListCases
     - ListComments
+    - ListInvestigations
     - ListMemberships
     - ListTagsForResource
+    - SendFeedback
     - TagResource
     - UntagResource
     - UpdateCase
@@ -20735,6 +20741,7 @@ serviceMap:
     - DescribeNotificationConfiguration
     - DescribeSignalingChannel
     - DescribeStream
+    - DescribeStreamStorageConfiguration
     - GetClip
     - GetDASHStreamingSessionURL
     - GetDataEndpoint
@@ -20765,6 +20772,7 @@ serviceMap:
     - UpdateNotificationConfiguration
     - UpdateSignalingChannel
     - UpdateStream
+    - UpdateStreamStorageConfiguration
     ARNFormat: arn:aws:kinesisvideo:${Region}:${Account}:${ResourceType}/${ResourceName}/${CreationTime}
     ARNRegex: "^arn:aws:kinesisvideo:.+"
     conditionKeys:
@@ -22759,8 +22767,11 @@ serviceMap:
     - DeleteRepository
     - DeleteRepositoryCreationTemplate
     - DeleteRepositoryPolicy
+    - DeleteSigningConfiguration
+    - DeregisterPullTimeUpdateExclusion
     - DescribeImageReplicationStatus
     - DescribeImageScanFindings
+    - DescribeImageSigningStatus
     - DescribeImages
     - DescribePullThroughCacheRules
     - DescribeRegistry
@@ -22775,8 +22786,10 @@ serviceMap:
     - GetRegistryPolicy
     - GetRegistryScanningConfiguration
     - GetRepositoryPolicy
+    - GetSigningConfiguration
     - InitiateLayerUpload
     - ListImages
+    - ListPullTimeUpdateExclusions
     - ListTagsForResource
     - PutAccountSetting
     - PutImage
@@ -22786,12 +22799,15 @@ serviceMap:
     - PutRegistryPolicy
     - PutRegistryScanningConfiguration
     - PutReplicationConfiguration
+    - PutSigningConfiguration
+    - RegisterPullTimeUpdateExclusion
     - ReplicateImage
     - SetRepositoryPolicy
     - StartImageScan
     - StartLifecyclePolicyPreview
     - TagResource
     - UntagResource
+    - UpdateImageStorageClass
     - UpdatePullThroughCacheRule
     - UpdateRepositoryCreationTemplate
     - UploadLayerPart
