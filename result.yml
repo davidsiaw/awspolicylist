@@ -3795,6 +3795,7 @@ serviceMap:
     - CreateAnycastIpList
     - CreateCachePolicy
     - CreateCloudFrontOriginAccessIdentity
+    - CreateConnectionFunction
     - CreateConnectionGroup
     - CreateContinuousDeploymentPolicy
     - CreateDistribution
@@ -3815,10 +3816,12 @@ serviceMap:
     - CreateSavingsPlan
     - CreateStreamingDistribution
     - CreateStreamingDistributionWithTags
+    - CreateTrustStore
     - CreateVpcOrigin
     - DeleteAnycastIpList
     - DeleteCachePolicy
     - DeleteCloudFrontOriginAccessIdentity
+    - DeleteConnectionFunction
     - DeleteConnectionGroup
     - DeleteContinuousDeploymentPolicy
     - DeleteDistribution
@@ -3836,7 +3839,9 @@ serviceMap:
     - DeleteResourcePolicy
     - DeleteResponseHeadersPolicy
     - DeleteStreamingDistribution
+    - DeleteTrustStore
     - DeleteVpcOrigin
+    - DescribeConnectionFunction
     - DescribeFunction
     - DescribeKeyValueStore
     - DisassociateDistributionTenantWebACL
@@ -3846,6 +3851,7 @@ serviceMap:
     - GetCachePolicyConfig
     - GetCloudFrontOriginAccessIdentity
     - GetCloudFrontOriginAccessIdentityConfig
+    - GetConnectionFunction
     - GetConnectionGroup
     - GetConnectionGroupByRoutingEndpoint
     - GetContinuousDeploymentPolicy
@@ -3878,11 +3884,13 @@ serviceMap:
     - GetSavingsPlan
     - GetStreamingDistribution
     - GetStreamingDistributionConfig
+    - GetTrustStore
     - GetVpcOrigin
     - ListAnycastIpLists
     - ListCachePolicies
     - ListCloudFrontOriginAccessIdentities
     - ListConflictingAliases
+    - ListConnectionFunctions
     - ListConnectionGroups
     - ListContinuousDeploymentPolicies
     - ListDistributionTenants
@@ -3890,12 +3898,14 @@ serviceMap:
     - ListDistributions
     - ListDistributionsByAnycastIpListId
     - ListDistributionsByCachePolicyId
+    - ListDistributionsByConnectionFunction
     - ListDistributionsByConnectionMode
     - ListDistributionsByKeyGroup
     - ListDistributionsByLambdaFunction
     - ListDistributionsByOriginRequestPolicyId
     - ListDistributionsByRealtimeLogConfig
     - ListDistributionsByResponseHeadersPolicyId
+    - ListDistributionsByTrustStore
     - ListDistributionsByVpcOriginId
     - ListDistributionsByWebACLId
     - ListDomainConflicts
@@ -3915,16 +3925,20 @@ serviceMap:
     - ListSavingsPlans
     - ListStreamingDistributions
     - ListTagsForResource
+    - ListTrustStores
     - ListUsages
     - ListVpcOrigins
+    - PublishConnectionFunction
     - PublishFunction
     - PutResourcePolicy
     - TagResource
+    - TestConnectionFunction
     - TestFunction
     - UntagResource
     - UpdateAnycastIpList
     - UpdateCachePolicy
     - UpdateCloudFrontOriginAccessIdentity
+    - UpdateConnectionFunction
     - UpdateConnectionGroup
     - UpdateContinuousDeploymentPolicy
     - UpdateDistribution
@@ -3943,6 +3957,7 @@ serviceMap:
     - UpdateResponseHeadersPolicy
     - UpdateSavingsPlan
     - UpdateStreamingDistribution
+    - UpdateTrustStore
     - UpdateVpcOrigin
     - VerifyDnsConfiguration
     ARNFormat: arn:aws:cloudfront:${Region}:${Account}:${ResourceType}/${ResourceId}
@@ -11026,6 +11041,7 @@ serviceMap:
     - PutIndexPolicy
     - PutIntegration
     - PutLogEvents
+    - PutLogGroupDeletionProtection
     - PutMetricFilter
     - PutQueryDefinition
     - PutResourcePolicy
