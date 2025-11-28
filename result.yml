@@ -3977,6 +3977,7 @@ serviceMap:
     - AssociateIdentityProviderConfig
     - CreateAccessEntry
     - CreateAddon
+    - CreateCapability
     - CreateCluster
     - CreateEksAnywhereSubscription
     - CreateFargateProfile
@@ -3984,6 +3985,7 @@ serviceMap:
     - CreatePodIdentityAssociation
     - DeleteAccessEntry
     - DeleteAddon
+    - DeleteCapability
     - DeleteCluster
     - DeleteEksAnywhereSubscription
     - DeleteFargateProfile
@@ -3994,6 +3996,7 @@ serviceMap:
     - DescribeAddon
     - DescribeAddonConfiguration
     - DescribeAddonVersions
+    - DescribeCapability
     - DescribeCluster
     - DescribeClusterVersions
     - DescribeEksAnywhereSubscription
@@ -4010,6 +4013,7 @@ serviceMap:
     - ListAccessPolicies
     - ListAddons
     - ListAssociatedAccessPolicies
+    - ListCapabilities
     - ListClusters
     - ListDashboardData
     - ListDashboardResources
@@ -4028,6 +4032,7 @@ serviceMap:
     - UntagResource
     - UpdateAccessEntry
     - UpdateAddon
+    - UpdateCapability
     - UpdateClusterConfig
     - UpdateClusterVersion
     - UpdateEksAnywhereSubscription
