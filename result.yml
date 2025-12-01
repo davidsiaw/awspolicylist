@@ -1391,21 +1391,27 @@ serviceMap:
     StringPrefix: aws-marketplace
     Actions:
     - AcceptAgreementApprovalRequest
+    - AcceptAgreementPaymentRequest
     - AcceptAgreementRequest
     - CancelAgreement
+    - CancelAgreementPaymentRequest
     - CancelAgreementRequest
     - CreateAgreementRequest
     - DescribeAgreement
     - GetAgreementApprovalRequest
     - GetAgreementEntitlements
+    - GetAgreementPaymentRequest
     - GetAgreementRequest
     - GetAgreementTerms
     - ListAgreementApprovalRequests
     - ListAgreementCharges
+    - ListAgreementPaymentRequests
     - ListAgreementRequests
     - ListEntitlementDetails
     - RejectAgreementApprovalRequest
+    - RejectAgreementPaymentRequest
     - SearchAgreements
+    - SendAgreementPaymentRequest
     - Subscribe
     - Unsubscribe
     - UpdateAgreementApprovalRequest
@@ -11371,6 +11377,64 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Route53 Global Resolver:
+    StringPrefix: route53globalresolver
+    Actions:
+    - AllowVendedLogDeliveryForResource
+    - AssociateHostedZone
+    - BatchCreateFirewallRule
+    - BatchDeleteFirewallRule
+    - BatchUpdateFirewallRule
+    - CreateAccessSource
+    - CreateAccessToken
+    - CreateDNSView
+    - CreateFirewallDomainList
+    - CreateFirewallRule
+    - CreateGlobalResolver
+    - DeleteAccessSource
+    - DeleteAccessToken
+    - DeleteDNSView
+    - DeleteFirewallDomainList
+    - DeleteFirewallRule
+    - DeleteGlobalResolver
+    - DisableDNSView
+    - DisassociateHostedZone
+    - EnableDNSView
+    - GetAccessSource
+    - GetAccessToken
+    - GetDNSView
+    - GetFirewallDomainList
+    - GetFirewallRule
+    - GetGlobalResolver
+    - GetHostedZoneAssociation
+    - GetManagedFirewallDomainList
+    - ImportFirewallDomains
+    - ListAccessSources
+    - ListAccessTokens
+    - ListDNSViews
+    - ListFirewallDomainLists
+    - ListFirewallDomains
+    - ListFirewallRules
+    - ListGlobalResolvers
+    - ListHostedZoneAssociations
+    - ListManagedFirewallDomainLists
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateAccessSource
+    - UpdateAccessToken
+    - UpdateDNSView
+    - UpdateFirewallDomains
+    - UpdateFirewallRule
+    - UpdateGlobalResolver
+    - UpdateHostedZoneAssociation
+    ARNFormat: arn:aws:route53globalresolver::${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:route53globalresolver::.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Panorama:
     StringPrefix: panorama
     Actions:
@@ -12454,9 +12518,14 @@ serviceMap:
   AWS Partner central account management:
     StringPrefix: partnercentral-account-management
     Actions:
+    - AccessLegacyPartnerCentral
+    - AccessMarketingCentral
     - AssociatePartnerAccount
     - AssociatePartnerUser
     - DisassociatePartnerUser
+    conditionKeys:
+    - partnercentral-account-management:LegacyPartnerCentralRole
+    - partnercentral-account-management:MarketingCentralRole
     HasResource: false
   Amazon Elastic File System:
     StringPrefix: elasticfilesystem
@@ -15806,14 +15875,29 @@ serviceMap:
     StringPrefix: partnercentral
     Actions:
     - AcceptChannelHandshake
+    - AcceptConnectionInvitation
     - AcceptEngagementInvitation
+    - AmendBenefitApplication
     - AssignOpportunity
+    - AssociateAwsTrainingCertificationEmailDomain
+    - AssociateBenefitApplicationResource
     - AssociateOpportunity
+    - CancelBenefitApplication
     - CancelChannelHandshake
+    - CancelConnection
+    - CancelConnectionInvitation
+    - CancelProfileUpdateTask
+    - CreateBenefitApplication
+    - CreateBusinessPlan
     - CreateChannelHandshake
+    - CreateCollaborationChannelMembers
+    - CreateCollaborationChannelRequest
+    - CreateConnectionInvitation
     - CreateEngagement
+    - CreateEngagementContext
     - CreateEngagementInvitation
     - CreateOpportunity
+    - CreatePartner
     - CreateProgramManagementAccount
     - CreateRelationship
     - CreateResourceSnapshot
@@ -15821,17 +15905,42 @@ serviceMap:
     - DeleteProgramManagementAccount
     - DeleteRelationship
     - DeleteResourceSnapshotJob
+    - DisassociateAwsTrainingCertificationEmailDomain
+    - DisassociateBenefitApplicationResource
     - DisassociateOpportunity
+    - EnrollInPartnerPath
+    - GetAllianceLeadContact
     - GetAwsOpportunitySummary
+    - GetBenefit
+    - GetBenefitAllocation
+    - GetBenefitApplication
+    - GetBusinessPlan
+    - GetCollaborationChannel
+    - GetConnection
+    - GetConnectionInvitation
+    - GetConnectionPreferences
     - GetEngagement
     - GetEngagementInvitation
     - GetOpportunity
+    - GetPartner
+    - GetPartnerDashboard
+    - GetPartnerProfile
+    - GetProfileUpdateTask
+    - GetProfileVisibility
     - GetProgramManagementAccount
     - GetRelationship
     - GetResourceSnapshot
     - GetResourceSnapshotJob
     - GetSellingSystemSettings
+    - GetVerification
+    - ListBenefitAllocations
+    - ListBenefitApplications
+    - ListBenefits
+    - ListBusinessPlans
     - ListChannelHandshakes
+    - ListCollaborationChannels
+    - ListConnectionInvitations
+    - ListConnections
     - ListEngagementByAcceptingInvitationTasks
     - ListEngagementFromOpportunityTasks
     - ListEngagementInvitations
@@ -15839,22 +15948,39 @@ serviceMap:
     - ListEngagementResourceAssociations
     - ListEngagements
     - ListOpportunities
+    - ListOpportunityFromEngagementTasks
+    - ListPartnerPaths
+    - ListPartners
     - ListProgramManagementAccounts
     - ListRelationships
     - ListResourceSnapshotJobs
     - ListResourceSnapshots
     - ListSolutions
     - ListTagsForResource
+    - PutAllianceLeadContact
+    - PutBusinessPlan
+    - PutProfileVisibility
     - PutSellingSystemSettings
+    - RecallBenefitApplication
     - RejectChannelHandshake
+    - RejectConnectionInvitation
     - RejectEngagementInvitation
+    - SearchPartnerProfiles
+    - SendEmailVerificationCode
     - StartEngagementByAcceptingInvitationTask
     - StartEngagementFromOpportunityTask
+    - StartOpportunityFromEngagementTask
+    - StartProfileUpdateTask
     - StartResourceSnapshotJob
+    - StartVerification
     - StopResourceSnapshotJob
+    - SubmitBenefitApplication
     - SubmitOpportunity
     - TagResource
     - UntagResource
+    - UpdateBenefitApplication
+    - UpdateConnectionPreferences
+    - UpdateEngagementContext
     - UpdateOpportunity
     - UpdateProgramManagementAccount
     - UpdateRelationship
@@ -15866,7 +15992,10 @@ serviceMap:
     - aws:TagKeys
     - partnercentral:Catalog
     - partnercentral:ChannelHandshakeType
+    - partnercentral:FulfillmentTypes
+    - partnercentral:Programs
     - partnercentral:RelatedEntityType
+    - partnercentral:VerificationType
     HasResource: true
   AWS OpsWorks:
     StringPrefix: opsworks
@@ -16674,6 +16803,13 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS MCP Server:
+    StringPrefix: aws-mcp
+    Actions:
+    - CallReadOnlyTool
+    - CallReadWriteTool
+    - InvokeMcp
+    HasResource: false
   AWS Diagnostic tools:
     StringPrefix: ts
     Actions:
