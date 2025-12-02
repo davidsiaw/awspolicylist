@@ -2072,13 +2072,19 @@ serviceMap:
     - AssociateQueueQuickConnects
     - AssociateRoutingProfileQueues
     - AssociateSecurityKey
+    - AssociateSecurityProfiles
     - AssociateTrafficDistributionGroupUser
     - AssociateUserProficiencies
+    - AssociateWorkspace
     - BatchAssociateAnalyticsDataSet
+    - BatchCreateDataTableValue
+    - BatchDeleteDataTableValue
+    - BatchDescribeDataTableValue
     - BatchDisassociateAnalyticsDataSet
     - BatchGetAttachedFileMetadata
     - BatchGetFlowAssociation
     - BatchPutContact
+    - BatchUpdateDataTableValue
     - ClaimPhoneNumber
     - CompleteAttachedFileUpload
     - CreateAgentStatus
@@ -2086,7 +2092,11 @@ serviceMap:
     - CreateContact
     - CreateContactFlow
     - CreateContactFlowModule
+    - CreateContactFlowModuleAlias
+    - CreateContactFlowModuleVersion
     - CreateContactFlowVersion
+    - CreateDataTable
+    - CreateDataTableAttribute
     - CreateEmailAddress
     - CreateEvaluationForm
     - CreateHoursOfOperation
@@ -2111,12 +2121,18 @@ serviceMap:
     - CreateView
     - CreateViewVersion
     - CreateVocabulary
+    - CreateWorkspace
+    - CreateWorkspacePage
     - DeactivateEvaluationForm
     - DeleteAttachedFile
     - DeleteContactEvaluation
     - DeleteContactFlow
     - DeleteContactFlowModule
+    - DeleteContactFlowModuleAlias
+    - DeleteContactFlowModuleVersion
     - DeleteContactFlowVersion
+    - DeleteDataTable
+    - DeleteDataTableAttribute
     - DeleteEmailAddress
     - DeleteEvaluationForm
     - DeleteHoursOfOperation
@@ -2139,12 +2155,18 @@ serviceMap:
     - DeleteView
     - DeleteViewVersion
     - DeleteVocabulary
+    - DeleteWorkspace
+    - DeleteWorkspaceMedia
+    - DeleteWorkspacePage
     - DescribeAgentStatus
     - DescribeAuthenticationProfile
     - DescribeContact
     - DescribeContactEvaluation
     - DescribeContactFlow
     - DescribeContactFlowModule
+    - DescribeContactFlowModuleAlias
+    - DescribeDataTable
+    - DescribeDataTableAttribute
     - DescribeEmailAddress
     - DescribeEvaluationForm
     - DescribeForecastingPlanningSchedulingIntegration
@@ -2167,6 +2189,7 @@ serviceMap:
     - DescribeUserHierarchyStructure
     - DescribeView
     - DescribeVocabulary
+    - DescribeWorkspace
     - DisassociateAnalyticsDataSet
     - DisassociateApprovedOrigin
     - DisassociateBot
@@ -2180,9 +2203,12 @@ serviceMap:
     - DisassociateQueueQuickConnects
     - DisassociateRoutingProfileQueues
     - DisassociateSecurityKey
+    - DisassociateSecurityProfiles
     - DisassociateTrafficDistributionGroupUser
     - DisassociateUserProficiencies
+    - DisassociateWorkspace
     - DismissUserContact
+    - EvaluateDataTableValues
     - GetAttachedFile
     - GetContactAttributes
     - GetContactMetrics
@@ -2197,6 +2223,7 @@ serviceMap:
     - GetTaskTemplate
     - GetTrafficDistribution
     - ImportPhoneNumber
+    - ImportWorkspaceMedia
     - ListAgentStatuses
     - ListAnalyticsDataAssociations
     - ListAnalyticsDataLakeDataSets
@@ -2205,11 +2232,18 @@ serviceMap:
     - ListAuthenticationProfiles
     - ListBots
     - ListContactEvaluations
+    - ListContactFlowModuleAliases
+    - ListContactFlowModuleVersions
     - ListContactFlowModules
     - ListContactFlowVersions
     - ListContactFlows
     - ListContactReferences
+    - ListDataTableAttributes
+    - ListDataTablePrimaryValues
+    - ListDataTableValues
+    - ListDataTables
     - ListDefaultVocabularies
+    - ListEntitySecurityProfiles
     - ListEvaluationFormVersions
     - ListEvaluationForms
     - ListFlowAssociations
@@ -2236,6 +2270,7 @@ serviceMap:
     - ListRules
     - ListSecurityKeys
     - ListSecurityProfileApplications
+    - ListSecurityProfileFlowModules
     - ListSecurityProfilePermissions
     - ListSecurityProfiles
     - ListTagsForResource
@@ -2248,6 +2283,9 @@ serviceMap:
     - ListUsers
     - ListViewVersions
     - ListViews
+    - ListWorkspaceMedia
+    - ListWorkspacePages
+    - ListWorkspaces
     - MonitorContact
     - PauseContact
     - PutUserStatus
@@ -2257,10 +2295,13 @@ serviceMap:
     - ResumeContactRecording
     - SearchAgentStatuses
     - SearchAvailablePhoneNumbers
+    - SearchContactEvaluations
     - SearchContactFlowModules
     - SearchContactFlows
     - SearchContacts
+    - SearchDataTables
     - SearchEmailAddresses
+    - SearchEvaluationForms
     - SearchHoursOfOperationOverrides
     - SearchHoursOfOperations
     - SearchPredefinedAttributes
@@ -2272,7 +2313,10 @@ serviceMap:
     - SearchSecurityProfiles
     - SearchUserHierarchyGroups
     - SearchUsers
+    - SearchViews
     - SearchVocabularies
+    - SearchWorkspaceAssociations
+    - SearchWorkspaces
     - SendChatIntegrationEvent
     - SendIntegrationEvent
     - SendOutboundChatMessage
@@ -2280,6 +2324,7 @@ serviceMap:
     - StartAttachedFileUpload
     - StartChatContact
     - StartContactEvaluation
+    - StartContactMediaProcessing
     - StartContactRecording
     - StartContactStreaming
     - StartEmailContact
@@ -2291,6 +2336,7 @@ serviceMap:
     - StartTaskContact
     - StartWebRTCContact
     - StopContact
+    - StopContactMediaProcessing
     - StopContactRecording
     - StopContactStreaming
     - StopForecastingPlanningSchedulingIntegration
@@ -2308,11 +2354,15 @@ serviceMap:
     - UpdateContactEvaluation
     - UpdateContactFlowContent
     - UpdateContactFlowMetadata
+    - UpdateContactFlowModuleAlias
     - UpdateContactFlowModuleContent
     - UpdateContactFlowModuleMetadata
     - UpdateContactFlowName
     - UpdateContactRoutingData
     - UpdateContactSchedule
+    - UpdateDataTableAttribute
+    - UpdateDataTableMetadata
+    - UpdateDataTablePrimaryValues
     - UpdateEmailAddressMetadata
     - UpdateEvaluationForm
     - UpdateHoursOfOperation
@@ -2352,6 +2402,10 @@ serviceMap:
     - UpdateUserSecurityProfiles
     - UpdateViewContent
     - UpdateViewMetadata
+    - UpdateWorkspaceMetadata
+    - UpdateWorkspacePage
+    - UpdateWorkspaceTheme
+    - UpdateWorkspaceVisibility
     ARNFormat: arn:aws:connect:${Region}:${Account}:instance/${InstanceId}
     ARNRegex: "^arn:aws:connect:.+:.+:instance/.+"
     conditionKeys:
@@ -2363,12 +2417,14 @@ serviceMap:
     - connect:Channel
     - connect:ContactAssociationId
     - connect:ContactInitiationMethod
+    - connect:ExpressionValue
     - connect:FlowType
     - connect:InstanceId
     - connect:ListRealtimeContactAnalysisSegmentsByOutputType
     - connect:ListRealtimeContactAnalysisSegmentsBySegmentType
     - connect:MonitorCapabilities
     - connect:PreferredUserArn
+    - connect:PrimaryAttribute/${PrimaryAttribute}
     - connect:SearchContactsByContactAnalysis
     - connect:SearchTag/${TagKey}
     - connect:StorageResourceType
@@ -4928,6 +4984,38 @@ serviceMap:
     - UpdateWirelessGateway
     ARNFormat: arn:aws:iotwireless:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:iotwireless:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  AWS Transform Custom:
+    StringPrefix: transform-custom
+    Actions:
+    - CompleteTransformationPackageUpload
+    - ConverseStream
+    - CreateCampaign
+    - CreateTransformationPackageUrl
+    - DeleteCampaign
+    - DeleteKnowledgeItem
+    - DeleteTransformationPackage
+    - ExecuteTransformation
+    - GetCampaign
+    - GetKnowledgeItem
+    - GetTransformationPackageUrl
+    - ListCampaignRepositories
+    - ListCampaigns
+    - ListKnowledgeItems
+    - ListTagsForResource
+    - ListTransformationPackageMetadata
+    - TagResource
+    - UntagResource
+    - UpdateCampaign
+    - UpdateCampaignRepositoryStatus
+    - UpdateKnowledgeItemConfiguration
+    - UpdateKnowledgeItemStatus
+    ARNFormat: arn:aws:transform-custom:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:transform-custom:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -11892,15 +11980,23 @@ serviceMap:
     Actions:
     - AssociateConnectorResource
     - CreateProfile
+    - DeleteAgentRuntimeConfiguration
     - DeleteConnector
     - DeleteProfile
+    - GetAccountSettings
+    - GetAgent
+    - GetAgentRuntimeConfiguration
     - GetConnector
+    - ListAgents
     - ListConnectors
     - ListProfiles
     - ListTagsForResource
+    - PutAgentRuntimeConfiguration
     - RejectConnector
     - TagResource
     - UntagResource
+    - UpdateAccountSettings
+    - UpdateAgentAccess
     - UpdateProfile
     ARNFormat: arn:aws:transform:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:transform:.+:.+:.+"
@@ -13366,11 +13462,13 @@ serviceMap:
     - AddLayerVersionPermission
     - AddPermission
     - CreateAlias
+    - CreateCapacityProvider
     - CreateCodeSigningConfig
     - CreateEventSourceMapping
     - CreateFunction
     - CreateFunctionUrlConfig
     - DeleteAlias
+    - DeleteCapacityProvider
     - DeleteCodeSigningConfig
     - DeleteEventSourceMapping
     - DeleteFunction
@@ -13384,6 +13482,7 @@ serviceMap:
     - EnableReplication
     - GetAccountSettings
     - GetAlias
+    - GetCapacityProvider
     - GetCodeSigningConfig
     - GetEventSourceMapping
     - GetFunction
@@ -13392,6 +13491,7 @@ serviceMap:
     - GetFunctionConfiguration
     - GetFunctionEventInvokeConfig
     - GetFunctionRecursionConfig
+    - GetFunctionScalingConfig
     - GetFunctionUrlConfig
     - GetLayerVersion
     - GetLayerVersionPolicy
@@ -13402,10 +13502,12 @@ serviceMap:
     - InvokeFunction
     - InvokeFunctionUrl
     - ListAliases
+    - ListCapacityProviders
     - ListCodeSigningConfigs
     - ListEventSourceMappings
     - ListFunctionEventInvokeConfigs
     - ListFunctionUrlConfigs
+    - ListFunctionVersionsByCapacityProvider
     - ListFunctions
     - ListFunctionsByCodeSigningConfig
     - ListLayerVersions
@@ -13413,12 +13515,14 @@ serviceMap:
     - ListProvisionedConcurrencyConfigs
     - ListTags
     - ListVersionsByFunction
+    - PassCapacityProvider
     - PublishLayerVersion
     - PublishVersion
     - PutFunctionCodeSigningConfig
     - PutFunctionConcurrency
     - PutFunctionEventInvokeConfig
     - PutFunctionRecursionConfig
+    - PutFunctionScalingConfig
     - PutProvisionedConcurrencyConfig
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
@@ -13426,6 +13530,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAlias
+    - UpdateCapacityProvider
     - UpdateCodeSigningConfig
     - UpdateEventSourceMapping
     - UpdateFunctionCode
@@ -19583,10 +19688,15 @@ serviceMap:
     StringPrefix: opensearch
     Actions:
     - ApplicationAccessAll
+    - CancelAutoOptimizeJob
     - CancelDirectQuery
+    - DeleteAutoOptimizeJob
+    - GetAutoOptimizeJob
     - GetDirectQuery
     - GetDirectQueryResult
+    - ListAutoOptimizeJobs
     - StartDirectQuery
+    - SubmitAutoOptimizeJob
     ARNFormat: arn:aws:opensearch:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:aws:opensearch:.+"
     HasResource: true
