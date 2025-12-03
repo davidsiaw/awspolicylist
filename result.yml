@@ -6834,6 +6834,7 @@ serviceMap:
     - GetCellRunResult
     - GetConnection
     - GetConversation
+    - GetDataExportConfiguration
     - GetDataProduct
     - GetDataSource
     - GetDataSourceRun
@@ -6916,6 +6917,7 @@ serviceMap:
     - PostTimeSeriesDataPoints
     - ProvisionDomain
     - PutCellRunResult
+    - PutDataExportConfiguration
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
     - RefreshToken
@@ -9959,21 +9961,29 @@ serviceMap:
     StringPrefix: observabilityadmin
     Actions:
     - CreateCentralizationRuleForOrganization
+    - CreateS3TableIntegration
+    - CreateTelemetryPipeline
     - CreateTelemetryRule
     - CreateTelemetryRuleForOrganization
     - DeleteCentralizationRuleForOrganization
+    - DeleteS3TableIntegration
+    - DeleteTelemetryPipeline
     - DeleteTelemetryRule
     - DeleteTelemetryRuleForOrganization
     - GetCentralizationRuleForOrganization
+    - GetS3TableIntegration
     - GetTelemetryEnrichmentStatus
     - GetTelemetryEvaluationStatus
     - GetTelemetryEvaluationStatusForOrganization
+    - GetTelemetryPipeline
     - GetTelemetryRule
     - GetTelemetryRuleForOrganization
     - ListCentralizationRulesForOrganization
     - ListResourceTelemetry
     - ListResourceTelemetryForOrganization
+    - ListS3TableIntegrations
     - ListTagsForResource
+    - ListTelemetryPipelines
     - ListTelemetryRules
     - ListTelemetryRulesForOrganization
     - StartTelemetryEnrichment
@@ -9983,10 +9993,13 @@ serviceMap:
     - StopTelemetryEvaluation
     - StopTelemetryEvaluationForOrganization
     - TagResource
+    - TestTelemetryPipeline
     - UntagResource
     - UpdateCentralizationRuleForOrganization
+    - UpdateTelemetryPipeline
     - UpdateTelemetryRule
     - UpdateTelemetryRuleForOrganization
+    - ValidateTelemetryPipelineConfiguration
     ARNFormat: arn:aws:observabilityadmin:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:observabilityadmin:.+:.+:.+"
     conditionKeys:
@@ -9996,6 +10009,7 @@ serviceMap:
     - observabilityadmin:CentralizationBackupRegion
     - observabilityadmin:CentralizationDestinationRegion
     - observabilityadmin:CentralizationSourceRegions
+    - observabilityadmin:SourceType
     HasResource: true
   Amazon Macie:
     StringPrefix: macie2
@@ -11058,6 +11072,7 @@ serviceMap:
     StringPrefix: logs
     Actions:
     - AssociateKmsKey
+    - AssociateSourceToS3TableIntegration
     - CancelExportTask
     - CreateDelivery
     - CreateExportTask
@@ -11080,6 +11095,7 @@ serviceMap:
     - DeleteLogGroup
     - DeleteLogStream
     - DeleteMetricFilter
+    - DeletePipelineRule
     - DeleteQueryDefinition
     - DeleteResourcePolicy
     - DeleteRetentionPolicy
@@ -11103,6 +11119,7 @@ serviceMap:
     - DescribeResourcePolicies
     - DescribeSubscriptionFilters
     - DisassociateKmsKey
+    - DisassociateSourceFromS3TableIntegration
     - FilterLogEvents
     - GetDataProtectionPolicy
     - GetDelivery
@@ -11113,13 +11130,16 @@ serviceMap:
     - GetLogAnomalyDetector
     - GetLogDelivery
     - GetLogEvents
+    - GetLogFields
     - GetLogGroupFields
     - GetLogRecord
     - GetQueryResults
     - GetScheduledQuery
     - GetScheduledQueryHistory
     - GetTransformer
+    - IntegrateWithS3Table
     - Link
+    - ListAggregateLogGroupSummaries
     - ListAnomalies
     - ListEntitiesForLogGroup
     - ListIntegrations
@@ -11129,8 +11149,10 @@ serviceMap:
     - ListLogGroupsForEntity
     - ListLogGroupsForQuery
     - ListScheduledQueries
+    - ListSourcesForS3TableIntegration
     - ListTagsForResource
     - ListTagsLogGroup
+    - ProcessWithPipeline
     - PutAccountPolicy
     - PutDataProtectionPolicy
     - PutDeliveryDestination
@@ -11143,6 +11165,7 @@ serviceMap:
     - PutLogEvents
     - PutLogGroupDeletionProtection
     - PutMetricFilter
+    - PutPipelineRule
     - PutQueryDefinition
     - PutResourcePolicy
     - PutRetentionPolicy
@@ -11747,14 +11770,21 @@ serviceMap:
     - GetVectorBucketPolicy
     - GetVectors
     - ListIndexes
+    - ListTagsForResource
     - ListVectorBuckets
     - ListVectors
     - PutVectorBucketPolicy
     - PutVectors
     - QueryVectors
+    - TagResource
+    - UntagResource
     ARNFormat: arn:aws:s3vectors:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3vectors:.+:.+:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - s3vectors:VectorBucketTag/${TagKey}
     - s3vectors:kmsKeyArn
     - s3vectors:sseType
     HasResource: true
@@ -12155,6 +12185,74 @@ serviceMap:
     conditionKeys:
     - compute-optimizer:ResourceType
     HasResource: false
+  AWS Security Agent:
+    StringPrefix: securityagent
+    Actions:
+    - AddArtifact
+    - AddControl
+    - BatchDeletePentests
+    - BatchGetAgentInstances
+    - BatchGetArtifactMetadata
+    - BatchGetFindings
+    - BatchGetPentestJobs
+    - BatchGetPentests
+    - BatchGetSecurityTestContentMetadata
+    - BatchGetTasks
+    - CreateAgentInstance
+    - CreateApplication
+    - CreateDocumentReview
+    - CreateIntegration
+    - CreateMembership
+    - CreateOneTimeLoginSession
+    - CreatePentest
+    - DeleteAgentInstance
+    - DeleteApplication
+    - DeleteArtifact
+    - DeleteControl
+    - DeleteIntegration
+    - DeleteMembership
+    - DescribeFindings
+    - GetApplication
+    - GetArtifact
+    - GetCodeReviewTask
+    - GetControl
+    - GetDocReviewTask
+    - GetDocumentReview
+    - GetDocumentReviewArtifact
+    - GetIntegration
+    - GetLoginSessionCredentials
+    - HandleOneTimeLoginSession
+    - InitiateProviderRegistration
+    - ListAgentInstanceTasks
+    - ListAgentInstances
+    - ListApplications
+    - ListArtifacts
+    - ListControls
+    - ListDiscoveredEndpoints
+    - ListDocumentReviewComments
+    - ListDocumentReviews
+    - ListFindings
+    - ListIntegratedResources
+    - ListIntegrations
+    - ListMemberships
+    - ListPentestJobsForPentest
+    - ListPentests
+    - ListResourcesFromIntegration
+    - ListTasks
+    - StartCodeRemediation
+    - StartPentestExecution
+    - StopPentestExecution
+    - ToggleManagedControl
+    - UpdateAgentInstance
+    - UpdateApplication
+    - UpdateControl
+    - UpdateFinding
+    - UpdateIntegratedResources
+    - UpdatePentest
+    - VerifyTargetDomain
+    ARNFormat: arn:aws:securityagent:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:securityagent:.+:.+:.+"
+    HasResource: true
   AWS Launch Wizard:
     StringPrefix: launchwizard
     Actions:
@@ -13461,6 +13559,7 @@ serviceMap:
     Actions:
     - AddLayerVersionPermission
     - AddPermission
+    - CheckpointDurableExecution
     - CreateAlias
     - CreateCapacityProvider
     - CreateCodeSigningConfig
@@ -13484,6 +13583,9 @@ serviceMap:
     - GetAlias
     - GetCapacityProvider
     - GetCodeSigningConfig
+    - GetDurableExecution
+    - GetDurableExecutionHistory
+    - GetDurableExecutionState
     - GetEventSourceMapping
     - GetFunction
     - GetFunctionCodeSigningConfig
@@ -13504,6 +13606,7 @@ serviceMap:
     - ListAliases
     - ListCapacityProviders
     - ListCodeSigningConfigs
+    - ListDurableExecutionsByFunction
     - ListEventSourceMappings
     - ListFunctionEventInvokeConfigs
     - ListFunctionUrlConfigs
@@ -13527,6 +13630,10 @@ serviceMap:
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
     - RemovePermission
+    - SendDurableExecutionCallbackFailure
+    - SendDurableExecutionCallbackHeartbeat
+    - SendDurableExecutionCallbackSuccess
+    - StopDurableExecution
     - TagResource
     - UntagResource
     - UpdateAlias
@@ -14611,6 +14718,7 @@ serviceMap:
     - BatchGetMetrics
     - BatchGetRecord
     - BatchPutMetrics
+    - CallMlflowAppApi
     - CallPartnerAppApi
     - CreateAction
     - CreateAlgorithm
@@ -14648,6 +14756,7 @@ serviceMap:
     - CreateInferenceRecommendationsJob
     - CreateLabelingJob
     - CreateLineageGroupPolicy
+    - CreateMlflowApp
     - CreateMlflowTrackingServer
     - CreateModel
     - CreateModelBiasJobDefinition
@@ -14665,6 +14774,7 @@ serviceMap:
     - CreatePartnerAppPresignedUrl
     - CreatePipeline
     - CreatePresignedDomainUrl
+    - CreatePresignedMlflowAppUrl
     - CreatePresignedMlflowTrackingServerUrl
     - CreatePresignedNotebookInstanceUrl
     - CreateProcessingJob
@@ -14714,6 +14824,7 @@ serviceMap:
     - DeleteInferenceComponent
     - DeleteInferenceExperiment
     - DeleteLineageGroupPolicy
+    - DeleteMlflowApp
     - DeleteMlflowTrackingServer
     - DeleteModel
     - DeleteModelBiasJobDefinition
@@ -14782,6 +14893,7 @@ serviceMap:
     - DescribeInferenceRecommendationsJob
     - DescribeLabelingJob
     - DescribeLineageGroup
+    - DescribeMlflowApp
     - DescribeMlflowTrackingServer
     - DescribeModel
     - DescribeModelBiasJobDefinition
@@ -14875,6 +14987,7 @@ serviceMap:
     - ListLabelingJobs
     - ListLabelingJobsForWorkteam
     - ListLineageGroups
+    - ListMlflowApps
     - ListMlflowTrackingServers
     - ListModelBiasJobDefinitions
     - ListModelCardExportJobs
@@ -14986,6 +15099,7 @@ serviceMap:
     - UpdateInferenceComponent
     - UpdateInferenceComponentRuntimeConfig
     - UpdateInferenceExperiment
+    - UpdateMlflowApp
     - UpdateMlflowTrackingServer
     - UpdateModelCard
     - UpdateModelPackage
@@ -22821,6 +22935,63 @@ serviceMap:
     ARNFormat: arn:${Partition}:eks-mcp:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:${Partition}:eks:."
     HasResource: false
+  AWS DevOps Agent Service:
+    StringPrefix: aidevops
+    Actions:
+    - AssociateService
+    - CreateAgentSpace
+    - CreateBacklogTask
+    - CreateKnowledgeItem
+    - CreateOneTimeLoginSession
+    - DeleteAgentSpace
+    - DeleteKnowledgeItem
+    - DeregisterService
+    - DescribeSupportLevel
+    - DisableOperatorApp
+    - DisassociateService
+    - DiscoverTopology
+    - EnableOperatorApp
+    - EndChatForCase
+    - GetAccountUsage
+    - GetAgentSpace
+    - GetAssociation
+    - GetBacklogTask
+    - GetKnowledgeItem
+    - GetOperatorAppTeams
+    - GetRecommendation
+    - GetService
+    - HandleServiceRegistrationCallback
+    - InitiateChatForCase
+    - InitiateServiceRegistration
+    - InvokeAgent
+    - ListAgentSpaces
+    - ListAssociations
+    - ListBacklogTasks
+    - ListExecutions
+    - ListGoals
+    - ListJournalRecords
+    - ListKnowledgeItems
+    - ListPendingMessages
+    - ListRecommendations
+    - ListServices
+    - ListWebhooks
+    - RegisterService
+    - SearchServiceAccessibleResource
+    - SendChatMessage
+    - UpdateAgentSpace
+    - UpdateAssociation
+    - UpdateBacklogTask
+    - UpdateKnowledgeItem
+    - UpdateOperatorAppTeams
+    - UpdateRecommendation
+    ARNFormat: arn:aws:aidevops:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:aidevops:.+:.+:.+"
+    conditionKeys:
+    - aidevops:AgentSpaceResourceAgentSpaceId
+    - aidevops:AssociationResourceAgentSpaceId
+    - aidevops:AssociationResourceAssociationId
+    - aidevops:ServiceResourceServiceId
+    HasResource: true
   Amazon Translate:
     StringPrefix: translate
     Actions:
@@ -24377,6 +24548,7 @@ serviceMap:
     StringPrefix: bedrock-agentcore
     Actions:
     - AllowVendedLogDeliveryForResource
+    - AuthorizeAction
     - BatchCreateMemoryRecords
     - BatchDeleteMemoryRecords
     - BatchUpdateMemoryRecords
@@ -24388,24 +24560,34 @@ serviceMap:
     - CreateApiKeyCredentialProvider
     - CreateBrowser
     - CreateCodeInterpreter
+    - CreateEvaluator
     - CreateEvent
     - CreateGateway
     - CreateGatewayTarget
     - CreateMemory
     - CreateOauth2CredentialProvider
+    - CreateOnlineEvaluationConfig
+    - CreatePolicy
+    - CreatePolicyEngine
     - CreateWorkloadIdentity
     - DeleteAgentRuntime
     - DeleteAgentRuntimeEndpoint
     - DeleteApiKeyCredentialProvider
     - DeleteBrowser
     - DeleteCodeInterpreter
+    - DeleteEvaluator
     - DeleteEvent
     - DeleteGateway
     - DeleteGatewayTarget
     - DeleteMemory
     - DeleteMemoryRecord
     - DeleteOauth2CredentialProvider
+    - DeleteOnlineEvaluationConfig
+    - DeletePolicy
+    - DeletePolicyEngine
+    - DeleteResourcePolicy
     - DeleteWorkloadIdentity
+    - Evaluate
     - GetAgentCard
     - GetAgentRuntime
     - GetAgentRuntimeEndpoint
@@ -24414,14 +24596,20 @@ serviceMap:
     - GetBrowserSession
     - GetCodeInterpreter
     - GetCodeInterpreterSession
+    - GetEvaluator
     - GetEvent
     - GetGateway
     - GetGatewayTarget
     - GetMemory
     - GetMemoryRecord
     - GetOauth2CredentialProvider
+    - GetOnlineEvaluationConfig
+    - GetPolicy
+    - GetPolicyEngine
+    - GetPolicyGeneration
     - GetResourceApiKey
     - GetResourceOauth2Token
+    - GetResourcePolicy
     - GetTokenVault
     - GetWorkloadAccessToken
     - GetWorkloadAccessTokenForJWT
@@ -24429,6 +24617,8 @@ serviceMap:
     - GetWorkloadIdentity
     - InvokeAgentRuntime
     - InvokeAgentRuntimeForUser
+    - InvokeAgentRuntimeWithWebSocketStream
+    - InvokeAgentRuntimeWithWebSocketStreamForUser
     - InvokeCodeInterpreter
     - InvokeGateway
     - ListActors
@@ -24440,19 +24630,32 @@ serviceMap:
     - ListBrowsers
     - ListCodeInterpreterSessions
     - ListCodeInterpreters
+    - ListEvaluators
     - ListEvents
     - ListGatewayTargets
     - ListGateways
     - ListMemories
+    - ListMemoryExtractionJobs
     - ListMemoryRecords
     - ListOauth2CredentialProviders
+    - ListOnlineEvaluationConfigs
+    - ListPolicies
+    - ListPolicyEngines
+    - ListPolicyGenerationAssets
+    - ListPolicyGenerations
     - ListSessions
     - ListTagsForResource
     - ListWorkloadIdentities
+    - ManageAdminPolicy
+    - ManageResourceScopedPolicy
+    - PartiallyAuthorizeActions
+    - PutResourcePolicy
     - RetrieveMemoryRecords
     - SetTokenVaultCMK
     - StartBrowserSession
     - StartCodeInterpreterSession
+    - StartMemoryExtractionJob
+    - StartPolicyGeneration
     - StopBrowserSession
     - StopCodeInterpreterSession
     - StopRuntimeSession
@@ -24463,10 +24666,14 @@ serviceMap:
     - UpdateAgentRuntimeEndpoint
     - UpdateApiKeyCredentialProvider
     - UpdateBrowserStream
+    - UpdateEvaluator
     - UpdateGateway
     - UpdateGatewayTarget
     - UpdateMemory
     - UpdateOauth2CredentialProvider
+    - UpdateOnlineEvaluationConfig
+    - UpdatePolicy
+    - UpdatePolicyEngine
     - UpdateWorkloadIdentity
     ARNFormat: arn:aws:bedrock-agentcore:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock-agentcore:.+:.+:.+"
@@ -25273,19 +25480,28 @@ serviceMap:
     - DeleteTableBucket
     - DeleteTableBucketEncryption
     - DeleteTableBucketPolicy
+    - DeleteTableBucketReplication
     - DeleteTablePolicy
+    - DeleteTableReplication
     - GetNamespace
     - GetTable
     - GetTableBucket
     - GetTableBucketEncryption
     - GetTableBucketMaintenanceConfiguration
     - GetTableBucketPolicy
+    - GetTableBucketReplication
+    - GetTableBucketStorageClass
     - GetTableData
     - GetTableEncryption
     - GetTableMaintenanceConfiguration
     - GetTableMaintenanceJobStatus
     - GetTableMetadataLocation
     - GetTablePolicy
+    - GetTableRecordExpirationConfiguration
+    - GetTableRecordExpirationJobStatus
+    - GetTableReplication
+    - GetTableReplicationStatus
+    - GetTableStorageClass
     - ListNamespaces
     - ListTableBuckets
     - ListTables
@@ -25293,10 +25509,15 @@ serviceMap:
     - PutTableBucketEncryption
     - PutTableBucketMaintenanceConfiguration
     - PutTableBucketPolicy
+    - PutTableBucketReplication
+    - PutTableBucketStorageClass
     - PutTableData
     - PutTableEncryption
     - PutTableMaintenanceConfiguration
     - PutTablePolicy
+    - PutTableRecordExpirationConfiguration
+    - PutTableReplication
+    - PutTableStorageClass
     - RenameTable
     - TagResource
     - UntagResource
@@ -25309,6 +25530,7 @@ serviceMap:
     - aws:TagKeys
     - s3tables:KMSKeyArn
     - s3tables:SSEAlgorithm
+    - s3tables:StorageClass
     - s3tables:TableBucketTag/${TagKey}
     - s3tables:namespace
     - s3tables:tableName
