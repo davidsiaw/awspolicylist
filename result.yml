@@ -1497,6 +1497,7 @@ serviceMap:
     - ListGroupMembershipsForMember
     - ListGroups
     - ListUsers
+    - ReserveUser
     - UpdateGroup
     - UpdateIdentityStore
     - UpdateUser
@@ -6542,34 +6543,6 @@ serviceMap:
     - aws:TagKeys
     - oam:ResourceTypes
     HasResource: true
-  AWS DeepComposer:
-    StringPrefix: deepcomposer
-    Actions:
-    - AssociateCoupon
-    - CreateAudio
-    - CreateComposition
-    - CreateModel
-    - DeleteComposition
-    - DeleteModel
-    - GetComposition
-    - GetModel
-    - GetSampleModel
-    - ListCompositions
-    - ListModels
-    - ListSampleModels
-    - ListTagsForResource
-    - ListTrainingTopics
-    - TagResource
-    - UntagResource
-    - UpdateComposition
-    - UpdateModel
-    ARNFormat: arn:aws:deepcomposer:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:aws:deepcomposer:.+:.+:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    HasResource: true
   Amazon Managed Blockchain:
     StringPrefix: managedblockchain
     Actions:
@@ -9615,6 +9588,7 @@ serviceMap:
     - UpdateAutomatedReasoningPolicyAnnotations
     - UpdateAutomatedReasoningPolicyTestCase
     - UpdateBlueprint
+    - UpdateCustomModelDeployment
     - UpdateDataAutomationProject
     - UpdateDataSource
     - UpdateFlow
@@ -22980,7 +22954,6 @@ serviceMap:
     - HandleServiceRegistrationCallback
     - InitiateChatForCase
     - InitiateServiceRegistration
-    - InvokeAgent
     - ListAgentSpaces
     - ListAssociations
     - ListBacklogTasks
