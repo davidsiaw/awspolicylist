@@ -4993,7 +4993,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Transform Custom:
+  AWS Transform custom:
     StringPrefix: transform-custom
     Actions:
     - CompleteTransformationPackageUpload
@@ -13352,6 +13352,7 @@ serviceMap:
     - ssm:AutoApprove
     - ssm:DocumentCategories
     - ssm:DocumentType
+    - ssm:DocumentVersion
     - ssm:InventoryTypeName
     - ssm:Overwrite
     - ssm:Policies
@@ -15176,6 +15177,7 @@ serviceMap:
     - sagemaker:ServerlessMaxConcurrency
     - sagemaker:ServerlessMemorySize
     - sagemaker:SpaceSharingType
+    - sagemaker:StudioLifecycleConfigArns
     - sagemaker:TaggingAction
     - sagemaker:TargetModel
     - sagemaker:UserProfileName
@@ -19096,6 +19098,7 @@ serviceMap:
     - GetFlowMetadata
     - GetFlowPermissions
     - GetGroupMapping
+    - GetIdentityContext
     - GetSessionEmbedUrl
     - ListActionConnectors
     - ListAgents
@@ -25138,6 +25141,7 @@ serviceMap:
     - GetAWSDefaultServiceQuota
     - GetAssociationForServiceQuotaTemplate
     - GetAutoManagementConfiguration
+    - GetQuotaUtilizationReport
     - GetRequestedServiceQuotaChange
     - GetServiceQuota
     - GetServiceQuotaIncreaseRequestFromTemplate
@@ -25151,6 +25155,7 @@ serviceMap:
     - PutServiceQuotaIncreaseRequestIntoTemplate
     - RequestServiceQuotaIncrease
     - StartAutoManagement
+    - StartQuotaUtilizationReport
     - StopAutoManagement
     - TagResource
     - UntagResource
