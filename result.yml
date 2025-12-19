@@ -20163,11 +20163,14 @@ serviceMap:
   AWS Payment Cryptography:
     StringPrefix: payment-cryptography
     Actions:
+    - AddKeyReplicationRegions
     - CreateAlias
     - CreateKey
     - DecryptData
     - DeleteAlias
     - DeleteKey
+    - DisableDefaultKeyReplicationRegions
+    - EnableDefaultKeyReplicationRegions
     - EncryptData
     - ExportKey
     - GenerateCardValidationData
@@ -20175,6 +20178,8 @@ serviceMap:
     - GenerateMacEmvPinChange
     - GeneratePinData
     - GetAlias
+    - GetCertificateSigningRequest
+    - GetDefaultKeyReplicationRegions
     - GetKey
     - GetParametersForExport
     - GetParametersForImport
@@ -20184,10 +20189,12 @@ serviceMap:
     - ListKeys
     - ListTagsForResource
     - ReEncryptData
+    - RemoveKeyReplicationRegions
     - RestoreKey
     - StartKeyUsage
     - StopKeyUsage
     - TagResource
+    - TranslateKeyMaterial
     - TranslatePinData
     - UntagResource
     - UpdateAlias
@@ -20547,15 +20554,41 @@ serviceMap:
   Amazon API Gateway Management V2:
     StringPrefix: apigateway
     Actions:
+    - CreatePortal
+    - CreatePortalProduct
+    - CreateProductPage
+    - CreateProductRestEndpointPage
     - CreateRoutingRule
     - DELETE
+    - DeletePortal
+    - DeletePortalProduct
+    - DeletePortalProductSharingPolicy
+    - DeleteProductPage
+    - DeleteProductRestEndpointPage
     - DeleteRoutingRule
+    - DisablePortal
     - GET
+    - GetPortal
+    - GetPortalProduct
+    - GetPortalProductSharingPolicy
+    - GetProductPage
+    - GetProductRestEndpointPage
     - GetRoutingRule
+    - ListPortalProducts
+    - ListPortals
+    - ListProductPages
+    - ListProductRestEndpointPages
     - ListRoutingRules
     - PATCH
     - POST
     - PUT
+    - PreviewPortal
+    - PublishPortal
+    - PutPortalProductSharingPolicy
+    - UpdatePortal
+    - UpdatePortalProduct
+    - UpdateProductPage
+    - UpdateProductRestEndpointPage
     - UpdateRoutingRule
     ARNFormat: arn:aws:apigateway:${Region}::${ApiGatewayResourcePath}
     ARNRegex: "^arn:aws:apigateway:.+"
@@ -20566,15 +20599,24 @@ serviceMap:
     - apigateway:Request/ApiName
     - apigateway:Request/AuthorizerType
     - apigateway:Request/AuthorizerUri
+    - apigateway:Request/CognitoUserPoolArn
     - apigateway:Request/ConditionBasePaths
     - apigateway:Request/DisableExecuteApiEndpoint
     - apigateway:Request/EndpointType
+    - apigateway:Request/Method
     - apigateway:Request/MtlsTrustStoreUri
     - apigateway:Request/MtlsTrustStoreVersion
+    - apigateway:Request/PortalDisplayName
+    - apigateway:Request/PortalDomainName
+    - apigateway:Request/PortalProductDisplayName
     - apigateway:Request/Priority
+    - apigateway:Request/ProductPageTitle
+    - apigateway:Request/ProductRestEndpointPageEndpointPrefix
+    - apigateway:Request/RestApiId
     - apigateway:Request/RouteAuthorizationType
     - apigateway:Request/RoutingMode
     - apigateway:Request/SecurityPolicy
+    - apigateway:Request/Stage
     - apigateway:Request/StageName
     - apigateway:Resource/AccessLoggingDestination
     - apigateway:Resource/AccessLoggingFormat
@@ -20582,15 +20624,25 @@ serviceMap:
     - apigateway:Resource/ApiName
     - apigateway:Resource/AuthorizerType
     - apigateway:Resource/AuthorizerUri
+    - apigateway:Resource/CognitoUserPoolArn
     - apigateway:Resource/ConditionBasePaths
     - apigateway:Resource/DisableExecuteApiEndpoint
     - apigateway:Resource/EndpointType
+    - apigateway:Resource/Method
     - apigateway:Resource/MtlsTrustStoreUri
     - apigateway:Resource/MtlsTrustStoreVersion
+    - apigateway:Resource/PortalDisplayName
+    - apigateway:Resource/PortalDomainName
+    - apigateway:Resource/PortalProductDisplayName
+    - apigateway:Resource/PortalPublishStatus
     - apigateway:Resource/Priority
+    - apigateway:Resource/ProductPageTitle
+    - apigateway:Resource/ProductRestEndpointPageEndpointPrefix
+    - apigateway:Resource/RestApiId
     - apigateway:Resource/RouteAuthorizationType
     - apigateway:Resource/RoutingMode
     - apigateway:Resource/SecurityPolicy
+    - apigateway:Resource/Stage
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
@@ -21645,6 +21697,7 @@ serviceMap:
     - AssociateTrunkInterface
     - AssociateVerifiedAccessInstanceWebAcl
     - AssociateVpcCidrBlock
+    - AttachApplianceToNatGateway
     - AttachClassicLinkVpc
     - AttachInternetGateway
     - AttachNetworkInterface
@@ -21696,9 +21749,13 @@ serviceMap:
     - CreateInstanceEventWindow
     - CreateInstanceExportTask
     - CreateInternetGateway
+    - CreateInterruptibleCapacityReservationAllocation
     - CreateIpam
     - CreateIpamExternalResourceVerificationToken
+    - CreateIpamPolicy
     - CreateIpamPool
+    - CreateIpamPrefixListResolver
+    - CreateIpamPrefixListResolverTarget
     - CreateIpamResourceDiscovery
     - CreateIpamScope
     - CreateKeyPair
@@ -21720,6 +21777,7 @@ serviceMap:
     - CreateNetworkInsightsPath
     - CreateNetworkInterface
     - CreateNetworkInterfacePermission
+    - CreateOdbNetworkPeering
     - CreatePlacementGroup
     - CreatePublicIpv4Pool
     - CreateReplaceRootVolumeTask
@@ -21745,6 +21803,8 @@ serviceMap:
     - CreateTransitGateway
     - CreateTransitGatewayConnect
     - CreateTransitGatewayConnectPeer
+    - CreateTransitGatewayMeteringPolicy
+    - CreateTransitGatewayMeteringPolicyEntry
     - CreateTransitGatewayMulticastDomain
     - CreateTransitGatewayPeeringAttachment
     - CreateTransitGatewayPolicyTable
@@ -21760,10 +21820,12 @@ serviceMap:
     - CreateVolume
     - CreateVpc
     - CreateVpcBlockPublicAccessExclusion
+    - CreateVpcEncryptionControl
     - CreateVpcEndpoint
     - CreateVpcEndpointConnectionNotification
     - CreateVpcEndpointServiceConfiguration
     - CreateVpcPeeringConnection
+    - CreateVpnConcentrator
     - CreateVpnConnection
     - CreateVpnConnectionRoute
     - CreateVpnGateway
@@ -21786,7 +21848,10 @@ serviceMap:
     - DeleteInternetGateway
     - DeleteIpam
     - DeleteIpamExternalResourceVerificationToken
+    - DeleteIpamPolicy
     - DeleteIpamPool
+    - DeleteIpamPrefixListResolver
+    - DeleteIpamPrefixListResolverTarget
     - DeleteIpamResourceDiscovery
     - DeleteIpamScope
     - DeleteKeyPair
@@ -21809,6 +21874,7 @@ serviceMap:
     - DeleteNetworkInsightsPath
     - DeleteNetworkInterface
     - DeleteNetworkInterfacePermission
+    - DeleteOdbNetworkPeering
     - DeletePlacementGroup
     - DeletePublicIpv4Pool
     - DeleteQueuedReservedInstances
@@ -21831,6 +21897,8 @@ serviceMap:
     - DeleteTransitGateway
     - DeleteTransitGatewayConnect
     - DeleteTransitGatewayConnectPeer
+    - DeleteTransitGatewayMeteringPolicy
+    - DeleteTransitGatewayMeteringPolicyEntry
     - DeleteTransitGatewayMulticastDomain
     - DeleteTransitGatewayPeeringAttachment
     - DeleteTransitGatewayPolicyTable
@@ -21846,10 +21914,12 @@ serviceMap:
     - DeleteVolume
     - DeleteVpc
     - DeleteVpcBlockPublicAccessExclusion
+    - DeleteVpcEncryptionControl
     - DeleteVpcEndpointConnectionNotifications
     - DeleteVpcEndpointServiceConfigurations
     - DeleteVpcEndpoints
     - DeleteVpcPeeringConnection
+    - DeleteVpnConcentrator
     - DeleteVpnConnection
     - DeleteVpnConnectionRoute
     - DeleteVpnGateway
@@ -21878,6 +21948,7 @@ serviceMap:
     - DescribeCapacityManagerDataExports
     - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationFleets
+    - DescribeCapacityReservationTopology
     - DescribeCapacityReservations
     - DescribeCarrierGateways
     - DescribeClassicLinkInstances
@@ -21922,6 +21993,8 @@ serviceMap:
     - DescribeInstanceEventNotificationAttributes
     - DescribeInstanceEventWindows
     - DescribeInstanceImageMetadata
+    - DescribeInstanceSqlHaHistoryStates
+    - DescribeInstanceSqlHaStates
     - DescribeInstanceStatus
     - DescribeInstanceTopology
     - DescribeInstanceTypeOfferings
@@ -21930,7 +22003,10 @@ serviceMap:
     - DescribeInternetGateways
     - DescribeIpamByoasn
     - DescribeIpamExternalResourceVerificationTokens
+    - DescribeIpamPolicies
     - DescribeIpamPools
+    - DescribeIpamPrefixListResolverTargets
+    - DescribeIpamPrefixListResolvers
     - DescribeIpamResourceDiscoveries
     - DescribeIpamResourceDiscoveryAssociations
     - DescribeIpamScopes
@@ -22002,6 +22078,7 @@ serviceMap:
     - DescribeTransitGatewayAttachments
     - DescribeTransitGatewayConnectPeers
     - DescribeTransitGatewayConnects
+    - DescribeTransitGatewayMeteringPolicies
     - DescribeTransitGatewayMulticastDomains
     - DescribeTransitGatewayPeeringAttachments
     - DescribeTransitGatewayPolicyTables
@@ -22025,6 +22102,7 @@ serviceMap:
     - DescribeVpcBlockPublicAccessOptions
     - DescribeVpcClassicLink
     - DescribeVpcClassicLinkDnsSupport
+    - DescribeVpcEncryptionControls
     - DescribeVpcEndpointAssociations
     - DescribeVpcEndpointConnectionNotifications
     - DescribeVpcEndpointConnections
@@ -22034,8 +22112,10 @@ serviceMap:
     - DescribeVpcEndpoints
     - DescribeVpcPeeringConnections
     - DescribeVpcs
+    - DescribeVpnConcentrators
     - DescribeVpnConnections
     - DescribeVpnGateways
+    - DetachApplianceFromNatGateway
     - DetachClassicLinkVpc
     - DetachInternetGateway
     - DetachNetworkInterface
@@ -22053,7 +22133,9 @@ serviceMap:
     - DisableImageBlockPublicAccess
     - DisableImageDeprecation
     - DisableImageDeregistrationProtection
+    - DisableInstanceSqlHaStandbyDetections
     - DisableIpamOrganizationAdminAccount
+    - DisableIpamPolicy
     - DisableRouteServerPropagation
     - DisableSerialConsoleAccess
     - DisableSnapshotBlockPublicAccess
@@ -22091,7 +22173,9 @@ serviceMap:
     - EnableImageBlockPublicAccess
     - EnableImageDeprecation
     - EnableImageDeregistrationProtection
+    - EnableInstanceSqlHaStandbyDetections
     - EnableIpamOrganizationAdminAccount
+    - EnableIpamPolicy
     - EnableReachabilityAnalyzerOrganizationSharing
     - EnableRouteServerPropagation
     - EnableSerialConsoleAccess
@@ -22122,9 +22206,11 @@ serviceMap:
     - GetDefaultCreditSpecification
     - GetEbsDefaultKmsKeyId
     - GetEbsEncryptionByDefault
+    - GetEnabledIpamPolicy
     - GetFlowLogsIntegrationTemplate
     - GetGroupsForCapacityReservation
     - GetHostReservationPurchasePreview
+    - GetImageAncestry
     - GetImageBlockPublicAccessState
     - GetInstanceMetadataDefaults
     - GetInstanceTpmEkPub
@@ -22134,8 +22220,13 @@ serviceMap:
     - GetIpamDiscoveredAccounts
     - GetIpamDiscoveredPublicAddresses
     - GetIpamDiscoveredResourceCidrs
+    - GetIpamPolicyAllocationRules
+    - GetIpamPolicyOrganizationTargets
     - GetIpamPoolAllocations
     - GetIpamPoolCidrs
+    - GetIpamPrefixListResolverRules
+    - GetIpamPrefixListResolverVersionEntries
+    - GetIpamPrefixListResolverVersions
     - GetIpamResourceCidrs
     - GetLaunchTemplateData
     - GetManagedPrefixListAssociations
@@ -22154,6 +22245,7 @@ serviceMap:
     - GetSpotPlacementScores
     - GetSubnetCidrReservations
     - GetTransitGatewayAttachmentPropagations
+    - GetTransitGatewayMeteringPolicyEntries
     - GetTransitGatewayMulticastDomainAssociations
     - GetTransitGatewayPolicyTableAssociations
     - GetTransitGatewayPolicyTableEntries
@@ -22164,6 +22256,7 @@ serviceMap:
     - GetVerifiedAccessEndpointTargets
     - GetVerifiedAccessGroupPolicy
     - GetVerifiedAccessInstanceWebAcl
+    - GetVpcResourcesBlockingEncryptionEnforcement
     - GetVpnConnectionDeviceSampleConfiguration
     - GetVpnConnectionDeviceTypes
     - GetVpnTunnelReplacementStatus
@@ -22177,6 +22270,7 @@ serviceMap:
     - InjectApiError
     - ListImagesInRecycleBin
     - ListSnapshotsInRecycleBin
+    - ListVolumesInRecycleBin
     - LockSnapshot
     - ModifyAddressAttribute
     - ModifyAvailabilityZoneGroup
@@ -22204,7 +22298,10 @@ serviceMap:
     - ModifyInstanceNetworkPerformanceOptions
     - ModifyInstancePlacement
     - ModifyIpam
+    - ModifyIpamPolicyAllocationRules
     - ModifyIpamPool
+    - ModifyIpamPrefixListResolver
+    - ModifyIpamPrefixListResolverTarget
     - ModifyIpamResourceCidr
     - ModifyIpamResourceDiscovery
     - ModifyIpamScope
@@ -22212,6 +22309,7 @@ serviceMap:
     - ModifyLocalGatewayRoute
     - ModifyManagedPrefixList
     - ModifyNetworkInterfaceAttribute
+    - ModifyOdbNetworkPeering
     - ModifyPrivateDnsNameOptions
     - ModifyPublicIpDnsNameOptions
     - ModifyReservedInstances
@@ -22225,6 +22323,7 @@ serviceMap:
     - ModifyTrafficMirrorFilterRule
     - ModifyTrafficMirrorSession
     - ModifyTransitGateway
+    - ModifyTransitGatewayMeteringPolicy
     - ModifyTransitGatewayPrefixListReference
     - ModifyTransitGatewayVpcAttachment
     - ModifyVerifiedAccessEndpoint
@@ -22239,6 +22338,7 @@ serviceMap:
     - ModifyVpcAttribute
     - ModifyVpcBlockPublicAccessExclusion
     - ModifyVpcBlockPublicAccessOptions
+    - ModifyVpcEncryptionControl
     - ModifyVpcEndpoint
     - ModifyVpcEndpointConnectionNotification
     - ModifyVpcEndpointServiceConfiguration
@@ -22302,6 +22402,7 @@ serviceMap:
     - RestoreManagedPrefixListVersion
     - RestoreSnapshotFromRecycleBin
     - RestoreSnapshotTier
+    - RestoreVolumeFromRecycleBin
     - RevokeClientVpnIngress
     - RevokeSecurityGroupEgress
     - RevokeSecurityGroupIngress
@@ -22326,6 +22427,7 @@ serviceMap:
     - UnlockSnapshot
     - UnmonitorInstances
     - UpdateCapacityManagerOrganizationsAccess
+    - UpdateInterruptibleCapacityReservationAllocation
     - UpdateSecurityGroupRuleDescriptionsEgress
     - UpdateSecurityGroupRuleDescriptionsIngress
     - WithdrawByoipCidr
@@ -22352,6 +22454,7 @@ serviceMap:
     - ec2:ClientRootCertificateChainArn
     - ec2:CloudwatchLogGroupArn
     - ec2:CloudwatchLogStreamArn
+    - ec2:CommitmentDuration
     - ec2:CpuOptionsAmdSevSnp
     - ec2:CreateAction
     - ec2:CreateDate
@@ -22386,8 +22489,12 @@ serviceMap:
     - ec2:InstanceProfile
     - ec2:InstanceType
     - ec2:InternetGatewayID
+    - ec2:InterruptibleCapacityReservationId
+    - ec2:InterruptionType
+    - ec2:IpamPrefixListResolverTargetId
     - ec2:Ipv4IpamPoolId
     - ec2:Ipv6IpamPoolId
+    - ec2:IsInterruptible
     - ec2:IsLaunchTemplateResource
     - ec2:KeyPairName
     - ec2:KeyPairType
@@ -22447,6 +22554,7 @@ serviceMap:
     - ec2:SourceOutpostArn
     - ec2:Subnet
     - ec2:SubnetID
+    - ec2:TargetInstanceCount
     - ec2:Tenancy
     - ec2:VolumeID
     - ec2:VolumeInitializationRate
@@ -22458,6 +22566,8 @@ serviceMap:
     - ec2:VpcID
     - ec2:VpcPeeringConnectionID
     - ec2:VpceMultiRegion
+    - ec2:VpcePrivateDnsPreference
+    - ec2:VpcePrivateDnsSpecifiedDomains
     - ec2:VpceServiceName
     - ec2:VpceServiceOwner
     - ec2:VpceServicePrivateDnsName
@@ -22466,6 +22576,7 @@ serviceMap:
     - ec2:transitGatewayAttachmentId
     - ec2:transitGatewayConnectPeerId
     - ec2:transitGatewayId
+    - ec2:transitGatewayMeteringPolicyId
     - ec2:transitGatewayMulticastDomainId
     - ec2:transitGatewayPolicyTableId
     - ec2:transitGatewayRouteTableAnnouncementId
