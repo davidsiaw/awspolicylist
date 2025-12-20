@@ -2538,6 +2538,7 @@ serviceMap:
     - GetDeliverabilityTestReport
     - GetDomainDeliverabilityCampaign
     - GetDomainStatisticsReport
+    - GetEmailAddressInsights
     - GetEmailIdentity
     - GetEmailIdentityPolicies
     - GetEmailTemplate
@@ -5898,6 +5899,7 @@ serviceMap:
     - UntagResource
     - UpdateAnalysisTemplate
     - UpdateCollaboration
+    - UpdateCollaborationChangeRequest
     - UpdateConfiguredAudienceModelAssociation
     - UpdateConfiguredTable
     - UpdateConfiguredTableAllowedColumns
@@ -7820,14 +7822,23 @@ serviceMap:
     - AssociateAvailabilityZones
     - AssociateFirewallPolicy
     - AssociateSubnets
+    - AttachRuleGroupsToProxyConfiguration
     - CreateFirewall
     - CreateFirewallPolicy
+    - CreateProxy
+    - CreateProxyConfiguration
+    - CreateProxyRuleGroup
+    - CreateProxyRules
     - CreateRuleGroup
     - CreateTLSInspectionConfiguration
     - CreateVpcEndpointAssociation
     - DeleteFirewall
     - DeleteFirewallPolicy
     - DeleteNetworkFirewallTransitGatewayAttachment
+    - DeleteProxy
+    - DeleteProxyConfiguration
+    - DeleteProxyRuleGroup
+    - DeleteProxyRules
     - DeleteResourcePolicy
     - DeleteRuleGroup
     - DeleteTLSInspectionConfiguration
@@ -7837,12 +7848,17 @@ serviceMap:
     - DescribeFirewallPolicy
     - DescribeFlowOperation
     - DescribeLoggingConfiguration
+    - DescribeProxy
+    - DescribeProxyConfiguration
+    - DescribeProxyRule
+    - DescribeProxyRuleGroup
     - DescribeResourcePolicy
     - DescribeRuleGroup
     - DescribeRuleGroupMetadata
     - DescribeRuleGroupSummary
     - DescribeTLSInspectionConfiguration
     - DescribeVpcEndpointAssociation
+    - DetachRuleGroupsFromProxyConfiguration
     - DisassociateAvailabilityZones
     - DisassociateSubnets
     - GetAnalysisReportResults
@@ -7851,6 +7867,9 @@ serviceMap:
     - ListFirewalls
     - ListFlowOperationResults
     - ListFlowOperations
+    - ListProxies
+    - ListProxyConfigurations
+    - ListProxyRuleGroups
     - ListRuleGroups
     - ListTLSInspectionConfigurations
     - ListTagsForResource
@@ -7870,6 +7889,11 @@ serviceMap:
     - UpdateFirewallPolicy
     - UpdateFirewallPolicyChangeProtection
     - UpdateLoggingConfiguration
+    - UpdateProxy
+    - UpdateProxyConfiguration
+    - UpdateProxyRule
+    - UpdateProxyRuleGroupPriorities
+    - UpdateProxyRulePriorities
     - UpdateRuleGroup
     - UpdateSubnetChangeProtection
     - UpdateTLSInspectionConfiguration
@@ -11078,8 +11102,10 @@ serviceMap:
     - AssociateKmsKey
     - AssociateSourceToS3TableIntegration
     - CancelExportTask
+    - CancelImportTask
     - CreateDelivery
     - CreateExportTask
+    - CreateImportTask
     - CreateLogAnomalyDetector
     - CreateLogDelivery
     - CreateLogGroup
@@ -11114,6 +11140,8 @@ serviceMap:
     - DescribeDestinations
     - DescribeExportTasks
     - DescribeFieldIndexes
+    - DescribeImportTaskBatches
+    - DescribeImportTasks
     - DescribeIndexPolicies
     - DescribeLogGroups
     - DescribeLogStreams
@@ -15545,7 +15573,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS service to manage AI agents for UI workflows:
+  Amazon Nova Act:
     StringPrefix: nova-act
     Actions:
     - CreateAct
@@ -16136,14 +16164,52 @@ serviceMap:
   AWS Wickr:
     StringPrefix: wickr
     Actions:
+    - BatchCreateUser
+    - BatchDeleteUser
+    - BatchLookupUserUname
+    - BatchReinviteUser
+    - BatchResetDevicesForUser
+    - BatchToggleUserSuspendStatus
     - CreateAdminSession
+    - CreateBot
+    - CreateDataRetentionBot
+    - CreateDataRetentionBotChallenge
     - CreateNetwork
+    - CreateSecurityGroup
+    - DeleteBot
+    - DeleteDataRetentionBot
     - DeleteNetwork
+    - DeleteSecurityGroup
+    - GetBot
+    - GetBotsCount
+    - GetDataRetentionBot
+    - GetGuestUserHistoryCount
+    - GetNetwork
+    - GetNetworkSettings
+    - GetOidcInfo
+    - GetSecurityGroup
+    - GetUser
+    - GetUsersCount
+    - ListBlockedGuestUsers
+    - ListBots
+    - ListDevicesForUser
+    - ListGuestUsers
     - ListNetworks
+    - ListSecurityGroupUsers
+    - ListSecurityGroups
     - ListTagsForResource
+    - ListUsers
+    - RegisterOidcConfig
+    - RegisterOidcConfigTest
     - TagResource
     - UntagResource
+    - UpdateBot
+    - UpdateDataRetention
+    - UpdateGuestUser
     - UpdateNetworkDetails
+    - UpdateNetworkSettings
+    - UpdateSecurityGroup
+    - UpdateUser
     ARNFormat: arn:aws:wickr:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:wickr:.+:.+:.+"
     conditionKeys:
@@ -22951,6 +23017,7 @@ serviceMap:
     - ListPlans
     - ListPlansInRegion
     - ListRoute53HealthChecks
+    - ListRoute53HealthChecksInRegion
     - ListTagsForResource
     - PutResourcePolicy
     - StartPlanExecution
