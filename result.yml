@@ -18875,7 +18875,6 @@ serviceMap:
     ARNRegex: "^arn:aws:sagemaker:.+"
     conditionKeys:
     - aws:ResourceTag/${TagKey}
-    - sagemaker:ResourceTag/${TagKey}
     HasResource: true
   Amazon Comprehend Medical:
     StringPrefix: comprehendmedical
