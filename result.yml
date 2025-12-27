@@ -6364,6 +6364,7 @@ serviceMap:
     - DeregisterNamespace
     - DescribeAccountAttributes
     - DescribeAuthenticationProfiles
+    - DescribeAutonomicsDenylist
     - DescribeClusterDbRevisions
     - DescribeClusterParameterGroups
     - DescribeClusterParameters
@@ -6428,6 +6429,7 @@ serviceMap:
     - ListTables
     - ModifyAquaConfiguration
     - ModifyAuthenticationProfile
+    - ModifyAutonomicsDenylist
     - ModifyCluster
     - ModifyClusterDbRevision
     - ModifyClusterIamRoles
@@ -23615,6 +23617,7 @@ serviceMap:
     - GetTrack
     - GetUsageLimit
     - GetWorkgroup
+    - ListAutonomicsDenylist
     - ListCustomDomainAssociations
     - ListEndpointAccess
     - ListManagedWorkgroups
@@ -23637,6 +23640,7 @@ serviceMap:
     - RestoreTableFromSnapshot
     - TagResource
     - UntagResource
+    - UpdateAutonomicsDenylist
     - UpdateCustomDomainAssociation
     - UpdateEndpointAccess
     - UpdateNamespace
