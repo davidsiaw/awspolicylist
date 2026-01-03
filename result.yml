@@ -19035,6 +19035,8 @@ serviceMap:
     - AllowVendedLogDeliveryForResource
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteTopicReviewedAnswer
+    - BatchGetPreferences
+    - BatchUpdatePreferences
     - CancelIngestion
     - CreateAccountCustomization
     - CreateAccountSubscription
@@ -19146,6 +19148,7 @@ serviceMap:
     - DescribeQuickSightQSearchConfiguration
     - DescribeRefreshSchedule
     - DescribeRoleCustomPermission
+    - DescribeSelfUpgradeConfiguration
     - DescribeTemplate
     - DescribeTemplateAlias
     - DescribeTemplatePermissions
@@ -19197,6 +19200,7 @@ serviceMap:
     - ListNamespaces
     - ListRefreshSchedules
     - ListRoleMemberships
+    - ListSelfUpgrades
     - ListTagsForResource
     - ListTemplateAliases
     - ListTemplateVersions
@@ -19284,6 +19288,8 @@ serviceMap:
     - UpdateResourcePermissions
     - UpdateRoleCustomPermission
     - UpdateSPICECapacityConfiguration
+    - UpdateSelfUpgrade
+    - UpdateSelfUpgradeConfiguration
     - UpdateTemplate
     - UpdateTemplateAlias
     - UpdateTemplatePermissions
