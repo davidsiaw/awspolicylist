@@ -3586,6 +3586,7 @@ serviceMap:
     - rds:PubliclyAccessible
     - rds:StorageEncrypted
     - rds:StorageSize
+    - rds:TagsFromRequest
     - rds:TenantDatabaseName
     - rds:Vpc
     - rds:cluster-pg-tag/${TagKey}
@@ -8513,6 +8514,7 @@ serviceMap:
     - CreateCloudExadataInfrastructure
     - CreateCloudVmCluster
     - CreateDbNode
+    - CreateGrantShare
     - CreateOdbNetwork
     - CreateOdbPeeringConnection
     - CreateOutboundIntegration
@@ -8520,6 +8522,7 @@ serviceMap:
     - DeleteCloudExadataInfrastructure
     - DeleteCloudVmCluster
     - DeleteDbNode
+    - DeleteGrantShare
     - DeleteOdbNetwork
     - DeleteOdbPeeringConnection
     - DeleteResourcePolicy
@@ -8553,6 +8556,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateCloudExadataInfrastructure
+    - UpdateGrantShare
     - UpdateOdbNetwork
     - UpdateOdbPeeringConnection
     - UpdateOutboundIntegration
