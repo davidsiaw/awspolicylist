@@ -10922,12 +10922,14 @@ serviceMap:
     - CreateRule
     - CreateTargetGroup
     - CreateTrustStore
+    - CreateWebACLAssociation
     - DeleteListener
     - DeleteLoadBalancer
     - DeleteRule
     - DeleteSharedTrustStoreAssociation
     - DeleteTargetGroup
     - DeleteTrustStore
+    - DeleteWebACLAssociation
     - DeregisterTargets
     - DescribeAccountLimits
     - DescribeCapacityReservation
@@ -10945,6 +10947,8 @@ serviceMap:
     - DescribeTrustStoreAssociations
     - DescribeTrustStoreRevocations
     - DescribeTrustStores
+    - DescribeWebACLAssociation
+    - GetLoadBalancerWebACL
     - GetResourcePolicy
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
