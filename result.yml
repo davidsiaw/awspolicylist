@@ -5686,6 +5686,7 @@ serviceMap:
     - CreateConnectPeer
     - CreateConnection
     - CreateCoreNetwork
+    - CreateCoreNetworkPrefixListAssociation
     - CreateDevice
     - CreateDirectConnectGatewayAttachment
     - CreateGlobalNetwork
@@ -5700,6 +5701,7 @@ serviceMap:
     - DeleteConnection
     - DeleteCoreNetwork
     - DeleteCoreNetworkPolicyVersion
+    - DeleteCoreNetworkPrefixListAssociation
     - DeleteDevice
     - DeleteGlobalNetwork
     - DeleteLink
@@ -5743,14 +5745,18 @@ serviceMap:
     - ListAttachments
     - ListConnectPeers
     - ListCoreNetworkPolicyVersions
+    - ListCoreNetworkPrefixListAssociations
+    - ListCoreNetworkRoutingInformation
     - ListCoreNetworks
     - ListOrganizationServiceAccessStatus
     - ListPeerings
     - ListTagsForResource
+    - PutAttachmentRoutingPolicyLabel
     - PutCoreNetworkPolicy
     - PutResourcePolicy
     - RegisterTransitGateway
     - RejectAttachment
+    - RemoveAttachmentRoutingPolicyLabel
     - RestoreCoreNetworkPolicyVersion
     - StartOrganizationServiceAccessUpdate
     - StartRouteAnalysis
