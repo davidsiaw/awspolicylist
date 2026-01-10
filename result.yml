@@ -9282,6 +9282,12 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon ECS MCP Service:
+    StringPrefix: ecs-mcp
+    Actions:
+    - InvokeReadOnlyTools
+    - UseMcp
+    HasResource: false
   AWS Elemental MediaLive:
     StringPrefix: medialive
     Actions:
