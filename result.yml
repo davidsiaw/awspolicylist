@@ -5742,6 +5742,7 @@ serviceMap:
     - GetTransitGatewayRegistrations
     - GetTransitGatewayRouteTableAttachment
     - GetVpcAttachment
+    - ListAttachmentRoutingPolicyAssociations
     - ListAttachments
     - ListConnectPeers
     - ListCoreNetworkPolicyVersions
@@ -25751,6 +25752,7 @@ serviceMap:
     - DeleteTable
     - DeleteTableBucket
     - DeleteTableBucketEncryption
+    - DeleteTableBucketMetricsConfiguration
     - DeleteTableBucketPolicy
     - DeleteTableBucketReplication
     - DeleteTablePolicy
@@ -25760,6 +25762,7 @@ serviceMap:
     - GetTableBucket
     - GetTableBucketEncryption
     - GetTableBucketMaintenanceConfiguration
+    - GetTableBucketMetricsConfiguration
     - GetTableBucketPolicy
     - GetTableBucketReplication
     - GetTableBucketStorageClass
@@ -25780,6 +25783,7 @@ serviceMap:
     - ListTagsForResource
     - PutTableBucketEncryption
     - PutTableBucketMaintenanceConfiguration
+    - PutTableBucketMetricsConfiguration
     - PutTableBucketPolicy
     - PutTableBucketReplication
     - PutTableBucketStorageClass
