@@ -13771,6 +13771,7 @@ serviceMap:
     - DisassociateSourceServers
     - DisconnectFromService
     - FinalizeCutover
+    - GetAccountSettings
     - GetAgentCommandForMgn
     - GetAgentConfirmedResumeInfoForMgn
     - GetAgentInstallationAssetsForMgn
@@ -13850,6 +13851,7 @@ serviceMap:
     - UnarchiveApplication
     - UnarchiveWave
     - UntagResource
+    - UpdateAccountSettings
     - UpdateAgentBacklogForMgn
     - UpdateAgentConversionInfoForMgn
     - UpdateAgentReplicationInfoForMgn
