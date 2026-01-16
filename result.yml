@@ -3658,6 +3658,7 @@ serviceMap:
     - AssociateApi
     - AssociateMergedGraphqlApi
     - AssociateSourceGraphqlApi
+    - AssociateWebACL
     - CreateApi
     - CreateApiCache
     - CreateApiKey
@@ -3682,6 +3683,7 @@ serviceMap:
     - DisassociateApi
     - DisassociateMergedGraphqlApi
     - DisassociateSourceGraphqlApi
+    - DisassociateWebACL
     - EvaluateCode
     - EvaluateMappingTemplate
     - EventConnect
@@ -3704,6 +3706,7 @@ serviceMap:
     - GetSchemaCreationStatus
     - GetSourceApiAssociation
     - GetType
+    - GetWebACLForResource
     - GraphQL
     - ListApiKeys
     - ListApis
@@ -3714,6 +3717,7 @@ serviceMap:
     - ListGraphqlApis
     - ListResolvers
     - ListResolversByFunction
+    - ListResourcesForWebACL
     - ListSourceApiAssociations
     - ListTagsForResource
     - ListTypes
@@ -20380,12 +20384,15 @@ serviceMap:
     StringPrefix: aoss
     Actions:
     - APIAccessAll
+    - AddCollectionToCollectionGroup
     - BatchGetCollection
+    - BatchGetCollectionGroup
     - BatchGetEffectiveLifecyclePolicy
     - BatchGetLifecyclePolicy
     - BatchGetVpcEndpoint
     - CreateAccessPolicy
     - CreateCollection
+    - CreateCollectionGroup
     - CreateIndex
     - CreateLifecyclePolicy
     - CreateSecurityConfig
@@ -20394,6 +20401,7 @@ serviceMap:
     - DashboardsAccessAll
     - DeleteAccessPolicy
     - DeleteCollection
+    - DeleteCollectionGroup
     - DeleteIndex
     - DeleteLifecyclePolicy
     - DeleteSecurityConfig
@@ -20406,6 +20414,7 @@ serviceMap:
     - GetSecurityConfig
     - GetSecurityPolicy
     - ListAccessPolicies
+    - ListCollectionGroups
     - ListCollections
     - ListLifecyclePolicies
     - ListSecurityConfigs
@@ -20417,6 +20426,7 @@ serviceMap:
     - UpdateAccessPolicy
     - UpdateAccountSettings
     - UpdateCollection
+    - UpdateCollectionGroup
     - UpdateIndex
     - UpdateLifecyclePolicy
     - UpdateSecurityConfig
@@ -20427,6 +20437,7 @@ serviceMap:
     conditionKeys:
     - aoss:CollectionId
     - aoss:collection
+    - aoss:collection-group
     - aoss:index
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
