@@ -12364,6 +12364,7 @@ serviceMap:
     - DeleteEnvironmentHost
     - DisassociateEipFromVlan
     - GetEnvironment
+    - GetVersions
     - ListEnvironmentHosts
     - ListEnvironmentVlans
     - ListEnvironments
