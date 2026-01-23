@@ -6753,6 +6753,7 @@ serviceMap:
     - DeleteCell
     - DeleteCellRun
     - DeleteConnection
+    - DeleteDataExportConfiguration
     - DeleteDataProduct
     - DeleteDataSource
     - DeleteDomain
@@ -6874,6 +6875,7 @@ serviceMap:
     - PutDataExportConfiguration
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
+    - QueryGraph
     - RefreshToken
     - RejectPredictions
     - RejectSubscriptionRequest
@@ -12265,6 +12267,7 @@ serviceMap:
     - DescribeProvisioningEvents
     - DescribeSettingsSet
     - GetDeployment
+    - GetDeploymentPatternVersion
     - GetInfrastructureSuggestion
     - GetIpAddress
     - GetResourceCostEstimate
@@ -12277,6 +12280,7 @@ serviceMap:
     - ListAdditionalNodes
     - ListAllowedResources
     - ListDeploymentEvents
+    - ListDeploymentPatternVersions
     - ListDeployments
     - ListProvisionedApps
     - ListResourceCostEstimates
@@ -12289,6 +12293,7 @@ serviceMap:
     - StartProvisioning
     - TagResource
     - UntagResource
+    - UpdateDeployment
     - UpdateSettingsSet
     ARNFormat: arn:aws:launchwizard:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:launchwizard:.+:.+:.+"
