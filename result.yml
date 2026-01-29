@@ -12191,42 +12191,57 @@ serviceMap:
     - AddControl
     - BatchDeletePentests
     - BatchGetAgentInstances
+    - BatchGetAgentSpaces
     - BatchGetArtifactMetadata
     - BatchGetFindings
+    - BatchGetPentestJobTasks
     - BatchGetPentestJobs
     - BatchGetPentests
     - BatchGetSecurityTestContentMetadata
     - BatchGetTasks
     - CreateAgentInstance
+    - CreateAgentSpace
     - CreateApplication
+    - CreateDesignReview
     - CreateDocumentReview
     - CreateIntegration
     - CreateMembership
     - CreateOneTimeLoginSession
     - CreatePentest
+    - CreateSecurityRequirement
     - DeleteAgentInstance
+    - DeleteAgentSpace
     - DeleteApplication
     - DeleteArtifact
     - DeleteControl
+    - DeleteDesignReview
+    - DeleteDocumentReview
     - DeleteIntegration
     - DeleteMembership
+    - DeleteSecurityRequirement
     - DescribeFindings
     - GetApplication
     - GetArtifact
     - GetCodeReviewTask
     - GetControl
+    - GetDesignReview
+    - GetDesignReviewArtifact
     - GetDocReviewTask
     - GetDocumentReview
     - GetDocumentReviewArtifact
     - GetIntegration
     - GetLoginSessionCredentials
+    - GetSecurityRequirement
     - HandleOneTimeLoginSession
     - InitiateProviderRegistration
     - ListAgentInstanceTasks
     - ListAgentInstances
+    - ListAgentSpaces
     - ListApplications
     - ListArtifacts
     - ListControls
+    - ListDesignReviewComments
+    - ListDesignReviews
     - ListDiscoveredEndpoints
     - ListDocumentReviewComments
     - ListDocumentReviews
@@ -12234,20 +12249,27 @@ serviceMap:
     - ListIntegratedResources
     - ListIntegrations
     - ListMemberships
+    - ListPentestJobTasks
     - ListPentestJobsForPentest
     - ListPentests
     - ListResourcesFromIntegration
+    - ListSecurityRequirements
     - ListTasks
     - StartCodeRemediation
     - StartPentestExecution
+    - StartPentestJob
     - StopPentestExecution
+    - StopPentestJob
     - ToggleManagedControl
+    - ToggleManagedSecurityRequirement
     - UpdateAgentInstance
+    - UpdateAgentSpace
     - UpdateApplication
     - UpdateControl
     - UpdateFinding
     - UpdateIntegratedResources
     - UpdatePentest
+    - UpdateSecurityRequirement
     - VerifyTargetDomain
     ARNFormat: arn:aws:securityagent:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:securityagent:.+:.+:.+"
@@ -14652,6 +14674,7 @@ serviceMap:
     - UpdateBucketMetadataJournalTableConfiguration
     - UpdateJobPriority
     - UpdateJobStatus
+    - UpdateObjectEncryption
     - UpdateStorageLensGroup
     ARNFormat: arn:aws:s3:::${BucketName}/${KeyName}
     ARNRegex: "^arn:aws:s3:::.+"
