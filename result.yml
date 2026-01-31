@@ -6369,6 +6369,7 @@ serviceMap:
     - FetchResults
     - GetClusterCredentials
     - GetClusterCredentialsWithIAM
+    - GetIdentityCenterAuthToken
     - GetReservedNodeExchangeConfigurationOptions
     - GetReservedNodeExchangeOfferings
     - GetResourcePolicy
@@ -23609,6 +23610,7 @@ serviceMap:
     - GetCredentials
     - GetCustomDomainAssociation
     - GetEndpointAccess
+    - GetIdentityCenterAuthToken
     - GetManagedWorkgroup
     - GetNamespace
     - GetRecoveryPoint
