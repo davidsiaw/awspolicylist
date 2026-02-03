@@ -1480,6 +1480,7 @@ serviceMap:
   AWS Identity Store:
     StringPrefix: identitystore
     Actions:
+    - AddRegion
     - CreateGroup
     - CreateGroupMembership
     - CreateIdentityStore
@@ -1490,6 +1491,7 @@ serviceMap:
     - DeleteUser
     - DescribeGroup
     - DescribeGroupMembership
+    - DescribeRegion
     - DescribeUser
     - GetGroupId
     - GetGroupMembershipId
@@ -1498,7 +1500,9 @@ serviceMap:
     - ListGroupMemberships
     - ListGroupMembershipsForMember
     - ListGroups
+    - ListRegions
     - ListUsers
+    - RemoveRegion
     - ReserveUser
     - UpdateGroup
     - UpdateIdentityStore
@@ -5256,6 +5260,7 @@ serviceMap:
   Amazon DynamoDB:
     StringPrefix: dynamodb
     Actions:
+    - AssociateTableReplica
     - BatchGetItem
     - BatchWriteItem
     - ConditionCheckItem
@@ -5312,6 +5317,8 @@ serviceMap:
     - PutItem
     - PutResourcePolicy
     - Query
+    - ReadDataForReplication
+    - ReplicateSettings
     - RestoreTableFromAwsBackup
     - RestoreTableFromBackup
     - RestoreTableToPointInTime
@@ -5330,6 +5337,7 @@ serviceMap:
     - UpdateTable
     - UpdateTableReplicaAutoScaling
     - UpdateTimeToLive
+    - WriteDataForReplication
     ARNFormat: arn:aws:dynamodb:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:dynamodb:.+:.+"
     conditionKeys:
@@ -12196,6 +12204,7 @@ serviceMap:
     - BatchGetAgentSpaces
     - BatchGetArtifactMetadata
     - BatchGetFindings
+    - BatchGetPentestJobContentMetadata
     - BatchGetPentestJobTasks
     - BatchGetPentestJobs
     - BatchGetPentests
@@ -13391,6 +13400,7 @@ serviceMap:
   AWS IAM Identity Center:
     StringPrefix: sso
     Actions:
+    - AddRegion
     - AssociateDirectory
     - AssociateProfile
     - AttachCustomerManagedPolicyReferenceToPermissionSet
@@ -13432,6 +13442,7 @@ serviceMap:
     - DescribeInstanceAccessControlAttributeConfiguration
     - DescribePermissionSet
     - DescribePermissionSetProvisioningStatus
+    - DescribeRegion
     - DescribeRegisteredRegions
     - DescribeTrustedTokenIssuer
     - DetachCustomerManagedPolicyReferenceFromPermissionSet
@@ -13480,6 +13491,7 @@ serviceMap:
     - ListPermissionSetsProvisionedToAccount
     - ListProfileAssociations
     - ListProfiles
+    - ListRegions
     - ListTagsForResource
     - ListTrustedTokenIssuers
     - ProvisionPermissionSet
@@ -13492,6 +13504,7 @@ serviceMap:
     - PutMfaDeviceManagementForDirectory
     - PutPermissionsBoundaryToPermissionSet
     - PutPermissionsPolicy
+    - RemoveRegion
     - SearchGroups
     - SearchUsers
     - StartSSO
@@ -24940,8 +24953,10 @@ serviceMap:
     - bedrock-agentcore:InboundJwtClaim/sub
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
+    - bedrock-agentcore:securityGroups
     - bedrock-agentcore:sessionId
     - bedrock-agentcore:strategyId
+    - bedrock-agentcore:subnets
     - bedrock-agentcore:userid
     HasResource: true
   Amazon Managed Streaming for Kafka Connect:
