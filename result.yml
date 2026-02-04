@@ -22353,6 +22353,7 @@ serviceMap:
     - ImportSnapshot
     - ImportVolume
     - InjectApiError
+    - InjectVolumeIOLatency
     - ListImagesInRecycleBin
     - ListSnapshotsInRecycleBin
     - ListVolumesInRecycleBin
