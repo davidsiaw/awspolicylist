@@ -12874,6 +12874,7 @@ serviceMap:
     - DeleteColumnStatisticsForTable
     - DeleteColumnStatisticsTaskSettings
     - DeleteConnection
+    - DeleteConnectionType
     - DeleteCrawler
     - DeleteCustomEntityType
     - DeleteDataQualityRuleset
@@ -13040,6 +13041,7 @@ serviceMap:
     - PutWorkflowRunProperties
     - QuerySchemaVersionMetadata
     - RefreshOAuth2Tokens
+    - RegisterConnectionType
     - RegisterSchemaVersion
     - RemoveSchemaVersionMetadata
     - RenameTable
@@ -15704,6 +15706,7 @@ serviceMap:
     conditionKeys:
     - accounts.google.com:aud
     - accounts.google.com:oaud
+    - accounts.google.com:organization_number
     - accounts.google.com:sub
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -15711,9 +15714,20 @@ serviceMap:
     - cognito-identity.amazonaws.com:amr
     - cognito-identity.amazonaws.com:aud
     - cognito-identity.amazonaws.com:sub
+    - github.com/enterprises/${EnterpriseName}:actor
+    - github.com/enterprises/${EnterpriseName}:actor_id
+    - github.com/enterprises/${EnterpriseName}:enterprise_id
+    - github.com/enterprises/${EnterpriseName}:environment
+    - github.com/enterprises/${EnterpriseName}:job_workflow_ref
+    - github.com/enterprises/${EnterpriseName}:ref
+    - github.com/enterprises/${EnterpriseName}:repository
+    - github.com/enterprises/${EnterpriseName}:repository_id
+    - github.com/enterprises/${EnterpriseName}:workflow
     - graph.facebook.com:app_id
     - graph.facebook.com:id
     - iam:ResourceTag/${TagKey}
+    - idcs-${OciUniqueIdentifier}.identity.oraclecloud.com:rpst_id
+    - oidc.circleci.com/org/${OrgId}:project_id
     - saml:aud
     - saml:cn
     - saml:commonName
@@ -15757,6 +15771,33 @@ serviceMap:
     - sts:SourceIdentity
     - sts:TaskPolicyArn
     - sts:TransitiveTagKeys
+    - token.actions.${Domain}.ghe.com:actor
+    - token.actions.${Domain}.ghe.com:actor_id
+    - token.actions.${Domain}.ghe.com:enterprise_id
+    - token.actions.${Domain}.ghe.com:environment
+    - token.actions.${Domain}.ghe.com:job_workflow_ref
+    - token.actions.${Domain}.ghe.com:ref
+    - token.actions.${Domain}.ghe.com:repository
+    - token.actions.${Domain}.ghe.com:repository_id
+    - token.actions.${Domain}.ghe.com:workflow
+    - token.actions.githubusercontent.com/${SubPath}:actor
+    - token.actions.githubusercontent.com/${SubPath}:actor_id
+    - token.actions.githubusercontent.com/${SubPath}:enterprise_id
+    - token.actions.githubusercontent.com/${SubPath}:environment
+    - token.actions.githubusercontent.com/${SubPath}:job_workflow_ref
+    - token.actions.githubusercontent.com/${SubPath}:ref
+    - token.actions.githubusercontent.com/${SubPath}:repository
+    - token.actions.githubusercontent.com/${SubPath}:repository_id
+    - token.actions.githubusercontent.com/${SubPath}:workflow
+    - token.actions.githubusercontent.com:actor
+    - token.actions.githubusercontent.com:actor_id
+    - token.actions.githubusercontent.com:enterprise_id
+    - token.actions.githubusercontent.com:environment
+    - token.actions.githubusercontent.com:job_workflow_ref
+    - token.actions.githubusercontent.com:ref
+    - token.actions.githubusercontent.com:repository
+    - token.actions.githubusercontent.com:repository_id
+    - token.actions.githubusercontent.com:workflow
     - www.amazon.com:app_id
     - www.amazon.com:user_id
     HasResource: true
@@ -24826,6 +24867,7 @@ serviceMap:
     - CreateAgentRuntimeEndpoint
     - CreateApiKeyCredentialProvider
     - CreateBrowser
+    - CreateBrowserProfile
     - CreateCodeInterpreter
     - CreateEvaluator
     - CreateEvent
@@ -24841,6 +24883,7 @@ serviceMap:
     - DeleteAgentRuntimeEndpoint
     - DeleteApiKeyCredentialProvider
     - DeleteBrowser
+    - DeleteBrowserProfile
     - DeleteCodeInterpreter
     - DeleteEvaluator
     - DeleteEvent
@@ -24860,6 +24903,7 @@ serviceMap:
     - GetAgentRuntimeEndpoint
     - GetApiKeyCredentialProvider
     - GetBrowser
+    - GetBrowserProfile
     - GetBrowserSession
     - GetCodeInterpreter
     - GetCodeInterpreterSession
@@ -24893,6 +24937,7 @@ serviceMap:
     - ListAgentRuntimeVersions
     - ListAgentRuntimes
     - ListApiKeyCredentialProviders
+    - ListBrowserProfiles
     - ListBrowserSessions
     - ListBrowsers
     - ListCodeInterpreterSessions
@@ -24918,6 +24963,7 @@ serviceMap:
     - PartiallyAuthorizeActions
     - PutResourcePolicy
     - RetrieveMemoryRecords
+    - SaveBrowserSessionProfile
     - SetTokenVaultCMK
     - StartBrowserSession
     - StartCodeInterpreterSession
@@ -24954,6 +25000,7 @@ serviceMap:
     - bedrock-agentcore:InboundJwtClaim/iss
     - bedrock-agentcore:InboundJwtClaim/scope
     - bedrock-agentcore:InboundJwtClaim/sub
+    - bedrock-agentcore:KmsKeyArn
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
     - bedrock-agentcore:securityGroups
