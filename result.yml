@@ -8726,11 +8726,13 @@ serviceMap:
     - CreateClusterV2
     - CreateConfiguration
     - CreateReplicator
+    - CreateTopic
     - CreateVpcConnection
     - DeleteCluster
     - DeleteClusterPolicy
     - DeleteConfiguration
     - DeleteReplicator
+    - DeleteTopic
     - DeleteVpcConnection
     - DescribeCluster
     - DescribeClusterOperation
@@ -8776,6 +8778,7 @@ serviceMap:
     - UpdateReplicationInfo
     - UpdateSecurity
     - UpdateStorage
+    - UpdateTopic
     ARNFormat: arn:aws:kafka:${Region}:${Account}:${ResourceType}/${ResourceName}/${Uuid}
     ARNRegex: "^arn:aws:kafka:.+"
     conditionKeys:
