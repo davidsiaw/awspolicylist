@@ -20264,6 +20264,7 @@ serviceMap:
     - EnableDefaultKeyReplicationRegions
     - EncryptData
     - ExportKey
+    - GenerateAs2805KekValidation
     - GenerateCardValidationData
     - GenerateMac
     - GenerateMacEmvPinChange
