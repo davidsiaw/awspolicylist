@@ -12897,6 +12897,7 @@ serviceMap:
     - DeleteDevEndpoint
     - DeleteGlueIdentityCenterConfiguration
     - DeleteIntegration
+    - DeleteIntegrationResourceProperty
     - DeleteIntegrationTableProperties
     - DeleteJob
     - DeleteMLTransform
@@ -13032,6 +13033,7 @@ serviceMap:
     - ListDataQualityRulesets
     - ListDevEndpoints
     - ListEntities
+    - ListIntegrationResourceProperties
     - ListJobUpgradeAnalyses
     - ListJobs
     - ListMLTransforms
