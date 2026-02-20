@@ -11095,6 +11095,7 @@ serviceMap:
     Actions:
     - AssociateKmsKey
     - AssociateSourceToS3TableIntegration
+    - CallWithBearerToken
     - CancelExportTask
     - CancelImportTask
     - CreateDelivery
@@ -11180,6 +11181,7 @@ serviceMap:
     - ListTagsLogGroup
     - ProcessWithPipeline
     - PutAccountPolicy
+    - PutBearerTokenAuthentication
     - PutDataProtectionPolicy
     - PutDeliveryDestination
     - PutDeliveryDestinationPolicy
