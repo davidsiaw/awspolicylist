@@ -2076,6 +2076,7 @@ serviceMap:
     - AssociateLambdaFunction
     - AssociateLexBot
     - AssociatePhoneNumberContactFlow
+    - AssociateQueueEmailAddresses
     - AssociateQueueQuickConnects
     - AssociateRoutingProfileQueues
     - AssociateSecurityKey
@@ -2110,6 +2111,7 @@ serviceMap:
     - CreateHoursOfOperationOverride
     - CreateInstance
     - CreateIntegrationAssociation
+    - CreateNotification
     - CreateParticipant
     - CreatePersistentContactAssociation
     - CreatePredefinedAttribute
@@ -2146,6 +2148,7 @@ serviceMap:
     - DeleteHoursOfOperationOverride
     - DeleteInstance
     - DeleteIntegrationAssociation
+    - DeleteNotification
     - DeletePredefinedAttribute
     - DeletePrompt
     - DeletePushNotificationRegistration
@@ -2182,6 +2185,7 @@ serviceMap:
     - DescribeInstance
     - DescribeInstanceAttribute
     - DescribeInstanceStorageConfig
+    - DescribeNotification
     - DescribePhoneNumber
     - DescribePredefinedAttribute
     - DescribePrompt
@@ -2207,6 +2211,7 @@ serviceMap:
     - DisassociateLambdaFunction
     - DisassociateLexBot
     - DisassociatePhoneNumberContactFlow
+    - DisassociateQueueEmailAddresses
     - DisassociateQueueQuickConnects
     - DisassociateRoutingProfileQueues
     - DisassociateSecurityKey
@@ -2262,10 +2267,12 @@ serviceMap:
     - ListIntegrationAssociations
     - ListLambdaFunctions
     - ListLexBots
+    - ListNotifications
     - ListPhoneNumbers
     - ListPhoneNumbersV2
     - ListPredefinedAttributes
     - ListPrompts
+    - ListQueueEmailAddresses
     - ListQueueQuickConnects
     - ListQueues
     - ListQuickConnects
@@ -2286,6 +2293,7 @@ serviceMap:
     - ListTrafficDistributionGroups
     - ListUseCases
     - ListUserHierarchyGroups
+    - ListUserNotifications
     - ListUserProficiencies
     - ListUsers
     - ListViewVersions
@@ -2311,6 +2319,7 @@ serviceMap:
     - SearchEvaluationForms
     - SearchHoursOfOperationOverrides
     - SearchHoursOfOperations
+    - SearchNotifications
     - SearchPredefinedAttributes
     - SearchPrompts
     - SearchQueues
@@ -2376,6 +2385,7 @@ serviceMap:
     - UpdateHoursOfOperationOverride
     - UpdateInstanceAttribute
     - UpdateInstanceStorageConfig
+    - UpdateNotificationContent
     - UpdateParticipantAuthentication
     - UpdateParticipantRoleConfig
     - UpdatePhoneNumber
@@ -2403,6 +2413,7 @@ serviceMap:
     - UpdateUserHierarchyGroupName
     - UpdateUserHierarchyStructure
     - UpdateUserIdentityInfo
+    - UpdateUserNotificationStatus
     - UpdateUserPhoneConfig
     - UpdateUserProficiencies
     - UpdateUserRoutingProfile
@@ -9401,6 +9412,7 @@ serviceMap:
     - BatchDeleteEvaluationJob
     - CallWithBearerToken
     - CancelAutomatedReasoningPolicyBuildWorkflow
+    - CopyBlueprintStage
     - CountTokens
     - CreateAgent
     - CreateAgentActionGroup
@@ -9489,6 +9501,7 @@ serviceMap:
     - GetAutomatedReasoningPolicyTestCase
     - GetAutomatedReasoningPolicyTestResult
     - GetBlueprint
+    - GetBlueprintOptimizationStatus
     - GetBlueprintRecommendation
     - GetCustomModel
     - GetCustomModelDeployment
@@ -9526,6 +9539,7 @@ serviceMap:
     - IngestKnowledgeBaseDocuments
     - InvokeAgent
     - InvokeAutomatedReasoningPolicy
+    - InvokeBlueprintOptimizationAsync
     - InvokeBlueprintRecommendationAsync
     - InvokeBuilder
     - InvokeDataAutomation
