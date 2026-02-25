@@ -58,6 +58,7 @@ conditionOperators:
 conditionKeys:
 - aws:AssumedRoot
 - aws:CalledVia
+- aws:CalledViaAWSMCP
 - aws:CalledViaFirst
 - aws:CalledViaLast
 - aws:ChatbotSourceArn
@@ -98,6 +99,7 @@ conditionKeys:
 - aws:TagKeys
 - aws:TokenIssueTime
 - aws:UserAgent
+- aws:ViaAWSMCPService
 - aws:ViaAWSService
 - aws:VpcSourceIp
 - aws:VpceAccount
@@ -5789,6 +5791,28 @@ serviceMap:
     - cognito-identity-unauth:AccountId
     - cognito-identity-unauth:IdentityPoolArn
     - cognito-identity:IdentityPoolArn
+    HasResource: true
+  AWS Elemental Inference:
+    StringPrefix: elemental-inference
+    Actions:
+    - AssociateFeed
+    - CreateFeed
+    - DeleteFeed
+    - DisassociateFeed
+    - GetFeed
+    - GetMetadata
+    - ListFeeds
+    - ListTagsForResource
+    - PutMedia
+    - TagResource
+    - UntagResource
+    - UpdateFeed
+    ARNFormat: arn:aws:elemental-inference:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:elemental-inference:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Clean Rooms:
     StringPrefix: cleanrooms
@@ -24767,6 +24791,7 @@ serviceMap:
     - GetCapabilities
     - GetExportedFile
     - GetHistoryByResourceId
+    - InquirePreAuthClaim
     - ListFHIRDatastores
     - ListFHIRExportJobs
     - ListFHIRImportJobs
@@ -24778,6 +24803,7 @@ serviceMap:
     - MemberRemove
     - PatchResource
     - ProcessBundle
+    - QuestionnairePackage
     - ReadResource
     - RetrieveAttributionStatus
     - SearchEverything
@@ -24788,6 +24814,7 @@ serviceMap:
     - StartFHIRExportJobWithGet
     - StartFHIRExportJobWithPost
     - StartFHIRImportJob
+    - SubmitPreAuthClaim
     - TagResource
     - UntagResource
     - UpdateResource
