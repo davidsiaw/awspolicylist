@@ -7028,6 +7028,7 @@ serviceMap:
     - GetRegexPatternSet
     - GetRuleGroup
     - GetSampledRequests
+    - GetTopPathStatisticsByTraffic
     - GetWebACL
     - GetWebACLForResource
     - ListAPIKeys
@@ -8838,6 +8839,7 @@ serviceMap:
     - BatchGetServiceLevelIndicatorReport
     - BatchGetServiceLevelObjectiveBudgetReport
     - CreateServiceLevelObjective
+    - DeleteAlarmMuteRule
     - DeleteAlarms
     - DeleteAnomalyDetector
     - DeleteDashboards
@@ -8856,6 +8858,7 @@ serviceMap:
     - EnableTopologyDiscovery
     - GenerateQuery
     - GenerateQueryResultsSummary
+    - GetAlarmMuteRule
     - GetDashboard
     - GetInsightRuleReport
     - GetMetricData
@@ -8868,6 +8871,7 @@ serviceMap:
     - GetTopologyDiscoveryStatus
     - GetTopologyMap
     - Link
+    - ListAlarmMuteRules
     - ListDashboards
     - ListEntitiesForMetric
     - ListManagedInsightRules
@@ -8876,6 +8880,7 @@ serviceMap:
     - ListServiceLevelObjectives
     - ListServices
     - ListTagsForResource
+    - PutAlarmMuteRule
     - PutAnomalyDetector
     - PutCompositeAlarm
     - PutDashboard
@@ -14209,6 +14214,7 @@ serviceMap:
     - CreateUploadUrl
     - DeleteBot
     - DeleteBotAlias
+    - DeleteBotAnalyzerRecommendation
     - DeleteBotChannel
     - DeleteBotLocale
     - DeleteBotReplica
@@ -14226,6 +14232,7 @@ serviceMap:
     - DeleteUtterances
     - DescribeBot
     - DescribeBotAlias
+    - DescribeBotAnalyzerRecommendation
     - DescribeBotChannel
     - DescribeBotLocale
     - DescribeBotRecommendation
@@ -14250,6 +14257,7 @@ serviceMap:
     - ListAggregatedUtterances
     - ListBotAliasReplicas
     - ListBotAliases
+    - ListBotAnalyzerRecommendations
     - ListBotChannels
     - ListBotLocales
     - ListBotRecommendations
@@ -14281,12 +14289,14 @@ serviceMap:
     - RecognizeText
     - RecognizeUtterance
     - SearchAssociatedTranscripts
+    - StartBotAnalyzer
     - StartBotRecommendation
     - StartBotResourceGeneration
     - StartConversation
     - StartImport
     - StartTestExecution
     - StartTestSetGeneration
+    - StopBotAnalyzer
     - StopBotRecommendation
     - TagResource
     - UntagResource
