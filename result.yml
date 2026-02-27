@@ -6601,24 +6601,35 @@ serviceMap:
   Amazon Bedrock Powered by AWS Mantle:
     StringPrefix: bedrock-mantle
     Actions:
+    - ArchiveProject
     - CallWithBearerToken
     - CancelFineTuningJob
     - CancelInference
     - CreateFile
     - CreateFineTuningJob
     - CreateInference
+    - CreateProject
     - DeleteFile
     - DeleteInference
     - GetFile
     - GetFineTuningJob
     - GetInference
     - GetModel
+    - GetProject
     - ListFiles
     - ListFineTuningJobs
     - ListModels
+    - ListProjects
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateProject
     ARNFormat: arn:aws:bedrock-mantle:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:bedrock-mantle:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - bedrock-mantle:BearerTokenType
     - bedrock-mantle:Files
     - bedrock-mantle:FineTuningJob
@@ -21859,6 +21870,7 @@ serviceMap:
     - AttachClassicLinkVpc
     - AttachInternetGateway
     - AttachNetworkInterface
+    - AttachResourcesToPlacementGroup
     - AttachVerifiedAccessTrustProvider
     - AttachVolume
     - AttachVpnGateway
@@ -21946,6 +21958,8 @@ serviceMap:
     - CreateRouteServerEndpoint
     - CreateRouteServerPeer
     - CreateRouteTable
+    - CreateSecondaryNetwork
+    - CreateSecondarySubnet
     - CreateSecurityGroup
     - CreateSnapshot
     - CreateSnapshots
@@ -22042,6 +22056,8 @@ serviceMap:
     - DeleteRouteServerEndpoint
     - DeleteRouteServerPeer
     - DeleteRouteTable
+    - DeleteSecondaryNetwork
+    - DeleteSecondarySubnet
     - DeleteSecurityGroup
     - DeleteSnapshot
     - DeleteSpotDatafeedSubscription
@@ -22211,6 +22227,9 @@ serviceMap:
     - DescribeRouteTables
     - DescribeScheduledInstanceAvailability
     - DescribeScheduledInstances
+    - DescribeSecondaryInterfaces
+    - DescribeSecondaryNetworks
+    - DescribeSecondarySubnets
     - DescribeSecurityGroupReferences
     - DescribeSecurityGroupRules
     - DescribeSecurityGroupVpcAssociations
@@ -22277,6 +22296,7 @@ serviceMap:
     - DetachClassicLinkVpc
     - DetachInternetGateway
     - DetachNetworkInterface
+    - DetachResourcesFromPlacementGroup
     - DetachVerifiedAccessTrustProvider
     - DetachVolume
     - DetachVpnGateway
