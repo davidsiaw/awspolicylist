@@ -23294,9 +23294,11 @@ serviceMap:
   AWS DevOps Agent Service:
     StringPrefix: aidevops
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociateService
     - CreateAgentSpace
     - CreateBacklogTask
+    - CreateChat
     - CreateKnowledgeItem
     - CreateOneTimeLoginSession
     - DeleteAgentSpace
@@ -23322,6 +23324,7 @@ serviceMap:
     - ListAgentSpaces
     - ListAssociations
     - ListBacklogTasks
+    - ListChats
     - ListExecutions
     - ListGoals
     - ListJournalRecords
@@ -23333,9 +23336,11 @@ serviceMap:
     - RegisterService
     - SearchServiceAccessibleResource
     - SendChatMessage
+    - StreamMessage
     - UpdateAgentSpace
     - UpdateAssociation
     - UpdateBacklogTask
+    - UpdateGoal
     - UpdateKnowledgeItem
     - UpdateOperatorAppTeams
     - UpdateRecommendation
