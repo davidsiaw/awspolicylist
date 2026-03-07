@@ -12334,6 +12334,7 @@ serviceMap:
     - BatchGetPentestJobs
     - BatchGetPentests
     - BatchGetSecurityTestContentMetadata
+    - BatchGetTargetDomains
     - BatchGetTasks
     - CreateAgentInstance
     - CreateAgentSpace
@@ -12345,6 +12346,7 @@ serviceMap:
     - CreateOneTimeLoginSession
     - CreatePentest
     - CreateSecurityRequirement
+    - CreateTargetDomain
     - DeleteAgentInstance
     - DeleteAgentSpace
     - DeleteApplication
@@ -12355,6 +12357,7 @@ serviceMap:
     - DeleteIntegration
     - DeleteMembership
     - DeleteSecurityRequirement
+    - DeleteTargetDomain
     - DescribeFindings
     - GetApplication
     - GetArtifact
@@ -12362,6 +12365,7 @@ serviceMap:
     - GetControl
     - GetDesignReview
     - GetDesignReviewArtifact
+    - GetDesignReviewFeedback
     - GetDocReviewTask
     - GetDocumentReview
     - GetDocumentReviewArtifact
@@ -12390,7 +12394,9 @@ serviceMap:
     - ListPentests
     - ListResourcesFromIntegration
     - ListSecurityRequirements
+    - ListTargetDomains
     - ListTasks
+    - PutDesignReviewFeedback
     - StartCodeRemediation
     - StartPentestExecution
     - StartPentestJob
@@ -12406,6 +12412,7 @@ serviceMap:
     - UpdateIntegratedResources
     - UpdatePentest
     - UpdateSecurityRequirement
+    - UpdateTargetDomain
     - VerifyTargetDomain
     ARNFormat: arn:aws:securityagent:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:securityagent:.+:.+:.+"
