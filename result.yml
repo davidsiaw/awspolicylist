@@ -751,6 +751,7 @@ serviceMap:
     - ListResourceSharePermissions
     - ListResourceTypes
     - ListResources
+    - ListSourceAssociations
     - PromotePermissionCreatedFromPolicy
     - PromoteResourceShareCreatedFromPolicy
     - RejectResourceShareInvitation
@@ -774,6 +775,7 @@ serviceMap:
     - ram:ResourceArn
     - ram:ResourceShareName
     - ram:ResourceTag/${TagKey}
+    - ram:RetainSharingOnAccountLeaveOrganization
     - ram:ShareOwnerAccountId
     HasResource: true
   AWS Supply Chain:
@@ -5473,6 +5475,8 @@ serviceMap:
     - RejectInboundCrossClusterSearchConnection
     - RemoveTags
     - RevokeVpcEndpointAccess
+    - RollbackElasticsearchServiceSoftwareUpdate
+    - RollbackServiceSoftwareUpdate
     - StartDomainMaintenance
     - StartElasticsearchServiceSoftwareUpdate
     - StartServiceSoftwareUpdate
@@ -10716,6 +10720,7 @@ serviceMap:
     StringPrefix: cognito-idp
     Actions:
     - AddCustomAttributes
+    - AddUserPoolClientSecret
     - AdminAddUserToGroup
     - AdminConfirmSignUp
     - AdminCreateUser
@@ -10766,6 +10771,7 @@ serviceMap:
     - DeleteUserAttributes
     - DeleteUserPool
     - DeleteUserPoolClient
+    - DeleteUserPoolClientSecret
     - DeleteUserPoolDomain
     - DescribeIdentityProvider
     - DescribeManagedLoginBranding
@@ -10802,6 +10808,7 @@ serviceMap:
     - ListTagsForResource
     - ListTerms
     - ListUserImportJobs
+    - ListUserPoolClientSecrets
     - ListUserPoolClients
     - ListUserPools
     - ListUsers
