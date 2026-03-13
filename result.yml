@@ -14885,6 +14885,7 @@ serviceMap:
     - s3:signatureversion
     - s3:versionid
     - s3:x-amz-acl
+    - s3:x-amz-bucket-namespace
     - s3:x-amz-content-sha256
     - s3:x-amz-copy-source
     - s3:x-amz-grant-full-control
@@ -16492,6 +16493,7 @@ serviceMap:
     - UpdateOpportunity
     - UpdateProgramManagementAccount
     - UpdateRelationship
+    - UseSession
     ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:partnercentral:.+"
     conditionKeys:
@@ -21757,10 +21759,12 @@ serviceMap:
     - kms:EncryptionContext:${EncryptionContextKey}
     - kms:EncryptionContextKeys
     - kms:ExpirationModel
+    - kms:GrantConstraintSourceArn
     - kms:GrantConstraintType
     - kms:GrantIsForAWSResource
     - kms:GrantOperations
     - kms:GranteePrincipal
+    - kms:GranteeServicePrincipal
     - kms:KeyAgreementAlgorithm
     - kms:KeyOrigin
     - kms:KeySpec
@@ -21832,6 +21836,7 @@ serviceMap:
     - kms:RequestAlias
     - kms:ResourceAliases
     - kms:RetiringPrincipal
+    - kms:RetiringServicePrincipal
     - kms:RotationPeriodInDays
     - kms:ScheduleKeyDeletionPendingWindowInDays
     - kms:SigningAlgorithm
