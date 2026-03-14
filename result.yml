@@ -1204,9 +1204,12 @@ serviceMap:
     - DeleteDomain
     - DomainMetadata
     - GetAttributes
+    - GetExport
     - ListDomains
+    - ListExports
     - PutAttributes
     - Select
+    - StartDomainExport
     ARNFormat: arn:aws:sdb:${Region}:${Account}:domain/${DomainName}
     ARNRegex: "^arn:aws:sdb:.+"
     HasResource: true
@@ -10380,7 +10383,6 @@ serviceMap:
     - DescribeCluster
     - DescribeControlPanel
     - DescribeRoutingControl
-    - DescribeRoutingControlByName
     - DescribeSafetyRule
     - GetResourcePolicy
     - ListAssociatedRoute53HealthChecks
