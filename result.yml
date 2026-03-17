@@ -5449,6 +5449,7 @@ serviceMap:
     - GetCompatibleElasticsearchVersions
     - GetCompatibleVersions
     - GetDataSource
+    - GetDefaultApplicationSetting
     - GetDirectQueryDataSource
     - GetDomainMaintenanceStatus
     - GetIndex
@@ -5474,6 +5475,7 @@ serviceMap:
     - ListVpcEndpointsForDomain
     - PurchaseReservedElasticsearchInstanceOffering
     - PurchaseReservedInstanceOffering
+    - PutDefaultApplicationSetting
     - RejectInboundConnection
     - RejectInboundCrossClusterSearchConnection
     - RemoveTags
@@ -7715,6 +7717,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - vpc-lattice:AuthType
+    - vpc-lattice:CreateAction
     - vpc-lattice:DomainName
     - vpc-lattice:PrivateDnsPreference
     - vpc-lattice:PrivateDnsSpecifiedDomains
@@ -12601,6 +12604,29 @@ serviceMap:
     - UnsubscribeFromEvent
     - UpdateAssessmentTarget
     HasResource: false
+  AWS Interconnect:
+    StringPrefix: interconnect
+    Actions:
+    - AcceptConnectionProposal
+    - CreateConnection
+    - DeleteConnection
+    - DescribeConnectionProposal
+    - GetConnection
+    - GetEnvironment
+    - ListAttachPoints
+    - ListConnections
+    - ListEnvironments
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+    - UpdateConnection
+    ARNFormat: arn:aws:interconnect:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:interconnect:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS CodeStar:
     StringPrefix: codestar
     Actions:
@@ -15380,12 +15406,15 @@ serviceMap:
     - sagemaker:WorkteamArn
     - sagemaker:WorkteamType
     HasResource: true
-  AWS Service for managing AWS Console user experience capabilities.:
+  AWS User Experience Customization:
     StringPrefix: uxc
     Actions:
     - DeleteAccountColor
     - GetAccountColor
+    - GetAccountCustomizations
+    - ListServices
     - PutAccountColor
+    - UpdateAccountCustomizations
     ARNFormat: arn:${Partition}:uxc:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:${Partition}:uxc:.+:.+:.+"
     HasResource: false
@@ -23640,6 +23669,7 @@ serviceMap:
     - ecs:enable-service-connect
     - ecs:enable-vpc-lattice
     - ecs:fargate-ephemeral-storage-kms-key
+    - ecs:instance-metadata-tags-propagation
     - ecs:namespace
     - ecs:privileged
     - ecs:propagate-tags
@@ -25062,6 +25092,7 @@ serviceMap:
     - GetWorkloadAccessTokenForUserId
     - GetWorkloadIdentity
     - InvokeAgentRuntime
+    - InvokeAgentRuntimeCommand
     - InvokeAgentRuntimeForUser
     - InvokeAgentRuntimeWithWebSocketStream
     - InvokeAgentRuntimeWithWebSocketStreamForUser
