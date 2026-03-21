@@ -18211,11 +18211,13 @@ serviceMap:
     - CreateComputeEnvironment
     - CreateConsumableResource
     - CreateJobQueue
+    - CreateQuotaShare
     - CreateSchedulingPolicy
     - CreateServiceEnvironment
     - DeleteComputeEnvironment
     - DeleteConsumableResource
     - DeleteJobQueue
+    - DeleteQuotaShare
     - DeleteSchedulingPolicy
     - DeleteServiceEnvironment
     - DeregisterJobDefinition
@@ -18224,6 +18226,7 @@ serviceMap:
     - DescribeJobDefinitions
     - DescribeJobQueues
     - DescribeJobs
+    - DescribeQuotaShare
     - DescribeSchedulingPolicies
     - DescribeServiceEnvironments
     - DescribeServiceJob
@@ -18231,6 +18234,7 @@ serviceMap:
     - ListConsumableResources
     - ListJobs
     - ListJobsByConsumableResource
+    - ListQuotaShares
     - ListSchedulingPolicies
     - ListServiceJobs
     - ListTagsForResource
@@ -18244,8 +18248,10 @@ serviceMap:
     - UpdateComputeEnvironment
     - UpdateConsumableResource
     - UpdateJobQueue
+    - UpdateQuotaShare
     - UpdateSchedulingPolicy
     - UpdateServiceEnvironment
+    - UpdateServiceJob
     ARNFormat: arn:aws:batch:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:batch:.+"
     conditionKeys:
@@ -18265,6 +18271,7 @@ serviceMap:
     - batch:Image
     - batch:LogDriver
     - batch:Privileged
+    - batch:SchedulingPriority
     - batch:ShareIdentifier
     - batch:User
     HasResource: true
@@ -23406,28 +23413,21 @@ serviceMap:
     - CreateAgentSpace
     - CreateBacklogTask
     - CreateChat
-    - CreateKnowledgeItem
-    - CreateOneTimeLoginSession
     - DeleteAgentSpace
-    - DeleteKnowledgeItem
     - DeregisterService
     - DescribeSupportLevel
     - DisableOperatorApp
     - DisassociateService
-    - DiscoverTopology
     - EnableOperatorApp
     - EndChatForCase
     - GetAccountUsage
     - GetAgentSpace
     - GetAssociation
     - GetBacklogTask
-    - GetKnowledgeItem
-    - GetOperatorAppTeams
+    - GetOperatorApp
     - GetRecommendation
     - GetService
-    - HandleServiceRegistrationCallback
     - InitiateChatForCase
-    - InitiateServiceRegistration
     - ListAgentSpaces
     - ListAssociations
     - ListBacklogTasks
@@ -23435,29 +23435,29 @@ serviceMap:
     - ListExecutions
     - ListGoals
     - ListJournalRecords
-    - ListKnowledgeItems
     - ListPendingMessages
     - ListRecommendations
     - ListServices
+    - ListTagsForResource
     - ListWebhooks
     - RegisterService
     - SearchServiceAccessibleResource
-    - SendChatMessage
-    - StreamMessage
+    - SendMessage
+    - TagResource
+    - UntagResource
     - UpdateAgentSpace
     - UpdateAssociation
     - UpdateBacklogTask
     - UpdateGoal
-    - UpdateKnowledgeItem
-    - UpdateOperatorAppTeams
+    - UpdateOperatorAppIdpConfig
     - UpdateRecommendation
+    - ValidateAwsAssociations
     ARNFormat: arn:aws:aidevops:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:aidevops:.+:.+:.+"
     conditionKeys:
-    - aidevops:AgentSpaceResourceAgentSpaceId
-    - aidevops:AssociationResourceAgentSpaceId
-    - aidevops:AssociationResourceAssociationId
-    - aidevops:ServiceResourceServiceId
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon Translate:
     StringPrefix: translate
