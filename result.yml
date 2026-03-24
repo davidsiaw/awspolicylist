@@ -12921,12 +12921,14 @@ serviceMap:
     Actions:
     - AccessLegacyPartnerCentral
     - AccessMarketingCentral
+    - AccessProServeTools
     - AssociatePartnerAccount
     - AssociatePartnerUser
     - DisassociatePartnerUser
     conditionKeys:
     - partnercentral-account-management:LegacyPartnerCentralRole
     - partnercentral-account-management:MarketingCentralRole
+    - partnercentral-account-management:ProServeRole
     HasResource: false
   Amazon Elastic File System:
     StringPrefix: elasticfilesystem
@@ -18605,6 +18607,7 @@ serviceMap:
     - ListLexicons
     - ListSpeechSynthesisTasks
     - PutLexicon
+    - StartSpeechSynthesisStream
     - StartSpeechSynthesisTask
     - SynthesizeSpeech
     ARNFormat: arn:aws:polly:${Region}:${Account}:lexicon/${RelativeId}
@@ -23173,6 +23176,7 @@ serviceMap:
     - GetComputeAuthToken
     - GetGameSessionLogUrl
     - GetInstanceAccess
+    - GetPlayerConnectionDetails
     - ListAliases
     - ListBuilds
     - ListCompute
@@ -23413,17 +23417,21 @@ serviceMap:
     - CreateAgentSpace
     - CreateBacklogTask
     - CreateChat
+    - CreateKnowledgeItem
     - DeleteAgentSpace
+    - DeleteKnowledgeItem
     - DeregisterService
     - DescribeSupportLevel
     - DisableOperatorApp
     - DisassociateService
+    - DiscoverTopology
     - EnableOperatorApp
     - EndChatForCase
     - GetAccountUsage
     - GetAgentSpace
     - GetAssociation
     - GetBacklogTask
+    - GetKnowledgeItem
     - GetOperatorApp
     - GetRecommendation
     - GetService
@@ -23435,6 +23443,8 @@ serviceMap:
     - ListExecutions
     - ListGoals
     - ListJournalRecords
+    - ListKnowledgeItemVersions
+    - ListKnowledgeItems
     - ListPendingMessages
     - ListRecommendations
     - ListServices
@@ -23449,6 +23459,7 @@ serviceMap:
     - UpdateAssociation
     - UpdateBacklogTask
     - UpdateGoal
+    - UpdateKnowledgeItem
     - UpdateOperatorAppIdpConfig
     - UpdateRecommendation
     - ValidateAwsAssociations
