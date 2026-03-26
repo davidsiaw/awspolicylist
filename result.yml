@@ -12339,9 +12339,7 @@ serviceMap:
     StringPrefix: securityagent
     Actions:
     - AddArtifact
-    - AddControl
     - BatchDeletePentests
-    - BatchGetAgentInstances
     - BatchGetAgentSpaces
     - BatchGetArtifactMetadata
     - BatchGetFindings
@@ -12352,24 +12350,19 @@ serviceMap:
     - BatchGetSecurityTestContentMetadata
     - BatchGetTargetDomains
     - BatchGetTasks
-    - CreateAgentInstance
     - CreateAgentSpace
     - CreateApplication
     - CreateDesignReview
-    - CreateDocumentReview
     - CreateIntegration
     - CreateMembership
     - CreateOneTimeLoginSession
     - CreatePentest
     - CreateSecurityRequirement
     - CreateTargetDomain
-    - DeleteAgentInstance
     - DeleteAgentSpace
     - DeleteApplication
     - DeleteArtifact
-    - DeleteControl
     - DeleteDesignReview
-    - DeleteDocumentReview
     - DeleteIntegration
     - DeleteMembership
     - DeleteSecurityRequirement
@@ -12378,29 +12371,19 @@ serviceMap:
     - GetApplication
     - GetArtifact
     - GetCodeReviewTask
-    - GetControl
     - GetDesignReview
     - GetDesignReviewArtifact
     - GetDesignReviewFeedback
     - GetDocReviewTask
-    - GetDocumentReview
-    - GetDocumentReviewArtifact
     - GetIntegration
-    - GetLoginSessionCredentials
     - GetSecurityRequirement
-    - HandleOneTimeLoginSession
     - InitiateProviderRegistration
-    - ListAgentInstanceTasks
-    - ListAgentInstances
     - ListAgentSpaces
     - ListApplications
     - ListArtifacts
-    - ListControls
     - ListDesignReviewComments
     - ListDesignReviews
     - ListDiscoveredEndpoints
-    - ListDocumentReviewComments
-    - ListDocumentReviews
     - ListFindings
     - ListIntegratedResources
     - ListIntegrations
@@ -12410,6 +12393,7 @@ serviceMap:
     - ListPentests
     - ListResourcesFromIntegration
     - ListSecurityRequirements
+    - ListTagsForResource
     - ListTargetDomains
     - ListTasks
     - PutDesignReviewFeedback
@@ -12418,12 +12402,11 @@ serviceMap:
     - StartPentestJob
     - StopPentestExecution
     - StopPentestJob
-    - ToggleManagedControl
+    - TagResource
     - ToggleManagedSecurityRequirement
-    - UpdateAgentInstance
+    - UntagResource
     - UpdateAgentSpace
     - UpdateApplication
-    - UpdateControl
     - UpdateFinding
     - UpdateIntegratedResources
     - UpdatePentest
@@ -12432,6 +12415,10 @@ serviceMap:
     - VerifyTargetDomain
     ARNFormat: arn:aws:securityagent:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:securityagent:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Launch Wizard:
     StringPrefix: launchwizard
