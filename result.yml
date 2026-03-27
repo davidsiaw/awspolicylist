@@ -5427,6 +5427,7 @@ serviceMap:
     - DescribeElasticsearchInstanceTypeLimits
     - DescribeInboundConnections
     - DescribeInboundCrossClusterSearchConnections
+    - DescribeInsightDetails
     - DescribeInstanceTypeLimits
     - DescribeOutboundConnections
     - DescribeOutboundCrossClusterSearchConnections
@@ -5465,6 +5466,7 @@ serviceMap:
     - ListElasticsearchInstanceTypeDetails
     - ListElasticsearchInstanceTypes
     - ListElasticsearchVersions
+    - ListInsights
     - ListInstanceTypeDetails
     - ListPackagesForDomain
     - ListScheduledActions
