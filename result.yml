@@ -11755,6 +11755,7 @@ serviceMap:
     - CompleteMultipartReadSetUpload
     - CreateAnnotationStore
     - CreateAnnotationStoreVersion
+    - CreateConfiguration
     - CreateMultipartReadSetUpload
     - CreateReferenceStore
     - CreateRunCache
@@ -11766,6 +11767,7 @@ serviceMap:
     - CreateWorkflowVersion
     - DeleteAnnotationStore
     - DeleteAnnotationStoreVersions
+    - DeleteConfiguration
     - DeleteReference
     - DeleteReferenceStore
     - DeleteRun
@@ -11780,6 +11782,7 @@ serviceMap:
     - GetAnnotationImportJob
     - GetAnnotationStore
     - GetAnnotationStoreVersion
+    - GetConfiguration
     - GetReadSet
     - GetReadSetActivationJob
     - GetReadSetExportJob
@@ -11803,6 +11806,7 @@ serviceMap:
     - ListAnnotationImportJobs
     - ListAnnotationStoreVersions
     - ListAnnotationStores
+    - ListConfigurations
     - ListMultipartReadSetUploads
     - ListReadSetActivationJobs
     - ListReadSetExportJobs
@@ -12349,9 +12353,7 @@ serviceMap:
     - BatchGetPentestJobTasks
     - BatchGetPentestJobs
     - BatchGetPentests
-    - BatchGetSecurityTestContentMetadata
     - BatchGetTargetDomains
-    - BatchGetTasks
     - CreateAgentSpace
     - CreateApplication
     - CreateDesignReview
@@ -12369,14 +12371,11 @@ serviceMap:
     - DeleteMembership
     - DeleteSecurityRequirement
     - DeleteTargetDomain
-    - DescribeFindings
     - GetApplication
     - GetArtifact
-    - GetCodeReviewTask
     - GetDesignReview
     - GetDesignReviewArtifact
     - GetDesignReviewFeedback
-    - GetDocReviewTask
     - GetIntegration
     - GetSecurityRequirement
     - InitiateProviderRegistration
@@ -12397,12 +12396,9 @@ serviceMap:
     - ListSecurityRequirements
     - ListTagsForResource
     - ListTargetDomains
-    - ListTasks
     - PutDesignReviewFeedback
     - StartCodeRemediation
-    - StartPentestExecution
     - StartPentestJob
-    - StopPentestExecution
     - StopPentestJob
     - TagResource
     - ToggleManagedSecurityRequirement
