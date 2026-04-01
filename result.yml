@@ -1400,26 +1400,36 @@ serviceMap:
     StringPrefix: aws-marketplace
     Actions:
     - AcceptAgreementApprovalRequest
+    - AcceptAgreementCancellationRequest
     - AcceptAgreementPaymentRequest
     - AcceptAgreementRequest
+    - BatchCreateBillingAdjustmentRequest
     - CancelAgreement
+    - CancelAgreementCancellationRequest
     - CancelAgreementPaymentRequest
     - CancelAgreementRequest
     - CreateAgreementRequest
     - DescribeAgreement
     - GetAgreementApprovalRequest
+    - GetAgreementCancellationRequest
     - GetAgreementEntitlements
     - GetAgreementPaymentRequest
     - GetAgreementRequest
     - GetAgreementTerms
+    - GetBillingAdjustmentRequest
     - ListAgreementApprovalRequests
+    - ListAgreementCancellationRequests
     - ListAgreementCharges
+    - ListAgreementInvoiceLineItems
     - ListAgreementPaymentRequests
     - ListAgreementRequests
+    - ListBillingAdjustmentRequests
     - ListEntitlementDetails
     - RejectAgreementApprovalRequest
+    - RejectAgreementCancellationRequest
     - RejectAgreementPaymentRequest
     - SearchAgreements
+    - SendAgreementCancellationRequest
     - SendAgreementPaymentRequest
     - Subscribe
     - Unsubscribe
@@ -3790,6 +3800,7 @@ serviceMap:
     - RequestCertificate
     - ResendValidationEmail
     - RevokeCertificate
+    - SearchCertificates
     - UpdateCertificateOptions
     ARNFormat: arn:aws:acm:${Region}:${Account}:${ArnType}/${ResourceId}
     ARNRegex: "^arn:aws:acm:.+:[0-9]+:.+"
@@ -11228,6 +11239,7 @@ serviceMap:
     - CreateLogDelivery
     - CreateLogGroup
     - CreateLogStream
+    - CreateLookupTable
     - CreateScheduledQuery
     - DeleteAccountPolicy
     - DeleteDataProtectionPolicy
@@ -11242,6 +11254,7 @@ serviceMap:
     - DeleteLogDelivery
     - DeleteLogGroup
     - DeleteLogStream
+    - DeleteLookupTable
     - DeleteMetricFilter
     - DeletePipelineRule
     - DeleteQueryDefinition
@@ -11263,6 +11276,7 @@ serviceMap:
     - DescribeIndexPolicies
     - DescribeLogGroups
     - DescribeLogStreams
+    - DescribeLookupTables
     - DescribeMetricFilters
     - DescribeQueries
     - DescribeQueryDefinitions
@@ -11283,6 +11297,7 @@ serviceMap:
     - GetLogFields
     - GetLogGroupFields
     - GetLogRecord
+    - GetLookupTable
     - GetQueryResults
     - GetScheduledQuery
     - GetScheduledQueryHistory
@@ -11337,6 +11352,7 @@ serviceMap:
     - UpdateDeliveryConfiguration
     - UpdateLogAnomalyDetector
     - UpdateLogDelivery
+    - UpdateLookupTable
     - UpdateScheduledQuery
     ARNFormat: arn:aws:logs:${Region}:${Account}:.+
     ARNRegex: "^arn:aws:logs:.+"
@@ -11516,6 +11532,8 @@ serviceMap:
     StringPrefix: sustainability
     Actions:
     - GetCarbonFootprintSummary
+    - GetEstimatedCarbonEmissions
+    - GetEstimatedCarbonEmissionsDimensionValues
     ARNFormat: arn:${Partition}:sustainability:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:${Partition}:sustainability:.+:.+:.+"
     HasResource: false
@@ -15053,12 +15071,14 @@ serviceMap:
     - DeleteOptimizationJob
     - DeletePartnerApp
     - DeletePipeline
+    - DeleteProcessingJob
     - DeleteProject
     - DeleteRecord
     - DeleteResourcePolicy
     - DeleteSpace
     - DeleteStudioLifecycleConfig
     - DeleteTags
+    - DeleteTrainingJob
     - DeleteTrial
     - DeleteTrialComponent
     - DeleteUserProfile
@@ -15260,6 +15280,7 @@ serviceMap:
     - SendPipelineExecutionStepFailure
     - SendPipelineExecutionStepSuccess
     - SendSharedModelEvent
+    - StartClusterHealthCheck
     - StartEdgeDeploymentStage
     - StartHumanLoop
     - StartInferenceExperiment
@@ -19303,6 +19324,7 @@ serviceMap:
     - DescribeAnalysisPermissions
     - DescribeAssetBundleExportJob
     - DescribeAssetBundleImportJob
+    - DescribeAutomationJob
     - DescribeBrand
     - DescribeBrandAssignment
     - DescribeBrandPublishedVersion
@@ -19427,6 +19449,7 @@ serviceMap:
     - SetGroupMapping
     - StartAssetBundleExportJob
     - StartAssetBundleImportJob
+    - StartAutomationJob
     - StartDashboardSnapshotJob
     - StartDashboardSnapshotJobSchedule
     - Subscribe
