@@ -1534,6 +1534,45 @@ serviceMap:
     - identitystore:UserExternalIdIssuers
     - identitystore:UserId
     HasResource: true
+  Claude Platform on AWS:
+    StringPrefix: aws-external-anthropic
+    Actions:
+    - ArchiveWorkspace
+    - AssumeConsole
+    - CallWithBearerToken
+    - CancelBatchInference
+    - CountTokens
+    - CreateBatchInference
+    - CreateFile
+    - CreateInference
+    - CreateSkill
+    - CreateUserProfile
+    - CreateWorkspace
+    - DeleteBatchInference
+    - DeleteFile
+    - DeleteSkill
+    - GetAccountStatus
+    - GetBatchInference
+    - GetFile
+    - GetModel
+    - GetSkill
+    - GetUserProfile
+    - GetWorkspace
+    - ListBatchInferences
+    - ListFiles
+    - ListModels
+    - ListSkills
+    - ListUserProfiles
+    - ListWorkspaces
+    - UpdateSkill
+    - UpdateUserProfile
+    - UpdateWorkspace
+    ARNFormat: arn:aws:aws-external-anthropic:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:aws-external-anthropic:.+"
+    conditionKeys:
+    - aws-external-anthropic:BearerTokenType
+    - aws-external-anthropic:Capability
+    HasResource: true
   Amazon FreeRTOS:
     StringPrefix: freertos
     Actions:
@@ -23611,6 +23650,7 @@ serviceMap:
     Actions:
     - CreateCapacityProvider
     - CreateCluster
+    - CreateDaemon
     - CreateExpressGatewayService
     - CreateService
     - CreateTaskSet
@@ -23618,6 +23658,8 @@ serviceMap:
     - DeleteAttributes
     - DeleteCapacityProvider
     - DeleteCluster
+    - DeleteDaemon
+    - DeleteDaemonTaskDefinition
     - DeleteExpressGatewayService
     - DeleteService
     - DeleteTaskDefinitions
@@ -23627,6 +23669,10 @@ serviceMap:
     - DescribeCapacityProviders
     - DescribeClusters
     - DescribeContainerInstances
+    - DescribeDaemon
+    - DescribeDaemonDeployments
+    - DescribeDaemonRevisions
+    - DescribeDaemonTaskDefinition
     - DescribeExpressGatewayService
     - DescribeServiceDeployments
     - DescribeServiceRevisions
@@ -23641,6 +23687,9 @@ serviceMap:
     - ListAttributes
     - ListClusters
     - ListContainerInstances
+    - ListDaemonDeployments
+    - ListDaemonTaskDefinitions
+    - ListDaemons
     - ListServiceDeployments
     - ListServices
     - ListServicesByNamespace
@@ -23655,6 +23704,7 @@ serviceMap:
     - PutClusterCapacityProviders
     - PutSystemLogEvents
     - RegisterContainerInstance
+    - RegisterDaemonTaskDefinition
     - RegisterTaskDefinition
     - RunTask
     - StartTask
@@ -23671,6 +23721,7 @@ serviceMap:
     - UpdateClusterSettings
     - UpdateContainerAgent
     - UpdateContainerInstancesState
+    - UpdateDaemon
     - UpdateExpressGatewayService
     - UpdateService
     - UpdateServicePrimaryTaskSet
@@ -23691,6 +23742,8 @@ serviceMap:
     - ecs:compute-compatibility
     - ecs:container-instances
     - ecs:container-name
+    - ecs:daemon
+    - ecs:daemon-task-definition
     - ecs:enable-ebs-volumes
     - ecs:enable-ecs-managed-tags
     - ecs:enable-execute-command
@@ -24859,6 +24912,7 @@ serviceMap:
     - GetBucketPolicy
     - GetEncryptionConfiguration
     - GetLifecycleConfiguration
+    - GetMetricsConfiguration
     - ListAccessPointsForDirectoryBuckets
     - ListAllMyDirectoryBuckets
     - ListTagsForResource
@@ -24867,6 +24921,7 @@ serviceMap:
     - PutBucketPolicy
     - PutEncryptionConfiguration
     - PutLifecycleConfiguration
+    - PutMetricsConfiguration
     - TagResource
     - UntagResource
     ARNFormat: arn:aws:s3express:${Region}:${Account}:bucket/${BucketName}
@@ -24952,6 +25007,7 @@ serviceMap:
     - DeleteFHIRDatastore
     - DeleteResource
     - DescribeFHIRBulkDeleteJob
+    - DescribeFHIRBulkMemberMatchJob
     - DescribeFHIRDatastore
     - DescribeFHIRExportJob
     - DescribeFHIRExportJobWithGet
@@ -24982,6 +25038,7 @@ serviceMap:
     - SearchWithGet
     - SearchWithPost
     - StartFHIRBulkDeleteJob
+    - StartFHIRBulkMemberMatchJob
     - StartFHIRExportJob
     - StartFHIRExportJobWithGet
     - StartFHIRExportJobWithPost
