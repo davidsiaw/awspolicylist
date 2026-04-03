@@ -6715,28 +6715,40 @@ serviceMap:
     StringPrefix: bedrock-mantle
     Actions:
     - ArchiveProject
+    - AssociateCustomizedModel
     - CallWithBearerToken
     - CancelFineTuningJob
     - CancelInference
+    - CreateCustomizedModel
     - CreateFile
     - CreateFineTuningJob
     - CreateInference
     - CreateProject
+    - CreateReservation
+    - DeleteCustomizedModel
     - DeleteFile
     - DeleteInference
+    - DeleteReservation
+    - DisassociateCustomizedModel
+    - GetCustomizedModel
     - GetFile
     - GetFineTuningJob
     - GetInference
     - GetModel
     - GetProject
+    - GetReservation
+    - ListCustomizedModelAssociations
+    - ListCustomizedModels
     - ListFiles
     - ListFineTuningJobs
     - ListModels
     - ListProjects
+    - ListReservations
     - ListTagsForResource
     - TagResource
     - UntagResource
     - UpdateProject
+    - UpdateReservation
     ARNFormat: arn:aws:bedrock-mantle:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:bedrock-mantle:.+"
     conditionKeys:
@@ -6744,9 +6756,12 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - bedrock-mantle:BearerTokenType
+    - bedrock-mantle:CustomizedModelArn
     - bedrock-mantle:Files
     - bedrock-mantle:FineTuningJob
     - bedrock-mantle:Model
+    - bedrock-mantle:ProjectArn
+    - bedrock-mantle:ReservationArn
     - bedrock-mantle:ServiceTier
     HasResource: true
   Amazon AppStream 2.0:
@@ -9581,6 +9596,7 @@ serviceMap:
     - CreateBlueprintVersion
     - CreateCustomModel
     - CreateCustomModelDeployment
+    - CreateDataAutomationLibrary
     - CreateDataAutomationProject
     - CreateDataSource
     - CreateEvaluationJob
@@ -9615,6 +9631,7 @@ serviceMap:
     - DeleteBlueprint
     - DeleteCustomModel
     - DeleteCustomModelDeployment
+    - DeleteDataAutomationLibrary
     - DeleteDataAutomationProject
     - DeleteDataSource
     - DeleteEnforcedGuardrailConfiguration
@@ -9662,6 +9679,9 @@ serviceMap:
     - GetBlueprintRecommendation
     - GetCustomModel
     - GetCustomModelDeployment
+    - GetDataAutomationLibrary
+    - GetDataAutomationLibraryEntity
+    - GetDataAutomationLibraryIngestionJob
     - GetDataAutomationProject
     - GetDataAutomationStatus
     - GetDataSource
@@ -9701,6 +9721,7 @@ serviceMap:
     - InvokeBuilder
     - InvokeDataAutomation
     - InvokeDataAutomationAsync
+    - InvokeDataAutomationLibraryIngestionJob
     - InvokeFlow
     - InvokeInlineAgent
     - InvokeModel
@@ -9720,6 +9741,9 @@ serviceMap:
     - ListBlueprints
     - ListCustomModelDeployments
     - ListCustomModels
+    - ListDataAutomationLibraries
+    - ListDataAutomationLibraryEntities
+    - ListDataAutomationLibraryIngestionJobs
     - ListDataAutomationProjects
     - ListDataSources
     - ListEnforcedGuardrailsConfiguration
@@ -9785,6 +9809,7 @@ serviceMap:
     - UpdateAutomatedReasoningPolicyTestCase
     - UpdateBlueprint
     - UpdateCustomModelDeployment
+    - UpdateDataAutomationLibrary
     - UpdateDataAutomationProject
     - UpdateDataSource
     - UpdateFlow
