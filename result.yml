@@ -1418,8 +1418,19 @@ serviceMap:
   AWS Marketplace Discovery:
     StringPrefix: aws-marketplace
     Actions:
+    - GetListing
+    - GetOffer
+    - GetOfferSet
+    - GetOfferTerms
+    - GetProduct
+    - ListFulfillmentOptions
     - ListPrivateListings
-    HasResource: false
+    - ListPurchaseOptions
+    - SearchFacets
+    - SearchListings
+    ARNFormat: arn:aws:aws-marketplace:::catalog/${CatalogName}/${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:aws-marketplace:.+"
+    HasResource: true
   AWS Marketplace Reporting:
     StringPrefix: aws-marketplace
     Actions:
@@ -2026,6 +2037,7 @@ serviceMap:
     - GetLicenseEndpoint
     - GetLimit
     - GetMonitor
+    - GetMonitorSettings
     - GetQueue
     - GetQueueEnvironment
     - GetQueueFleetAssociation
@@ -2081,6 +2093,7 @@ serviceMap:
     - UpdateJob
     - UpdateLimit
     - UpdateMonitor
+    - UpdateMonitorSettings
     - UpdateQueue
     - UpdateQueueEnvironment
     - UpdateQueueFleetAssociation
@@ -17946,11 +17959,14 @@ serviceMap:
     - DisassociateIpGroups
     - DisassociateWorkspaceApplication
     - GetAccountLink
+    - GetTroubleshootingRecommendation
     - ImportClientBranding
     - ImportCustomWorkspaceImage
     - ImportWorkspaceImage
+    - InvokeTroubleshootingInvestigation
     - ListAccountLinks
     - ListAvailableManagementCidrRanges
+    - ListTroubleshootingRecommendations
     - MigrateWorkspace
     - ModifyAccount
     - ModifyCertificateBasedAuthProperties
