@@ -10268,9 +10268,13 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - observabilityadmin:CentralizationBackupRegion
+    - observabilityadmin:CentralizationDestinationAccount
     - observabilityadmin:CentralizationDestinationRegion
+    - observabilityadmin:CentralizationRuleName
+    - observabilityadmin:CentralizationSourceId
     - observabilityadmin:CentralizationSourceRegions
     - observabilityadmin:SourceType
+    - observabilityadmin:TargetRegions
     HasResource: true
   Amazon Macie:
     StringPrefix: macie2
@@ -25209,6 +25213,8 @@ serviceMap:
     - CreateOnlineEvaluationConfig
     - CreatePolicy
     - CreatePolicyEngine
+    - CreateRegistry
+    - CreateRegistryRecord
     - CreateWorkloadIdentity
     - DeleteAgentRuntime
     - DeleteAgentRuntimeEndpoint
@@ -25226,6 +25232,8 @@ serviceMap:
     - DeleteOnlineEvaluationConfig
     - DeletePolicy
     - DeletePolicyEngine
+    - DeleteRegistry
+    - DeleteRegistryRecord
     - DeleteResourcePolicy
     - DeleteWorkloadIdentity
     - Evaluate
@@ -25249,6 +25257,8 @@ serviceMap:
     - GetPolicy
     - GetPolicyEngine
     - GetPolicyGeneration
+    - GetRegistry
+    - GetRegistryRecord
     - GetResourceApiKey
     - GetResourceOauth2Token
     - GetResourcePolicy
@@ -25264,6 +25274,7 @@ serviceMap:
     - InvokeAgentRuntimeWithWebSocketStreamForUser
     - InvokeCodeInterpreter
     - InvokeGateway
+    - InvokeRegistryMcp
     - ListActors
     - ListAgentRuntimeEndpoints
     - ListAgentRuntimeVersions
@@ -25287,6 +25298,8 @@ serviceMap:
     - ListPolicyEngines
     - ListPolicyGenerationAssets
     - ListPolicyGenerations
+    - ListRegistries
+    - ListRegistryRecords
     - ListSessions
     - ListTagsForResource
     - ListWorkloadIdentities
@@ -25296,6 +25309,7 @@ serviceMap:
     - PutResourcePolicy
     - RetrieveMemoryRecords
     - SaveBrowserSessionProfile
+    - SearchRegistryRecords
     - SetTokenVaultCMK
     - StartBrowserSession
     - StartCodeInterpreterSession
@@ -25304,6 +25318,7 @@ serviceMap:
     - StopBrowserSession
     - StopCodeInterpreterSession
     - StopRuntimeSession
+    - SubmitRegistryRecordForApproval
     - SynchronizeGatewayTargets
     - TagResource
     - UntagResource
@@ -25319,6 +25334,9 @@ serviceMap:
     - UpdateOnlineEvaluationConfig
     - UpdatePolicy
     - UpdatePolicyEngine
+    - UpdateRegistry
+    - UpdateRegistryRecord
+    - UpdateRegistryRecordStatus
     - UpdateWorkloadIdentity
     ARNFormat: arn:aws:bedrock-agentcore:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:bedrock-agentcore:.+:.+:.+"
