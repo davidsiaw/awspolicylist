@@ -5512,6 +5512,7 @@ serviceMap:
     - DeleteOutboundCrossClusterSearchConnection
     - DeletePackage
     - DeleteVpcEndpoint
+    - DeregisterCapability
     - DescribeDomain
     - DescribeDomainAutoTunes
     - DescribeDomainChangeProgress
@@ -5546,6 +5547,7 @@ serviceMap:
     - ESHttpPost
     - ESHttpPut
     - GetApplication
+    - GetCapability
     - GetCompatibleElasticsearchVersions
     - GetCompatibleVersions
     - GetDataSource
@@ -5577,6 +5579,7 @@ serviceMap:
     - PurchaseReservedElasticsearchInstanceOffering
     - PurchaseReservedInstanceOffering
     - PutDefaultApplicationSetting
+    - RegisterCapability
     - RejectInboundConnection
     - RejectInboundCrossClusterSearchConnection
     - RemoveTags
@@ -11886,6 +11889,7 @@ serviceMap:
     - BatchDeleteReadSet
     - CancelAnnotationImportJob
     - CancelRun
+    - CancelRunBatch
     - CancelVariantImportJob
     - CompleteMultipartReadSetUpload
     - CreateAnnotationStore
@@ -11902,10 +11906,12 @@ serviceMap:
     - CreateWorkflowVersion
     - DeleteAnnotationStore
     - DeleteAnnotationStoreVersions
+    - DeleteBatch
     - DeleteConfiguration
     - DeleteReference
     - DeleteReferenceStore
     - DeleteRun
+    - DeleteRunBatch
     - DeleteRunCache
     - DeleteRunGroup
     - DeleteS3AccessPolicy
@@ -11917,6 +11923,7 @@ serviceMap:
     - GetAnnotationImportJob
     - GetAnnotationStore
     - GetAnnotationStoreVersion
+    - GetBatch
     - GetConfiguration
     - GetReadSet
     - GetReadSetActivationJob
@@ -11941,6 +11948,7 @@ serviceMap:
     - ListAnnotationImportJobs
     - ListAnnotationStoreVersions
     - ListAnnotationStores
+    - ListBatch
     - ListConfigurations
     - ListMultipartReadSetUploads
     - ListReadSetActivationJobs
@@ -11955,6 +11963,7 @@ serviceMap:
     - ListRunGroups
     - ListRunTasks
     - ListRuns
+    - ListRunsInBatch
     - ListSequenceStores
     - ListShares
     - ListTagsForResource
@@ -11969,6 +11978,7 @@ serviceMap:
     - StartReadSetImportJob
     - StartReferenceImportJob
     - StartRun
+    - StartRunBatch
     - StartVariantImportJob
     - TagResource
     - UntagResource
@@ -15553,20 +15563,24 @@ serviceMap:
     - CreateIdentitySource
     - CreatePolicy
     - CreatePolicyStore
+    - CreatePolicyStoreAlias
     - CreatePolicyTemplate
     - DeleteIdentitySource
     - DeletePolicy
     - DeletePolicyStore
+    - DeletePolicyStoreAlias
     - DeletePolicyTemplate
     - GetIdentitySource
     - GetPolicy
     - GetPolicyStore
+    - GetPolicyStoreAlias
     - GetPolicyTemplate
     - GetSchema
     - IsAuthorized
     - IsAuthorizedWithToken
     - ListIdentitySources
     - ListPolicies
+    - ListPolicyStoreAliases
     - ListPolicyStores
     - ListPolicyTemplates
     - ListTagsForResource
@@ -18640,20 +18654,27 @@ serviceMap:
     StringPrefix: bcm-dashboards
     Actions:
     - CreateDashboard
+    - CreateScheduledReport
     - DeleteDashboard
+    - DeleteScheduledReport
+    - ExecuteScheduledReport
     - GetDashboard
     - GetResourcePolicy
+    - GetScheduledReport
     - ListDashboards
+    - ListScheduledReports
     - ListTagsForResource
     - TagResource
     - UntagResource
     - UpdateDashboard
-    ARNFormat: arn:${Partition}:bcm-dashboards:${Region}:${Account}:${ResourceType}
-    ARNRegex: "^arn:${Partition}:bcm-dashboards:. :. :. "
+    - UpdateScheduledReport
+    ARNFormat: arn:aws:bcm-dashboards::${Account}:${ResourceType}
+    ARNRegex: "^arn:aws:bcm-dashboards:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
     - aws:TagKeys
-    HasResource: false
+    HasResource: true
   Amazon GameLift Streams:
     StringPrefix: gameliftstreams
     Actions:
