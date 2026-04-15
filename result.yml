@@ -9060,6 +9060,7 @@ serviceMap:
     - GetMetricStatistics
     - GetMetricStream
     - GetMetricWidgetImage
+    - GetOTelEnrichment
     - GetService
     - GetServiceData
     - GetServiceLevelObjective
@@ -9086,7 +9087,9 @@ serviceMap:
     - PutMetricStream
     - SetAlarmState
     - StartMetricStreams
+    - StartOTelEnrichment
     - StopMetricStreams
+    - StopOTelEnrichment
     - TagResource
     - UntagResource
     - UpdateServiceLevelObjective
@@ -11745,6 +11748,10 @@ serviceMap:
     - UpdateSolution
     ARNFormat: arn:aws:personalize:${Region}:${Account}:${Resourcename}/${ResourceId}
     ARNRegex: "^arn:aws:personalize:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS End User Messaging Social:
     StringPrefix: social-messaging
