@@ -4233,7 +4233,7 @@ serviceMap:
     - UpdateNodegroupVersion
     - UpdatePodIdentityAssociation
     ARNFormat: arn:aws:eks:${Region}:${Account}:${ResourceType}/${RelativeId}
-    ARNRegex: "^arn:aws:eks:. "
+    ARNRegex: "^arn:aws:eks:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -4247,15 +4247,22 @@ serviceMap:
     - eks:clientId
     - eks:clusterName
     - eks:computeConfigEnabled
+    - eks:controlPlaneScalingTier
+    - eks:deletionProtection
     - eks:elasticLoadBalancingEnabled
+    - eks:encryptionConfigProviderKeyArns
+    - eks:endpointPrivateAccess
+    - eks:endpointPublicAccess
     - eks:issuerUrl
     - eks:kubernetesGroups
+    - eks:kubernetesVersion
     - eks:loggingType/${type}
     - eks:namespaces
     - eks:policyArn
     - eks:principalArn
     - eks:supportType
     - eks:username
+    - eks:zonalShiftEnabled
     HasResource: true
   AWS Identity Sync:
     StringPrefix: identity-sync
@@ -8447,6 +8454,7 @@ serviceMap:
     - DeleteEphemeris
     - DeleteMissionProfile
     - DescribeContact
+    - DescribeContactVersion
     - DescribeEphemeris
     - GetAgentConfiguration
     - GetAgentTaskResponseUrl
@@ -8455,10 +8463,13 @@ serviceMap:
     - GetMinuteUsage
     - GetMissionProfile
     - GetSatellite
+    - ListAntennas
     - ListConfigs
+    - ListContactVersions
     - ListContacts
     - ListDataflowEndpointGroups
     - ListEphemerides
+    - ListGroundStationReservations
     - ListGroundStations
     - ListMissionProfiles
     - ListSatellites
@@ -8469,6 +8480,7 @@ serviceMap:
     - UntagResource
     - UpdateAgentStatus
     - UpdateConfig
+    - UpdateContact
     - UpdateEphemeris
     - UpdateMissionProfile
     ARNFormat: arn:aws:groundstation:${Region}:${Account}:${ResourceType}/${ResourceId}
@@ -18435,6 +18447,7 @@ serviceMap:
     - DeleteCampaignChannelSubtypeConfig
     - DeleteCampaignCommunicationLimits
     - DeleteCampaignCommunicationTime
+    - DeleteCampaignEntryLimits
     - DeleteConnectInstanceConfig
     - DeleteConnectInstanceIntegration
     - DeleteInstanceOnboardingJob
@@ -18463,6 +18476,7 @@ serviceMap:
     - UpdateCampaignCommunicationLimits
     - UpdateCampaignCommunicationTime
     - UpdateCampaignDialerConfig
+    - UpdateCampaignEntryLimits
     - UpdateCampaignFlowAssociation
     - UpdateCampaignName
     - UpdateCampaignOutboundCallConfig
@@ -19718,6 +19732,7 @@ serviceMap:
     - ListTagsForResource
     - ListTemplates
     - PutCaseEventConfiguration
+    - SearchAllRelatedItems
     - SearchCases
     - SearchRelatedItems
     - TagResource
