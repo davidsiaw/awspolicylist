@@ -6968,6 +6968,7 @@ serviceMap:
     - BatchGetCellRun
     - BatchPutAttributesMetadata
     - BatchPutLinkedTypes
+    - CancelMessage
     - CancelMetadataGenerationRun
     - CancelSubscription
     - CreateAccountPool
@@ -12694,19 +12695,26 @@ serviceMap:
     StringPrefix: evs
     Actions:
     - AssociateEipToVlan
+    - CreateEntitlement
     - CreateEnvironment
+    - CreateEnvironmentConnector
     - CreateEnvironmentHost
+    - DeleteEntitlement
     - DeleteEnvironment
+    - DeleteEnvironmentConnector
     - DeleteEnvironmentHost
     - DisassociateEipFromVlan
     - GetEnvironment
     - GetVersions
+    - ListEnvironmentConnectors
     - ListEnvironmentHosts
     - ListEnvironmentVlans
     - ListEnvironments
     - ListTagsForResource
+    - ListVmEntitlements
     - TagResource
     - UntagResource
+    - UpdateEnvironmentConnector
     ARNFormat: arn:aws:evs:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:evs:.+:.+:.+"
     conditionKeys:
@@ -19741,6 +19749,7 @@ serviceMap:
     - UpdateCaseRule
     - UpdateField
     - UpdateLayout
+    - UpdateRelatedItem
     - UpdateTemplate
     ARNFormat: arn:aws:cases:${Region}:${Account}:domain/${DomainId}
     ARNRegex: "^arn:aws:cases:.+"
@@ -19748,6 +19757,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - cases:CreatedBy
+    - cases:RelatedItemType
     - connect:UserArn
     HasResource: true
   AWS Well-Architected Tool:
@@ -25037,6 +25048,7 @@ serviceMap:
     - GetAccessPointScope
     - GetBucketPolicy
     - GetEncryptionConfiguration
+    - GetInventoryConfiguration
     - GetLifecycleConfiguration
     - GetMetricsConfiguration
     - ListAccessPointsForDirectoryBuckets
@@ -25046,6 +25058,7 @@ serviceMap:
     - PutAccessPointScope
     - PutBucketPolicy
     - PutEncryptionConfiguration
+    - PutInventoryConfiguration
     - PutLifecycleConfiguration
     - PutMetricsConfiguration
     - TagResource
@@ -25062,6 +25075,7 @@ serviceMap:
     - s3express:BucketTag/${TagKey}
     - s3express:DataAccessPointAccount
     - s3express:DataAccessPointArn
+    - s3express:InventoryAccessibleOptionalFields
     - s3express:LocationName
     - s3express:Permissions
     - s3express:ResourceAccount
