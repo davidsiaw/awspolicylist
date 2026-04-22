@@ -1369,13 +1369,17 @@ serviceMap:
     - DescribeAssessment
     - DescribeChangeSet
     - DescribeEntity
+    - GetInvoiceSubmissionTask
     - GetResourcePolicy
     - ListAssessments
     - ListChangeSets
     - ListEntities
+    - ListInvoiceSubmissionTasks
+    - ListPayables
     - ListTagsForResource
     - PutResourcePolicy
     - StartChangeSet
+    - StartInvoiceSubmissionTask
     - TagResource
     - UntagResource
     ARNFormat: arn:aws:aws-marketplace:${Region}:${Account}:${Catalog}/${ResourceType}/${ResourceId}
@@ -15107,6 +15111,9 @@ serviceMap:
     - BatchPutMetrics
     - CallMlflowAppApi
     - CallPartnerAppApi
+    - CreateAIBenchmarkJob
+    - CreateAIRecommendationJob
+    - CreateAIWorkloadConfig
     - CreateAction
     - CreateAlgorithm
     - CreateApp
@@ -15178,6 +15185,9 @@ serviceMap:
     - CreateUserProfile
     - CreateWorkforce
     - CreateWorkteam
+    - DeleteAIBenchmarkJob
+    - DeleteAIRecommendationJob
+    - DeleteAIWorkloadConfig
     - DeleteAction
     - DeleteAlgorithm
     - DeleteApp
@@ -15242,6 +15252,9 @@ serviceMap:
     - DeleteWorkteam
     - DeployHubModel
     - DeregisterDevices
+    - DescribeAIBenchmarkJob
+    - DescribeAIRecommendationJob
+    - DescribeAIWorkloadConfig
     - DescribeAction
     - DescribeAlgorithm
     - DescribeApp
@@ -15333,6 +15346,9 @@ serviceMap:
     - InvokeEndpoint
     - InvokeEndpointAsync
     - InvokeEndpointWithResponseStream
+    - ListAIBenchmarkJobs
+    - ListAIRecommendationJobs
+    - ListAIWorkloadConfigs
     - ListActions
     - ListAlgorithms
     - ListAliases
@@ -15445,6 +15461,8 @@ serviceMap:
     - StartNotebookInstance
     - StartPipelineExecution
     - StartSession
+    - StopAIBenchmarkJob
+    - StopAIRecommendationJob
     - StopAutoMLJob
     - StopCompilationJob
     - StopEdgeDeploymentStage
@@ -15551,6 +15569,7 @@ serviceMap:
     - sagemaker:ModelLifeCycle:Stage
     - sagemaker:ModelLifeCycle:StageStatus
     - sagemaker:NetworkIsolation
+    - sagemaker:NotebookInstanceLifecycleConfigArns
     - sagemaker:OutputKmsKey
     - sagemaker:OwnerUserProfileArn
     - sagemaker:PipelineVersionId
