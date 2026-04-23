@@ -962,6 +962,8 @@ serviceMap:
     - CreateIntegrationWorkflow
     - CreateProfile
     - CreateRecommender
+    - CreateRecommenderFilter
+    - CreateRecommenderSchema
     - CreateSegmentDefinition
     - CreateSegmentEstimate
     - CreateSegmentSnapshot
@@ -979,6 +981,8 @@ serviceMap:
     - DeleteProfileObject
     - DeleteProfileObjectType
     - DeleteRecommender
+    - DeleteRecommenderFilter
+    - DeleteRecommenderSchema
     - DeleteSegmentDefinition
     - DeleteWorkflow
     - DetectProfileObjectType
@@ -1000,6 +1004,8 @@ serviceMap:
     - GetProfileObjectTypeTemplate
     - GetProfileRecommendations
     - GetRecommender
+    - GetRecommenderFilter
+    - GetRecommenderSchema
     - GetSegmentDefinition
     - GetSegmentEstimate
     - GetSegmentMembership
@@ -1028,7 +1034,9 @@ serviceMap:
     - ListProfileObjectTypeTemplates
     - ListProfileObjectTypes
     - ListProfileObjects
+    - ListRecommenderFilters
     - ListRecommenderRecipes
+    - ListRecommenderSchemas
     - ListRecommenders
     - ListRuleBasedMatches
     - ListSegmentDefinitions
@@ -7339,6 +7347,7 @@ serviceMap:
     - BatchGetChannel
     - BatchGetStreamKey
     - BatchStartViewerSessionRevocation
+    - CreateAdConfiguration
     - CreateChannel
     - CreateEncoderConfiguration
     - CreateIngestConfiguration
@@ -7348,6 +7357,7 @@ serviceMap:
     - CreateStage
     - CreateStorageConfiguration
     - CreateStreamKey
+    - DeleteAdConfiguration
     - DeleteChannel
     - DeleteEncoderConfiguration
     - DeleteIngestConfiguration
@@ -7359,6 +7369,7 @@ serviceMap:
     - DeleteStorageConfiguration
     - DeleteStreamKey
     - DisconnectParticipant
+    - GetAdConfiguration
     - GetChannel
     - GetComposition
     - GetEncoderConfiguration
@@ -7376,6 +7387,8 @@ serviceMap:
     - GetStreamSession
     - ImportPlaybackKeyPair
     - ImportPublicKey
+    - InsertAdBreak
+    - ListAdConfigurations
     - ListChannels
     - ListCompositions
     - ListEncoderConfigurations
@@ -20300,14 +20313,20 @@ serviceMap:
     - GetApplication
     - GetDashboardForJobRun
     - GetJobRun
+    - GetResourceDashboard
+    - GetSession
+    - GetSessionEndpoint
     - ListApplications
     - ListJobRunAttempts
     - ListJobRuns
+    - ListSessions
     - ListTagsForResource
     - StartApplication
     - StartJobRun
+    - StartSession
     - StopApplication
     - TagResource
+    - TerminateSession
     - UntagResource
     - UpdateApplication
     ARNFormat: arn:aws:emr-serverless:${Region}:${Account}:/${ResourceType}/${ResourcePath}
