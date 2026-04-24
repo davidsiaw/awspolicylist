@@ -21897,6 +21897,7 @@ serviceMap:
     - BatchUpdateDevicePosition
     - CalculateRoute
     - CalculateRouteMatrix
+    - CancelJob
     - CreateGeofenceCollection
     - CreateKey
     - CreateMap
@@ -21920,6 +21921,7 @@ serviceMap:
     - GetDevicePosition
     - GetDevicePositionHistory
     - GetGeofence
+    - GetJob
     - GetMapGlyphs
     - GetMapSprites
     - GetMapStyleDescriptor
@@ -21928,6 +21930,7 @@ serviceMap:
     - ListDevicePositions
     - ListGeofenceCollections
     - ListGeofences
+    - ListJobs
     - ListKeys
     - ListMaps
     - ListPlaceIndexes
@@ -21939,6 +21942,7 @@ serviceMap:
     - SearchPlaceIndexForPosition
     - SearchPlaceIndexForSuggestions
     - SearchPlaceIndexForText
+    - StartJob
     - TagResource
     - UntagResource
     - UpdateGeofenceCollection
@@ -25303,6 +25307,7 @@ serviceMap:
     - CreateEvent
     - CreateGateway
     - CreateGatewayTarget
+    - CreateHarness
     - CreateMemory
     - CreateOauth2CredentialProvider
     - CreateOnlineEvaluationConfig
@@ -25321,6 +25326,7 @@ serviceMap:
     - DeleteEvent
     - DeleteGateway
     - DeleteGatewayTarget
+    - DeleteHarness
     - DeleteMemory
     - DeleteMemoryRecord
     - DeleteOauth2CredentialProvider
@@ -25345,6 +25351,7 @@ serviceMap:
     - GetEvent
     - GetGateway
     - GetGatewayTarget
+    - GetHarness
     - GetMemory
     - GetMemoryRecord
     - GetOauth2CredentialProvider
@@ -25369,6 +25376,7 @@ serviceMap:
     - InvokeAgentRuntimeWithWebSocketStreamForUser
     - InvokeCodeInterpreter
     - InvokeGateway
+    - InvokeHarness
     - InvokeRegistryMcp
     - ListActors
     - ListAgentRuntimeEndpoints
@@ -25384,6 +25392,7 @@ serviceMap:
     - ListEvents
     - ListGatewayTargets
     - ListGateways
+    - ListHarnesses
     - ListMemories
     - ListMemoryExtractionJobs
     - ListMemoryRecords
@@ -25424,6 +25433,7 @@ serviceMap:
     - UpdateEvaluator
     - UpdateGateway
     - UpdateGatewayTarget
+    - UpdateHarness
     - UpdateMemory
     - UpdateOauth2CredentialProvider
     - UpdateOnlineEvaluationConfig
@@ -25446,6 +25456,7 @@ serviceMap:
     - bedrock-agentcore:InboundJwtClaim/scope
     - bedrock-agentcore:InboundJwtClaim/sub
     - bedrock-agentcore:KmsKeyArn
+    - bedrock-agentcore:RuntimeAuthorizerType
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
     - bedrock-agentcore:securityGroups
