@@ -3347,9 +3347,6 @@ serviceMap:
     StringPrefix: trustedadvisor
     Actions:
     - BatchUpdateRecommendationResourceExclusion
-    - CreateEngagement
-    - CreateEngagementAttachment
-    - CreateEngagementCommunication
     - DeleteNotificationConfigurationForDelegatedAdmin
     - DescribeAccount
     - DescribeAccountAccess
@@ -3370,17 +3367,11 @@ serviceMap:
     - DownloadRisk
     - ExcludeCheckItems
     - GenerateReport
-    - GetEngagement
-    - GetEngagementAttachment
-    - GetEngagementType
     - GetOrganizationRecommendation
     - GetRecommendation
     - IncludeCheckItems
     - ListAccountsForParent
     - ListChecks
-    - ListEngagementCommunications
-    - ListEngagementTypes
-    - ListEngagements
     - ListOrganizationRecommendationAccounts
     - ListOrganizationRecommendationResources
     - ListOrganizationRecommendations
@@ -3391,8 +3382,6 @@ serviceMap:
     - RefreshCheck
     - SetAccountAccess
     - SetOrganizationAccess
-    - UpdateEngagement
-    - UpdateEngagementStatus
     - UpdateNotificationConfigurations
     - UpdateNotificationPreferences
     - UpdateOrganizationRecommendationLifecycle
@@ -22000,6 +21989,7 @@ serviceMap:
     - GenerateDataKeyWithoutPlaintext
     - GenerateMac
     - GenerateRandom
+    - GetKeyLastUsage
     - GetKeyPolicy
     - GetKeyRotationStatus
     - GetParametersForImport
@@ -22126,6 +22116,7 @@ serviceMap:
     - kms:RotationPeriodInDays
     - kms:ScheduleKeyDeletionPendingWindowInDays
     - kms:SigningAlgorithm
+    - kms:TrailingDaysWithoutKeyUsage
     - kms:ValidTo
     - kms:ViaService
     - kms:WrappingAlgorithm
@@ -23663,9 +23654,12 @@ serviceMap:
     - CreateChat
     - CreateKnowledgeItem
     - CreateOneTimeLoginSession
+    - CreatePrivateConnection
     - DeleteAgentSpace
     - DeleteKnowledgeItem
+    - DeletePrivateConnection
     - DeregisterService
+    - DescribePrivateConnection
     - DescribeSupportLevel
     - DisableOperatorApp
     - DisassociateService
@@ -23691,6 +23685,7 @@ serviceMap:
     - ListKnowledgeItemVersions
     - ListKnowledgeItems
     - ListPendingMessages
+    - ListPrivateConnections
     - ListRecommendations
     - ListServices
     - ListTagsForResource
@@ -23706,6 +23701,7 @@ serviceMap:
     - UpdateGoal
     - UpdateKnowledgeItem
     - UpdateOperatorAppIdpConfig
+    - UpdatePrivateConnectionCertificate
     - UpdateRecommendation
     - ValidateAwsAssociations
     ARNFormat: arn:aws:aidevops:${Region}:${Account}:${ResourceType}/${ResourcePath}
