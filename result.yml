@@ -3148,16 +3148,27 @@ serviceMap:
     StringPrefix: q
     Actions:
     - AssociateConnectorResource
+    - AssociateLoginDomain
+    - BatchDescribeGroups
+    - BatchDescribeUsers
+    - BatchGetGroups
+    - BatchGetUsers
+    - CreateArtifact
     - CreateAssignment
     - CreateAuthGrant
     - CreateOAuthAppConnection
     - CreatePlugin
+    - CreateScimAccessToken
     - DeleteAssignment
     - DeleteConversation
     - DeleteOAuthAppConnection
     - DeletePlugin
+    - DeleteScimAccessToken
+    - DisassociateLoginDomain
     - GenerateCodeFromCommands
     - GenerateCodeRecommendations
+    - GetArtifact
+    - GetArtifactActionResult
     - GetConnector
     - GetConversation
     - GetIdentityMetadata
@@ -3165,10 +3176,15 @@ serviceMap:
     - GetTroubleshootingResults
     - ListConversations
     - ListDashboardMetrics
+    - ListGroups
+    - ListLoginDomains
     - ListPluginProviders
     - ListPlugins
+    - ListScimAccessTokens
     - ListTagsForResource
+    - ListUsers
     - PassRequest
+    - PerformArtifactAction
     - RejectConnector
     - SendEvent
     - SendMessage
@@ -3177,6 +3193,7 @@ serviceMap:
     - StartTroubleshootingResolutionExplanation
     - TagResource
     - UntagResource
+    - UpdateAssignment
     - UpdateAuthGrant
     - UpdateConversation
     - UpdateOAuthAppConnection
@@ -16583,6 +16600,7 @@ serviceMap:
     - GetNetwork
     - GetNetworkSettings
     - GetOidcInfo
+    - GetOpentdfConfig
     - GetSecurityGroup
     - GetUser
     - GetUsersCount
@@ -16597,6 +16615,7 @@ serviceMap:
     - ListUsers
     - RegisterOidcConfig
     - RegisterOidcConfigTest
+    - RegisterOpentdfConfig
     - TagResource
     - UntagResource
     - UpdateBot
@@ -19147,6 +19166,7 @@ serviceMap:
     - GetScheduleGroup
     - ListScheduleGroups
     - ListSchedules
+    - ListSchedulesByTarget
     - ListTagsForResource
     - TagResource
     - UntagResource
@@ -23380,6 +23400,7 @@ serviceMap:
     - DescribeCompute
     - DescribeContainerFleet
     - DescribeContainerGroupDefinition
+    - DescribeContainerGroupPortMappings
     - DescribeEC2InstanceLimits
     - DescribeFleetAttributes
     - DescribeFleetCapacity
