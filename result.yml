@@ -11373,6 +11373,29 @@ serviceMap:
     Actions:
     - SendConversation
     HasResource: false
+  Amazon WorkSpaces AgentAccess MCP Server:
+    StringPrefix: agentaccess-mcp
+    Actions:
+    - DoubleClick
+    - GetScreenshot
+    - HoldKey
+    - InvokeMcp
+    - KeyPress
+    - LeftClick
+    - LeftClickDrag
+    - LeftMouseDown
+    - LeftMouseUp
+    - MiddleClick
+    - MovePointer
+    - RightClick
+    - Scroll
+    - TripleClick
+    - TypeText
+    ARNFormat: arn:${Partition}:agentaccess-mcp:${Region}:${Account}:*
+    ARNRegex: "^arn:${Partition}:agentaccess-mcp:."
+    conditionKeys:
+    - agentaccess-mcp:StackArn
+    HasResource: false
   AWS Signin:
     StringPrefix: signin
     Actions:
@@ -20691,12 +20714,15 @@ serviceMap:
     StringPrefix: payment-cryptography
     Actions:
     - AddKeyReplicationRegions
+    - AssociateMpaTeam
     - CreateAlias
     - CreateKey
     - DecryptData
     - DeleteAlias
     - DeleteKey
+    - DeleteResourcePolicy
     - DisableDefaultKeyReplicationRegions
+    - DisassociateMpaTeam
     - EnableDefaultKeyReplicationRegions
     - EncryptData
     - ExportKey
@@ -20709,13 +20735,16 @@ serviceMap:
     - GetCertificateSigningRequest
     - GetDefaultKeyReplicationRegions
     - GetKey
+    - GetMpaTeamAssociation
     - GetParametersForExport
     - GetParametersForImport
     - GetPublicKeyCertificate
+    - GetResourcePolicy
     - ImportKey
     - ListAliases
     - ListKeys
     - ListTagsForResource
+    - PutResourcePolicy
     - ReEncryptData
     - RemoveKeyReplicationRegions
     - RestoreKey
@@ -25325,15 +25354,18 @@ serviceMap:
     - CompleteResourceTokenAuth
     - ConnectBrowserAutomationStream
     - ConnectBrowserLiveViewStream
+    - CreateABTest
     - CreateAgentRuntime
     - CreateAgentRuntimeEndpoint
     - CreateApiKeyCredentialProvider
     - CreateBrowser
     - CreateBrowserProfile
     - CreateCodeInterpreter
+    - CreateConfigurationBundle
     - CreateEvaluator
     - CreateEvent
     - CreateGateway
+    - CreateGatewayRule
     - CreateGatewayTarget
     - CreateHarness
     - CreateMemory
@@ -25344,15 +25376,19 @@ serviceMap:
     - CreateRegistry
     - CreateRegistryRecord
     - CreateWorkloadIdentity
+    - DeleteABTest
     - DeleteAgentRuntime
     - DeleteAgentRuntimeEndpoint
     - DeleteApiKeyCredentialProvider
+    - DeleteBatchEvaluation
     - DeleteBrowser
     - DeleteBrowserProfile
     - DeleteCodeInterpreter
+    - DeleteConfigurationBundle
     - DeleteEvaluator
     - DeleteEvent
     - DeleteGateway
+    - DeleteGatewayRule
     - DeleteGatewayTarget
     - DeleteHarness
     - DeleteMemory
@@ -25361,23 +25397,29 @@ serviceMap:
     - DeleteOnlineEvaluationConfig
     - DeletePolicy
     - DeletePolicyEngine
+    - DeleteRecommendation
     - DeleteRegistry
     - DeleteRegistryRecord
     - DeleteResourcePolicy
     - DeleteWorkloadIdentity
     - Evaluate
+    - GetABTest
     - GetAgentCard
     - GetAgentRuntime
     - GetAgentRuntimeEndpoint
     - GetApiKeyCredentialProvider
+    - GetBatchEvaluation
     - GetBrowser
     - GetBrowserProfile
     - GetBrowserSession
     - GetCodeInterpreter
     - GetCodeInterpreterSession
+    - GetConfigurationBundle
+    - GetConfigurationBundleVersion
     - GetEvaluator
     - GetEvent
     - GetGateway
+    - GetGatewayRule
     - GetGatewayTarget
     - GetHarness
     - GetMemory
@@ -25387,6 +25429,7 @@ serviceMap:
     - GetPolicy
     - GetPolicyEngine
     - GetPolicyGeneration
+    - GetRecommendation
     - GetRegistry
     - GetRegistryRecord
     - GetResourceApiKey
@@ -25406,18 +25449,23 @@ serviceMap:
     - InvokeGateway
     - InvokeHarness
     - InvokeRegistryMcp
+    - ListABTests
     - ListActors
     - ListAgentRuntimeEndpoints
     - ListAgentRuntimeVersions
     - ListAgentRuntimes
     - ListApiKeyCredentialProviders
+    - ListBatchEvaluations
     - ListBrowserProfiles
     - ListBrowserSessions
     - ListBrowsers
     - ListCodeInterpreterSessions
     - ListCodeInterpreters
+    - ListConfigurationBundleVersions
+    - ListConfigurationBundles
     - ListEvaluators
     - ListEvents
+    - ListGatewayRules
     - ListGatewayTargets
     - ListGateways
     - ListHarnesses
@@ -25430,6 +25478,7 @@ serviceMap:
     - ListPolicyEngines
     - ListPolicyGenerationAssets
     - ListPolicyGenerations
+    - ListRecommendations
     - ListRegistries
     - ListRegistryRecords
     - ListSessions
@@ -25443,10 +25492,13 @@ serviceMap:
     - SaveBrowserSessionProfile
     - SearchRegistryRecords
     - SetTokenVaultCMK
+    - StartBatchEvaluation
     - StartBrowserSession
     - StartCodeInterpreterSession
     - StartMemoryExtractionJob
     - StartPolicyGeneration
+    - StartRecommendation
+    - StopBatchEvaluation
     - StopBrowserSession
     - StopCodeInterpreterSession
     - StopRuntimeSession
@@ -25454,12 +25506,15 @@ serviceMap:
     - SynchronizeGatewayTargets
     - TagResource
     - UntagResource
+    - UpdateABTest
     - UpdateAgentRuntime
     - UpdateAgentRuntimeEndpoint
     - UpdateApiKeyCredentialProvider
     - UpdateBrowserStream
+    - UpdateConfigurationBundle
     - UpdateEvaluator
     - UpdateGateway
+    - UpdateGatewayRule
     - UpdateGatewayTarget
     - UpdateHarness
     - UpdateMemory
