@@ -4531,6 +4531,16 @@ serviceMap:
     - aws:TagKeys
     - codestar-notifications:NotificationsForResource
     HasResource: true
+  Amazon CloudWatch Application Signals MCP Server:
+    StringPrefix: application-signals-mcp
+    Actions:
+    - CallReadOnlyTool
+    - InvokeMcp
+    ARNFormat: arn:aws:application-signals-mcp:${Region}:${Account}:mcp-server/${ResourceId}
+    ARNRegex: "^arn:aws:application-signals-mcp:.+:.+:.+"
+    conditionKeys:
+    - aws:ResourceTag/${TagKey}
+    HasResource: true
   Amazon Fraud Detector:
     StringPrefix: frauddetector
     Actions:
@@ -9069,6 +9079,7 @@ serviceMap:
     Actions:
     - BatchGetServiceLevelIndicatorReport
     - BatchGetServiceLevelObjectiveBudgetReport
+    - CallWithBearerToken
     - CreateServiceLevelObjective
     - DeleteAlarmMuteRule
     - DeleteAlarms
