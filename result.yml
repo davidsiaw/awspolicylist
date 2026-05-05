@@ -12313,6 +12313,7 @@ serviceMap:
     - EnableOrganizationAdminAccount
     - EnableSecurityHub
     - EnableSecurityHubV2
+    - GenerateRecommendedPolicyV2
     - GetAdhocInsightResults
     - GetAdministratorAccount
     - GetAggregatorV2
@@ -12334,12 +12335,15 @@ serviceMap:
     - GetInvitationsCount
     - GetMasterAccount
     - GetMembers
+    - GetRecommendedPolicyV2
     - GetResourcesStatisticsV2
     - GetResourcesTrendsV2
     - GetResourcesV2
     - GetSecurityControlDefinition
     - GetUsage
+    - GetUsageV2
     - InviteMembers
+    - ListAccountUsageV2
     - ListAggregatorsV2
     - ListAutomationRules
     - ListAutomationRulesV2
