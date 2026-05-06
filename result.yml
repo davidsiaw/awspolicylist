@@ -6301,7 +6301,9 @@ serviceMap:
     - ListMessageTemplateVersions
     - ListMessageTemplates
     - ListMessages
+    - ListModels
     - ListQuickResponses
+    - ListSpans
     - ListTagsForResource
     - NotifyRecommendationsReceived
     - PutFeedback
@@ -17604,13 +17606,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS MCP Server:
-    StringPrefix: aws-mcp
-    Actions:
-    - CallReadOnlyTool
-    - CallReadWriteTool
-    - InvokeMcp
-    HasResource: false
   AWS Diagnostic tools:
     StringPrefix: ts
     Actions:
@@ -20633,6 +20628,17 @@ serviceMap:
     conditionKeys:
     - ec2:SourceInstanceARN
     - ssm:SourceInstanceARN
+    HasResource: false
+  Amazon Bio Discovery:
+    StringPrefix: researchstudio
+    Actions:
+    - AssignPrincipal
+    - CreateApplication
+    - DeleteApplication
+    - DeletePrincipal
+    - GetApplication
+    - ListApplications
+    ARNRegex: "^arn:${Partition}:researchstudio:.+:.+:.+"
     HasResource: false
   AWS Billing:
     StringPrefix: billing
@@ -23725,6 +23731,7 @@ serviceMap:
     - DeletePrivateConnection
     - DeregisterService
     - DescribePrivateConnection
+    - DescribeServices
     - DescribeSupportLevel
     - DisableOperatorApp
     - DisassociateService
@@ -24802,8 +24809,10 @@ serviceMap:
     - CreateAccessPreview
     - CreateAnalyzer
     - CreateArchiveRule
+    - CreateServiceLinkedAnalyzer
     - DeleteAnalyzer
     - DeleteArchiveRule
+    - DeleteServiceLinkedAnalyzer
     - GenerateFindingRecommendation
     - GetAccessPreview
     - GetAnalyzedResource
