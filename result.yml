@@ -1378,11 +1378,13 @@ serviceMap:
     - DescribeChangeSet
     - DescribeEntity
     - GetInvoiceSubmissionTask
+    - GetIssuedTaxInvoice
     - GetResourcePolicy
     - ListAssessments
     - ListChangeSets
     - ListEntities
     - ListInvoiceSubmissionTasks
+    - ListIssuedTaxInvoices
     - ListPayables
     - ListTagsForResource
     - PutResourcePolicy
@@ -25395,6 +25397,11 @@ serviceMap:
     - CreateMemory
     - CreateOauth2CredentialProvider
     - CreateOnlineEvaluationConfig
+    - CreatePaymentConnector
+    - CreatePaymentCredentialProvider
+    - CreatePaymentInstrument
+    - CreatePaymentManager
+    - CreatePaymentSession
     - CreatePolicy
     - CreatePolicyEngine
     - CreateRegistry
@@ -25419,6 +25426,11 @@ serviceMap:
     - DeleteMemoryRecord
     - DeleteOauth2CredentialProvider
     - DeleteOnlineEvaluationConfig
+    - DeletePaymentConnector
+    - DeletePaymentCredentialProvider
+    - DeletePaymentInstrument
+    - DeletePaymentManager
+    - DeletePaymentSession
     - DeletePolicy
     - DeletePolicyEngine
     - DeleteRecommendation
@@ -25450,6 +25462,12 @@ serviceMap:
     - GetMemoryRecord
     - GetOauth2CredentialProvider
     - GetOnlineEvaluationConfig
+    - GetPaymentConnector
+    - GetPaymentCredentialProvider
+    - GetPaymentInstrument
+    - GetPaymentInstrumentBalance
+    - GetPaymentManager
+    - GetPaymentSession
     - GetPolicy
     - GetPolicyEngine
     - GetPolicyGeneration
@@ -25458,6 +25476,7 @@ serviceMap:
     - GetRegistryRecord
     - GetResourceApiKey
     - GetResourceOauth2Token
+    - GetResourcePaymentToken
     - GetResourcePolicy
     - GetTokenVault
     - GetWorkloadAccessToken
@@ -25498,6 +25517,11 @@ serviceMap:
     - ListMemoryRecords
     - ListOauth2CredentialProviders
     - ListOnlineEvaluationConfigs
+    - ListPaymentConnectors
+    - ListPaymentCredentialProviders
+    - ListPaymentInstruments
+    - ListPaymentManagers
+    - ListPaymentSessions
     - ListPolicies
     - ListPolicyEngines
     - ListPolicyGenerationAssets
@@ -25511,6 +25535,7 @@ serviceMap:
     - ManageAdminPolicy
     - ManageResourceScopedPolicy
     - PartiallyAuthorizeActions
+    - ProcessPayment
     - PutResourcePolicy
     - RetrieveMemoryRecords
     - SaveBrowserSessionProfile
@@ -25544,6 +25569,9 @@ serviceMap:
     - UpdateMemory
     - UpdateOauth2CredentialProvider
     - UpdateOnlineEvaluationConfig
+    - UpdatePaymentConnector
+    - UpdatePaymentCredentialProvider
+    - UpdatePaymentManager
     - UpdatePolicy
     - UpdatePolicyEngine
     - UpdateRegistry
