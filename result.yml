@@ -1665,6 +1665,7 @@ serviceMap:
     ARNRegex: "^arn:aws:aws-external-anthropic:.+"
     conditionKeys:
     - aws-external-anthropic:BearerTokenType
+    - aws-external-anthropic:CalledViaConsole
     - aws-external-anthropic:Capability
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -11595,6 +11596,8 @@ serviceMap:
     - aws:TagKeys
     - logs:DeliveryDestinationResourceArn
     - logs:LogGeneratingResourceArns
+    - logs:data_source_name
+    - logs:data_source_type
     HasResource: true
   AWS Elastic Disaster Recovery:
     StringPrefix: drs
