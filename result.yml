@@ -8798,6 +8798,7 @@ serviceMap:
     StringPrefix: odb
     Actions:
     - AcceptMarketplaceRegistration
+    - AssociateIamRoleToResource
     - CreateCloudAutonomousVmCluster
     - CreateCloudExadataInfrastructure
     - CreateCloudVmCluster
@@ -8814,6 +8815,7 @@ serviceMap:
     - DeleteOdbNetwork
     - DeleteOdbPeeringConnection
     - DeleteResourcePolicy
+    - DisassociateIamRoleFromResource
     - GetCloudAutonomousVmCluster
     - GetCloudExadataInfrastructure
     - GetCloudExadataInfrastructureUnallocatedResources
@@ -20696,6 +20698,7 @@ serviceMap:
     - GetBillingView
     - GetBillingViewData
     - GetContractInformation
+    - GetCreditAllocationHistory
     - GetCredits
     - GetIAMAccessPreference
     - GetResourcePolicy
@@ -25954,6 +25957,7 @@ serviceMap:
     Actions:
     - NotifyHeartbeat
     - SendTelemetry
+    - SendTelemetryEvent
     - StartSession
     - StopSession
     HasResource: false
