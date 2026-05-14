@@ -15212,6 +15212,7 @@ serviceMap:
   Amazon SageMaker:
     StringPrefix: sagemaker
     Actions:
+    - AccessModelPackage
     - AddAssociation
     - AddTags
     - AssociateTrialComponent
@@ -18924,17 +18925,21 @@ serviceMap:
     Actions:
     - AddPeerCluster
     - CreateCluster
+    - CreateStream
     - DbConnect
     - DbConnectAdmin
     - DeleteCluster
     - DeleteClusterPolicy
+    - DeleteStream
     - GetBackupJob
     - GetCluster
     - GetClusterPolicy
     - GetRestoreJob
+    - GetStream
     - GetVpcEndpointServiceName
     - InjectError
     - ListClusters
+    - ListStreams
     - ListTagsForResource
     - PutClusterPolicy
     - PutMultiRegionProperties
@@ -18947,6 +18952,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateCluster
+    - UpdateStream
     ARNFormat: arn:aws:dsql:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:dsql:.+:.+:.+"
     conditionKeys:
@@ -21358,21 +21364,29 @@ serviceMap:
     StringPrefix: rtbfabric
     Actions:
     - AcceptLink
+    - AssociateCertificate
     - CreateInboundExternalLink
     - CreateLink
+    - CreateLinkRoutingRule
     - CreateOutboundExternalLink
     - CreateRequesterGateway
     - CreateResponderGateway
     - DeleteInboundExternalLink
     - DeleteLink
+    - DeleteLinkRoutingRule
     - DeleteOutboundExternalLink
     - DeleteRequesterGateway
     - DeleteResponderGateway
+    - DisassociateCertificate
+    - GetCertificateAssociation
     - GetInboundExternalLink
     - GetLink
+    - GetLinkRoutingRule
     - GetOutboundExternalLink
     - GetRequesterGateway
     - GetResponderGateway
+    - ListCertificateAssociations
+    - ListLinkRoutingRules
     - ListLinks
     - ListRequesterGateways
     - ListResponderGateways
@@ -21382,6 +21396,7 @@ serviceMap:
     - UntagResource
     - UpdateLink
     - UpdateLinkModuleFlow
+    - UpdateLinkRoutingRule
     - UpdateRequesterGateway
     - UpdateResponderGateway
     ARNFormat: arn:aws:rtbfabric:${Region}:${Account}:${ResourceType}/${ResourcePath}
@@ -21393,6 +21408,7 @@ serviceMap:
     - rtbfabric:InboundExternalLinkGatewayId
     - rtbfabric:InboundExternalLinkLinkId
     - rtbfabric:LinkLinkId
+    - rtbfabric:LinkRoutingRuleRuleId
     - rtbfabric:OutboundExternalLinkLinkId
     - rtbfabric:RequesterGatewayGatewayId
     - rtbfabric:ResponderGatewayGatewayId
@@ -25512,7 +25528,10 @@ serviceMap:
     - GetPaymentSession
     - GetPolicy
     - GetPolicyEngine
+    - GetPolicyEngineSummary
     - GetPolicyGeneration
+    - GetPolicyGenerationSummary
+    - GetPolicySummary
     - GetRecommendation
     - GetRegistry
     - GetRegistryRecord
@@ -25565,9 +25584,12 @@ serviceMap:
     - ListPaymentManagers
     - ListPaymentSessions
     - ListPolicies
+    - ListPolicyEngineSummaries
     - ListPolicyEngines
     - ListPolicyGenerationAssets
+    - ListPolicyGenerationSummaries
     - ListPolicyGenerations
+    - ListPolicySummaries
     - ListRecommendations
     - ListRegistries
     - ListRegistryRecords
