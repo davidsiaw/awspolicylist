@@ -2493,6 +2493,7 @@ serviceMap:
     - SendIntegrationEvent
     - SendOutboundChatMessage
     - SendOutboundEmail
+    - SendOutboundWebNotification
     - StartAttachedFileUpload
     - StartChatContact
     - StartContactEvaluation
@@ -7694,6 +7695,7 @@ serviceMap:
     - GetBackupVaultNotifications
     - GetBackupVaultSharingPolicy
     - GetLegalHold
+    - GetPITRMalwareScanResults
     - GetRecoveryPointIndexDetails
     - GetRecoveryPointRestoreMetadata
     - GetRestoreJobMetadata
