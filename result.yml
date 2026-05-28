@@ -6036,16 +6036,22 @@ serviceMap:
     StringPrefix: elemental-inference
     Actions:
     - AssociateFeed
+    - CreateDictionary
     - CreateFeed
+    - DeleteDictionary
     - DeleteFeed
     - DisassociateFeed
+    - ExportDictionaryEntries
+    - GetDictionary
     - GetFeed
     - GetMetadata
+    - ListDictionaries
     - ListFeeds
     - ListTagsForResource
     - PutMedia
     - TagResource
     - UntagResource
+    - UpdateDictionary
     - UpdateFeed
     ARNFormat: arn:aws:elemental-inference:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:elemental-inference:.+:.+:.+"
