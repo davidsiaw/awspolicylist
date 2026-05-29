@@ -350,6 +350,7 @@ serviceMap:
     - GetCardinality
     - GetCommand
     - GetCommandExecution
+    - GetConnection
     - GetEffectivePolicies
     - GetIndexingConfiguration
     - GetJobDocument
@@ -419,6 +420,7 @@ serviceMap:
     - ListSecurityProfiles
     - ListSecurityProfilesForTarget
     - ListStreams
+    - ListSubscriptions
     - ListTagsForResource
     - ListTargetsForPolicy
     - ListTargetsForSecurityProfile
@@ -452,6 +454,7 @@ serviceMap:
     - RetainPublish
     - RotateTunnelAccessToken
     - SearchIndex
+    - SendDirectMessage
     - SetDefaultAuthorizer
     - SetDefaultPolicyVersion
     - SetLoggingOptions
@@ -514,7 +517,9 @@ serviceMap:
     - iot:CommandExecutionParameterString/${CommandParameterName}
     - iot:Delete
     - iot:DomainName
+    - iot:IncludeSocketInformation
     - iot:ThingGroupArn
+    - iot:Topic
     - iot:TunnelDestinationService
     - iot:thingArn
     HasResource: true
@@ -1266,15 +1271,32 @@ serviceMap:
     - CreateApp
     - CreateAppVersionAppComponent
     - CreateAppVersionResource
+    - CreateAssertion
+    - CreateInputSource
+    - CreatePolicy
     - CreateRecommendationTemplate
+    - CreateReport
     - CreateResiliencyPolicy
+    - CreateService
+    - CreateServiceFunction
+    - CreateServiceFunctionResources
+    - CreateSystem
+    - CreateUserJourney
     - DeleteApp
     - DeleteAppAssessment
     - DeleteAppInputSource
     - DeleteAppVersionAppComponent
     - DeleteAppVersionResource
+    - DeleteAssertion
+    - DeleteInputSource
+    - DeletePolicy
     - DeleteRecommendationTemplate
     - DeleteResiliencyPolicy
+    - DeleteService
+    - DeleteServiceFunction
+    - DeleteServiceFunctionResources
+    - DeleteSystem
+    - DeleteUserJourney
     - DescribeApp
     - DescribeAppAssessment
     - DescribeAppVersion
@@ -1286,6 +1308,13 @@ serviceMap:
     - DescribeMetricsExport
     - DescribeResiliencyPolicy
     - DescribeResourceGroupingRecommendationTask
+    - GetFailureModeFinding
+    - GetPolicy
+    - GetService
+    - GetSystem
+    - GetUserJourney
+    - ImportApp
+    - ImportPolicy
     - ImportResourcesToDraftAppVersion
     - ListAlarmRecommendations
     - ListAppAssessmentComplianceDrifts
@@ -1299,21 +1328,37 @@ serviceMap:
     - ListAppVersionResources
     - ListAppVersions
     - ListApps
+    - ListAssertions
+    - ListDependencies
+    - ListFailureModeAssessments
+    - ListFailureModeFindings
+    - ListInputSources
     - ListMetrics
+    - ListPolicies
     - ListRecommendationTemplates
+    - ListReports
     - ListResiliencyPolicies
     - ListResourceGroupingRecommendations
+    - ListResources
+    - ListServiceEvents
+    - ListServiceFunctions
+    - ListServiceTopologyEdges
+    - ListServices
     - ListSopRecommendations
     - ListSuggestedResiliencyPolicies
+    - ListSystemEvents
+    - ListSystems
     - ListTagsForResource
     - ListTestRecommendations
     - ListUnsupportedAppVersionResources
+    - ListUserJourneys
     - PublishAppVersion
     - PutDraftAppVersionTemplate
     - RejectResourceGroupingRecommendations
     - RemoveDraftAppVersionResourceMappings
     - ResolveAppVersionResources
     - StartAppAssessment
+    - StartFailureModeAssessment
     - StartMetricsExport
     - StartResourceGroupingRecommendationTask
     - TagResource
@@ -1322,7 +1367,15 @@ serviceMap:
     - UpdateAppVersion
     - UpdateAppVersionAppComponent
     - UpdateAppVersionResource
+    - UpdateAssertion
+    - UpdateDependency
+    - UpdateFailureModeFinding
+    - UpdatePolicy
     - UpdateResiliencyPolicy
+    - UpdateService
+    - UpdateServiceFunction
+    - UpdateSystem
+    - UpdateUserJourney
     ARNFormat: arn:aws:resiliencehub:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:resiliencehub:.+"
     conditionKeys:
