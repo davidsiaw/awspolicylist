@@ -1867,6 +1867,7 @@ serviceMap:
     - ListFirewallDomains
     - ListFirewallRuleGroupAssociations
     - ListFirewallRuleGroups
+    - ListFirewallRuleTypes
     - ListFirewallRules
     - ListOutpostResolvers
     - ListResolverConfigs
@@ -2127,6 +2128,7 @@ serviceMap:
     - DeleteQueueFleetAssociation
     - DeleteQueueLimitAssociation
     - DeleteStorageProfile
+    - DeleteVolume
     - DeleteWorker
     - DisassociateMemberFromFarm
     - DisassociateMemberFromFleet
@@ -2153,6 +2155,7 @@ serviceMap:
     - GetStorageProfile
     - GetStorageProfileForQueue
     - GetTask
+    - GetVolume
     - GetWorker
     - ListAvailableMeteredProducts
     - ListBudgets
@@ -2182,6 +2185,7 @@ serviceMap:
     - ListStorageProfilesForQueue
     - ListTagsForResource
     - ListTasks
+    - ListVolumes
     - ListWorkers
     - PutMeteredProduct
     - SearchJobs
@@ -2815,6 +2819,7 @@ serviceMap:
     - PutEmailIdentityFeedbackAttributes
     - PutEmailIdentityMailFromAttributes
     - PutSuppressedDestination
+    - PutTenantSuppressionAttributes
     - ReplicateEmailIdentityDkimSigningKey
     - SendBulkEmail
     - SendCustomVerificationEmail
