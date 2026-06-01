@@ -14348,6 +14348,7 @@ serviceMap:
     - StartNetworkMigrationMapping
     - StartNetworkMigrationMappingUpdate
     - StartReplication
+    - StartSnapshotGroupForMgn
     - StartTest
     - StopReplication
     - TagResource
