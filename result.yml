@@ -19626,6 +19626,7 @@ serviceMap:
     - CreateAccountSubscription
     - CreateActionConnector
     - CreateAdmin
+    - CreateAgent
     - CreateAnalysis
     - CreateBrand
     - CreateCustomPermissions
@@ -19634,6 +19635,7 @@ serviceMap:
     - CreateDataSource
     - CreateEmailCustomizationTemplate
     - CreateExtensionAccess
+    - CreateFlow
     - CreateFolder
     - CreateFolderMembership
     - CreateGroup
@@ -19644,6 +19646,7 @@ serviceMap:
     - CreateReader
     - CreateRefreshSchedule
     - CreateRoleMembership
+    - CreateSpace
     - CreateTemplate
     - CreateTemplateAlias
     - CreateTheme
@@ -19656,6 +19659,7 @@ serviceMap:
     - DeleteAccountCustomization
     - DeleteAccountSubscription
     - DeleteActionConnector
+    - DeleteAgent
     - DeleteAnalysis
     - DeleteBrand
     - DeleteBrandAssignment
@@ -19667,6 +19671,7 @@ serviceMap:
     - DeleteDefaultQBusinessApplication
     - DeleteEmailCustomizationTemplate
     - DeleteExtensionAccess
+    - DeleteFlow
     - DeleteFolder
     - DeleteFolderMembership
     - DeleteGroup
@@ -19677,6 +19682,7 @@ serviceMap:
     - DeleteRefreshSchedule
     - DeleteRoleCustomPermission
     - DeleteRoleMembership
+    - DeleteSpace
     - DeleteTemplate
     - DeleteTemplateAlias
     - DeleteTheme
@@ -19718,6 +19724,7 @@ serviceMap:
     - DescribeDefaultQBusinessApplication
     - DescribeEmailCustomizationTemplate
     - DescribeExtensionAccess
+    - DescribeFlow
     - DescribeFolder
     - DescribeFolderPermissions
     - DescribeFolderResolvedPermissions
@@ -19734,6 +19741,8 @@ serviceMap:
     - DescribeRefreshSchedule
     - DescribeRoleCustomPermission
     - DescribeSelfUpgradeConfiguration
+    - DescribeSpace
+    - DescribeSpacePermissions
     - DescribeTemplate
     - DescribeTemplateAlias
     - DescribeTemplatePermissions
@@ -19786,6 +19795,8 @@ serviceMap:
     - ListRefreshSchedules
     - ListRoleMemberships
     - ListSelfUpgrades
+    - ListSpaceResources
+    - ListSpaces
     - ListTagsForResource
     - ListTemplateAliases
     - ListTemplateVersions
@@ -19819,6 +19830,7 @@ serviceMap:
     - SearchFlows
     - SearchFolders
     - SearchGroups
+    - SearchSpaces
     - SearchTopics
     - SearchUsers
     - SetGroupMapping
@@ -19837,6 +19849,7 @@ serviceMap:
     - UpdateAccountSettings
     - UpdateActionConnector
     - UpdateActionConnectorPermissions
+    - UpdateAgent
     - UpdateAgentPermissions
     - UpdateAnalysis
     - UpdateAnalysisPermissions
@@ -19858,6 +19871,7 @@ serviceMap:
     - UpdateDefaultQBusinessApplication
     - UpdateEmailCustomizationTemplate
     - UpdateExtensionAccess
+    - UpdateFlow
     - UpdateFlowPermissions
     - UpdateFolder
     - UpdateFolderPermissions
@@ -19876,6 +19890,9 @@ serviceMap:
     - UpdateSPICECapacityConfiguration
     - UpdateSelfUpgrade
     - UpdateSelfUpgradeConfiguration
+    - UpdateSpace
+    - UpdateSpacePermissions
+    - UpdateSpaceResources
     - UpdateTemplate
     - UpdateTemplateAlias
     - UpdateTemplatePermissions
