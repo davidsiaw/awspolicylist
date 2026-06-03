@@ -12501,6 +12501,7 @@ serviceMap:
   AWS Transform:
     StringPrefix: transform
     Actions:
+    - AccessTransformProfile
     - AssociateConnectorResource
     - CreateProfile
     - DeleteAgentRuntimeConfiguration
@@ -12526,6 +12527,7 @@ serviceMap:
     ARNRegex: "^arn:aws:transform:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
   Amazon SQS:
@@ -15294,6 +15296,8 @@ serviceMap:
     - BatchPutMetrics
     - CallMlflowAppApi
     - CallPartnerAppApi
+    - CallWithBearerToken
+    - CompleteRollout
     - CreateAIBenchmarkJob
     - CreateAIRecommendationJob
     - CreateAIWorkloadConfig
@@ -15331,6 +15335,7 @@ serviceMap:
     - CreateInferenceComponent
     - CreateInferenceExperiment
     - CreateInferenceRecommendationsJob
+    - CreateJob
     - CreateLabelingJob
     - CreateLineageGroupPolicy
     - CreateMlflowApp
@@ -15403,6 +15408,7 @@ serviceMap:
     - DeleteImageVersion
     - DeleteInferenceComponent
     - DeleteInferenceExperiment
+    - DeleteJob
     - DeleteLineageGroupPolicy
     - DeleteMlflowApp
     - DeleteMlflowTrackingServer
@@ -15476,6 +15482,8 @@ serviceMap:
     - DescribeInferenceComponent
     - DescribeInferenceExperiment
     - DescribeInferenceRecommendationsJob
+    - DescribeJob
+    - DescribeJobSchemaVersion
     - DescribeLabelingJob
     - DescribeLineageGroup
     - DescribeMlflowApp
@@ -15572,6 +15580,8 @@ serviceMap:
     - ListInferenceExperiments
     - ListInferenceRecommendationsJobSteps
     - ListInferenceRecommendationsJobs
+    - ListJobSchemaVersions
+    - ListJobs
     - ListLabelingJobs
     - ListLabelingJobsForWorkteam
     - ListLineageGroups
@@ -15629,6 +15639,8 @@ serviceMap:
     - RegisterDevices
     - RenderUiTemplate
     - RetryPipelineExecution
+    - Sample
+    - SampleWithResponseStream
     - Search
     - SearchTrainingPlanOfferings
     - SendHeartbeat
@@ -15654,6 +15666,7 @@ serviceMap:
     - StopHyperParameterTuningJob
     - StopInferenceExperiment
     - StopInferenceRecommendationsJob
+    - StopJob
     - StopLabelingJob
     - StopMlflowTrackingServer
     - StopMonitoringSchedule
@@ -15703,6 +15716,7 @@ serviceMap:
     - UpdatePipelineExecution
     - UpdatePipelineVersion
     - UpdateProject
+    - UpdateReward
     - UpdateSharedModel
     - UpdateSpace
     - UpdateTrainingJob
@@ -15719,6 +15733,7 @@ serviceMap:
     - aws:TagKeys
     - sagemaker:AcceleratorTypes
     - sagemaker:AppNetworkAccessType
+    - sagemaker:BearerTokenType
     - sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}
     - sagemaker:CurrentModelLifeCycleStage
     - sagemaker:CurrentModelLifeCycleStageStatus
@@ -15728,13 +15743,16 @@ serviceMap:
     - sagemaker:DirectInternetAccess
     - sagemaker:DomainId
     - sagemaker:DomainSharingOutputKmsKey
+    - sagemaker:DomainSharingOutputKmsKeyArn
     - sagemaker:EnableRemoteDebug
     - sagemaker:FeatureGroupDisableGlueTableCreation
     - sagemaker:FeatureGroupEnableOnlineStore
     - sagemaker:FeatureGroupOfflineStoreConfig
     - sagemaker:FeatureGroupOfflineStoreKmsKey
+    - sagemaker:FeatureGroupOfflineStoreKmsKeyArn
     - sagemaker:FeatureGroupOfflineStoreS3Uri
     - sagemaker:FeatureGroupOnlineStoreKmsKey
+    - sagemaker:FeatureGroupOnlineStoreKmsKeyArn
     - sagemaker:FileSystemAccessMode
     - sagemaker:FileSystemDirectoryPath
     - sagemaker:FileSystemId
@@ -15754,6 +15772,7 @@ serviceMap:
     - sagemaker:NetworkIsolation
     - sagemaker:NotebookInstanceLifecycleConfigArns
     - sagemaker:OutputKmsKey
+    - sagemaker:OutputKmsKeyArn
     - sagemaker:OwnerUserProfileArn
     - sagemaker:PipelineVersionId
     - sagemaker:RemoteAccess
@@ -15769,6 +15788,7 @@ serviceMap:
     - sagemaker:TargetModel
     - sagemaker:UserProfileName
     - sagemaker:VolumeKmsKey
+    - sagemaker:VolumeKmsKeyArn
     - sagemaker:VpcSecurityGroupIds
     - sagemaker:VpcSubnets
     - sagemaker:WorkteamArn
@@ -18379,6 +18399,7 @@ serviceMap:
     - elasticache:CacheParameterGroupName
     - elasticache:ClusterModeEnabled
     - elasticache:DataStorageUnit
+    - elasticache:Durability
     - elasticache:EngineType
     - elasticache:EngineVersion
     - elasticache:KmsKeyId
