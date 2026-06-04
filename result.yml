@@ -3122,6 +3122,56 @@ serviceMap:
     Actions:
     - ListRecommendedActions
     HasResource: false
+  AWS FinOps Agent:
+    StringPrefix: finops-agent
+    Actions:
+    - AcceptAgentRequest
+    - CancelTask
+    - CancelTurn
+    - CreateAgentSpace
+    - CreateAutomation
+    - CreateConnection
+    - CreateConversation
+    - CreateDocument
+    - CreateIntegration
+    - CreateOneTimeLoginSession
+    - CreateTask
+    - CreateTurn
+    - DeleteAgentSpace
+    - DeleteArtifact
+    - DeleteAutomation
+    - DeleteConnection
+    - DeleteDocument
+    - DeleteIntegration
+    - GetAgentRequest
+    - GetAgentSpace
+    - GetArtifactContent
+    - GetArtifactMetadata
+    - GetAutomation
+    - GetConnection
+    - GetDocumentContent
+    - GetDocumentMetadata
+    - GetIntegration
+    - GetTask
+    - GetTurn
+    - ListAgentSpaces
+    - ListArtifacts
+    - ListAutomations
+    - ListConnections
+    - ListConversations
+    - ListDocuments
+    - ListIntegrations
+    - ListRecords
+    - ListTasks
+    - ListTurns
+    - RejectAgentRequest
+    - RestoreDocument
+    - SendFeedback
+    - UpdateAgentSpace
+    - UpdateAutomation
+    - UpdateConnection
+    - UpdateDocument
+    HasResource: false
   Amazon CloudWatch Application Signals:
     StringPrefix: application-signals
     Actions:
@@ -5758,6 +5808,7 @@ serviceMap:
     - GetAgent
     - GetCareTeamProvider
     - GetDomain
+    - GetDomainAnalytics
     - GetIntegration
     - GetMedicalScribeListeningSession
     - GetPatient
@@ -5773,6 +5824,7 @@ serviceMap:
     - ListPatientAppointments
     - ListPatientInsuranceCoverages
     - ListProviders
+    - ListSessionRecords
     - ListSubscriptions
     - ListTagsForResource
     - MatchPatient
@@ -12687,6 +12739,8 @@ serviceMap:
     - AddArtifact
     - BatchDeleteCodeReviews
     - BatchDeletePentests
+    - BatchDeleteThreatModels
+    - BatchDeleteThreats
     - BatchGetAgentSpaces
     - BatchGetArtifactMetadata
     - BatchGetCodeReviewJobTasks
@@ -12698,6 +12752,10 @@ serviceMap:
     - BatchGetPentestJobs
     - BatchGetPentests
     - BatchGetTargetDomains
+    - BatchGetThreatModelJobTasks
+    - BatchGetThreatModelJobs
+    - BatchGetThreatModels
+    - BatchGetThreats
     - CreateAgentSpace
     - CreateApplication
     - CreateCodeReview
@@ -12708,6 +12766,8 @@ serviceMap:
     - CreatePentest
     - CreateSecurityRequirement
     - CreateTargetDomain
+    - CreateThreat
+    - CreateThreatModel
     - DeleteAgentSpace
     - DeleteApplication
     - DeleteArtifact
@@ -12744,12 +12804,18 @@ serviceMap:
     - ListSecurityRequirements
     - ListTagsForResource
     - ListTargetDomains
+    - ListThreatModelJobTasks
+    - ListThreatModelJobs
+    - ListThreatModels
+    - ListThreats
     - PutDesignReviewFeedback
     - StartCodeRemediation
     - StartCodeReviewJob
     - StartPentestJob
+    - StartThreatModelJob
     - StopCodeReviewJob
     - StopPentestJob
+    - StopThreatModelJob
     - TagResource
     - ToggleManagedSecurityRequirement
     - UntagResource
@@ -12761,6 +12827,8 @@ serviceMap:
     - UpdatePentest
     - UpdateSecurityRequirement
     - UpdateTargetDomain
+    - UpdateThreat
+    - UpdateThreatModel
     - VerifyTargetDomain
     ARNFormat: arn:aws:securityagent:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:securityagent:.+:.+:.+"
@@ -19639,6 +19707,7 @@ serviceMap:
     - AccountConfigurations
     - AllowVendedLogDeliveryForResource
     - BatchCreateTopicReviewedAnswer
+    - BatchDeleteKnowledgeBase
     - BatchDeleteTopicReviewedAnswer
     - BatchGetPreferences
     - BatchUpdatePreferences
@@ -19664,6 +19733,7 @@ serviceMap:
     - CreateIAMPolicyAssignment
     - CreateIngestion
     - CreateNamespace
+    - CreateOAuthClientApplication
     - CreateReader
     - CreateRefreshSchedule
     - CreateRoleMembership
@@ -19699,7 +19769,9 @@ serviceMap:
     - DeleteGroupMembership
     - DeleteIAMPolicyAssignment
     - DeleteIdentityPropagationConfig
+    - DeleteKnowledgeBase
     - DeleteNamespace
+    - DeleteOAuthClientApplication
     - DeleteRefreshSchedule
     - DeleteRoleCustomPermission
     - DeleteRoleMembership
@@ -19755,7 +19827,10 @@ serviceMap:
     - DescribeIngestion
     - DescribeIpRestriction
     - DescribeKeyRegistration
+    - DescribeKnowledgeBase
+    - DescribeKnowledgeBasePermissions
     - DescribeNamespace
+    - DescribeOAuthClientApplication
     - DescribeQPersonalizationConfiguration
     - DescribeQuickIndexCapacity
     - DescribeQuickSightQSearchConfiguration
@@ -19812,7 +19887,9 @@ serviceMap:
     - ListIdentityPropagationConfigs
     - ListIngestions
     - ListKMSKeysForUser
+    - ListKnowledgeBases
     - ListNamespaces
+    - ListOAuthClientApplications
     - ListRefreshSchedules
     - ListRoleMemberships
     - ListSelfUpgrades
@@ -19830,6 +19907,7 @@ serviceMap:
     - ListTopics
     - ListUserGroups
     - ListUsers
+    - ListUsersIndexCapacity
     - ListVPCConnections
     - PassDataSet
     - PassDataSource
@@ -19851,6 +19929,7 @@ serviceMap:
     - SearchFlows
     - SearchFolders
     - SearchGroups
+    - SearchKnowledgeBases
     - SearchSpaces
     - SearchTopics
     - SearchUsers
@@ -19901,6 +19980,8 @@ serviceMap:
     - UpdateIdentityPropagationConfig
     - UpdateIpRestriction
     - UpdateKeyRegistration
+    - UpdateKnowledgeBasePermissions
+    - UpdateOAuthClientApplication
     - UpdatePublicSharingSettings
     - UpdateQPersonalizationConfiguration
     - UpdateQuickIndexCapacity
@@ -23888,12 +23969,16 @@ serviceMap:
     - AllowVendedLogDeliveryForResource
     - AssociateService
     - CreateAgentSpace
+    - CreateAsset
+    - CreateAssetFile
     - CreateBacklogTask
     - CreateChat
     - CreateKnowledgeItem
     - CreateOneTimeLoginSession
     - CreatePrivateConnection
     - DeleteAgentSpace
+    - DeleteAsset
+    - DeleteAssetFile
     - DeleteKnowledgeItem
     - DeletePrivateConnection
     - DeregisterService
@@ -23907,6 +23992,9 @@ serviceMap:
     - EndChatForCase
     - GetAccountUsage
     - GetAgentSpace
+    - GetAsset
+    - GetAssetContent
+    - GetAssetFile
     - GetAssociation
     - GetBacklogTask
     - GetKnowledgeItem
@@ -23915,6 +24003,10 @@ serviceMap:
     - GetService
     - InitiateChatForCase
     - ListAgentSpaces
+    - ListAssetFiles
+    - ListAssetTypes
+    - ListAssetVersions
+    - ListAssets
     - ListAssociations
     - ListBacklogTasks
     - ListChats
@@ -23935,6 +24027,8 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAgentSpace
+    - UpdateAsset
+    - UpdateAssetFile
     - UpdateAssociation
     - UpdateBacklogTask
     - UpdateGoal
