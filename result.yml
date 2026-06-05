@@ -7590,6 +7590,7 @@ serviceMap:
     - StopStream
     - TagResource
     - UntagResource
+    - UpdateAdConfiguration
     - UpdateChannel
     - UpdateIngestConfiguration
     - UpdatePlaybackRestrictionPolicy
@@ -11114,6 +11115,7 @@ serviceMap:
     - CreateUserPool
     - CreateUserPoolClient
     - CreateUserPoolDomain
+    - CreateUserPoolReplica
     - DeleteGroup
     - DeleteIdentityProvider
     - DeleteManagedLoginBranding
@@ -11125,6 +11127,7 @@ serviceMap:
     - DeleteUserPoolClient
     - DeleteUserPoolClientSecret
     - DeleteUserPoolDomain
+    - DeleteUserPoolReplica
     - DescribeIdentityProvider
     - DescribeManagedLoginBranding
     - DescribeManagedLoginBrandingByClient
@@ -11162,6 +11165,7 @@ serviceMap:
     - ListUserImportJobs
     - ListUserPoolClientSecrets
     - ListUserPoolClients
+    - ListUserPoolReplicas
     - ListUserPools
     - ListUsers
     - ListUsersInGroup
@@ -11190,6 +11194,7 @@ serviceMap:
     - UpdateUserPool
     - UpdateUserPoolClient
     - UpdateUserPoolDomain
+    - UpdateUserPoolReplica
     - VerifySoftwareToken
     - VerifyUserAttribute
     ARNFormat: 'arn:aws:cognito-idp:${Region}:${Account}:${ResourceType}/${ResourcePath}:'
@@ -13563,6 +13568,7 @@ serviceMap:
     - GetSecurityConfiguration
     - GetSecurityConfigurations
     - GetSession
+    - GetSessionEndpoint
     - GetStage
     - GetStageAttempt
     - GetStageAttemptTaskList
