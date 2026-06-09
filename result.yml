@@ -22546,6 +22546,7 @@ serviceMap:
     - AcceptAddressTransfer
     - AcceptCapacityReservationBillingOwnership
     - AcceptReservedInstancesExchangeQuote
+    - AcceptTransitGatewayClientVpnAttachment
     - AcceptTransitGatewayMulticastDomainAssociations
     - AcceptTransitGatewayPeeringAttachment
     - AcceptTransitGatewayVpcAttachment
@@ -22610,6 +22611,7 @@ serviceMap:
     - CreateCapacityManagerDataExport
     - CreateCapacityReservation
     - CreateCapacityReservationBySplitting
+    - CreateCapacityReservationCancellationQuote
     - CreateCapacityReservationFleet
     - CreateCarrierGateway
     - CreateClientVpnEndpoint
@@ -22782,6 +22784,7 @@ serviceMap:
     - DeleteTrafficMirrorSession
     - DeleteTrafficMirrorTarget
     - DeleteTransitGateway
+    - DeleteTransitGatewayClientVpnAttachment
     - DeleteTransitGatewayConnect
     - DeleteTransitGatewayConnectPeer
     - DeleteTransitGatewayMeteringPolicy
@@ -22834,6 +22837,7 @@ serviceMap:
     - DescribeCapacityBlocks
     - DescribeCapacityManagerDataExports
     - DescribeCapacityReservationBillingRequests
+    - DescribeCapacityReservationCancellationQuotes
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservationTopology
     - DescribeCapacityReservations
@@ -22891,6 +22895,7 @@ serviceMap:
     - DescribeIpamByoasn
     - DescribeIpamExternalResourceVerificationTokens
     - DescribeIpamPolicies
+    - DescribeIpamPoolAllocations
     - DescribeIpamPools
     - DescribeIpamPrefixListResolverTargets
     - DescribeIpamPrefixListResolvers
@@ -23089,6 +23094,7 @@ serviceMap:
     - GetCapacityManagerAttributes
     - GetCapacityManagerMetricData
     - GetCapacityManagerMetricDimensions
+    - GetCapacityManagerMonitoredTagKeys
     - GetCapacityReservationUsage
     - GetCoipPoolUsage
     - GetConsoleOutput
@@ -23122,6 +23128,7 @@ serviceMap:
     - GetLaunchTemplateData
     - GetManagedPrefixListAssociations
     - GetManagedPrefixListEntries
+    - GetManagedResourceVisibility
     - GetNetworkInsightsAccessScopeAnalysisFindings
     - GetNetworkInsightsAccessScopeContent
     - GetPasswordData
@@ -23192,6 +23199,7 @@ serviceMap:
     - ModifyIpam
     - ModifyIpamPolicyAllocationRules
     - ModifyIpamPool
+    - ModifyIpamPoolAllocation
     - ModifyIpamPrefixListResolver
     - ModifyIpamPrefixListResolverTarget
     - ModifyIpamResourceCidr
@@ -23200,6 +23208,7 @@ serviceMap:
     - ModifyLaunchTemplate
     - ModifyLocalGatewayRoute
     - ModifyManagedPrefixList
+    - ModifyManagedResourceVisibility
     - ModifyNetworkInterfaceAttribute
     - ModifyOdbNetworkPeering
     - ModifyPrivateDnsNameOptions
@@ -23263,6 +23272,7 @@ serviceMap:
     - RegisterTransitGatewayMulticastGroupMembers
     - RegisterTransitGatewayMulticastGroupSources
     - RejectCapacityReservationBillingOwnership
+    - RejectTransitGatewayClientVpnAttachment
     - RejectTransitGatewayMulticastDomainAssociations
     - RejectTransitGatewayPeeringAttachment
     - RejectTransitGatewayVpcAttachment
@@ -23318,6 +23328,7 @@ serviceMap:
     - UnassignPrivateNatGatewayAddress
     - UnlockSnapshot
     - UnmonitorInstances
+    - UpdateCapacityManagerMonitoredTagKeys
     - UpdateCapacityManagerOrganizationsAccess
     - UpdateInterruptibleCapacityReservationAllocation
     - UpdateSecurityGroupRuleDescriptionsEgress
