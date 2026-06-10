@@ -7012,6 +7012,7 @@ serviceMap:
     - DeleteInference
     - DeleteReservation
     - DisassociateCustomizedModel
+    - GetAccountDataRetention
     - GetCustomizedModel
     - GetFile
     - GetFineTuningJob
@@ -7027,6 +7028,7 @@ serviceMap:
     - ListProjects
     - ListReservations
     - ListTagsForResource
+    - PutAccountDataRetention
     - TagResource
     - UntagResource
     - UpdateProject
@@ -7039,6 +7041,7 @@ serviceMap:
     - aws:TagKeys
     - bedrock-mantle:BearerTokenType
     - bedrock-mantle:CustomizedModelArn
+    - bedrock-mantle:DataRetentionMode
     - bedrock-mantle:Files
     - bedrock-mantle:FineTuningJob
     - bedrock-mantle:Model
@@ -9960,6 +9963,7 @@ serviceMap:
     - EndSession
     - ExportAutomatedReasoningPolicyVersion
     - GenerateQuery
+    - GetAccountDataRetention
     - GetAgent
     - GetAgentActionGroup
     - GetAgentAlias
@@ -10078,6 +10082,7 @@ serviceMap:
     - OptimizePrompt
     - PrepareAgent
     - PrepareFlow
+    - PutAccountDataRetention
     - PutEnforcedGuardrailConfiguration
     - PutFoundationModelEntitlement
     - PutInvocationStep
@@ -10129,6 +10134,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - bedrock:BearerTokenType
+    - bedrock:DataRetentionMode
     - bedrock:GuardrailIdentifier
     - bedrock:InferenceProfileArn
     - bedrock:InlineAgentName
@@ -14750,6 +14756,10 @@ serviceMap:
     - aws:TagKeys
     - events:EventBusArn
     - events:ManagedBy
+    - events:Metadata/${MetadataKey}
+    - events:ResourceArn
+    - events:SystemMetadata/ContentType
+    - events:SystemMetadata/EventGroupId
     - events:TargetArn
     - events:creatorAccount
     - events:detail-type
