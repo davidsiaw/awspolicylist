@@ -108,6 +108,18 @@ conditionKeys:
 - aws:userid
 - aws:username
 serviceMap:
+  AWS reInvent event pass amount charge to customer AWS account:
+    StringPrefix: eventsbilltoaws
+    Actions:
+    - approve
+    - info
+    ARNFormat: arn:aws:eventsbilltoaws:${Region}:${Account}:${RelativeId}
+    ARNRegex: "^arn:aws:eventsbilltoaws:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon AI Operations:
     StringPrefix: aiops
     Actions:
@@ -8958,6 +8970,9 @@ serviceMap:
     Actions:
     - AcceptMarketplaceRegistration
     - AssociateIamRoleToResource
+    - CreateAutonomousDatabase
+    - CreateAutonomousDatabaseBackup
+    - CreateAutonomousDatabaseWallet
     - CreateCloudAutonomousVmCluster
     - CreateCloudExadataInfrastructure
     - CreateCloudVmCluster
@@ -8966,6 +8981,8 @@ serviceMap:
     - CreateOdbNetwork
     - CreateOdbPeeringConnection
     - CreateOutboundIntegration
+    - DeleteAutonomousDatabase
+    - DeleteAutonomousDatabaseBackup
     - DeleteCloudAutonomousVmCluster
     - DeleteCloudExadataInfrastructure
     - DeleteCloudVmCluster
@@ -8975,6 +8992,10 @@ serviceMap:
     - DeleteOdbPeeringConnection
     - DeleteResourcePolicy
     - DisassociateIamRoleFromResource
+    - FailoverAutonomousDatabase
+    - GetAutonomousDatabase
+    - GetAutonomousDatabaseBackup
+    - GetAutonomousDatabaseWalletDetails
     - GetCloudAutonomousVmCluster
     - GetCloudExadataInfrastructure
     - GetCloudExadataInfrastructureUnallocatedResources
@@ -8986,6 +9007,12 @@ serviceMap:
     - GetOdbPeeringConnection
     - GetResourcePolicy
     - InitializeService
+    - ListAutonomousDatabaseBackups
+    - ListAutonomousDatabaseCharacterSets
+    - ListAutonomousDatabaseClones
+    - ListAutonomousDatabasePeers
+    - ListAutonomousDatabaseVersions
+    - ListAutonomousDatabases
     - ListAutonomousVirtualMachines
     - ListCloudAutonomousVmClusters
     - ListCloudExadataInfrastructures
@@ -8999,11 +9026,19 @@ serviceMap:
     - ListSystemVersions
     - ListTagsForResource
     - PutResourcePolicy
+    - RebootAutonomousDatabase
     - RebootDbNode
+    - RestoreAutonomousDatabase
+    - ShrinkAutonomousDatabase
+    - StartAutonomousDatabase
     - StartDbNode
+    - StopAutonomousDatabase
     - StopDbNode
+    - SwitchoverAutonomousDatabase
     - TagResource
     - UntagResource
+    - UpdateAutonomousDatabase
+    - UpdateAutonomousDatabaseBackup
     - UpdateCloudExadataInfrastructure
     - UpdateGrantShare
     - UpdateOdbNetwork
@@ -10703,8 +10738,11 @@ serviceMap:
     - CreateOrder
     - CreateOutpost
     - CreatePrivateConnectivityConfig
+    - CreateQuote
+    - CreateRenewal
     - CreateSite
     - DeleteOutpost
+    - DeleteQuote
     - DeleteSite
     - GetCapacityTask
     - GetCatalogItem
@@ -10715,6 +10753,8 @@ serviceMap:
     - GetOutpostInstanceTypes
     - GetOutpostSupportedInstanceTypes
     - GetPrivateConnectivityConfig
+    - GetQuote
+    - GetRenewalPricing
     - GetSite
     - GetSiteAddress
     - ListAssetInstances
@@ -10722,8 +10762,10 @@ serviceMap:
     - ListBlockingInstancesForCapacityTask
     - ListCapacityTasks
     - ListCatalogItems
+    - ListOrderableInstanceTypes
     - ListOrders
     - ListOutposts
+    - ListQuotes
     - ListSites
     - ListTagsForResource
     - StartCapacityTask
@@ -10731,6 +10773,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateOutpost
+    - UpdateQuote
     - UpdateSite
     - UpdateSiteAddress
     - UpdateSiteRackPhysicalProperties
@@ -24040,11 +24083,13 @@ serviceMap:
     - CreateKnowledgeItem
     - CreateOneTimeLoginSession
     - CreatePrivateConnection
+    - CreateTrigger
     - DeleteAgentSpace
     - DeleteAsset
     - DeleteAssetFile
     - DeleteKnowledgeItem
     - DeletePrivateConnection
+    - DeleteTrigger
     - DeregisterService
     - DescribePrivateConnection
     - DescribeServices
@@ -24065,6 +24110,7 @@ serviceMap:
     - GetOperatorApp
     - GetRecommendation
     - GetService
+    - GetTrigger
     - InitiateChatForCase
     - ListAgentSpaces
     - ListAssetFiles
@@ -24084,6 +24130,7 @@ serviceMap:
     - ListRecommendations
     - ListServices
     - ListTagsForResource
+    - ListTriggers
     - ListWebhooks
     - RegisterService
     - SearchServiceAccessibleResource
@@ -24100,6 +24147,7 @@ serviceMap:
     - UpdateOperatorAppIdpConfig
     - UpdatePrivateConnectionCertificate
     - UpdateRecommendation
+    - UpdateTrigger
     - ValidateAwsAssociations
     ARNFormat: arn:aws:aidevops:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:aidevops:.+:.+:.+"
