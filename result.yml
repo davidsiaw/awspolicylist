@@ -1692,6 +1692,7 @@ serviceMap:
     - CreateUserProfile
     - CreateUserProfileEnrollmentUrl
     - CreateVault
+    - CreateWebhook
     - CreateWorkspace
     - DeleteBatchInference
     - DeleteEnvironment
@@ -1700,6 +1701,7 @@ serviceMap:
     - DeleteSession
     - DeleteSkill
     - DeleteVault
+    - DeleteWebhook
     - GetAccountStatus
     - GetAgent
     - GetBatchInference
@@ -1711,6 +1713,7 @@ serviceMap:
     - GetSkill
     - GetUserProfile
     - GetVault
+    - GetWebhook
     - GetWorkspace
     - ListAgents
     - ListBatchInferences
@@ -1723,7 +1726,10 @@ serviceMap:
     - ListTagsForResource
     - ListUserProfiles
     - ListVaults
+    - ListWebhooks
     - ListWorkspaces
+    - ProcessEnvironmentWork
+    - RotateWebhookSecret
     - TagResource
     - UntagResource
     - UpdateAgent
@@ -1733,6 +1739,7 @@ serviceMap:
     - UpdateSkill
     - UpdateUserProfile
     - UpdateVault
+    - UpdateWebhook
     - UpdateWorkspace
     ARNFormat: arn:aws:aws-external-anthropic:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:aws-external-anthropic:.+"
@@ -11662,12 +11669,23 @@ serviceMap:
   AWS Signin:
     StringPrefix: signin
     Actions:
+    - Authenticate
     - AuthorizeOAuth2Access
+    - CreateAccount
     - CreateOAuth2Token
     - CreateTrustedIdentityPropagationApplicationForConsole
+    - DeleteConsoleAuthorizationConfiguration
+    - DeleteResourcePermissionStatement
+    - GetConsoleAuthorizationConfiguration
+    - GetResourcePolicy
+    - ListResourcePermissionStatements
     - ListTrustedIdentityPropagationApplicationsForConsole
+    - PutConsoleAuthorizationConfiguration
+    - PutResourcePermissionStatement
     ARNFormat: arn:aws:signin:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:signin:.+"
+    conditionKeys:
+    - signin:PrincipalArn
     HasResource: true
   Amazon CloudWatch Logs:
     StringPrefix: logs
@@ -12828,8 +12846,10 @@ serviceMap:
     StringPrefix: securityagent
     Actions:
     - AddArtifact
+    - BatchCreateSecurityRequirements
     - BatchDeleteCodeReviews
     - BatchDeletePentests
+    - BatchDeleteSecurityRequirements
     - BatchDeleteThreatModels
     - BatchDeleteThreats
     - BatchGetAgentSpaces
@@ -12842,11 +12862,13 @@ serviceMap:
     - BatchGetPentestJobTasks
     - BatchGetPentestJobs
     - BatchGetPentests
+    - BatchGetSecurityRequirements
     - BatchGetTargetDomains
     - BatchGetThreatModelJobTasks
     - BatchGetThreatModelJobs
     - BatchGetThreatModels
     - BatchGetThreats
+    - BatchUpdateSecurityRequirements
     - CreateAgentSpace
     - CreateApplication
     - CreateCodeReview
@@ -12855,7 +12877,9 @@ serviceMap:
     - CreateMembership
     - CreateOneTimeLoginSession
     - CreatePentest
+    - CreatePrivateConnection
     - CreateSecurityRequirement
+    - CreateSecurityRequirementPack
     - CreateTargetDomain
     - CreateThreat
     - CreateThreatModel
@@ -12865,15 +12889,22 @@ serviceMap:
     - DeleteDesignReview
     - DeleteIntegration
     - DeleteMembership
+    - DeletePrivateConnection
     - DeleteSecurityRequirement
+    - DeleteSecurityRequirementPack
     - DeleteTargetDomain
+    - DescribePrivateConnection
     - GetApplication
     - GetArtifact
     - GetDesignReview
     - GetDesignReviewArtifact
     - GetDesignReviewFeedback
     - GetIntegration
+    - GetProviderRegistrationManifest
     - GetSecurityRequirement
+    - GetSecurityRequirementPack
+    - HandleProviderRegistrationCallback
+    - ImportSecurityRequirements
     - InitiateProviderRegistration
     - ListAgentSpaces
     - ListApplications
@@ -12891,7 +12922,9 @@ serviceMap:
     - ListPentestJobTasks
     - ListPentestJobsForPentest
     - ListPentests
+    - ListPrivateConnections
     - ListResourcesFromIntegration
+    - ListSecurityRequirementPacks
     - ListSecurityRequirements
     - ListTagsForResource
     - ListTargetDomains
@@ -12916,7 +12949,9 @@ serviceMap:
     - UpdateFinding
     - UpdateIntegratedResources
     - UpdatePentest
+    - UpdatePrivateConnectionCertificate
     - UpdateSecurityRequirement
+    - UpdateSecurityRequirementPack
     - UpdateTargetDomain
     - UpdateThreat
     - UpdateThreatModel
@@ -15218,6 +15253,7 @@ serviceMap:
     StringPrefix: s3
     Actions:
     - AbortMultipartUpload
+    - AllowVendedLogDeliveryForResource
     - AssociateAccessGrantsIdentityCenter
     - BypassGovernanceRetention
     - CreateAccessGrant
@@ -15413,17 +15449,20 @@ serviceMap:
     - s3:TlsVersion
     - s3:authType
     - s3:delimiter
+    - s3:deliverySourceArn
     - s3:destinationRegion
     - s3:if-match
     - s3:if-none-match
     - s3:isReplicationPauseRequest
     - s3:locationconstraint
+    - s3:logType
     - s3:max-keys
     - s3:object-lock-legal-hold
     - s3:object-lock-mode
     - s3:object-lock-remaining-retention-days
     - s3:object-lock-retain-until-date
     - s3:prefix
+    - s3:resourceArnBeingAuthorized
     - s3:signatureAge
     - s3:signatureversion
     - s3:versionid
@@ -24075,6 +24114,7 @@ serviceMap:
     Actions:
     - AllowVendedLogDeliveryForResource
     - AssociateService
+    - CreateAccessToken
     - CreateAgentSpace
     - CreateAsset
     - CreateAssetFile
@@ -24099,6 +24139,7 @@ serviceMap:
     - DiscoverTopology
     - EnableOperatorApp
     - EndChatForCase
+    - GetAccessToken
     - GetAccountUsage
     - GetAgentSpace
     - GetAsset
@@ -24112,6 +24153,7 @@ serviceMap:
     - GetService
     - GetTrigger
     - InitiateChatForCase
+    - ListAccessTokens
     - ListAgentSpaces
     - ListAssetFiles
     - ListAssetTypes
@@ -24133,6 +24175,8 @@ serviceMap:
     - ListTriggers
     - ListWebhooks
     - RegisterService
+    - RevokeAccessToken
+    - RotateAccessToken
     - SearchServiceAccessibleResource
     - SendMessage
     - TagResource
