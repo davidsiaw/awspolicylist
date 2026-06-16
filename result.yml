@@ -7473,6 +7473,9 @@ serviceMap:
     - GetPermissionPolicy
     - GetRateBasedStatementManagedKeys
     - GetRegexPatternSet
+    - GetRevenueStatistics
+    - GetRevenueStatisticsSummary
+    - GetRevenueStatisticsTimeSeries
     - GetRuleGroup
     - GetSampledRequests
     - GetTopPathStatisticsByTraffic
@@ -7488,6 +7491,7 @@ serviceMap:
     - ListRegexPatternSets
     - ListResourcesForWebACL
     - ListRuleGroups
+    - ListSettlementRecords
     - ListTagsForResource
     - ListWebACLs
     - PutFirewallManagerRuleGroups
