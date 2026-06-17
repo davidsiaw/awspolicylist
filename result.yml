@@ -7268,6 +7268,7 @@ serviceMap:
     - DeleteFormType
     - DeleteGlossary
     - DeleteGlossaryTerm
+    - DeleteLineageEvent
     - DeleteListing
     - DeleteNotebook
     - DeleteProject
@@ -9926,16 +9927,19 @@ serviceMap:
   Amazon Bedrock:
     StringPrefix: bedrock
     Actions:
+    - AgenticRetrieveStream
     - AllowVendedLogDeliveryForResource
     - ApplyGuardrail
     - AssociateAgentCollaborator
     - AssociateAgentKnowledgeBase
     - AssociateThirdPartyKnowledgeBase
+    - BatchDeleteAdvancedPromptOptimizationJob
     - BatchDeleteEvaluationJob
     - CallWithBearerToken
     - CancelAutomatedReasoningPolicyBuildWorkflow
     - CopyBlueprintStage
     - CountTokens
+    - CreateAdvancedPromptOptimizationJob
     - CreateAgent
     - CreateAgentActionGroup
     - CreateAgentAlias
@@ -10010,6 +10014,7 @@ serviceMap:
     - ExportAutomatedReasoningPolicyVersion
     - GenerateQuery
     - GetAccountDataRetention
+    - GetAdvancedPromptOptimizationJob
     - GetAgent
     - GetAgentActionGroup
     - GetAgentAlias
@@ -10036,6 +10041,7 @@ serviceMap:
     - GetDataAutomationProject
     - GetDataAutomationStatus
     - GetDataSource
+    - GetDocumentContent
     - GetEvaluationJob
     - GetExecutionFlowSnapshot
     - GetFlow
@@ -10074,10 +10080,12 @@ serviceMap:
     - InvokeDataAutomationAsync
     - InvokeDataAutomationLibraryIngestionJob
     - InvokeFlow
+    - InvokeGuardrailChecks
     - InvokeInlineAgent
     - InvokeModel
     - InvokeModelWithResponseStream
     - InvokeTool
+    - ListAdvancedPromptOptimizationJobs
     - ListAgentActionGroups
     - ListAgentAliases
     - ListAgentCollaborators
@@ -10144,6 +10152,7 @@ serviceMap:
     - StartAutomatedReasoningPolicyTestWorkflow
     - StartFlowExecution
     - StartIngestionJob
+    - StopAdvancedPromptOptimizationJob
     - StopEvaluationJob
     - StopFlowExecution
     - StopIngestionJob
@@ -15285,8 +15294,10 @@ serviceMap:
     - DeleteJobTagging
     - DeleteMultiRegionAccessPoint
     - DeleteObject
+    - DeleteObjectAnnotation
     - DeleteObjectTagging
     - DeleteObjectVersion
+    - DeleteObjectVersionAnnotation
     - DeleteObjectVersionTagging
     - DeleteStorageLensConfiguration
     - DeleteStorageLensConfigurationTagging
@@ -15338,6 +15349,7 @@ serviceMap:
     - GetMultiRegionAccessPointRoutes
     - GetObject
     - GetObjectAcl
+    - GetObjectAnnotation
     - GetObjectAttributes
     - GetObjectLegalHold
     - GetObjectRetention
@@ -15345,6 +15357,8 @@ serviceMap:
     - GetObjectTorrent
     - GetObjectVersion
     - GetObjectVersionAcl
+    - GetObjectVersionAnnotation
+    - GetObjectVersionAnnotationForReplication
     - GetObjectVersionAttributes
     - GetObjectVersionForReplication
     - GetObjectVersionTagging
@@ -15368,6 +15382,8 @@ serviceMap:
     - ListJobs
     - ListMultiRegionAccessPoints
     - ListMultipartUploadParts
+    - ListObjectAnnotations
+    - ListObjectVersionAnnotations
     - ListStorageLensConfigurations
     - ListStorageLensGroups
     - ListTagsForResource
@@ -15403,22 +15419,26 @@ serviceMap:
     - PutMultiRegionAccessPointPolicy
     - PutObject
     - PutObjectAcl
+    - PutObjectAnnotation
     - PutObjectLegalHold
     - PutObjectRetention
     - PutObjectTagging
     - PutObjectVersionAcl
+    - PutObjectVersionAnnotation
     - PutObjectVersionTagging
     - PutReplicationConfiguration
     - PutStorageLensConfiguration
     - PutStorageLensConfigurationTagging
     - ReplicateDelete
     - ReplicateObject
+    - ReplicateObjectAnnotation
     - ReplicateTags
     - RestoreObject
     - SubmitMultiRegionAccessPointRoutes
     - TagResource
     - UntagResource
     - UpdateAccessGrantsLocation
+    - UpdateBucketMetadataAnnotationTableConfiguration
     - UpdateBucketMetadataInventoryTableConfiguration
     - UpdateBucketMetadataJournalTableConfiguration
     - UpdateJobPriority
@@ -15451,6 +15471,7 @@ serviceMap:
     - s3:RequestObjectTagKeys
     - s3:ResourceAccount
     - s3:TlsVersion
+    - s3:annotation-prefix
     - s3:authType
     - s3:delimiter
     - s3:deliverySourceArn
@@ -15460,6 +15481,7 @@ serviceMap:
     - s3:isReplicationPauseRequest
     - s3:locationconstraint
     - s3:logType
+    - s3:max-annotation-results
     - s3:max-keys
     - s3:object-lock-legal-hold
     - s3:object-lock-mode
@@ -15480,6 +15502,8 @@ serviceMap:
     - s3:x-amz-grant-write
     - s3:x-amz-grant-write-acp
     - s3:x-amz-metadata-directive
+    - s3:x-amz-object-annotation-directive
+    - s3:x-amz-object-if-match
     - s3:x-amz-object-ownership
     - s3:x-amz-server-side-encryption
     - s3:x-amz-server-side-encryption-aws-kms-key-id
@@ -17069,6 +17093,7 @@ serviceMap:
     - GetProfileUpdateTask
     - GetProfileVisibility
     - GetProgramManagementAccount
+    - GetProspectingFromEngagementTask
     - GetRelationship
     - GetResourceSnapshot
     - GetResourceSnapshotJob
@@ -17093,6 +17118,7 @@ serviceMap:
     - ListPartnerPaths
     - ListPartners
     - ListProgramManagementAccounts
+    - ListProspectingFromEngagementTasks
     - ListRelationships
     - ListResourceSnapshotJobs
     - ListResourceSnapshots
@@ -17112,6 +17138,7 @@ serviceMap:
     - StartEngagementFromOpportunityTask
     - StartOpportunityFromEngagementTask
     - StartProfileUpdateTask
+    - StartProspectingFromEngagementTask
     - StartResourceSnapshotJob
     - StartVerification
     - StopResourceSnapshotJob
