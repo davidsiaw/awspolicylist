@@ -4440,6 +4440,7 @@ serviceMap:
     - eks:clientId
     - eks:clusterName
     - eks:computeConfigEnabled
+    - eks:controlPlaneEgressMode
     - eks:controlPlaneScalingTier
     - eks:deletionProtection
     - eks:elasticLoadBalancingEnabled
@@ -7293,6 +7294,7 @@ serviceMap:
     - GetCell
     - GetCellRun
     - GetCellRunResult
+    - GetCompute
     - GetConnection
     - GetConversation
     - GetDataExportConfiguration
@@ -7399,12 +7401,15 @@ serviceMap:
     - SsoLogin
     - SsoLogout
     - StartAccountBootstrapAction
+    - StartCompute
     - StartConversation
     - StartDataSourceRun
     - StartMetadataGenerationRun
     - StartNotebookCompute
     - StartNotebookExport
     - StartNotebookImport
+    - StartNotebookSync
+    - StopCompute
     - StopMetadataGenerationRun
     - StopNotebookCompute
     - TagResource
@@ -9355,6 +9360,7 @@ serviceMap:
     - GenerateQueryResultsSummary
     - GetAlarmMuteRule
     - GetDashboard
+    - GetDataset
     - GetInsightRuleReport
     - GetMetricData
     - GetMetricStatistics
@@ -9381,6 +9387,7 @@ serviceMap:
     - PutCompositeAlarm
     - PutDashboard
     - PutInsightRule
+    - PutLogAlarm
     - PutManagedInsightRules
     - PutMetricAlarm
     - PutMetricData
@@ -11663,6 +11670,8 @@ serviceMap:
   Amazon WorkSpaces AgentAccess MCP Server:
     StringPrefix: agentaccess-mcp
     Actions:
+    - CallForwardedTool
+    - CheckConnectionStatus
     - DoubleClick
     - GetScreenshot
     - HoldKey
@@ -11964,6 +11973,7 @@ serviceMap:
     - DescribeBrokerInstanceOptions
     - DescribeConfiguration
     - DescribeConfigurationRevision
+    - DescribeSharedResources
     - DescribeUser
     - ListBrokers
     - ListConfigurationRevisions
@@ -19876,10 +19886,12 @@ serviceMap:
     Actions:
     - AccountConfigurations
     - AllowVendedLogDeliveryForResource
+    - BatchAssignLimitsProfile
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteKnowledgeBase
     - BatchDeleteTopicReviewedAnswer
     - BatchGetPreferences
+    - BatchUnassignLimitsProfile
     - BatchUpdatePreferences
     - CancelIngestion
     - CreateAccountCustomization
@@ -19902,6 +19914,7 @@ serviceMap:
     - CreateGroupMembership
     - CreateIAMPolicyAssignment
     - CreateIngestion
+    - CreateLimitsProfile
     - CreateNamespace
     - CreateOAuthClientApplication
     - CreateReader
@@ -19940,6 +19953,7 @@ serviceMap:
     - DeleteIAMPolicyAssignment
     - DeleteIdentityPropagationConfig
     - DeleteKnowledgeBase
+    - DeleteLimitsProfile
     - DeleteNamespace
     - DeleteOAuthClientApplication
     - DeleteRefreshSchedule
@@ -19968,6 +19982,8 @@ serviceMap:
     - DescribeAnalysisPermissions
     - DescribeAssetBundleExportJob
     - DescribeAssetBundleImportJob
+    - DescribeAutomationGroup
+    - DescribeAutomationGroupPermissions
     - DescribeAutomationJob
     - DescribeBrand
     - DescribeBrandAssignment
@@ -19999,6 +20015,7 @@ serviceMap:
     - DescribeKeyRegistration
     - DescribeKnowledgeBase
     - DescribeKnowledgeBasePermissions
+    - DescribeLimitsProfile
     - DescribeNamespace
     - DescribeOAuthClientApplication
     - DescribeQPersonalizationConfiguration
@@ -20038,6 +20055,8 @@ serviceMap:
     - ListAnalyses
     - ListAssetBundleExportJobs
     - ListAssetBundleImportJobs
+    - ListAssignmentsForPrincipal
+    - ListAutomationGroups
     - ListBrands
     - ListCustomPermissions
     - ListCustomerManagedKeys
@@ -20058,8 +20077,10 @@ serviceMap:
     - ListIngestions
     - ListKMSKeysForUser
     - ListKnowledgeBases
+    - ListLimitsProfiles
     - ListNamespaces
     - ListOAuthClientApplications
+    - ListProfileAssignments
     - ListRefreshSchedules
     - ListRoleMemberships
     - ListSelfUpgrades
@@ -20092,6 +20113,7 @@ serviceMap:
     - SearchActionConnectors
     - SearchAgents
     - SearchAnalyses
+    - SearchAutomationGroups
     - SearchDashboards
     - SearchDataSets
     - SearchDataSources
@@ -20124,6 +20146,7 @@ serviceMap:
     - UpdateAnalysis
     - UpdateAnalysisPermissions
     - UpdateApplicationWithTokenExchangeGrant
+    - UpdateAutomationGroupPermissions
     - UpdateBrand
     - UpdateBrandAssignment
     - UpdateBrandPublishedVersion
@@ -20151,6 +20174,7 @@ serviceMap:
     - UpdateIpRestriction
     - UpdateKeyRegistration
     - UpdateKnowledgeBasePermissions
+    - UpdateLimitsProfile
     - UpdateOAuthClientApplication
     - UpdatePublicSharingSettings
     - UpdateQPersonalizationConfiguration
