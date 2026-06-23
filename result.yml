@@ -3202,17 +3202,23 @@ serviceMap:
   Amazon CloudWatch Application Signals:
     StringPrefix: application-signals
     Actions:
+    - BatchDeleteInstrumentationConfigurations
     - BatchGetServiceLevelObjectiveBudgetReport
     - BatchUpdateExclusionWindows
+    - CreateInstrumentationConfiguration
     - CreateServiceLevelObjective
     - DeleteGroupingConfiguration
+    - DeleteInstrumentationConfiguration
     - DeleteServiceLevelObjective
+    - GetInstrumentationConfiguration
+    - GetInstrumentationConfigurationStatus
     - GetService
     - GetServiceLevelObjective
     - Link
     - ListAuditFindings
     - ListEntityEvents
     - ListGroupingAttributeDefinitions
+    - ListInstrumentationConfigurations
     - ListObservedEntities
     - ListServiceDependencies
     - ListServiceDependents
@@ -3223,6 +3229,7 @@ serviceMap:
     - ListServices
     - ListTagsForResource
     - PutGroupingConfiguration
+    - ReportInstrumentationConfigurationStatus
     - StartDiscovery
     - TagResource
     - UntagResource
@@ -11751,6 +11758,7 @@ serviceMap:
     - DeleteRetentionPolicy
     - DeleteScheduledQuery
     - DeleteSubscriptionFilter
+    - DeleteSyslogConfiguration
     - DeleteTransformer
     - DescribeAccountPolicies
     - DescribeConfigurationTemplates
@@ -11804,6 +11812,7 @@ serviceMap:
     - ListLogGroupsForQuery
     - ListScheduledQueries
     - ListSourcesForS3TableIntegration
+    - ListSyslogConfigurations
     - ListTagsForResource
     - ListTagsLogGroup
     - ProcessWithPipeline
@@ -11825,6 +11834,7 @@ serviceMap:
     - PutResourcePolicy
     - PutRetentionPolicy
     - PutSubscriptionFilter
+    - PutSyslogConfiguration
     - PutTransformer
     - StartLiveTail
     - StartQuery
@@ -14347,12 +14357,17 @@ serviceMap:
     - AddLayerVersionPermission
     - AddPermission
     - CheckpointDurableExecution
+    - ConnectMicrovm
     - CreateAlias
     - CreateCapacityProvider
     - CreateCodeSigningConfig
     - CreateEventSourceMapping
     - CreateFunction
     - CreateFunctionUrlConfig
+    - CreateMicrovmAuthToken
+    - CreateMicrovmImage
+    - CreateMicrovmShellAuthToken
+    - CreateNetworkConnector
     - DeleteAlias
     - DeleteCapacityProvider
     - DeleteCodeSigningConfig
@@ -14363,6 +14378,9 @@ serviceMap:
     - DeleteFunctionEventInvokeConfig
     - DeleteFunctionUrlConfig
     - DeleteLayerVersion
+    - DeleteMicrovmImage
+    - DeleteMicrovmImageVersion
+    - DeleteNetworkConnector
     - DeleteProvisionedConcurrencyConfig
     - DisableReplication
     - EnableReplication
@@ -14384,6 +14402,11 @@ serviceMap:
     - GetFunctionUrlConfig
     - GetLayerVersion
     - GetLayerVersionPolicy
+    - GetMicrovm
+    - GetMicrovmImage
+    - GetMicrovmImageBuild
+    - GetMicrovmImageVersion
+    - GetNetworkConnector
     - GetPolicy
     - GetProvisionedConcurrencyConfig
     - GetRuntimeManagementConfig
@@ -14402,10 +14425,18 @@ serviceMap:
     - ListFunctionsByCodeSigningConfig
     - ListLayerVersions
     - ListLayers
+    - ListManagedMicrovmImageVersions
+    - ListManagedMicrovmImages
+    - ListMicrovmImageBuilds
+    - ListMicrovmImageVersions
+    - ListMicrovmImages
+    - ListMicrovms
+    - ListNetworkConnectors
     - ListProvisionedConcurrencyConfigs
     - ListTags
     - ListVersionsByFunction
     - PassCapacityProvider
+    - PassNetworkConnector
     - PublishLayerVersion
     - PublishVersion
     - PutFunctionCodeSigningConfig
@@ -14417,11 +14448,15 @@ serviceMap:
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
     - RemovePermission
+    - ResumeMicrovm
+    - RunMicrovm
     - SendDurableExecutionCallbackFailure
     - SendDurableExecutionCallbackHeartbeat
     - SendDurableExecutionCallbackSuccess
     - StopDurableExecution
+    - SuspendMicrovm
     - TagResource
+    - TerminateMicrovm
     - UntagResource
     - UpdateAlias
     - UpdateCapacityProvider
@@ -14432,6 +14467,9 @@ serviceMap:
     - UpdateFunctionConfiguration
     - UpdateFunctionEventInvokeConfig
     - UpdateFunctionUrlConfig
+    - UpdateMicrovmImage
+    - UpdateMicrovmImageVersion
+    - UpdateNetworkConnector
     ARNFormat: arn:aws:lambda:${Region}:${Account}:${ResourceType}:${ResourceId}
     ARNRegex: "^arn:aws:lambda:.+"
     conditionKeys:
@@ -14701,6 +14739,7 @@ serviceMap:
     - CreateDetector
     - CreateFilter
     - CreateIPSet
+    - CreateInvestigation
     - CreateMalwareProtectionPlan
     - CreateMembers
     - CreatePublishingDestination
@@ -14734,6 +14773,7 @@ serviceMap:
     - GetFindings
     - GetFindingsStatistics
     - GetIPSet
+    - GetInvestigation
     - GetInvitationsCount
     - GetMalwareProtectionPlan
     - GetMalwareScan
@@ -14753,6 +14793,7 @@ serviceMap:
     - ListFilters
     - ListFindings
     - ListIPSets
+    - ListInvestigations
     - ListInvitations
     - ListMalwareProtectionPlans
     - ListMalwareScans
