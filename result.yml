@@ -21129,7 +21129,9 @@ serviceMap:
     - GetContractInformation
     - GetCreditAllocationHistory
     - GetCredits
+    - GetCumulativeTracking
     - GetIAMAccessPreference
+    - GetMonthlyTracking
     - GetResourcePolicy
     - GetSellerOfRecord
     - ListBillingViews
