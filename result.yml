@@ -3258,12 +3258,14 @@ serviceMap:
     - CreateCisScanConfiguration
     - CreateCodeSecurityIntegration
     - CreateCodeSecurityScanConfiguration
+    - CreateConnector
     - CreateFilter
     - CreateFindingsReport
     - CreateSbomExport
     - DeleteCisScanConfiguration
     - DeleteCodeSecurityIntegration
     - DeleteCodeSecurityScanConfiguration
+    - DeleteConnector
     - DeleteFilter
     - DescribeOrganizationConfiguration
     - Disable
@@ -3292,6 +3294,8 @@ serviceMap:
     - ListCodeSecurityIntegrations
     - ListCodeSecurityScanConfigurationAssociations
     - ListCodeSecurityScanConfigurations
+    - ListConnectorScanConfigurations
+    - ListConnectors
     - ListCoverage
     - ListCoverageStatistics
     - ListDelegatedAdminAccounts
@@ -3314,6 +3318,8 @@ serviceMap:
     - UpdateCodeSecurityIntegration
     - UpdateCodeSecurityScanConfiguration
     - UpdateConfiguration
+    - UpdateConnector
+    - UpdateConnectorScanConfiguration
     - UpdateEc2DeepInspectionConfiguration
     - UpdateEncryptionKey
     - UpdateFilter
@@ -3619,6 +3625,7 @@ serviceMap:
     - DeleteConfigurationAggregator
     - DeleteConfigurationRecorder
     - DeleteConformancePack
+    - DeleteConnector
     - DeleteDeliveryChannel
     - DeleteEvaluationResults
     - DeleteOrganizationConfigRule
@@ -3668,6 +3675,7 @@ serviceMap:
     - GetComplianceSummaryByResourceType
     - GetConformancePackComplianceDetails
     - GetConformancePackComplianceSummary
+    - GetConnector
     - GetCustomRulePolicy
     - GetDiscoveredResourceCounts
     - GetOrganizationConfigRuleDetailedStatus
@@ -3679,6 +3687,7 @@ serviceMap:
     - ListAggregateDiscoveredResources
     - ListConfigurationRecorders
     - ListConformancePackComplianceScores
+    - ListConnectors
     - ListDiscoveredResources
     - ListResourceEvaluations
     - ListStoredQueries
@@ -3688,6 +3697,7 @@ serviceMap:
     - PutConfigurationAggregator
     - PutConfigurationRecorder
     - PutConformancePack
+    - PutConnector
     - PutDeliveryChannel
     - PutEvaluations
     - PutExternalEvaluation
@@ -3699,6 +3709,7 @@ serviceMap:
     - PutRetentionConfiguration
     - PutServiceLinkedConfigurationRecorder
     - PutStoredQuery
+    - PutThirdPartyServiceLinkedConfigurationRecorder
     - SelectAggregateResourceConfig
     - SelectResourceConfig
     - StartConfigRulesEvaluation
