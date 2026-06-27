@@ -24308,6 +24308,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAgentSpace
+    - UpdateApprovalAction
     - UpdateAsset
     - UpdateAssetFile
     - UpdateAssociation
@@ -26335,11 +26336,21 @@ serviceMap:
     StringPrefix: user-subscriptions
     Actions:
     - CreateClaim
+    - CreateClaimAddOn
+    - DeleteAutoTopUpRule
     - DeleteClaim
+    - GetAutoTopUpRule
+    - GetEffectiveUsageLimit
+    - GetUsageLimitHistory
     - ListApplicationClaims
+    - ListClaimAddOns
     - ListClaims
+    - ListEntitlements
+    - ListUsageLimits
     - ListUserSubscriptions
+    - SetAutoTopUpRule
     - SetOverageConfig
+    - SetUsageLimit
     - UpdateClaim
     conditionKeys:
     - user-subscriptions:CreateForSelf
