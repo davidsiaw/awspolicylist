@@ -5394,6 +5394,7 @@ serviceMap:
     - ListTagsForResource
     - ListTransformationPackageMetadata
     - ListTransformationPackageShares
+    - SendTelemetryEvent
     - ShareTransformationPackage
     - TagResource
     - UnshareTransformationPackage
@@ -5819,6 +5820,7 @@ serviceMap:
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
+    - InsightFeedback
     - ListApplications
     - ListDataSourceAttachments
     - ListDataSources
@@ -17140,12 +17142,15 @@ serviceMap:
     - CreateEngagement
     - CreateEngagementContext
     - CreateEngagementInvitation
+    - CreateMarketplaceRevenueShare
+    - CreateMarketplaceRevenueShareAllocation
     - CreateOpportunity
     - CreatePartner
     - CreateProgramManagementAccount
     - CreateRelationship
     - CreateResourceSnapshot
     - CreateResourceSnapshotJob
+    - CreateRevenueAttribution
     - DeleteProgramManagementAccount
     - DeleteRelationship
     - DeleteResourceSnapshotJob
@@ -17165,6 +17170,8 @@ serviceMap:
     - GetConnectionPreferences
     - GetEngagement
     - GetEngagementInvitation
+    - GetMarketplaceRevenueShare
+    - GetMarketplaceRevenueShareAllocation
     - GetOpportunity
     - GetPartner
     - GetPartnerDashboard
@@ -17176,6 +17183,9 @@ serviceMap:
     - GetRelationship
     - GetResourceSnapshot
     - GetResourceSnapshotJob
+    - GetRevenueAttribution
+    - GetRevenueAttributionAllocation
+    - GetRevenueAttributionAllocationsTask
     - GetSellingSystemSettings
     - GetVerification
     - ListBenefitAllocations
@@ -17192,6 +17202,8 @@ serviceMap:
     - ListEngagementMembers
     - ListEngagementResourceAssociations
     - ListEngagements
+    - ListMarketplaceRevenueShareAllocations
+    - ListMarketplaceRevenueShares
     - ListOpportunities
     - ListOpportunityFromEngagementTasks
     - ListPartnerPaths
@@ -17201,6 +17213,8 @@ serviceMap:
     - ListRelationships
     - ListResourceSnapshotJobs
     - ListResourceSnapshots
+    - ListRevenueAttributionAllocations
+    - ListRevenueAttributions
     - ListSolutions
     - ListTagsForResource
     - PutAllianceLeadContact
@@ -17219,6 +17233,7 @@ serviceMap:
     - StartProfileUpdateTask
     - StartProspectingFromEngagementTask
     - StartResourceSnapshotJob
+    - StartRevenueAttributionAllocationsTask
     - StartVerification
     - StopResourceSnapshotJob
     - SubmitBenefitApplication
@@ -17228,9 +17243,11 @@ serviceMap:
     - UpdateBenefitApplication
     - UpdateConnectionPreferences
     - UpdateEngagementContext
+    - UpdateMarketplaceRevenueShareAllocation
     - UpdateOpportunity
     - UpdateProgramManagementAccount
     - UpdateRelationship
+    - UpdateRevenueAttribution
     - UseSession
     ARNFormat: arn:aws:partnercentral:${Region}:${Account}:catalog/${CatalogId}/${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:partnercentral:.+"
@@ -21182,24 +21199,35 @@ serviceMap:
     Actions:
     - AcceptAgreement
     - AcceptNdaForAgreement
+    - CreateComplianceInquiry
+    - ExportComplianceInquiry
     - GetAccountSettings
     - GetAgreement
+    - GetComplianceInquiryMetadata
     - GetCustomerAgreement
     - GetNdaForAgreement
     - GetReport
     - GetReportMetadata
     - GetTermForReport
     - ListAgreements
+    - ListComplianceInquiries
+    - ListComplianceInquiryQueries
     - ListCustomerAgreements
     - ListReportVersions
     - ListReports
+    - ListTagsForResource
     - PutAccountSettings
+    - TagResource
     - TerminateAgreement
+    - UntagResource
     ARNFormat: arn:aws:artifact:::${Resource}
     ARNRegex: "^arn:aws:artifact::.+"
     conditionKeys:
     - artifact:ReportCategory
     - artifact:ReportSeries
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   Amazon Timestream InfluxDB:
     StringPrefix: timestream-influxdb
@@ -22800,6 +22828,7 @@ serviceMap:
     - AssociateVpcCidrBlock
     - AttachApplianceToNatGateway
     - AttachClassicLinkVpc
+    - AttachImageWatermark
     - AttachInternetGateway
     - AttachNetworkInterface
     - AttachResourcesToPlacementGroup
@@ -23230,6 +23259,7 @@ serviceMap:
     - DescribeVpnGateways
     - DetachApplianceFromNatGateway
     - DetachClassicLinkVpc
+    - DetachImageWatermark
     - DetachInternetGateway
     - DetachNetworkInterface
     - DetachResourcesFromPlacementGroup
