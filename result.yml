@@ -2336,6 +2336,7 @@ serviceMap:
     - ClaimPhoneNumber
     - CompleteAttachedFileUpload
     - CreateAgentStatus
+    - CreateAttachedFile
     - CreateAuthenticationProfile
     - CreateContact
     - CreateContactFlow
@@ -2467,6 +2468,7 @@ serviceMap:
     - GetCurrentMetricData
     - GetCurrentUserData
     - GetEffectiveHoursOfOperations
+    - GetEvaluationFormValidation
     - GetFederationToken
     - GetFlowAssociation
     - GetMetricData
@@ -2580,11 +2582,13 @@ serviceMap:
     - SendOutboundWebNotification
     - StartAttachedFileUpload
     - StartChatContact
+    - StartContactConversationalAnalyticsJob
     - StartContactEvaluation
     - StartContactMediaProcessing
     - StartContactRecording
     - StartContactStreaming
     - StartEmailContact
+    - StartEvaluationFormValidation
     - StartForecastingPlanningSchedulingIntegration
     - StartOutboundChatContact
     - StartOutboundEmailContact
@@ -4085,26 +4089,50 @@ serviceMap:
     StringPrefix: acm
     Actions:
     - AddTagsToCertificate
+    - CreateAcmeDomainValidation
+    - CreateAcmeEndpoint
+    - CreateAcmeExternalAccountBinding
+    - DeleteAcmeDomainValidation
+    - DeleteAcmeEndpoint
+    - DeleteAcmeExternalAccountBinding
     - DeleteCertificate
+    - DescribeAcmeAccount
+    - DescribeAcmeDomainValidation
+    - DescribeAcmeEndpoint
+    - DescribeAcmeExternalAccountBinding
     - DescribeCertificate
     - ExportCertificate
     - GetAccountConfiguration
+    - GetAcmeExternalAccountBindingCredentials
     - GetCertificate
     - ImportCertificate
+    - ListAcmeAccounts
+    - ListAcmeDomainValidations
+    - ListAcmeEndpoints
+    - ListAcmeExternalAccountBindings
     - ListCertificates
     - ListTagsForCertificate
+    - ListTagsForResource
     - PutAccountConfiguration
     - RemoveTagsFromCertificate
     - RenewCertificate
     - RequestCertificate
     - ResendValidationEmail
+    - RevokeAcmeAccount
+    - RevokeAcmeExternalAccountBinding
     - RevokeCertificate
     - SearchCertificates
+    - TagResource
+    - UntagResource
+    - UpdateAcmeDomainValidation
+    - UpdateAcmeEndpoint
+    - UpdateCertificate
     - UpdateCertificateOptions
     ARNFormat: arn:aws:acm:${Region}:${Account}:${ArnType}/${ResourceId}
     ARNRegex: "^arn:aws:acm:.+:[0-9]+:.+"
     conditionKeys:
     - acm:CertificateAuthority
+    - acm:CertificateKeyPairOrigin
     - acm:CertificateTransparencyLogging
     - acm:DomainNames
     - acm:Export
@@ -4379,6 +4407,7 @@ serviceMap:
     - AssociateAccessPolicy
     - AssociateEncryptionConfig
     - AssociateIdentityProviderConfig
+    - CancelUpdate
     - CreateAccessEntry
     - CreateAddon
     - CreateCapability
@@ -6267,6 +6296,8 @@ serviceMap:
     - CreateConfiguredTableAssociationAnalysisRule
     - CreateIdMappingTable
     - CreateIdNamespaceAssociation
+    - CreateIntermediateTable
+    - CreateIntermediateTableAnalysisRule
     - CreateMembership
     - CreatePrivacyBudgetTemplate
     - DeleteAnalysisTemplate
@@ -6278,9 +6309,12 @@ serviceMap:
     - DeleteConfiguredTableAssociationAnalysisRule
     - DeleteIdMappingTable
     - DeleteIdNamespaceAssociation
+    - DeleteIntermediateTable
+    - DeleteIntermediateTableAnalysisRule
     - DeleteMember
     - DeleteMembership
     - DeletePrivacyBudgetTemplate
+    - DisallowIntermediateTable
     - GetAnalysisTemplate
     - GetCollaboration
     - GetCollaborationAnalysisTemplate
@@ -6295,6 +6329,8 @@ serviceMap:
     - GetConfiguredTableAssociationAnalysisRule
     - GetIdMappingTable
     - GetIdNamespaceAssociation
+    - GetIntermediateTable
+    - GetIntermediateTableAnalysisRule
     - GetMembership
     - GetPrivacyBudgetTemplate
     - GetProtectedJob
@@ -6314,6 +6350,8 @@ serviceMap:
     - ListConfiguredTables
     - ListIdMappingTables
     - ListIdNamespaceAssociations
+    - ListIntermediateTableVersions
+    - ListIntermediateTables
     - ListMembers
     - ListMemberships
     - ListPrivacyBudgetTemplates
@@ -6325,6 +6363,7 @@ serviceMap:
     - PassCollaboration
     - PassMembership
     - PopulateIdMappingTable
+    - PopulateIntermediateTable
     - PreviewPrivacyImpact
     - StartProtectedJob
     - StartProtectedQuery
@@ -6342,6 +6381,8 @@ serviceMap:
     - UpdateConfiguredTableReference
     - UpdateIdMappingTable
     - UpdateIdNamespaceAssociation
+    - UpdateIntermediateTable
+    - UpdateIntermediateTableAnalysisRule
     - UpdateMembership
     - UpdatePrivacyBudgetTemplate
     - UpdateProtectedJob
@@ -14926,9 +14967,11 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - events:ContentFilterPresent
     - events:EventBusArn
     - events:ManagedBy
     - events:Metadata/${MetadataKey}
+    - events:Metadata/${MetadataKey}/Matcher
     - events:ResourceArn
     - events:SystemMetadata/ContentType
     - events:SystemMetadata/EventGroupId
@@ -15606,6 +15649,7 @@ serviceMap:
     - BatchGetMetrics
     - BatchGetRecord
     - BatchPutMetrics
+    - BatchWriteRecord
     - CallMlflowAppApi
     - CallPartnerAppApi
     - CallWithBearerToken
@@ -15924,6 +15968,7 @@ serviceMap:
     - ListPipelines
     - ListProcessingJobs
     - ListProjects
+    - ListRecords
     - ListResourceCatalogs
     - ListSharedModelEvents
     - ListSharedModelVersions
