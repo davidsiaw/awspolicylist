@@ -8365,6 +8365,7 @@ serviceMap:
     - AssociateFirewallPolicy
     - AssociateSubnets
     - AttachRuleGroupsToProxyConfiguration
+    - CreateContainerAssociation
     - CreateFirewall
     - CreateFirewallPolicy
     - CreateProxy
@@ -8374,6 +8375,7 @@ serviceMap:
     - CreateRuleGroup
     - CreateTLSInspectionConfiguration
     - CreateVpcEndpointAssociation
+    - DeleteContainerAssociation
     - DeleteFirewall
     - DeleteFirewallPolicy
     - DeleteNetworkFirewallTransitGatewayAttachment
@@ -8385,6 +8387,7 @@ serviceMap:
     - DeleteRuleGroup
     - DeleteTLSInspectionConfiguration
     - DeleteVpcEndpointAssociation
+    - DescribeContainerAssociation
     - DescribeFirewall
     - DescribeFirewallMetadata
     - DescribeFirewallPolicy
@@ -8405,6 +8408,7 @@ serviceMap:
     - DisassociateSubnets
     - GetAnalysisReportResults
     - ListAnalysisReports
+    - ListContainerAssociations
     - ListFirewallPolicies
     - ListFirewalls
     - ListFlowOperationResults
@@ -8424,6 +8428,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAvailabilityZoneChangeProtection
+    - UpdateContainerAssociation
     - UpdateFirewallAnalysisSettings
     - UpdateFirewallDeleteProtection
     - UpdateFirewallDescription
@@ -9406,6 +9411,7 @@ serviceMap:
     - DeleteDashboards
     - DeleteInsightRules
     - DeleteMetricStream
+    - DeletePipelineRule
     - DeleteServiceLevelObjective
     - DescribeAlarmHistory
     - DescribeAlarms
@@ -9453,6 +9459,7 @@ serviceMap:
     - PutMetricAlarm
     - PutMetricData
     - PutMetricStream
+    - PutPipelineRule
     - SetAlarmState
     - StartMetricStreams
     - StartOTelEnrichment
@@ -19304,6 +19311,7 @@ serviceMap:
     - AssociateApplications
     - CreateApplication
     - CreateStreamGroup
+    - CreateStreamSessionAdminShell
     - CreateStreamSessionConnection
     - DeleteApplication
     - DeleteStreamGroup
@@ -24525,6 +24533,7 @@ serviceMap:
   Amazon Elastic Container Service:
     StringPrefix: ecs
     Actions:
+    - AllowVendedLogDeliveryForResource
     - ContinueServiceDeployment
     - CreateCapacityProvider
     - CreateCluster
