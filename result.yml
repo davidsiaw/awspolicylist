@@ -12197,25 +12197,35 @@ serviceMap:
     StringPrefix: social-messaging
     Actions:
     - AssociateWhatsAppBusinessAccount
+    - CreateWhatsAppFlow
     - CreateWhatsAppMessageTemplate
     - CreateWhatsAppMessageTemplateFromLibrary
     - CreateWhatsAppMessageTemplateMedia
+    - DeleteWhatsAppFlow
     - DeleteWhatsAppMessageMedia
     - DeleteWhatsAppMessageTemplate
+    - DeprecateWhatsAppFlow
     - DisassociateWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccountPhoneNumber
+    - GetWhatsAppFlow
+    - GetWhatsAppFlowPreview
     - GetWhatsAppMessageMedia
     - GetWhatsAppMessageTemplate
     - ListLinkedWhatsAppBusinessAccounts
     - ListTagsForResource
+    - ListWhatsAppFlowAssets
+    - ListWhatsAppFlows
     - ListWhatsAppMessageTemplates
     - ListWhatsAppTemplateLibrary
     - PostWhatsAppMessageMedia
+    - PublishWhatsAppFlow
     - PutWhatsAppBusinessAccountEventDestinations
     - SendWhatsAppMessage
     - TagResource
     - UntagResource
+    - UpdateWhatsAppFlow
+    - UpdateWhatsAppFlowAssets
     - UpdateWhatsAppMessageTemplate
     ARNFormat: arn:aws:social-messaging:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:social-messaging:.+"
