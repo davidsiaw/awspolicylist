@@ -10938,6 +10938,28 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Support Authorization:
+    StringPrefix: supportauthz
+    Actions:
+    - CreateSupportPermit
+    - DeleteSupportPermit
+    - GetAction
+    - GetSupportPermit
+    - ListActions
+    - ListSupportPermitRequests
+    - ListSupportPermits
+    - ListTagsForResource
+    - RegisterKey
+    - RejectSupportPermitRequest
+    - TagResource
+    - UntagResource
+    ARNFormat: arn:aws:supportauthz:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:supportauthz:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon Timestream:
     StringPrefix: timestream
     Actions:
@@ -11331,6 +11353,7 @@ serviceMap:
     - GetGroup
     - GetIdentityProviderByIdentifier
     - GetLogDeliveryConfiguration
+    - GetProvisionedLimit
     - GetSigningCertificate
     - GetTokensFromRefreshToken
     - GetUICustomization
@@ -11373,6 +11396,7 @@ serviceMap:
     - UpdateGroup
     - UpdateIdentityProvider
     - UpdateManagedLoginBranding
+    - UpdateProvisionedLimit
     - UpdateResourceServer
     - UpdateTerms
     - UpdateUserAttributes
@@ -11859,6 +11883,7 @@ serviceMap:
     - GetQueryResults
     - GetScheduledQuery
     - GetScheduledQueryHistory
+    - GetStorageTierPolicy
     - GetTransformer
     - IntegrateWithS3Table
     - Link
@@ -11894,6 +11919,7 @@ serviceMap:
     - PutQueryDefinition
     - PutResourcePolicy
     - PutRetentionPolicy
+    - PutStorageTierPolicy
     - PutSubscriptionFilter
     - PutSyslogConfiguration
     - PutTransformer
