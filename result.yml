@@ -11790,19 +11790,27 @@ serviceMap:
     - Authenticate
     - AuthorizeOAuth2Access
     - CreateAccount
+    - CreateOAuth2PublicClient
     - CreateOAuth2Token
     - CreateTrustedIdentityPropagationApplicationForConsole
     - DeleteConsoleAuthorizationConfiguration
     - DeleteResourcePermissionStatement
     - GetConsoleAuthorizationConfiguration
     - GetResourcePolicy
+    - IntrospectOAuth2Token
     - ListResourcePermissionStatements
     - ListTrustedIdentityPropagationApplicationsForConsole
     - PutConsoleAuthorizationConfiguration
     - PutResourcePermissionStatement
+    - RevokeOAuth2Token
     ARNFormat: arn:aws:signin:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:signin:.+"
     conditionKeys:
+    - signin:OAuthClientAuthentication
+    - signin:OAuthClientId
+    - signin:OAuthGrantType
+    - signin:OAuthRedirectUri
+    - signin:OAuthTokenType
     - signin:PrincipalArn
     HasResource: true
   Amazon CloudWatch Logs:
@@ -16352,9 +16360,7 @@ serviceMap:
   Amazon SageMaker Unified Studio MCP:
     StringPrefix: sagemaker-unified-studio-mcp
     Actions:
-    - CallPrivilegedTool
-    - CallReadOnlyTool
-    - InvokeMcp
+    - AuthorizeVpce
     ARNFormat: arn:${Partition}:sagemaker-unified-studio-mcp:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:${Partition}:sagemaker-unified-studio-mcp:.+:.+"
     HasResource: false
@@ -20454,6 +20460,9 @@ serviceMap:
     - AssociateLenses
     - AssociateProfiles
     - ConfigureIntegration
+    - CreateAgentContext
+    - CreateAgentGoal
+    - CreateAgentProfile
     - CreateLensShare
     - CreateLensVersion
     - CreateMilestone
@@ -20463,6 +20472,9 @@ serviceMap:
     - CreateTemplateShare
     - CreateWorkload
     - CreateWorkloadShare
+    - DeleteAgentContext
+    - DeleteAgentGoal
+    - DeleteAgentProfile
     - DeleteLens
     - DeleteLensShare
     - DeleteProfile
@@ -20474,6 +20486,11 @@ serviceMap:
     - DisassociateLenses
     - DisassociateProfiles
     - ExportLens
+    - GetAgentContext
+    - GetAgentGoal
+    - GetAgentProfile
+    - GetAgentRecommendation
+    - GetAgentRecommendationGeneration
     - GetAnswer
     - GetConsolidatedReport
     - GetGlobalSettings
@@ -20489,6 +20506,12 @@ serviceMap:
     - GetReviewTemplateLensReview
     - GetWorkload
     - ImportLens
+    - ListAgentContexts
+    - ListAgentGoals
+    - ListAgentProfiles
+    - ListAgentRecommendationGenerations
+    - ListAgentRecommendationItems
+    - ListAgentRecommendations
     - ListAnswers
     - ListCheckDetails
     - ListCheckSummaries
@@ -20508,8 +20531,14 @@ serviceMap:
     - ListTemplateShares
     - ListWorkloadShares
     - ListWorkloads
+    - PutAgentRecommendationFeedback
+    - StartAgentRecommendationGeneration
     - TagResource
     - UntagResource
+    - UpdateAgentContext
+    - UpdateAgentGoal
+    - UpdateAgentProfile
+    - UpdateAgentRecommendationStatus
     - UpdateAnswer
     - UpdateGlobalSettings
     - UpdateIntegration
