@@ -17348,6 +17348,9 @@ serviceMap:
     - GetProfileVisibility
     - GetProgramManagementAccount
     - GetProspectingFromEngagementTask
+    - GetQualificationsAssociationDetails
+    - GetQualificationsAssociationTask
+    - GetQualificationsDisassociationTask
     - GetRelationship
     - GetResourceSnapshot
     - GetResourceSnapshotJob
@@ -17400,6 +17403,8 @@ serviceMap:
     - StartOpportunityFromEngagementTask
     - StartProfileUpdateTask
     - StartProspectingFromEngagementTask
+    - StartQualificationsAssociationTask
+    - StartQualificationsDisassociationTask
     - StartResourceSnapshotJob
     - StartRevenueAttributionAllocationsTask
     - StartVerification
@@ -20165,6 +20170,7 @@ serviceMap:
     - CreateGroupMembership
     - CreateIAMPolicyAssignment
     - CreateIngestion
+    - CreateKnowledgeBase
     - CreateLimitsProfile
     - CreateNamespace
     - CreateOAuthClientApplication
@@ -20424,6 +20430,7 @@ serviceMap:
     - UpdateIdentityPropagationConfig
     - UpdateIpRestriction
     - UpdateKeyRegistration
+    - UpdateKnowledgeBase
     - UpdateKnowledgeBasePermissions
     - UpdateLimitsProfile
     - UpdateOAuthClientApplication
@@ -21132,6 +21139,7 @@ serviceMap:
     - ListAutoOptimizeJobs
     - StartDirectQuery
     - SubmitAutoOptimizeJob
+    - ViewLoginPage
     ARNFormat: arn:aws:opensearch:${Region}:${Account}:${Resource}
     ARNRegex: "^arn:aws:opensearch:.+"
     HasResource: true
@@ -26370,13 +26378,27 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - bedrock-agentcore:AllowedQueryParameters
+    - bedrock-agentcore:AllowedRequestHeaders
+    - bedrock-agentcore:AllowedResponseHeaders
+    - bedrock-agentcore:CredentialProviderScope
+    - bedrock-agentcore:CredentialProviderType
+    - bedrock-agentcore:DiscoveryUrl
     - bedrock-agentcore:GatewayAuthorizerType
+    - bedrock-agentcore:HttpTargetConfigurationType
     - bedrock-agentcore:InboundJwtClaim/aud
     - bedrock-agentcore:InboundJwtClaim/client_id
     - bedrock-agentcore:InboundJwtClaim/iss
     - bedrock-agentcore:InboundJwtClaim/scope
     - bedrock-agentcore:InboundJwtClaim/sub
+    - bedrock-agentcore:InferenceTargetConfigurationType
     - bedrock-agentcore:KmsKeyArn
+    - bedrock-agentcore:McpTargetConfigurationType
+    - bedrock-agentcore:PolicyEngineArn
+    - bedrock-agentcore:PolicyEngineMode
+    - bedrock-agentcore:PrivateEndpointType
+    - bedrock-agentcore:ProtocolType
+    - bedrock-agentcore:ResourceConfigurationIdentifier
     - bedrock-agentcore:RuntimeAuthorizerType
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
