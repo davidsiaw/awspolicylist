@@ -87,6 +87,7 @@ conditionKeys:
 - aws:ResourceOrgPaths
 - aws:ResourceTag/${TagKey}
 - aws:SecureTransport
+- aws:SignInSessionArn
 - aws:SourceAccount
 - aws:SourceArn
 - aws:SourceIdentity
@@ -5933,6 +5934,7 @@ serviceMap:
     - ListIntegrations
     - ListPatientAppointments
     - ListPatientInsuranceCoverages
+    - ListPatientMedications
     - ListProviders
     - ListSessionRecords
     - ListSubscriptions
@@ -5940,9 +5942,11 @@ serviceMap:
     - MatchPatient
     - PublishAgent
     - RescheduleAppointment
+    - ResetPassword
     - ScheduleAppointment
     - StartMedicalScribeListeningSession
     - StartPatientInsightsJob
+    - SubmitMedicationRenewal
     - TagResource
     - UntagResource
     - UpdateAgent
@@ -7293,6 +7297,7 @@ serviceMap:
     - CreateDataProduct
     - CreateDataProductRevision
     - CreateDataSource
+    - CreateDesignation
     - CreateDomain
     - CreateDomainUnit
     - CreateEnvironment
@@ -7323,6 +7328,7 @@ serviceMap:
     - DeleteDataExportConfiguration
     - DeleteDataProduct
     - DeleteDataSource
+    - DeleteDesignation
     - DeleteDomain
     - DeleteDomainSharingPolicy
     - DeleteDomainUnit
@@ -7358,10 +7364,12 @@ serviceMap:
     - GetCompute
     - GetConnection
     - GetConversation
+    - GetCurrentEffectivePolicy
     - GetDataExportConfiguration
     - GetDataProduct
     - GetDataSource
     - GetDataSourceRun
+    - GetDesignation
     - GetDomain
     - GetDomainExecutionRoleCredentials
     - GetDomainSharingPolicy
@@ -7409,6 +7417,7 @@ serviceMap:
     - ListDataSourceRunActivities
     - ListDataSourceRuns
     - ListDataSources
+    - ListDesignations
     - ListDomainUnitsForParent
     - ListDomains
     - ListEntityOwners
@@ -7482,6 +7491,7 @@ serviceMap:
     - UpdateConnection
     - UpdateDataSource
     - UpdateDataSourceRunActivities
+    - UpdateDesignation
     - UpdateDomain
     - UpdateDomainUnit
     - UpdateEnvironment
@@ -7502,6 +7512,7 @@ serviceMap:
     - UpdateSubscriptionTarget
     - UpdateUserProfile
     - ValidatePassRole
+    - ValidatePolicy
     ARNFormat: arn:aws:datazone:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:datazone:. :. :. "
     conditionKeys:
@@ -13673,6 +13684,7 @@ serviceMap:
   AWS Glue:
     StringPrefix: glue
     Actions:
+    - AccessDataQualityRuntimeConfiguration
     - AuthorizeInboundIntegration
     - BatchCreatePartition
     - BatchDeleteConnection
