@@ -12692,6 +12692,7 @@ serviceMap:
     - BatchGetAutomationRules
     - BatchGetConfigurationPolicyAssociations
     - BatchGetControlEvaluations
+    - BatchGetEnabledRegionsV2
     - BatchGetSecurityControls
     - BatchGetStandardsControlAssociations
     - BatchImportFindings
@@ -12752,6 +12753,7 @@ serviceMap:
     - GetConnector
     - GetConnectorV2
     - GetControlFindingSummary
+    - GetCoverageStatisticsV2
     - GetEnabledStandards
     - GetFindingAggregator
     - GetFindingHistory
@@ -26055,10 +26057,13 @@ serviceMap:
     Actions:
     - CancelFHIRExportJobWithDelete
     - ConfirmAttributionList
+    - CreateDataTransformationProfile
     - CreateFHIRDatastore
     - CreateResource
+    - DeleteDataTransformationProfile
     - DeleteFHIRDatastore
     - DeleteResource
+    - DescribeDataTransformationJob
     - DescribeFHIRBulkDeleteJob
     - DescribeFHIRBulkMemberMatchJob
     - DescribeFHIRDatastore
@@ -26070,9 +26075,13 @@ serviceMap:
     - GenerateDocumentWithGet
     - GenerateDocumentWithPost
     - GetCapabilities
+    - GetDataTransformationProfile
     - GetExportedFile
     - GetHistoryByResourceId
     - InquirePreAuthClaim
+    - ListDataTransformationJobs
+    - ListDataTransformationProfileVersions
+    - ListDataTransformationProfiles
     - ListFHIRDatastores
     - ListFHIRExportJobs
     - ListFHIRImportJobs
@@ -26084,12 +26093,14 @@ serviceMap:
     - MemberRemove
     - PatchResource
     - ProcessBundle
+    - PublishDataTransformationProfile
     - QuestionnairePackage
     - ReadResource
     - RetrieveAttributionStatus
     - SearchEverything
     - SearchWithGet
     - SearchWithPost
+    - StartDataTransformationJob
     - StartFHIRBulkDeleteJob
     - StartFHIRBulkMemberMatchJob
     - StartFHIRExportJob
@@ -26098,10 +26109,14 @@ serviceMap:
     - StartFHIRImportJob
     - SubmitPreAuthClaim
     - TagResource
+    - TransformData
     - UntagResource
+    - UpdateDataTransformationProfile
     - UpdateFHIRDatastore
+    - UpdateProfileWithAgent
     - UpdateResource
     - ValidateResource
+    - ValidateSource
     - VersionReadResource
     ARNFormat: arn:aws:healthlake:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:healthlake:.+:.+:.+"
