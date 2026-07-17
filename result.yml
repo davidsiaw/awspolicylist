@@ -12142,6 +12142,8 @@ serviceMap:
     - GetCarbonFootprintSummary
     - GetEstimatedCarbonEmissions
     - GetEstimatedCarbonEmissionsDimensionValues
+    - GetEstimatedWaterAllocation
+    - GetEstimatedWaterAllocationDimensionValues
     ARNFormat: arn:${Partition}:sustainability:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:${Partition}:sustainability:.+:.+:.+"
     HasResource: false
