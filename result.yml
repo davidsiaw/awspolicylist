@@ -7846,11 +7846,13 @@ serviceMap:
     - ListTagsForResource
     - PutInvoiceEmailDeliveryPreferences
     - PutProcurementPortalPreference
+    - SendProcurementPortalValidation
     - StartInvoiceCorrection
     - TagResource
     - UntagResource
     - UpdateInvoiceUnit
     - UpdateProcurementPortalPreferenceStatus
+    - VerifyProcurementPortalValidation
     ARNFormat: arn:aws:invoicing::${Account}:${ResourceType}
     ARNRegex: "^arn:aws:invoicing::.+:.+"
     conditionKeys:
@@ -21714,11 +21716,19 @@ serviceMap:
   AWS Support Plans:
     StringPrefix: supportplans
     Actions:
+    - AcceptSupportAgreement
+    - CancelSupportAgreement
+    - CreateSupportAgreement
     - CreateSupportPlanSchedule
+    - GetSupportAgreement
     - GetSupportPlan
     - GetSupportPlanUpdateStatus
+    - ListSupportAgreementRevisions
+    - ListSupportAgreements
     - ListSupportPlanModifiers
+    - RejectSupportAgreement
     - StartSupportPlanUpdate
+    - UpdateSupportAgreement
     ARNFormat: "^arn:${Partition}:supportplans::${Account}:${ResourceType}/${ResourcePath}"
     ARNRegex: "^arn:${Partition}:supportplans::.+:.+"
     HasResource: false
