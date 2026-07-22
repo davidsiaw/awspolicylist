@@ -1447,6 +1447,7 @@ serviceMap:
     - GetInvoiceSubmissionTask
     - GetIssuedTaxInvoice
     - GetResourcePolicy
+    - GetTaxComplianceProfile
     - GetVerification
     - GetVerificationEvidence
     - ListAssessments
@@ -1456,11 +1457,14 @@ serviceMap:
     - ListIssuedTaxInvoices
     - ListPayables
     - ListTagsForResource
+    - ListTaxComplianceProfileChangeTasks
+    - ListTaxComplianceProfiles
     - ListVerificationEvidence
     - ListVerifications
     - PutResourcePolicy
     - StartChangeSet
     - StartInvoiceSubmissionTask
+    - StartTaxComplianceProfileChangeTask
     - StartVerification
     - TagResource
     - UntagResource
@@ -12135,6 +12139,11 @@ serviceMap:
     ARNFormat: arn:aws:airflow:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:airflow:.+:.+:.+"
     conditionKeys:
+    - airflow:DagAccessEntity
+    - airflow:ResourceAction
+    - airflow:ResourceId
+    - airflow:ResourceType
+    - airflow:TeamName
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
