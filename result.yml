@@ -2573,6 +2573,7 @@ serviceMap:
     - SearchQuickConnects
     - SearchResourceTags
     - SearchRoutingProfiles
+    - SearchRules
     - SearchSecurityProfiles
     - SearchUserHierarchyGroups
     - SearchUsers
@@ -19487,6 +19488,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - gameliftstreams:RoleArn
     HasResource: true
   AWS Support:
     StringPrefix: support
@@ -21398,9 +21400,7 @@ serviceMap:
     - GetContractInformation
     - GetCreditAllocationHistory
     - GetCredits
-    - GetCumulativeTracking
     - GetIAMAccessPreference
-    - GetMonthlyTracking
     - GetResourcePolicy
     - GetSellerOfRecord
     - ListBillingViews
