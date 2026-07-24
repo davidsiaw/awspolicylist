@@ -890,6 +890,7 @@ serviceMap:
     - GetStatementResult
     - ListDatabases
     - ListSchemas
+    - ListSessions
     - ListStatements
     - ListTables
     ARNFormat: arn:aws:redshift-serverless:${Region}:${Account}:${ResourceType}/${ResourceName}
@@ -20222,6 +20223,7 @@ serviceMap:
     - DeleteActionConnector
     - DeleteAgent
     - DeleteAnalysis
+    - DeleteApp
     - DeleteBrand
     - DeleteBrandAssignment
     - DeleteCustomPermissions
@@ -20267,6 +20269,8 @@ serviceMap:
     - DescribeAgentPermissions
     - DescribeAnalysis
     - DescribeAnalysisPermissions
+    - DescribeApp
+    - DescribeAppPermissions
     - DescribeAssetBundleExportJob
     - DescribeAssetBundleImportJob
     - DescribeAutomationGroup
@@ -20340,6 +20344,7 @@ serviceMap:
     - ListActionConnectors
     - ListAgents
     - ListAnalyses
+    - ListApps
     - ListAssetBundleExportJobs
     - ListAssetBundleImportJobs
     - ListAssignmentsForPrincipal
@@ -20400,6 +20405,7 @@ serviceMap:
     - SearchActionConnectors
     - SearchAgents
     - SearchAnalyses
+    - SearchApps
     - SearchAutomationGroups
     - SearchDashboards
     - SearchDataSets
@@ -20432,6 +20438,7 @@ serviceMap:
     - UpdateAgentPermissions
     - UpdateAnalysis
     - UpdateAnalysisPermissions
+    - UpdateAppPermissions
     - UpdateApplicationWithTokenExchangeGrant
     - UpdateAutomationGroupPermissions
     - UpdateBrand
@@ -21445,6 +21452,7 @@ serviceMap:
     - ListReports
     - ListTagsForResource
     - PutAccountSettings
+    - PutComplianceInquiryFeedback
     - TagResource
     - TerminateAgreement
     - UntagResource
@@ -26198,6 +26206,7 @@ serviceMap:
   Amazon Bedrock Agentcore:
     StringPrefix: bedrock-agentcore
     Actions:
+    - AddDatasetExamples
     - AllowVendedLogDeliveryForResource
     - AuthorizeAction
     - BatchCreateMemoryRecords
@@ -26214,6 +26223,8 @@ serviceMap:
     - CreateBrowserProfile
     - CreateCodeInterpreter
     - CreateConfigurationBundle
+    - CreateDataset
+    - CreateDatasetVersion
     - CreateEvaluator
     - CreateEvent
     - CreateGateway
@@ -26243,6 +26254,8 @@ serviceMap:
     - DeleteBrowserProfile
     - DeleteCodeInterpreter
     - DeleteConfigurationBundle
+    - DeleteDataset
+    - DeleteDatasetExamples
     - DeleteEvaluator
     - DeleteEvent
     - DeleteGateway
@@ -26284,6 +26297,7 @@ serviceMap:
     - GetCodeInterpreterSession
     - GetConfigurationBundle
     - GetConfigurationBundleVersion
+    - GetDataset
     - GetEvaluator
     - GetEvent
     - GetGateway
@@ -26344,6 +26358,9 @@ serviceMap:
     - ListCodeInterpreters
     - ListConfigurationBundleVersions
     - ListConfigurationBundles
+    - ListDatasetExamples
+    - ListDatasetVersions
+    - ListDatasets
     - ListEvaluators
     - ListEvents
     - ListGatewayRules
@@ -26403,6 +26420,8 @@ serviceMap:
     - UpdateApiKeyCredentialProvider
     - UpdateBrowserStream
     - UpdateConfigurationBundle
+    - UpdateDataset
+    - UpdateDatasetExamples
     - UpdateEvaluator
     - UpdateGateway
     - UpdateGatewayRule
