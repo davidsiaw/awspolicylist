@@ -2416,6 +2416,7 @@ serviceMap:
     - DeleteWorkspaceMedia
     - DeleteWorkspacePage
     - DescribeAgentStatus
+    - DescribeAttachedFilesConfiguration
     - DescribeAuthenticationProfile
     - DescribeContact
     - DescribeContactEvaluation
@@ -2489,6 +2490,7 @@ serviceMap:
     - ListAnalyticsDataLakeDataSets
     - ListApprovedOrigins
     - ListAssociatedContacts
+    - ListAttachedFilesConfigurations
     - ListAuthenticationProfiles
     - ListBots
     - ListContactEvaluations
@@ -2616,6 +2618,7 @@ serviceMap:
     - UntagContact
     - UntagResource
     - UpdateAgentStatus
+    - UpdateAttachedFilesConfiguration
     - UpdateAuthenticationProfile
     - UpdateContact
     - UpdateContactAttributes
