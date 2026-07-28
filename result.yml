@@ -7403,6 +7403,7 @@ serviceMap:
     - GetNotebook
     - GetNotebookCompute
     - GetNotebookExport
+    - GetNotebookRun
     - GetProject
     - GetProjectProfile
     - GetRule
@@ -7442,6 +7443,7 @@ serviceMap:
     - ListLineageNodeHistory
     - ListLinkedTypes
     - ListMetadataGenerationRuns
+    - ListNotebookRuns
     - ListNotebooks
     - ListNotifications
     - ListPolicyGrants
@@ -7487,10 +7489,12 @@ serviceMap:
     - StartNotebookCompute
     - StartNotebookExport
     - StartNotebookImport
+    - StartNotebookRun
     - StartNotebookSync
     - StopCompute
     - StopMetadataGenerationRun
     - StopNotebookCompute
+    - StopNotebookRun
     - TagResource
     - UntagResource
     - UpdateAccountPool
@@ -17425,6 +17429,7 @@ serviceMap:
     - PutBusinessPlan
     - PutProfileVisibility
     - PutSellingSystemSettings
+    - QueryDataset
     - RecallBenefitApplication
     - RejectChannelHandshake
     - RejectConnectionInvitation
