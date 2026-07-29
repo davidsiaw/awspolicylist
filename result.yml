@@ -3597,6 +3597,7 @@ serviceMap:
     - ListOrganizationalUnitsForParent
     - ListRecommendationResources
     - ListRecommendations
+    - ListRecommendationsForResource
     - ListRoots
     - RefreshCheck
     - SetAccountAccess
@@ -9133,6 +9134,7 @@ serviceMap:
     - ListDbNodes
     - ListDbServers
     - ListDbSystemShapes
+    - ListFlexComponents
     - ListGiVersions
     - ListOdbNetworks
     - ListOdbPeeringConnections
@@ -17429,7 +17431,6 @@ serviceMap:
     - PutBusinessPlan
     - PutProfileVisibility
     - PutSellingSystemSettings
-    - QueryDataset
     - RecallBenefitApplication
     - RejectChannelHandshake
     - RejectConnectionInvitation
@@ -27433,6 +27434,7 @@ serviceMap:
     - GetContactInformation
     - GetGovCloudAccountInformation
     - GetPrimaryEmail
+    - GetPrimaryEmailUpdateStatus
     - GetRegionOptStatus
     - ListRegions
     - PutAccountName
