@@ -7857,6 +7857,8 @@ serviceMap:
     - ListInvoiceSummaries
     - ListInvoiceUnits
     - ListProcurementPortalPreferences
+    - ListProcurementPortalSuppliers
+    - ListProcurementPortals
     - ListTagsForResource
     - PutInvoiceEmailDeliveryPreferences
     - PutProcurementPortalPreference
@@ -19443,6 +19445,7 @@ serviceMap:
   AWS PricingPlanManager Service:
     StringPrefix: pricingplanmanager
     Actions:
+    - ApprovePaidSubscription
     - AssociateResourcesToSubscription
     - CancelSubscription
     - CancelSubscriptionChange
@@ -26432,6 +26435,7 @@ serviceMap:
     - ListGatewayTargets
     - ListGateways
     - ListHarnessEndpoints
+    - ListHarnessVersions
     - ListHarnesses
     - ListMemories
     - ListMemoryExtractionJobs
@@ -27144,6 +27148,7 @@ serviceMap:
     - DescribeVirtualInterfaces
     - DisassociateConnectionFromLag
     - DisassociateMacSecKey
+    - ListVirtualInterfaceRoutes
     - ListVirtualInterfaceTestHistory
     - StartBgpFailoverTest
     - StopBgpFailoverTest
