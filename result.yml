@@ -1295,6 +1295,7 @@ serviceMap:
     - CreateServiceFunction
     - CreateServiceFunctionResources
     - CreateSystem
+    - CreateTest
     - CreateUserJourney
     - DeleteApp
     - DeleteAppAssessment
@@ -1310,6 +1311,8 @@ serviceMap:
     - DeleteServiceFunction
     - DeleteServiceFunctionResources
     - DeleteSystem
+    - DeleteTest
+    - DeleteTestSources
     - DeleteUserJourney
     - DescribeApp
     - DescribeAppAssessment
@@ -1326,6 +1329,9 @@ serviceMap:
     - GetPolicy
     - GetService
     - GetSystem
+    - GetTest
+    - GetTestRun
+    - GetTestTemplate
     - GetUserJourney
     - ImportApp
     - ImportPolicy
@@ -1352,6 +1358,7 @@ serviceMap:
     - ListRecommendationTemplates
     - ListReports
     - ListResiliencyPolicies
+    - ListResolvedTestRunTargetResources
     - ListResourceGroupingRecommendations
     - ListResources
     - ListServiceEvents
@@ -1364,10 +1371,17 @@ serviceMap:
     - ListSystems
     - ListTagsForResource
     - ListTestRecommendations
+    - ListTestRunEvents
+    - ListTestRunSources
+    - ListTestRuns
+    - ListTestSources
+    - ListTestTemplates
+    - ListTests
     - ListUnsupportedAppVersionResources
     - ListUserJourneys
     - PublishAppVersion
     - PutDraftAppVersionTemplate
+    - PutTestSources
     - RejectResourceGroupingRecommendations
     - RemoveDraftAppVersionResourceMappings
     - ResolveAppVersionResources
@@ -1375,6 +1389,8 @@ serviceMap:
     - StartFailureModeAssessment
     - StartMetricsExport
     - StartResourceGroupingRecommendationTask
+    - StartTestRun
+    - StopTestRun
     - TagResource
     - UntagResource
     - UpdateApp
@@ -1389,6 +1405,7 @@ serviceMap:
     - UpdateService
     - UpdateServiceFunction
     - UpdateSystem
+    - UpdateTest
     - UpdateUserJourney
     ARNFormat: arn:aws:resiliencehub:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:resiliencehub:.+"
@@ -2840,6 +2857,7 @@ serviceMap:
     - ListTenants
     - PutAccountDedicatedIpWarmupAttributes
     - PutAccountDetails
+    - PutAccountPricingAttributes
     - PutAccountSendingAttributes
     - PutAccountSuppressionAttributes
     - PutAccountVdmAttributes
@@ -21475,10 +21493,13 @@ serviceMap:
     - GetContractInformation
     - GetCreditAllocationHistory
     - GetCredits
+    - GetEnterpriseSupportChargeSummary
+    - GetEnterpriseSupportContractDetails
     - GetIAMAccessPreference
     - GetResourcePolicy
     - GetSellerOfRecord
     - ListBillingViews
+    - ListEnterpriseSupportLinkedAccountCharges
     - ListSourceViewsForBillingView
     - ListTagsForResource
     - PutContractInformation
