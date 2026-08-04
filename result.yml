@@ -4114,6 +4114,15 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon Bedrock Web Search:
+    StringPrefix: bedrock-websearch
+    Actions:
+    - ExternalWebAccess
+    - InvokeFetch
+    - InvokeSearch
+    ARNFormat: arn:aws:bedrock-websearch:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:bedrock-websearch:.+"
+    HasResource: true
   AWS Certificate Manager:
     StringPrefix: acm
     Actions:
@@ -5875,6 +5884,7 @@ serviceMap:
     - GetDirectQueryDataSource
     - GetDomainMaintenanceStatus
     - GetIndex
+    - GetMigration
     - GetPackageVersionHistory
     - GetUpgradeHistory
     - GetUpgradeStatus
@@ -5891,6 +5901,7 @@ serviceMap:
     - ListElasticsearchVersions
     - ListInsights
     - ListInstanceTypeDetails
+    - ListMigrations
     - ListPackagesForDomain
     - ListScheduledActions
     - ListTags
@@ -5910,6 +5921,7 @@ serviceMap:
     - RollbackServiceSoftwareUpdate
     - StartDomainMaintenance
     - StartElasticsearchServiceSoftwareUpdate
+    - StartMigration
     - StartServiceSoftwareUpdate
     - UpdateApplication
     - UpdateDataSource
@@ -20480,6 +20492,7 @@ serviceMap:
     - ListVPCConnections
     - PassDataSet
     - PassDataSource
+    - PassTopic
     - PredictQAResults
     - PutDataSetRefreshProperties
     - QuickSuiteUsageMetrics
@@ -21557,14 +21570,18 @@ serviceMap:
   Amazon Timestream InfluxDB:
     StringPrefix: timestream-influxdb
     Actions:
+    - CreateDbBackup
     - CreateDbCluster
     - CreateDbInstance
     - CreateDbParameterGroup
+    - DeleteDbBackup
     - DeleteDbCluster
     - DeleteDbInstance
+    - GetDbBackup
     - GetDbCluster
     - GetDbInstance
     - GetDbParameterGroup
+    - ListDbBackups
     - ListDbClusters
     - ListDbInstances
     - ListDbInstancesForCluster
@@ -21572,6 +21589,7 @@ serviceMap:
     - ListTagsForResource
     - RebootDbCluster
     - RebootDbInstance
+    - RestoreFromDbBackup
     - TagResource
     - UntagResource
     - UpdateDbCluster
@@ -21582,6 +21600,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - timestream-influxdb:RestoreMode
     HasResource: true
   AWS Payment Cryptography:
     StringPrefix: payment-cryptography
