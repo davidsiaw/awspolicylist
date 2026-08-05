@@ -22418,11 +22418,14 @@ serviceMap:
     Actions:
     - AssociateOriginationIdentity
     - AssociateProtectConfiguration
+    - CarrierLookup
     - CreateConfigurationSet
     - CreateEventDestination
+    - CreateNotifyConfiguration
     - CreateOptOutList
     - CreatePool
     - CreateProtectConfiguration
+    - CreateRcsAgent
     - CreateRegistration
     - CreateRegistrationAssociation
     - CreateRegistrationAttachment
@@ -22435,11 +22438,15 @@ serviceMap:
     - DeleteEventDestination
     - DeleteKeyword
     - DeleteMediaMessageSpendLimitOverride
+    - DeleteNotifyConfiguration
+    - DeleteNotifyMessageSpendLimitOverride
     - DeleteOptOutList
     - DeleteOptedOutNumber
     - DeletePool
     - DeleteProtectConfiguration
     - DeleteProtectConfigurationRuleSetNumberOverride
+    - DeleteRcsAgent
+    - DeleteRcsMessageSpendLimitOverride
     - DeleteRegistration
     - DeleteRegistrationAttachment
     - DeleteRegistrationFieldValue
@@ -22451,11 +22458,15 @@ serviceMap:
     - DescribeAccountLimits
     - DescribeConfigurationSets
     - DescribeKeywords
+    - DescribeNotifyConfigurations
+    - DescribeNotifyTemplates
     - DescribeOptOutLists
     - DescribeOptedOutNumbers
     - DescribePhoneNumbers
     - DescribePools
     - DescribeProtectConfigurations
+    - DescribeRcsAgentCountryLaunchStatus
+    - DescribeRcsAgents
     - DescribeRegistrationAttachments
     - DescribeRegistrationFieldDefinitions
     - DescribeRegistrationFieldValues
@@ -22471,6 +22482,7 @@ serviceMap:
     - DiscardRegistrationVersion
     - GetProtectConfigurationCountryRuleSet
     - GetResourcePolicy
+    - ListNotifyCountries
     - ListPoolOriginationIdentities
     - ListProtectConfigurationRuleSetNumberOverrides
     - ListRegistrationAssociations
@@ -22487,6 +22499,9 @@ serviceMap:
     - RequestSenderId
     - SendDestinationNumberVerificationCode
     - SendMediaMessage
+    - SendNotifyTextMessage
+    - SendNotifyVoiceMessage
+    - SendRcsMessage
     - SendTextMessage
     - SendVoiceMessage
     - SetAccountDefaultProtectConfiguration
@@ -22494,16 +22509,20 @@ serviceMap:
     - SetDefaultMessageType
     - SetDefaultSenderId
     - SetMediaMessageSpendLimitOverride
+    - SetNotifyMessageSpendLimitOverride
+    - SetRcsMessageSpendLimitOverride
     - SetTextMessageSpendLimitOverride
     - SetVoiceMessageSpendLimitOverride
     - SubmitRegistrationVersion
     - TagResource
     - UntagResource
     - UpdateEventDestination
+    - UpdateNotifyConfiguration
     - UpdatePhoneNumber
     - UpdatePool
     - UpdateProtectConfiguration
     - UpdateProtectConfigurationCountryRuleSet
+    - UpdateRcsAgent
     - UpdateSenderId
     - VerifyDestinationNumber
     ARNFormat: arn:aws:sms-voice:${Region}:${Account}:${ResourceType}/${ResourceId}
