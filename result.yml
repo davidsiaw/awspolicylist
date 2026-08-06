@@ -5533,6 +5533,8 @@ serviceMap:
     - GetManagedScalingPolicy
     - GetOnClusterAppUIPresignedURL
     - GetPersistentAppUIPresignedURL
+    - GetSession
+    - GetSessionEndpoint
     - GetStudioSessionMapping
     - LinkRepository
     - ListBootstrapActions
@@ -5545,6 +5547,7 @@ serviceMap:
     - ListReleaseLabels
     - ListRepositories
     - ListSecurityConfigurations
+    - ListSessions
     - ListSteps
     - ListStudioSessionMappings
     - ListStudios
@@ -5570,9 +5573,11 @@ serviceMap:
     - SetVisibleToAllUsers
     - StartEditor
     - StartNotebookExecution
+    - StartSession
     - StopEditor
     - StopNotebookExecution
     - TerminateJobFlows
+    - TerminateSession
     - UnlinkRepository
     - UpdateEditor
     - UpdateRepository
@@ -5766,6 +5771,7 @@ serviceMap:
     - RestoreTableFromBackup
     - RestoreTableToPointInTime
     - Scan
+    - SearchVectors
     - StartAwsBackupJob
     - TagResource
     - UntagResource
@@ -20271,12 +20277,11 @@ serviceMap:
     Actions:
     - AccountConfigurations
     - AllowVendedLogDeliveryForResource
-    - BatchAssignLimitsProfile
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteKnowledgeBase
     - BatchDeleteTopicReviewedAnswer
+    - BatchDescribeUserLimits
     - BatchGetPreferences
-    - BatchUnassignLimitsProfile
     - BatchUpdatePreferences
     - CancelIngestion
     - CreateAccountCustomization
@@ -20290,6 +20295,7 @@ serviceMap:
     - CreateDashboard
     - CreateDataSet
     - CreateDataSource
+    - CreateDlpSetting
     - CreateEmailCustomizationTemplate
     - CreateExtensionAccess
     - CreateFlow
@@ -20330,6 +20336,7 @@ serviceMap:
     - DeleteDataSetRefreshProperties
     - DeleteDataSource
     - DeleteDefaultQBusinessApplication
+    - DeleteDlpSetting
     - DeleteEmailCustomizationTemplate
     - DeleteExtensionAccess
     - DeleteFlow
@@ -20390,6 +20397,8 @@ serviceMap:
     - DescribeDataSource
     - DescribeDataSourcePermissions
     - DescribeDefaultQBusinessApplication
+    - DescribeDlpJob
+    - DescribeDlpSetting
     - DescribeEmailCustomizationTemplate
     - DescribeExtensionAccess
     - DescribeFlow
@@ -20454,6 +20463,8 @@ serviceMap:
     - ListDashboards
     - ListDataSets
     - ListDataSources
+    - ListDlpLabels
+    - ListDlpSettings
     - ListExtensionAccesses
     - ListFlows
     - ListFolderMembers
@@ -20523,6 +20534,7 @@ serviceMap:
     - StartAutomationJob
     - StartDashboardSnapshotJob
     - StartDashboardSnapshotJobSchedule
+    - StartDlpJob
     - Subscribe
     - TagResource
     - UnpublishFlow
@@ -20555,6 +20567,7 @@ serviceMap:
     - UpdateDataSource
     - UpdateDataSourcePermissions
     - UpdateDefaultQBusinessApplication
+    - UpdateDlpSetting
     - UpdateEmailCustomizationTemplate
     - UpdateExtensionAccess
     - UpdateFlow
