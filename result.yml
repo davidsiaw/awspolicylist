@@ -8020,6 +8020,9 @@ serviceMap:
     - GetRestoreTestingSelection
     - GetSupportedResourceTypes
     - GetTieringConfiguration
+    - ListBackupAccessPoints
+    - ListBackupAccessPointsByRecoveryPoint
+    - ListBackupAccessPointsByResource
     - ListBackupJobSummaries
     - ListBackupJobs
     - ListBackupPlanTemplates
@@ -8351,6 +8354,7 @@ serviceMap:
     - DescribeSchemas
     - DescribeTableStatistics
     - ExportMetadataModelAssessment
+    - GetMetadataModel
     - GetTargetSelectionRules
     - ImportCertificate
     - ListDataProviders
@@ -9638,6 +9642,7 @@ serviceMap:
     - autoscaling:MetadataHttpPutResponseHopLimit
     - autoscaling:MetadataHttpTokens
     - autoscaling:MinSize
+    - autoscaling:OperatorPrincipal
     - autoscaling:ResourceTag/${TagKey}
     - autoscaling:SpotPrice
     - autoscaling:TargetGroupARNs
@@ -9691,6 +9696,35 @@ serviceMap:
     - UpdateSubscription
     ARNFormat: arn:aws:shield:${Region}:${Account}:${Resource}/${ResourceId}
     ARNRegex: "^arn:aws:shield:${Region}:[0-9]+:.+/.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
+  AWS Agent Registry:
+    StringPrefix: agent-registry
+    Actions:
+    - CreateRegistry
+    - CreateRegistryRecord
+    - DeleteRegistry
+    - DeleteRegistryRecord
+    - GetDiscoverableRegistryRecord
+    - GetRegistry
+    - GetRegistryRecord
+    - InvokeRegistryMcp
+    - ListDiscoverableRegistryRecords
+    - ListRegistries
+    - ListRegistryRecords
+    - ListTagsForResource
+    - SearchDiscoverableRegistryRecords
+    - SubmitRegistryRecordForApproval
+    - TagResource
+    - UntagResource
+    - UpdateRegistry
+    - UpdateRegistryRecord
+    - UpdateRegistryRecordStatus
+    ARNFormat: arn:aws:agent-registry:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:agent-registry:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -12854,6 +12888,7 @@ serviceMap:
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
     - ListFindingAggregators
+    - ListFreeTrialStatusesV2
     - ListInvitations
     - ListMembers
     - ListOrganizationAdminAccounts
@@ -26351,6 +26386,7 @@ serviceMap:
     - AuthorizeAction
     - BatchCreateMemoryRecords
     - BatchDeleteMemoryRecords
+    - BatchPutGatewayRateLimits
     - BatchUpdateMemoryRecords
     - CompleteResourceTokenAuth
     - ConnectBrowserAutomationStream
@@ -26361,6 +26397,7 @@ serviceMap:
     - CreateApiKeyCredentialProvider
     - CreateBrowser
     - CreateBrowserProfile
+    - CreateCapacityProvider
     - CreateCodeInterpreter
     - CreateConfigurationBundle
     - CreateDataset
@@ -26368,6 +26405,7 @@ serviceMap:
     - CreateEvaluator
     - CreateEvent
     - CreateGateway
+    - CreateGatewayRateLimit
     - CreateGatewayRule
     - CreateGatewayTarget
     - CreateHarness
@@ -26392,6 +26430,8 @@ serviceMap:
     - DeleteBatchEvaluation
     - DeleteBrowser
     - DeleteBrowserProfile
+    - DeleteCapacityProvider
+    - DeleteCapacityProviderSession
     - DeleteCodeInterpreter
     - DeleteConfigurationBundle
     - DeleteDataset
@@ -26399,6 +26439,7 @@ serviceMap:
     - DeleteEvaluator
     - DeleteEvent
     - DeleteGateway
+    - DeleteGatewayRateLimit
     - DeleteGatewayRule
     - DeleteGatewayTarget
     - DeleteHarness
@@ -26433,6 +26474,7 @@ serviceMap:
     - GetBrowser
     - GetBrowserProfile
     - GetBrowserSession
+    - GetCapacityProvider
     - GetCodeInterpreter
     - GetCodeInterpreterSession
     - GetConfigurationBundle
@@ -26441,6 +26483,7 @@ serviceMap:
     - GetEvaluator
     - GetEvent
     - GetGateway
+    - GetGatewayRateLimit
     - GetGatewayRule
     - GetGatewayTarget
     - GetHarness
@@ -26488,12 +26531,14 @@ serviceMap:
     - ListActors
     - ListAgentRuntimeEndpoints
     - ListAgentRuntimeVersions
+    - ListAgentRuntimeVersionsByCapacityProvider
     - ListAgentRuntimes
     - ListApiKeyCredentialProviders
     - ListBatchEvaluations
     - ListBrowserProfiles
     - ListBrowserSessions
     - ListBrowsers
+    - ListCapacityProviders
     - ListCodeInterpreterSessions
     - ListCodeInterpreters
     - ListConfigurationBundleVersions
@@ -26503,6 +26548,7 @@ serviceMap:
     - ListDatasets
     - ListEvaluators
     - ListEvents
+    - ListGatewayRateLimits
     - ListGatewayRules
     - ListGatewayTargets
     - ListGateways
@@ -26535,8 +26581,10 @@ serviceMap:
     - ManageAdminPolicy
     - ManageResourceScopedPolicy
     - PartiallyAuthorizeActions
+    - PassCapacityProvider
     - ProcessPayment
     - PutResourcePolicy
+    - PutSystemLogEvents
     - RetrieveMemoryRecords
     - SaveBrowserSessionProfile
     - SearchRegistryRecords
@@ -26560,11 +26608,13 @@ serviceMap:
     - UpdateAgentRuntimeEndpoint
     - UpdateApiKeyCredentialProvider
     - UpdateBrowserStream
+    - UpdateCapacityProvider
     - UpdateConfigurationBundle
     - UpdateDataset
     - UpdateDatasetExamples
     - UpdateEvaluator
     - UpdateGateway
+    - UpdateGatewayRateLimit
     - UpdateGatewayRule
     - UpdateGatewayTarget
     - UpdateHarness
@@ -26611,6 +26661,7 @@ serviceMap:
     - bedrock-agentcore:RuntimeAuthorizerType
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
+    - bedrock-agentcore:runtimeSessionId
     - bedrock-agentcore:securityGroups
     - bedrock-agentcore:sessionId
     - bedrock-agentcore:strategyId
