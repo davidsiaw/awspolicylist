@@ -5442,6 +5442,7 @@ serviceMap:
     - DeleteTransformationPackage
     - ExecuteTransformation
     - GetAnalysis
+    - GetAnalysisArtifactDownloadUrl
     - GetCampaign
     - GetFinding
     - GetFindingGroups
@@ -5451,6 +5452,7 @@ serviceMap:
     - GetSource
     - GetTransformationPackageUrl
     - ListAnalyses
+    - ListAnalysisArtifacts
     - ListCampaignRepositories
     - ListCampaigns
     - ListFindings
@@ -7329,6 +7331,7 @@ serviceMap:
     - BatchGetCellRun
     - BatchPutAttributesMetadata
     - BatchPutLinkedTypes
+    - BatchUpdateNotifications
     - CancelMessage
     - CancelMetadataGenerationRun
     - CancelSubscription
@@ -12231,7 +12234,7 @@ serviceMap:
     - airflow:ResourceAction
     - airflow:ResourceId
     - airflow:ResourceType
-    - airflow:TeamName
+    - airflow:TeamNames
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
