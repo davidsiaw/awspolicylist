@@ -2375,6 +2375,7 @@ serviceMap:
     - CreateHoursOfOperationOverride
     - CreateInstance
     - CreateIntegrationAssociation
+    - CreateMetric
     - CreateNotification
     - CreateParticipant
     - CreatePersistentContactAssociation
@@ -2412,6 +2413,7 @@ serviceMap:
     - DeleteHoursOfOperationOverride
     - DeleteInstance
     - DeleteIntegrationAssociation
+    - DeleteMetric
     - DeleteNotification
     - DeletePredefinedAttribute
     - DeletePrompt
@@ -2450,6 +2452,7 @@ serviceMap:
     - DescribeInstance
     - DescribeInstanceAttribute
     - DescribeInstanceStorageConfig
+    - DescribeMetric
     - DescribeNotification
     - DescribePhoneNumber
     - DescribePredefinedAttribute
@@ -2534,6 +2537,7 @@ serviceMap:
     - ListIntegrationAssociations
     - ListLambdaFunctions
     - ListLexBots
+    - ListMetrics
     - ListNotifications
     - ListPhoneNumbers
     - ListPhoneNumbersV2
@@ -2586,6 +2590,7 @@ serviceMap:
     - SearchEvaluationForms
     - SearchHoursOfOperationOverrides
     - SearchHoursOfOperations
+    - SearchMetrics
     - SearchNotifications
     - SearchPredefinedAttributes
     - SearchPrompts
@@ -2657,6 +2662,8 @@ serviceMap:
     - UpdateHoursOfOperationOverride
     - UpdateInstanceAttribute
     - UpdateInstanceStorageConfig
+    - UpdateMetricContent
+    - UpdateMetricMetadata
     - UpdateNotificationContent
     - UpdateParticipantAuthentication
     - UpdateParticipantRoleConfig
@@ -4533,6 +4540,9 @@ serviceMap:
     - eks:endpointPrivateAccess
     - eks:endpointPublicAccess
     - eks:issuerUrl
+    - eks:kubeApiServerConfig
+    - eks:kubeControllerManagerConfig
+    - eks:kubeSchedulerConfig
     - eks:kubernetesGroups
     - eks:kubernetesVersion
     - eks:loggingType/${type}
@@ -6367,6 +6377,7 @@ serviceMap:
     - DeleteMembership
     - DeletePrivacyBudgetTemplate
     - DisallowIntermediateTable
+    - GetAnalysisLogExport
     - GetAnalysisTemplate
     - GetCollaboration
     - GetCollaborationAnalysisTemplate
@@ -6389,6 +6400,7 @@ serviceMap:
     - GetProtectedQuery
     - GetSchema
     - GetSchemaAnalysisRule
+    - ListAnalysisLogExports
     - ListAnalysisTemplates
     - ListCollaborationAnalysisTemplates
     - ListCollaborationChangeRequests
@@ -6417,6 +6429,7 @@ serviceMap:
     - PopulateIdMappingTable
     - PopulateIntermediateTable
     - PreviewPrivacyImpact
+    - StartAnalysisLogExport
     - StartProtectedJob
     - StartProtectedQuery
     - TagResource
@@ -20349,6 +20362,7 @@ serviceMap:
     - CreateAdmin
     - CreateAgent
     - CreateAnalysis
+    - CreateApprovalPolicy
     - CreateBrand
     - CreateCustomPermissions
     - CreateDashboard
@@ -20387,6 +20401,7 @@ serviceMap:
     - DeleteAgent
     - DeleteAnalysis
     - DeleteApp
+    - DeleteApprovalPolicy
     - DeleteBrand
     - DeleteBrandAssignment
     - DeleteCustomPermissions
@@ -20435,6 +20450,7 @@ serviceMap:
     - DescribeAnalysisPermissions
     - DescribeApp
     - DescribeAppPermissions
+    - DescribeApprovalPolicy
     - DescribeAssetBundleExportJob
     - DescribeAssetBundleImportJob
     - DescribeAutomationGroup
@@ -20510,10 +20526,10 @@ serviceMap:
     - ListActionConnectors
     - ListAgents
     - ListAnalyses
+    - ListApprovalPolicies
     - ListApps
     - ListAssetBundleExportJobs
     - ListAssetBundleImportJobs
-    - ListAssignmentsForPrincipal
     - ListAutomationGroups
     - ListBrands
     - ListCustomPermissions
@@ -20540,7 +20556,6 @@ serviceMap:
     - ListLimitsProfiles
     - ListNamespaces
     - ListOAuthClientApplications
-    - ListProfileAssignments
     - ListRefreshSchedules
     - ListRoleMemberships
     - ListSelfUpgrades
@@ -20610,6 +20625,7 @@ serviceMap:
     - UpdateAnalysisPermissions
     - UpdateAppPermissions
     - UpdateApplicationWithTokenExchangeGrant
+    - UpdateApprovalPolicy
     - UpdateAutomationGroupPermissions
     - UpdateBrand
     - UpdateBrandAssignment
