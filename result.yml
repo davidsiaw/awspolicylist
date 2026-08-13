@@ -9142,6 +9142,7 @@ serviceMap:
     Actions:
     - AcceptMarketplaceRegistration
     - AssociateIamRoleToResource
+    - AssociateVirtualMachinesToExadbVmCluster
     - CreateAutonomousDatabase
     - CreateAutonomousDatabaseBackup
     - CreateAutonomousDatabaseWallet
@@ -9149,6 +9150,8 @@ serviceMap:
     - CreateCloudExadataInfrastructure
     - CreateCloudVmCluster
     - CreateDbNode
+    - CreateExadbVmCluster
+    - CreateExascaleDbStorageVault
     - CreateGrantShare
     - CreateOdbNetwork
     - CreateOdbPeeringConnection
@@ -9159,11 +9162,14 @@ serviceMap:
     - DeleteCloudExadataInfrastructure
     - DeleteCloudVmCluster
     - DeleteDbNode
+    - DeleteExadbVmCluster
+    - DeleteExascaleDbStorageVault
     - DeleteGrantShare
     - DeleteOdbNetwork
     - DeleteOdbPeeringConnection
     - DeleteResourcePolicy
     - DisassociateIamRoleFromResource
+    - DisassociateVirtualMachinesFromExadbVmCluster
     - FailoverAutonomousDatabase
     - GetAutonomousDatabase
     - GetAutonomousDatabaseBackup
@@ -9174,6 +9180,8 @@ serviceMap:
     - GetCloudVmCluster
     - GetDbNode
     - GetDbServer
+    - GetExadbVmCluster
+    - GetExascaleDbStorageVault
     - GetOciOnboardingStatus
     - GetOdbNetwork
     - GetOdbPeeringConnection
@@ -9192,7 +9200,10 @@ serviceMap:
     - ListDbNodes
     - ListDbServers
     - ListDbSystemShapes
+    - ListExadbVmClusters
+    - ListExascaleDbStorageVaults
     - ListFlexComponents
+    - ListGiMinorVersions
     - ListGiVersions
     - ListOdbNetworks
     - ListOdbPeeringConnections
@@ -9213,6 +9224,8 @@ serviceMap:
     - UpdateAutonomousDatabase
     - UpdateAutonomousDatabaseBackup
     - UpdateCloudExadataInfrastructure
+    - UpdateExadbVmCluster
+    - UpdateExascaleDbStorageVault
     - UpdateGrantShare
     - UpdateOdbNetwork
     - UpdateOdbPeeringConnection
@@ -17783,6 +17796,7 @@ serviceMap:
     - GetAccountEmailAddress
     - GetAccountName
     - GetAccountPasswordPolicy
+    - GetAccountProperties
     - GetAccountSummary
     - GetCloudFrontPublicKey
     - GetContextKeysForCustomPolicy
@@ -17802,6 +17816,7 @@ serviceMap:
     - GetPolicyVersion
     - GetRole
     - GetRolePolicy
+    - GetRoleTemplateVersion
     - GetSAMLProvider
     - GetSSHPublicKey
     - GetServerCertificate
@@ -17849,6 +17864,7 @@ serviceMap:
     - ListUsers
     - ListVirtualMFADevices
     - PassRole
+    - PutAccountProperties
     - PutGroupPolicy
     - PutRolePermissionsBoundary
     - PutRolePolicy
@@ -17910,6 +17926,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - iam:AWSServiceName
+    - iam:AccountPropertyNamespaces
     - iam:AssociatedResourceArn
     - iam:DelegationDuration
     - iam:DelegationRequestOwner
@@ -17923,6 +17940,7 @@ serviceMap:
     - iam:PolicyARN
     - iam:RegisterSecurityKey
     - iam:ResourceTag/${TagKey}
+    - iam:RoleTemplateARN
     - iam:ServiceSpecificCredentialAgeDays
     - iam:ServiceSpecificCredentialServiceName
     - iam:TemplateArn
