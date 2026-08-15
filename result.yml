@@ -6467,6 +6467,7 @@ serviceMap:
     - CreateConfigurationProfile
     - CreateDeploymentStrategy
     - CreateEnvironment
+    - CreateExperimentDefinition
     - CreateExtension
     - CreateExtensionAssociation
     - CreateHostedConfigurationVersion
@@ -6474,6 +6475,7 @@ serviceMap:
     - DeleteConfigurationProfile
     - DeleteDeploymentStrategy
     - DeleteEnvironment
+    - DeleteExperimentDefinition
     - DeleteExtension
     - DeleteExtensionAssociation
     - DeleteHostedConfigurationVersion
@@ -6484,6 +6486,8 @@ serviceMap:
     - GetDeployment
     - GetDeploymentStrategy
     - GetEnvironment
+    - GetExperimentDefinition
+    - GetExperimentRun
     - GetExtension
     - GetExtensionAssociation
     - GetHostedConfigurationVersion
@@ -6493,13 +6497,18 @@ serviceMap:
     - ListDeploymentStrategies
     - ListDeployments
     - ListEnvironments
+    - ListExperimentDefinitions
+    - ListExperimentRunEvents
+    - ListExperimentRuns
     - ListExtensionAssociations
     - ListExtensions
     - ListHostedConfigurationVersions
     - ListTagsForResource
     - StartConfigurationSession
     - StartDeployment
+    - StartExperimentRun
     - StopDeployment
+    - StopExperimentRun
     - TagResource
     - UntagResource
     - UpdateAccountSettings
@@ -6507,6 +6516,8 @@ serviceMap:
     - UpdateConfigurationProfile
     - UpdateDeploymentStrategy
     - UpdateEnvironment
+    - UpdateExperimentDefinition
+    - UpdateExperimentRun
     - UpdateExtension
     - UpdateExtensionAssociation
     - ValidateConfiguration
@@ -10151,6 +10162,8 @@ serviceMap:
     - BatchDeleteEvaluationJob
     - CallWithBearerToken
     - CancelAutomatedReasoningPolicyBuildWorkflow
+    - CancelInvoke
+    - CheckIngestedDocumentAcl
     - CopyBlueprintStage
     - CountTokens
     - CreateAdvancedPromptOptimizationJob
@@ -10210,6 +10223,7 @@ serviceMap:
     - DeleteGuardrail
     - DeleteImportedModel
     - DeleteInferenceProfile
+    - DeleteInvoke
     - DeleteKnowledgeBase
     - DeleteKnowledgeBaseDocuments
     - DeleteMarketplaceModelAgreement
@@ -10267,8 +10281,10 @@ serviceMap:
     - GetGuardrail
     - GetImportedModel
     - GetInferenceProfile
+    - GetIngestedDocumentAcl
     - GetIngestionJob
     - GetInvocationStep
+    - GetInvoke
     - GetKnowledgeBase
     - GetKnowledgeBaseDocuments
     - GetMarketplaceModelEndpoint
@@ -10407,6 +10423,8 @@ serviceMap:
     - bedrock:GuardrailIdentifier
     - bedrock:InferenceProfileArn
     - bedrock:InlineAgentName
+    - bedrock:ModelArn
+    - bedrock:ProjectArn
     - bedrock:PromptRouterArn
     - bedrock:ServiceTier
     - bedrock:ThirdPartyKnowledgeBaseCredentialsSecretArn
