@@ -12120,10 +12120,13 @@ serviceMap:
     - AssociateSourceNetworkStack
     - BatchCreateVolumeSnapshotGroupForDrs
     - BatchDeleteSnapshotRequestForDrs
+    - CancelRecoveryPlanExecution
     - CreateConvertedSnapshotForDrs
     - CreateExtendedSourceServer
     - CreateLaunchConfigurationTemplate
     - CreateRecoveryInstanceForDrs
+    - CreateRecoveryPlan
+    - CreateRecoveryPlanStep
     - CreateReplicationConfigurationTemplate
     - CreateSourceNetwork
     - CreateSourceServerForDrs
@@ -12131,6 +12134,9 @@ serviceMap:
     - DeleteLaunchAction
     - DeleteLaunchConfigurationTemplate
     - DeleteRecoveryInstance
+    - DeleteRecoveryPlan
+    - DeleteRecoveryPlanExecution
+    - DeleteRecoveryPlanStep
     - DeleteReplicationConfigurationTemplate
     - DeleteSourceNetwork
     - DeleteSourceServer
@@ -12158,12 +12164,20 @@ serviceMap:
     - GetFailbackLaunchRequestedForDrs
     - GetFailbackReplicationConfiguration
     - GetLaunchConfiguration
+    - GetRecoveryPlan
+    - GetRecoveryPlanExecution
+    - GetRecoveryPlanExecutionStep
+    - GetRecoveryPlanStep
     - GetReplicationConfiguration
     - GetSuggestedFailbackClientDeviceMappingForDrs
     - InitializeService
     - IssueAgentCertificateForDrs
     - ListExtensibleSourceServers
     - ListLaunchActions
+    - ListRecoveryPlanExecutionSteps
+    - ListRecoveryPlanExecutions
+    - ListRecoveryPlanSteps
+    - ListRecoveryPlans
     - ListStagingAccounts
     - ListTagsForResource
     - NotifyAgentAuthenticationForDrs
@@ -12174,7 +12188,9 @@ serviceMap:
     - NotifyReplicationServerAuthenticationForDrs
     - NotifyVolumeEventForDrs
     - PutLaunchAction
+    - ReorderRecoveryPlanSteps
     - RetryDataReplication
+    - RetryRecoveryPlanExecutionStep
     - ReverseReplication
     - SendAgentLogsForDrs
     - SendAgentMetricsForDrs
@@ -12184,6 +12200,7 @@ serviceMap:
     - SendVolumeStatsForDrs
     - StartFailbackLaunch
     - StartRecovery
+    - StartRecoveryPlanExecution
     - StartReplication
     - StartSourceNetworkRecovery
     - StartSourceNetworkReplication
@@ -12203,6 +12220,9 @@ serviceMap:
     - UpdateFailbackReplicationConfiguration
     - UpdateLaunchConfiguration
     - UpdateLaunchConfigurationTemplate
+    - UpdateRecoveryPlan
+    - UpdateRecoveryPlanExecutionStep
+    - UpdateRecoveryPlanStep
     - UpdateReplicationCertificateForDrs
     - UpdateReplicationConfiguration
     - UpdateReplicationConfigurationTemplate
