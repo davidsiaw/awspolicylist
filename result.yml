@@ -4450,6 +4450,7 @@ serviceMap:
     StringPrefix: eks
     Actions:
     - AccessKubernetesApi
+    - ActivateCertificateAuthority
     - AssociateAccessPolicy
     - AssociateEncryptionConfig
     - AssociateIdentityProviderConfig
@@ -4457,6 +4458,7 @@ serviceMap:
     - CreateAccessEntry
     - CreateAddon
     - CreateCapability
+    - CreateCertificateAuthority
     - CreateCluster
     - CreateEksAnywhereSubscription
     - CreateFargateProfile
@@ -4465,6 +4467,7 @@ serviceMap:
     - DeleteAccessEntry
     - DeleteAddon
     - DeleteCapability
+    - DeleteCertificateAuthority
     - DeleteCluster
     - DeleteEksAnywhereSubscription
     - DeleteFargateProfile
@@ -4476,6 +4479,7 @@ serviceMap:
     - DescribeAddonConfiguration
     - DescribeAddonVersions
     - DescribeCapability
+    - DescribeCertificateAuthority
     - DescribeCluster
     - DescribeClusterVersions
     - DescribeEksAnywhereSubscription
@@ -4493,6 +4497,7 @@ serviceMap:
     - ListAddons
     - ListAssociatedAccessPolicies
     - ListCapabilities
+    - ListCertificateAuthorities
     - ListClusters
     - ListDashboardData
     - ListDashboardResources
@@ -10180,6 +10185,7 @@ serviceMap:
     - CreateDataAutomationLibrary
     - CreateDataAutomationProject
     - CreateDataSource
+    - CreateDataSourceToken
     - CreateEvaluationJob
     - CreateFlow
     - CreateFlowAlias
@@ -10269,6 +10275,7 @@ serviceMap:
     - GetDataAutomationProject
     - GetDataAutomationStatus
     - GetDataSource
+    - GetDataSourceAuthorizationUrl
     - GetDocumentContent
     - GetEvaluationJob
     - GetExecutionFlowSnapshot
@@ -14400,6 +14407,7 @@ serviceMap:
     - RegisterTargetWithMaintenanceWindow
     - RegisterTaskWithMaintenanceWindow
     - RemoveTagsFromResource
+    - RequestManagedInstanceRoleToken
     - ResetServiceSetting
     - ResumeSession
     - SendAutomationSignal
@@ -14424,6 +14432,7 @@ serviceMap:
     - UpdateMaintenanceWindow
     - UpdateMaintenanceWindowTarget
     - UpdateMaintenanceWindowTask
+    - UpdateManagedInstancePublicKey
     - UpdateManagedInstanceRole
     - UpdateOpsItem
     - UpdateOpsMetadata
@@ -14444,6 +14453,8 @@ serviceMap:
     - ssm:DocumentType
     - ssm:DocumentVersion
     - ssm:InventoryTypeName
+    - ssm:NodeAccountId
+    - ssm:NodeOrgId
     - ssm:Overwrite
     - ssm:Policies
     - ssm:Recursive
@@ -23323,6 +23334,7 @@ serviceMap:
     - AssignPrivateIpAddresses
     - AssignPrivateNatGatewayAddress
     - AssociateAddress
+    - AssociateApplicationStatusCheck
     - AssociateCapacityReservationBillingOwner
     - AssociateClientVpnTargetNetwork
     - AssociateDhcpOptions
@@ -23371,6 +23383,7 @@ serviceMap:
     - CopyImage
     - CopySnapshot
     - CopyVolumes
+    - CreateApplicationStatusCheck
     - CreateCapacityManagerDataExport
     - CreateCapacityReservation
     - CreateCapacityReservationBySplitting
@@ -23458,6 +23471,7 @@ serviceMap:
     - CreateTransitGatewayMulticastDomain
     - CreateTransitGatewayPeeringAttachment
     - CreateTransitGatewayPolicyTable
+    - CreateTransitGatewayPolicyTableEntry
     - CreateTransitGatewayPrefixListReference
     - CreateTransitGatewayRoute
     - CreateTransitGatewayRouteTable
@@ -23479,6 +23493,7 @@ serviceMap:
     - CreateVpnConnection
     - CreateVpnConnectionRoute
     - CreateVpnGateway
+    - DeleteApplicationStatusCheck
     - DeleteCapacityManagerDataExport
     - DeleteCarrierGateway
     - DeleteClientVpnEndpoint
@@ -23555,6 +23570,7 @@ serviceMap:
     - DeleteTransitGatewayMulticastDomain
     - DeleteTransitGatewayPeeringAttachment
     - DeleteTransitGatewayPolicyTable
+    - DeleteTransitGatewayPolicyTableEntry
     - DeleteTransitGatewayPrefixListReference
     - DeleteTransitGatewayRoute
     - DeleteTransitGatewayRouteTable
@@ -23589,6 +23605,9 @@ serviceMap:
     - DescribeAddresses
     - DescribeAddressesAttribute
     - DescribeAggregateIdFormat
+    - DescribeApplicationStatus
+    - DescribeApplicationStatusCheckAssociations
+    - DescribeApplicationStatusChecks
     - DescribeAvailabilityZones
     - DescribeAwsNetworkPerformanceMetricSubscriptions
     - DescribeBundleTasks
@@ -23784,6 +23803,7 @@ serviceMap:
     - DetachVpnGateway
     - DisableAddressTransfer
     - DisableAllowedImagesSettings
+    - DisableApplicationStatusCheckSuppression
     - DisableAwsNetworkPerformanceMetricSubscription
     - DisableCapacityManager
     - DisableEbsEncryptionByDefault
@@ -23804,6 +23824,7 @@ serviceMap:
     - DisableVpcClassicLink
     - DisableVpcClassicLinkDnsSupport
     - DisassociateAddress
+    - DisassociateApplicationStatusCheck
     - DisassociateCapacityReservationBillingOwner
     - DisassociateClientVpnTargetNetwork
     - DisassociateEnclaveCertificateIamRole
@@ -23824,6 +23845,7 @@ serviceMap:
     - DisassociateVpcCidrBlock
     - EnableAddressTransfer
     - EnableAllowedImagesSettings
+    - EnableApplicationStatusCheckSuppression
     - EnableAwsNetworkPerformanceMetricSubscription
     - EnableCapacityManager
     - EnableEbsEncryptionByDefault
@@ -23936,6 +23958,7 @@ serviceMap:
     - ListVolumesInRecycleBin
     - LockSnapshot
     - ModifyAddressAttribute
+    - ModifyApplicationStatusCheck
     - ModifyAvailabilityZoneGroup
     - ModifyCapacityReservation
     - ModifyCapacityReservationFleet
@@ -23989,6 +24012,7 @@ serviceMap:
     - ModifyTrafficMirrorSession
     - ModifyTransitGateway
     - ModifyTransitGatewayMeteringPolicy
+    - ModifyTransitGatewayPolicyTableEntry
     - ModifyTransitGatewayPrefixListReference
     - ModifyTransitGatewayVpcAttachment
     - ModifyVerifiedAccessEndpoint
@@ -24006,6 +24030,7 @@ serviceMap:
     - ModifyVpcEncryptionControl
     - ModifyVpcEndpoint
     - ModifyVpcEndpointConnectionNotification
+    - ModifyVpcEndpointPayerResponsibility
     - ModifyVpcEndpointServiceConfiguration
     - ModifyVpcEndpointServicePayerResponsibility
     - ModifyVpcEndpointServicePermissions
