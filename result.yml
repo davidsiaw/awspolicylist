@@ -14696,6 +14696,7 @@ serviceMap:
     - DeleteMicrovmImageVersion
     - DeleteNetworkConnector
     - DeleteProvisionedConcurrencyConfig
+    - DeleteResourcePolicy
     - DisableReplication
     - EnableReplication
     - GetAccountSettings
@@ -14723,6 +14724,7 @@ serviceMap:
     - GetNetworkConnector
     - GetPolicy
     - GetProvisionedConcurrencyConfig
+    - GetResourcePolicy
     - GetRuntimeManagementConfig
     - InvokeAsync
     - InvokeFunction
@@ -14759,6 +14761,7 @@ serviceMap:
     - PutFunctionRecursionConfig
     - PutFunctionScalingConfig
     - PutProvisionedConcurrencyConfig
+    - PutResourcePolicy
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
     - RemovePermission
@@ -18996,6 +18999,7 @@ serviceMap:
     - ImportClientBranding
     - ImportCustomWorkspaceImage
     - ImportWorkspaceImage
+    - InvokeOnboardingAgent
     - InvokeTroubleshootingInvestigation
     - ListAccountLinks
     - ListAvailableManagementCidrRanges
@@ -19012,6 +19016,7 @@ serviceMap:
     - ModifyWorkspaceCreationProperties
     - ModifyWorkspaceProperties
     - ModifyWorkspaceState
+    - Personalization
     - RebootWorkspaces
     - RebuildWorkspaces
     - RegisterWorkspaceDirectory
