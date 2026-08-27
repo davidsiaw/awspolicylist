@@ -11263,6 +11263,7 @@ serviceMap:
     - EvaluatePullRequestApprovalRules
     - GetApprovalRuleTemplate
     - GetBlob
+    - GetBlobDifferences
     - GetBranch
     - GetComment
     - GetCommentReactions
@@ -14893,6 +14894,7 @@ serviceMap:
     - ListNetworkMigrationDeployedStacks
     - ListNetworkMigrationDeployedStacksDeletions
     - ListNetworkMigrationDeployments
+    - ListNetworkMigrationExecutionArtifacts
     - ListNetworkMigrationExecutions
     - ListNetworkMigrationMapperSegmentConstructs
     - ListNetworkMigrationMapperSegments
