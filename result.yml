@@ -15910,6 +15910,8 @@ serviceMap:
     - BatchGetMetrics
     - BatchGetRecord
     - BatchPutMetrics
+    - BatchRebootClusterNodes
+    - BatchReplaceClusterNodes
     - BatchWriteRecord
     - CallMlflowAppApi
     - CallPartnerAppApi
@@ -16130,6 +16132,7 @@ serviceMap:
     - DescribeSubscribedWorkteam
     - DescribeTrainingJob
     - DescribeTrainingPlan
+    - DescribeTrainingPlanExtensionHistory
     - DescribeTransformJob
     - DescribeTrial
     - DescribeTrialComponent
@@ -16140,6 +16143,7 @@ serviceMap:
     - DisableSagemakerServicecatalogPortfolio
     - DisassociateTrialComponent
     - EnableSagemakerServicecatalogPortfolio
+    - ExtendTrainingPlan
     - GetDeployments
     - GetDeviceFleetReport
     - GetDeviceRegistration
@@ -16351,6 +16355,7 @@ serviceMap:
     - aws:TagKeys
     - sagemaker:AcceleratorTypes
     - sagemaker:AppNetworkAccessType
+    - sagemaker:AuthMode
     - sagemaker:BearerTokenType
     - sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}
     - sagemaker:CurrentModelLifeCycleStage
@@ -16380,6 +16385,7 @@ serviceMap:
     - sagemaker:ImageVersionArns
     - sagemaker:InstanceTypes
     - sagemaker:InterContainerTrafficEncryption
+    - sagemaker:IsUpdateRecord
     - sagemaker:KeepAlivePeriod
     - sagemaker:MaxRuntimeInSeconds
     - sagemaker:MinimumInstanceMetadataServiceVersion
@@ -16404,6 +16410,7 @@ serviceMap:
     - sagemaker:StudioLifecycleConfigArns
     - sagemaker:TaggingAction
     - sagemaker:TargetModel
+    - sagemaker:UpdatableFeatures
     - sagemaker:UserProfileName
     - sagemaker:VolumeKmsKey
     - sagemaker:VolumeKmsKeyArn
@@ -19757,6 +19764,7 @@ serviceMap:
     Actions:
     - AddAttachmentsToSet
     - AddCommunicationToCase
+    - AddRelatedItemToCase
     - CreateCase
     - DescribeAttachment
     - DescribeCaseAttributes
@@ -19766,6 +19774,7 @@ serviceMap:
     - DescribeCommunications
     - DescribeCreateCaseOptions
     - DescribeIssueTypes
+    - DescribeRelatedItems
     - DescribeServices
     - DescribeSeverityLevels
     - DescribeSupportLevel
@@ -19774,6 +19783,8 @@ serviceMap:
     - DescribeTrustedAdvisorCheckResult
     - DescribeTrustedAdvisorCheckSummaries
     - DescribeTrustedAdvisorChecks
+    - DisconnectLiveContactForCase
+    - DownloadAttachment
     - GetInteraction
     - InitiateCallForCase
     - InitiateChatForCase
@@ -19789,6 +19800,7 @@ serviceMap:
     - StartInteraction
     - UpdateCaseSeverity
     - UpdateInteraction
+    - UploadAttachment
     HasResource: false
   Amazon Polly:
     StringPrefix: polly
@@ -26436,6 +26448,7 @@ serviceMap:
     - PublishDataTransformationProfile
     - QuestionnairePackage
     - ReadResource
+    - RestoreFHIRDatastore
     - RetrieveAttributionStatus
     - SearchEverything
     - SearchWithGet
