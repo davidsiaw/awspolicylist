@@ -2379,6 +2379,7 @@ serviceMap:
     - CreateDataTableAttribute
     - CreateEmailAddress
     - CreateEvaluationForm
+    - CreateExtractionDefinition
     - CreateHoursOfOperation
     - CreateHoursOfOperationOverride
     - CreateInstance
@@ -2417,6 +2418,7 @@ serviceMap:
     - DeleteDataTableAttribute
     - DeleteEmailAddress
     - DeleteEvaluationForm
+    - DeleteExtractionDefinition
     - DeleteHoursOfOperation
     - DeleteHoursOfOperationOverride
     - DeleteInstance
@@ -2454,6 +2456,7 @@ serviceMap:
     - DescribeDataTableAttribute
     - DescribeEmailAddress
     - DescribeEvaluationForm
+    - DescribeExtractionDefinition
     - DescribeForecastingPlanningSchedulingIntegration
     - DescribeHoursOfOperation
     - DescribeHoursOfOperationOverride
@@ -2536,6 +2539,7 @@ serviceMap:
     - ListEntitySecurityProfiles
     - ListEvaluationFormVersions
     - ListEvaluationForms
+    - ListExtractionDefinitions
     - ListFlowAssociations
     - ListHoursOfOperationOverrides
     - ListHoursOfOperations
@@ -2666,6 +2670,7 @@ serviceMap:
     - UpdateDataTablePrimaryValues
     - UpdateEmailAddressMetadata
     - UpdateEvaluationForm
+    - UpdateExtractionDefinition
     - UpdateHoursOfOperation
     - UpdateHoursOfOperationOverride
     - UpdateInstanceAttribute
@@ -9788,6 +9793,7 @@ serviceMap:
     ARNRegex: "^arn:aws:agent-registry:.+:.+:.+"
     conditionKeys:
     - agent-registry:RecordCreatorAccount
+    - agent-registry:RecordSourceAccount
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
