@@ -2503,6 +2503,7 @@ serviceMap:
     - GetAttachedFile
     - GetContactAttributes
     - GetContactMetrics
+    - GetCrossRegionRouting
     - GetCurrentMetricData
     - GetCurrentUserData
     - GetEffectiveHoursOfOperations
@@ -2665,6 +2666,7 @@ serviceMap:
     - UpdateContactFlowName
     - UpdateContactRoutingData
     - UpdateContactSchedule
+    - UpdateCrossRegionRouting
     - UpdateDataTableAttribute
     - UpdateDataTableMetadata
     - UpdateDataTablePrimaryValues
@@ -4647,12 +4649,16 @@ serviceMap:
     StringPrefix: kinesis
     Actions:
     - AddTagsToStream
+    - AssociateStreamsWithChannel
+    - CreateChannel
     - CreateStream
     - DecreaseStreamRetentionPeriod
+    - DeleteChannel
     - DeleteResourcePolicy
     - DeleteStream
     - DeregisterStreamConsumer
     - DescribeAccountSettings
+    - DescribeChannel
     - DescribeLimits
     - DescribeStream
     - DescribeStreamConsumer
@@ -4664,6 +4670,7 @@ serviceMap:
     - GetShardIterator
     - IncreaseStreamRetentionPeriod
     - InjectApiError
+    - ListChannels
     - ListShards
     - ListStreamConsumers
     - ListStreams
@@ -4682,6 +4689,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateAccountSettings
+    - UpdateChannel
     - UpdateMaxRecordSize
     - UpdateShardCount
     - UpdateStreamMode
@@ -11467,6 +11475,7 @@ serviceMap:
     - AdminAddUserToGroup
     - AdminConfirmSignUp
     - AdminCreateUser
+    - AdminDeleteSoftwareToken
     - AdminDeleteUser
     - AdminDeleteUserAttributes
     - AdminDisableProviderForUser
@@ -15077,6 +15086,8 @@ serviceMap:
     - AcceptAdministratorInvitation
     - AcceptInvitation
     - ArchiveFindings
+    - CreateCustomDetectionRuleAssociation
+    - CreateCustomDetectionRuleOrgConfiguration
     - CreateDetector
     - CreateFilter
     - CreateIPSet
@@ -15089,6 +15100,8 @@ serviceMap:
     - CreateThreatIntelSet
     - CreateTrustedEntitySet
     - DeclineInvitations
+    - DeleteCustomDetectionRuleAssociation
+    - DeleteCustomDetectionRuleOrgConfiguration
     - DeleteDetector
     - DeleteFilter
     - DeleteIPSet
@@ -15109,6 +15122,9 @@ serviceMap:
     - EnableOrganizationAdminAccount
     - GetAdministratorAccount
     - GetCoverageStatistics
+    - GetCustomDetectionRule
+    - GetCustomDetectionRuleAssociation
+    - GetCustomDetectionRuleOrgConfiguration
     - GetDetector
     - GetFilter
     - GetFindings
@@ -15130,6 +15146,9 @@ serviceMap:
     - GetUsageStatistics
     - InviteMembers
     - ListCoverage
+    - ListCustomDetectionRuleAssociations
+    - ListCustomDetectionRuleOrgConfigurations
+    - ListCustomDetectionRules
     - ListDetectors
     - ListFilters
     - ListFindings
@@ -15153,6 +15172,8 @@ serviceMap:
     - TagResource
     - UnarchiveFindings
     - UntagResource
+    - UpdateCustomDetectionRuleAssociation
+    - UpdateCustomDetectionRuleOrgConfiguration
     - UpdateDetector
     - UpdateFilter
     - UpdateFindingsFeedback
@@ -23404,6 +23425,7 @@ serviceMap:
     - AuthorizeClientVpnIngress
     - AuthorizeSecurityGroupEgress
     - AuthorizeSecurityGroupIngress
+    - BatchModifyIpamRoutingPolicyRegistrations
     - BundleInstance
     - CancelBundleTask
     - CancelCapacityReservation
@@ -23451,11 +23473,13 @@ serviceMap:
     - CreateInterruptibleCapacityReservationAllocation
     - CreateIpam
     - CreateIpamExternalResourceVerificationToken
+    - CreateIpamInternetRegistryAssociation
     - CreateIpamPolicy
     - CreateIpamPool
     - CreateIpamPrefixListResolver
     - CreateIpamPrefixListResolverTarget
     - CreateIpamResourceDiscovery
+    - CreateIpamRoutingPolicyRegistration
     - CreateIpamScope
     - CreateKeyPair
     - CreateLaunchTemplate
@@ -23551,11 +23575,13 @@ serviceMap:
     - DeleteInternetGateway
     - DeleteIpam
     - DeleteIpamExternalResourceVerificationToken
+    - DeleteIpamInternetRegistryAssociation
     - DeleteIpamPolicy
     - DeleteIpamPool
     - DeleteIpamPrefixListResolver
     - DeleteIpamPrefixListResolverTarget
     - DeleteIpamResourceDiscovery
+    - DeleteIpamRoutingPolicyRegistration
     - DeleteIpamScope
     - DeleteKeyPair
     - DeleteLaunchTemplate
@@ -23639,6 +23665,7 @@ serviceMap:
     - DeregisterTransitGatewayMulticastGroupMembers
     - DeregisterTransitGatewayMulticastGroupSources
     - DescribeAccountAttributes
+    - DescribeAccountVpcEncryptionControl
     - DescribeAddressTransfers
     - DescribeAddresses
     - DescribeAddressesAttribute
@@ -23714,6 +23741,7 @@ serviceMap:
     - DescribeInternetGateways
     - DescribeIpamByoasn
     - DescribeIpamExternalResourceVerificationTokens
+    - DescribeIpamInternetRegistryAssociations
     - DescribeIpamPolicies
     - DescribeIpamPoolAllocations
     - DescribeIpamPools
@@ -23894,6 +23922,7 @@ serviceMap:
     - EnableImageDeprecation
     - EnableImageDeregistrationProtection
     - EnableInstanceSqlHaStandbyDetections
+    - EnableIpamInternetRegistryAssociation
     - EnableIpamOrganizationAdminAccount
     - EnableIpamPolicy
     - EnableReachabilityAnalyzerOrganizationSharing
@@ -23941,6 +23970,9 @@ serviceMap:
     - GetIpamDiscoveredAccounts
     - GetIpamDiscoveredPublicAddresses
     - GetIpamDiscoveredResourceCidrs
+    - GetIpamDiscoveredRoutes
+    - GetIpamInternetRegistryAssociationAsns
+    - GetIpamInternetRegistryAssociationCidrs
     - GetIpamPolicyAllocationRules
     - GetIpamPolicyOrganizationTargets
     - GetIpamPoolAllocations
@@ -23949,6 +23981,10 @@ serviceMap:
     - GetIpamPrefixListResolverVersionEntries
     - GetIpamPrefixListResolverVersions
     - GetIpamResourceCidrs
+    - GetIpamRouteOriginAuthorizations
+    - GetIpamRouteProtectionFindings
+    - GetIpamRoutingPolicyRegistrationDeltas
+    - GetIpamRoutingPolicyRegistrations
     - GetLaunchTemplateData
     - GetManagedPrefixListAssociations
     - GetManagedPrefixListEntries
@@ -23995,6 +24031,7 @@ serviceMap:
     - ListSnapshotsInRecycleBin
     - ListVolumesInRecycleBin
     - LockSnapshot
+    - ModifyAccountVpcEncryptionControl
     - ModifyAddressAttribute
     - ModifyApplicationStatusCheck
     - ModifyAvailabilityZoneGroup
@@ -24029,6 +24066,7 @@ serviceMap:
     - ModifyIpamPrefixListResolverTarget
     - ModifyIpamResourceCidr
     - ModifyIpamResourceDiscovery
+    - ModifyIpamRoutingPolicyRegistration
     - ModifyIpamScope
     - ModifyLaunchTemplate
     - ModifyLocalGatewayRoute
