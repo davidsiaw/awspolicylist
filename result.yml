@@ -13455,6 +13455,7 @@ serviceMap:
     - DeleteEnvironmentConnector
     - DeleteEnvironmentHost
     - DisassociateEipFromVlan
+    - GetAccountSettings
     - GetDepotUrl
     - GetEnvironment
     - GetVersions
@@ -13464,6 +13465,7 @@ serviceMap:
     - ListEnvironments
     - ListTagsForResource
     - ListVmEntitlements
+    - PutAccountSettings
     - TagResource
     - UntagResource
     - UpdateEnvironmentConnector
@@ -20501,6 +20503,7 @@ serviceMap:
     - CreateDataSource
     - CreateDlpSetting
     - CreateEmailCustomizationTemplate
+    - CreateExtension
     - CreateExtensionAccess
     - CreateFlow
     - CreateFolder
@@ -20543,6 +20546,7 @@ serviceMap:
     - DeleteDefaultQBusinessApplication
     - DeleteDlpSetting
     - DeleteEmailCustomizationTemplate
+    - DeleteExtension
     - DeleteExtensionAccess
     - DeleteFlow
     - DeleteFolder
@@ -20604,7 +20608,9 @@ serviceMap:
     - DescribeDlpJob
     - DescribeDlpSetting
     - DescribeEmailCustomizationTemplate
+    - DescribeExtension
     - DescribeExtensionAccess
+    - DescribeExtensionPermissions
     - DescribeFlow
     - DescribeFolder
     - DescribeFolderPermissions
@@ -20670,6 +20676,7 @@ serviceMap:
     - ListDlpLabels
     - ListDlpSettings
     - ListExtensionAccesses
+    - ListExtensions
     - ListFlows
     - ListFolderMembers
     - ListFolders
@@ -20737,6 +20744,7 @@ serviceMap:
     - StartDashboardSnapshotJob
     - StartDashboardSnapshotJobSchedule
     - StartDlpJob
+    - StartExtensionInstallation
     - Subscribe
     - TagResource
     - UnpublishFlow
@@ -20771,7 +20779,9 @@ serviceMap:
     - UpdateDefaultQBusinessApplication
     - UpdateDlpSetting
     - UpdateEmailCustomizationTemplate
+    - UpdateExtension
     - UpdateExtensionAccess
+    - UpdateExtensionPermissions
     - UpdateFlow
     - UpdateFlowPermissions
     - UpdateFolder
