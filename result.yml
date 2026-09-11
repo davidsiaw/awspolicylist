@@ -2538,6 +2538,7 @@ serviceMap:
     - ListDataTables
     - ListDefaultVocabularies
     - ListEntitySecurityProfiles
+    - ListEvaluationFormAIVersions
     - ListEvaluationFormVersions
     - ListEvaluationForms
     - ListExtractionDefinitions
@@ -3552,6 +3553,7 @@ serviceMap:
     ARNFormat: arn:aws:vpc-lattice:${Region}:${Account}:${ResourceType}/${RelativeId}
     ARNRegex: "^arn:aws:vpc-lattice:.+"
     conditionKeys:
+    - aws:ResourceTag/${TagKey}
     - vpc-lattice-svcs:Port
     - vpc-lattice-svcs:RequestHeader/${HeaderName}
     - vpc-lattice-svcs:RequestMethod
@@ -26619,6 +26621,7 @@ serviceMap:
     - CreateCapacityProvider
     - CreateCodeInterpreter
     - CreateConfigurationBundle
+    - CreateConsentPortal
     - CreateDataset
     - CreateDatasetVersion
     - CreateEvaluator
@@ -26653,6 +26656,7 @@ serviceMap:
     - DeleteCapacityProviderSession
     - DeleteCodeInterpreter
     - DeleteConfigurationBundle
+    - DeleteConsentPortal
     - DeleteDataset
     - DeleteDatasetExamples
     - DeleteEvaluator
@@ -26698,6 +26702,7 @@ serviceMap:
     - GetCodeInterpreterSession
     - GetConfigurationBundle
     - GetConfigurationBundleVersion
+    - GetConsentPortal
     - GetDataset
     - GetEvaluator
     - GetEvent
@@ -26762,6 +26767,7 @@ serviceMap:
     - ListCodeInterpreters
     - ListConfigurationBundleVersions
     - ListConfigurationBundles
+    - ListConsentPortals
     - ListDatasetExamples
     - ListDatasetVersions
     - ListDatasets
@@ -26829,6 +26835,7 @@ serviceMap:
     - UpdateBrowserStream
     - UpdateCapacityProvider
     - UpdateConfigurationBundle
+    - UpdateConsentPortal
     - UpdateDataset
     - UpdateDatasetExamples
     - UpdateEvaluator
