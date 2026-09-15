@@ -1379,7 +1379,9 @@ serviceMap:
     - ListSystems
     - ListTagsForResource
     - ListTestRecommendations
+    - ListTestRunDependencies
     - ListTestRunEvents
+    - ListTestRunSourceEvents
     - ListTestRunSources
     - ListTestRuns
     - ListTestSources
