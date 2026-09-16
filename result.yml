@@ -2806,6 +2806,8 @@ serviceMap:
   Amazon Simple Email Service v2:
     StringPrefix: ses
     Actions:
+    - ApplyTrackingConfigurationOverrides
+    - AssociateEmailIdentityCertificate
     - BatchGetMetricData
     - CancelExportJob
     - CreateConfigurationSet
@@ -2836,6 +2838,7 @@ serviceMap:
     - DeleteSuppressedDestination
     - DeleteTenant
     - DeleteTenantResourceAssociation
+    - DisassociateEmailIdentityCertificate
     - GetAccount
     - GetBlacklistReports
     - GetConfigurationSet
@@ -2869,6 +2872,7 @@ serviceMap:
     - ListDeliverabilityTestReports
     - ListDomainDeliverabilityCampaigns
     - ListEmailIdentities
+    - ListEmailIdentityCertificates
     - ListEmailTemplates
     - ListExportJobs
     - ListImportJobs
@@ -2911,6 +2915,7 @@ serviceMap:
     - TagResource
     - TestRenderEmailTemplate
     - UntagResource
+    - UpdateConfigurationSet
     - UpdateConfigurationSetEventDestination
     - UpdateContact
     - UpdateContactList
@@ -2926,11 +2931,14 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - ses:ApiVersion
+    - ses:ClickTrackingEnabled
+    - ses:ConfigurationSetOptions
     - ses:ExportSourceType
     - ses:FeedbackAddress
     - ses:FromAddress
     - ses:FromDisplayName
     - ses:MultiRegionEndpointId
+    - ses:OpenTrackingEnabled
     - ses:Recipients
     - ses:ReplicaRegion
     - ses:TenantName
@@ -27455,6 +27463,7 @@ serviceMap:
     - AllocatePublicVirtualInterface
     - AllocateTransitVirtualInterface
     - AssociateConnectionWithLag
+    - AssociateConnectionsToResiliencyGroup
     - AssociateHostedConnection
     - AssociateMacSecKey
     - AssociateVirtualInterface
@@ -27472,6 +27481,7 @@ serviceMap:
     - CreateLag
     - CreatePrivateVirtualInterface
     - CreatePublicVirtualInterface
+    - CreateResiliencyGroup
     - CreateTransitVirtualInterface
     - DeleteBGPPeer
     - DeleteConnection
@@ -27480,6 +27490,7 @@ serviceMap:
     - DeleteDirectConnectGatewayAssociationProposal
     - DeleteInterconnect
     - DeleteLag
+    - DeleteResiliencyGroup
     - DeleteVirtualInterface
     - DescribeConnectionLoa
     - DescribeConnections
@@ -27500,7 +27511,11 @@ serviceMap:
     - DescribeVirtualGateways
     - DescribeVirtualInterfaces
     - DisassociateConnectionFromLag
+    - DisassociateConnectionsFromResiliencyGroup
     - DisassociateMacSecKey
+    - GetResiliencyGroup
+    - ListResiliencyGroupAssociations
+    - ListResiliencyGroups
     - ListVirtualInterfaceRoutes
     - ListVirtualInterfaceTestHistory
     - StartBgpFailoverTest
@@ -27508,9 +27523,11 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateConnection
+    - UpdateConnectionsBillingMode
     - UpdateDirectConnectGateway
     - UpdateDirectConnectGatewayAssociation
     - UpdateLag
+    - UpdateResiliencyGroup
     - UpdateVirtualInterfaceAttributes
     ARNFormat: arn:aws:directconnect:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:directconnect:.+"
