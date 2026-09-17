@@ -22837,6 +22837,7 @@ serviceMap:
   AWS User Notifications:
     StringPrefix: notifications
     Actions:
+    - AccessSensitiveEvents
     - AssociateChannel
     - AssociateManagedNotificationAccountContact
     - AssociateManagedNotificationAdditionalChannel
@@ -22874,9 +22875,11 @@ serviceMap:
     - ListTagsForResource
     - PutFeatureOptInStatus
     - RegisterNotificationHub
+    - SubscribeSensitiveEvents
     - TagResource
     - UntagResource
     - UpdateEventRule
+    - UpdateManagedNotificationChannelAssociation
     - UpdateNotificationConfiguration
     ARNFormat: arn:aws:notifications::${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:notifications:.*:.+:.+"
@@ -26501,6 +26504,7 @@ serviceMap:
     - DescribeDataTransformationJob
     - DescribeFHIRBulkDeleteJob
     - DescribeFHIRBulkMemberMatchJob
+    - DescribeFHIRBulkPatchJob
     - DescribeFHIRDatastore
     - DescribeFHIRExportJob
     - DescribeFHIRExportJobWithGet
@@ -26539,6 +26543,7 @@ serviceMap:
     - StartDataTransformationJob
     - StartFHIRBulkDeleteJob
     - StartFHIRBulkMemberMatchJob
+    - StartFHIRBulkPatchJob
     - StartFHIRExportJob
     - StartFHIRExportJobWithGet
     - StartFHIRExportJobWithPost
