@@ -13252,6 +13252,7 @@ serviceMap:
     - BatchGetThreatModelJobs
     - BatchGetThreatModels
     - BatchGetThreats
+    - BatchGetValidationRuns
     - BatchUpdateSecurityRequirements
     - CreateAgentSpace
     - CreateApplication
@@ -13298,6 +13299,7 @@ serviceMap:
     - ListCodeReviews
     - ListDesignReviewComments
     - ListDesignReviews
+    - ListDiscoveredDomains
     - ListDiscoveredEndpoints
     - ListFindings
     - ListIntegratedResources
@@ -13321,6 +13323,7 @@ serviceMap:
     - StartCodeReviewJob
     - StartPentestJob
     - StartThreatModelJob
+    - StartValidationRun
     - StopCodeReviewJob
     - StopPentestJob
     - StopThreatModelJob
@@ -13330,6 +13333,7 @@ serviceMap:
     - UpdateAgentSpace
     - UpdateApplication
     - UpdateCodeReview
+    - UpdateDiscoveredDomains
     - UpdateFinding
     - UpdateIntegratedResources
     - UpdatePentest
@@ -22727,6 +22731,7 @@ serviceMap:
     - DiscardRegistrationVersion
     - GetProtectConfigurationCountryRuleSet
     - GetResourcePolicy
+    - ListAvailablePhoneNumbers
     - ListNotifyCountries
     - ListPoolOriginationIdentities
     - ListProtectConfigurationRuleSetNumberOverrides
@@ -27083,12 +27088,18 @@ serviceMap:
   AWS User Subscriptions:
     StringPrefix: user-subscriptions
     Actions:
+    - CancelPurchaseSession
+    - ConfirmPurchaseSession
     - CreateClaim
     - CreateClaimAddOn
+    - CreatePurchaseSession
+    - CreateUpdatePlanPreview
     - DeleteAutoTopUpRule
     - DeleteClaim
     - GetAutoTopUpRule
+    - GetCurrentPlanDetails
     - GetEffectiveUsageLimit
+    - GetPurchaseSession
     - GetUsageLimitHistory
     - ListApplicationClaims
     - ListClaimAddOns
