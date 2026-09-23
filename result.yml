@@ -2570,6 +2570,7 @@ serviceMap:
     - ListRoutingProfiles
     - ListRules
     - ListSecurityKeys
+    - ListSecurityProfileAIAgents
     - ListSecurityProfileApplications
     - ListSecurityProfileFlowModules
     - ListSecurityProfilePermissions
@@ -7709,6 +7710,8 @@ serviceMap:
     - UpdateRegexPatternSet
     - UpdateRuleGroup
     - UpdateWebACL
+    - ValidateNetworkSecurityManagerRuleConfiguration
+    - ValidateNetworkSecurityManagerWebACLConfiguration
     ARNFormat: arn:aws:wafv2:${Region}:${Account}:${Scope}/${ResourceType}/${ResourceName}/${ResourceId}
     ARNRegex: "^arn:aws:wafv2:.+:.+:.+/.+/.+/.+"
     conditionKeys:
@@ -10903,16 +10906,19 @@ serviceMap:
     StringPrefix: observabilityadmin
     Actions:
     - CreateCentralizationRuleForOrganization
+    - CreateDatasetIntegration
     - CreateS3TableIntegration
     - CreateTelemetryPipeline
     - CreateTelemetryRule
     - CreateTelemetryRuleForOrganization
     - DeleteCentralizationRuleForOrganization
+    - DeleteDatasetIntegration
     - DeleteS3TableIntegration
     - DeleteTelemetryPipeline
     - DeleteTelemetryRule
     - DeleteTelemetryRuleForOrganization
     - GetCentralizationRuleForOrganization
+    - GetDatasetIntegration
     - GetS3TableIntegration
     - GetTelemetryEnrichmentStatus
     - GetTelemetryEvaluationStatus
@@ -10921,6 +10927,7 @@ serviceMap:
     - GetTelemetryRule
     - GetTelemetryRuleForOrganization
     - ListCentralizationRulesForOrganization
+    - ListDatasetIntegrations
     - ListResourceTelemetry
     - ListResourceTelemetryForOrganization
     - ListS3TableIntegrations
@@ -10938,6 +10945,7 @@ serviceMap:
     - TestTelemetryPipeline
     - UntagResource
     - UpdateCentralizationRuleForOrganization
+    - UpdateDatasetIntegration
     - UpdateTelemetryPipeline
     - UpdateTelemetryRule
     - UpdateTelemetryRuleForOrganization
@@ -12185,6 +12193,7 @@ serviceMap:
     - GetScheduledQueryHistory
     - GetStorageTierPolicy
     - GetTransformer
+    - IntegrateWithDataset
     - IntegrateWithS3Table
     - Link
     - ListAggregateLogGroupSummaries
