@@ -4706,6 +4706,7 @@ serviceMap:
     - UpdateMaxRecordSize
     - UpdateShardCount
     - UpdateStreamMode
+    - UpdateStreamRecordDistributionStrategy
     - UpdateStreamWarmThroughput
     ARNFormat: arn:aws:kinesis:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:kinesis:.+"
@@ -15318,7 +15319,9 @@ serviceMap:
     - CreateConnection
     - CreateEndpoint
     - CreateEventBus
+    - CreateEventSource
     - CreatePartnerEventSource
+    - CreateSubscriber
     - DeactivateEventSource
     - DeauthorizeConnection
     - DeleteApiDestination
@@ -15326,8 +15329,11 @@ serviceMap:
     - DeleteConnection
     - DeleteEndpoint
     - DeleteEventBus
+    - DeleteEventSource
     - DeletePartnerEventSource
+    - DeleteResourcePolicy
     - DeleteRule
+    - DeleteSubscriber
     - DescribeApiDestination
     - DescribeArchive
     - DescribeConnection
@@ -15337,8 +15343,10 @@ serviceMap:
     - DescribePartnerEventSource
     - DescribeReplay
     - DescribeRule
+    - DescribeSubscriber
     - DisableRule
     - EnableRule
+    - GetResourcePolicy
     - InvokeApiDestination
     - ListApiDestinations
     - ListArchives
@@ -15349,18 +15357,23 @@ serviceMap:
     - ListPartnerEventSourceAccounts
     - ListPartnerEventSources
     - ListReplays
+    - ListResourcePolicies
     - ListRuleNamesByTarget
     - ListRules
+    - ListSubscribers
     - ListTagsForResource
     - ListTargetsByRule
     - PutEvents
     - PutPartnerEvents
     - PutPermission
+    - PutRawEvents
+    - PutResourcePolicy
     - PutRule
     - PutTargets
     - RemovePermission
     - RemoveTargets
     - RetrieveConnectionCredentials
+    - RevokeResource
     - StartReplay
     - TagResource
     - TestEventPattern
@@ -15370,6 +15383,8 @@ serviceMap:
     - UpdateConnection
     - UpdateEndpoint
     - UpdateEventBus
+    - UpdateEventSource
+    - UpdateSubscriber
     ARNFormat: arn:aws:events:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:events:.+"
     conditionKeys:
@@ -15381,9 +15396,10 @@ serviceMap:
     - events:ManagedBy
     - events:Metadata/${MetadataKey}
     - events:Metadata/${MetadataKey}/Matcher
-    - events:ResourceArn
+    - events:PolicyName
+    - events:SystemMetadata/AwsDetailType
+    - events:SystemMetadata/AwsSource
     - events:SystemMetadata/ContentType
-    - events:SystemMetadata/EventGroupId
     - events:TargetArn
     - events:creatorAccount
     - events:detail-type
@@ -19660,6 +19676,62 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Network Security Manager:
+    StringPrefix: network-security-manager
+    Actions:
+    - CreateDeployment
+    - CreateDeploymentSnapshot
+    - CreatePolicy
+    - CreatePolicySnapshot
+    - CreateRule
+    - CreateRuleSnapshot
+    - CreateScope
+    - CreateScopeSnapshot
+    - CreateTemplate
+    - CreateTemplateSnapshot
+    - DeleteAdminAccount
+    - DeleteDeployment
+    - DeletePolicy
+    - DeleteRule
+    - DeleteScope
+    - DeleteTemplate
+    - GenerateRuleConfiguration
+    - GetAdminAccount
+    - GetDeployment
+    - GetPolicy
+    - GetRule
+    - GetScope
+    - GetTemplate
+    - ListAdminAccounts
+    - ListAggregateResourceSynchronizationStatuses
+    - ListDeploymentSnapshots
+    - ListDeployments
+    - ListPolicies
+    - ListPolicySnapshots
+    - ListResourceAssociations
+    - ListResourceSynchronizationStatuses
+    - ListRuleSnapshots
+    - ListRules
+    - ListScopeSnapshots
+    - ListScopes
+    - ListTagsForResource
+    - ListTemplateSnapshots
+    - ListTemplates
+    - PutAdminAccount
+    - TagResource
+    - UntagResource
+    - UpdateDeployment
+    - UpdatePolicy
+    - UpdateRule
+    - UpdateScope
+    - UpdateTemplate
+    ARNFormat: arn:aws:network-security-manager:${Region}:${Account}:${ResourceType}:${ResourceId}
+    ARNRegex: "^arn:aws:network-security-manager:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS CloudTrail:
     StringPrefix: cloudtrail
     Actions:
@@ -21850,6 +21922,7 @@ serviceMap:
     - GetIAMAccessPreference
     - GetResourcePolicy
     - GetSellerOfRecord
+    - ListBillingViewSegments
     - ListBillingViews
     - ListEnterpriseSupportLinkedAccountCharges
     - ListSourceViewsForBillingView
