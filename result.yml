@@ -1675,6 +1675,7 @@ serviceMap:
     - DeleteUser
     - DescribeGroup
     - DescribeGroupMembership
+    - DescribeIdentityStore
     - DescribeRegion
     - DescribeUser
     - GetGroupId
@@ -1684,6 +1685,7 @@ serviceMap:
     - ListGroupMemberships
     - ListGroupMembershipsForMember
     - ListGroups
+    - ListIdentityStores
     - ListRegions
     - ListUsers
     - RemoveRegion
@@ -1735,11 +1737,13 @@ serviceMap:
     - DeleteSkill
     - DeleteVault
     - DeleteWebhook
+    - DisableKey
     - GetAccountStatus
     - GetAgent
     - GetBatchInference
     - GetEnvironment
     - GetFile
+    - GetKey
     - GetMemoryStore
     - GetModel
     - GetSession
@@ -1752,6 +1756,7 @@ serviceMap:
     - ListBatchInferences
     - ListEnvironments
     - ListFiles
+    - ListKeys
     - ListMemoryStores
     - ListModels
     - ListSessions
@@ -1762,11 +1767,13 @@ serviceMap:
     - ListWebhooks
     - ListWorkspaces
     - ProcessEnvironmentWork
+    - RegisterKey
     - RotateWebhookSecret
     - TagResource
     - UntagResource
     - UpdateAgent
     - UpdateEnvironment
+    - UpdateKey
     - UpdateMemoryStore
     - UpdateSession
     - UpdateSkill
@@ -1780,6 +1787,7 @@ serviceMap:
     - aws-external-anthropic:BearerTokenType
     - aws-external-anthropic:CalledViaConsole
     - aws-external-anthropic:Capability
+    - aws-external-anthropic:KeyArn
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
@@ -6366,14 +6374,17 @@ serviceMap:
     - CreateFeed
     - DeleteDictionary
     - DeleteFeed
+    - DeleteFeedPolicy
     - DisassociateFeed
     - ExportDictionaryEntries
     - GetDictionary
     - GetFeed
+    - GetFeedPolicy
     - GetMetadata
     - ListDictionaries
     - ListFeeds
     - ListTagsForResource
+    - PutFeedPolicy
     - PutMedia
     - TagResource
     - UntagResource
@@ -7414,6 +7425,7 @@ serviceMap:
     - CreateCell
     - CreateCellRun
     - CreateConnection
+    - CreateDataApp
     - CreateDataProduct
     - CreateDataProductRevision
     - CreateDataSource
@@ -7445,6 +7457,8 @@ serviceMap:
     - DeleteCell
     - DeleteCellRun
     - DeleteConnection
+    - DeleteConversation
+    - DeleteDataApp
     - DeleteDataExportConfiguration
     - DeleteDataProduct
     - DeleteDataSource
@@ -7471,6 +7485,7 @@ serviceMap:
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
+    - DeregisterAgentArtifact
     - DisassociateEnvironmentRole
     - DisassociateGovernedTerms
     - GenerateCode
@@ -7485,6 +7500,7 @@ serviceMap:
     - GetConnection
     - GetConversation
     - GetCurrentEffectivePolicy
+    - GetDataApp
     - GetDataExportConfiguration
     - GetDataProduct
     - GetDataSource
@@ -7526,14 +7542,18 @@ serviceMap:
     - GetTimeSeriesDataPoint
     - GetUpdateEligibility
     - GetUserProfile
+    - InvokeAgent
     - ListAccountEnvironments
     - ListAccountPools
     - ListAccountsInAccountPool
+    - ListAgentArtifacts
+    - ListAgentSessionRecords
     - ListAssetFilters
     - ListAssetRevisions
     - ListCellRuns
     - ListConnections
     - ListConversations
+    - ListDataApps
     - ListDataProductRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -7562,6 +7582,7 @@ serviceMap:
     - ListProjectProfiles
     - ListProjects
     - ListRules
+    - ListSharedDataApps
     - ListSubscriptionGrants
     - ListSubscriptionRequests
     - ListSubscriptionTargets
@@ -7578,6 +7599,7 @@ serviceMap:
     - PutEnvironmentBlueprintConfiguration
     - QueryGraph
     - RefreshToken
+    - RegisterAgentArtifact
     - RejectPredictions
     - RejectSubscriptionRequest
     - RemoveEntityOwner
@@ -7602,6 +7624,7 @@ serviceMap:
     - StartNotebookImport
     - StartNotebookRun
     - StartNotebookSync
+    - StopAgent
     - StopCompute
     - StopMetadataGenerationRun
     - StopNotebookCompute
@@ -7613,6 +7636,8 @@ serviceMap:
     - UpdateCell
     - UpdateCellRun
     - UpdateConnection
+    - UpdateConversation
+    - UpdateDataApp
     - UpdateDataSource
     - UpdateDataSourceRunActivities
     - UpdateDesignation
@@ -13388,6 +13413,7 @@ serviceMap:
     - HandleProviderRegistrationCallback
     - ImportSecurityRequirements
     - InitiateProviderRegistration
+    - ListActorMessages
     - ListAgentSpaces
     - ListApplications
     - ListArtifacts
