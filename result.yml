@@ -12596,6 +12596,7 @@ serviceMap:
     - DisassociateWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccountPhoneNumber
+    - GetWhatsAppCallPermission
     - GetWhatsAppFlow
     - GetWhatsAppFlowPreview
     - GetWhatsAppMessageMedia
@@ -12609,9 +12610,11 @@ serviceMap:
     - PostWhatsAppMessageMedia
     - PublishWhatsAppFlow
     - PutWhatsAppBusinessAccountEventDestinations
+    - SendWhatsAppCallEvent
     - SendWhatsAppMessage
     - TagResource
     - UntagResource
+    - UpdateLinkedWhatsAppBusinessAccountPhoneNumber
     - UpdateWhatsAppFlow
     - UpdateWhatsAppFlowAssets
     - UpdateWhatsAppMessageTemplate
@@ -13410,6 +13413,7 @@ serviceMap:
     - GetProviderRegistrationManifest
     - GetSecurityRequirement
     - GetSecurityRequirementPack
+    - HandleProviderCallback
     - HandleProviderRegistrationCallback
     - ImportSecurityRequirements
     - InitiateProviderRegistration
@@ -13459,6 +13463,7 @@ serviceMap:
     - UpdateDiscoveredDomains
     - UpdateFinding
     - UpdateIntegratedResources
+    - UpdateIntegration
     - UpdatePentest
     - UpdatePrivateConnectionCertificate
     - UpdateSecurityRequirement
@@ -16095,6 +16100,7 @@ serviceMap:
     - AddAssociation
     - AddTags
     - AssociateTrialComponent
+    - AttachClusterNodeNetworkInterface
     - AttachClusterNodeVolume
     - BatchAddClusterNodes
     - BatchDeleteClusterNodes
@@ -24381,6 +24387,7 @@ serviceMap:
     - ReleaseIpamPoolAllocation
     - ReplaceIamInstanceProfileAssociation
     - ReplaceImageCriteriaInAllowedImagesSettings
+    - ReplaceImageInstanceTypeSpecification
     - ReplaceNetworkAclAssociation
     - ReplaceNetworkAclEntry
     - ReplaceRoute
@@ -24431,6 +24438,7 @@ serviceMap:
     - UpdateInterruptibleCapacityReservationAllocation
     - UpdateSecurityGroupRuleDescriptionsEgress
     - UpdateSecurityGroupRuleDescriptionsIngress
+    - ValidateSecurityGroupQuotasForInterface
     - WithdrawByoipCidr
     ARNFormat: arn:aws:ec2:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:ec2:.+"
@@ -24451,6 +24459,7 @@ serviceMap:
     - ec2:AutoPlacement
     - ec2:AvailabilityZone
     - ec2:AvailabilityZoneId
+    - ec2:BootModeOverride
     - ec2:CapacityReservationFleet
     - ec2:ClientRootCertificateChainArn
     - ec2:CloudwatchLogGroupArn
