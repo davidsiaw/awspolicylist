@@ -12585,6 +12585,7 @@ serviceMap:
     StringPrefix: social-messaging
     Actions:
     - AssociateWhatsAppBusinessAccount
+    - CreateWhatsAppDataset
     - CreateWhatsAppFlow
     - CreateWhatsAppMessageTemplate
     - CreateWhatsAppMessageTemplateFromLibrary
@@ -12596,6 +12597,7 @@ serviceMap:
     - DisassociateWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccount
     - GetLinkedWhatsAppBusinessAccountPhoneNumber
+    - GetWhatsAppBusinessPublicKey
     - GetWhatsAppCallPermission
     - GetWhatsAppFlow
     - GetWhatsAppFlowPreview
@@ -12610,7 +12612,9 @@ serviceMap:
     - PostWhatsAppMessageMedia
     - PublishWhatsAppFlow
     - PutWhatsAppBusinessAccountEventDestinations
+    - PutWhatsAppBusinessPublicKey
     - SendWhatsAppCallEvent
+    - SendWhatsAppConversionEvent
     - SendWhatsAppMessage
     - TagResource
     - UntagResource
@@ -13683,6 +13687,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - interconnect:RemoteAccount
     HasResource: true
   AWS CodeStar:
     StringPrefix: codestar
@@ -24964,6 +24969,7 @@ serviceMap:
     - ListPlansInRegion
     - ListRoute53HealthChecks
     - ListRoute53HealthChecksInRegion
+    - ListServiceQuotaWarnings
     - ListTagsForResource
     - PutResourcePolicy
     - StartPlanExecution
@@ -27558,6 +27564,13 @@ serviceMap:
     - aws:TagKeys
     - servicequotas:service
     HasResource: true
+  AWS Startups:
+    StringPrefix: startups
+    Actions:
+    - GetSpendSummary
+    ARNFormat: arn:${Partition}:startups:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:${Partition}:startups:.+:.+:.+"
+    HasResource: false
   AWS RoboMaker:
     StringPrefix: robomaker
     Actions:
