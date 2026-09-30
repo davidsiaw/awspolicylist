@@ -5667,56 +5667,6 @@ serviceMap:
     conditionKeys:
     - route53-recovery-cluster:AllowSafetyRulesOverrides
     HasResource: true
-  AWS IoT Events:
-    StringPrefix: iotevents
-    Actions:
-    - BatchAcknowledgeAlarm
-    - BatchDeleteDetector
-    - BatchDisableAlarm
-    - BatchEnableAlarm
-    - BatchPutMessage
-    - BatchResetAlarm
-    - BatchSnoozeAlarm
-    - BatchUpdateDetector
-    - CreateAlarmModel
-    - CreateDetectorModel
-    - CreateInput
-    - DeleteAlarmModel
-    - DeleteDetectorModel
-    - DeleteInput
-    - DescribeAlarm
-    - DescribeAlarmModel
-    - DescribeDetector
-    - DescribeDetectorModel
-    - DescribeDetectorModelAnalysis
-    - DescribeInput
-    - DescribeLoggingOptions
-    - GetDetectorModelAnalysisResults
-    - ListAlarmModelVersions
-    - ListAlarmModels
-    - ListAlarms
-    - ListDetectorModelVersions
-    - ListDetectorModels
-    - ListDetectors
-    - ListInputRoutings
-    - ListInputs
-    - ListTagsForResource
-    - PutLoggingOptions
-    - StartDetectorModelAnalysis
-    - TagResource
-    - UntagResource
-    - UpdateAlarmModel
-    - UpdateDetectorModel
-    - UpdateInput
-    - UpdateInputRouting
-    ARNFormat: arn:aws:iotevents:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:aws:iotevents:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    - iotevents:keyValue
-    HasResource: true
   AWS Billing Conductor:
     StringPrefix: billingconductor
     Actions:
@@ -7425,7 +7375,6 @@ serviceMap:
     - CreateCell
     - CreateCellRun
     - CreateConnection
-    - CreateDataApp
     - CreateDataProduct
     - CreateDataProductRevision
     - CreateDataSource
@@ -7457,8 +7406,6 @@ serviceMap:
     - DeleteCell
     - DeleteCellRun
     - DeleteConnection
-    - DeleteConversation
-    - DeleteDataApp
     - DeleteDataExportConfiguration
     - DeleteDataProduct
     - DeleteDataSource
@@ -7485,7 +7432,6 @@ serviceMap:
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
-    - DeregisterAgentArtifact
     - DisassociateEnvironmentRole
     - DisassociateGovernedTerms
     - GenerateCode
@@ -7500,7 +7446,6 @@ serviceMap:
     - GetConnection
     - GetConversation
     - GetCurrentEffectivePolicy
-    - GetDataApp
     - GetDataExportConfiguration
     - GetDataProduct
     - GetDataSource
@@ -7542,18 +7487,14 @@ serviceMap:
     - GetTimeSeriesDataPoint
     - GetUpdateEligibility
     - GetUserProfile
-    - InvokeAgent
     - ListAccountEnvironments
     - ListAccountPools
     - ListAccountsInAccountPool
-    - ListAgentArtifacts
-    - ListAgentSessionRecords
     - ListAssetFilters
     - ListAssetRevisions
     - ListCellRuns
     - ListConnections
     - ListConversations
-    - ListDataApps
     - ListDataProductRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -7582,7 +7523,6 @@ serviceMap:
     - ListProjectProfiles
     - ListProjects
     - ListRules
-    - ListSharedDataApps
     - ListSubscriptionGrants
     - ListSubscriptionRequests
     - ListSubscriptionTargets
@@ -7599,7 +7539,6 @@ serviceMap:
     - PutEnvironmentBlueprintConfiguration
     - QueryGraph
     - RefreshToken
-    - RegisterAgentArtifact
     - RejectPredictions
     - RejectSubscriptionRequest
     - RemoveEntityOwner
@@ -7624,7 +7563,6 @@ serviceMap:
     - StartNotebookImport
     - StartNotebookRun
     - StartNotebookSync
-    - StopAgent
     - StopCompute
     - StopMetadataGenerationRun
     - StopNotebookCompute
@@ -7636,8 +7574,6 @@ serviceMap:
     - UpdateCell
     - UpdateCellRun
     - UpdateConnection
-    - UpdateConversation
-    - UpdateDataApp
     - UpdateDataSource
     - UpdateDataSourceRunActivities
     - UpdateDesignation
@@ -13118,6 +13054,7 @@ serviceMap:
     - GetMasterAccount
     - GetMembers
     - GetRecommendedPolicyV2
+    - GetRemediationsV2
     - GetResourcesStatisticsV2
     - GetResourcesTrendsV2
     - GetResourcesV2
@@ -13135,6 +13072,7 @@ serviceMap:
     - ListConnectorsV2
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
+    - ListExposuresByRemediationV2
     - ListFindingAggregators
     - ListFreeTrialStatusesV2
     - ListInvitations
@@ -14383,54 +14321,6 @@ serviceMap:
     - UpdateExport
     ARNFormat: arn:aws:bcm-data-exports:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:bcm-data-exports:.+:.+:.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    HasResource: true
-  Amazon CloudWatch Evidently:
-    StringPrefix: evidently
-    Actions:
-    - BatchEvaluateFeature
-    - CreateExperiment
-    - CreateFeature
-    - CreateLaunch
-    - CreateProject
-    - CreateSegment
-    - DeleteExperiment
-    - DeleteFeature
-    - DeleteLaunch
-    - DeleteProject
-    - DeleteSegment
-    - EvaluateFeature
-    - GetExperiment
-    - GetExperimentResults
-    - GetFeature
-    - GetLaunch
-    - GetProject
-    - GetSegment
-    - ListExperiments
-    - ListFeatures
-    - ListLaunches
-    - ListProjects
-    - ListSegmentReferences
-    - ListSegments
-    - ListTagsForResource
-    - PutProjectEvents
-    - StartExperiment
-    - StartLaunch
-    - StopExperiment
-    - StopLaunch
-    - TagResource
-    - TestSegmentPattern
-    - UntagResource
-    - UpdateExperiment
-    - UpdateFeature
-    - UpdateLaunch
-    - UpdateProject
-    - UpdateProjectDataDelivery
-    ARNFormat: arn:aws:evidently:${Region}:${Account}:${ResourceType}/${ResourceName}
-    ARNRegex: "^arn:aws:evidently:.+:.+:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
