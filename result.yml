@@ -12861,11 +12861,13 @@ serviceMap:
     - ListTagsForResource
     - ListVectorBuckets
     - ListVectors
+    - PutVectorBucketDefaultIndexMode
     - PutVectorBucketPolicy
     - PutVectors
     - QueryVectors
     - TagResource
     - UntagResource
+    - UpdateIndexMode
     ARNFormat: arn:aws:s3vectors:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3vectors:.+:.+:.+"
     conditionKeys:
@@ -19285,6 +19287,7 @@ serviceMap:
     - elasticache:CacheNodeType
     - elasticache:CacheParameterGroupName
     - elasticache:ClusterModeEnabled
+    - elasticache:ConnectionType
     - elasticache:DataStorageUnit
     - elasticache:Durability
     - elasticache:EngineType
@@ -27994,7 +27997,9 @@ serviceMap:
     - PutAccountName
     - PutAlternateContact
     - PutContactInformation
+    - SendPhoneNumberVerification
     - StartPrimaryEmailUpdate
+    - VerifyPhoneNumber
     ARNFormat: arn:aws:account::${Account}:account
     ARNRegex: "^arn:aws:account::.+:account"
     conditionKeys:
