@@ -7629,6 +7629,7 @@ serviceMap:
     - DescribeAllManagedProducts
     - DescribeManagedProductsByVendor
     - DescribeManagedRuleGroup
+    - DescribeTopContributorsByEvent
     - DisassociateFirewallManager
     - DisassociateWebACL
     - GenerateMobileSdkReleaseUrl
@@ -9541,6 +9542,7 @@ serviceMap:
     - CreateOmniDashboard
     - CreateOmniThread
     - CreateOneTimeDeepLinkCode
+    - CreateResourceMetricsConfiguration
     - CreateServiceLevelObjective
     - CreateSpace
     - CreateView
@@ -9561,6 +9563,7 @@ serviceMap:
     - DeleteOmniDashboard
     - DeleteOmniThread
     - DeletePipelineRule
+    - DeleteResourceMetricsConfiguration
     - DeleteServiceLevelObjective
     - DeleteSpace
     - DeleteView
@@ -9600,6 +9603,7 @@ serviceMap:
     - GetOmniThread
     - GetPreferences
     - GetRecords
+    - GetResourceMetricsConfiguration
     - GetService
     - GetServiceData
     - GetServiceLevelObjective
@@ -9670,9 +9674,11 @@ serviceMap:
     - UpdateDomainForOrganization
     - UpdateIngestionEndpoint
     - UpdateIntegration
+    - UpdateOTelEnrichment
     - UpdateOmniDashboard
     - UpdateOmniThread
     - UpdatePreferences
+    - UpdateResourceMetricsConfiguration
     - UpdateServiceLevelObjective
     - UpdateSpace
     - UpdateView
@@ -9684,6 +9690,7 @@ serviceMap:
     - aws:TagKeys
     - cloudwatch:AlarmActions
     - cloudwatch:HasAccessGrant
+    - cloudwatch:ResourceArn
     - cloudwatch:namespace
     - cloudwatch:requestInsightRuleLogGroups
     - cloudwatch:requestManagedResourceARNs
@@ -14757,6 +14764,9 @@ serviceMap:
     - CreateMicrovmImage
     - CreateMicrovmShellAuthToken
     - CreateNetworkConnector
+    - CreateWebFunction
+    - CreateWebFunctionEndpoint
+    - CreateWebFunctionRevision
     - DeleteAlias
     - DeleteCapacityProvider
     - DeleteCodeSigningConfig
@@ -14772,6 +14782,9 @@ serviceMap:
     - DeleteNetworkConnector
     - DeleteProvisionedConcurrencyConfig
     - DeleteResourcePolicy
+    - DeleteWebFunction
+    - DeleteWebFunctionEndpoint
+    - DeleteWebFunctionRevision
     - DisableReplication
     - EnableReplication
     - GetAccountSettings
@@ -14801,9 +14814,14 @@ serviceMap:
     - GetProvisionedConcurrencyConfig
     - GetResourcePolicy
     - GetRuntimeManagementConfig
+    - GetWebAccountSettings
+    - GetWebFunction
+    - GetWebFunctionEndpoint
+    - GetWebFunctionRevision
     - InvokeAsync
     - InvokeFunction
     - InvokeFunctionUrl
+    - InvokeWebFunctionEndpoint
     - ListAliases
     - ListCapacityProviders
     - ListCodeSigningConfigs
@@ -14826,6 +14844,9 @@ serviceMap:
     - ListProvisionedConcurrencyConfigs
     - ListTags
     - ListVersionsByFunction
+    - ListWebFunctionEndpoints
+    - ListWebFunctionRevisions
+    - ListWebFunctions
     - PassCapacityProvider
     - PassNetworkConnector
     - PublishLayerVersion
@@ -14862,6 +14883,7 @@ serviceMap:
     - UpdateMicrovmImage
     - UpdateMicrovmImageVersion
     - UpdateNetworkConnector
+    - UpdateWebFunctionEndpoint
     ARNFormat: arn:aws:lambda:${Region}:${Account}:${ResourceType}:${ResourceId}
     ARNRegex: "^arn:aws:lambda:.+"
     conditionKeys:
@@ -14875,6 +14897,8 @@ serviceMap:
     - lambda:InvokedViaFunctionUrl
     - lambda:Layer
     - lambda:Principal
+    - lambda:Request/WebFunctionAuthType
+    - lambda:Resource/WebFunctionAuthType
     - lambda:SecurityGroupIds
     - lambda:SourceFunctionArn
     - lambda:SubnetIds
@@ -19763,6 +19787,7 @@ serviceMap:
     - GetCase
     - GetCaseAttachmentDownloadUrl
     - GetCaseAttachmentUploadUrl
+    - GetFindingMetrics
     - GetMembership
     - ListCaseEdits
     - ListCases
@@ -21854,6 +21879,8 @@ serviceMap:
     - GetSellerOfRecord
     - ListBillingViewSegments
     - ListBillingViews
+    - ListBusinessSupportAccountCharges
+    - ListBusinessSupportSubscriptionHistory
     - ListEnterpriseSupportLinkedAccountCharges
     - ListSourceViewsForBillingView
     - ListTagsForResource
