@@ -9653,6 +9653,7 @@ serviceMap:
     - PutMetricData
     - PutMetricStream
     - PutPipelineRule
+    - PutRecords
     - QueryTraces
     - SearchPrincipals
     - SetAlarmState
@@ -9665,6 +9666,7 @@ serviceMap:
     - StopOTelEnrichment
     - StopTelemetryQuery
     - StopTelemetryQuerySession
+    - SubmitAlarmFeedback
     - SubmitFeedback
     - TagResource
     - UntagResource
@@ -12035,9 +12037,11 @@ serviceMap:
     - CheckConnectionStatus
     - DoubleClick
     - GetScreenshot
+    - GetSessionInfo
     - HoldKey
     - InvokeMcp
     - KeyPress
+    - LaunchApplication
     - LeftClick
     - LeftClickDrag
     - LeftMouseDown
@@ -12046,6 +12050,7 @@ serviceMap:
     - MovePointer
     - RightClick
     - Scroll
+    - ToggleAppSwitcher
     - TripleClick
     - TypeText
     ARNFormat: arn:${Partition}:agentaccess-mcp:${Region}:${Account}:*
@@ -12994,6 +12999,7 @@ serviceMap:
     - BatchUpdateAutomationRules
     - BatchUpdateFindings
     - BatchUpdateStandardsControlAssociations
+    - CancelExportJobV2
     - ConnectorRegistrationsV2
     - CreateActionTarget
     - CreateAggregatorV2
@@ -13050,6 +13056,7 @@ serviceMap:
     - GetControlFindingSummary
     - GetCoverageStatisticsV2
     - GetEnabledStandards
+    - GetExportJobV2
     - GetFindingAggregator
     - GetFindingHistory
     - GetFindings
@@ -13081,6 +13088,7 @@ serviceMap:
     - ListConnectorsV2
     - ListControlEvaluationSummaries
     - ListEnabledProductsForImport
+    - ListExportJobsV2
     - ListExposuresByRemediationV2
     - ListFindingAggregators
     - ListFreeTrialStatusesV2
@@ -13094,6 +13102,7 @@ serviceMap:
     - SendInsightEvents
     - StartConfigurationPolicyAssociation
     - StartConfigurationPolicyDisassociation
+    - StartExportJobV2
     - TagResource
     - UntagResource
     - UpdateActionTarget
@@ -14170,6 +14179,8 @@ serviceMap:
     - GetStatement
     - GetStorage
     - GetStorageUnit
+    - GetSystemLogsForJobRun
+    - GetSystemLogsForSession
     - GetTable
     - GetTableOptimizer
     - GetTableVersion
@@ -21918,13 +21929,17 @@ serviceMap:
     - ListBillingViews
     - ListBusinessSupportAccountCharges
     - ListBusinessSupportSubscriptionHistory
+    - ListCreditEntitlementPeriods
+    - ListCreditEntitlements
     - ListEnterpriseSupportLinkedAccountCharges
     - ListSourceViewsForBillingView
     - ListTagsForResource
     - PutContractInformation
     - PutResourcePolicy
     - RedeemCredits
+    - SplitCredit
     - TagResource
+    - TransferCredit
     - UntagResource
     - UpdateBillingPreferences
     - UpdateBillingView
