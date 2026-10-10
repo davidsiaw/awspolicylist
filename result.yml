@@ -2236,6 +2236,7 @@ serviceMap:
     - ListJobs
     - ListLicenseEndpoints
     - ListLimits
+    - ListMemberships
     - ListMeteredProducts
     - ListMonitors
     - ListQueueEnvironments
@@ -28076,6 +28077,7 @@ serviceMap:
     - PutAccountName
     - PutAlternateContact
     - PutContactInformation
+    - ReopenAccount
     - SendPhoneNumberVerification
     - StartPrimaryEmailUpdate
     - VerifyPhoneNumber
