@@ -4174,6 +4174,7 @@ serviceMap:
     - CreateAcmeDomainValidation
     - CreateAcmeEndpoint
     - CreateAcmeExternalAccountBinding
+    - CreateTimeStamp
     - DeleteAcmeDomainValidation
     - DeleteAcmeEndpoint
     - DeleteAcmeExternalAccountBinding
@@ -13322,6 +13323,8 @@ serviceMap:
     - BatchDeleteSecurityRequirements
     - BatchDeleteThreatModels
     - BatchDeleteThreats
+    - BatchDisassociateFindingIssue
+    - BatchExportFindings
     - BatchGetAgentSpaces
     - BatchGetArtifactMetadata
     - BatchGetCodeReviewJobTasks
@@ -14852,6 +14855,7 @@ serviceMap:
     - ListMicrovmImageVersions
     - ListMicrovmImages
     - ListMicrovms
+    - ListNetworkConnectorVersions
     - ListNetworkConnectors
     - ListProvisionedConcurrencyConfigs
     - ListTags
@@ -16117,6 +16121,7 @@ serviceMap:
     - CreateStudioLifecycleConfig
     - CreateTrainingJob
     - CreateTrainingPlan
+    - CreateTrainingSession
     - CreateTransformJob
     - CreateTrial
     - CreateTrialComponent
@@ -16184,6 +16189,7 @@ serviceMap:
     - DeleteStudioLifecycleConfig
     - DeleteTags
     - DeleteTrainingJob
+    - DeleteTrainingSession
     - DeleteTrial
     - DeleteTrialComponent
     - DeleteUserProfile
@@ -16264,6 +16270,7 @@ serviceMap:
     - DescribeTrainingJob
     - DescribeTrainingPlan
     - DescribeTrainingPlanExtensionHistory
+    - DescribeTrainingSession
     - DescribeTransformJob
     - DescribeTrial
     - DescribeTrialComponent
@@ -16274,6 +16281,8 @@ serviceMap:
     - DisableSagemakerServicecatalogPortfolio
     - DisassociateTrialComponent
     - EnableSagemakerServicecatalogPortfolio
+    - ExecuteSamplingOperation
+    - ExecuteTrainingOperation
     - ExtendTrainingPlan
     - GetDeployments
     - GetDeviceFleetReport
@@ -16283,8 +16292,10 @@ serviceMap:
     - GetRecord
     - GetResourcePolicy
     - GetSagemakerServicecatalogPortfolioStatus
+    - GetSamplingOperationResult
     - GetScalingConfigurationRecommendation
     - GetSearchSuggestions
+    - GetTrainingOperationResult
     - ImportHubContent
     - InvokeEndpoint
     - InvokeEndpointAsync
@@ -16377,6 +16388,7 @@ serviceMap:
     - ListTrainingJobs
     - ListTrainingJobsForHyperParameterTuningJob
     - ListTrainingPlans
+    - ListTrainingSessions
     - ListTransformJobs
     - ListTrialComponents
     - ListTrials
@@ -16393,6 +16405,8 @@ serviceMap:
     - RenderUiTemplate
     - RetryPipelineExecution
     - Sample
+    - SampleTrainingSession
+    - SampleTrainingSessionWithResponseStream
     - SampleWithResponseStream
     - Search
     - SearchTrainingPlanOfferings
@@ -16428,6 +16442,7 @@ serviceMap:
     - StopPipelineExecution
     - StopProcessingJob
     - StopTrainingJob
+    - StopTrainingSession
     - StopTransformJob
     - TrainHubModel
     - UpdateAction
@@ -17711,6 +17726,8 @@ serviceMap:
     - GetMarketplaceRevenueShareAllocation
     - GetOpportunity
     - GetPartner
+    - GetPartnerCentralContentDocument
+    - GetPartnerCentralContentMetadata
     - GetPartnerDashboard
     - GetPartnerProfile
     - GetProfileUpdateTask
@@ -17746,6 +17763,7 @@ serviceMap:
     - ListMarketplaceRevenueShares
     - ListOpportunities
     - ListOpportunityFromEngagementTasks
+    - ListPartnerCentralContent
     - ListPartnerPaths
     - ListPartners
     - ListProgramManagementAccounts
@@ -17765,6 +17783,7 @@ serviceMap:
     - RejectChannelHandshake
     - RejectConnectionInvitation
     - RejectEngagementInvitation
+    - SearchPartnerCentralContent
     - SearchPartnerProfiles
     - SendEmailVerificationCode
     - StartEngagementByAcceptingInvitationTask
