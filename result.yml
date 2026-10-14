@@ -1333,6 +1333,7 @@ serviceMap:
     - DescribeMetricsExport
     - DescribeResiliencyPolicy
     - DescribeResourceGroupingRecommendationTask
+    - GetDependencyInsights
     - GetFailureModeFinding
     - GetPolicy
     - GetService
@@ -1363,6 +1364,7 @@ serviceMap:
     - ListInputSources
     - ListMetrics
     - ListPolicies
+    - ListPolicyEvents
     - ListRecommendationTemplates
     - ListReports
     - ListResiliencyPolicies
@@ -1396,6 +1398,7 @@ serviceMap:
     - RemoveDraftAppVersionResourceMappings
     - ResolveAppVersionResources
     - StartAppAssessment
+    - StartDependencyInsights
     - StartFailureModeAssessment
     - StartMetricsExport
     - StartResourceGroupingRecommendationTask
@@ -7377,6 +7380,7 @@ serviceMap:
     - CreateCell
     - CreateCellRun
     - CreateConnection
+    - CreateDataApp
     - CreateDataProduct
     - CreateDataProductRevision
     - CreateDataSource
@@ -7402,12 +7406,15 @@ serviceMap:
     - CreateSubscriptionTarget
     - CreateUserProfile
     - DeleteAccountPool
+    - DeleteAgentApprovalPolicy
     - DeleteAsset
     - DeleteAssetFilter
     - DeleteAssetType
     - DeleteCell
     - DeleteCellRun
     - DeleteConnection
+    - DeleteConversation
+    - DeleteDataApp
     - DeleteDataExportConfiguration
     - DeleteDataProduct
     - DeleteDataSource
@@ -7434,10 +7441,12 @@ serviceMap:
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
+    - DeregisterAgentArtifact
     - DisassociateEnvironmentRole
     - DisassociateGovernedTerms
     - GenerateCode
     - GetAccountPool
+    - GetAgentApprovalPolicy
     - GetAsset
     - GetAssetFilter
     - GetAssetType
@@ -7448,6 +7457,7 @@ serviceMap:
     - GetConnection
     - GetConversation
     - GetCurrentEffectivePolicy
+    - GetDataApp
     - GetDataExportConfiguration
     - GetDataProduct
     - GetDataSource
@@ -7489,14 +7499,18 @@ serviceMap:
     - GetTimeSeriesDataPoint
     - GetUpdateEligibility
     - GetUserProfile
+    - InvokeAgent
     - ListAccountEnvironments
     - ListAccountPools
     - ListAccountsInAccountPool
+    - ListAgentArtifacts
+    - ListAgentSessionRecords
     - ListAssetFilters
     - ListAssetRevisions
     - ListCellRuns
     - ListConnections
     - ListConversations
+    - ListDataApps
     - ListDataProductRevisions
     - ListDataSourceRunActivities
     - ListDataSourceRuns
@@ -7525,6 +7539,7 @@ serviceMap:
     - ListProjectProfiles
     - ListProjects
     - ListRules
+    - ListSharedDataApps
     - ListSubscriptionGrants
     - ListSubscriptionRequests
     - ListSubscriptionTargets
@@ -7535,12 +7550,14 @@ serviceMap:
     - PostLineageEvent
     - PostTimeSeriesDataPoints
     - ProvisionDomain
+    - PutAgentApprovalPolicy
     - PutCellRunResult
     - PutDataExportConfiguration
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
     - QueryGraph
     - RefreshToken
+    - RegisterAgentArtifact
     - RejectPredictions
     - RejectSubscriptionRequest
     - RemoveEntityOwner
@@ -7565,6 +7582,7 @@ serviceMap:
     - StartNotebookImport
     - StartNotebookRun
     - StartNotebookSync
+    - StopAgent
     - StopCompute
     - StopMetadataGenerationRun
     - StopNotebookCompute
@@ -7576,6 +7594,8 @@ serviceMap:
     - UpdateCell
     - UpdateCellRun
     - UpdateConnection
+    - UpdateConversation
+    - UpdateDataApp
     - UpdateDataSource
     - UpdateDataSourceRunActivities
     - UpdateDesignation
@@ -16622,6 +16642,7 @@ serviceMap:
     StringPrefix: lakeformation
     Actions:
     - AddLFTagsToResource
+    - AttachRLSPolicy
     - BatchGrantPermissions
     - BatchRevokePermissions
     - CancelTransaction
@@ -16631,16 +16652,19 @@ serviceMap:
     - CreateLFTagExpression
     - CreateLakeFormationIdentityCenterConfiguration
     - CreateLakeFormationOptIn
+    - CreateRLSPolicy
     - DeleteDataCellsFilter
     - DeleteLFTag
     - DeleteLFTagExpression
     - DeleteLakeFormationIdentityCenterConfiguration
     - DeleteLakeFormationOptIn
     - DeleteObjectsOnCancel
+    - DeleteRLSPolicy
     - DeregisterResource
     - DescribeLakeFormationIdentityCenterConfiguration
     - DescribeResource
     - DescribeTransaction
+    - DetachRLSPolicy
     - ExtendTransaction
     - GetDataAccess
     - GetDataCellsFilter
@@ -16651,6 +16675,7 @@ serviceMap:
     - GetLFTagExpression
     - GetQueryState
     - GetQueryStatistics
+    - GetRLSPolicy
     - GetResourceLFTags
     - GetTableObjects
     - GetTemporaryGluePartitionCredentials
@@ -16663,6 +16688,8 @@ serviceMap:
     - ListLFTags
     - ListLakeFormationOptIns
     - ListPermissions
+    - ListRLSPolicies
+    - ListRLSPolicyAttachments
     - ListResources
     - ListTableStorageOptimizers
     - ListTransactions
@@ -16679,6 +16706,7 @@ serviceMap:
     - UpdateLFTag
     - UpdateLFTagExpression
     - UpdateLakeFormationIdentityCenterConfiguration
+    - UpdateRLSPolicy
     - UpdateResource
     - UpdateTableObjects
     - UpdateTableStorageOptimizer
@@ -17590,6 +17618,7 @@ serviceMap:
     - EnableDomainTransferLock
     - GetContactReachabilityStatus
     - GetDomainDetail
+    - GetDomainPrices
     - GetDomainSuggestions
     - GetOperationDetail
     - ListDomains
