@@ -1710,6 +1710,7 @@ serviceMap:
     StringPrefix: aws-external-anthropic
     Actions:
     - ArchiveAgent
+    - ArchiveDeployment
     - ArchiveEnvironment
     - ArchiveMemoryStore
     - ArchiveSession
@@ -1721,6 +1722,7 @@ serviceMap:
     - CountTokens
     - CreateAgent
     - CreateBatchInference
+    - CreateDeployment
     - CreateEnvironment
     - CreateFile
     - CreateInference
@@ -1744,6 +1746,7 @@ serviceMap:
     - GetAccountStatus
     - GetAgent
     - GetBatchInference
+    - GetDeployment
     - GetEnvironment
     - GetFile
     - GetKey
@@ -1757,6 +1760,7 @@ serviceMap:
     - GetWorkspace
     - ListAgents
     - ListBatchInferences
+    - ListDeployments
     - ListEnvironments
     - ListFiles
     - ListKeys
@@ -1769,12 +1773,16 @@ serviceMap:
     - ListVaults
     - ListWebhooks
     - ListWorkspaces
+    - PauseDeployment
     - ProcessEnvironmentWork
     - RegisterKey
     - RotateWebhookSecret
+    - RunDeployment
     - TagResource
+    - UnpauseDeployment
     - UntagResource
     - UpdateAgent
+    - UpdateDeployment
     - UpdateEnvironment
     - UpdateKey
     - UpdateMemoryStore
@@ -9713,6 +9721,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - cloudwatch:AlarmActions
+    - cloudwatch:AlarmTagsPropagationEnabled
     - cloudwatch:HasAccessGrant
     - cloudwatch:ResourceArn
     - cloudwatch:namespace
@@ -25239,6 +25248,7 @@ serviceMap:
     ARNFormat: arn:aws:aidevops:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:aidevops:.+:.+:.+"
     conditionKeys:
+    - aidevops:ServiceType
     - aidevops:SourceAgentSpaceArn
     - aidevops:TargetAgentSpaceArn
     - aws:RequestTag/${TagKey}
