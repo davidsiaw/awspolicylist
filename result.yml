@@ -1109,6 +1109,7 @@ serviceMap:
     - ListRegions
     - ListTagsForResource
     - ListWorkspaceInstances
+    - ModifyVolume
     - TagResource
     - UntagResource
     ARNFormat: arn:aws:workspaces-instances:${Region}:${Account}:${ResourceType}
@@ -25379,11 +25380,13 @@ serviceMap:
     StringPrefix: ecs
     Actions:
     - AllowVendedLogDeliveryForResource
+    - AssociateGatewayWithCluster
     - ContinueServiceDeployment
     - CreateCapacityProvider
     - CreateCluster
     - CreateDaemon
     - CreateExpressGatewayService
+    - CreateGateway
     - CreateService
     - CreateTaskSet
     - DeleteAccountSetting
@@ -25393,6 +25396,7 @@ serviceMap:
     - DeleteDaemon
     - DeleteDaemonTaskDefinition
     - DeleteExpressGatewayService
+    - DeleteGateway
     - DeleteService
     - DeleteTaskDefinitions
     - DeleteTaskSet
@@ -25406,12 +25410,16 @@ serviceMap:
     - DescribeDaemonRevisions
     - DescribeDaemonTaskDefinition
     - DescribeExpressGatewayService
+    - DescribeGateway
+    - DescribeGatewayResources
+    - DescribeGatewayRoute
     - DescribeServiceDeployments
     - DescribeServiceRevisions
     - DescribeServices
     - DescribeTaskDefinition
     - DescribeTaskSets
     - DescribeTasks
+    - DisassociateGatewayFromCluster
     - DiscoverPollEndpoint
     - ExecuteCommand
     - GetTaskProtection
@@ -25422,6 +25430,9 @@ serviceMap:
     - ListDaemonDeployments
     - ListDaemonTaskDefinitions
     - ListDaemons
+    - ListGatewayClusterAssociations
+    - ListGatewayRoutes
+    - ListGateways
     - ListServiceDeployments
     - ListServices
     - ListServicesByNamespace
@@ -25455,6 +25466,7 @@ serviceMap:
     - UpdateContainerInstancesState
     - UpdateDaemon
     - UpdateExpressGatewayService
+    - UpdateGateway
     - UpdateService
     - UpdateServicePrimaryTaskSet
     - UpdateTaskProtection
@@ -27004,6 +27016,7 @@ serviceMap:
     - GetWorkloadAccessTokenForJWT
     - GetWorkloadAccessTokenForUserId
     - GetWorkloadIdentity
+    - IngestData
     - InvokeAgentRuntime
     - InvokeAgentRuntimeCommand
     - InvokeAgentRuntimeCommandShell
@@ -27074,6 +27087,7 @@ serviceMap:
     - ProcessPayment
     - PutResourcePolicy
     - PutSystemLogEvents
+    - ResetTokenVaultKeyMaterial
     - RetrieveMemoryRecords
     - SaveBrowserSessionProfile
     - SearchRegistryRecords
@@ -27110,6 +27124,7 @@ serviceMap:
     - UpdateHarness
     - UpdateHarnessEndpoint
     - UpdateMemory
+    - UpdateMemoryRecordExpirySpecification
     - UpdateOauth2CredentialProvider
     - UpdateOnlineEvaluationConfig
     - UpdatePaymentConnector
@@ -27151,9 +27166,12 @@ serviceMap:
     - bedrock-agentcore:RuntimeAuthorizerType
     - bedrock-agentcore:actorId
     - bedrock-agentcore:namespace
+    - bedrock-agentcore:namespacePath
+    - bedrock-agentcore:namespaceVariable/${VariableName}
     - bedrock-agentcore:runtimeSessionId
     - bedrock-agentcore:securityGroups
     - bedrock-agentcore:sessionId
+    - bedrock-agentcore:sourceNamespace
     - bedrock-agentcore:strategyId
     - bedrock-agentcore:subnets
     - bedrock-agentcore:userid
