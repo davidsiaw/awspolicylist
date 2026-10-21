@@ -1706,6 +1706,7 @@ serviceMap:
     - identitystore:ReservedUserId
     - identitystore:UserExternalIdIssuers
     - identitystore:UserId
+    - identitystore:VpceAccessRequired
     HasResource: true
   Claude Platform on AWS:
     StringPrefix: aws-external-anthropic
@@ -3826,6 +3827,7 @@ serviceMap:
     - ApplyPendingMaintenanceAction
     - AuthorizeDBSecurityGroupIngress
     - BacktrackDBCluster
+    - CancelDBCapacityReservation
     - CancelExportTask
     - CopyCustomDBEngineVersion
     - CopyDBClusterParameterGroup
@@ -3835,6 +3837,7 @@ serviceMap:
     - CopyOptionGroup
     - CreateBlueGreenDeployment
     - CreateCustomDBEngineVersion
+    - CreateDBCapacityReservation
     - CreateDBCluster
     - CreateDBClusterEndpoint
     - CreateDBClusterParameterGroup
@@ -3879,6 +3882,7 @@ serviceMap:
     - DescribeAccountAttributes
     - DescribeBlueGreenDeployments
     - DescribeCertificates
+    - DescribeDBCapacityReservations
     - DescribeDBClusterAutomatedBackups
     - DescribeDBClusterBacktracks
     - DescribeDBClusterEndpoints
@@ -3935,6 +3939,7 @@ serviceMap:
     - ModifyCertificates
     - ModifyCurrentDBClusterCapacity
     - ModifyCustomDBEngineVersion
+    - ModifyDBCapacityReservation
     - ModifyDBCluster
     - ModifyDBClusterEndpoint
     - ModifyDBClusterParameterGroup
@@ -5768,6 +5773,7 @@ serviceMap:
     - DescribeTableReplicaAutoScaling
     - DescribeTimeToLive
     - DisableKinesisStreamingDestination
+    - DisassociateTableReplica
     - EnableKinesisStreamingDestination
     - ExportTableToPointInTime
     - GetAbacStatus
@@ -7016,6 +7022,7 @@ serviceMap:
     - ModifyEndpointAccess
     - ModifyEventSubscription
     - ModifyIntegration
+    - ModifyLakehouseConfiguration
     - ModifyQev2IdcApplication
     - ModifyRedshiftIdcApplication
     - ModifySavedQuery
@@ -10341,6 +10348,8 @@ serviceMap:
     - CreatePromptRouter
     - CreatePromptVersion
     - CreateProvisionedModelThroughput
+    - CreateRetrievalInstruction
+    - CreateRetrievalInstructionVersion
     - CreateSession
     - DeleteAgent
     - DeleteAgentActionGroup
@@ -10374,6 +10383,7 @@ serviceMap:
     - DeletePromptRouter
     - DeleteProvisionedModelThroughput
     - DeleteResourcePolicy
+    - DeleteRetrievalInstruction
     - DeleteSession
     - DeregisterMarketplaceModelEndpoint
     - DetectGeneratedContent
@@ -10440,6 +10450,7 @@ serviceMap:
     - GetPromptRouter
     - GetProvisionedModelThroughput
     - GetResourcePolicy
+    - GetRetrievalInstruction
     - GetSession
     - GetUseCaseForModelAccess
     - IngestKnowledgeBaseDocuments
@@ -10503,6 +10514,8 @@ serviceMap:
     - ListPromptRouters
     - ListPrompts
     - ListProvisionedModelThroughputs
+    - ListRetrievalInstructionVersions
+    - ListRetrievalInstructions
     - ListSessions
     - ListTagsForResource
     - OptimizePrompt
@@ -10552,6 +10565,7 @@ serviceMap:
     - UpdateMarketplaceModelEndpoint
     - UpdatePrompt
     - UpdateProvisionedModelThroughput
+    - UpdateRetrievalInstruction
     - UpdateSession
     - ValidateFlowDefinition
     ARNFormat: arn:aws:bedrock:${Region}:${Account}:${ResourceType}/${ResourceId}
@@ -11327,8 +11341,10 @@ serviceMap:
     StringPrefix: rds-db
     Actions:
     - connect
-    ARNFormat: arn:aws:rds-db:<region>:<account-id>:dbuser:<dbi-resource-id>/<db-user-name>
+    ARNFormat: arn:aws:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}
     ARNRegex: "^arn:aws:rds-db:.+"
+    conditionKeys:
+    - aws:ResourceTag/${TagKey}
     HasResource: true
   AWS Application Discovery Service:
     StringPrefix: discovery
@@ -19845,6 +19861,115 @@ serviceMap:
     ARNFormat: arn:aws:geo-places:${Region}::provider/default
     ARNRegex: "^arn:aws:geo-places:.+"
     HasResource: true
+  AWS Assurance:
+    StringPrefix: assurance
+    Actions:
+    - AcceptInvitation
+    - AssignPermissionSet
+    - BatchGetComment
+    - BatchGetControl
+    - BatchGetTask
+    - Chat
+    - CreateAnnotation
+    - CreateComment
+    - CreateControl
+    - CreateControlGroup
+    - CreateEnvironment
+    - CreateEnvironmentConnection
+    - CreateFramework
+    - CreateInvitation
+    - CreatePermissionSet
+    - CreateProject
+    - CreateTask
+    - DeleteAnnotation
+    - DeleteComment
+    - DeleteControl
+    - DeleteControlGroup
+    - DeleteEnvironment
+    - DeleteEnvironmentConnection
+    - DeleteEvidence
+    - DeleteFramework
+    - DeleteInvitation
+    - DeletePermissionSet
+    - DeleteProject
+    - DeregisterOrganizationDelegatedAdmin
+    - DisableFramework
+    - DownloadEvidence
+    - EnableFramework
+    - GetAnnotation
+    - GetAssessment
+    - GetAssessmentReportContent
+    - GetAssessmentReportExport
+    - GetChatMessages
+    - GetComment
+    - GetControl
+    - GetControlGroup
+    - GetControlStatus
+    - GetEnvironment
+    - GetEvidence
+    - GetEvidenceContent
+    - GetFramework
+    - GetInvitation
+    - GetPermissionSet
+    - GetProject
+    - GetTask
+    - ListAssessmentAnnotations
+    - ListAssessmentJournalRecords
+    - ListAssessmentOutcomes
+    - ListAssessments
+    - ListChatSessions
+    - ListComments
+    - ListConnectionItems
+    - ListControlGroups
+    - ListControlResources
+    - ListControls
+    - ListDiscoveredResources
+    - ListEnabledFrameworks
+    - ListEnvironmentConnections
+    - ListEnvironments
+    - ListEvidence
+    - ListEvidenceAnnotations
+    - ListFrameworks
+    - ListInboundInvitations
+    - ListOutboundInvitations
+    - ListPermissionSetAssignments
+    - ListPermissionSets
+    - ListProjects
+    - ListResourcesForControl
+    - ListTagsForResource
+    - ListTaskHistory
+    - ListTasks
+    - PublishFramework
+    - PutControlStatusOverride
+    - PutEvidence
+    - RegisterOrganizationDelegatedAdmin
+    - RejectInvitation
+    - RevokePermissionSet
+    - StartAssessment
+    - StartAssessmentReportExport
+    - StartResourceDiscovery
+    - TagResource
+    - UntagResource
+    - UpdateAnnotation
+    - UpdateAssessment
+    - UpdateComment
+    - UpdateControl
+    - UpdateControlGroup
+    - UpdateEnvironment
+    - UpdateEvidence
+    - UpdateFramework
+    - UpdatePermissionSet
+    - UpdateProject
+    - UpdateTask
+    - UploadEvidence
+    - VendConnectionAccessToken
+    ARNFormat: arn:aws:assurance:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:assurance:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Security Incident Response:
     StringPrefix: security-ir
     Actions:
@@ -21965,10 +22090,14 @@ serviceMap:
   AWS Billing:
     StringPrefix: billing
     Actions:
+    - AssociateContract
     - AssociateSourceViews
+    - CancelContractualInvestmentAttestation
     - CreateBillingView
+    - CreateContractualInvestmentAttestation
     - DeleteBillingView
     - DeleteResourcePolicy
+    - DisassociateContract
     - DisassociateSourceViews
     - GetBillingData
     - GetBillingDetails
@@ -21988,6 +22117,10 @@ serviceMap:
     - ListBillingViews
     - ListBusinessSupportAccountCharges
     - ListBusinessSupportSubscriptionHistory
+    - ListContracts
+    - ListContractualInvestmentAttestations
+    - ListContractualInvestmentSummaries
+    - ListContractualInvestments
     - ListCreditEntitlementPeriods
     - ListCreditEntitlements
     - ListEnterpriseSupportLinkedAccountCharges
@@ -25694,6 +25827,7 @@ serviceMap:
     - UpdateAutonomicsDenylist
     - UpdateCustomDomainAssociation
     - UpdateEndpointAccess
+    - UpdateLakehouseConfiguration
     - UpdateNamespace
     - UpdateScheduledAction
     - UpdateSnapshot
