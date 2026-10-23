@@ -6250,6 +6250,7 @@ serviceMap:
     - GetTransitGatewayRegistrations
     - GetTransitGatewayRouteTableAttachment
     - GetVpcAttachment
+    - ListAttachmentNatConfigurations
     - ListAttachmentRoutingPolicyAssociations
     - ListAttachments
     - ListConnectPeers
@@ -6271,6 +6272,7 @@ serviceMap:
     - StartRouteAnalysis
     - TagResource
     - UntagResource
+    - UpdateAttachmentNatConfiguration
     - UpdateConnection
     - UpdateCoreNetwork
     - UpdateDevice
@@ -7854,6 +7856,7 @@ serviceMap:
     - ListStreams
     - ListTagsForResource
     - PutMetadata
+    - RevokeConnectionToken
     - StartComposition
     - StartParticipantReplication
     - StartViewerSessionRevocation
@@ -10987,6 +10990,50 @@ serviceMap:
     - observabilityadmin:CentralizationSourceRegions
     - observabilityadmin:SourceType
     - observabilityadmin:TargetRegions
+    HasResource: true
+  AWS Continuum:
+    StringPrefix: continuum
+    Actions:
+    - AssociateCollector
+    - CreateCodeFinding
+    - CreateCodeScan
+    - CreateCollector
+    - CreateEnvironment
+    - CreateIntegration
+    - DeleteCollector
+    - DeleteEnvironment
+    - DeleteIntegration
+    - DisassociateCollector
+    - GetCodeFinding
+    - GetCodeIssue
+    - GetCodeIssueArtifact
+    - GetCodeScan
+    - GetCollector
+    - GetCollectorDataAccessAuthorization
+    - GetEnvironment
+    - GetIntegration
+    - GetResourcePolicy
+    - ListAssociatedCollectors
+    - ListAssociatedEnvironments
+    - ListCodeFindings
+    - ListCodeIssueArtifacts
+    - ListCodeIssues
+    - ListCodeScans
+    - ListCollectors
+    - ListEnvironments
+    - ListIntegrations
+    - PutResourcePolicy
+    - StartIntegrationAuthorization
+    - UpdateCollector
+    - UpdateEnvironment
+    - UpdateIntegration
+    ARNFormat: arn:aws:continuum:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:aws:continuum:.+"
+    conditionKeys:
+    - continuum:CollectorArn
+    - continuum:EnvironmentArn
+    - continuum:RepositoryName
+    - continuum:S3BucketName
     HasResource: true
   Amazon Macie:
     StringPrefix: macie2
