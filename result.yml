@@ -6692,6 +6692,8 @@ serviceMap:
     - NotifyRecommendationsReceived
     - PutFeedback
     - QueryAssistant
+    - RegisterAssistantReplicaKey
+    - RegisterKnowledgeBaseReplicaKey
     - RemoveAssistantAIAgent
     - RemoveKnowledgeBaseTemplateUri
     - RenderMessageTemplate
@@ -8706,6 +8708,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateCallAnalyticsCategory
+    - UpdateLanguageModel
     - UpdateMedicalVocabulary
     - UpdateVocabulary
     - UpdateVocabularyFilter
@@ -22408,10 +22411,13 @@ serviceMap:
     - BatchGetEffectiveLifecyclePolicy
     - BatchGetLifecyclePolicy
     - BatchGetVpcEndpoint
+    - CancelIngestionJob
     - CreateAccessPolicy
     - CreateCollection
     - CreateCollectionGroup
     - CreateIndex
+    - CreateIngestionJob
+    - CreateIngestionStream
     - CreateLifecyclePolicy
     - CreateSecurityConfig
     - CreateSecurityPolicy
@@ -22421,6 +22427,7 @@ serviceMap:
     - DeleteCollection
     - DeleteCollectionGroup
     - DeleteIndex
+    - DeleteIngestionStream
     - DeleteLifecyclePolicy
     - DeleteSecurityConfig
     - DeleteSecurityPolicy
@@ -22428,12 +22435,16 @@ serviceMap:
     - GetAccessPolicy
     - GetAccountSettings
     - GetIndex
+    - GetIngestionJob
+    - GetIngestionStream
     - GetPoliciesStats
     - GetSecurityConfig
     - GetSecurityPolicy
     - ListAccessPolicies
     - ListCollectionGroups
     - ListCollections
+    - ListIngestionJobs
+    - ListIngestionStreams
     - ListLifecyclePolicies
     - ListSecurityConfigs
     - ListSecurityPolicies
@@ -22454,6 +22465,7 @@ serviceMap:
     ARNRegex: "^arn:aws:aoss:.+"
     conditionKeys:
     - aoss:CollectionId
+    - aoss:DeletionProtection
     - aoss:collection
     - aoss:collection-group
     - aoss:index
