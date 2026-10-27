@@ -4249,6 +4249,7 @@ serviceMap:
     Actions:
     - BatchGetTraceSummaryById
     - BatchGetTraces
+    - CallWithBearerToken
     - CancelTraceRetrieval
     - CreateGroup
     - CreateSamplingRule
@@ -5849,6 +5850,7 @@ serviceMap:
     - AcceptInboundCrossClusterSearchConnection
     - AddDataSource
     - AddDirectQueryDataSource
+    - AddReplicationPeer
     - AddTags
     - AssociatePackage
     - AssociatePackages
@@ -5857,6 +5859,7 @@ serviceMap:
     - CancelDomainConfigChange
     - CancelElasticsearchServiceSoftwareUpdate
     - CancelServiceSoftwareUpdate
+    - CompareDomainConfiguration
     - CreateApplication
     - CreateDomain
     - CreateElasticsearchDomain
@@ -5888,6 +5891,7 @@ serviceMap:
     - DescribeDomainConfig
     - DescribeDomainHealth
     - DescribeDomainNodes
+    - DescribeDomainReplication
     - DescribeDomains
     - DescribeDryRunProgress
     - DescribeElasticsearchDomain
@@ -5916,6 +5920,7 @@ serviceMap:
     - ESHttpPatch
     - ESHttpPost
     - ESHttpPut
+    - FailoverReplication
     - GetApplication
     - GetCapability
     - GetCompatibleElasticsearchVersions
@@ -5956,6 +5961,7 @@ serviceMap:
     - RegisterCapability
     - RejectInboundConnection
     - RejectInboundCrossClusterSearchConnection
+    - RemoveReplicationPeer
     - RemoveTags
     - RevokeVpcEndpointAccess
     - RollbackElasticsearchServiceSoftwareUpdate
@@ -5964,6 +5970,7 @@ serviceMap:
     - StartElasticsearchServiceSoftwareUpdate
     - StartMigration
     - StartServiceSoftwareUpdate
+    - SwitchoverReplication
     - UpdateApplication
     - UpdateDataSource
     - UpdateDirectQueryDataSource
@@ -5982,6 +5989,8 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - es:SecurityGroupIds
+    - es:SubnetIds
     HasResource: true
   Amazon Connect Health:
     StringPrefix: health-agent
@@ -7800,6 +7809,7 @@ serviceMap:
     - CreateAdConfiguration
     - CreateChannel
     - CreateEncoderConfiguration
+    - CreateFailoverSlateConfiguration
     - CreateIngestConfiguration
     - CreateParticipantToken
     - CreatePlaybackRestrictionPolicy
@@ -7810,6 +7820,7 @@ serviceMap:
     - DeleteAdConfiguration
     - DeleteChannel
     - DeleteEncoderConfiguration
+    - DeleteFailoverSlateConfiguration
     - DeleteIngestConfiguration
     - DeletePlaybackKeyPair
     - DeletePlaybackRestrictionPolicy
@@ -7823,6 +7834,7 @@ serviceMap:
     - GetChannel
     - GetComposition
     - GetEncoderConfiguration
+    - GetFailoverSlateConfiguration
     - GetIngestConfiguration
     - GetParticipant
     - GetPlaybackKeyPair
@@ -7842,6 +7854,7 @@ serviceMap:
     - ListChannels
     - ListCompositions
     - ListEncoderConfigurations
+    - ListFailoverSlateConfigurations
     - ListIngestConfigurations
     - ListParticipantEvents
     - ListParticipantReplicas
@@ -7869,6 +7882,7 @@ serviceMap:
     - UntagResource
     - UpdateAdConfiguration
     - UpdateChannel
+    - UpdateFailoverSlateConfiguration
     - UpdateIngestConfiguration
     - UpdatePlaybackRestrictionPolicy
     - UpdateStage
@@ -13749,39 +13763,6 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - interconnect:RemoteAccount
-    HasResource: true
-  AWS CodeStar:
-    StringPrefix: codestar
-    Actions:
-    - AssociateTeamMember
-    - CreateProject
-    - CreateUserProfile
-    - DeleteExtendedAccess
-    - DeleteProject
-    - DeleteUserProfile
-    - DescribeProject
-    - DescribeUserProfile
-    - DisassociateTeamMember
-    - GetExtendedAccess
-    - ListProjects
-    - ListResources
-    - ListTagsForProject
-    - ListTeamMembers
-    - ListUserProfiles
-    - PutExtendedAccess
-    - TagProject
-    - UntagProject
-    - UpdateProject
-    - UpdateTeamMember
-    - UpdateUserProfile
-    - VerifyServiceRole
-    ARNFormat: arn:aws:codestar:${Region}:${Account}:project/${ResourceId}
-    ARNRegex: "^arn:aws:codestar:.+:[0-9]+:project/.+"
-    conditionKeys:
-    - aws:RequestTag/${TagKey}
-    - aws:ResourceTag/${TagKey}
-    - aws:TagKeys
-    - iam:ResourceTag/${TagKey}
     HasResource: true
   AWS CodeArtifact:
     StringPrefix: codeartifact
@@ -25733,6 +25714,7 @@ serviceMap:
     - DescribeImages
     - DescribePullThroughCacheRules
     - DescribeRegistry
+    - DescribeReplicationBackfillResults
     - DescribeRepositories
     - DescribeRepositoryCreationTemplates
     - GetAccountSetting
@@ -25748,6 +25730,7 @@ serviceMap:
     - InitiateLayerUpload
     - ListImages
     - ListPullTimeUpdateExclusions
+    - ListReplicationBackfills
     - ListTagsForResource
     - PutAccountSetting
     - PutImage
@@ -25763,6 +25746,8 @@ serviceMap:
     - SetRepositoryPolicy
     - StartImageScan
     - StartLifecyclePolicyPreview
+    - StartReplicationBackfill
+    - StopReplicationBackfill
     - TagResource
     - UntagResource
     - UpdateImageStorageClass
