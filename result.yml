@@ -3374,6 +3374,7 @@ serviceMap:
     - GetEncryptionKey
     - GetFindingsReportStatus
     - GetMember
+    - GetOnDemandScanStatus
     - GetSbomExport
     - ListAccountPermissions
     - ListCisScanConfigurations
@@ -3392,6 +3393,7 @@ serviceMap:
     - ListFindingAggregations
     - ListFindings
     - ListMembers
+    - ListOnDemandScans
     - ListTagsForResource
     - ListUsageTotals
     - ResetEncryptionKey
@@ -3400,6 +3402,7 @@ serviceMap:
     - SendCisSessionTelemetry
     - StartCisSession
     - StartCodeSecurityScan
+    - StartOnDemandScan
     - StopCisSession
     - TagResource
     - UntagResource
@@ -3420,6 +3423,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - inspector2:ExpectedBucketOwner
     HasResource: true
   Amazon Q:
     StringPrefix: q
@@ -6354,9 +6358,11 @@ serviceMap:
     - AssociateFeed
     - CreateDictionary
     - CreateFeed
+    - CreateScheduleAction
     - DeleteDictionary
     - DeleteFeed
     - DeleteFeedPolicy
+    - DeleteScheduleAction
     - DisassociateFeed
     - ExportDictionaryEntries
     - GetDictionary
@@ -6365,6 +6371,7 @@ serviceMap:
     - GetMetadata
     - ListDictionaries
     - ListFeeds
+    - ListScheduleActions
     - ListTagsForResource
     - PutFeedPolicy
     - PutMedia
@@ -9311,6 +9318,7 @@ serviceMap:
     - UpdateAutonomousDatabaseBackup
     - UpdateCloudExadataInfrastructure
     - UpdateExadbVmCluster
+    - UpdateExascaleCloudExadataInfrastructure
     - UpdateExascaleDbStorageVault
     - UpdateGrantShare
     - UpdateOdbNetwork
@@ -17874,6 +17882,7 @@ serviceMap:
     - RejectChannelHandshake
     - RejectConnectionInvitation
     - RejectEngagementInvitation
+    - SearchOpportunities
     - SearchPartnerCentralContent
     - SearchPartnerProfiles
     - SendEmailVerificationCode
@@ -27381,6 +27390,9 @@ serviceMap:
     - ListCustomPlugins
     - ListTagsForResource
     - ListWorkerConfigurations
+    - PauseConnector
+    - RestartConnector
+    - ResumeConnector
     - TagResource
     - UntagResource
     - UpdateConnector
