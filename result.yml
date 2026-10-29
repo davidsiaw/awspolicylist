@@ -25390,6 +25390,7 @@ serviceMap:
     - GetAssetFile
     - GetAssociation
     - GetBacklogTask
+    - GetCatalogCapability
     - GetKnowledgeItem
     - GetOperatorApp
     - GetRecommendation
@@ -25404,6 +25405,9 @@ serviceMap:
     - ListAssets
     - ListAssociations
     - ListBacklogTasks
+    - ListCatalogCapabilities
+    - ListCatalogCapabilityFiles
+    - ListCatalogCapabilityTypes
     - ListChats
     - ListExecutions
     - ListGoals
@@ -25420,6 +25424,7 @@ serviceMap:
     - RegisterService
     - RevokeAccessToken
     - RotateAccessToken
+    - SearchAssets
     - SearchServiceAccessibleResource
     - SendMessage
     - TagResource
@@ -25752,6 +25757,7 @@ serviceMap:
     - PutSigningConfiguration
     - RegisterPullTimeUpdateExclusion
     - ReplicateImage
+    - ReplicateImageDelete
     - SetRepositoryPolicy
     - StartImageScan
     - StartLifecyclePolicyPreview
