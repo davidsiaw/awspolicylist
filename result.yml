@@ -15789,6 +15789,7 @@ serviceMap:
     - AddFlowSources
     - AddFlowVpcInterfaces
     - AssociateRouterNetworkInterface
+    - ConnectEndpoints
     - CreateBridge
     - CreateFlow
     - CreateGateway
@@ -15798,10 +15799,13 @@ serviceMap:
     - DeleteBridge
     - DeleteFlow
     - DeleteGateway
+    - DeleteResourcePolicy
     - DeleteRouterInput
     - DeleteRouterNetworkInterface
     - DeleteRouterOutput
+    - DeregisterDestinationEndpoint
     - DeregisterGatewayInstance
+    - DeregisterSourceEndpoint
     - DescribeBridge
     - DescribeFlow
     - DescribeFlowSourceMetadata
@@ -15810,14 +15814,19 @@ serviceMap:
     - DescribeGatewayInstance
     - DescribeOffering
     - DescribeReservation
+    - DisconnectEndpoints
     - DiscoverGatewayPollEndpoint
+    - GetDestinationEndpoint
+    - GetResourcePolicy
     - GetRouterInput
     - GetRouterInputSourceMetadata
     - GetRouterInputThumbnail
     - GetRouterNetworkInterface
     - GetRouterOutput
+    - GetSourceEndpoint
     - GrantFlowEntitlements
     - ListBridges
+    - ListDestinationEndpoints
     - ListEntitlements
     - ListFlows
     - ListGatewayInstances
@@ -15827,9 +15836,13 @@ serviceMap:
     - ListRouterInputs
     - ListRouterNetworkInterfaces
     - ListRouterOutputs
+    - ListSourceEndpoints
     - ListTagsForResource
     - PollGateway
     - PurchaseOffering
+    - PutResourcePolicy
+    - RegisterDestinationEndpoint
+    - RegisterSourceEndpoint
     - RemoveBridgeOutput
     - RemoveBridgeSource
     - RemoveFlowMediaStream
@@ -15853,6 +15866,7 @@ serviceMap:
     - UpdateBridgeOutput
     - UpdateBridgeSource
     - UpdateBridgeState
+    - UpdateDestinationEndpoint
     - UpdateFlow
     - UpdateFlowEntitlement
     - UpdateFlowMediaStream
@@ -15862,6 +15876,7 @@ serviceMap:
     - UpdateRouterInput
     - UpdateRouterNetworkInterface
     - UpdateRouterOutput
+    - UpdateSourceEndpoint
     ARNFormat: arn:aws:mediaconnect:${Region}:${Account}:${Namespace}:${RelativeId}:${RelativeName}
     ARNRegex: "^arn:aws:mediaconnect:.+"
     conditionKeys:
