@@ -9438,6 +9438,7 @@ serviceMap:
     - ListProfiles
     - ListTagsForResource
     - TagResource
+    - TestOtelConnection
     - UntagResource
     - UpdateCustomization
     - UpdateProfile
@@ -9674,6 +9675,7 @@ serviceMap:
     - GetOmniDashboard
     - GetOmniThread
     - GetPreferences
+    - GetProfileRecords
     - GetRecords
     - GetResourceMetricsConfiguration
     - GetService
@@ -9725,6 +9727,7 @@ serviceMap:
     - PutMetricData
     - PutMetricStream
     - PutPipelineRule
+    - PutProfileRecords
     - PutRecords
     - QueryTraces
     - SearchPrincipals
@@ -11738,6 +11741,7 @@ serviceMap:
     - DescribeResourceServer
     - DescribeRiskConfiguration
     - DescribeTerms
+    - DescribeTermsByClient
     - DescribeUserImportJob
     - DescribeUserPool
     - DescribeUserPoolClient
@@ -11746,6 +11750,7 @@ serviceMap:
     - ForgetDevice
     - ForgotPassword
     - GetCSVHeader
+    - GetClientToken
     - GetDevice
     - GetGroup
     - GetIdentityProviderByIdentifier
@@ -12527,6 +12532,7 @@ serviceMap:
   Amazon Managed Workflows for Apache Airflow:
     StringPrefix: airflow
     Actions:
+    - AccessAirflowResource
     - CreateCliToken
     - CreateEnvironment
     - CreateWebLoginToken
