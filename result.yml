@@ -7441,6 +7441,7 @@ serviceMap:
     - CreateSubscriptionGrant
     - CreateSubscriptionRequest
     - CreateSubscriptionTarget
+    - CreateUIConfiguration
     - CreateUserProfile
     - DeleteAccountPool
     - DeleteAgentApprovalPolicy
@@ -7478,6 +7479,7 @@ serviceMap:
     - DeleteSubscriptionRequest
     - DeleteSubscriptionTarget
     - DeleteTimeSeriesDataPoints
+    - DeleteUIConfiguration
     - DeregisterAgentArtifact
     - DisassociateEnvironmentRole
     - DisassociateGovernedTerms
@@ -7504,6 +7506,7 @@ serviceMap:
     - GetDomainExecutionRoleCredentials
     - GetDomainSharingPolicy
     - GetDomainUnit
+    - GetEffectiveUICustomization
     - GetEnvironment
     - GetEnvironmentAction
     - GetEnvironmentActionLink
@@ -7534,6 +7537,7 @@ serviceMap:
     - GetSubscriptionRequestDetails
     - GetSubscriptionTarget
     - GetTimeSeriesDataPoint
+    - GetUIConfiguration
     - GetUpdateEligibility
     - GetUserProfile
     - InvokeAgent
@@ -7583,6 +7587,7 @@ serviceMap:
     - ListSubscriptions
     - ListTagsForResource
     - ListTimeSeriesDataPoints
+    - ListUIConfigurations
     - ListWarehouseMetadata
     - PostLineageEvent
     - PostTimeSeriesDataPoints
@@ -7654,6 +7659,7 @@ serviceMap:
     - UpdateSubscriptionGrantStatus
     - UpdateSubscriptionRequest
     - UpdateSubscriptionTarget
+    - UpdateUIConfiguration
     - UpdateUserProfile
     - ValidatePassRole
     - ValidatePolicy
@@ -13207,6 +13213,9 @@ serviceMap:
     - GetResourcesTrendsV2
     - GetResourcesV2
     - GetSecurityControlDefinition
+    - GetSoftwareResourcesV2
+    - GetSoftwareStatisticsV2
+    - GetSoftwareV2
     - GetUsage
     - GetUsageV2
     - InviteMembers
@@ -19960,7 +19969,6 @@ serviceMap:
     - DeleteProject
     - DeregisterOrganizationDelegatedAdmin
     - DisableFramework
-    - DownloadEvidence
     - EnableFramework
     - GetAnnotation
     - GetAssessment
@@ -20001,7 +20009,6 @@ serviceMap:
     - ListPermissionSetAssignments
     - ListPermissionSets
     - ListProjects
-    - ListResourcesForControl
     - ListTagsForResource
     - ListTaskHistory
     - ListTasks
@@ -20013,7 +20020,6 @@ serviceMap:
     - RevokePermissionSet
     - StartAssessment
     - StartAssessmentReportExport
-    - StartResourceDiscovery
     - TagResource
     - UntagResource
     - UpdateAnnotation
@@ -20027,7 +20033,6 @@ serviceMap:
     - UpdatePermissionSet
     - UpdateProject
     - UpdateTask
-    - UploadEvidence
     - VendConnectionAccessToken
     ARNFormat: arn:aws:assurance:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:assurance:.+:.+:.+"
