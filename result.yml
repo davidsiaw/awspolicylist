@@ -7434,6 +7434,7 @@ serviceMap:
     - CreateGroupProfile
     - CreateListingChangeSet
     - CreateNotebook
+    - CreateNotificationPreference
     - CreateProject
     - CreateProjectMembership
     - CreateProjectProfile
@@ -7471,6 +7472,7 @@ serviceMap:
     - DeleteLineageEvent
     - DeleteListing
     - DeleteNotebook
+    - DeleteNotificationPreference
     - DeleteProject
     - DeleteProjectMembership
     - DeleteProjectProfile
@@ -7528,6 +7530,7 @@ serviceMap:
     - GetNotebookCompute
     - GetNotebookExport
     - GetNotebookRun
+    - GetNotificationPreference
     - GetProject
     - GetProjectProfile
     - GetRule
@@ -7536,6 +7539,7 @@ serviceMap:
     - GetSubscriptionGrant
     - GetSubscriptionRequestDetails
     - GetSubscriptionTarget
+    - GetSystemTableExportConfiguration
     - GetTimeSeriesDataPoint
     - GetUIConfiguration
     - GetUpdateEligibility
@@ -7556,6 +7560,7 @@ serviceMap:
     - ListDataSourceRunActivities
     - ListDataSourceRuns
     - ListDataSources
+    - ListDeployableEnvironmentBlueprints
     - ListDesignations
     - ListDomainUnitsForParent
     - ListDomains
@@ -7597,6 +7602,7 @@ serviceMap:
     - PutDataExportConfiguration
     - PutDomainSharingPolicy
     - PutEnvironmentBlueprintConfiguration
+    - PutSystemTableExportConfiguration
     - QueryGraph
     - RefreshToken
     - RegisterAgentArtifact
@@ -7633,6 +7639,7 @@ serviceMap:
     - UntagResource
     - UpdateAccountPool
     - UpdateAssetFilter
+    - UpdateAssetOwner
     - UpdateCell
     - UpdateCellRun
     - UpdateConnection
@@ -7653,6 +7660,7 @@ serviceMap:
     - UpdateGlossaryTerm
     - UpdateGroupProfile
     - UpdateNotebook
+    - UpdateNotificationPreference
     - UpdateProject
     - UpdateProjectProfile
     - UpdateRule
@@ -9881,6 +9889,7 @@ serviceMap:
   AWS Shield:
     StringPrefix: shield
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociateDRTLogBucket
     - AssociateDRTRole
     - AssociateHealthCheck
@@ -17808,14 +17817,18 @@ serviceMap:
     - AssignOpportunity
     - AssociateAwsTrainingCertificationEmailDomain
     - AssociateBenefitApplicationResource
+    - AssociateBusinessPlan
     - AssociateOpportunity
     - CancelBenefitApplication
+    - CancelBusinessPlan
+    - CancelBusinessPlanSubmissionTask
     - CancelChannelHandshake
     - CancelConnection
     - CancelConnectionInvitation
     - CancelProfileUpdateTask
     - CreateBenefitApplication
     - CreateBusinessPlan
+    - CreateBusinessPlanItem
     - CreateChannelHandshake
     - CreateCollaborationChannelMembers
     - CreateCollaborationChannelRequest
@@ -17832,11 +17845,14 @@ serviceMap:
     - CreateResourceSnapshot
     - CreateResourceSnapshotJob
     - CreateRevenueAttribution
+    - DeleteBusinessPlanAttachment
+    - DeleteBusinessPlanItem
     - DeleteProgramManagementAccount
     - DeleteRelationship
     - DeleteResourceSnapshotJob
     - DisassociateAwsTrainingCertificationEmailDomain
     - DisassociateBenefitApplicationResource
+    - DisassociateBusinessPlan
     - DisassociateOpportunity
     - EnrollInPartnerPath
     - GetAllianceLeadContact
@@ -17845,6 +17861,12 @@ serviceMap:
     - GetBenefitAllocation
     - GetBenefitApplication
     - GetBusinessPlan
+    - GetBusinessPlanAttachment
+    - GetBusinessPlanAttachmentImportTask
+    - GetBusinessPlanItem
+    - GetBusinessPlanItemSchema
+    - GetBusinessPlanSettings
+    - GetBusinessPlanSubmissionTask
     - GetCollaborationChannel
     - GetConnection
     - GetConnectionInvitation
@@ -17859,6 +17881,7 @@ serviceMap:
     - GetPartnerCentralContentMetadata
     - GetPartnerDashboard
     - GetPartnerProfile
+    - GetPartnerReportingData
     - GetProfileUpdateTask
     - GetProfileVisibility
     - GetProgramManagementAccount
@@ -17877,6 +17900,12 @@ serviceMap:
     - ListBenefitAllocations
     - ListBenefitApplications
     - ListBenefits
+    - ListBusinessPlanAssociations
+    - ListBusinessPlanAttachmentImportTasks
+    - ListBusinessPlanAttachments
+    - ListBusinessPlanHistory
+    - ListBusinessPlanItems
+    - ListBusinessPlanSubmissionTasks
     - ListBusinessPlans
     - ListChannelHandshakes
     - ListCollaborationChannels
@@ -17906,6 +17935,7 @@ serviceMap:
     - ListTagsForResource
     - PutAllianceLeadContact
     - PutBusinessPlan
+    - PutBusinessPlanSettings
     - PutProfileVisibility
     - PutSellingSystemSettings
     - RecallBenefitApplication
@@ -17916,6 +17946,8 @@ serviceMap:
     - SearchPartnerCentralContent
     - SearchPartnerProfiles
     - SendEmailVerificationCode
+    - StartBusinessPlanAttachmentImportTask
+    - StartBusinessPlanSubmissionTask
     - StartEngagementByAcceptingInvitationTask
     - StartEngagementFromOpportunityTask
     - StartOpportunityFromEngagementTask
@@ -17932,6 +17964,8 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateBenefitApplication
+    - UpdateBusinessPlan
+    - UpdateBusinessPlanItem
     - UpdateConnectionPreferences
     - UpdateEngagementContext
     - UpdateMarketplaceRevenueShareAllocation
@@ -17946,6 +17980,9 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - partnercentral:AllowAwsEngagement
+    - partnercentral:BusinessPlanItemStage
+    - partnercentral:BusinessPlanItemType
     - partnercentral:Catalog
     - partnercentral:ChannelHandshakeType
     - partnercentral:FulfillmentTypes
@@ -25424,6 +25461,7 @@ serviceMap:
     - GetAssociation
     - GetBacklogTask
     - GetCatalogCapability
+    - GetChat
     - GetKnowledgeItem
     - GetOperatorApp
     - GetRecommendation
@@ -25468,6 +25506,7 @@ serviceMap:
     - UpdateAssetFile
     - UpdateAssociation
     - UpdateBacklogTask
+    - UpdateChat
     - UpdateGoal
     - UpdateKnowledgeItem
     - UpdateOperatorAppIdpConfig
@@ -28237,6 +28276,7 @@ serviceMap:
   Amazon S3 Tables:
     StringPrefix: s3tables
     Actions:
+    - CompleteTableMigration
     - CreateNamespace
     - CreateTable
     - CreateTableBucket
@@ -28263,6 +28303,7 @@ serviceMap:
     - GetTableMaintenanceConfiguration
     - GetTableMaintenanceJobStatus
     - GetTableMetadataLocation
+    - GetTableMigration
     - GetTablePolicy
     - GetTableRecordExpirationConfiguration
     - GetTableRecordExpirationJobStatus
@@ -28271,6 +28312,7 @@ serviceMap:
     - GetTableStorageClass
     - ListNamespaces
     - ListTableBuckets
+    - ListTableMigrations
     - ListTables
     - ListTagsForResource
     - PutTableBucketEncryption
@@ -28287,9 +28329,12 @@ serviceMap:
     - PutTableReplication
     - PutTableStorageClass
     - RenameTable
+    - StartTableMigration
+    - SyncTableMigration
     - TagResource
     - UntagResource
     - UpdateTableMetadataLocation
+    - UpdateTableMigration
     ARNFormat: arn:aws:s3tables:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3tables:.+"
     conditionKeys:
