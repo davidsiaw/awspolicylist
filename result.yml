@@ -2707,6 +2707,7 @@ serviceMap:
     - UpdateMetricContent
     - UpdateMetricMetadata
     - UpdateNotificationContent
+    - UpdateOutboundEmailContactMessage
     - UpdateParticipantAuthentication
     - UpdateParticipantRoleConfig
     - UpdatePhoneNumber
@@ -5750,6 +5751,8 @@ serviceMap:
     - AssociateTableReplica
     - BatchGetItem
     - BatchWriteItem
+    - BulkPutItems
+    - CancelBulkOperation
     - ConditionCheckItem
     - CreateBackup
     - CreateGlobalTable
@@ -5763,6 +5766,7 @@ serviceMap:
     - DeleteTable
     - DeleteTableReplica
     - DescribeBackup
+    - DescribeBulkOperation
     - DescribeContinuousBackups
     - DescribeContributorInsights
     - DescribeEndpoints
@@ -5790,6 +5794,7 @@ serviceMap:
     - ImportTable
     - InjectError
     - ListBackups
+    - ListBulkOperations
     - ListContributorInsights
     - ListExports
     - ListGlobalTables
@@ -5813,6 +5818,7 @@ serviceMap:
     - Scan
     - SearchVectors
     - StartAwsBackupJob
+    - StartBulkOperation
     - TagResource
     - UntagResource
     - UpdateAbacStatus
@@ -6000,6 +6006,7 @@ serviceMap:
     StringPrefix: health-agent
     Actions:
     - ActivateSubscription
+    - BatchRefillPatientPharmacyPrescriptions
     - CancelAppointment
     - CreateAgent
     - CreateDomain
@@ -6029,6 +6036,7 @@ serviceMap:
     - ListPatientAppointments
     - ListPatientInsuranceCoverages
     - ListPatientMedications
+    - ListPatientPharmacyPrescriptions
     - ListProviders
     - ListSessionRecords
     - ListSubscriptions
@@ -10028,15 +10036,19 @@ serviceMap:
     StringPrefix: payments
     Actions:
     - AcceptFinancingApplicationTerms
+    - CreateConnectedAccount
     - CreateFinancingApplication
     - CreatePaymentInstrument
+    - DeleteConnectedAccount
     - DeletePaymentInstrument
+    - GetConnectedAccount
     - GetFinancingApplication
     - GetFinancingLine
     - GetFinancingLineWithdrawal
     - GetFinancingOption
     - GetPaymentInstrument
     - GetPaymentStatus
+    - ListConnectedAccounts
     - ListFinancingApplications
     - ListFinancingLineWithdrawals
     - ListFinancingLines
@@ -10052,7 +10064,7 @@ serviceMap:
     - UpdatePaymentInstrument
     - UpdatePaymentPreferences
     ARNFormat: arn:aws:payments::${Account}:${ResourceType}:${ResourceId}
-    ARNRegex: "^arn:aws:payments:::.+:.+"
+    ARNRegex: "^arn:aws:payments::.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
@@ -12181,6 +12193,7 @@ serviceMap:
     Actions:
     - CallForwardedTool
     - CheckConnectionStatus
+    - CloseSession
     - DoubleClick
     - GetScreenshot
     - GetSessionInfo
@@ -17740,6 +17753,7 @@ serviceMap:
     - RenewDomain
     - ResendContactReachabilityEmail
     - ResendOperationAuthorization
+    - RestoreDomain
     - RetrieveDomainAuthCode
     - TransferDomain
     - TransferDomainToAnotherAwsAccount
@@ -20023,6 +20037,7 @@ serviceMap:
     - GetInvitation
     - GetPermissionSet
     - GetProject
+    - GetResourceActivitiesQueryResults
     - GetTask
     - ListAssessmentAnnotations
     - ListAssessmentJournalRecords
@@ -20057,6 +20072,7 @@ serviceMap:
     - RevokePermissionSet
     - StartAssessment
     - StartAssessmentReportExport
+    - StartResourceActivitiesQuery
     - TagResource
     - UntagResource
     - UpdateAnnotation
@@ -20070,7 +20086,6 @@ serviceMap:
     - UpdatePermissionSet
     - UpdateProject
     - UpdateTask
-    - VendConnectionAccessToken
     ARNFormat: arn:aws:assurance:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:assurance:.+:.+:.+"
     conditionKeys:
@@ -20933,6 +20948,7 @@ serviceMap:
     Actions:
     - AccountConfigurations
     - AllowVendedLogDeliveryForResource
+    - AuthorizeOAuthAccess
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteKnowledgeBase
     - BatchDeleteTopicReviewedAnswer
@@ -20940,6 +20956,8 @@ serviceMap:
     - BatchGetPreferences
     - BatchUpdatePreferences
     - CancelIngestion
+    - CreateAccessControlApplication
+    - CreateAccessControlApplicationSecret
     - CreateAccountCustomization
     - CreateAccountSubscription
     - CreateActionConnector
@@ -20962,11 +20980,13 @@ serviceMap:
     - CreateGroup
     - CreateGroupMembership
     - CreateIAMPolicyAssignment
+    - CreateInboundConnector
     - CreateIngestion
     - CreateKnowledgeBase
     - CreateLimitsProfile
     - CreateNamespace
     - CreateOAuthClientApplication
+    - CreateOAuthToken
     - CreateReader
     - CreateRefreshSchedule
     - CreateRoleMembership
@@ -20979,6 +20999,8 @@ serviceMap:
     - CreateTopicRefreshSchedule
     - CreateUser
     - CreateVPCConnection
+    - DeleteAccessControlApplication
+    - DeleteAccessControlApplicationSecret
     - DeleteAccountCustomPermission
     - DeleteAccountCustomization
     - DeleteAccountSubscription
@@ -21006,6 +21028,7 @@ serviceMap:
     - DeleteGroupMembership
     - DeleteIAMPolicyAssignment
     - DeleteIdentityPropagationConfig
+    - DeleteInboundConnector
     - DeleteKnowledgeBase
     - DeleteLimitsProfile
     - DeleteNamespace
@@ -21024,6 +21047,7 @@ serviceMap:
     - DeleteUserByPrincipalId
     - DeleteUserCustomPermission
     - DeleteVPCConnection
+    - DescribeAccessControlApplication
     - DescribeAccountCustomPermission
     - DescribeAccountCustomization
     - DescribeAccountSettings
@@ -21069,6 +21093,7 @@ serviceMap:
     - DescribeGroup
     - DescribeGroupMembership
     - DescribeIAMPolicyAssignment
+    - DescribeInboundConnector
     - DescribeIngestion
     - DescribeIpRestriction
     - DescribeKeyRegistration
@@ -21081,6 +21106,7 @@ serviceMap:
     - DescribeQuickIndexCapacity
     - DescribeQuickSightQSearchConfiguration
     - DescribeRefreshSchedule
+    - DescribeResourcePermissions
     - DescribeRoleCustomPermission
     - DescribeSelfUpgradeConfiguration
     - DescribeSpace
@@ -21109,6 +21135,7 @@ serviceMap:
     - GetGroupMapping
     - GetIdentityContext
     - GetSessionEmbedUrl
+    - ListAccessControlApplications
     - ListActionConnectors
     - ListAgents
     - ListAnalyses
@@ -21137,6 +21164,8 @@ serviceMap:
     - ListIAMPolicyAssignments
     - ListIAMPolicyAssignmentsForUser
     - ListIdentityPropagationConfigs
+    - ListInboundConnectorApplicationAssociations
+    - ListInboundConnectors
     - ListIngestions
     - ListKMSKeysForUser
     - ListKnowledgeBases
@@ -21172,6 +21201,7 @@ serviceMap:
     - RegisterUser
     - RemoveCustomerManagedKey
     - RestoreAnalysis
+    - RevokeOAuthToken
     - ScopeDownPolicy
     - SearchActionConnectors
     - SearchAgents
@@ -21201,6 +21231,8 @@ serviceMap:
     - UnpublishFlow
     - Unsubscribe
     - UntagResource
+    - UpdateAccessControlApplication
+    - UpdateAccessControlApplicationSecret
     - UpdateAccountCustomPermission
     - UpdateAccountCustomization
     - UpdateAccountSettings
@@ -21240,6 +21272,8 @@ serviceMap:
     - UpdateGroup
     - UpdateIAMPolicyAssignment
     - UpdateIdentityPropagationConfig
+    - UpdateInboundConnector
+    - UpdateInboundConnectorApplicationAssociations
     - UpdateIpRestriction
     - UpdateKeyRegistration
     - UpdateKnowledgeBase
@@ -22187,10 +22221,14 @@ serviceMap:
     - CreateDataChannel
     - OpenControlChannel
     - OpenDataChannel
+    ARNFormat: arn:aws:ssm:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:ssm:.+"
     conditionKeys:
     - ec2:SourceInstanceARN
     - ssm:SourceInstanceARN
-    HasResource: false
+    - ssm:resourceTag/aws:ssmmessages:session-id
+    - ssm:resourceTag/aws:ssmmessages:target-id
+    HasResource: true
   Amazon Bio Discovery:
     StringPrefix: researchstudio
     Actions:
@@ -27301,6 +27339,7 @@ serviceMap:
     - InvokeGateway
     - InvokeHarness
     - InvokeRegistryMcp
+    - InvokeWebAnswer
     - InvokeWebSearch
     - ListABTests
     - ListActors
