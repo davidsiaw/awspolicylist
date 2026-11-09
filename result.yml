@@ -15088,6 +15088,7 @@ serviceMap:
     - CreateConnector
     - CreateLaunchConfigurationTemplate
     - CreateNetworkMigrationDefinition
+    - CreateRemoteSourceAction
     - CreateReplicationConfigurationTemplate
     - CreateVcenterClientForMgn
     - CreateWave
@@ -15096,6 +15097,7 @@ serviceMap:
     - DeleteJob
     - DeleteLaunchConfigurationTemplate
     - DeleteNetworkMigrationDefinition
+    - DeleteRemoteSourceAction
     - DeleteReplicationConfigurationTemplate
     - DeleteSourceServer
     - DeleteVcenterClient
@@ -15121,6 +15123,7 @@ serviceMap:
     - GetAgentSnapshotCreditsForMgn
     - GetChannelCommandsForMgn
     - GetLaunchConfiguration
+    - GetLaunchConfigurationDefaults
     - GetNetworkMigrationDefinition
     - GetNetworkMigrationMapperSegmentConstruct
     - GetReplicationConfiguration
@@ -15145,10 +15148,15 @@ serviceMap:
     - ListNetworkMigrationDeployments
     - ListNetworkMigrationExecutionArtifacts
     - ListNetworkMigrationExecutions
+    - ListNetworkMigrationInsights
     - ListNetworkMigrationMapperSegmentConstructs
     - ListNetworkMigrationMapperSegments
     - ListNetworkMigrationMappingUpdates
     - ListNetworkMigrationMappings
+    - ListRemoteSourceActionInvocationResults
+    - ListRemoteSourceActionInvocations
+    - ListRemoteSourceActionJobs
+    - ListRemoteSourceActions
     - ListSourceServerActions
     - ListTagsForResource
     - ListTemplateActions
@@ -15185,6 +15193,7 @@ serviceMap:
     - StartNetworkMigrationDeployment
     - StartNetworkMigrationMapping
     - StartNetworkMigrationMappingUpdate
+    - StartRemoteSourceActionJob
     - StartReplication
     - StartSnapshotGroupForMgn
     - StartTest
@@ -15203,10 +15212,12 @@ serviceMap:
     - UpdateApplication
     - UpdateConnector
     - UpdateLaunchConfiguration
+    - UpdateLaunchConfigurationDefaults
     - UpdateLaunchConfigurationTemplate
     - UpdateNetworkMigrationDefinition
     - UpdateNetworkMigrationMapperSegment
     - UpdateNetworkMigrationMapperSegmentConstruct
+    - UpdateRemoteSourceAction
     - UpdateReplicationConfiguration
     - UpdateReplicationConfigurationTemplate
     - UpdateSourceServer
