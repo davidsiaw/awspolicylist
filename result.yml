@@ -9719,6 +9719,7 @@ serviceMap:
     - GetSpace
     - GetSpaceCredentials
     - GetSpaceCredentialsForOrganization
+    - GetSpaceDataAccess
     - GetTelemetryQueryResults
     - GetTopologyDiscoveryStatus
     - GetTopologyMap
@@ -12862,6 +12863,7 @@ serviceMap:
     Actions:
     - AbortMultipartReadSetUpload
     - AcceptShare
+    - AuthorizeRunProcessing
     - BatchDeleteReadSet
     - CancelAnnotationImportJob
     - CancelRun
@@ -24061,6 +24063,7 @@ serviceMap:
     - CreateCapacityReservation
     - CreateCapacityReservationBySplitting
     - CreateCapacityReservationCancellationQuote
+    - CreateCapacityReservationDateChangeQuote
     - CreateCapacityReservationFleet
     - CreateCarrierGateway
     - CreateClientVpnEndpoint
@@ -24172,6 +24175,7 @@ serviceMap:
     - DeleteCapacityManagerDataExport
     - DeleteCarrierGateway
     - DeleteClientVpnEndpoint
+    - DeleteClientVpnEndpointAuthorizationPolicy
     - DeleteClientVpnRoute
     - DeleteCoipCidr
     - DeleteCoipPool
@@ -24298,6 +24302,7 @@ serviceMap:
     - DescribeCapacityManagerDataExports
     - DescribeCapacityReservationBillingRequests
     - DescribeCapacityReservationCancellationQuotes
+    - DescribeCapacityReservationDateChangeQuotes
     - DescribeCapacityReservationFleets
     - DescribeCapacityReservationTopology
     - DescribeCapacityReservations
@@ -24562,6 +24567,7 @@ serviceMap:
     - GetCapacityManagerMetricDimensions
     - GetCapacityManagerMonitoredTagKeys
     - GetCapacityReservationUsage
+    - GetClientVpnEndpointAuthorizationPolicy
     - GetCoipPoolUsage
     - GetConsoleOutput
     - GetConsoleScreenshot
@@ -24575,6 +24581,7 @@ serviceMap:
     - GetHostReservationPurchasePreview
     - GetImageAncestry
     - GetImageBlockPublicAccessState
+    - GetImageFindings
     - GetInstanceMetadataDefaults
     - GetInstanceTpmEkPub
     - GetInstanceTypesFromInstanceRequirements
@@ -24615,6 +24622,7 @@ serviceMap:
     - GetSnapshotBlockPublicAccessState
     - GetSpotPlacementScores
     - GetSubnetCidrReservations
+    - GetTransitGatewayAttachmentNatConfiguration
     - GetTransitGatewayAttachmentPropagations
     - GetTransitGatewayMeteringPolicyEntries
     - GetTransitGatewayMulticastDomainAssociations
@@ -24651,6 +24659,7 @@ serviceMap:
     - ModifyCapacityReservation
     - ModifyCapacityReservationFleet
     - ModifyClientVpnEndpoint
+    - ModifyClientVpnEndpointAuthorizationPolicy
     - ModifyDefaultCreditSpecification
     - ModifyEbsDefaultKmsKeyId
     - ModifyFleet
@@ -24700,6 +24709,7 @@ serviceMap:
     - ModifyTrafficMirrorFilterRule
     - ModifyTrafficMirrorSession
     - ModifyTransitGateway
+    - ModifyTransitGatewayAttachmentNatConfiguration
     - ModifyTransitGatewayMeteringPolicy
     - ModifyTransitGatewayPolicyTableEntry
     - ModifyTransitGatewayPrefixListReference
@@ -24855,11 +24865,13 @@ serviceMap:
     - ec2:EphemeralStorage
     - ec2:FisActionId
     - ec2:FisTargetArns
+    - ec2:FutureCapacitySpecification
     - ec2:GatewayType
     - ec2:HostRecovery
     - ec2:IKEVersions
     - ec2:ImageID
     - ec2:ImageType
+    - ec2:ImageWatermarkKeys
     - ec2:InsideTunnelCidr
     - ec2:InsideTunnelIpv6Cidr
     - ec2:InstanceAutoRecovery
@@ -25193,6 +25205,7 @@ serviceMap:
     StringPrefix: gamelift
     Actions:
     - AcceptMatch
+    - AllowVendedLogDeliveryForResource
     - ClaimGameServer
     - CreateAlias
     - CreateBuild
@@ -28377,6 +28390,7 @@ serviceMap:
     - GetTable
     - GetTableBucket
     - GetTableBucketEncryption
+    - GetTableBucketLogging
     - GetTableBucketMaintenanceConfiguration
     - GetTableBucketMetricsConfiguration
     - GetTableBucketPolicy
@@ -28400,6 +28414,7 @@ serviceMap:
     - ListTables
     - ListTagsForResource
     - PutTableBucketEncryption
+    - PutTableBucketLogging
     - PutTableBucketMaintenanceConfiguration
     - PutTableBucketMetricsConfiguration
     - PutTableBucketPolicy
