@@ -11738,9 +11738,11 @@ serviceMap:
     - AdminListDevices
     - AdminListGroupsForUser
     - AdminListUserAuthEvents
+    - AdminListUserSessions
     - AdminRemoveUserFromGroup
     - AdminResetUserPassword
     - AdminRespondToAuthChallenge
+    - AdminRevokeUserSession
     - AdminSetUserMFAPreference
     - AdminSetUserPassword
     - AdminSetUserSettings
@@ -11802,7 +11804,9 @@ serviceMap:
     - GetUICustomization
     - GetUser
     - GetUserAttributeVerificationCode
+    - GetUserPoolClientSessionConfiguration
     - GetUserPoolMfaConfig
+    - GetUserPoolSessionConfiguration
     - GetWebACLForResource
     - GlobalSignOut
     - InitiateAuth
@@ -11818,16 +11822,20 @@ serviceMap:
     - ListUserPoolClients
     - ListUserPoolReplicas
     - ListUserPools
+    - ListUserSessions
     - ListUsers
     - ListUsersInGroup
     - ResendConfirmationCode
     - RespondToAuthChallenge
     - RevokeToken
+    - RevokeUserSession
     - SetLogDeliveryConfiguration
     - SetRiskConfiguration
     - SetUICustomization
     - SetUserMFAPreference
+    - SetUserPoolClientSessionConfiguration
     - SetUserPoolMfaConfig
+    - SetUserPoolSessionConfiguration
     - SetUserSettings
     - SignUp
     - StartUserImportJob
@@ -27733,6 +27741,7 @@ serviceMap:
     - GetAutoTopUpRule
     - GetCurrentPlanDetails
     - GetEffectiveUsageLimit
+    - GetOverageConfig
     - GetPurchaseSession
     - GetUsageLimitHistory
     - ListApplicationClaims
@@ -27740,6 +27749,7 @@ serviceMap:
     - ListClaims
     - ListEntitlements
     - ListUsageLimits
+    - ListUsagesAndLimits
     - ListUserSubscriptions
     - SetAutoTopUpRule
     - SetOverageConfig
