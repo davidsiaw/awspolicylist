@@ -5521,6 +5521,7 @@ serviceMap:
     - BatchCreateFindings
     - BatchUpdateFindings
     - CompleteTransformationPackageUpload
+    - ContributeKnowledgeItems
     - ConverseStream
     - CreateAnalysis
     - CreateCampaign
@@ -5534,6 +5535,7 @@ serviceMap:
     - DeleteKnowledgeItem
     - DeleteRemediation
     - DeleteRepository
+    - DeleteResourcePolicy
     - DeleteSource
     - DeleteTransformationPackage
     - ExecuteTransformation
@@ -5545,6 +5547,7 @@ serviceMap:
     - GetKnowledgeItem
     - GetRemediation
     - GetRepository
+    - GetResourcePolicy
     - GetSource
     - GetTransformationPackageUrl
     - ListAnalyses
@@ -5559,6 +5562,7 @@ serviceMap:
     - ListTagsForResource
     - ListTransformationPackageMetadata
     - ListTransformationPackageShares
+    - PutResourcePolicy
     - SendTelemetryEvent
     - ShareTransformationPackage
     - TagResource
@@ -7369,6 +7373,7 @@ serviceMap:
     - UpdateDirectoryConfig
     - UpdateEntitlement
     - UpdateFleet
+    - UpdateImageBuilder
     - UpdateImagePermissions
     - UpdateStack
     - UpdateThemeForStack
@@ -9269,6 +9274,7 @@ serviceMap:
     Actions:
     - AcceptMarketplaceRegistration
     - AssociateIamRoleToResource
+    - AssociateVirtualMachinesToCloudVmCluster
     - AssociateVirtualMachinesToExadbVmCluster
     - CreateAutonomousDatabase
     - CreateAutonomousDatabaseBackup
@@ -9296,6 +9302,7 @@ serviceMap:
     - DeleteOdbPeeringConnection
     - DeleteResourcePolicy
     - DisassociateIamRoleFromResource
+    - DisassociateVirtualMachinesFromCloudVmCluster
     - DisassociateVirtualMachinesFromExadbVmCluster
     - FailoverAutonomousDatabase
     - GetAutonomousDatabase
@@ -9350,7 +9357,10 @@ serviceMap:
     - UntagResource
     - UpdateAutonomousDatabase
     - UpdateAutonomousDatabaseBackup
+    - UpdateCloudAutonomousVmCluster
     - UpdateCloudExadataInfrastructure
+    - UpdateCloudExadataInfrastructureStorageCapacity
+    - UpdateCloudVmCluster
     - UpdateExadbVmCluster
     - UpdateExascaleCloudExadataInfrastructure
     - UpdateExascaleDbStorageVault
@@ -9666,6 +9676,7 @@ serviceMap:
     - DeleteIngestionEndpoint
     - DeleteInsightRules
     - DeleteIntegration
+    - DeleteMetricDataQueryDefinition
     - DeleteMetricStream
     - DeleteOmniDashboard
     - DeleteOmniThread
@@ -9703,6 +9714,7 @@ serviceMap:
     - GetIntegration
     - GetIntelligenceConfiguration
     - GetMetricData
+    - GetMetricDataQueryDefinition
     - GetMetricStatistics
     - GetMetricStream
     - GetMetricWidgetImage
@@ -9738,6 +9750,7 @@ serviceMap:
     - ListIngestionEndpoints
     - ListIntegrations
     - ListManagedInsightRules
+    - ListMetricDataQueryDefinitions
     - ListMetricStreams
     - ListMetrics
     - ListOmniDashboards
@@ -9761,6 +9774,7 @@ serviceMap:
     - PutManagedInsightRules
     - PutMetricAlarm
     - PutMetricData
+    - PutMetricDataQueryDefinition
     - PutMetricStream
     - PutPipelineRule
     - PutProfileRecords
@@ -9995,15 +10009,19 @@ serviceMap:
   AWS Secrets Manager:
     StringPrefix: secretsmanager
     Actions:
+    - AcceptCrossAccountReplication
+    - AssociateCrossAccountReplica
     - BatchGetSecretValue
     - CancelRotateSecret
     - CreateSecret
     - DeleteResourcePolicy
     - DeleteSecret
     - DescribeSecret
+    - DisassociateCrossAccountReplica
     - GetRandomPassword
     - GetResourcePolicy
     - GetSecretValue
+    - ListResourcePolicies
     - ListSecretVersionIds
     - ListSecrets
     - PutResourcePolicy
@@ -10026,6 +10044,8 @@ serviceMap:
     - aws:TagKeys
     - secretsmanager:AddReplicaRegions
     - secretsmanager:BlockPublicPolicy
+    - secretsmanager:CrossAccountPrimaryARN
+    - secretsmanager:CrossAccountReplicaARN
     - secretsmanager:Description
     - secretsmanager:ExternalSecretRotationRoleArn
     - secretsmanager:ForceDeleteWithoutRecovery
@@ -10034,7 +10054,10 @@ serviceMap:
     - secretsmanager:KmsKeyId
     - secretsmanager:ModifyRotationRules
     - secretsmanager:Name
+    - secretsmanager:PolicyName
     - secretsmanager:RecoveryWindowInDays
+    - secretsmanager:ReplicaRestriction
+    - secretsmanager:ReplicationRoleARN
     - secretsmanager:ResourceTag/tag-key
     - secretsmanager:RotateImmediately
     - secretsmanager:RotationLambdaARN
@@ -10856,7 +10879,9 @@ serviceMap:
     - RecordHandlerProgress
     - RegisterPublisher
     - RegisterType
+    - RemoveAlias
     - RollbackStack
+    - SetAlias
     - SetStackPolicy
     - SetTypeConfiguration
     - SetTypeDefaultVersion
@@ -12218,6 +12243,7 @@ serviceMap:
     - CloseSession
     - DoubleClick
     - ExecuteSequence
+    - GetCurrentUser
     - GetScreenshot
     - GetSessionInfo
     - HoldKey
@@ -12232,6 +12258,7 @@ serviceMap:
     - MovePointer
     - RightClick
     - Scroll
+    - SwitchUser
     - ToggleAppSwitcher
     - TripleClick
     - TypeText
@@ -12239,6 +12266,8 @@ serviceMap:
     ARNFormat: arn:${Partition}:agentaccess-mcp:${Region}:${Account}:*
     ARNRegex: "^arn:${Partition}:agentaccess-mcp:."
     conditionKeys:
+    - agentaccess-mcp:ImageBuilderArn
+    - agentaccess-mcp:LocalUser
     - agentaccess-mcp:StackArn
     HasResource: false
   AWS Signin:
@@ -13235,6 +13264,7 @@ serviceMap:
     - GetAdministratorAccount
     - GetAggregatorV2
     - GetAutomationRuleV2
+    - GetCSPMOrganizationsImportStatus
     - GetConfigurationPolicy
     - GetConfigurationPolicyAssociation
     - GetConnector
@@ -13287,6 +13317,7 @@ serviceMap:
     - ListSecurityControlDefinitions
     - ListStandardsControlAssociations
     - ListTagsForResource
+    - PutCSPMOrganizationsImportStatus
     - SendFindingEvents
     - SendInsightEvents
     - StartConfigurationPolicyAssociation
@@ -14861,6 +14892,7 @@ serviceMap:
     - identitycenter:InstanceArn
     - sso:ApplicationAccount
     - sso:PrimaryRegion
+    - sso:VpceAccessRequired
     HasResource: true
   AWS Migration Hub:
     StringPrefix: mgh
@@ -15406,6 +15438,7 @@ serviceMap:
     - ListFilters
     - ListFindings
     - ListIPSets
+    - ListInvestigationRecords
     - ListInvestigations
     - ListInvitations
     - ListMalwareProtectionPlans
@@ -18577,6 +18610,7 @@ serviceMap:
   AWS MWAA Serverless:
     StringPrefix: airflow-serverless
     Actions:
+    - CreateAirflowUiUrl
     - CreateWorkflow
     - DeleteWorkflow
     - GetTaskInstance
