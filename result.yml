@@ -1205,8 +1205,10 @@ serviceMap:
     - CreateCidrCollection
     - CreateHealthCheck
     - CreateHostedZone
+    - CreateIpGuardrailPolicy
     - CreateKeySigningKey
     - CreateQueryLoggingConfig
+    - CreateResourceRecordSetProtections
     - CreateReusableDelegationSet
     - CreateTrafficPolicy
     - CreateTrafficPolicyInstance
@@ -1216,8 +1218,10 @@ serviceMap:
     - DeleteCidrCollection
     - DeleteHealthCheck
     - DeleteHostedZone
+    - DeleteIpGuardrailPolicy
     - DeleteKeySigningKey
     - DeleteQueryLoggingConfig
+    - DeleteResourceRecordSetProtections
     - DeleteReusableDelegationSet
     - DeleteTrafficPolicy
     - DeleteTrafficPolicyInstance
@@ -1237,6 +1241,7 @@ serviceMap:
     - GetHostedZone
     - GetHostedZoneCount
     - GetHostedZoneLimit
+    - GetIpGuardrailPolicy
     - GetQueryLoggingConfig
     - GetReusableDelegationSet
     - GetReusableDelegationSetLimit
@@ -1251,7 +1256,9 @@ serviceMap:
     - ListHostedZones
     - ListHostedZonesByName
     - ListHostedZonesByVPC
+    - ListIpGuardrailPolicies
     - ListQueryLoggingConfigs
+    - ListResourceRecordSetProtections
     - ListResourceRecordSets
     - ListReusableDelegationSets
     - ListTagsForResource
@@ -1266,6 +1273,7 @@ serviceMap:
     - UpdateHealthCheck
     - UpdateHostedZoneComment
     - UpdateHostedZoneFeatures
+    - UpdateIpGuardrailPolicy
     - UpdateTrafficPolicyComment
     - UpdateTrafficPolicyInstance
     ARNFormat: arn:aws:route53:::${Resource}/{$Id}
@@ -13628,6 +13636,7 @@ serviceMap:
     - ListThreatModels
     - ListThreats
     - PutDesignReviewFeedback
+    - ResumePentestJob
     - StartCodeRemediation
     - StartCodeReviewJob
     - StartPentestJob
@@ -21469,8 +21478,11 @@ serviceMap:
     - AssociateLenses
     - AssociateProfiles
     - ConfigureIntegration
+    - CreateAgentBasicProfile
     - CreateAgentContext
     - CreateAgentGoal
+    - CreateAgentOrganizationalProfile
+    - CreateAgentOrganizationalReport
     - CreateAgentProfile
     - CreateLensShare
     - CreateLensVersion
@@ -21483,7 +21495,10 @@ serviceMap:
     - CreateWorkloadShare
     - DeleteAgentContext
     - DeleteAgentGoal
+    - DeleteAgentOrganizationalReport
     - DeleteAgentProfile
+    - DeleteAgentProfilePolicy
+    - DeleteAgentRecommendationPolicy
     - DeleteLens
     - DeleteLensShare
     - DeleteProfile
@@ -21497,9 +21512,14 @@ serviceMap:
     - ExportLens
     - GetAgentContext
     - GetAgentGoal
+    - GetAgentOrganizationalReport
+    - GetAgentOrganizationalReportData
+    - GetAgentPreferences
     - GetAgentProfile
+    - GetAgentProfilePolicy
     - GetAgentRecommendation
     - GetAgentRecommendationGeneration
+    - GetAgentRecommendationPolicy
     - GetAnswer
     - GetConsolidatedReport
     - GetGlobalSettings
@@ -21517,6 +21537,7 @@ serviceMap:
     - ImportLens
     - ListAgentContexts
     - ListAgentGoals
+    - ListAgentOrganizationalReports
     - ListAgentProfiles
     - ListAgentRecommendationGenerations
     - ListAgentRecommendationItems
@@ -21540,12 +21561,17 @@ serviceMap:
     - ListTemplateShares
     - ListWorkloadShares
     - ListWorkloads
+    - PutAgentPreferences
+    - PutAgentProfilePolicy
     - PutAgentRecommendationFeedback
+    - PutAgentRecommendationPolicy
+    - SendAgentOrganizationalReportDataToS3
     - StartAgentRecommendationGeneration
     - TagResource
     - UntagResource
     - UpdateAgentContext
     - UpdateAgentGoal
+    - UpdateAgentOrganizationalProfile
     - UpdateAgentProfile
     - UpdateAgentRecommendationStatus
     - UpdateAnswer
