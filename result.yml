@@ -2929,6 +2929,7 @@ serviceMap:
     - ListTenantResources
     - ListTenants
     - PutAccountDedicatedIpWarmupAttributes
+    - PutAccountDeliveryAttributes
     - PutAccountDetails
     - PutAccountPricingAttributes
     - PutAccountSendingAttributes
@@ -5528,12 +5529,15 @@ serviceMap:
     Actions:
     - BatchCreateFindings
     - BatchUpdateFindings
+    - CancelSkillCreationJob
     - CompleteTransformationPackageUpload
+    - ConnectSource
     - ContributeKnowledgeItems
     - ConverseStream
     - CreateAnalysis
     - CreateCampaign
     - CreateRemediation
+    - CreateRemediationPlan
     - CreateRepository
     - CreateSource
     - CreateTransformationPackageUrl
@@ -5542,6 +5546,7 @@ serviceMap:
     - DeleteFinding
     - DeleteKnowledgeItem
     - DeleteRemediation
+    - DeleteRemediationPlan
     - DeleteRepository
     - DeleteResourcePolicy
     - DeleteSource
@@ -5552,10 +5557,13 @@ serviceMap:
     - GetCampaign
     - GetFinding
     - GetFindingGroups
+    - GetIssueGroup
     - GetKnowledgeItem
     - GetRemediation
+    - GetRemediationPlan
     - GetRepository
     - GetResourcePolicy
+    - GetSkillCreationJob
     - GetSource
     - GetTransformationPackageUrl
     - ListAnalyses
@@ -5563,27 +5571,36 @@ serviceMap:
     - ListCampaignRepositories
     - ListCampaigns
     - ListFindings
+    - ListIssueGroups
     - ListKnowledgeItems
+    - ListRemediationPlans
     - ListRemediations
     - ListRepositories
+    - ListSkillCreationJobs
     - ListSources
     - ListTagsForResource
     - ListTransformationPackageMetadata
     - ListTransformationPackageShares
     - PutResourcePolicy
+    - ReadRepositoryContent
     - SendTelemetryEvent
     - ShareTransformationPackage
+    - StartSkillCreationJob
     - TagResource
     - UnshareTransformationPackage
     - UntagResource
     - UpdateAnalysis
     - UpdateCampaign
     - UpdateCampaignRepositoryStatus
+    - UpdateIssueGroup
     - UpdateKnowledgeItemConfiguration
     - UpdateKnowledgeItemStatus
     - UpdateRemediation
+    - UpdateRemediationPlan
     - UpdateRepository
+    - UpdateSkillCreationJob
     - UpdateSource
+    - WriteRepositoryContent
     ARNFormat: arn:aws:transform-custom:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:transform-custom:.+:.+:.+"
     conditionKeys:
@@ -6033,19 +6050,23 @@ serviceMap:
     - BatchRefillPatientPharmacyPrescriptions
     - CancelAppointment
     - CreateAgent
+    - CreateDataset
     - CreateDomain
     - CreateIntegration
     - CreateSession
     - CreateSubscription
     - DeactivateSubscription
     - DeleteAgent
+    - DeleteDataset
     - DeleteDomain
     - DeleteIntegration
     - GetAgent
     - GetCareTeamProvider
+    - GetDataset
     - GetDomain
     - GetDomainAnalytics
     - GetIntegration
+    - GetMedicalCodingJob
     - GetMedicalScribeListeningSession
     - GetPatient
     - GetPatientInsightsJob
@@ -6055,6 +6076,7 @@ serviceMap:
     - InvokeAgent
     - ListAgents
     - ListAppointmentSlots
+    - ListDatasets
     - ListDomains
     - ListIntegrations
     - ListPatientAppointments
@@ -6070,8 +6092,10 @@ serviceMap:
     - RescheduleAppointment
     - ResetPassword
     - ScheduleAppointment
+    - StartMedicalCodingJob
     - StartMedicalScribeListeningSession
     - StartPatientInsightsJob
+    - SubmitFeedback
     - SubmitMedicationRenewal
     - TagResource
     - UntagResource
@@ -8631,6 +8655,7 @@ serviceMap:
     - GetAnalysisReportResults
     - ListAnalysisReports
     - ListContainerAssociations
+    - ListContextStores
     - ListFirewallPolicies
     - ListFirewallPoliciesV2
     - ListFirewalls
@@ -8639,6 +8664,7 @@ serviceMap:
     - ListProxies
     - ListProxyConfigurations
     - ListProxyRuleGroups
+    - ListResourcesInContextStore
     - ListRuleGroups
     - ListTLSInspectionConfigurations
     - ListTagsForResource
@@ -13103,6 +13129,7 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateIndexMode
+    - UpdateMetadataConfiguration
     ARNFormat: arn:aws:s3vectors:${Region}:${Account}:${ResourceType}
     ARNRegex: "^arn:aws:s3vectors:.+:.+:.+"
     conditionKeys:
@@ -13117,30 +13144,40 @@ serviceMap:
     StringPrefix: networkflowmonitor
     Actions:
     - CreateMonitor
+    - CreatePerformanceMonitor
     - CreateScope
     - DeleteMonitor
+    - DeletePerformanceMonitor
     - DeleteScope
     - GetMonitor
+    - GetMonitorScopeSuggestions
+    - GetPerformanceMonitor
     - GetQueryResultsMonitorTopContributors
+    - GetQueryResultsPerformanceMonitor
     - GetQueryResultsWorkloadInsightsTopContributors
     - GetQueryResultsWorkloadInsightsTopContributorsData
     - GetQueryStatusMonitorTopContributors
+    - GetQueryStatusPerformanceMonitor
     - GetQueryStatusWorkloadInsightsTopContributors
     - GetQueryStatusWorkloadInsightsTopContributorsData
     - GetScope
     - ListMonitors
+    - ListPerformanceMonitors
     - ListScopes
     - ListTagsForResource
     - Publish
     - StartQueryMonitorTopContributors
+    - StartQueryPerformanceMonitor
     - StartQueryWorkloadInsightsTopContributors
     - StartQueryWorkloadInsightsTopContributorsData
     - StopQueryMonitorTopContributors
+    - StopQueryPerformanceMonitor
     - StopQueryWorkloadInsightsTopContributors
     - StopQueryWorkloadInsightsTopContributorsData
     - TagResource
     - UntagResource
     - UpdateMonitor
+    - UpdatePerformanceMonitor
     - UpdateScope
     ARNFormat: arn:aws:networkflowmonitor:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:networkflowmonitor:.+:.+:.+"
@@ -13370,13 +13407,18 @@ serviceMap:
     - GetAgent
     - GetAgentRuntimeConfiguration
     - GetConnector
+    - GetPartner
+    - GetPartnerByAccountId
+    - GetPartnerByArn
     - GetWebAppUrl
     - ListAgents
     - ListConnectors
     - ListProfiles
     - ListTagsForResource
     - PutAgentRuntimeConfiguration
+    - PutPartner
     - RejectConnector
+    - RemovePartner
     - TagResource
     - UntagResource
     - UpdateAccountSettings
@@ -14232,6 +14274,7 @@ serviceMap:
     - CreateConnection
     - CreateCrawler
     - CreateCustomEntityType
+    - CreateDataQualityEvaluationConfig
     - CreateDataQualityRuleset
     - CreateDatabase
     - CreateDevEndpoint
@@ -14265,6 +14308,7 @@ serviceMap:
     - DeleteConnectionType
     - DeleteCrawler
     - DeleteCustomEntityType
+    - DeleteDataQualityEvaluationConfig
     - DeleteDataQualityRuleset
     - DeleteDatabase
     - DeleteDevEndpoint
@@ -14318,6 +14362,7 @@ serviceMap:
     - GetDashboardUrl
     - GetDataCatalogEncryptionSettings
     - GetDataPreviewStatement
+    - GetDataQualityEvaluationConfig
     - GetDataQualityModel
     - GetDataQualityModelResult
     - GetDataQualityResult
@@ -14403,6 +14448,7 @@ serviceMap:
     - ListCrawlers
     - ListCrawls
     - ListCustomEntityTypes
+    - ListDataQualityEvaluationConfigs
     - ListDataQualityResults
     - ListDataQualityRuleRecommendationRuns
     - ListDataQualityRulesetEvaluationRuns
@@ -14410,6 +14456,7 @@ serviceMap:
     - ListDevEndpoints
     - ListEntities
     - ListIntegrationResourceProperties
+    - ListIntegrationTableProperties
     - ListJobUpgradeAnalyses
     - ListJobs
     - ListMLTransforms
@@ -14485,6 +14532,7 @@ serviceMap:
     - UpdateConnection
     - UpdateCrawler
     - UpdateCrawlerSchedule
+    - UpdateDataQualityEvaluationConfig
     - UpdateDataQualityRuleset
     - UpdateDatabase
     - UpdateDevEndpoint
@@ -14967,6 +15015,8 @@ serviceMap:
     Actions:
     - AddLayerVersionPermission
     - AddPermission
+    - AssociateRuntimeAlias
+    - AssociateRuntimeVersion
     - CheckpointDurableExecution
     - ConnectMicrovm
     - CreateAlias
@@ -14979,6 +15029,9 @@ serviceMap:
     - CreateMicrovmImage
     - CreateMicrovmShellAuthToken
     - CreateNetworkConnector
+    - CreateRuntime
+    - CreateRuntimeAlias
+    - CreateRuntimeVersion
     - CreateWebFunction
     - CreateWebFunctionEndpoint
     - CreateWebFunctionRevision
@@ -14997,6 +15050,9 @@ serviceMap:
     - DeleteNetworkConnector
     - DeleteProvisionedConcurrencyConfig
     - DeleteResourcePolicy
+    - DeleteRuntime
+    - DeleteRuntimeAlias
+    - DeleteRuntimeVersion
     - DeleteWebFunction
     - DeleteWebFunctionEndpoint
     - DeleteWebFunctionRevision
@@ -15028,7 +15084,10 @@ serviceMap:
     - GetPolicy
     - GetProvisionedConcurrencyConfig
     - GetResourcePolicy
+    - GetRuntime
+    - GetRuntimeAlias
     - GetRuntimeManagementConfig
+    - GetRuntimeVersion
     - GetWebAccountSettings
     - GetWebFunction
     - GetWebFunctionEndpoint
@@ -15058,6 +15117,9 @@ serviceMap:
     - ListNetworkConnectorVersions
     - ListNetworkConnectors
     - ListProvisionedConcurrencyConfigs
+    - ListRuntimeAliases
+    - ListRuntimeVersions
+    - ListRuntimes
     - ListTags
     - ListVersionsByFunction
     - ListWebFunctionEndpoints
@@ -15077,6 +15139,7 @@ serviceMap:
     - PutRuntimeManagementConfig
     - RemoveLayerVersionPermission
     - RemovePermission
+    - RestoreRuntime
     - ResumeMicrovm
     - RunMicrovm
     - SendDurableExecutionCallbackFailure
@@ -15099,6 +15162,9 @@ serviceMap:
     - UpdateMicrovmImage
     - UpdateMicrovmImageVersion
     - UpdateNetworkConnector
+    - UpdateRuntime
+    - UpdateRuntimeAlias
+    - UpdateRuntimeVersion
     - UpdateWebFunctionEndpoint
     ARNFormat: arn:aws:lambda:${Region}:${Account}:${ResourceType}:${ResourceId}
     ARNRegex: "^arn:aws:lambda:.+"
@@ -16316,6 +16382,7 @@ serviceMap:
     - CreateInferenceComponent
     - CreateInferenceExperiment
     - CreateInferenceRecommendationsJob
+    - CreateInferenceRouter
     - CreateJob
     - CreateLabelingJob
     - CreateLineageGroupPolicy
@@ -16377,6 +16444,7 @@ serviceMap:
     - DeleteEdgeDeploymentStage
     - DeleteEndpoint
     - DeleteEndpointConfig
+    - DeleteEndpointPolicy
     - DeleteExperiment
     - DeleteFeatureGroup
     - DeleteFlowDefinition
@@ -16390,6 +16458,7 @@ serviceMap:
     - DeleteImageVersion
     - DeleteInferenceComponent
     - DeleteInferenceExperiment
+    - DeleteInferenceRouter
     - DeleteJob
     - DeleteLineageGroupPolicy
     - DeleteMlflowApp
@@ -16465,6 +16534,7 @@ serviceMap:
     - DescribeInferenceComponent
     - DescribeInferenceExperiment
     - DescribeInferenceRecommendationsJob
+    - DescribeInferenceRouter
     - DescribeJob
     - DescribeJobSchemaVersion
     - DescribeLabelingJob
@@ -16514,6 +16584,7 @@ serviceMap:
     - GetDeployments
     - GetDeviceFleetReport
     - GetDeviceRegistration
+    - GetEndpointPolicy
     - GetLineageGroupPolicy
     - GetModelPackageGroupPolicy
     - GetRecord
@@ -16527,6 +16598,8 @@ serviceMap:
     - InvokeEndpoint
     - InvokeEndpointAsync
     - InvokeEndpointWithResponseStream
+    - InvokeInferenceRouter
+    - InvokeInferenceRouterAsync
     - ListAIBenchmarkJobs
     - ListAIRecommendationJobs
     - ListAIWorkloadConfigs
@@ -16570,6 +16643,7 @@ serviceMap:
     - ListInferenceExperiments
     - ListInferenceRecommendationsJobSteps
     - ListInferenceRecommendationsJobs
+    - ListInferenceRouters
     - ListJobSchemaVersions
     - ListJobs
     - ListLabelingJobs
@@ -16623,6 +16697,7 @@ serviceMap:
     - ListUserProfiles
     - ListWorkforces
     - ListWorkteams
+    - PutEndpointPolicy
     - PutLineageGroupPolicy
     - PutModelPackageGroupPolicy
     - PutRecord
@@ -16698,6 +16773,7 @@ serviceMap:
     - UpdateInferenceComponent
     - UpdateInferenceComponentRuntimeConfig
     - UpdateInferenceExperiment
+    - UpdateInferenceRouter
     - UpdateMlflowApp
     - UpdateMlflowTrackingServer
     - UpdateModelCard
@@ -16779,6 +16855,7 @@ serviceMap:
     - sagemaker:SearchVisibilityCondition/${FilterKey}
     - sagemaker:ServerlessMaxConcurrency
     - sagemaker:ServerlessMemorySize
+    - sagemaker:SourceInferenceRouterArn
     - sagemaker:SpaceSharingType
     - sagemaker:StudioLifecycleConfigArns
     - sagemaker:TaggingAction
@@ -20383,6 +20460,7 @@ serviceMap:
     - ResolveCase
     - ResolveInteraction
     - SearchForCases
+    - SearchInteractions
     - StartInteraction
     - UpdateCaseSeverity
     - UpdateInteraction
@@ -22323,6 +22401,39 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  Amazon OpenSearch Memory:
+    StringPrefix: osm
+    Actions:
+    - BatchGetEvent
+    - CreateEvent
+    - CreateMemory
+    - CreateSpace
+    - DeleteEvent
+    - DeleteMemory
+    - DeleteSpace
+    - GetEvent
+    - GetMemory
+    - GetSpace
+    - ListEvents
+    - ListMemories
+    - ListSpaces
+    - ListTagsForResource
+    - SearchEvents
+    - SearchMemories
+    - TagResource
+    - UntagResource
+    - UpdateMemory
+    - UpdateSpace
+    ARNFormat: arn:aws:osm:${Region}:${Account}:${Resource}
+    ARNRegex: "^arn:aws:osm:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    - osm:actorId
+    - osm:sessionId
+    - osm:strategyName
+    HasResource: true
   Amazon Message Gateway Service:
     StringPrefix: ssmmessages
     Actions:
@@ -23924,6 +24035,7 @@ serviceMap:
     - kms:MessageType
     - kms:MultiRegion
     - kms:MultiRegionKeyType
+    - kms:PolicyName
     - kms:PrimaryRegion
     - kms:ReEncryptOnSameKey
     - kms:RecipientAttestation:ImageSha384
