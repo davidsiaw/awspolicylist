@@ -1589,6 +1589,7 @@ serviceMap:
   AWS Marketplace:
     StringPrefix: aws-marketplace
     Actions:
+    - AcceptAgreementApproval
     - AcceptAgreementApprovalRequest
     - AcceptAgreementCancellationRequest
     - AcceptAgreementPaymentRequest
@@ -1600,14 +1601,19 @@ serviceMap:
     - CancelAgreementRequest
     - CreateAgreementRequest
     - DescribeAgreement
+    - GetAgreementApproval
     - GetAgreementApprovalRequest
     - GetAgreementCancellationRequest
+    - GetAgreementContacts
     - GetAgreementEntitlements
     - GetAgreementPaymentRequest
     - GetAgreementRequest
+    - GetAgreementRequestApprovalPlans
+    - GetAgreementRequestTerms
     - GetAgreementTerms
     - GetBillingAdjustmentRequest
     - ListAgreementApprovalRequests
+    - ListAgreementApprovals
     - ListAgreementCancellationRequests
     - ListAgreementCharges
     - ListAgreementInvoiceLineItems
@@ -1615,12 +1621,14 @@ serviceMap:
     - ListAgreementRequests
     - ListBillingAdjustmentRequests
     - ListEntitlementDetails
+    - RejectAgreementApproval
     - RejectAgreementApprovalRequest
     - RejectAgreementCancellationRequest
     - RejectAgreementPaymentRequest
     - SearchAgreements
     - SendAgreementCancellationRequest
     - SendAgreementPaymentRequest
+    - StartAgreementApprovals
     - Subscribe
     - Unsubscribe
     - UpdateAgreementApprovalRequest
@@ -1966,6 +1974,7 @@ serviceMap:
     - ListFirewallConfigs
     - ListFirewallDomainLists
     - ListFirewallDomains
+    - ListFirewallRuleDomains
     - ListFirewallRuleGroupAssociations
     - ListFirewallRuleGroups
     - ListFirewallRuleTypes
@@ -4715,18 +4724,24 @@ serviceMap:
   Amazon Kinesis Data Streams:
     StringPrefix: kinesis
     Actions:
+    - AcknowledgeDeadLetterQueueRecords
+    - AcknowledgeQueueRecords
     - AddTagsToStream
     - AssociateStreamsWithChannel
+    - AssociateStreamsWithQueue
     - CreateChannel
+    - CreateQueue
     - CreateStream
     - DecreaseStreamRetentionPeriod
     - DeleteChannel
+    - DeleteQueue
     - DeleteResourcePolicy
     - DeleteStream
     - DeregisterStreamConsumer
     - DescribeAccountSettings
     - DescribeChannel
     - DescribeLimits
+    - DescribeQueue
     - DescribeStream
     - DescribeStreamConsumer
     - DescribeStreamSummary
@@ -4738,6 +4753,7 @@ serviceMap:
     - IncreaseStreamRetentionPeriod
     - InjectApiError
     - ListChannels
+    - ListQueues
     - ListShards
     - ListStreamConsumers
     - ListStreams
@@ -4747,8 +4763,11 @@ serviceMap:
     - PutRecord
     - PutRecords
     - PutResourcePolicy
+    - ReceiveDeadLetterQueueRecords
+    - ReceiveQueueRecords
     - RegisterStreamConsumer
     - RemoveTagsFromStream
+    - RestoreDeadLetterQueueRecords
     - SplitShard
     - StartStreamEncryption
     - StopStreamEncryption
@@ -4757,7 +4776,10 @@ serviceMap:
     - UntagResource
     - UpdateAccountSettings
     - UpdateChannel
+    - UpdateDeadLetterQueueRecordsVisibility
     - UpdateMaxRecordSize
+    - UpdateQueue
+    - UpdateQueueRecordsVisibility
     - UpdateShardCount
     - UpdateStreamMode
     - UpdateStreamRecordDistributionStrategy
@@ -7764,6 +7786,8 @@ serviceMap:
     - DisassociateWebACL
     - GenerateMobileSdkReleaseUrl
     - GetDecryptedAPIKey
+    - GetEvent
+    - GetEventActor
     - GetIPSet
     - GetLoggingConfiguration
     - GetManagedRuleSet
@@ -7782,6 +7806,9 @@ serviceMap:
     - ListAPIKeys
     - ListAvailableManagedRuleGroupVersions
     - ListAvailableManagedRuleGroups
+    - ListEventActors
+    - ListEvents
+    - ListEventsByWebACL
     - ListIPSets
     - ListLoggingConfigurations
     - ListManagedRuleSets
@@ -10939,6 +10966,7 @@ serviceMap:
     - aws:TagKeys
     - cloudformation:ChangeSetName
     - cloudformation:CreateAction
+    - cloudformation:DisableValidation
     - cloudformation:ImportResourceTypes
     - cloudformation:ResourceTypes
     - cloudformation:RoleArn
@@ -11060,18 +11088,23 @@ serviceMap:
     StringPrefix: observabilityadmin
     Actions:
     - CreateCentralizationRuleForOrganization
+    - CreateConnector
     - CreateDatasetIntegration
     - CreateS3TableIntegration
     - CreateTelemetryPipeline
     - CreateTelemetryRule
     - CreateTelemetryRuleForOrganization
     - DeleteCentralizationRuleForOrganization
+    - DeleteConnector
     - DeleteDatasetIntegration
     - DeleteS3TableIntegration
     - DeleteTelemetryPipeline
     - DeleteTelemetryRule
     - DeleteTelemetryRuleForOrganization
     - GetCentralizationRuleForOrganization
+    - GetConnector
+    - GetConnectorTelemetryManifest
+    - GetConnectorTelemetrySetup
     - GetDatasetIntegration
     - GetS3TableIntegration
     - GetTelemetryEnrichmentStatus
@@ -11080,21 +11113,29 @@ serviceMap:
     - GetTelemetryPipeline
     - GetTelemetryRule
     - GetTelemetryRuleForOrganization
+    - GetThirdPartyTelemetryEnrichment
     - ListCentralizationRulesForOrganization
+    - ListConnectors
     - ListDatasetIntegrations
     - ListResourceTelemetry
     - ListResourceTelemetryForOrganization
+    - ListResourcesByConnector
     - ListS3TableIntegrations
     - ListTagsForResource
     - ListTelemetryPipelines
     - ListTelemetryRules
     - ListTelemetryRulesForOrganization
+    - ListThirdPartyTelemetryEnrichments
+    - PutConnectorTelemetryManifest
     - StartTelemetryEnrichment
     - StartTelemetryEvaluation
     - StartTelemetryEvaluationForOrganization
+    - StartTelemetryPipelineRefresh
+    - StartThirdPartyTelemetryEnrichment
     - StopTelemetryEnrichment
     - StopTelemetryEvaluation
     - StopTelemetryEvaluationForOrganization
+    - StopThirdPartyTelemetryEnrichment
     - TagResource
     - TestTelemetryPipeline
     - UntagResource
@@ -11110,11 +11151,13 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - observabilityadmin:AzureTelemetryRegion
     - observabilityadmin:CentralizationBackupRegion
     - observabilityadmin:CentralizationDestinationAccount
     - observabilityadmin:CentralizationDestinationRegion
     - observabilityadmin:CentralizationRuleName
     - observabilityadmin:CentralizationSourceId
+    - observabilityadmin:CentralizationSourceOrganizationalUnitId
     - observabilityadmin:CentralizationSourceRegions
     - observabilityadmin:SourceType
     - observabilityadmin:TargetRegions
@@ -19513,6 +19556,7 @@ serviceMap:
     - DisassociateWorkspaceApplication
     - GetAccountLink
     - GetTroubleshootingRecommendation
+    - GetWorkspaceProactiveRecommendation
     - ImportClientBranding
     - ImportCustomWorkspaceImage
     - ImportWorkspaceImage
@@ -19521,6 +19565,8 @@ serviceMap:
     - ListAccountLinks
     - ListAvailableManagementCidrRanges
     - ListTroubleshootingRecommendations
+    - ListWorkspaceProactiveRecommendationResources
+    - ListWorkspaceProactiveRecommendations
     - MigrateWorkspace
     - ModifyAccount
     - ModifyCertificateBasedAuthProperties
@@ -19696,6 +19742,7 @@ serviceMap:
     - elasticache:Durability
     - elasticache:EngineType
     - elasticache:EngineVersion
+    - elasticache:IntegrationType
     - elasticache:KmsKeyId
     - elasticache:MaximumDataStorage
     - elasticache:MaximumECPUPerSecond
@@ -22458,6 +22505,7 @@ serviceMap:
     - DeletePrincipal
     - GetApplication
     - ListApplications
+    - UpdateApplication
     ARNRegex: "^arn:${Partition}:researchstudio:.+:.+:.+"
     HasResource: false
   AWS Billing:
@@ -25168,6 +25216,62 @@ serviceMap:
     - ListJobs
     - UpdateJob
     HasResource: false
+  AWS API Portal:
+    StringPrefix: apiportal
+    Actions:
+    - AssociateManagedApis
+    - CreateManagedApi
+    - CreatePortal
+    - CreatePortalPreview
+    - CreateProduct
+    - CreateProductApiPage
+    - CreateProductPage
+    - DeleteDiscoveryConfiguration
+    - DeleteManagedApi
+    - DeleteOrganizationDiscoveryConfiguration
+    - DeletePortal
+    - DeleteProduct
+    - DeleteProductApiPage
+    - DeleteProductPage
+    - DeleteProductSharingPolicy
+    - DisassociateManagedApis
+    - GetApiInventoryItem
+    - GetDiscoveryConfiguration
+    - GetManagedApi
+    - GetOrganizationDiscoveryConfiguration
+    - GetPortal
+    - GetProduct
+    - GetProductApiPage
+    - GetProductPage
+    - GetProductSharingPolicy
+    - ListApiInventoryItems
+    - ListDiscoveryStatuses
+    - ListManagedApiEvents
+    - ListManagedApis
+    - ListPortals
+    - ListProductApiPages
+    - ListProductPages
+    - ListProducts
+    - ListTagsForResource
+    - PutDiscoveryConfiguration
+    - PutOrganizationDiscoveryConfiguration
+    - PutProductSharingPolicy
+    - StartDiscovery
+    - StopDiscovery
+    - TagResource
+    - UntagResource
+    - UpdatePortal
+    - UpdatePortalPublishStatus
+    - UpdateProduct
+    - UpdateProductApiPage
+    - UpdateProductPage
+    ARNFormat: arn:aws:apiportal:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:apiportal:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   Amazon SageMaker geospatial capabilities:
     StringPrefix: sagemaker-geospatial
     Actions:
@@ -27516,6 +27620,8 @@ serviceMap:
     - GatewayListResourcesForWebACL
     - GetABTest
     - GetAgentCard
+    - GetAgentInsight
+    - GetAgentInsightStore
     - GetAgentRuntime
     - GetAgentRuntimeEndpoint
     - GetApiKeyCredentialProvider
@@ -27581,6 +27687,8 @@ serviceMap:
     - InvokeWebSearch
     - ListABTests
     - ListActors
+    - ListAgentInsightStores
+    - ListAgentInsights
     - ListAgentRuntimeEndpoints
     - ListAgentRuntimeVersions
     - ListAgentRuntimeVersionsByCapacityProvider
@@ -27658,6 +27766,8 @@ serviceMap:
     - TagResource
     - UntagResource
     - UpdateABTest
+    - UpdateAgentInsight
+    - UpdateAgentInsightStore
     - UpdateAgentRuntime
     - UpdateAgentRuntimeEndpoint
     - UpdateApiKeyCredentialProvider
