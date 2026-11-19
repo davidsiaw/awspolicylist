@@ -1512,6 +1512,7 @@ serviceMap:
     - ListVerificationEvidence
     - ListVerifications
     - PutResourcePolicy
+    - StartAssessment
     - StartChangeSet
     - StartInvoiceSubmissionTask
     - StartTaxComplianceProfileChangeTask
@@ -1539,16 +1540,31 @@ serviceMap:
   AWS Marketplace Seller Reporting:
     StringPrefix: aws-marketplace
     Actions:
+    - CreateDataSubscription
+    - DeleteDataSubscription
+    - GetDataSubscription
     - GetSellerDashboard
     - GetSellerReportingData
+    - ListDataSubscriptions
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
     ARNFormat: arn:aws:aws-marketplace::${Account}:${Catalog}/${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:aws-marketplace:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Marketplace Deployment Service:
     StringPrefix: aws-marketplace
     Actions:
+    - GetDeploymentConfiguration
+    - GetDeploymentConfigurationJob
+    - ListDeploymentConfigurationJobs
     - ListTagsForResource
     - PutDeploymentParameter
+    - StartDeploymentConfigurationJob
     - TagResource
     - UntagResource
     ARNFormat: arn:aws:aws-marketplace:${Region}:${Account}:${ResourceType}:catalogs/${CatalogName}/products/${ProductId}/${ResourceId}
@@ -1735,6 +1751,15 @@ serviceMap:
     - identitystore:UserId
     - identitystore:VpceAccessRequired
     HasResource: true
+  AWS Abuse Signal API:
+    StringPrefix: abuse
+    Actions:
+    - CreateAbuseReport
+    - GetAbuseReportStatus
+    - ListAbuseReportStatuses
+    ARNFormat: arn:${Partition}:abuse:${Region}:${Account}:${ResourceType}
+    ARNRegex: "^arn:${Partition}:abuse:.+:.+:.+"
+    HasResource: false
   Claude Platform on AWS:
     StringPrefix: aws-external-anthropic
     Actions:
@@ -2388,6 +2413,7 @@ serviceMap:
     Actions:
     - ActivateEvaluationForm
     - AdminGetEmergencyAccessToken
+    - ApproveTimeOff
     - AssociateAnalyticsDataSet
     - AssociateApprovedOrigin
     - AssociateBot
@@ -2417,6 +2443,7 @@ serviceMap:
     - BatchGetFlowAssociation
     - BatchPutContact
     - BatchUpdateDataTableValue
+    - CancelTimeOff
     - ClaimPhoneNumber
     - CompleteAttachedFileUpload
     - CreateAgentStatus
@@ -2450,6 +2477,7 @@ serviceMap:
     - CreateRule
     - CreateSecurityProfile
     - CreateTaskTemplate
+    - CreateTimeOff
     - CreateTrafficDistributionGroup
     - CreateUseCase
     - CreateUser
@@ -2567,6 +2595,7 @@ serviceMap:
     - GetMetricDataV2
     - GetPromptFile
     - GetTaskTemplate
+    - GetTimeOff
     - GetTrafficDistribution
     - ImportPhoneNumber
     - ImportWorkspaceMedia
@@ -2642,7 +2671,9 @@ serviceMap:
     - ListWorkspaces
     - MonitorContact
     - PauseContact
+    - PutTimeOffBalance
     - PutUserStatus
+    - RejectTimeOff
     - ReleasePhoneNumber
     - ReplicateInstance
     - ResumeContact
@@ -3742,6 +3773,7 @@ serviceMap:
   AWS Config:
     StringPrefix: config
     Actions:
+    - AllowVendedLogDeliveryForResource
     - AssociateResourceTypes
     - BatchGetAggregateResourceConfig
     - BatchGetResourceConfig
@@ -6278,12 +6310,14 @@ serviceMap:
     Actions:
     - AcceptAttachment
     - AssociateConnectPeer
+    - AssociateContextStore
     - AssociateCustomerGateway
     - AssociateLink
     - AssociateTransitGatewayConnectPeer
     - CreateConnectAttachment
     - CreateConnectPeer
     - CreateConnection
+    - CreateContextStore
     - CreateCoreNetwork
     - CreateCoreNetworkPrefixListAssociation
     - CreateDevice
@@ -6298,6 +6332,7 @@ serviceMap:
     - DeleteAttachment
     - DeleteConnectPeer
     - DeleteConnection
+    - DeleteContextStore
     - DeleteCoreNetwork
     - DeleteCoreNetworkPolicyVersion
     - DeleteCoreNetworkPrefixListAssociation
@@ -6310,6 +6345,7 @@ serviceMap:
     - DeregisterTransitGateway
     - DescribeGlobalNetworks
     - DisassociateConnectPeer
+    - DisassociateContextStore
     - DisassociateCustomerGateway
     - DisassociateLink
     - DisassociateTransitGatewayConnectPeer
@@ -6318,6 +6354,9 @@ serviceMap:
     - GetConnectPeer
     - GetConnectPeerAssociations
     - GetConnections
+    - GetContextStore
+    - GetContextStoreAssociation
+    - GetContextVersion
     - GetCoreNetwork
     - GetCoreNetworkChangeEvents
     - GetCoreNetworkChangeSet
@@ -6345,6 +6384,10 @@ serviceMap:
     - ListAttachmentRoutingPolicyAssociations
     - ListAttachments
     - ListConnectPeers
+    - ListContextChanges
+    - ListContextStoreAssociations
+    - ListContextStores
+    - ListContexts
     - ListCoreNetworkPolicyVersions
     - ListCoreNetworkPrefixListAssociations
     - ListCoreNetworkRoutingInformation
@@ -6365,6 +6408,7 @@ serviceMap:
     - UntagResource
     - UpdateAttachmentNatConfiguration
     - UpdateConnection
+    - UpdateContextStore
     - UpdateCoreNetwork
     - UpdateDevice
     - UpdateDirectConnectGatewayAttachment
@@ -6379,6 +6423,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - networkmanager:ManagedBy
     - networkmanager:cgwArn
     - networkmanager:directConnectGatewayArn
     - networkmanager:edgeLocations
@@ -7840,6 +7885,30 @@ serviceMap:
     - aws:TagKeys
     - wafv2:LogDestinationResource
     - wafv2:LogScope
+    HasResource: true
+  AWS Billing and Cost Management Data Hub:
+    StringPrefix: bcm-data-hub
+    Actions:
+    - CancelQueryExecution
+    - CreateDataset
+    - DeleteDataset
+    - GetDataset
+    - GetDatasetSchema
+    - GetQueryExecution
+    - GetQueryExecutionResults
+    - ListDatasets
+    - ListQueryExecutions
+    - ListTagsForResource
+    - StartQueryExecution
+    - TagResource
+    - UntagResource
+    - UpdateDataset
+    ARNFormat: arn:aws:bcm-data-hub:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:bcm-data-hub:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     HasResource: true
   AWS Billing And Cost Management Pricing Calculator:
     StringPrefix: bcm-pricing-calculator
@@ -11347,6 +11416,8 @@ serviceMap:
   AWS Health APIs and Notifications:
     StringPrefix: health
     Actions:
+    - ConfigureTags
+    - ConfigureTagsForOrganization
     - DescribeAffectedAccountsForOrganization
     - DescribeAffectedEntities
     - DescribeAffectedEntitiesForOrganization
@@ -11359,11 +11430,25 @@ serviceMap:
     - DescribeEvents
     - DescribeEventsForOrganization
     - DescribeHealthServiceStatusForOrganization
+    - DescribeTagKeys
+    - DescribeTagKeysForOrganization
+    - DescribeTags
+    - DescribeTagsForOrganization
+    - DescribeTagsOnboardingStatus
+    - DescribeTagsOnboardingStatusForOrganization
     - DisableHealthServiceAccessForOrganization
+    - DisableTags
+    - DisableTagsForOrganization
     - EnableHealthServiceAccessForOrganization
+    - EnableTags
+    - EnableTagsForOrganization
     ARNFormat: arn:aws:health:${Region}::${RelativeId}
     ARNRegex: "^arn:aws:health:[^:]*:[^:]*:.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:TagKeys
+    - health:TagChannel
+    - health:TagKeys
     - health:eventTypeCode
     - health:service
     HasResource: true
@@ -12868,7 +12953,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
-  AWS Route53 Global Resolver:
+  AWS Route 53 Global Resolver:
     StringPrefix: route53globalresolver
     Actions:
     - AllowVendedLogDeliveryForResource
@@ -12878,12 +12963,14 @@ serviceMap:
     - BatchUpdateFirewallRule
     - CreateAccessSource
     - CreateAccessToken
+    - CreateCoreNetworkEndpoint
     - CreateDNSView
     - CreateFirewallDomainList
     - CreateFirewallRule
     - CreateGlobalResolver
     - DeleteAccessSource
     - DeleteAccessToken
+    - DeleteCoreNetworkEndpoint
     - DeleteDNSView
     - DeleteFirewallDomainList
     - DeleteFirewallRule
@@ -12893,6 +12980,7 @@ serviceMap:
     - EnableDNSView
     - GetAccessSource
     - GetAccessToken
+    - GetCoreNetworkEndpoint
     - GetDNSView
     - GetFirewallDomainList
     - GetFirewallRule
@@ -12902,6 +12990,7 @@ serviceMap:
     - ImportFirewallDomains
     - ListAccessSources
     - ListAccessTokens
+    - ListCoreNetworkEndpoints
     - ListDNSViews
     - ListFirewallDomainLists
     - ListFirewallDomains
@@ -12909,11 +12998,13 @@ serviceMap:
     - ListGlobalResolvers
     - ListHostedZoneAssociations
     - ListManagedFirewallDomainLists
+    - ListSharedDNSViews
     - ListTagsForResource
     - TagResource
     - UntagResource
     - UpdateAccessSource
     - UpdateAccessToken
+    - UpdateCoreNetworkEndpoint
     - UpdateDNSView
     - UpdateFirewallDomains
     - UpdateFirewallRule
@@ -15081,6 +15172,7 @@ serviceMap:
     - DeleteAlias
     - DeleteCapacityProvider
     - DeleteCodeSigningConfig
+    - DeleteDurableExecution
     - DeleteEventSourceMapping
     - DeleteFunction
     - DeleteFunctionCodeSigningConfig
@@ -15170,6 +15262,7 @@ serviceMap:
     - ListWebFunctions
     - PassCapacityProvider
     - PassNetworkConnector
+    - PauseDurableExecution
     - PublishLayerVersion
     - PublishVersion
     - PutFunctionCodeSigningConfig
@@ -15183,6 +15276,7 @@ serviceMap:
     - RemoveLayerVersionPermission
     - RemovePermission
     - RestoreRuntime
+    - ResumeDurableExecution
     - ResumeMicrovm
     - RunMicrovm
     - SendDurableExecutionCallbackFailure
@@ -18043,6 +18137,7 @@ serviceMap:
     - AssociateBenefitApplicationResource
     - AssociateBusinessPlan
     - AssociateOpportunity
+    - BatchCreateCampaignAsset
     - CancelBenefitApplication
     - CancelBusinessPlan
     - CancelBusinessPlanSubmissionTask
@@ -18053,10 +18148,13 @@ serviceMap:
     - CreateBenefitApplication
     - CreateBusinessPlan
     - CreateBusinessPlanItem
+    - CreateCampaign
     - CreateChannelHandshake
     - CreateCollaborationChannelMembers
     - CreateCollaborationChannelRequest
     - CreateConnectionInvitation
+    - CreateCustomerAccount
+    - CreateDataSubscription
     - CreateEngagement
     - CreateEngagementContext
     - CreateEngagementInvitation
@@ -18069,11 +18167,18 @@ serviceMap:
     - CreateResourceSnapshot
     - CreateResourceSnapshotJob
     - CreateRevenueAttribution
+    - CreateSocialConnectionAuthorizationUrl
+    - DeactivateCampaignAsset
     - DeleteBusinessPlanAttachment
     - DeleteBusinessPlanItem
+    - DeleteCampaign
+    - DeleteCampaignAsset
+    - DeleteCustomerAccount
+    - DeleteDataSubscription
     - DeleteProgramManagementAccount
     - DeleteRelationship
     - DeleteResourceSnapshotJob
+    - DeleteSocialConnection
     - DisassociateAwsTrainingCertificationEmailDomain
     - DisassociateBenefitApplicationResource
     - DisassociateBusinessPlan
@@ -18091,15 +18196,26 @@ serviceMap:
     - GetBusinessPlanItemSchema
     - GetBusinessPlanSettings
     - GetBusinessPlanSubmissionTask
+    - GetCampaign
+    - GetCampaignAsset
+    - GetCampaignAssetActivationTask
+    - GetCampaignAssetExportTask
+    - GetCampaignTemplate
     - GetCollaborationChannel
     - GetConnection
     - GetConnectionInvitation
     - GetConnectionPreferences
+    - GetCustomerAccount
+    - GetCustomerAccountBulkJob
+    - GetCustomerAccountBulkJobReportUrl
+    - GetCustomerAccountStatistics
+    - GetDataSubscription
     - GetEngagement
     - GetEngagementInvitation
     - GetMarketplaceRevenueShare
     - GetMarketplaceRevenueShareAllocation
     - GetOpportunity
+    - GetOpportunityBulkJobReportUrl
     - GetPartner
     - GetPartnerCentralContentDocument
     - GetPartnerCentralContentMetadata
@@ -18131,12 +18247,18 @@ serviceMap:
     - ListBusinessPlanItems
     - ListBusinessPlanSubmissionTasks
     - ListBusinessPlans
+    - ListCampaignAssets
+    - ListCampaigns
     - ListChannelHandshakes
     - ListCollaborationChannels
     - ListConnectionInvitations
     - ListConnections
+    - ListCustomerAccountBulkJobResults
+    - ListCustomerAccountBulkJobs
+    - ListDataSubscriptions
     - ListEngagementByAcceptingInvitationTasks
     - ListEngagementFromOpportunityTasks
+    - ListEngagementGroups
     - ListEngagementInvitations
     - ListEngagementMembers
     - ListEngagementResourceAssociations
@@ -18144,6 +18266,8 @@ serviceMap:
     - ListMarketplaceRevenueShareAllocations
     - ListMarketplaceRevenueShares
     - ListOpportunities
+    - ListOpportunityBulkJobResults
+    - ListOpportunityBulkJobs
     - ListOpportunityFromEngagementTasks
     - ListPartnerCentralContent
     - ListPartnerPaths
@@ -18155,6 +18279,7 @@ serviceMap:
     - ListResourceSnapshots
     - ListRevenueAttributionAllocations
     - ListRevenueAttributions
+    - ListSocialConnections
     - ListSolutions
     - ListTagsForResource
     - PutAllianceLeadContact
@@ -18166,14 +18291,21 @@ serviceMap:
     - RejectChannelHandshake
     - RejectConnectionInvitation
     - RejectEngagementInvitation
+    - SearchCampaignTemplates
+    - SearchCustomerAccounts
+    - SearchEngagements
     - SearchOpportunities
     - SearchPartnerCentralContent
     - SearchPartnerProfiles
     - SendEmailVerificationCode
     - StartBusinessPlanAttachmentImportTask
     - StartBusinessPlanSubmissionTask
+    - StartCampaignAssetActivationTask
+    - StartCampaignAssetExportTask
+    - StartCustomerAccountBulkJob
     - StartEngagementByAcceptingInvitationTask
     - StartEngagementFromOpportunityTask
+    - StartOpportunityBulkJob
     - StartOpportunityFromEngagementTask
     - StartProfileUpdateTask
     - StartProspectingFromEngagementTask
@@ -18190,8 +18322,12 @@ serviceMap:
     - UpdateBenefitApplication
     - UpdateBusinessPlan
     - UpdateBusinessPlanItem
+    - UpdateCampaign
+    - UpdateCampaignAsset
     - UpdateConnectionPreferences
+    - UpdateCustomerAccount
     - UpdateEngagementContext
+    - UpdateMarketplaceRevenueShare
     - UpdateMarketplaceRevenueShareAllocation
     - UpdateOpportunity
     - UpdateProgramManagementAccount
@@ -18426,6 +18562,8 @@ serviceMap:
     - GetOutboundWebIdentityFederationInfo
     - GetPolicy
     - GetPolicyVersion
+    - GetRequestAuthorizationDetails
+    - GetRequestAuthorizationPolicy
     - GetRole
     - GetRolePolicy
     - GetRoleTemplateVersion
@@ -20540,6 +20678,7 @@ serviceMap:
     StringPrefix: dsql
     Actions:
     - AddPeerCluster
+    - AllowVendedLogDeliveryForResource
     - CreateCluster
     - CreateStream
     - DbConnect
@@ -28751,6 +28890,8 @@ serviceMap:
     - CreateApplication
     - CreateApplicationPresignedUrl
     - CreateApplicationSnapshot
+    - CreateSnapshot
+    - CreateSystemSnapshot
     - DeleteApplication
     - DeleteApplicationCloudWatchLoggingOption
     - DeleteApplicationInputProcessingConfiguration
@@ -28758,16 +28899,24 @@ serviceMap:
     - DeleteApplicationReferenceDataSource
     - DeleteApplicationSnapshot
     - DeleteApplicationVpcConfiguration
+    - DeleteSnapshot
     - DescribeApplication
     - DescribeApplicationOperation
     - DescribeApplicationSnapshot
     - DescribeApplicationVersion
+    - DescribeSnapshot
+    - DescribeSnapshotOperation
     - DiscoverInputSchema
+    - ExportSnapshot
+    - ImportSnapshot
     - ListApplicationOperations
     - ListApplicationSnapshots
     - ListApplicationVersions
     - ListApplications
+    - ListSnapshotOperations
+    - ListSnapshots
     - ListTagsForResource
+    - RestoreFromSnapshot
     - RollbackApplication
     - StartApplication
     - StopApplication
@@ -28775,8 +28924,8 @@ serviceMap:
     - UntagResource
     - UpdateApplication
     - UpdateApplicationMaintenanceConfiguration
-    ARNFormat: arn:aws:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}
-    ARNRegex: "^arn:aws:kinesisanalytics:.+:[0-9]+:application/[a-zA-Z0-9_.-]+"
+    ARNFormat: arn:aws:kinesisanalytics:${Region}:${Account}:${ResourceType}/${ResourceName}
+    ARNRegex: "^arn:aws:kinesisanalytics:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
