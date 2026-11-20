@@ -1204,6 +1204,7 @@ serviceMap:
     - ChangeTagsForResource
     - CreateCidrCollection
     - CreateHealthCheck
+    - CreateHealthCheckSource
     - CreateHostedZone
     - CreateIpGuardrailPolicy
     - CreateKeySigningKey
@@ -1217,6 +1218,7 @@ serviceMap:
     - DeactivateKeySigningKey
     - DeleteCidrCollection
     - DeleteHealthCheck
+    - DeleteHealthCheckSource
     - DeleteHostedZone
     - DeleteIpGuardrailPolicy
     - DeleteKeySigningKey
@@ -1237,6 +1239,7 @@ serviceMap:
     - GetHealthCheck
     - GetHealthCheckCount
     - GetHealthCheckLastFailureReason
+    - GetHealthCheckSource
     - GetHealthCheckStatus
     - GetHostedZone
     - GetHostedZoneCount
@@ -1252,7 +1255,9 @@ serviceMap:
     - ListCidrCollections
     - ListCidrLocations
     - ListGeoLocations
+    - ListHealthCheckSources
     - ListHealthChecks
+    - ListHealthChecksBySource
     - ListHostedZones
     - ListHostedZonesByName
     - ListHostedZonesByVPC
@@ -1279,6 +1284,9 @@ serviceMap:
     ARNFormat: arn:aws:route53:::${Resource}/{$Id}
     ARNRegex: "^arn:aws:route53:::.+"
     conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
     - route53:ChangeResourceRecordSetsActions
     - route53:ChangeResourceRecordSetsNormalizedRecordNames
     - route53:ChangeResourceRecordSetsRecordTypes
@@ -3329,6 +3337,7 @@ serviceMap:
     - GetDocumentContent
     - GetDocumentMetadata
     - GetIntegration
+    - GetOrganizationAccess
     - GetTask
     - GetTurn
     - ListAgentSpaces
@@ -3348,6 +3357,7 @@ serviceMap:
     - UpdateAutomation
     - UpdateConnection
     - UpdateDocument
+    - UpdateOrganizationAccess
     HasResource: false
   Amazon CloudWatch Application Signals:
     StringPrefix: application-signals
@@ -3996,9 +4006,13 @@ serviceMap:
     - DescribeTenantDatabases
     - DescribeValidDBInstanceModifications
     - DisableHttpEndpoint
+    - DisableInternetAccessGateway
+    - DisableVpcNetworking
     - DownloadCompleteDBLogFile
     - DownloadDBLogFilePortion
     - EnableHttpEndpoint
+    - EnableInternetAccessGateway
+    - EnableVpcNetworking
     - FailoverDBCluster
     - FailoverGlobalCluster
     - ListTagsForResource
@@ -4081,6 +4095,7 @@ serviceMap:
     - rds:TagsFromRequest
     - rds:TenantDatabaseName
     - rds:Vpc
+    - rds:VpcNetworkingEnabled
     - rds:cluster-pg-tag/${TagKey}
     - rds:cluster-snapshot-tag/${TagKey}
     - rds:cluster-tag/${TagKey}
@@ -7928,6 +7943,7 @@ serviceMap:
     - GetBillEstimate
     - GetBillScenario
     - GetPreferences
+    - GetUsageLinesEstimatedCost
     - GetWorkloadEstimate
     - ListBillEstimateCommitments
     - ListBillEstimateInputCommitmentModifications
@@ -8797,6 +8813,13 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Edge Analytics Platform:
+    StringPrefix: apex
+    Actions:
+    - GetStatistics
+    - GetStatisticsTimeSeries
+    - Search
+    HasResource: false
   AWS Systems Manager Incident Manager Contacts:
     StringPrefix: ssm-contacts
     Actions:
@@ -9701,6 +9724,7 @@ serviceMap:
     Actions:
     - BatchAssociateScramSecret
     - BatchDisassociateScramSecret
+    - CreateAssessment
     - CreateChannel
     - CreateCluster
     - CreateClusterV2
@@ -9708,6 +9732,7 @@ serviceMap:
     - CreateReplicator
     - CreateTopic
     - CreateVpcConnection
+    - DeleteAssessment
     - DeleteChannel
     - DeleteCluster
     - DeleteClusterPolicy
@@ -9715,6 +9740,7 @@ serviceMap:
     - DeleteReplicator
     - DeleteTopic
     - DeleteVpcConnection
+    - DescribeAssessment
     - DescribeChannel
     - DescribeCluster
     - DescribeClusterOperation
@@ -9725,10 +9751,13 @@ serviceMap:
     - DescribeReplicator
     - DescribeTopic
     - DescribeTopicPartitions
+    - DescribeTopicReassignment
     - DescribeVpcConnection
     - GetBootstrapBrokers
     - GetClusterPolicy
     - GetCompatibleKafkaVersions
+    - ListAssessmentFindings
+    - ListAssessments
     - ListChannels
     - ListClientVpcConnections
     - ListClusterOperations
@@ -9742,11 +9771,14 @@ serviceMap:
     - ListReplicators
     - ListScramSecrets
     - ListTagsForResource
+    - ListTopicReassignments
     - ListTopics
     - ListVpcConnections
     - PutClusterPolicy
     - RebootBroker
     - RejectClientVpcConnection
+    - StartTopicReassignment
+    - StopTopicReassignment
     - TagResource
     - UntagResource
     - UpdateBrokerCount
@@ -9786,6 +9818,7 @@ serviceMap:
     - CreateDomainForOrganization
     - CreateIngestionEndpoint
     - CreateIntegration
+    - CreateOmniAgentAsset
     - CreateOmniDashboard
     - CreateOmniThread
     - CreateOneTimeDeepLinkCode
@@ -9808,6 +9841,7 @@ serviceMap:
     - DeleteIntegration
     - DeleteMetricDataQueryDefinition
     - DeleteMetricStream
+    - DeleteOmniAgentAsset
     - DeleteOmniDashboard
     - DeleteOmniThread
     - DeletePipelineRule
@@ -9849,6 +9883,7 @@ serviceMap:
     - GetMetricStream
     - GetMetricWidgetImage
     - GetOTelEnrichment
+    - GetOmniAgentAsset
     - GetOmniDashboard
     - GetOmniThread
     - GetPreferences
@@ -9883,6 +9918,7 @@ serviceMap:
     - ListMetricDataQueryDefinitions
     - ListMetricStreams
     - ListMetrics
+    - ListOmniAgentAssets
     - ListOmniDashboards
     - ListOmniThreads
     - ListServiceLevelObjectives
@@ -9932,6 +9968,7 @@ serviceMap:
     - UpdateIngestionEndpoint
     - UpdateIntegration
     - UpdateOTelEnrichment
+    - UpdateOmniAgentAsset
     - UpdateOmniDashboard
     - UpdateOmniThread
     - UpdatePreferences
@@ -10105,6 +10142,7 @@ serviceMap:
   AWS Agent Registry:
     StringPrefix: agent-registry
     Actions:
+    - CompleteRegistryRecordTokenAuth
     - CreateRegistry
     - CreateRegistryRecord
     - DeleteRegistry
@@ -10128,7 +10166,7 @@ serviceMap:
     - UpdateRegistryRecord
     - UpdateRegistryRecordStatus
     ARNFormat: arn:aws:agent-registry:${Region}:${Account}:${ResourceType}/${ResourceId}
-    ARNRegex: "^arn:aws:agent-registry:.+:.+:.+"
+    ARNRegex: "^arn:aws:agent-registry:.*:.+:.+"
     conditionKeys:
     - agent-registry:RecordCreatorAccount
     - agent-registry:RecordSourceAccount
@@ -11939,10 +11977,12 @@ serviceMap:
     - AdminUserGlobalSignOut
     - AssociateSoftwareToken
     - AssociateWebACL
+    - CancelPointInTimeRecovery
     - ChangePassword
     - ConfirmDevice
     - ConfirmForgotPassword
     - ConfirmSignUp
+    - CreateCIMDPolicy
     - CreateGroup
     - CreateIdentityProvider
     - CreateManagedLoginBranding
@@ -11953,6 +11993,7 @@ serviceMap:
     - CreateUserPoolClient
     - CreateUserPoolDomain
     - CreateUserPoolReplica
+    - DeleteCIMDPolicy
     - DeleteGroup
     - DeleteIdentityProvider
     - DeleteManagedLoginBranding
@@ -11965,9 +12006,11 @@ serviceMap:
     - DeleteUserPoolClientSecret
     - DeleteUserPoolDomain
     - DeleteUserPoolReplica
+    - DescribeCIMDPolicy
     - DescribeIdentityProvider
     - DescribeManagedLoginBranding
     - DescribeManagedLoginBrandingByClient
+    - DescribePointInTimeRecovery
     - DescribeResourceServer
     - DescribeRiskConfiguration
     - DescribeTerms
@@ -11981,6 +12024,7 @@ serviceMap:
     - ForgotPassword
     - GetCSVHeader
     - GetClientToken
+    - GetDerivedToken
     - GetDevice
     - GetGroup
     - GetIdentityProviderByIdentifier
@@ -11997,9 +12041,13 @@ serviceMap:
     - GetWebACLForResource
     - GlobalSignOut
     - InitiateAuth
+    - InitiatePointInTimeRecovery
+    - ListCIMDPolicies
+    - ListClientMetadataURLs
     - ListDevices
     - ListGroups
     - ListIdentityProviders
+    - ListPointInTimeRecoveries
     - ListResourceServers
     - ListResourcesForWebACL
     - ListTagsForResource
@@ -12025,11 +12073,14 @@ serviceMap:
     - SetUserPoolSessionConfiguration
     - SetUserSettings
     - SignUp
+    - StartPointInTimeRecovery
     - StartUserImportJob
     - StopUserImportJob
     - TagResource
     - UntagResource
     - UpdateAuthEventFeedback
+    - UpdateCIMDPolicy
+    - UpdateClientMetadataURLState
     - UpdateDeviceStatus
     - UpdateGroup
     - UpdateIdentityProvider
@@ -15753,10 +15804,12 @@ serviceMap:
     - PutResourcePolicy
     - PutRule
     - PutTargets
+    - PutWebhookEvents
     - RemovePermission
     - RemoveTargets
     - RetrieveConnectionCredentials
     - RevokeResource
+    - RotateWebhookCredentials
     - StartReplay
     - TagResource
     - TestEventPattern
@@ -15776,6 +15829,7 @@ serviceMap:
     - aws:TagKeys
     - events:ContentFilterPresent
     - events:EventBusArn
+    - events:EventSourceType
     - events:ManagedBy
     - events:Metadata/${MetadataKey}
     - events:Metadata/${MetadataKey}/Matcher
@@ -17483,11 +17537,13 @@ serviceMap:
     - GetCallerIdentity
     - GetDelegatedAccessToken
     - GetFederationToken
+    - GetScopedCredentials
     - GetServiceBearerToken
     - GetSessionToken
     - GetWebIdentityToken
     - SetContext
     - SetSourceIdentity
+    - SetWebIdentityTokenScope
     - TagGetWebIdentityToken
     - TagSession
     ARNFormat: arn:aws:iam::${Account}:${RelativeId}
@@ -17584,12 +17640,14 @@ serviceMap:
     - sts:DurationSeconds
     - sts:ExternalId
     - sts:IdentityTokenAudience
+    - sts:IdentityTokenScope
     - sts:RequestContext/${ContextKey}
     - sts:RequestContextProviders
     - sts:RoleAuthorizedByIdp
     - sts:RoleSessionName
     - sts:SigningAlgorithm
     - sts:SourceIdentity
+    - sts:SubjectMode
     - sts:TaskPolicyArn
     - sts:TransitiveTagKeys
     - token.actions.${Domain}.ghe.com:actor
@@ -18656,6 +18714,7 @@ serviceMap:
     - UpdateCloudFrontPublicKey
     - UpdateGroup
     - UpdateLoginProfile
+    - UpdateOpenIDConnectProvider
     - UpdateOpenIDConnectProviderThumbprint
     - UpdateRole
     - UpdateRoleDescription
@@ -18680,6 +18739,8 @@ serviceMap:
     - iam:AssociatedResourceArn
     - iam:DelegationDuration
     - iam:DelegationRequestOwner
+    - iam:EnableIdentityCenterAssociation
+    - iam:EnableIdentityPropagation
     - iam:FIDO-FIPS-140-2-certification
     - iam:FIDO-FIPS-140-3-certification
     - iam:FIDO-certification
@@ -18689,6 +18750,10 @@ serviceMap:
     - iam:PermissionsBoundary
     - iam:PolicyARN
     - iam:RegisterSecurityKey
+    - iam:RequestIdentityCenterInstanceArn
+    - iam:RequestIdentityProviderIssuers
+    - iam:ResourceIdentityCenterInstanceArn
+    - iam:ResourceIdentityProviderIssuers
     - iam:ResourceTag/${TagKey}
     - iam:RoleTemplateARN
     - iam:ServiceSpecificCredentialAgeDays
@@ -23395,6 +23460,8 @@ serviceMap:
     - DeleteRequesterGateway
     - DeleteResponderGateway
     - DisassociateCertificate
+    - GetAvailableModule
+    - GetAvailableModuleVersion
     - GetCertificateAssociation
     - GetInboundExternalLink
     - GetLink
@@ -23402,12 +23469,17 @@ serviceMap:
     - GetOutboundExternalLink
     - GetRequesterGateway
     - GetResponderGateway
+    - GetUpdate
+    - ListAvailableModuleVersions
+    - ListAvailableModules
     - ListCertificateAssociations
     - ListLinkRoutingRules
     - ListLinks
     - ListRequesterGateways
     - ListResponderGateways
     - ListTagsForResource
+    - ListUpdates
+    - PutLinkFlows
     - RejectLink
     - TagResource
     - UntagResource
@@ -28817,6 +28889,7 @@ serviceMap:
     - DeleteTableBucketReplication
     - DeleteTablePolicy
     - DeleteTableReplication
+    - DisassociateTableReplication
     - GetNamespace
     - GetTable
     - GetTableBucket
