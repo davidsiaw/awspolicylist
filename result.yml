@@ -1242,6 +1242,7 @@ serviceMap:
     - GetHealthCheckSource
     - GetHealthCheckStatus
     - GetHostedZone
+    - GetHostedZoneChangeBatch
     - GetHostedZoneCount
     - GetHostedZoneLimit
     - GetIpGuardrailPolicy
@@ -1258,6 +1259,7 @@ serviceMap:
     - ListHealthCheckSources
     - ListHealthChecks
     - ListHealthChecksBySource
+    - ListHostedZoneChangeBatches
     - ListHostedZones
     - ListHostedZonesByName
     - ListHostedZonesByVPC
@@ -1278,6 +1280,7 @@ serviceMap:
     - UpdateHealthCheck
     - UpdateHostedZoneComment
     - UpdateHostedZoneFeatures
+    - UpdateHostedZoneTier
     - UpdateIpGuardrailPolicy
     - UpdateTrafficPolicyComment
     - UpdateTrafficPolicyInstance
@@ -1591,6 +1594,7 @@ serviceMap:
     - GetOfferTerms
     - GetProduct
     - ListFulfillmentOptions
+    - ListListingAttributes
     - ListPrivateListings
     - ListPurchaseOptions
     - SearchFacets
@@ -3893,6 +3897,7 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     - config:ConfigurationRecorderServicePrincipal
+    - config:ConformancePackType
     HasResource: true
   Amazon RDS:
     StringPrefix: rds
@@ -8919,6 +8924,7 @@ serviceMap:
     - StartStreamTranscriptionWebSocket
     - StartTranscriptionJob
     - TagResource
+    - TranscribeAudio
     - UntagResource
     - UpdateCallAnalyticsCategory
     - UpdateLanguageModel
@@ -9882,6 +9888,7 @@ serviceMap:
     - GetMetricStatistics
     - GetMetricStream
     - GetMetricWidgetImage
+    - GetMonitoringAssessment
     - GetOTelEnrichment
     - GetOmniAgentAsset
     - GetOmniDashboard
@@ -9918,6 +9925,8 @@ serviceMap:
     - ListMetricDataQueryDefinitions
     - ListMetricStreams
     - ListMetrics
+    - ListMonitoringAssessmentResults
+    - ListMonitoringAssessments
     - ListOmniAgentAssets
     - ListOmniDashboards
     - ListOmniThreads
@@ -9949,6 +9958,7 @@ serviceMap:
     - SearchPrincipals
     - SetAlarmState
     - StartMetricStreams
+    - StartMonitoringAssessment
     - StartOTelEnrichment
     - StartOmniThreadSession
     - StartTelemetryQuery
@@ -10142,18 +10152,25 @@ serviceMap:
   AWS Agent Registry:
     StringPrefix: agent-registry
     Actions:
+    - AssociatePublisher
     - CompleteRegistryRecordTokenAuth
+    - CreatePublisher
     - CreateRegistry
     - CreateRegistryRecord
+    - DeletePublisher
     - DeleteRegistry
     - DeleteRegistryRecord
     - DeleteResourcePolicy
+    - DisassociatePublisher
     - GetDiscoverableRegistryRecord
+    - GetPublisher
     - GetRegistry
     - GetRegistryRecord
     - GetResourcePolicy
     - InvokeRegistryMcp
     - ListDiscoverableRegistryRecords
+    - ListPublisherAssociations
+    - ListPublishers
     - ListRegistries
     - ListRegistryRecords
     - ListTagsForResource
@@ -10162,9 +10179,11 @@ serviceMap:
     - SubmitRegistryRecordForApproval
     - TagResource
     - UntagResource
+    - UpdatePublisherAssociationApprovalStatus
     - UpdateRegistry
     - UpdateRegistryRecord
     - UpdateRegistryRecordStatus
+    - ValidatePublisher
     ARNFormat: arn:aws:agent-registry:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:agent-registry:.*:.+:.+"
     conditionKeys:
@@ -10241,12 +10260,15 @@ serviceMap:
     StringPrefix: payments
     Actions:
     - AcceptFinancingApplicationTerms
+    - BatchGetFinancialRecord
     - CreateConnectedAccount
     - CreateFinancingApplication
     - CreatePaymentInstrument
     - DeleteConnectedAccount
     - DeletePaymentInstrument
+    - GetAccountBalance
     - GetConnectedAccount
+    - GetFinancialRecord
     - GetFinancingApplication
     - GetFinancingLine
     - GetFinancingLineWithdrawal
@@ -10254,6 +10276,7 @@ serviceMap:
     - GetPaymentInstrument
     - GetPaymentStatus
     - ListConnectedAccounts
+    - ListFinancialRecords
     - ListFinancingApplications
     - ListFinancingLineWithdrawals
     - ListFinancingLines
@@ -10966,6 +10989,13 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Agent Registry Public Search and Discovery:
+    StringPrefix: agent-discovery
+    Actions:
+    - SearchPublicRecords
+    ARNFormat: arn:${Partition}:agent-discovery:${Region}:${Account}:${ResourceType}/${ResourceId}
+    ARNRegex: "^arn:${Partition}:agent-discovery:.*:.+:.+"
+    HasResource: false
   AWS CloudFormation:
     StringPrefix: cloudformation
     Actions:
@@ -12488,6 +12518,7 @@ serviceMap:
     Actions:
     - Authenticate
     - AuthorizeOAuth2Access
+    - BatchRevokeSessions
     - CreateAccount
     - CreateBearerToken
     - CreateOAuth2PublicClient
@@ -12497,8 +12528,10 @@ serviceMap:
     - DeleteResourcePermissionStatement
     - GetConsoleAuthorizationConfiguration
     - GetResourcePolicy
+    - GetSession
     - IntrospectOAuth2Token
     - ListResourcePermissionStatements
+    - ListSessions
     - ListTrustedIdentityPropagationApplicationsForConsole
     - PutConsoleAuthorizationConfiguration
     - PutResourcePermissionStatement
@@ -12512,6 +12545,7 @@ serviceMap:
     - signin:OAuthRedirectUri
     - signin:OAuthTokenType
     - signin:PrincipalArn
+    - signin:PutSignInDurationBlock
     HasResource: true
   Amazon CloudWatch Logs:
     StringPrefix: logs
@@ -13240,26 +13274,39 @@ serviceMap:
     - AnalyzeID
     - CreateAdapter
     - CreateAdapterVersion
+    - CreateBlueprint
+    - CreateBlueprintVersion
+    - CreateProject
     - DeleteAdapter
     - DeleteAdapterVersion
+    - DeleteBlueprint
+    - DeleteProject
     - DetectDocumentText
     - GetAdapter
     - GetAdapterVersion
+    - GetBlueprint
     - GetDocumentAnalysis
+    - GetDocumentInsights
     - GetDocumentTextDetection
     - GetExpenseAnalysis
     - GetLendingAnalysis
     - GetLendingAnalysisSummary
+    - GetProject
     - ListAdapterVersions
     - ListAdapters
+    - ListBlueprints
+    - ListProjects
     - ListTagsForResource
     - StartDocumentAnalysis
+    - StartDocumentInsights
     - StartDocumentTextDetection
     - StartExpenseAnalysis
     - StartLendingAnalysis
     - TagResource
     - UntagResource
     - UpdateAdapter
+    - UpdateBlueprint
+    - UpdateProject
     ARNFormat: arn:aws:textract:${Region}:${Account}:${RelativeId}
     ARNRegex: "^arn:aws:textract:.+"
     conditionKeys:
@@ -13827,6 +13874,7 @@ serviceMap:
     - GetDesignReviewArtifact
     - GetDesignReviewFeedback
     - GetIntegration
+    - GetPentestEstimate
     - GetProviderRegistrationManifest
     - GetSecurityRequirement
     - GetSecurityRequirementPack
@@ -13866,10 +13914,12 @@ serviceMap:
     - ResumePentestJob
     - StartCodeRemediation
     - StartCodeReviewJob
+    - StartPentestEstimationRun
     - StartPentestJob
     - StartThreatModelJob
     - StartValidationRun
     - StopCodeReviewJob
+    - StopPentestEstimationRun
     - StopPentestJob
     - StopThreatModelJob
     - TagResource
@@ -16519,6 +16569,7 @@ serviceMap:
     Actions:
     - AccessModelPackage
     - AddAssociation
+    - AddInferenceGateway
     - AddTags
     - AssociateTrialComponent
     - AttachClusterNodeNetworkInterface
@@ -16547,6 +16598,7 @@ serviceMap:
     - CreateAutoMLJob
     - CreateAutoMLJobV2
     - CreateCluster
+    - CreateClusterExtension
     - CreateClusterSchedulerConfig
     - CreateCodeRepository
     - CreateCompilationJob
@@ -16563,6 +16615,7 @@ serviceMap:
     - CreateExperiment
     - CreateFeatureGroup
     - CreateFlowDefinition
+    - CreateGlobalInferenceGateway
     - CreateHub
     - CreateHubContentPresignedUrls
     - CreateHubContentReference
@@ -16623,6 +16676,7 @@ serviceMap:
     - DeleteArtifact
     - DeleteAssociation
     - DeleteCluster
+    - DeleteClusterExtension
     - DeleteClusterSchedulerConfig
     - DeleteCodeRepository
     - DeleteCompilationJob
@@ -16639,6 +16693,7 @@ serviceMap:
     - DeleteExperiment
     - DeleteFeatureGroup
     - DeleteFlowDefinition
+    - DeleteGlobalInferenceGateway
     - DeleteHub
     - DeleteHubContent
     - DeleteHubContentReference
@@ -16694,8 +16749,10 @@ serviceMap:
     - DescribeArtifact
     - DescribeAutoMLJob
     - DescribeAutoMLJobV2
+    - DescribeCapacityReservation
     - DescribeCluster
     - DescribeClusterEvent
+    - DescribeClusterExtension
     - DescribeClusterInference
     - DescribeClusterNode
     - DescribeClusterSchedulerConfig
@@ -16715,6 +16772,7 @@ serviceMap:
     - DescribeFeatureGroup
     - DescribeFeatureMetadata
     - DescribeFlowDefinition
+    - DescribeGlobalInferenceGateway
     - DescribeHub
     - DescribeHubContent
     - DescribeHumanLoop
@@ -16751,6 +16809,7 @@ serviceMap:
     - DescribeProcessingJob
     - DescribeProject
     - DescribeReservedCapacity
+    - DescribeResourceAssociations
     - DescribeSharedModel
     - DescribeSpace
     - DescribeStudioLifecycleConfig
@@ -16772,6 +16831,7 @@ serviceMap:
     - ExecuteSamplingOperation
     - ExecuteTrainingOperation
     - ExtendTrainingPlan
+    - GetCapacityReservationUsage
     - GetDeployments
     - GetDeviceFleetReport
     - GetDeviceRegistration
@@ -16789,6 +16849,8 @@ serviceMap:
     - InvokeEndpoint
     - InvokeEndpointAsync
     - InvokeEndpointWithResponseStream
+    - InvokeGlobalInferenceGateway
+    - InvokeGlobalInferenceGatewayWithResponseStream
     - InvokeInferenceRouter
     - InvokeInferenceRouterAsync
     - ListAIBenchmarkJobs
@@ -16803,7 +16865,10 @@ serviceMap:
     - ListAssociations
     - ListAutoMLJobs
     - ListCandidatesForAutoMLJob
+    - ListCapacityReservations
     - ListClusterEvents
+    - ListClusterExtensionVersions
+    - ListClusterExtensions
     - ListClusterNodes
     - ListClusterSchedulerConfigs
     - ListClusters
@@ -16822,6 +16887,7 @@ serviceMap:
     - ListExperiments
     - ListFeatureGroups
     - ListFlowDefinitions
+    - ListGlobalInferenceGateways
     - ListHubContentVersions
     - ListHubContents
     - ListHubs
@@ -16832,6 +16898,7 @@ serviceMap:
     - ListImages
     - ListInferenceComponents
     - ListInferenceExperiments
+    - ListInferenceGateways
     - ListInferenceRecommendationsJobSteps
     - ListInferenceRecommendationsJobs
     - ListInferenceRouters
@@ -16895,6 +16962,7 @@ serviceMap:
     - PutResourcePolicy
     - QueryLineage
     - RegisterDevices
+    - RemoveInferenceGateway
     - RenderUiTemplate
     - RetryPipelineExecution
     - Sample
@@ -16942,6 +17010,7 @@ serviceMap:
     - UpdateAppImageConfig
     - UpdateArtifact
     - UpdateCluster
+    - UpdateClusterExtension
     - UpdateClusterInference
     - UpdateClusterSchedulerConfig
     - UpdateClusterSoftware
@@ -16956,6 +17025,7 @@ serviceMap:
     - UpdateExperiment
     - UpdateFeatureGroup
     - UpdateFeatureMetadata
+    - UpdateGlobalInferenceGateway
     - UpdateHub
     - UpdateHubContent
     - UpdateHubContentReference
@@ -17038,6 +17108,7 @@ serviceMap:
     - sagemaker:OutputKmsKey
     - sagemaker:OutputKmsKeyArn
     - sagemaker:OwnerUserProfileArn
+    - sagemaker:PipelineVersionAlias
     - sagemaker:PipelineVersionId
     - sagemaker:RemoteAccess
     - sagemaker:ResourceTag/
@@ -17196,6 +17267,7 @@ serviceMap:
     - AssociateAccounts
     - CreateAutomationRule
     - DeleteAutomationRule
+    - DeleteOrganizationEnrollmentConfiguration
     - DisassociateAccounts
     - GetAutomationEvent
     - GetAutomationRule
@@ -17207,9 +17279,12 @@ serviceMap:
     - ListAutomationRulePreview
     - ListAutomationRulePreviewSummaries
     - ListAutomationRules
+    - ListOrganizationEnrollmentConfigurations
+    - ListOrganizationalUnits
     - ListRecommendedActionSummaries
     - ListRecommendedActions
     - ListTagsForResource
+    - PutOrganizationEnrollmentConfiguration
     - RollbackAutomationEvent
     - StartAutomationEvent
     - TagResource
@@ -18199,6 +18274,7 @@ serviceMap:
     - CancelBenefitApplication
     - CancelBusinessPlan
     - CancelBusinessPlanSubmissionTask
+    - CancelChannelContract
     - CancelChannelHandshake
     - CancelConnection
     - CancelConnectionInvitation
@@ -18207,6 +18283,7 @@ serviceMap:
     - CreateBusinessPlan
     - CreateBusinessPlanItem
     - CreateCampaign
+    - CreateChannelContract
     - CreateChannelHandshake
     - CreateCollaborationChannelMembers
     - CreateCollaborationChannelRequest
@@ -18259,6 +18336,7 @@ serviceMap:
     - GetCampaignAssetActivationTask
     - GetCampaignAssetExportTask
     - GetCampaignTemplate
+    - GetChannelContract
     - GetCollaborationChannel
     - GetConnection
     - GetConnectionInvitation
@@ -18307,6 +18385,7 @@ serviceMap:
     - ListBusinessPlans
     - ListCampaignAssets
     - ListCampaigns
+    - ListChannelContracts
     - ListChannelHandshakes
     - ListCollaborationChannels
     - ListConnectionInvitations
@@ -18402,6 +18481,7 @@ serviceMap:
     - partnercentral:BusinessPlanItemStage
     - partnercentral:BusinessPlanItemType
     - partnercentral:Catalog
+    - partnercentral:ChannelContractType
     - partnercentral:ChannelHandshakeType
     - partnercentral:FulfillmentTypes
     - partnercentral:Programs
@@ -19177,6 +19257,11 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: true
+  AWS Workload Telemetry Service:
+    StringPrefix: workload-telemetry
+    Actions:
+    - PutCertificateTelemetry
+    HasResource: false
   AWS IoT Jobs DataPlane:
     StringPrefix: iotjobsdata
     Actions:
@@ -20290,8 +20375,10 @@ serviceMap:
     - ListAggregateResourceSynchronizationStatuses
     - ListDeploymentSnapshots
     - ListDeployments
+    - ListEntityCoverages
     - ListPolicies
     - ListPolicySnapshots
+    - ListProtectedResourceCoverages
     - ListResourceAssociations
     - ListResourceSynchronizationStatuses
     - ListRuleSnapshots
@@ -20315,6 +20402,7 @@ serviceMap:
     - aws:RequestTag/${TagKey}
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
+    - network-security-manager:ProtectedResourceArn
     HasResource: true
   AWS CloudTrail:
     StringPrefix: cloudtrail
@@ -20719,10 +20807,13 @@ serviceMap:
   Amazon Polly:
     StringPrefix: polly
     Actions:
+    - CreateVoice
     - DeleteLexicon
+    - DeleteVoice
     - DescribeVoices
     - GetLexicon
     - GetSpeechSynthesisTask
+    - GetVoice
     - ListLexicons
     - ListSpeechSynthesisTasks
     - ListTagsForResource
@@ -20732,7 +20823,7 @@ serviceMap:
     - SynthesizeSpeech
     - TagResource
     - UntagResource
-    ARNFormat: arn:aws:polly:${Region}:${Account}:lexicon/${RelativeId}
+    ARNFormat: arn:aws:polly:${Region}:${Account}:${ResourceType}/${ResourceName}
     ARNRegex: "^arn:aws:polly:${Region}:.+"
     conditionKeys:
     - aws:RequestTag/${TagKey}
@@ -21371,9 +21462,11 @@ serviceMap:
     - AuthorizeOAuthAccess
     - BatchCreateTopicReviewedAnswer
     - BatchDeleteKnowledgeBase
+    - BatchDeletePolicyAssignmentByPolicy
     - BatchDeleteTopicReviewedAnswer
     - BatchDescribeUserLimits
     - BatchGetPreferences
+    - BatchPutPolicyAssignmentByPolicy
     - BatchUpdatePreferences
     - CancelIngestion
     - CreateAccessControlApplication
@@ -21403,6 +21496,7 @@ serviceMap:
     - CreateInboundConnector
     - CreateIngestion
     - CreateKnowledgeBase
+    - CreateKnowledgeBaseRefreshSchedule
     - CreateLimitsProfile
     - CreateNamespace
     - CreateOAuthClientApplication
@@ -21450,9 +21544,11 @@ serviceMap:
     - DeleteIdentityPropagationConfig
     - DeleteInboundConnector
     - DeleteKnowledgeBase
+    - DeleteKnowledgeBaseRefreshSchedule
     - DeleteLimitsProfile
     - DeleteNamespace
     - DeleteOAuthClientApplication
+    - DeletePolicyAssignment
     - DeleteRefreshSchedule
     - DeleteRoleCustomPermission
     - DeleteRoleMembership
@@ -21519,6 +21615,7 @@ serviceMap:
     - DescribeKeyRegistration
     - DescribeKnowledgeBase
     - DescribeKnowledgeBasePermissions
+    - DescribeKnowledgeBaseRefreshSchedule
     - DescribeLimitsProfile
     - DescribeNamespace
     - DescribeOAuthClientApplication
@@ -21550,10 +21647,12 @@ serviceMap:
     - GetAuthCode
     - GetCustomPermissionsSummary
     - GetDashboardEmbedUrl
+    - GetEffectiveCustomPermissions
     - GetFlowMetadata
     - GetFlowPermissions
     - GetGroupMapping
     - GetIdentityContext
+    - GetPolicyAssignment
     - GetSessionEmbedUrl
     - ListAccessControlApplications
     - ListActionConnectors
@@ -21588,10 +21687,12 @@ serviceMap:
     - ListInboundConnectors
     - ListIngestions
     - ListKMSKeysForUser
+    - ListKnowledgeBaseRefreshSchedules
     - ListKnowledgeBases
     - ListLimitsProfiles
     - ListNamespaces
     - ListOAuthClientApplications
+    - ListPrincipalsForPolicy
     - ListRefreshSchedules
     - ListRoleMemberships
     - ListSelfUpgrades
@@ -21616,6 +21717,7 @@ serviceMap:
     - PassTopic
     - PredictQAResults
     - PutDataSetRefreshProperties
+    - PutPolicyAssignment
     - QuickSuiteUsageMetrics
     - RegisterCustomerManagedKey
     - RegisterUser
@@ -21698,6 +21800,7 @@ serviceMap:
     - UpdateKeyRegistration
     - UpdateKnowledgeBase
     - UpdateKnowledgeBasePermissions
+    - UpdateKnowledgeBaseRefreshSchedule
     - UpdateLimitsProfile
     - UpdateOAuthClientApplication
     - UpdatePublicSharingSettings
@@ -25530,6 +25633,7 @@ serviceMap:
     - GetInstallationUrl
     - GetRepositoryLink
     - GetRepositorySyncStatus
+    - GetResourcePolicy
     - GetResourceSyncStatus
     - GetSyncBlockerSummary
     - GetSyncConfiguration
@@ -26012,6 +26116,11 @@ serviceMap:
     Actions:
     - AllowVendedLogDeliveryForResource
     - AssociateService
+    - BatchCreateAccessProfileAssignment
+    - BatchDeleteAccessProfileAssignment
+    - BatchDeleteAccessProfileEntitlement
+    - BatchPutAccessProfileEntitlement
+    - CreateAccessProfile
     - CreateAccessToken
     - CreateAgentSpace
     - CreateAsset
@@ -26022,6 +26131,7 @@ serviceMap:
     - CreateOneTimeLoginSession
     - CreatePrivateConnection
     - CreateTrigger
+    - DeleteAccessProfile
     - DeleteAgentSpace
     - DeleteAsset
     - DeleteAssetFile
@@ -26037,6 +26147,7 @@ serviceMap:
     - DiscoverTopology
     - EnableOperatorApp
     - EndChatForCase
+    - GetAccessProfile
     - GetAccessToken
     - GetAccountUsage
     - GetAgentSpace
@@ -26055,6 +26166,9 @@ serviceMap:
     - GetService
     - GetTrigger
     - InitiateChatForCase
+    - ListAccessProfileAssignments
+    - ListAccessProfileEntitlements
+    - ListAccessProfiles
     - ListAccessTokens
     - ListAgentSpaceMetrics
     - ListAgentSpaces
@@ -26090,6 +26204,8 @@ serviceMap:
     - StopPlan
     - TagResource
     - UntagResource
+    - UpdateAccessProfile
+    - UpdateAccessProfilesOrder
     - UpdateAgentSpace
     - UpdateApprovalAction
     - UpdateAsset
@@ -27800,6 +27916,7 @@ serviceMap:
     - DeleteConsentPortal
     - DeleteDataset
     - DeleteDatasetExamples
+    - DeleteDatasetGeneration
     - DeleteEvaluator
     - DeleteEvent
     - DeleteGateway
@@ -27847,6 +27964,7 @@ serviceMap:
     - GetConfigurationBundleVersion
     - GetConsentPortal
     - GetDataset
+    - GetDatasetGeneration
     - GetEvaluator
     - GetEvent
     - GetGateway
@@ -27916,6 +28034,7 @@ serviceMap:
     - ListConfigurationBundles
     - ListConsentPortals
     - ListDatasetExamples
+    - ListDatasetGenerations
     - ListDatasetVersions
     - ListDatasets
     - ListEvaluators
@@ -27965,6 +28084,7 @@ serviceMap:
     - StartBatchEvaluation
     - StartBrowserSession
     - StartCodeInterpreterSession
+    - StartDatasetGeneration
     - StartMemoryExtractionJob
     - StartPolicyGeneration
     - StartRecommendation
