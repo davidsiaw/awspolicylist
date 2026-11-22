@@ -10335,25 +10335,36 @@ serviceMap:
     - CopySnapshotAndUpdateVolume
     - CreateAndAttachS3AccessPoint
     - CreateBackup
+    - CreateClusterPeer
     - CreateDataRepositoryAssociation
     - CreateDataRepositoryTask
     - CreateFileCache
     - CreateFileSystem
     - CreateFileSystemFromBackup
+    - CreateSnapmirrorPolicy
+    - CreateSnapmirrorRelationship
     - CreateSnapshot
+    - CreateSnapshotPolicy
     - CreateStorageVirtualMachine
+    - CreateStorageVirtualMachinePeer
     - CreateVolume
     - CreateVolumeFromBackup
     - DeleteBackup
+    - DeleteClusterPeer
     - DeleteDataRepositoryAssociation
     - DeleteFileCache
     - DeleteFileSystem
     - DeleteResourcePolicy
+    - DeleteSnapmirrorPolicy
+    - DeleteSnapmirrorRelationship
     - DeleteSnapshot
+    - DeleteSnapshotPolicy
     - DeleteStorageVirtualMachine
+    - DeleteStorageVirtualMachinePeer
     - DeleteVolume
     - DescribeAssociatedFileGateways
     - DescribeBackups
+    - DescribeClusterPeers
     - DescribeDataRepositoryAssociations
     - DescribeDataRepositoryTasks
     - DescribeFileCaches
@@ -10361,7 +10372,11 @@ serviceMap:
     - DescribeFileSystems
     - DescribeS3AccessPointAttachments
     - DescribeSharedVpcConfiguration
+    - DescribeSnapmirrorPolicies
+    - DescribeSnapmirrorRelationships
+    - DescribeSnapshotPolicies
     - DescribeSnapshots
+    - DescribeStorageVirtualMachinePeers
     - DescribeStorageVirtualMachines
     - DescribeVolumes
     - DetachAndDeleteS3AccessPoint
@@ -10376,12 +10391,17 @@ serviceMap:
     - StartMisconfiguredStateRecovery
     - TagResource
     - UntagResource
+    - UpdateClusterPeer
     - UpdateDataRepositoryAssociation
     - UpdateFileCache
     - UpdateFileSystem
     - UpdateSharedVpcConfiguration
+    - UpdateSnapmirrorPolicy
+    - UpdateSnapmirrorRelationship
     - UpdateSnapshot
+    - UpdateSnapshotPolicy
     - UpdateStorageVirtualMachine
+    - UpdateStorageVirtualMachinePeer
     - UpdateVolume
     ARNFormat: arn:aws:fsx:${Region}:${Account}:${ResourceType}/${ResourcePath}
     ARNRegex: "^arn:aws:fsx:.+"
@@ -10394,6 +10414,7 @@ serviceMap:
     - fsx:NfsDataRepositoryAuthenticationEnabled
     - fsx:NfsDataRepositoryEncryptionInTransitEnabled
     - fsx:ParentVolumeId
+    - fsx:SnapmirrorSourcePath
     - fsx:StorageVirtualMachineId
     HasResource: true
   AWS Amplify:
