@@ -7173,6 +7173,7 @@ serviceMap:
     - ListSavedQueries
     - ListSchemas
     - ListTables
+    - ModifyAccountAttributes
     - ModifyAquaConfiguration
     - ModifyAuthenticationProfile
     - ModifyAutonomicsDenylist
