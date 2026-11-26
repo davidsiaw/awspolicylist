@@ -4009,6 +4009,7 @@ serviceMap:
     - DescribeRecommendations
     - DescribeReservedDBInstances
     - DescribeReservedDBInstancesOfferings
+    - DescribeSchemas
     - DescribeSourceRegions
     - DescribeTenantDatabases
     - DescribeValidDBInstanceModifications
@@ -9816,21 +9817,27 @@ serviceMap:
     StringPrefix: cloudwatch
     Actions:
     - AssumeAccessProfile
+    - BatchGetOmniSloReport
     - BatchGetServiceLevelIndicatorReport
     - BatchGetServiceLevelObjectiveBudgetReport
     - CallWithBearerToken
+    - CompleteExperimentRun
     - CreateAccessGrant
     - CreateAccessProfile
     - CreateAlert
     - CreateDomain
     - CreateDomainAccessGrantForOrganization
     - CreateDomainForOrganization
+    - CreateExperiment
     - CreateIngestionEndpoint
     - CreateIntegration
+    - CreateLookup
     - CreateOmniAgentAsset
     - CreateOmniDashboard
+    - CreateOmniSlo
     - CreateOmniThread
     - CreateOneTimeDeepLinkCode
+    - CreateProvisioningRolesForOrganization
     - CreateResourceMetricsConfiguration
     - CreateServiceLevelObjective
     - CreateSpace
@@ -9845,13 +9852,17 @@ serviceMap:
     - DeleteDomain
     - DeleteDomainAccessGrantForOrganization
     - DeleteDomainForOrganization
+    - DeleteExperiment
+    - DeleteExperimentRun
     - DeleteIngestionEndpoint
     - DeleteInsightRules
     - DeleteIntegration
+    - DeleteLookup
     - DeleteMetricDataQueryDefinition
     - DeleteMetricStream
     - DeleteOmniAgentAsset
     - DeleteOmniDashboard
+    - DeleteOmniSlo
     - DeleteOmniThread
     - DeletePipelineRule
     - DeleteResourceMetricsConfiguration
@@ -9882,10 +9893,13 @@ serviceMap:
     - GetDomain
     - GetDomainAccessGrantForOrganization
     - GetDomainForOrganization
+    - GetExperiment
+    - GetExperimentRun
     - GetIngestionEndpoint
     - GetInsightRuleReport
     - GetIntegration
     - GetIntelligenceConfiguration
+    - GetLookup
     - GetMetricData
     - GetMetricDataQueryDefinition
     - GetMetricStatistics
@@ -9895,6 +9909,7 @@ serviceMap:
     - GetOTelEnrichment
     - GetOmniAgentAsset
     - GetOmniDashboard
+    - GetOmniSlo
     - GetOmniThread
     - GetPreferences
     - GetProfileRecords
@@ -9918,20 +9933,27 @@ serviceMap:
     - ListAlarmMuteRules
     - ListAlertContributors
     - ListAlerts
+    - ListAnomalies
     - ListDashboards
     - ListDomainAccessGrantsForOrganization
     - ListDomains
     - ListEntitiesForMetric
+    - ListExperimentRuns
+    - ListExperiments
     - ListIngestionEndpoints
+    - ListIntegrationTargets
     - ListIntegrations
+    - ListLookups
     - ListManagedInsightRules
     - ListMetricDataQueryDefinitions
     - ListMetricStreams
     - ListMetrics
     - ListMonitoringAssessmentResults
     - ListMonitoringAssessments
+    - ListObservations
     - ListOmniAgentAssets
     - ListOmniDashboards
+    - ListOmniSlos
     - ListOmniThreads
     - ListServiceLevelObjectives
     - ListServices
@@ -9946,6 +9968,7 @@ serviceMap:
     - PutAnomalyDetector
     - PutCompositeAlarm
     - PutDashboard
+    - PutExperimentRunResults
     - PutInsightRule
     - PutIntelligenceConfiguration
     - PutLogAlarm
@@ -9960,12 +9983,14 @@ serviceMap:
     - QueryTraces
     - SearchPrincipals
     - SetAlarmState
+    - StartExperimentRun
     - StartMetricStreams
     - StartMonitoringAssessment
     - StartOTelEnrichment
     - StartOmniThreadSession
     - StartTelemetryQuery
     - StartTelemetryQuerySession
+    - StopExperimentRun
     - StopMetricStreams
     - StopOTelEnrichment
     - StopTelemetryQuery
@@ -9978,11 +10003,14 @@ serviceMap:
     - UpdateAlert
     - UpdateDomain
     - UpdateDomainForOrganization
+    - UpdateExperiment
     - UpdateIngestionEndpoint
     - UpdateIntegration
+    - UpdateLookup
     - UpdateOTelEnrichment
     - UpdateOmniAgentAsset
     - UpdateOmniDashboard
+    - UpdateOmniSlo
     - UpdateOmniThread
     - UpdatePreferences
     - UpdateResourceMetricsConfiguration
@@ -12292,6 +12320,105 @@ serviceMap:
     - aws:ResourceTag/${TagKey}
     - aws:TagKeys
     HasResource: false
+  AWS Amplify Gen 3:
+    StringPrefix: amplifygen3
+    Actions:
+    - AcceptForkPullRequestDeployment
+    - AllowVendedLogDeliveryForResource
+    - AssociateWebACL
+    - CancelGradualRollout
+    - Connect
+    - CreateApp
+    - CreateDeployment
+    - CreateDomainAssociation
+    - CreateEnvironment
+    - CreateIntegrationConfiguration
+    - CreateIntegrationConnection
+    - CreateNetworkConnector
+    - CreateSourceUpload
+    - DeleteAlias
+    - DeleteApp
+    - DeleteBackendFromApp
+    - DeleteBranch
+    - DeleteDeployment
+    - DeleteDomainAssociation
+    - DeleteEnvironment
+    - DeleteEnvironmentVariables
+    - DeleteGitConnection
+    - DeleteIdentityProviderConfig
+    - DeleteIntegrationConfiguration
+    - DeleteIntegrationConnection
+    - DeleteNetworkConnector
+    - DeleteSourceUpload
+    - DisableAccessControl
+    - DisassociateWebACL
+    - EnableAccessControl
+    - GetAccessControl
+    - GetAlias
+    - GetApiKey
+    - GetApp
+    - GetBranch
+    - GetDeployment
+    - GetDomainAssociation
+    - GetDomainConnectUrl
+    - GetEnvironment
+    - GetEnvironmentsForNetworkConnector
+    - GetFile
+    - GetFolder
+    - GetIdentityProviderConfig
+    - GetIntegrationConfiguration
+    - GetIntegrationConnection
+    - GetNetworkConnector
+    - GetRestoreWindow
+    - GetSourceUpload
+    - GetWebACLForResource
+    - ListAccessControls
+    - ListAliases
+    - ListApiKeys
+    - ListApps
+    - ListBranches
+    - ListDeploymentsForApp
+    - ListDeploymentsForEnvironment
+    - ListDomainAssociationsForAccount
+    - ListDomainAssociationsForApp
+    - ListEnvironmentVariables
+    - ListEnvironments
+    - ListGitBranches
+    - ListGitConnections
+    - ListIntegrationConfigurations
+    - ListIntegrationConnections
+    - ListIntegrationTypes
+    - ListNetworkConnectors
+    - ListPlanViolations
+    - ListRepositories
+    - ListResourcesForWebACL
+    - ListSourceUploads
+    - ListTagsForResource
+    - PutEnvironmentVariables
+    - PutIdentityProviderConfig
+    - ResetCache
+    - RestoreBranch
+    - ResumeBackend
+    - RevokeApiKey
+    - RotateIdentityProviderSecret
+    - StartAuthorizationFlow
+    - StartCacheRevalidation
+    - TagResource
+    - UntagResource
+    - UpdateAccessControl
+    - UpdateAliasRouting
+    - UpdateApp
+    - UpdateDomainAssociation
+    - UpdateEnvironment
+    - UpdateIntegrationConfiguration
+    - UpdateNetworkConnector
+    ARNFormat: arn:aws:amplifygen3:${Region}:${Account}:${ResourceType}/${ResourcePath}
+    ARNRegex: "^arn:aws:amplifygen3:.+:.+:.+"
+    conditionKeys:
+    - aws:RequestTag/${TagKey}
+    - aws:ResourceTag/${TagKey}
+    - aws:TagKeys
+    HasResource: true
   AWS Elastic Load Balancing:
     StringPrefix: elasticloadbalancing
     Actions:
@@ -12345,14 +12472,20 @@ serviceMap:
     - AddTags
     - AddTrustStoreRevocations
     - AllowVendedLogDeliveryForResource
+    - AssociateCertificate
+    - CancelProxyVersionUpdate
     - CreateListener
     - CreateLoadBalancer
+    - CreateProxy
+    - CreateProxyWafAssociation
     - CreateRule
     - CreateTargetGroup
     - CreateTrustStore
     - CreateWebACLAssociation
     - DeleteListener
     - DeleteLoadBalancer
+    - DeleteProxy
+    - DeleteProxyWafAssociation
     - DeleteRule
     - DeleteSharedTrustStoreAssociation
     - DeleteTargetGroup
@@ -12376,10 +12509,22 @@ serviceMap:
     - DescribeTrustStoreRevocations
     - DescribeTrustStores
     - DescribeWebACLAssociation
+    - DisassociateCertificate
     - GetLoadBalancerWebACL
+    - GetProxy
+    - GetProxyAttributes
+    - GetProxyConfigurationContents
+    - GetProxyUpdate
+    - GetProxyWafAssociation
     - GetResourcePolicy
     - GetTrustStoreCaCertificatesBundle
     - GetTrustStoreRevocationContent
+    - ListCertificateAssociations
+    - ListProxies
+    - ListProxyUpdates
+    - ListProxyVersions
+    - ListProxyWafAssociations
+    - ListTagsForResource
     - ModifyCapacityReservation
     - ModifyIpPools
     - ModifyListener
@@ -12398,6 +12543,12 @@ serviceMap:
     - SetSecurityGroups
     - SetSubnets
     - SetWebAcl
+    - TagResource
+    - UntagResource
+    - UpdateProxyAttributes
+    - UpdateProxyConfiguration
+    - UpdateProxyNetworkConfiguration
+    - UpdateProxyVersion
     ARNFormat: arn:aws:elasticloadbalancing:${Region}:${Account}:${ResourceType}/${ResourceId}
     ARNRegex: "^arn:aws:elasticloadbalancing:.+"
     conditionKeys:
